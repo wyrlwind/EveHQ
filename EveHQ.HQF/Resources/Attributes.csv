@@ -1,0 +1,98 @@
+10001,Radius,Radius,0,m,1
+10002,Mass,Mass,0,kg,1
+10003,Volume,Volume,0,m3,1
+10004,Capacity,Capacity,0,m3,1
+10005,Drone Control,Drone Control,0,,0
+10006,Fighter Control,Fighter Control,0,,0
+10007,Drone Control Range,Drone Control Range,0,,0
+10008,Fighter Control Range,Fighter Control Range,0,,0
+10009,Warp Core Strength,Warp Core Strength,0,,6
+10010,Thrust Addition,Thrust Addition,0,,6
+10011,energyTurretROF,Rate Of Fire,0,s,9
+10012,hybridTurretROF,Rate Of Fire,0,s,9
+10013,projectileTurretROF,Rate Of Fire,0,s,9
+10014,energyTurretDamage,Damage Modifier,0,x,9
+10015,hybridTurretDamage,Damage Modifier,0,x,9
+10016,projectileTurretDamage,Damage Modifier,0,x,9
+10017,weaponBaseDamage,Weapon Base Damage,0,HP,9
+10018,weaponVolleyDamage,Weapon Volley Damage,0,HP,9
+10019,weaponDPS,Weapon DPS,0,HP,9
+10020,allTurretVolleyDamage,Turret Volley Damage,0,HP,9
+10021,allMissileVolleyDamage,Missile Volley Damage,0,HP,9
+10022,allSBDamage,Smartbomb Volley Damage,0,HP,9
+10023,allDroneVolleyDamage,Drone Volley Damage,0,HP,9
+10024,allTurretDPS,Turret DPS,0,HP,9
+10025,allMissileDPS,Missile DPS,0,HP,9
+10026,allSBDPS,Smartbomb DPS,0,HP,9
+10027,allDroneDPS,Drone DPS,0,HP,9
+10028,totalVolleyDamage,Total Volley Damage,0,HP,9
+10029,totalDPS,Total DPS,0,HP,9
+10030,loadedCharge,Loaded Charge,0,typeID,9
+10031,maxDroneControlUnits,Drone Control Units,0,,0
+# Module Cap Usage Rate
+10032,capUsageRate,Capacitor Usage Rate,0,GJ/s,13
+# Ship Mining Totals
+10033,totalOreMiningAmount,Mining Amount,0,m3,0
+10034,turretOreMiningAmount,Turret Mining Amount,0,m3,0
+10035,droneOreMiningAmount,Drone Mining Amount,0,m3,0
+10036,totalIceMiningAmount,Mining Amount,0,m3,0
+10037,turretIceMiningAmount,Turret Mining Amount,0,m3,0
+10038,droneIceMiningAmount,Drone Mining Amount,0,m3,0
+# Module Mining Rates
+10039,turretOreMiningRate,Turret Mining Rate,0,m3/s,0
+10040,droneOreMiningRate,Drone Mining Rate,0,m3/s,0
+10041,turretIceMiningRate,Turret Ice Mining Rate,0,m3/s,0
+10042,droneIceMiningRate,Drone Ice Mining Rate,0,m3/s,0
+# Ship Mining Rates
+10043,allTurretOreMiningRate,Turrets Mining Rate,0,m3/s,0
+10044,allDroneOreMiningRate,Drones Mining Rate,0,m3/s,0
+10045,allTurretIceMiningRate,Turrets Ice Mining Rate,0,m3/s,0
+10046,allDroneIceMiningRate,Drones Ice Mining Rate,0,m3/s,0
+10047,totalOreMiningRate,Total Mining Rate,0,m3/s,0
+10048,totalIceMiningRate,Total Ice Mining Rate,0,m3/s,0
+# Ship Cap Usage Rates
+10049,shipCapUsageRate,Total Cap Usage Rate,0,F/s,0
+10050,shipCapInjRate,Total Cap Injection Rate,0,F/s,0
+# Weapon Damage Split
+10051,EMWeaponDamage,EM Weapon Damage,0,HP,0
+10052,ExplosiveWeaponDamage,Explosive Weapon Damage,0,HP,0
+10053,KineticWeaponDamage,Kinetic Weapon Damage,0,HP,0
+10054,ThermalWeaponDamage,Thermal Weapon Damage,0,HP,0
+# Total Damage Split
+10055,EMDamage,EM Damage,0,HP,0
+10056,ExplosiveDamage,Explosive Damage,0,HP,0
+10057,KineticDamage,Kinetic Damage,0,HP,0
+10058,ThermalDamage,Thermal Damage,0,HP,0
+# Defence Values
+10059,ShieldDefence,Shield Defence,0,HP,0
+10060,ArmorDefence,Armor Defence,0,HP,0
+10061,HullDefence,Hull Defence,0,HP,0
+10062,MaxDefence,Max Defence,0,HP,0
+# GangLink Capacity
+10063,MaxGanglinks,Maximum Gang Modules,0,,0
+# Max Character Locked Targets
+10064,MaxPilotTargets,Maximum Pilot Targets,0,,0
+# HP Recharge Values
+10065,TotalShieldRecharge,Total Shield Recharge,0,HP/s,0
+10066,TotalArmorRecharge,Total Armor Recharge,0,HP/s,0
+10067,TotalHullRecharge,Total Hull Recharge,0,HP/s,0
+10068,TotalRecharge,Total Recharge,0,HP/s,0
+# Passive Defence Values
+10069,PassiveDefence,Passive Defence,0,HP/s,0
+# DPS Damage Split
+10070,EMDPS,EM DPS,0,HP,0
+10071,ExplosiveDPS,Explosive DPS,0,HP,0
+10072,KineticDPS,Kinetic DPS,0,HP,0
+10073,ThermalDPS,Thermal DPS,0,HP,0
+# Logistics Values
+10074,TransferRate,Transfer Rate,0,HP/s,0
+10075,ModuleTransferAmount,Module Transfer Amount,0,HP,0
+10076,DroneTransferAmount,Drone Transfer Amount,0,HP,0
+10077,ModuleTransferRate,Module Transfer Rate,0,HP/s,0
+10078,DroneTransferRate,Drone Transfer Rate,0,HP/s,0
+10079,totalTransferAmount,Total Transfer Amount,0,HP,0
+10080,totalTransferRate,Total Transfer Rate,0,HP/s,0
+# Gas Mining Values
+10081,totalGasMiningAmount,Gas Mining Amount,0,m3,0
+10082,turretGasMiningRate,Turret Gas Mining Rate,0,m3/s,0
+10083,totalGasMiningRate,Total Gas Mining Rate,0,m3/s,0

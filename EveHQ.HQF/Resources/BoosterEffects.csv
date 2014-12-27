@@ -1,0 +1,36 @@
+#HQF Booster Mapping Table,,,,,
+#Booster ID,IsPen,Effect ID,Group,Booster,Effect
+10155,0,548,Improved,Blue Pill,Shield Boost Bonus
+10151,0,848,Improved,Crash,Explosion Velocity Bonus
+15477,0,244,Improved,Drop,Tracking Speed Bonus
+15480,0,895,Improved,Exile,Armor Repair Bonus
+15461,0,294,Improved,Frentix,Turret Optimal Range Bonus
+15464,0,1079,Improved,Mindflood,Capacitor Bonus
+10165,0,349,Improved,Soothsayer,Turret Falloff Bonus
+15458,0,554,Improved,Xinstict,Sig Radius Bonus
+9950,0,548,Standard,Blue Pill,Shield Boost Bonus
+9947,0,848,Standard,Crash,Explosion Velocity Bonus
+15466,0,244,Standard,Drop,Tracking Speed Bonus
+15479,0,895,Standard,Exile,Armor Repair Bonus
+15460,0,294,Standard,Frentix,Turret Optimal Range Bonus
+15463,0,1079,Standard,Mindflood,Capacitor Bonus
+10164,0,349,Standard,Soothsayer,Turret Falloff Bonus
+15457,0,554,Standard,Xinstict,Sig Radius Bonus
+10156,0,548,Strong,Blue Pill,Shield Boost Bonus
+10152,0,848,Strong,Crash,Explosion Velocity Bonus
+15478,0,244,Strong,Drop,Tracking Speed Bonus
+25349,0,895,Strong,Exile,Armor Repair Bonus
+15462,0,294,Strong,Frentix,Turret Optimal Range Bonus
+15465,0,1079,Strong,Mindflood,Capacitor Bonus
+10166,0,349,Strong,Soothsayer,Turret Falloff Bonus
+15459,0,554,Strong,Xinstict,Sig Radius Bonus
+28670,0,548,Synth,Blue Pill,Shield Boost Bonus
+28672,0,848,Synth,Crash,Explosion Velocity Bonus
+28674,0,244,Synth,Drop,Tracking Speed Bonus
+28676,0,895,Synth,Exile,Armor Repair Bonus
+28678,0,294,Synth,Frentix,Turret Optimal Range Bonus
+28680,0,1079,Synth,Mindflood,Capacitor Bonus
+28684,0,349,Synth,Soothsayer,Turret Falloff Bonus
+28682,0,554,Synth,Xinstict,Sig Radius Bonus
+3898,0,315,Quafe,Zero,Velocity Bonus
+3898,0,566,Quafe,Zero,Scan Resolution Bonus
