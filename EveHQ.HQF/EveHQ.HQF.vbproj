@@ -112,6 +112,7 @@
     <Compile Include="Forms\frmShipSelection.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="_Deprecated\ImplantGroup.vb" />
     <Compile Include="_New\FittingPilots.vb" />
     <Compile Include="_New\FittingSkill.vb" />
@@ -313,7 +314,6 @@
     <Compile Include="Forms\frmHQF.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>

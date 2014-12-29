@@ -1,7 +1,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(SolutionDir)\VersionNumber.targets" />
   <Import Project="$(SolutionDir)\Tools\MSBuild\MSBuild.Community.Tasks.Targets" Condition="Exists('$(SolutionDir)\Tools\MSBuild\MSBuild.Community.Tasks.Targets')" />
-<UsingTask TaskName="HgVersionFile" AssemblyFile="$(SolutionDir)\MSBuildVersioning.dll" />
+
  
   <Target Name="SetAssemblyVersion">
     <Message Text="Building Package" Importance="high" />
@@ -33,7 +33,6 @@
                   ComVisible="False"
                   Guid="$(AssemblyInfoGUID)"
                   />
-    
-    <HgVersionFile TemplateFile="Properties\AssemblyInfo.template.cs" DestinationFile="Properties\AssemblyInfo.CS" />
+   
   </Target>
 </Project>

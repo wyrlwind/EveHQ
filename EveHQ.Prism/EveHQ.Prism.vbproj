@@ -127,6 +127,7 @@
     <Compile Include="BPCalc\OwnedBlueprint.vb" />
     <Compile Include="BPCalc\SwapResource.vb" />
     <Compile Include="Classes\BlueprintAsset.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="_Deprecated\BPCCostInfo.vb" />
     <Compile Include="Classes\BlueprintCopyCostInfo.vb" />
     <Compile Include="Classes\BPStatus.vb" />
@@ -279,7 +280,6 @@
     </Compile>
     <Compile Include="Classes\Locations.vb" />
     <Compile Include="Classes\MarketOrder.vb" />
-    <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
