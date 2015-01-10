@@ -259,7 +259,8 @@ Public Class FrmCacheCreator
                                                 For Each bonusPart In CType(index.Value, YamlMappingNode).Children
                                                     Select Case CType(bonusPart.Key, YamlScalarNode).Value
                                                         Case "bonus"
-                                                            partBonus = Convert.ToDouble(CType(bonusPart.Value, YamlScalarNode).Value).ToString("0.##")
+                                                            'partBonus = Convert.ToDouble(CType(bonusPart.Value, YamlScalarNode).Value).ToString("0.##")
+                                                            partBonus = CType(bonusPart.Value, YamlScalarNode).Value
                                                         Case "bonusText"
                                                             partBonusText = CType(bonusPart.Value, YamlScalarNode).Value
                                                         Case "unitID"
