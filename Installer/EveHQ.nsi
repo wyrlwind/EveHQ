@@ -29,9 +29,9 @@ InstallDirRegKey HKLM "Software\EveHQ" "Install_Dir"
 !define MUI_WELCOMEFINISHPAGE_BITMAP EveHQInstallerSideImage.bmp
 
 #Installer file settings
-VIAddVersionKey "CompanyName" "Software Addicts Studios"
-VIAddVersionKey "FileDescription" "EveHQ: The Internet Spaceship Toolki"
-VIAddVersionKey "LegalCopyright" "Copyright 2005-2013, EveHQ Dev Team"
+VIAddVersionKey "CompanyName" "EveHQ Dev Team"
+VIAddVersionKey "FileDescription" "EveHQ: The Internet Spaceship Toolkit"
+#VIAddVersionKey "LegalCopyright" "Copyright 2005-2013, EveHQ Dev Team"
 VIAddVersionKey "ProductName" "EveHQ Setup"
 !ifdef Version
 VIProductVersion ${Version}

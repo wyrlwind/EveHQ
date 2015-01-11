@@ -184,3 +184,4 @@ FakesAssemblies/
 EveHQ.CacheCreator/eve.db
 EveHQ.CacheCreator/Resources/graphicIDs.yaml
 EveHQ.CacheCreator/Resources/blueprints.yaml
+Installer/EveHQ-Setup.exe
