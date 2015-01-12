@@ -2609,7 +2609,7 @@ Namespace Forms
 
         Private Sub btnViewHistory_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnViewHistory.Click
             Try
-                Process.Start("http://wiki.newedentech.com/doku.php?id=evehq:versionhistory:version_history_2.x")
+                Process.Start("http://evehq.co/files")
             Catch ex As Exception
                 ' Guess the user needs to reset the http protocol in the OS - not much EveHQ can do here!
             End Try
