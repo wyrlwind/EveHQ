@@ -18,11 +18,11 @@ Imports System.Runtime.CompilerServices
 Imports System.Runtime.InteropServices
 <Assembly: AssemblyCompany("EveHQ Development Team"),  _
  Assembly: AssemblyProduct("EveHQ"),  _
- Assembly: AssemblyCopyright("� EveHQ Development Team 2005-2014"),  _
- Assembly: AssemblyFileVersion("2.15.0.$REVNUM$"),  _
+ Assembly: AssemblyCopyright("� EveHQ Development Team 2005-2015"),  _
+ Assembly: AssemblyFileVersion("2.15.0.$REVNUM$-Beta-"),  _
  Assembly: AssemblyVersion("2.15.0.$REVNUM$"),  _
- Assembly: AssemblyConfiguration("Release"),  _
- Assembly: AssemblyTrademark("$UTCDATE$ (Version 2.15.0.$REVNUM$)"),  _
+ Assembly: AssemblyConfiguration("Debug"),  _
+ Assembly: AssemblyTrademark("$UTCDATE$ (Version 2.15.0.$REVNUM$-Beta-)"),  _
  Assembly: CLSCompliant(false),  _
  Assembly: ComVisible(false)> 
 
