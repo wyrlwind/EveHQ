@@ -1204,7 +1204,7 @@ Namespace Forms
             'rpCore
             '
             Me.rpCore.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-            Me.rpCore.Controls.Add(Me.rbHelp)
+            'Me.rpCore.Controls.Add(Me.rbHelp)
             Me.rpCore.Controls.Add(Me.rbAPITools)
             Me.rpCore.Controls.Add(Me.rbBackup)
             Me.rpCore.Controls.Add(Me.rbIGB)
