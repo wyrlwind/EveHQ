@@ -165,11 +165,11 @@ Public Class HQ
         Get
             If _marketStatDataProvider Is Nothing Then
                 ' Initialize based on settings
-                If (Settings.MarketDataProvider = EveCentralMarketDataProvider.Name) Then
-                    _marketStatDataProvider = GetEveCentralMarketInstance()
-                Else
-                    _marketStatDataProvider = GetEveHqMarketInstance()
-                End If
+                'If (Settings.MarketDataProvider = EveCentralMarketDataProvider.Name) Then
+                _marketStatDataProvider = GetEveCentralMarketInstance()
+                'Else
+                '_marketStatDataProvider = GetEveHqMarketInstance()
+                'End If
             End If
             Return _marketStatDataProvider
         End Get
