@@ -159,7 +159,6 @@ Namespace Forms
             HQ.WriteLogEvent("Start: Insert version info into splash screen")
             lblVersion.Text = "Version " & FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion
             lblDate.Text = "Released: " & My.Application.Info.Trademark
-            lblCopyright.Text = My.Application.Info.Copyright
             HQ.WriteLogEvent("End: Insert version info into splash screen")
             HQ.WriteLogEvent("Start: Show Splash Screen")
             If _showSplash = True And _showSettings = False Then

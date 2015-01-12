@@ -12,8 +12,8 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("")> 
-<Assembly: AssemblyCopyright("Copyright ©  2014")> 
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyCopyright("")> 
+<Assembly: AssemblyTrademark("2015-01-12")> 
 
 <Assembly: ComVisible(False)> 
 
