@@ -211,7 +211,7 @@ Public Class EveHQSettings
     Public Property EmailSenderAddress() As String
         Get
             If _emailSenderAddress Is Nothing Then
-                _emailSenderAddress = "notifications@newedentech.com"
+                _emailSenderAddress = "contact.evehq@gmail.com"
             End If
             Return _emailSenderAddress
         End Get
@@ -641,7 +641,7 @@ Public Class EveHQSettings
         TrainingBarWidth = 100
         CsvSeparatorChar = CultureInfo.CurrentCulture.NumberFormat.NumberGroupSeparator
         DBTickerLocation = "Bottom"
-        EmailSenderAddress = "notifications@newedentech.com"
+        EmailSenderAddress = "contact.evehq@gmail.com"
         EveHqBackupStart = Now
         EveHqBackupFreq = 1
         EveHqBackupLast = New DateTime(1999, 1, 1)

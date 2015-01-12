@@ -56,7 +56,7 @@ Imports System.Windows.Forms
 Namespace CoreReports
 
     Public Class Reports
-        Private Const WWW As String = "http://newedentech.com"
+        Private Const WWW As String = "http://evehq.co"
 
 #Region "Common Routines"
 

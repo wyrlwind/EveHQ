@@ -146,7 +146,7 @@ Public Class EveSettings
     Private cAPIRSAddress As String = ""
     Private cUseAPIRS As Boolean = False
     Private cUseCCPAPIBackup As Boolean = False
-    Private cUpdateURL As String = "http://evehq.newedentech.com/update/"
+    Private cUpdateURL As String = "http://evehq.co/update/"
     Private cOmitCurrentSkill As Boolean = False
     Private cUseAppDirectoryForDB As Boolean = False
     Private cAPIFileExtension As String = "aspx"
@@ -185,7 +185,7 @@ Public Class EveSettings
     Private cDBTickerLocation As String = "Bottom"
     Private cStandardQueueColumns As New ArrayList
     Private cUserQueueColumns As New ArrayList
-    Private cEmailSenderAddress As String = "notifications@newedentech.com"
+    Private cEmailSenderAddress As String = "contact.evehq@gmail.com"
     Private cIBShowAllItems As Boolean = False
     Private cEveHQBackupStart As Date = Now
     Private cEveHQBackupFreq As Integer = 1
@@ -533,7 +533,7 @@ Public Class EveSettings
     Public Property EmailSenderAddress() As String
         Get
             If cEmailSenderAddress Is Nothing Then
-                cEmailSenderAddress = "notifications@newedentech.com"
+                cEmailSenderAddress = "contact.evehq@gmail.com"
             End If
             Return cEmailSenderAddress
         End Get

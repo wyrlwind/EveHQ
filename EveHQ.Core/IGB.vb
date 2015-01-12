@@ -416,7 +416,7 @@ Public Class IGB
         If context.Request.UserAgent.StartsWith("EVE-IGB") Then
             strHTML &= "<p>If you have any questions or suggestions, please contact <a href='evemail:Drailen' SUBJECT='EveHQ IGB'>Drailen</a> via Eve-mail.</p>"
         Else
-            strHTML &= "<p>If you have any questions or suggestions, please contact <a href='mailto:drailen@newedentech.com'>Drailen</a> via E-mail.</p>"
+            strHTML &= "<p>If you have any questions or suggestions, please contact <a href='mailto:contact.evehq@gmail.com'>Drailen</a> via E-mail.</p>"
         End If
         strHTML &= "<p></p>"
         strHTML &= "<p>Happy browsing and fly safe!</p>"
