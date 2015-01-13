@@ -61,10 +61,18 @@ Battleships\Advanced Battleships\Marauders\Gallente\Kronos
 Battleships\Advanced Battleships\Marauders\Minmatar
 Battleships\Advanced Battleships\Marauders\Minmatar\Vargur
 Battleships\Faction
+Battleships\Faction\??????YC117????
+Battleships\Faction\?????YC117????
+Battleships\Faction\?????YC117????
+Battleships\Faction\?????YC117????
+Battleships\Faction\????YC117????
+Battleships\Faction\????YC117????
+Battleships\Faction\???YC117????
+Battleships\Faction\???YC117????
 Battleships\Faction\Apocalypse Blood Raider Edition
 Battleships\Faction\Apocalypse Kador Edition
 Battleships\Faction\Apocalypse Tash-Murkon Edition
-Battleships\Faction\Megathron Innerzone Shipping Edition
+Battleships\Faction\Megathron Inner Zone Shipping Edition
 Battleships\Faction\Megathron Police Edition
 Battleships\Faction\Rattlesnake Victory Edition
 Battleships\Faction\Raven Guristas Edition
@@ -106,9 +114,10 @@ Battleships\Standard Battleships\Caldari\Rokh Wiyrkomi Edition
 Battleships\Standard Battleships\Caldari\Scorpion
 Battleships\Standard Battleships\Gallente
 Battleships\Standard Battleships\Gallente\Dominix
+Battleships\Standard Battleships\Gallente\Dominix Quafe Edition
 Battleships\Standard Battleships\Gallente\Hyperion
 Battleships\Standard Battleships\Gallente\Hyperion Aliastra Edition
-Battleships\Standard Battleships\Gallente\Hyperion Innerzone Shipping Edition
+Battleships\Standard Battleships\Gallente\Hyperion Inner Zone Shipping Edition
 Battleships\Standard Battleships\Gallente\Megathron
 Battleships\Standard Battleships\Gallente\Megathron Quafe Edition
 Battleships\Standard Battleships\Minmatar
@@ -237,6 +246,7 @@ Cruisers\Advanced Cruisers\Strategic Cruisers\Gallente\Proteus
 Cruisers\Advanced Cruisers\Strategic Cruisers\Minmatar
 Cruisers\Advanced Cruisers\Strategic Cruisers\Minmatar\Loki
 Cruisers\Faction
+Cruisers\Faction\???YC117????
 Cruisers\Faction\Opux Luxury Yacht
 Cruisers\Faction\Stratios Emergency Responder
 Cruisers\Faction Cruisers
@@ -277,8 +287,9 @@ Cruisers\Standard Cruisers\Gallente\Celestis
 Cruisers\Standard Cruisers\Gallente\Exequror
 Cruisers\Standard Cruisers\Gallente\Thorax
 Cruisers\Standard Cruisers\Gallente\Thorax Aliastra Edition
-Cruisers\Standard Cruisers\Gallente\Thorax Innerzone Shipping Edition
+Cruisers\Standard Cruisers\Gallente\Thorax Inner Zone Shipping Edition
 Cruisers\Standard Cruisers\Gallente\Vexor
+Cruisers\Standard Cruisers\Gallente\Vexor Quafe Edition
 Cruisers\Standard Cruisers\Minmatar
 Cruisers\Standard Cruisers\Minmatar\Bellicose
 Cruisers\Standard Cruisers\Minmatar\Rupture
@@ -408,10 +419,11 @@ Frigates\Standard Frigates\Gallente\Atron
 Frigates\Standard Frigates\Gallente\Imicus
 Frigates\Standard Frigates\Gallente\Incursus
 Frigates\Standard Frigates\Gallente\Incursus Aliastra Edition
-Frigates\Standard Frigates\Gallente\Incursus Innerzone Shipping Edition
+Frigates\Standard Frigates\Gallente\Incursus Inner Zone Shipping Edition
 Frigates\Standard Frigates\Gallente\Maulus
 Frigates\Standard Frigates\Gallente\Navitas
 Frigates\Standard Frigates\Gallente\Tristan
+Frigates\Standard Frigates\Gallente\Tristan Quafe Edition
 Frigates\Standard Frigates\Minmatar
 Frigates\Standard Frigates\Minmatar\Breacher
 Frigates\Standard Frigates\Minmatar\Burst

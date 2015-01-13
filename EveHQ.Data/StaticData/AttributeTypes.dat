@@ -75,7 +75,7 @@ Ba>aenergyDestabilizationAmountEnergy Amount Neutralized r(
 0c,cempFieldRangeArea of effect radius (
 3e/elauncherSlotsLeftLauncher Hardpoints ç(
 /f+fturretSlotsLeftTurret Hardpoints ç(
-2g.gwarpScrambleRangeWarp Scramble Range (
+4g0gwarpScrambleRangeWarp Disruption Range (
 4h0hwarpScrambleStatusWarp Scramble Status z(
 8i4iwarpScrambleStrengthWarp Scramble Strength z(
 3j/jdroneBaySlotsLeftDrone Bay Hardpoints z(
@@ -1692,7 +1692,7 @@ N˝I˝subsystemBonusCaldariOffensive3subsystemBonusCaldariOffensive3 z(
 P˛K˛ subsystemBonusMinmatarOffensive3 subsystemBonusMinmatarOffensive3 z(
 (ˇ#ˇshipBonusCR3shipBonusCR3 z(	
 ,Ä'ÄecmRangeBonusECM Range Bonus i(
-8Å3ÅeliteBonusReconShips3eliteBonusReconShips3 z
+8Å3ÅeliteBonusReconShip3eliteBonusReconShip3 z(	
 0Ç+ÇwarpBubbleImmunewarpBubbleImmune z(
 @É;ÉwarpBubbleImmuneModifierwarpBubbleImmuneModifier z(
 DÑ?ÑstealthBomberLauncherPower2stealthBomberLauncherPower2 z

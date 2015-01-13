@@ -259,8 +259,7 @@ Public Class FrmCacheCreator
                                                 For Each bonusPart In CType(index.Value, YamlMappingNode).Children
                                                     Select Case CType(bonusPart.Key, YamlScalarNode).Value
                                                         Case "bonus"
-                                                            'partBonus = Convert.ToDouble(CType(bonusPart.Value, YamlScalarNode).Value).ToString("0.##")
-                                                            partBonus = CType(bonusPart.Value, YamlScalarNode).Value
+                                                            partBonus = Double.Parse(CType(bonusPart.Value, YamlScalarNode).Value, System.Globalization.CultureInfo.InvariantCulture).ToString("0.##")
                                                         Case "bonusText"
                                                             partBonusText = CType(bonusPart.Value, YamlScalarNode).Value
                                                         Case "unitID"
@@ -1834,7 +1833,7 @@ Public Class FrmCacheCreator
             Dim tSkillName As String
             strSql &= "SELECT invCategories.categoryID, invGroups.groupID, invTypes.typeID, invTypes.description, invTypes.typeName, invTypes.mass, invTypes.volume, invTypes.capacity, invTypes.basePrice, invTypes.published, invTypes.raceID, invTypes.marketGroupID, dgmTypeAttributes.attributeID, dgmTypeAttributes.valueInt, dgmTypeAttributes.valueFloat"
             strSql &= " FROM ((invCategories INNER JOIN invGroups ON invCategories.categoryID=invGroups.categoryID) INNER JOIN invTypes ON invGroups.groupID=invTypes.groupID) INNER JOIN dgmTypeAttributes ON invTypes.typeID=dgmTypeAttributes.typeID"
-            strSql &= " WHERE ((invCategories.categoryID=6 AND invTypes.published=1) OR invTypes.typeID IN (601,596,588,606)) ORDER BY typeName, attributeID;"
+            strSql &= " WHERE ((invCategories.categoryID=6 AND invTypes.published=1) OR invTypes.typeID IN (601,596,588,606)) AND invTypes.typeName not like ""%YC117%""  ORDER BY typeName, attributeID;"
             Dim shipData As DataSet = DatabaseFunctions.GetStaticData(strSql)
             If shipData IsNot Nothing Then
                 If shipData.Tables(0).Rows.Count <> 0 Then
@@ -1843,6 +1842,7 @@ Public Class FrmCacheCreator
                     Dim newShip As New Ship
                     pSkillName = "" : sSkillName = "" : tSkillName = ""
                     Dim attValue As Double
+
                     For Each shipRow As DataRow In shipData.Tables(0).Rows
                         ' If the shipName has changed, we need to start a new ship type
                         If lastShipName <> shipRow.Item("typeName").ToString Then

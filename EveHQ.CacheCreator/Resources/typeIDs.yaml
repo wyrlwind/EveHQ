@@ -7533,7 +7533,7 @@
     radius: 350.0
     soundID: 31
 2856:
-    graphicID: 10035
+    graphicID: 3114
 2858:
     graphicID: 2782
     radius: 4553.0
@@ -10784,6 +10784,43 @@
 4005:
     factionID: 500001
     graphicID: 11536
+    masteries:
+        0:
+        - 96
+        - 100
+        - 165
+        - 138
+        - 139
+        - 85
+        1:
+        - 96
+        - 100
+        - 165
+        - 138
+        - 139
+        - 85
+        2:
+        - 96
+        - 100
+        - 165
+        - 138
+        - 139
+        - 85
+        3:
+        - 96
+        - 100
+        - 165
+        - 138
+        - 139
+        - 85
+        4:
+        - 96
+        - 100
+        - 165
+        - 138
+        - 139
+        - 85
+        - 118
     radius: 250.0
     soundID: 20068
     traits:
@@ -19040,6 +19077,9 @@
     radius: 131.0
     soundID: 20070
     traits:
+        -1:
+            1:
+                bonusText: Cannot be detected by directional scanners
         3334:
             1:
                 bonus: 5
@@ -19074,7 +19114,6 @@
         - 150
         - 103
         - 72
-        - 76
         - 141
         - 85
         - 94
@@ -19085,7 +19124,6 @@
         - 150
         - 103
         - 72
-        - 76
         - 141
         - 85
         - 94
@@ -19096,7 +19134,6 @@
         - 150
         - 103
         - 72
-        - 76
         - 141
         - 85
         - 94
@@ -19107,7 +19144,6 @@
         - 150
         - 103
         - 72
-        - 76
         - 141
         - 142
         - 85
@@ -19119,7 +19155,6 @@
         - 150
         - 103
         - 72
-        - 76
         - 141
         - 142
         - 85
@@ -19129,6 +19164,9 @@
     radius: 133.0
     soundID: 20078
     traits:
+        -1:
+            1:
+                bonusText: Cannot be detected by directional scanners
         3333:
             1:
                 bonus: 5
@@ -19147,9 +19185,8 @@
                 unitID: 105
             2:
                 bonus: 5
-                bonusText: bonus to Rapid <a href=showinfo:3321>Light Missile</a>,
-                    <a href=showinfo:3324>Heavy Missile</a> and <a href=showinfo:25719>Heavy
-                    Assault Missile</a> Launcher rate of fire
+                bonusText: bonus to <a href=showinfo:3305>Medium Projectile Turret</a>
+                    damage
                 unitID: 105
 11962:
     graphicID: 303
@@ -19162,7 +19199,7 @@
         - 99
         - 150
         - 103
-        - 72
+        - 76
         - 108
         - 141
         - 85
@@ -19173,7 +19210,7 @@
         - 99
         - 150
         - 103
-        - 72
+        - 76
         - 108
         - 141
         - 85
@@ -19184,7 +19221,7 @@
         - 99
         - 150
         - 103
-        - 72
+        - 76
         - 108
         - 141
         - 85
@@ -19195,7 +19232,7 @@
         - 99
         - 150
         - 103
-        - 72
+        - 76
         - 108
         - 141
         - 85
@@ -19206,7 +19243,7 @@
         - 99
         - 150
         - 103
-        - 72
+        - 76
         - 108
         - 141
         - 85
@@ -19235,9 +19272,8 @@
                     to 5 seconds
         3333:
             1:
-                bonus: 5
-                bonusText: bonus to <a href=showinfo:3305>Medium Projectile Turret</a>
-                    rate of fire
+                bonus: 10
+                bonusText: bonus to missile damage
                 unitID: 105
             2:
                 bonus: 10
@@ -19338,7 +19374,7 @@
                 unitID: 105
         22761:
             1:
-                bonus: 20
+                bonus: 10
                 bonusText: bonus to <a href=showinfo:3423>Energy Vampire</a> and <a
                     href=showinfo:3423>Energy Neutralizer</a> transfer amount
                 unitID: 105
@@ -19346,6 +19382,11 @@
                 bonus: 20
                 bonusText: reduction in <a href=showinfo:11579>Cloaking Devices</a>
                     CPU requirement
+                unitID: 105
+            3:
+                bonus: 20
+                bonusText: bonus to <a href=showinfo:3423>Energy Vampire</a> and <a
+                    href=showinfo:3423>Energy Neutralizer</a> range
                 unitID: 105
 11966:
     graphicID: 303
@@ -19463,7 +19504,6 @@
         - 68
         - 101
         - 140
-        - 76
         - 150
         - 89
         - 94
@@ -19474,7 +19514,6 @@
         - 68
         - 101
         - 140
-        - 76
         - 150
         - 89
         - 94
@@ -19485,7 +19524,6 @@
         - 68
         - 101
         - 140
-        - 76
         - 150
         - 89
         - 94
@@ -19496,7 +19534,6 @@
         - 68
         - 101
         - 140
-        - 76
         - 142
         - 150
         - 89
@@ -19508,7 +19545,6 @@
         - 68
         - 101
         - 140
-        - 76
         - 142
         - 117
         - 150
@@ -19518,11 +19554,14 @@
     radius: 79.0
     soundID: 20074
     traits:
+        -1:
+            1:
+                bonusText: Cannot be detected by directional scanners
         3332:
             1:
-                bonus: 5
+                bonus: 10
                 bonusText: bonus to <a href=showinfo:3304>Medium Hybrid Turret</a>
-                    damage
+                    tracking
                 unitID: 105
             2:
                 bonus: 7.5
@@ -19536,10 +19575,9 @@
                     href=showinfo:3242>Warp Disruptor</a> optimal range
                 unitID: 105
             2:
-                bonus: 5
-                bonusText: bonus to <a href=showinfo:3324>Heavy Missile</a> and <a
-                    href=showinfo:25719>Heavy Assault Missile</a> Launcher rate of
-                    fire
+                bonus: 10
+                bonusText: bonus to <a href=showinfo:3304>Medium Hybrid Turret</a>
+                    optimal range
                 unitID: 105
 11972:
     graphicID: 303
@@ -37541,6 +37579,9 @@
     radius: 176.0
     soundID: 20063
     traits:
+        -1:
+            1:
+                bonusText: Cannot be detected by directional scanners
         3335:
             1:
                 bonus: 7.5
@@ -39471,6 +39512,27 @@
 21097:
     factionID: 500001
     graphicID: 317
+    masteries:
+        0:
+        - 144
+        - 117
+        - 118
+        1:
+        - 144
+        - 117
+        - 118
+        2:
+        - 144
+        - 117
+        - 118
+        3:
+        - 144
+        - 117
+        - 118
+        4:
+        - 144
+        - 117
+        - 118
     radius: 49.0
     soundID: 20080
 21098:
@@ -40547,6 +40609,27 @@
 21628:
     factionID: 500001
     graphicID: 20231
+    masteries:
+        0:
+        - 144
+        - 117
+        - 118
+        1:
+        - 144
+        - 117
+        - 118
+        2:
+        - 144
+        - 117
+        - 118
+        3:
+        - 144
+        - 117
+        - 118
+        4:
+        - 144
+        - 117
+        - 118
     radius: 49.0
     soundID: 20080
 21629:
@@ -71682,6 +71765,64 @@
 33395:
     factionID: 500002
     graphicID: 20345
+    masteries:
+        0:
+        - 96
+        - 99
+        - 150
+        - 103
+        - 76
+        - 108
+        - 141
+        - 85
+        - 94
+        - 165
+        1:
+        - 96
+        - 99
+        - 150
+        - 103
+        - 76
+        - 108
+        - 141
+        - 85
+        - 94
+        - 165
+        2:
+        - 96
+        - 99
+        - 150
+        - 103
+        - 76
+        - 108
+        - 141
+        - 85
+        - 94
+        - 165
+        3:
+        - 96
+        - 99
+        - 150
+        - 103
+        - 76
+        - 108
+        - 141
+        - 85
+        - 94
+        - 165
+        4:
+        - 96
+        - 99
+        - 150
+        - 103
+        - 76
+        - 108
+        - 141
+        - 85
+        - 118
+        - 94
+        - 165
+    radius: 150.0
     soundID: 20079
     traits:
         -1:
@@ -71716,6 +71857,59 @@
 33397:
     factionID: 500002
     graphicID: 20344
+    masteries:
+        0:
+        - 96
+        - 99
+        - 150
+        - 71
+        - 104
+        - 108
+        - 141
+        - 85
+        - 94
+        1:
+        - 96
+        - 99
+        - 150
+        - 71
+        - 104
+        - 108
+        - 141
+        - 85
+        - 94
+        2:
+        - 96
+        - 99
+        - 150
+        - 71
+        - 104
+        - 108
+        - 141
+        - 85
+        - 94
+        3:
+        - 96
+        - 99
+        - 150
+        - 71
+        - 104
+        - 108
+        - 141
+        - 85
+        - 94
+        4:
+        - 96
+        - 99
+        - 150
+        - 71
+        - 104
+        - 108
+        - 141
+        - 85
+        - 118
+        - 94
+    radius: 25.0
     soundID: 20070
     traits:
         -1:
@@ -72305,8 +72499,31 @@
 33512:
     iconID: 2224
 33513:
+    factionID: 500002
     graphicID: 20402
+    masteries:
+        0:
+        - 144
+        - 117
+        - 118
+        1:
+        - 144
+        - 117
+        - 118
+        2:
+        - 144
+        - 117
+        - 118
+        3:
+        - 144
+        - 117
+        - 118
+        4:
+        - 144
+        - 117
+        - 118
     radius: 14.0
+    soundID: 20080
 33514:
     graphicID: 317
 33515:
@@ -74106,6 +74323,53 @@
     iconID: 1084
 33673:
     graphicID: 20605
+    masteries:
+        0:
+        - 96
+        - 99
+        - 164
+        - 150
+        - 75
+        - 139
+        - 85
+        - 94
+        1:
+        - 96
+        - 99
+        - 164
+        - 150
+        - 75
+        - 139
+        - 85
+        - 94
+        2:
+        - 96
+        - 99
+        - 164
+        - 150
+        - 75
+        - 139
+        - 85
+        - 94
+        3:
+        - 96
+        - 99
+        - 164
+        - 150
+        - 75
+        - 139
+        - 85
+        - 94
+        4:
+        - 96
+        - 99
+        - 164
+        - 150
+        - 75
+        - 139
+        - 85
+        - 118
+        - 94
     radius: 33.0
     soundID: 20070
     traits:
@@ -74150,6 +74414,60 @@
     graphicID: 39
 33675:
     graphicID: 20604
+    masteries:
+        0:
+        - 96
+        - 99
+        - 100
+        - 150
+        - 139
+        - 76
+        - 85
+        - 94
+        - 165
+        1:
+        - 96
+        - 99
+        - 100
+        - 150
+        - 139
+        - 76
+        - 85
+        - 94
+        - 165
+        2:
+        - 96
+        - 99
+        - 100
+        - 150
+        - 139
+        - 76
+        - 85
+        - 94
+        - 165
+        3:
+        - 96
+        - 99
+        - 100
+        - 150
+        - 139
+        - 76
+        - 142
+        - 85
+        - 94
+        - 165
+        4:
+        - 96
+        - 99
+        - 100
+        - 150
+        - 139
+        - 76
+        - 142
+        - 85
+        - 118
+        - 94
+        - 165
     radius: 131.0
     soundID: 20070
     traits:
@@ -76485,6 +76803,23 @@
         - 150
     radius: 250.0
     soundID: 20104
+    traits:
+        -1:
+            1:
+                bonus: 275
+                bonusText: bonus to <a href=showinfo:23594>Sentry Drone</a> and <a
+                    href=showinfo:3441>Heavy Drone</a> damage and hitpoints
+                unitID: 105
+        3336:
+            1:
+                bonus: 10
+                bonusText: bonus to kinetic and thermal missile damage
+                unitID: 105
+        3338:
+            1:
+                bonus: 4
+                bonusText: bonus to all shield resistances
+                unitID: 105
 34153:
     graphicID: 43
 34154:
@@ -77726,6 +78061,7 @@
     radius: 3000.0
 34339:
     graphicID: 20974
+    radius: 1613.0
     traits:
         -1:
             1:
@@ -77745,6 +78081,7 @@
     graphicID: 296
 34341:
     graphicID: 20972
+    radius: 1700.0
     traits:
         -1:
             1:
@@ -77769,6 +78106,7 @@
     graphicID: 296
 34343:
     graphicID: 20973
+    radius: 1700.0
     traits:
         -1:
             1:
@@ -77787,6 +78125,7 @@
     graphicID: 296
 34345:
     graphicID: 20971
+    radius: 1700.0
     traits:
         -1:
             1:
@@ -77961,6 +78300,46 @@
     iconID: 3766
 34416:
     iconID: 3766
+34417:
+    iconID: 2103
+34418:
+    iconID: 10159
+34419:
+    iconID: 1194
+34420:
+    iconID: 1177
+34421:
+    iconID: 2887
+34422:
+    iconID: 1177
+34423:
+    iconID: 1192
+34424:
+    iconID: 3182
+34425:
+    iconID: 10159
+34426:
+    iconID: 10159
+34427:
+    iconID: 21060
+34428:
+    iconID: 1177
+34429:
+    iconID: 111
+34430:
+    iconID: 10159
+34431:
+    iconID: 3755
+34432:
+    iconID: 1656
+34433:
+    iconID: 2544
+34434:
+    iconID: 10159
+34435:
+    iconID: 21170
+34436:
+    iconID: 2106
 34437:
     graphicID: 3533
     radius: 45.0
@@ -77973,6 +78352,57 @@
 34440:
     graphicID: 3121
     radius: 14.0
+34441:
+    graphicID: 20982
+    radius: 250.0
+    traits:
+        3336:
+            1:
+                bonus: 10
+                bonusText: bonus to <a href=showinfo:3436>Drone</a> hitpoints and
+                    damage
+                unitID: 105
+            2:
+                bonus: 7.5
+                bonusText: bonus to <a href=showinfo:3436>Drone</a> optimal range
+                    and tracking speed
+                unitID: 105
+34442:
+    graphicID: 318
+34443:
+    graphicID: 1796
+    radius: 29.0
+    traits:
+        3328:
+            1:
+                bonus: 7.5
+                bonusText: bonus to <a href=showinfo:3301>Small Hybrid Turret</a>
+                    tracking speed
+                unitID: 105
+            2:
+                bonus: 10
+                bonusText: bonus to <a href=showinfo:3436>Drone</a> hitpoints and
+                    tracking speed
+                unitID: 105
+34444:
+    graphicID: 60
+34445:
+    graphicID: 20981
+    radius: 110.0
+    traits:
+        3332:
+            1:
+                bonus: 5
+                bonusText: bonus to <a href=showinfo:3304>Medium Hybrid Turret</a>
+                    damage
+                unitID: 105
+            2:
+                bonus: 10
+                bonusText: bonus to <a href=showinfo:3436>Drone</a> hitpoints, damage
+                    and mining yield
+                unitID: 105
+34446:
+    graphicID: 62
 34447:
     graphicID: 2007
     radius: 1060.0
@@ -78000,3 +78430,276 @@
 34455:
     graphicID: 3533
     radius: 45.0
+34457:
+    graphicID: 20989
+    radius: 250.0
+    sofDnaAddition: mesh?black_metal_01;black_paint_01;serenity_acidblue_01
+    traits:
+        3339:
+            1:
+                bonus: 10
+                bonusText: bonus to <a href=showinfo:3436>Drone</a> hitpoints and
+                    damage
+                unitID: 105
+            2:
+                bonus: 10
+                bonusText: bonus to <a href=showinfo:3423>Energy Vampire</a> and <a
+                    href=showinfo:3423>Energy Neutralizer</a> transfer range
+                unitID: 105
+34458:
+    graphicID: 297
+34459:
+    graphicID: 20986
+    radius: 400.0
+    traits:
+        3339:
+            1:
+                bonus: 5
+                bonusText: bonus to <a href=showinfo:3309>Large Energy Turret</a>
+                    damage
+                unitID: 105
+            2:
+                bonus: 4
+                bonusText: bonus to all armor resistances
+                unitID: 105
+34460:
+    graphicID: 297
+34461:
+    graphicID: 20994
+    radius: 500.0
+    sofDnaAddition: mesh?serenity_acidblue_01;black_paint_01;silver_metal_02
+    traits:
+        -1:
+            1:
+                bonus: 25
+                bonusText: bonus to <a href=showinfo:3308>Large Projectile Turret</a>
+                    rate of fire
+                unitID: 105
+            2:
+                bonus: 50
+                bonusText: bonus to warp speed and warp acceleration
+                unitID: 105
+        3336:
+            1:
+                bonus: 10
+                bonusText: bonus to <a href=showinfo:3308>Large Projectile Turret</a>
+                    falloff
+                unitID: 105
+        3337:
+            1:
+                bonus: 5
+                bonusText: bonus to <a href=showinfo:3308>Large Projectile Turret</a>
+                    damage
+                unitID: 105
+34462:
+    graphicID: 43
+34463:
+    graphicID: 20992
+    radius: 250.0
+    sofDnaAddition: mesh?chrome_metal_01;serenity_reddusty_01;serenity_whitedusty_01
+    traits:
+        -1:
+            1:
+                bonus: 275
+                bonusText: bonus to <a href=showinfo:23594>Sentry Drone</a> and <a
+                    href=showinfo:3441>Heavy Drone</a> damage and hitpoints
+                unitID: 105
+        3336:
+            1:
+                bonus: 10
+                bonusText: bonus to kinetic and thermal missile damage
+                unitID: 105
+        3338:
+            1:
+                bonus: 4
+                bonusText: bonus to all shield resistances
+                unitID: 105
+34464:
+    graphicID: 43
+34465:
+    graphicID: 20990
+    radius: 250.0
+    sofDnaAddition: mesh?amarr_tech_metal;black_paint_02;chrome_metal_01
+    traits:
+        3336:
+            1:
+                bonus: 10
+                bonusText: bonus to <a href=showinfo:3436>Drone</a> hitpoints and
+                    damage
+                unitID: 105
+            2:
+                bonus: 7.5
+                bonusText: bonus to <a href=showinfo:3436>Drone</a> optimal range
+                    and tracking speed
+                unitID: 105
+34466:
+    graphicID: 318
+34467:
+    graphicID: 20991
+    radius: 250.0
+    traits:
+        3336:
+            1:
+                bonus: 5
+                bonusText: bonus to <a href=showinfo:3307>Large Hybrid Turret</a>
+                    rate of fire
+                unitID: 105
+            2:
+                bonus: 7.5
+                bonusText: bonus to <a href=showinfo:3307>Large Hybrid Turret</a>
+                    tracking speed
+                unitID: 105
+34468:
+    graphicID: 64
+34469:
+    graphicID: 20993
+    radius: 250.0
+    traits:
+        3338:
+            1:
+                bonus: 5
+                bonusText: bonus to Rapid <a href=showinfo:3324>Heavy Missile</a>,
+                    <a href=showinfo:3326>Cruise Missile</a> and <a href=showinfo:3325>Torpedo</a>
+                    Launcher rate of fire
+                unitID: 105
+            2:
+                bonus: 10
+                bonusText: bonus to <a href=showinfo:3326>Cruise Missile</a> and <a
+                    href=showinfo:3325>Torpedo</a> max velocity
+                unitID: 105
+34470:
+    graphicID: 43
+34471:
+    graphicID: 20987
+    radius: 400.0
+    traits:
+        3339:
+            1:
+                bonus: 7.5
+                bonusText: bonus to <a href=showinfo:3309>Large Energy Turret</a>
+                    optimal range
+                unitID: 105
+            2:
+                bonus: 7.5
+                bonusText: bonus to <a href=showinfo:3309>Large Energy Turret</a>
+                    tracking speed
+                unitID: 105
+34472:
+    graphicID: 296
+34473:
+    graphicID: 20995
+    radius: 263.0
+    traits:
+        -1:
+            1:
+                bonusText: Can fit <a href=showinfo:3348>Warfare Link</a> modules
+        33096:
+            1:
+                bonus: 4
+                bonusText: bonus to all shield resistances
+                unitID: 105
+            2:
+                bonus: 10
+                bonusText: bonus to kinetic <a href=showinfo:3324>Heavy Missile</a>
+                    and <a href=showinfo:25719>Heavy Assault Missile</a> damage
+                unitID: 105
+34474:
+    graphicID: 1748
+34475:
+    graphicID: 20996
+    radius: 166.0
+    traits:
+        -1:
+            1:
+                bonus: 500
+                bonusText: bonus to <a href=showinfo:33699>Medium Combat Drone</a>
+                    damage and hitpoints
+                unitID: 105
+        3332:
+            1:
+                bonus: 10
+                bonusText: bonus to kinetic and thermal missile damage
+                unitID: 105
+        3334:
+            1:
+                bonus: 4
+                bonusText: bonus to all shield resistances
+                unitID: 105
+34476:
+    graphicID: 49
+34477:
+    graphicID: 20997
+    radius: 166.0
+    traits:
+        -1:
+            1:
+                bonus: 50
+                bonusText: reduction in <a href=showinfo:3454>Microwarpdrive</a> signature
+                    radius penalty
+                unitID: 105
+        3334:
+            1:
+                bonus: 10
+                bonusText: bonus to <a href=showinfo:3304>Medium Hybrid Turret</a>
+                    optimal range
+                unitID: 105
+            2:
+                bonus: 4
+                bonusText: bonus to all shield resistances
+                unitID: 105
+        16591:
+            1:
+                bonus: 10
+                bonusText: bonus to <a href=showinfo:3304>Medium Hybrid Turret</a>
+                    optimal range
+                unitID: 105
+            2:
+                bonus: 5
+                bonusText: bonus to <a href=showinfo:3304>Medium Hybrid Turret</a>
+                    damage
+                unitID: 105
+34478:
+    graphicID: 303
+34479:
+    graphicID: 20998
+    radius: 110.0
+    traits:
+        -1:
+            1:
+                bonus: 50
+                bonusText: reduction in <a href=showinfo:3454>Microwarpdrive</a> signature
+                    radius penalty
+                unitID: 105
+        3332:
+            1:
+                bonus: 7.5
+                bonusText: bonus to <a href=showinfo:3441>Heavy Drone</a> max velocity
+                    and tracking speed
+                unitID: 105
+            2:
+                bonus: 10
+                bonusText: bonus to <a href=showinfo:3436>Drone</a> hitpoints and
+                    damage
+                unitID: 105
+        16591:
+            1:
+                bonus: 5000
+                bonusText: bonus to <a href=showinfo:3436>Drone</a> operation range
+                unitID: 105
+            2:
+                bonus: 5
+                bonusText: bonus to <a href=showinfo:23594>Sentry Drone</a> optimal
+                    range and tracking speed
+                unitID: 105
+34480:
+    graphicID: 303
+34481:
+    iconID: 1041
+34483:
+    iconID: 1041
+34485:
+    iconID: 76
+34487:
+    iconID: 76
+34489:
+    iconID: 92
