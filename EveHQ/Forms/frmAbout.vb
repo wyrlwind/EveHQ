@@ -63,7 +63,7 @@ Namespace Forms
             'credits.Append("<tr><td align='left' colspan=2>Lead Developer:</td></tr>")
             'credits.Append("<tr><td align='left' colspan=2><a href='https://gate.eveonline.com/Profile/Drailen' target='_blank'>Drailen</a></td></tr>")
             credits.Append("<tr><td align='left' colspan=2>Current Contributors:</td></tr>")
-            credits.Append("<tr><td align='left' colspan=2><a href='http://evehq.co' target='_blank'>EveHQ Team</a></td></tr>")
+            'credits.Append("<tr><td align='left' colspan=2><a href='http://evehq.co' target='_blank'>EveHQ Team</a></td></tr>")
             credits.Append("<tr><td align='left' colspan=2>Slivo, Skr AB</td></tr>")
             credits.Append("<tr><td colspan=2><br /></td></tr>")
             credits.Append("<tr><td align='left' colspan=2>Former Contributors:</td></tr>")

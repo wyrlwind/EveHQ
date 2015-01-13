@@ -21,7 +21,7 @@ Imports System.Runtime.InteropServices
  Assembly: AssemblyCopyright("� EveHQ Development Team 2005-2015"),  _
  Assembly: AssemblyFileVersion("2.15.0.$REVNUM$-Beta-"),  _
  Assembly: AssemblyVersion("2.15.0.$REVNUM$"),  _
- Assembly: AssemblyConfiguration("Debug"),  _
+ Assembly: AssemblyConfiguration("Release"),  _
  Assembly: AssemblyTrademark("$UTCDATE$ (Version 2.15.0.$REVNUM$-Beta-)"),  _
  Assembly: CLSCompliant(false),  _
  Assembly: ComVisible(false)> 
