@@ -414,13 +414,13 @@ Public Class IGB
         strHTML &= "<p>Welcome to the EveHQ In-Game Browser (IGB) Server!</p>"
         strHTML &= "<p>This server will give you access to the wealth of information that is the Eve Online database and present it in tabular form for easy reading.</p>"
         If context.Request.UserAgent.StartsWith("EVE-IGB") Then
-            strHTML &= "<p>If you have any questions or suggestions, please contact <a href='evemail:Drailen' SUBJECT='EveHQ IGB'>Drailen</a> via Eve-mail.</p>"
+            strHTML &= "<p>If you have any questions or suggestions, please contact <a href='evemail:Slivo' SUBJECT='EveHQ IGB'>Slivo</a> via Eve-mail.</p>"
         Else
-            strHTML &= "<p>If you have any questions or suggestions, please contact <a href='mailto:contact.evehq@gmail.com'>Drailen</a> via E-mail.</p>"
+            strHTML &= "<p>If you have any questions or suggestions, please contact <a href='mailto:contact.evehq@gmail.com'>EveHQ team</a> via E-mail.</p>"
         End If
         strHTML &= "<p></p>"
         strHTML &= "<p>Happy browsing and fly safe!</p>"
-        strHTML &= "<p>  - Drailen</p>"
+        strHTML &= "<p>  - EveHQ team</p>"
         strHTML &= IGBHTMLFooter(context)
         Return strHTML
     End Function
