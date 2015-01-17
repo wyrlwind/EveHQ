@@ -830,10 +830,11 @@
 12034,0,0,50,2,330,0,0,0,-50,15,Cloaking Device CPU
 12034,0,0,560,2,330,0,0,0,-100,15,Sensor Recalibration Time Bonus
 # Huginn,,,,,,,,,,,
+#11961,1,22761,51,2,511;510;771,0,1,0,-5,15,"Rapid Light, Heavy & HAM Launcher ROF"
 11961,1,3333,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
 11961,1,3333,554,2,379,0,1,0,10,15,Target Painter Effect Sig Radius
 11961,1,22761,54,2,65,0,1,0,60,15,Stasis Web Range
-11961,1,22761,51,2,511;510;771,0,1,0,-5,15,"Rapid Light, Heavy & HAM Launcher ROF"
+11961,1,22761,10016,4,575;578,0,1,0,5,15,Medium Projectile Turret Damage
 # Hulk,,,,,,,,,,,
 22544,1,17940,54,4,1040;1038,0,1,0,5,15,Strip Miner & Ice Harvester Range
 22544,1,17940,73,4,1040;1038,0,1,0,-4,15,Strip Miner & Ice Harvester Duration
@@ -1016,7 +1017,8 @@
 654,1,3340,1558,1,654,0,1,0,10,15,Mineral Hold Capacity
 654,1,3340,37,1,654,0,1,0,5,15,Max Velocity
 # Lachesis,,,,,,,,,,,
-11971,1,3332,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
+#11971,1,3332,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
+11971,1,3332,160,4,562;565,0,1,0,10,15,Medium Hybrid Turret Tracking
 11971,1,3332,309,2,208,0,1,0,7.5,15,Remote Sensor Damp Effect Range
 11971,1,3332,566,2,208,0,1,0,7.5,15,Remote Sensor Damp Effect Scan Res
 11971,1,22761,54,2,52,0,1,0,20,15,Warp Disruptor Range
@@ -1448,8 +1450,8 @@
 17718,1,3335,160,4,568;572,0,1,0,7.5,15,Medium Energy Turret Tracking
 17718,1,3334,20,4,542,0,1,0,20,15,Afterburner Velocity
 # Phobos,,,,,,,,,,,
-12021,1,3332,160,4,562;565,0,1,0,10,15,Medium Hybrid Turret Tracking
 12021,1,3332,10012,4,562;565,0,1,0,-5,15,Medium Hybrid Turret ROF
+12021,1,3332,160,4,562;565,0,1,0,10,15,Medium Hybrid Turret Tracking
 12021,1,28609,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
 12021,1,28609,103,2,899,0,1,0,5,15,Warp Disruption Field Range
 12021,0,0,267,1,12021,0,1,2,-20,15,Armor EM Resistance
@@ -1476,8 +1478,10 @@
 11965,1,3335,265,3,18,0,1,0,10,15,Drone Armor HP
 11965,1,3335,9,3,18,0,1,0,10,15,Drone Hull HP
 11965,1,3335,64,3,18,0,1,0,10,15,Drone Damage
-11965,1,22761,90,2,68,0,1,0,20,15,Nos Drain Amount
-11965,1,22761,97,2,71,0,1,0,20,15,Neut Drain Amount
+11965,1,22761,90,2,68,0,1,0,10,15,Nos Drain Amount
+11965,1,22761,97,2,71,0,1,0,10,15,Neut Drain Amount
+11965,1,22761,91,2,68,0,1,0,20,15,Nos Drain Range
+11965,1,22761,98,2,71,0,1,0,20,15,Neut Drain Range
 11965,1,22761,50,2,330,0,1,0,-20,15,Cloaking Device CPU
 11965,0,0,714,2,658,0,0,0,-80,15,Cyno Field Fuel
 11965,0,0,73,2,658,0,0,0,-50,15,Cyno Field Duration
@@ -1574,7 +1578,11 @@
 23773,1,3345,552,3,6,0,1,0,-7.5,16,Gang Sig Radius
 23773,1,3345,10063,1,23773,0,1,1,1,15,Warfare Link Bonus
 # Rapier,,,,,,,,,,,
-11963,1,3333,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
+#11963,1,3333,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
+11963,1,3333,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,10,15,EM Missile Damage
+11963,1,3333,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,10,15,Exp Missile Damage
+11963,1,3333,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,10,15,Kin Missile Damage
+11963,1,3333,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,10,15,Therm Missile Damage
 11963,1,3333,554,2,379,0,1,0,10,15,Target Painter Effect Sig Radius
 11963,1,22761,54,2,65,0,1,0,60,15,Stasis Web Range
 11963,1,22761,50,2,330,0,1,0,-20,15,Cloaking Device CPU
@@ -1707,8 +1715,10 @@
 33629,1,3338,273,1,33629,0,1,2,-4,15,Shield Kinetic Resistance
 33629,1,3338,274,1,33629,0,1,2,-4,15,Shield Thermal Resistance
 # Rook,,,,,,,,,,,
+#11959,1,3334,51,2,510;771,0,1,0,-5,15,Heavy & HAM Launcher ROF
 11959,1,3334,6,2,201,0,1,0,-10,15,ECM Cap Use
-11959,1,3334,51,2,510;771,0,1,0,-5,15,Heavy & HAM Launcher ROF
+11959,1,3334,117,2,385;655;395;772;654,0,1,0,7.5,15,Kinetic Heavy & HAM Damage
+11959,1,3334,117,2,384;653;394,0,1,0,7.5,15,Light Missile Kinetic Damage
 11959,1,22761,238,2,201,0,1,0,30,15,ECM Jam Strength Grav
 11959,1,22761,239,2,201,0,1,0,30,15,ECM Jam Strength Ladar
 11959,1,22761,240,2,201,0,1,0,30,15,ECM Jam Strength Mag
