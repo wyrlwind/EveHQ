@@ -1019,6 +1019,7 @@
 # Lachesis,,,,,,,,,,,
 11971,1,3332,160,4,562;565,0,1,0,10,15,Medium Hybrid Turret Tracking
 11971,1,3332,566,2,208,0,1,0,7.5,15,Remote Sensor Damp Effect Scan Res
+11971,1,3332,309,2,208,0,1,0,7.5,15,Remote Sensor Damp Effect Range
 11971,1,22761,54,2,52,0,1,0,20,15,Warp Disruptor Range
 11971,1,22761,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
 # Legion,,,,,,,,,,,
