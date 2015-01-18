@@ -1017,12 +1017,10 @@
 654,1,3340,1558,1,654,0,1,0,10,15,Mineral Hold Capacity
 654,1,3340,37,1,654,0,1,0,5,15,Max Velocity
 # Lachesis,,,,,,,,,,,
-#11971,1,3332,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 11971,1,3332,160,4,562;565,0,1,0,10,15,Medium Hybrid Turret Tracking
-11971,1,3332,309,2,208,0,1,0,7.5,15,Remote Sensor Damp Effect Range
 11971,1,3332,566,2,208,0,1,0,7.5,15,Remote Sensor Damp Effect Scan Res
 11971,1,22761,54,2,52,0,1,0,20,15,Warp Disruptor Range
-11971,1,22761,51,2,511;510,0,1,0,-5,15,Heavy & HAM Launcher ROF
+11971,1,22761,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
 # Legion,,,,,,,,,,,
 29986,1,30650,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
 # Leviathan,,,,,,,,,,,
