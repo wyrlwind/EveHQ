@@ -396,6 +396,17 @@
 0,Ship Equipment\Turrets & Bays
 1014,Ship Equipment\Turrets & Bays\Bomb Launchers
 912,Ship Equipment\Turrets & Bays\Doomsday Devices
+0,Ship Equipment\Turrets & Bays\Energy Turrets
+0,Ship Equipment\Turrets & Bays\Energy Turrets\Beam Lasers
+773,Ship Equipment\Turrets & Bays\Energy Turrets\Beam Lasers\Extra Large
+569,Ship Equipment\Turrets & Bays\Energy Turrets\Beam Lasers\Large
+568,Ship Equipment\Turrets & Bays\Energy Turrets\Beam Lasers\Medium
+567,Ship Equipment\Turrets & Bays\Energy Turrets\Beam Lasers\Small
+0,Ship Equipment\Turrets & Bays\Energy Turrets\Pulse Lasers
+774,Ship Equipment\Turrets & Bays\Energy Turrets\Pulse Lasers\Extra Large
+573,Ship Equipment\Turrets & Bays\Energy Turrets\Pulse Lasers\Large
+572,Ship Equipment\Turrets & Bays\Energy Turrets\Pulse Lasers\Medium
+570,Ship Equipment\Turrets & Bays\Energy Turrets\Pulse Lasers\Small
 0,Ship Equipment\Turrets & Bays\Hybrid Turrets
 0,Ship Equipment\Turrets & Bays\Hybrid Turrets\Blasters
 771,Ship Equipment\Turrets & Bays\Hybrid Turrets\Blasters\Extra Large
@@ -407,17 +418,6 @@
 566,Ship Equipment\Turrets & Bays\Hybrid Turrets\Railguns\Large
 565,Ship Equipment\Turrets & Bays\Hybrid Turrets\Railguns\Medium
 564,Ship Equipment\Turrets & Bays\Hybrid Turrets\Railguns\Small
-0,Ship Equipment\Turrets & Bays\Laser Turrets
-0,Ship Equipment\Turrets & Bays\Laser Turrets\Beam Lasers
-773,Ship Equipment\Turrets & Bays\Laser Turrets\Beam Lasers\Extra Large
-569,Ship Equipment\Turrets & Bays\Laser Turrets\Beam Lasers\Large
-568,Ship Equipment\Turrets & Bays\Laser Turrets\Beam Lasers\Medium
-567,Ship Equipment\Turrets & Bays\Laser Turrets\Beam Lasers\Small
-0,Ship Equipment\Turrets & Bays\Laser Turrets\Pulse Lasers
-774,Ship Equipment\Turrets & Bays\Laser Turrets\Pulse Lasers\Extra Large
-573,Ship Equipment\Turrets & Bays\Laser Turrets\Pulse Lasers\Large
-572,Ship Equipment\Turrets & Bays\Laser Turrets\Pulse Lasers\Medium
-570,Ship Equipment\Turrets & Bays\Laser Turrets\Pulse Lasers\Small
 0,Ship Equipment\Turrets & Bays\Missile Launchers
 777,Ship Equipment\Turrets & Bays\Missile Launchers\Citadel Launchers
 643,Ship Equipment\Turrets & Bays\Missile Launchers\Cruise Launchers

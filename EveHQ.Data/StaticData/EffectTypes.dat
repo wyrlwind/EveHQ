@@ -3658,3 +3658,14 @@ $´.´.entitySelfVelocityMultiply
 $ç/ç/shipMissileBonusThermdmgMC
 "é/é/shipMissileBonusKindmgMC
 "è/è/shipMissileBonusExpdmgMC
+8ê/3ê/.remoteCapacitorTransmitterPowerNeedBonusEffect
+.ë/)ë/$tacticalDestroyerMinmatarSkillLevel1
+.í/)í/$tacticalDestroyerMinmatarSkillLevel2
+.ì/)ì/$tacticalDestroyerMinmatarSkillLevel3
+2î/-î/(shipHeatDamageMinmatarTacticalDestroyer3
+1ï/,ï/'shipSPTDamageMinmatarTacticalDestroyer1
+2ñ/-ñ/(shipSPTOptimalMinmatarTacticalDestroyer2
+$ó/ó/shipModeSPTTrackingPostDiv
+!ò/ò/modeMWDSigRadiusPostDiv
+$ô/ô/modeShieldResonancePostDiv
+ö/ö/entitySuperWeapon

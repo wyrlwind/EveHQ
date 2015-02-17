@@ -1,6 +1,6 @@
 
 isOnlineisOnline z(	
-damageDamage z(
+damageItem Damage q(
 massMass (
 *&capacitorNeedactivation cost r(
 minRangeminRange z(	
@@ -1000,7 +1000,7 @@ L˜G˜disallowOffensiveModifierBonusdisallowOffensiveModifierBonus z(
 8®3®carrierCaldariBonus4carrierCaldariBonus4 z(	
 :¯5¯carrierGallenteBonus4carrierGallenteBonus4 z(	
 :°5°carrierMinmatarBonus4carrierMinmatarBonus4 z(	
-@±;±maxJumpClonesBonusNumber of Jump Clones Allowed ‹(
+?±:±maxJumpClonesBonusNumber of Jump Clones Allowed y(
 <²7²disallowInEmpireSpaceBanned in Empire Space ‰(	
 <³7³missileNeverDoesDamagemissileNeverDoesDamage z(	
 5´0´implantBonusVelocityVelocity Modifier y(
@@ -2086,9 +2086,9 @@ FÅAÅroleBonusTacticalDestroyer1roleBonusTacticalDestroyer1 z(
 BÇ=ÇmodeMaxTargetRangePostDivmodeMaxTargetRangePostDiv z(
 @È;ÈmodeRadarStrengthPostDivmodeRadarStrengthPostDiv z(
 4É/ÉmodeScanResPostDivmodeScanResPostDiv z(
-@Ê;ÊmodeLadarStrengthPercentmodeLadarStrengthPercent z(
-LËGËmodeGravimetricStrengthPercentmodeGravimetricStrengthPercent z(
-PÌKÌ modeMagnetometricStrengthPercent modeMagnetometricStrengthPercent z(
+@Ê;ÊmodeLadarStrengthPostDivmodeLadarStrengthPostDiv z(
+LËGËmodeGravimetricStrengthPostDivmodeGravimetricStrengthPostDiv z(
+PÌKÌ modeMagnetometricStrengthPostDiv modeMagnetometricStrengthPostDiv z(
 >Í9ÍmodeEmResistancePostDivmodeEmResistancePostDiv z(
 LÎGÎmodeExplosiveResistancePostDivmodeExplosiveResistancePostDiv z(
 HÏCÏmodeThermicResistancePostDivmodeThermicResistancePostDiv z(
@@ -2096,3 +2096,13 @@ HÐCÐmodeKineticResistancePostDivmodeKineticResistancePostDiv z(
 DÑ?ÑmodeSignatureRadiusPostDivmodeSignatureRadiusPostDiv z(
 4Ò/ÒmodeAgilityPostDivmodeAgilityPostDiv z(
 6Ó1ÓmodeVelocityPostDivmodeVelocityPostDiv z(
+VÔQÔ#shipBonusTacticalDestroyerMinmatar1#shipBonusTacticalDestroyerMinmatar1 z(	
+VÕQÕ#shipBonusTacticalDestroyerMinmatar2#shipBonusTacticalDestroyerMinmatar2 z(	
+VÖQÖ#shipBonusTacticalDestroyerMinmatar3#shipBonusTacticalDestroyerMinmatar3 z(	
+@×;×modeMWDSigPenaltyPostDivmodeMWDSigPenaltyPostDiv z(
+6Ø1ØmodeTrackingPostDivmodeTrackingPostDiv z(
+BÙ=ÙentitySuperWeaponDurationentitySuperWeaponDuration z(!
+BÚ=ÚentitySuperWeaponEmDamageentitySuperWeaponEmDamage z(!
+LÛGÛentitySuperWeaponKineticDamageentitySuperWeaponKineticDamage z(!
+LÜGÜentitySuperWeaponThermalDamageentitySuperWeaponThermalDamage z(!
+PÝKÝ entitySuperWeaponExplosiveDamage entitySuperWeaponExplosiveDamage z(!

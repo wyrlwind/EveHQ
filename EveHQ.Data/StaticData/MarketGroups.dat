@@ -47,7 +47,7 @@ Passengers
 
 WWProjectile Turrets
 
-XXLaser Turrets
+XXEnergy Turrets
 
 ccProjectile Ammo
 ddHybrid Charges
@@ -113,7 +113,7 @@ Smartbombs
 ùùAmarr–
 ûûHybrid Turrets“
 üüProjectile Turrets“
-††Laser Turrets“
+††Energy Turrets“
 °°Largeû
 ¢¢Mediumû
 ££Smallû
@@ -1632,6 +1632,7 @@ Hairstylesˇ
  üüTactical Destroyers›
 
 ††Amarrü
+°°Minmatarü
 ±Æ±ÆInfantry Gear
 ï ï Grenadesü 
 "ö ö Dropsuits and Gear±Æ
@@ -2061,3 +2062,6 @@ Decryptorsõπ
 ÎªÎªScoutëª
 ÏªÏªHeavyëª
 ÌªÌª	Logisticsëª
+è¿è¿Battle Salvageõπ
+õ¿õ¿Warbarge±Æ
+ú¿ú¿	Resourcesõ¿

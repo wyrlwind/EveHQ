@@ -1880,10 +1880,10 @@ Public Class FrmCacheCreator
 
                         ' Now get, modify (if applicable) and add the "attribute"
 
-                        If IsDBNull(shipRow.Item("valueInt")) = True Then
-                            attValue = CDbl(shipRow.Item("valueFloat"))
-                        Else
+                        If IsDBNull(shipRow.Item("valueFloat")) = True Then
                             attValue = CDbl(shipRow.Item("valueInt"))
+                        Else
+                            attValue = CDbl(shipRow.Item("valueFloat"))
                         End If
 
                         ' Do attribute (unit) modifiers
