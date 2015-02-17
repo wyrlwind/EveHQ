@@ -12,19 +12,20 @@
 34317,2,0,0,564,1,34317,0,1,0,100,15,Sharpshooter Mode - Scan Resolution
 34317,2,0,0,208,1,34317,0,1,0,100,15,Sharpshooter Mode - Sensor Strength
 
-34317,3,0,0,37,1,34317,0,1,0,66.66666667,15,Propulstion Mode - Max Velocity
+34317,3,0,0,37,1,34317,0,1,0,66.66666667,15,Propulsion Mode - Max Velocity
 34317,3,0,0,70,1,34317,0,1,0,-33.33333333,15,Propulsion Mode - Inertia
 # Svipul,,,,,,,,,,,,
 34562,1,0,0,267,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor EM Resistence
 34562,1,0,0,268,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor Explosive Resistence
 34562,1,0,0,269,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor Kinetic Resistence
 34562,1,0,0,270,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor Thermal Resistence
-34562,1,0,0,554,1,34562,0,1,0,-66.66666666,15,Defence Mode - MWD Signature Radius Penalty
+34562,1,0,0,554,2,46,0,1,0,-66.66666666,15,Defence Mode - MWD Signature Radius Penalty
 
+34562,2,0,0,160,4,574;577,0,0,0,33.33333333,15,Sharpshooter Mode - Small Projectile Turret Tracking
 34562,2,0,0,76,1,34562,0,1,0,100,15,Sharpshooter Mode - Targeting Range
 34562,2,0,0,564,1,34562,0,1,0,100,15,Sharpshooter Mode - Scan Resolution
-34562,2,0,0,208,1,34562,0,1,0,100,15,Sharpshooter Mode - Sensor Strength
-34562,2,0,0,160,1,34562,0,1,0,33.33333333,15,Sharpshooter Mode - Small Projectile Turret Tracking
+34562,2,0,0,209,1,34562,0,1,0,100,15,Sharpshooter Mode - Sensor Strength
 
-34562,3,0,0,37,1,34562,0,1,0,66.66666667,15,Propulstion Mode - Max Velocity
+
+34562,3,0,0,37,1,34562,0,1,0,66.66666667,15,Propulsion Mode - Max Velocity
 34562,3,0,0,70,1,34562,0,1,0,-33.33333333,15,Propulsion Mode - Inertia
