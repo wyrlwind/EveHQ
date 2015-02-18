@@ -19,6 +19,10 @@
 34562,1,0,0,268,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor Explosive Resistence
 34562,1,0,0,269,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor Kinetic Resistence
 34562,1,0,0,270,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor Thermal Resistence
+34562,1,0,0,271,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor EM Resistence
+34562,1,0,0,272,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor Explosive Resistence
+34562,1,0,0,273,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor Kinetic Resistence
+34562,1,0,0,274,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor Thermal Resistence
 34562,1,0,0,554,2,46,0,1,0,-66.66666666,15,Defence Mode - MWD Signature Radius Penalty
 
 34562,2,0,0,160,4,574;577,0,0,0,33.33333333,15,Sharpshooter Mode - Small Projectile Turret Tracking
