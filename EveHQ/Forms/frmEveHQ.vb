@@ -5,8 +5,8 @@
 '
 ' This file is part of EveHQ.
 '
-' The source code for EveHQ is free and you may redistribute 
-' it and/or modify it under the terms of the MIT License. 
+' The source code for EveHQ is free and you may redistribute
+' it and/or modify it under the terms of the MIT License.
 '
 ' Refer to the NOTICES file in the root folder of EVEHQ source
 ' project for details of 3rd party components that are covered
@@ -14,7 +14,7 @@
 '
 ' EveHQ is distributed in the hope that it will be useful,
 ' but WITHOUT ANY WARRANTY; without even the implied warranty of
-' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the MIT 
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the MIT
 ' license below for details.
 '
 ' ------------------------------------------------------------------------------
@@ -32,7 +32,7 @@
 '
 ' The above copyright notice and this permission notice shall be included in
 ' all copies or substantial portions of the Software.
-' 
+'
 ' THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 ' IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 ' FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -371,7 +371,12 @@ Namespace Forms
 
             ' Set Theme Stuff
             UpdateTheme(HQ.Settings.ThemeStyle, HQ.Settings.ThemeTint)
-            Dim themeBtn As ButtonItem = CType(btnTheme.SubItems("btn" & HQ.Settings.ThemeStyle.ToString), ButtonItem)
+            Dim themeBtn As ButtonItem = CType(btnTheme.SubItems(1), ButtonItem)
+            If btnTheme.SubItems.Contains("btn" & HQ.Settings.ThemeStyle.ToString) Then
+                themeBtn = CType(btnTheme.SubItems("btn" & HQ.Settings.ThemeStyle.ToString), ButtonItem)
+            ElseIf StyleManager.IsMetro(HQ.Settings.ThemeStyle) Then
+                themeBtn = CType(btnTheme.SubItems("btnMetro"), ButtonItem)
+            End If
             themeBtn.Checked = True
 
             ' Add the pilot refresh handler
@@ -1337,8 +1342,8 @@ Namespace Forms
                 Next
 
                 ' Add training pilots to the training bar
-                ' Note: I'm not completely sure why the date objects need to be sorted descending, in order to get the pilots in order of 
-                ' next to finish training, but it's what is required. It seems counter-intuitive, but don't change this to an ascending order or 
+                ' Note: I'm not completely sure why the date objects need to be sorted descending, in order to get the pilots in order of
+                ' next to finish training, but it's what is required. It seems counter-intuitive, but don't change this to an ascending order or
                 ' you get the pilots in the wrong order (the one with the most training left is first)
                 For Each cPilot As PilotSortTrainingTime In pilotTrainingTimes.OrderByDescending(Function(pilot) pilot.TrainingEndTime)
                     Dim cb As New CharacterTrainingBlock(cPilot.Name, False)
@@ -2083,7 +2088,7 @@ Namespace Forms
                 currentComponents.Clear()
                 currentVersion = My.Application.Info.Version
 
-                ' Try parsing the update file 
+                ' Try parsing the update file
                 Try
                     Dim updateVersion As XmlNodeList = updateXML.SelectNodes("/eveHQUpdate/version")
                     Dim installerLocation As XmlNodeList = updateXML.SelectNodes("/eveHQUpdate/location")
@@ -3516,7 +3521,7 @@ Namespace Forms
                 Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
                 ' Get the stream associated with the response.
                 Dim receiveStream As Stream = response.GetResponseStream()
-                ' Pipes the stream to a higher level stream reader with the required encoding format. 
+                ' Pipes the stream to a higher level stream reader with the required encoding format.
                 Dim readStream As New StreamReader(receiveStream, Encoding.UTF8)
                 webdata = readStream.ReadToEnd()
                 ' Check response string for any error codes?
