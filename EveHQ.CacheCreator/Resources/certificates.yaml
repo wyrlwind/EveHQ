@@ -2890,6 +2890,7 @@
     - 33883
     - 34317
     - 34562
+    - 34590
     skillTypes:
         3327:
             advanced: 4
@@ -3342,6 +3343,7 @@
     - 34151
     - 34317
     - 34562
+    - 34590
     skillTypes:
         3402:
             advanced: 1
@@ -4215,6 +4217,7 @@
     - 33470
     - 33553
     - 33697
+    - 34590
     skillTypes:
         3392:
             advanced: 3
@@ -4981,6 +4984,7 @@
     - 34317
     - 34328
     - 34496
+    - 34590
     skillTypes:
         3413:
             advanced: 3
@@ -5192,6 +5196,7 @@
     - 34328
     - 34496
     - 34562
+    - 34590
     skillTypes:
         3392:
             advanced: 4
@@ -7594,7 +7599,7 @@
             standard: 2
 183:
     description: This certificate represents a level of competence in handling invention
-        and manufacturing of Tech II Siege, Triade and Cloak related modules. This
+        and manufacturing of Tech II Siege, Triage and Cloak related modules. This
         is a good skillset for players wishing to build their own products.
     groupID: 270
     name: Advanced Operations Technology

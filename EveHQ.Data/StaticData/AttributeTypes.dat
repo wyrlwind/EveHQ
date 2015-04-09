@@ -223,7 +223,7 @@ Dð?ðscanMagnetometricStrengthBonusMagnetometric Strength z(
 4ù/ùentityLootValueMaxentityLootValueMax z(
 4ú/úentityLootCountMinentityLootCountMin z(
 4û/ûentityLootCountMaxentityLootCountMax z(
-HüCüentitySecurityStatusKillBonusSecurity Status Kill Amount z( 
+HüCüentitySecurityStatusKillBonusSecurity Status Kill Amount m( 
 VýQý#entitySecurityStatusAggressionBonus#entitySecurityStatusAggressionBonus z( 
 (þ#þminLootCountminLootCount z(	
 (€#€maxLootCountmaxLootCount z(	
@@ -2106,3 +2106,4 @@ BÚ=ÚentitySuperWeaponEmDamageentitySuperWeaponEmDamage z(!
 LÛGÛentitySuperWeaponKineticDamageentitySuperWeaponKineticDamage z(!
 LÜGÜentitySuperWeaponThermalDamageentitySuperWeaponThermalDamage z(!
 PÝKÝ entitySuperWeaponExplosiveDamage entitySuperWeaponExplosiveDamage z(!
+(Þ#ÞshipBonusGC3shipBonusGC3 z(	
