@@ -9030,7 +9030,7 @@
 3494:
     graphicID: 1217
 3495:
-    graphicID: 2370
+    graphicID: 2599
     radius: 3275.0
 3496:
     iconID: 89
@@ -9156,6 +9156,9 @@
                 bonusText: Can fit <a href=showinfo:27678>Remote ECM Burst</a>
             4:
                 bonusText: Immune to all forms of Electronic Warfare
+            5:
+                bonusText: This ship class is only capable of carrying <a href=showinfo:23069>Fighters</a>
+                    and <a href=showinfo:32339>Fighter Bombers</a> in its drone bay
         24311:
             1:
                 bonus: 10
@@ -9943,7 +9946,7 @@
     graphicID: 1212
     radius: 45.0
 3742:
-    graphicID: 1215
+    graphicID: 1213
     radius: 45.0
 3743:
     graphicID: 1216
@@ -10353,7 +10356,7 @@
 3805:
     graphicID: 2364
     radius: 6185.0
-    soundID: 31
+    soundID: 20199
 3806:
     iconID: 2542
 3807:
@@ -10364,7 +10367,7 @@
 3809:
     graphicID: 2356
     radius: 6185.0
-    soundID: 31
+    soundID: 20193
 3810:
     iconID: 2540
 3811:
@@ -10513,6 +10516,7 @@
 3880:
     graphicID: 1265
     radius: 4200.0
+    soundID: 20174
 3881:
     graphicID: 1266
     radius: 4634.0
@@ -10693,7 +10697,7 @@
     graphicID: 46
     radius: 50.0
 3962:
-    graphicID: 2945
+    graphicID: 2625
     radius: 1857.0
 3963:
     iconID: 0
@@ -12219,6 +12223,7 @@
     graphicID: 11146
     iconID: 1061
     radius: 25.0
+    sofFactionName: orebase
 5235:
     graphicID: 11146
     iconID: 1061
@@ -14602,9 +14607,11 @@
 10137:
     graphicID: 1693
     radius: 5825.0
+    soundID: 20174
 10138:
     graphicID: 1694
     radius: 5756.0
+    soundID: 20174
 10139:
     graphicID: 1695
     radius: 890.0
@@ -14747,6 +14754,7 @@
 10256:
     graphicID: 1717
     radius: 9213.0
+    soundID: 20197
 10257:
     graphicID: 3306
     radius: 625.0
@@ -14854,6 +14862,7 @@
 10305:
     graphicID: 1021
     radius: 4023.0
+    soundID: 20174
 10629:
     graphicID: 20089
     iconID: 1345
@@ -22998,7 +23007,7 @@
     graphicID: 1216
     radius: 45.0
 13115:
-    graphicID: 1215
+    graphicID: 1213
     radius: 45.0
 13116:
     graphicID: 1006
@@ -28434,7 +28443,7 @@
     graphicID: 2378
     radius: 1289.0
 16222:
-    graphicID: 2379
+    graphicID: 2603
     radius: 366.0
 16223:
     graphicID: 2380
@@ -29720,7 +29729,7 @@
     graphicID: 1216
     radius: 400.0
 16689:
-    graphicID: 2753
+    graphicID: 2751
     radius: 400.0
 16690:
     graphicID: 1213
@@ -29729,7 +29738,7 @@
     graphicID: 1213
     radius: 400.0
 16692:
-    graphicID: 2752
+    graphicID: 2751
     radius: 400.0
 16693:
     graphicID: 1124
@@ -29738,7 +29747,7 @@
     graphicID: 2751
     radius: 400.0
 16695:
-    graphicID: 2379
+    graphicID: 2603
     radius: 366.0
 16696:
     graphicID: 2603
@@ -29894,18 +29903,22 @@
 16757:
     graphicID: 2431
     radius: 800.0
+    soundID: 20202
 16758:
     graphicID: 2432
     radius: 844.0
+    soundID: 20173
 16759:
     graphicID: 2433
     radius: 200.0
 16760:
     graphicID: 2434
     radius: 1415.0
+    soundID: 20202
 16761:
     graphicID: 2435
     radius: 233.0
+    soundID: 20178
 16762:
     graphicID: 2436
     radius: 400.0
@@ -29921,21 +29934,25 @@
 16766:
     graphicID: 2440
     radius: 650.0
+    soundID: 20201
 16767:
     graphicID: 2441
     radius: 533.0
+    soundID: 20173
 16768:
     graphicID: 2442
     radius: 170.0
 16769:
     graphicID: 2443
     radius: 707.0
+    soundID: 20201
 16770:
     graphicID: 2444
     radius: 200.0
 16771:
     graphicID: 2445
     radius: 529.0
+    soundID: 20201
 16772:
     graphicID: 2446
     radius: 614.0
@@ -29975,12 +29992,14 @@
 16785:
     graphicID: 2459
     radius: 600.0
+    soundID: 20173
 16786:
     graphicID: 2460
     radius: 350.0
 16787:
     graphicID: 2461
     radius: 689.0
+    soundID: 20195
 16788:
     graphicID: 2462
     radius: 244.0
@@ -30005,15 +30024,18 @@
 16796:
     graphicID: 2470
     radius: 800.0
+    soundID: 20196
 16797:
     graphicID: 2471
     radius: 741.0
+    soundID: 20196
 16798:
     graphicID: 2472
     radius: 320.0
 16799:
     graphicID: 2473
     radius: 974.0
+    soundID: 20196
 16800:
     graphicID: 2474
     radius: 350.0
@@ -30035,6 +30057,7 @@
 16806:
     graphicID: 2480
     radius: 765.0
+    soundID: 20173
 16807:
     graphicID: 2481
     radius: 200.0
@@ -30059,15 +30082,18 @@
 16814:
     graphicID: 2488
     radius: 650.0
+    soundID: 20173
 16815:
     graphicID: 2489
     radius: 525.0
+    soundID: 20173
 16816:
     graphicID: 2490
     radius: 200.0
 16817:
     graphicID: 2491
     radius: 400.0
+    soundID: 20199
 16818:
     graphicID: 2492
     radius: 200.0
@@ -30083,9 +30109,11 @@
 16822:
     graphicID: 2496
     radius: 738.0
+    soundID: 20200
 16823:
     graphicID: 2497
     radius: 732.0
+    soundID: 20173
 16824:
     graphicID: 2498
     radius: 330.0
@@ -30095,6 +30123,7 @@
 16826:
     graphicID: 2500
     radius: 244.0
+    soundID: 20178
 16827:
     graphicID: 2501
     radius: 330.0
@@ -31414,19 +31443,19 @@
     graphicID: 2615
     radius: 629.0
 17184:
-    graphicID: 2617
+    graphicID: 2380
     radius: 750.0
 17185:
-    graphicID: 2617
+    graphicID: 2380
     radius: 750.0
 17186:
-    graphicID: 2617
+    graphicID: 2380
     radius: 750.0
 17187:
-    graphicID: 2617
+    graphicID: 2380
     radius: 750.0
 17188:
-    graphicID: 2379
+    graphicID: 2603
     radius: 100.0
 17190:
     iconID: 2310
@@ -31824,13 +31853,13 @@
     graphicID: 2521
     radius: 416.0
 17402:
-    graphicID: 2752
+    graphicID: 2751
     radius: 400.0
 17403:
-    graphicID: 1215
+    graphicID: 1213
     radius: 400.0
 17404:
-    graphicID: 1215
+    graphicID: 1213
     radius: 400.0
 17406:
     graphicID: 2751
@@ -33834,7 +33863,7 @@
 17769:
     iconID: 2664
 17770:
-    graphicID: 2753
+    graphicID: 2751
     radius: 400.0
 17771:
     graphicID: 1216
@@ -33857,26 +33886,26 @@
     radius: 800.0
     soundID: 20195
 17777:
-    graphicID: 2296
+    graphicID: 2593
     radius: 3394.0
     soundID: 20204
 17778:
-    graphicID: 2370
+    graphicID: 2599
     radius: 3275.0
 17779:
-    graphicID: 2297
+    graphicID: 2594
     radius: 3666.0
 17780:
-    graphicID: 2371
+    graphicID: 2600
     radius: 3346.0
 17781:
     graphicID: 2595
     radius: 450.0
 17782:
-    graphicID: 2379
+    graphicID: 2603
     radius: 260.0
 17783:
-    graphicID: 2379
+    graphicID: 2603
     radius: 260.0
 17784:
     graphicID: 2374
@@ -34011,7 +34040,7 @@
     radius: 918.0
     soundID: 20195
 17821:
-    graphicID: 2296
+    graphicID: 2593
     radius: 3394.0
     soundID: 20195
 17822:
@@ -35046,7 +35075,7 @@
     radius: 8516.0
     soundID: 20187
 17994:
-    graphicID: 2296
+    graphicID: 2593
     radius: 3394.0
     soundID: 20195
 17995:
@@ -35320,11 +35349,11 @@
     radius: 1913.0
     soundID: 20195
 18568:
-    graphicID: 2626
+    graphicID: 2625
     radius: 1857.0
     soundID: 20195
 18569:
-    graphicID: 2627
+    graphicID: 2625
     radius: 1913.0
     soundID: 20195
 18573:
@@ -36575,7 +36604,7 @@
     radius: 4737.0
     soundID: 31
 19505:
-    graphicID: 2370
+    graphicID: 2599
     radius: 3275.0
 19533:
     graphicID: 2007
@@ -38076,7 +38105,7 @@
     radius: 738.0
     soundID: 31
 20326:
-    graphicID: 2370
+    graphicID: 2599
     radius: 3275.0
     soundID: 31
 20327:
@@ -40774,7 +40803,7 @@
     graphicID: 1827
     radius: 45.979999999999997
 21659:
-    graphicID: 2627
+    graphicID: 2625
     radius: 1913.0
 21660:
     graphicID: 1832
@@ -40959,10 +40988,10 @@
 21743:
     iconID: 2539
 21744:
-    graphicID: 2753
+    graphicID: 2751
     radius: 571.0
 21745:
-    graphicID: 2753
+    graphicID: 2751
     radius: 571.0
 21746:
     graphicID: 2751
@@ -40971,10 +41000,10 @@
     graphicID: 2751
     radius: 571.0
 21748:
-    graphicID: 2752
+    graphicID: 2751
     radius: 571.0
 21749:
-    graphicID: 2752
+    graphicID: 2751
     radius: 571.0
 21754:
     graphicID: 335
@@ -41971,7 +42000,7 @@
 22155:
     iconID: 2038
 22156:
-    graphicID: 2371
+    graphicID: 2600
     radius: 3346.0
     soundID: 31
 22157:
@@ -44395,7 +44424,7 @@
 22708:
     iconID: 2536
 22709:
-    graphicID: 2371
+    graphicID: 2600
     radius: 3346.0
     soundID: 31
 22710:
@@ -44422,7 +44451,7 @@
     graphicID: 2743
     radius: 1000.0
 22719:
-    graphicID: 2296
+    graphicID: 2593
     radius: 3394.0
 22725:
     graphicID: 2515
@@ -47307,7 +47336,7 @@
     radius: 35.0
 23760: {}
 23761:
-    graphicID: 2296
+    graphicID: 2593
     radius: 3394.0
 23762:
     graphicID: 2425
@@ -49390,7 +49419,7 @@
 24255:
     iconID: 2039
 24256:
-    graphicID: 2296
+    graphicID: 2593
     radius: 3394.0
     soundID: 31
 24257:
@@ -50170,7 +50199,7 @@
 24572:
     iconID: 33
 24574:
-    graphicID: 2945
+    graphicID: 2625
     radius: 1857.0
 24575:
     graphicID: 2977
@@ -50301,19 +50330,19 @@
     graphicID: 2601
     radius: 911.0
 24653:
-    graphicID: 2945
+    graphicID: 2625
     radius: 1857.0
 24654:
-    graphicID: 2945
+    graphicID: 2625
     radius: 1857.0
 24655:
-    graphicID: 2945
+    graphicID: 2625
     radius: 1857.0
 24656:
-    graphicID: 2945
+    graphicID: 2625
     radius: 1857.0
 24657:
-    graphicID: 2945
+    graphicID: 2625
     radius: 1857.0
 24658:
     graphicID: 2377
@@ -52113,7 +52142,7 @@
     radius: 250.0
     soundID: 11
 25375:
-    graphicID: 2370
+    graphicID: 2599
     radius: 3275.0
 25377:
     graphicID: 2301
@@ -53013,7 +53042,7 @@
     graphicID: 2123
     radius: 350.0
 25815:
-    graphicID: 2296
+    graphicID: 2593
     radius: 3394.0
 25816:
     graphicID: 2717
@@ -53373,7 +53402,7 @@
     radius: 150.0
     soundID: 31
 25991:
-    graphicID: 2370
+    graphicID: 2599
     radius: 3275.0
 25992:
     graphicID: 2308
@@ -55093,28 +55122,28 @@
     radius: 500.0
     soundID: 20195
 26727:
-    graphicID: 2617
+    graphicID: 2380
     radius: 750.0
     soundID: 20195
 26728:
     graphicID: 2598
     radius: 500.0
 26729:
-    graphicID: 2371
+    graphicID: 2600
     radius: 3346.0
 26731:
     graphicID: 1712
     radius: 918.0
     soundID: 20202
 26732:
-    graphicID: 2296
+    graphicID: 2593
     radius: 3394.0
 26733:
     graphicID: 1712
     radius: 918.0
     soundID: 20201
 26734:
-    graphicID: 2370
+    graphicID: 2599
     radius: 3275.0
 26735:
     graphicID: 1712
@@ -55125,7 +55154,7 @@
     radius: 918.0
     soundID: 20199
 26737:
-    graphicID: 2297
+    graphicID: 2594
     radius: 3666.0
 26738:
     graphicID: 1712
@@ -56256,7 +56285,7 @@
     graphicID: 2518
     radius: 416.0
 27290:
-    graphicID: 2371
+    graphicID: 2600
     radius: 3346.0
 27292:
     graphicID: 2069
@@ -56749,37 +56778,37 @@
     graphicID: 3292
     radius: 3394.0
 27532:
-    graphicID: 3291
+    graphicID: 3292
     radius: 3394.0
 27533:
     graphicID: 3294
     radius: 3275.0
 27535:
-    graphicID: 3293
+    graphicID: 3294
     radius: 3275.0
 27536:
     graphicID: 3298
     radius: 3666.0
 27538:
-    graphicID: 3297
+    graphicID: 3298
     radius: 3666.0
 27539:
     graphicID: 3290
     radius: 3346.0
 27540:
-    graphicID: 3289
+    graphicID: 3290
     radius: 3346.0
 27542:
-    graphicID: 2752
+    graphicID: 2751
     radius: 400.0
 27544:
-    graphicID: 2752
+    graphicID: 2751
     radius: 400.0
 27545:
-    graphicID: 2752
+    graphicID: 2751
     radius: 400.0
 27547:
-    graphicID: 2752
+    graphicID: 2751
     radius: 400.0
 27548:
     graphicID: 2751
@@ -56794,16 +56823,16 @@
     graphicID: 2751
     radius: 400.0
 27554:
-    graphicID: 2753
+    graphicID: 2751
     radius: 400.0
 27556:
-    graphicID: 2753
+    graphicID: 2751
     radius: 400.0
 27557:
-    graphicID: 2753
+    graphicID: 2751
     radius: 400.0
 27559:
-    graphicID: 2753
+    graphicID: 2751
     radius: 400.0
 27560:
     graphicID: 2603
@@ -56857,55 +56886,55 @@
     graphicID: 3292
     radius: 3394.0
 27591:
-    graphicID: 3291
+    graphicID: 3292
     radius: 3394.0
 27592:
     graphicID: 3292
     radius: 3394.0
 27594:
-    graphicID: 3291
+    graphicID: 3292
     radius: 3394.0
 27595:
     graphicID: 3294
     radius: 3275.0
 27597:
-    graphicID: 3293
+    graphicID: 3294
     radius: 3275.0
 27598:
     graphicID: 3294
     radius: 3275.0
 27600:
-    graphicID: 3293
+    graphicID: 3294
     radius: 3275.0
 27601:
     graphicID: 3298
     radius: 3666.0
 27603:
-    graphicID: 3297
+    graphicID: 3298
     radius: 3666.0
 27604:
     graphicID: 3298
     radius: 3666.0
 27606:
-    graphicID: 3297
+    graphicID: 3298
     radius: 3666.0
 27607:
     graphicID: 3290
     radius: 3346.0
 27609:
-    graphicID: 3289
+    graphicID: 3290
     radius: 3346.0
 27610:
     graphicID: 3290
     radius: 3346.0
 27612:
-    graphicID: 3289
+    graphicID: 3290
     radius: 3346.0
 27613:
-    graphicID: 1215
+    graphicID: 1213
     radius: 400.0
 27615:
-    graphicID: 1215
+    graphicID: 1213
     radius: 400.0
 27616:
     graphicID: 1213
@@ -56914,10 +56943,10 @@
     graphicID: 1213
     radius: 400.0
 27619:
-    graphicID: 1215
+    graphicID: 1213
     radius: 400.0
 27621:
-    graphicID: 1215
+    graphicID: 1213
     radius: 400.0
 27622:
     graphicID: 1213
@@ -57335,17 +57364,17 @@
 27785:
     iconID: 21
 27786:
-    graphicID: 3296
+    graphicID: 3295
     radius: 3394.0
 27787:
     iconID: 21
 27788:
-    graphicID: 3296
+    graphicID: 3295
     radius: 3394.0
 27789:
     iconID: 21
 27790:
-    graphicID: 3296
+    graphicID: 3295
     radius: 3394.0
 27791:
     iconID: 21
@@ -58536,7 +58565,7 @@
     graphicID: 1717
     radius: 9213.0
 28228:
-    graphicID: 2370
+    graphicID: 2599
     radius: 3275.0
 28231:
     iconID: 2040
@@ -60918,7 +60947,7 @@
 29030:
     iconID: 2885
 29031:
-    graphicID: 2296
+    graphicID: 2593
     radius: 3394.0
 29033:
     graphicID: 3099
@@ -61158,19 +61187,19 @@
     graphicID: 2422
     radius: 705.0
 29167:
-    graphicID: 2296
+    graphicID: 2593
     radius: 3394.0
 29168:
     graphicID: 2400
     radius: 2787.0
 29169:
-    graphicID: 2370
+    graphicID: 2599
     radius: 3275.0
 29170:
     graphicID: 2594
     radius: 3666.0
 29171:
-    graphicID: 2371
+    graphicID: 2600
     radius: 3346.0
 29172:
     graphicID: 1708
@@ -61261,7 +61290,7 @@
 29211:
     iconID: 2224
 29212:
-    graphicID: 2297
+    graphicID: 2594
     radius: 3666.0
 29213:
     graphicID: 2515
@@ -61401,7 +61430,7 @@
     graphicID: 2353
     radius: 15000.0
 29251:
-    graphicID: 2617
+    graphicID: 2380
     radius: 580.0
 29253:
     iconID: 2538
@@ -61983,7 +62012,7 @@
     graphicID: 2463
     radius: 330.0
 29460:
-    graphicID: 2297
+    graphicID: 2594
     radius: 3394.0
 29461:
     graphicID: 2595
@@ -62002,7 +62031,7 @@
     graphicID: 2625
     radius: 1913.0
 29469:
-    graphicID: 2296
+    graphicID: 2593
     radius: 3394.0
 29470:
     iconID: 3435
@@ -62041,7 +62070,7 @@
 29494:
     radius: 1274.0
 29503:
-    graphicID: 2371
+    graphicID: 2600
     radius: 3394.0
 29504:
     iconID: 1187
@@ -62052,7 +62081,7 @@
     graphicID: 2470
     radius: 870.0
 29507:
-    graphicID: 2370
+    graphicID: 2599
     radius: 3394.0
 29508:
     graphicID: 2451
@@ -62238,7 +62267,7 @@
     graphicID: 2505
     radius: 2636.0
 29613:
-    graphicID: 2945
+    graphicID: 2625
     radius: 1857.0
 29614:
     iconID: 2536
@@ -64291,7 +64320,7 @@
     graphicID: 3537
     radius: 1000.0
 30389:
-    graphicID: 2945
+    graphicID: 2625
     radius: 1857.0
 30391:
     graphicID: 1217
@@ -67969,7 +67998,7 @@
 32193:
     iconID: 2543
 32194:
-    graphicID: 2297
+    graphicID: 2594
     radius: 3666.0
 32195:
     graphicID: 297
@@ -77967,45 +77996,50 @@
     traits:
         -2:
             1:
+                bonus: 50
+                bonusText: bonus to <a href=showinfo:3303>Small Energy Turret</a>
+                    damage
+                unitID: 105
+            2:
                 bonus: 95
                 bonusText: reduction in Scan Probe Launcher CPU requirements
                 unitID: 105
-            2:
+            3:
                 bonusText: <b>Additional bonuses are available while one of three
                     Tactical Destroyer Modes are active. Modes may be switched no
                     more than once every 10 seconds.</b>
-            3:
-                bonusText: <b><u>Defense Mode</b></u>
             4:
+                bonusText: <b><u>Defense Mode</b></u>
+            5:
                 bonus: 33.299999999999997
                 bonusText: bonus to all armor resistances while <i>Defense Mode</i>
                     is enabled
                 unitID: 105
-            5:
+            6:
                 bonus: 33.299999999999997
                 bonusText: reduction in ship signature radius while <i>Defense Mode</i>
                     is enabled
                 unitID: 105
-            6:
-                bonusText: <b><u>Propulsion Mode</b></u>
             7:
+                bonusText: <b><u>Propulsion Mode</b></u>
+            8:
                 bonus: 66.599999999999994
                 bonusText: bonus to maximum velocity while <i>Propulsion Mode</i>
                     is enabled
                 unitID: 105
-            8:
+            9:
                 bonus: 33.299999999999997
                 bonusText: bonus to ship inertia modifier while <i>Propulsion Mode</i>
                     is enabled
                 unitID: 105
-            9:
-                bonusText: <b><u>Sharpshooter Mode</b></u>
             10:
+                bonusText: <b><u>Sharpshooter Mode</b></u>
+            11:
                 bonus: 66.599999999999994
                 bonusText: bonus to <a href=showinfo:3303>Small Energy Turret</a>
                     optimal range while <i>Sharpshooter Mode</i> is enabled
                 unitID: 105
-            11:
+            12:
                 bonus: 100
                 bonusText: bonus to sensor strength, targeting range and scan resolution
                     while <i>Sharpshooter Mode</i> is enabled
@@ -79033,45 +79067,50 @@
     traits:
         -2:
             1:
+                bonus: 50
+                bonusText: bonus to <a href=showinfo:3302>Small Projectile Turret</a>
+                    damage
+                unitID: 105
+            2:
                 bonus: 95
                 bonusText: reduction in Scan Probe Launcher CPU requirements
                 unitID: 105
-            2:
+            3:
                 bonusText: <b>Additional bonuses are available while one of three
                     Tactical Destroyer Modes are active. Modes may be switched no
                     more than once every 10 seconds.</b>
-            3:
-                bonusText: <b><u>Defense Mode</b></u>
             4:
+                bonusText: <b><u>Defense Mode</b></u>
+            5:
                 bonus: 33.299999999999997
                 bonusText: bonus to all shield and armor resistances while <i>Defense
                     Mode</i> is enabled
                 unitID: 105
-            5:
+            6:
                 bonus: 66.599999999999994
                 bonusText: reduction in <a href=showinfo:3454>Microwarpdrive</a> signature
                     radius penalty while <i>Defense Mode</i> is active
                 unitID: 105
-            6:
-                bonusText: <b><u>Propulsion Mode</b></u>
             7:
+                bonusText: <b><u>Propulsion Mode</b></u>
+            8:
                 bonus: 66.599999999999994
                 bonusText: bonus to maximum velocity while <i>Propulsion Mode</i>
                     is enabled
                 unitID: 105
-            8:
+            9:
                 bonus: 33.299999999999997
                 bonusText: bonus to ship inertia modifier while <i>Propulsion Mode</i>
                     is enabled
                 unitID: 105
-            9:
-                bonusText: <b><u>Sharpshooter Mode</b></u>
             10:
+                bonusText: <b><u>Sharpshooter Mode</b></u>
+            11:
                 bonus: 33.299999999999997
                 bonusText: bonus to <a href=showinfo:3302>Small Projectile Turret</a>
                     tracking speed while <i>Sharpshooter Mode</i> is enabled
                 unitID: 105
-            11:
+            12:
                 bonus: 100
                 bonusText: bonus to sensor strength, targeting range and scan resolution
                     while <i>Sharpshooter Mode</i> is enabled
@@ -79183,6 +79222,14 @@
                 bonusText: Can fit <a href=showinfo:11578>Covert Ops Cloaking Device</a>
 34591:
     graphicID: 49
+34593:
+    iconID: 21421
+34594:
+    iconID: 107
+34595:
+    iconID: 21421
+34596:
+    iconID: 107
 34717:
     graphicID: 21081
     radius: 6500.0
@@ -79207,6 +79254,14 @@
     graphicID: 21095
     radius: 220.0
     soundID: 20209
+34766:
+    graphicID: 20373
+    iconID: 398
+    radius: 1.0
+34767:
+    graphicID: 20373
+    iconID: 398
+    radius: 1.0
 34768:
     graphicID: 3115
     radius: 14.0
@@ -79240,7 +79295,119 @@
 34778:
     iconID: 2886
     radius: 1.0
+34783:
+    graphicID: 11777
+    radius: 266.0
+    soundID: 20072
+34784:
+    graphicID: 20978
+34785:
+    graphicID: 2636
+    radius: 137.0
+    soundID: 20115
 34824:
     iconID: 21414
 34825:
     iconID: 21415
+34826:
+    iconID: 21421
+34827:
+    iconID: 107
+34833:
+    graphicID: 20373
+    iconID: 398
+    radius: 1.0
+34834:
+    graphicID: 20373
+    iconID: 398
+    radius: 1.0
+34835:
+    graphicID: 20373
+    iconID: 398
+    radius: 1.0
+34836:
+    graphicID: 20373
+    iconID: 398
+    radius: 1.0
+34837:
+    graphicID: 20373
+    iconID: 398
+    radius: 1.0
+34838:
+    graphicID: 20373
+    iconID: 398
+    radius: 1.0
+34839:
+    graphicID: 20373
+    iconID: 398
+    radius: 1.0
+34840:
+    graphicID: 20373
+    iconID: 398
+    radius: 1.0
+34841: {}
+34842: {}
+34843: {}
+34844: {}
+34845: {}
+34846: {}
+34847: {}
+34848: {}
+34849: {}
+34850: {}
+34851: {}
+34852: {}
+34853: {}
+34854: {}
+34855: {}
+34856: {}
+34857: {}
+34858: {}
+34859: {}
+34860: {}
+34861: {}
+34862: {}
+34863: {}
+34864: {}
+34865: {}
+34866: {}
+34867: {}
+34868: {}
+34869: {}
+34873:
+    graphicID: 2421
+    radius: 371.0
+34874:
+    iconID: 1192
+    radius: 1.0
+34875:
+    iconID: 1192
+    radius: 1.0
+34876:
+    iconID: 1192
+    radius: 1.0
+34877:
+    iconID: 1192
+    radius: 1.0
+34878:
+    iconID: 1192
+    radius: 1.0
+34879:
+    iconID: 1192
+    radius: 1.0
+34880:
+    iconID: 1192
+    radius: 1.0
+34881:
+    iconID: 1192
+    radius: 1.0
+34882:
+    iconID: 1192
+    radius: 1.0
+34883:
+    iconID: 1192
+    radius: 1.0
+35646:
+    graphicID: 3365
+    radius: 39.0
+    soundID: 20061

@@ -209,10 +209,10 @@ bè]è)willpowerSkillTrainingTimeMultiplierBonus)willpowerSkillTrainingTime
 Bë=ëmaxLockedTargetsBonusMaximum Locked Targets Bonus ‹(
 ;ì6ìmaxAttackTargetsBonusmaxAttackTargetsBonus ‹(	
 =í8ímaxTargetRangeMultiplierTargeting Range Bonus m(
-@î;îscanGravimetricStrengthBonusGravimetric Strength z(
-4ï/ïscanLadarStrengthBonusLadar Strength z(
-Dð?ðscanMagnetometricStrengthBonusMagnetometric Strength z(
-4ñ/ñscanRadarStrengthBonusRADAR Strength z(
+KîFîscanGravimetricStrengthBonusGravimetric ECM Jammer Strength z(
+?ï:ïscanLadarStrengthBonusLadar ECM Jammer Strength z(
+OðJðscanMagnetometricStrengthBonus!Magnetometric ECM Jammer Strength z(
+?ñ:ñscanRadarStrengthBonusRADAR ECM Jammer Strength z(
 6ò1òscanSpeedMultiplierscanSpeedMultiplier o(
 :ó5ómaxRangeMultiplierMaximum Range Multiplier h(
 @ô;ôtrackingSpeedMultiplierTracking Speed Multiplier h(
