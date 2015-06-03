@@ -3690,3 +3690,29 @@ $ / /shipBonusSentryShieldHPGC3
 '­/"­/shipBonusLightDroneArmorHPGC2
 (®/#®/shipBonusLightDroneShieldHPGC2
 ¯/¯/entosisLink
+*°/%°/ shipBonusLightMissileEMDamageMC2
++±/&±/!shipBonusLightMissileExpDamageMC2
+/²/*²/%shipBonusLightMissileKineticDamageMC2
+-³/(³/#shipBonusLightMissileThermDamageMC2
+*´/%´/ shipBonusHeavyMissileEmDamageMC2
++µ/&µ/!shipBonusHeavyMissileExpDamageMC2
+/¶/*¶/%shipBonusHeavyMissileKineticDamageMC2
+-·/(·/#shipBonusHeavyMissileThermDamageMC2
+4¸//¸/*shipBonusHeavyAssaultMissileThermDamageMC2
+6¹/1¹/,shipBonusHeavyAssaultMissileKineticDamageMC2
+2º/-º/(shipBonusHeavyAssaultMissileExpDamageMC2
+1»/,»/'shipBonusHeavyAssaultMissileEmDamageMC2
+(¼/#¼/shipModeMissileVelocityPostDiv
+1½/,½/'shipHeatDamageCaldariTacticalDestroyer3
+-¾/(¾/#tacticalDestroyerCaldariSkillLevel1
+-¿/(¿/#tacticalDestroyerCaldariSkillLevel2
+-À/(À/#tacticalDestroyerCaldariSkillLevel3
+*Ã/%Ã/ shipSmallMissileDmgPirateFaction
+5Ä/0Ä/+shipShieldCapacityCaldariTacticalDestroyer2
+1Å/,Å/'shipMissileRoFCaldariTacticalDestroyer1
+2È/-È/(shipBonusHeavyAssaultMissileAllDamageMC2
++Í/&Í/!shipBonusHeavyMissileAllDamageMC2
++Ð/&Ð/!shipBonusLightMissileAllDamageMC2
+=Ñ/8Ñ/3shipShieldCapacityAdditionCaldariTacticalDestroyer2
+8Ò/3Ò/.shipMissileReloadTimeCaldariTacticalDestroyer2
+!Ø/Ø/entosisDurationMultiply

@@ -2,7 +2,7 @@
 isOnlineisOnline z(	
 damageItem Damage q(
 massMass (
-*&capacitorNeedactivation cost r(
+*&capacitorNeedActivation Cost r(
 minRangeminRange z(	
 #		hpStructure Hitpoints q(
 )%powerOutputPowergrid Output k(
@@ -19,7 +19,7 @@ Power Load k(
 warpFactor
 warpFactor z(
 ($warpInhibitorwarpInhibitor z(	
-"powerpowergrid usage k(
+"powerPowergrid Usage k(
 maxArmormaxArmor z(	
 "  
 breakPoint
@@ -911,7 +911,7 @@ MÑHÑhullThermalDamageResonance#Structure Thermal Damage Resistance l(
 2Ô-ÔhasCloneJumpSlotshasCloneJumpSlots z(	
 DÕ?ÕallowsCloneJumpsWhenActiveallowsCloneJumpsWhenActive z(	
 8Ö3ÖcanReceiveCloneJumpscanReceiveCloneJumps z(	
-8×3×signatureRadiusAddSignature radius bonus (
+;×6×signatureRadiusAddSignature Radius Modifier (
 AØ<ØemDamageResistanceBonusEM Damage Resistance Bonus |(
 OÙJÙexplosiveDamageResistanceBonus!Explosive Damage Resistance Bonus |(
 KÚFÚkineticDamageResistanceBonusKinetic Damage Resistance Bonus i(
@@ -2107,3 +2107,8 @@ LÛGÛentitySuperWeaponKineticDamageentitySuperWeaponKineticDamage z(!
 LÜGÜentitySuperWeaponThermalDamageentitySuperWeaponThermalDamage z(!
 PÝKÝ entitySuperWeaponExplosiveDamage entitySuperWeaponExplosiveDamage z(!
 (Þ#ÞshipBonusGC3shipBonusGC3 z(	
+TßOß"shipBonusTacticalDestroyerCaldari1"shipBonusTacticalDestroyerCaldari1 z(	
+TàOà"shipBonusTacticalDestroyerCaldari2"shipBonusTacticalDestroyerCaldari2 z(	
+TáOá"shipBonusTacticalDestroyerCaldari3"shipBonusTacticalDestroyerCaldari3 z(	
+&ã!ãallowRefillsallowRefills z
+Bå=åentosisDurationMultiplierentosisDurationMultiplier z(	

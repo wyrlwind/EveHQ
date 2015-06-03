@@ -382,7 +382,6 @@ DestroyersÌ
 ÜÜMicro€
 ÝÝSmall§
 ÞÞMedium§
-ßßMicro§
 ààLarge§
 ááSmall¨
 ââMedium¨
@@ -770,7 +769,7 @@ $ôôCynosural System Jammer…
 „„Fightersú
 &…!…Electronic Warfare Droneså
 ††Logistic Droneså
-‡‡Raw materials•
+‡‡Raw Materials•
 !ˆˆGas Clouds Materials•
 ‰‰Ice Products•
 ŠŠReaction Materials•
@@ -1395,7 +1394,6 @@ $þþSpecial Edition Apparelû
 "„„EM Resistance Platingœ
 ……Layered Plating
 (†#†Adaptive Resistance Platingœ
-‡‡50mm Armor Plate…
 ˆˆ100mm Armor Plate…
 ‰‰200mm Armor Plate…
 ŠŠ400mm Armor Plate…
@@ -1669,10 +1667,10 @@ Freighters°
 ÄÄCruisers¢
 ÅÅ
 Destroyers¢
-ÆÆAmarrÄ
-ÇÇCaldariÄ
-ÈÈGallenteÄ
-ÉÉMinmatarÄ
+ÆÆAmarrì
+ÇÇCaldariì
+ÈÈGallenteì
+ÉÉMinmatarì
 ÊÊAmarrÅ
 ËËCaldariÅ
 ÌÌGallenteÅ
@@ -1700,6 +1698,17 @@ Destroyers¢
 ááStrategic Upgradesß
 ââEntosis Links¬
 ääEntosis Links®
+ååCaldariŸ
+!ææAdvanced Battleships¨
+çç	Maraudersæ
+èèAmarrç
+ééCaldariç
+êêGallenteç
+ëëMinmatarç
+ììStandard CruisersÄ
+ííFaction CruisersÄ
+îîPirate Factioní
+ïïPirate FactionÏ
 ±®±®Infantry Gear
 •Ê•ÊGrenadesŸÊ
 "šÊšÊDropsuits and Gear±®
@@ -2107,7 +2116,6 @@ $ÊªÊªAmmo Expansion Units¸Ê
 ¢±¢±Advanced ±
 £±£±	Prototype ±
 þ¶þ¶	Services Ò·
-$Í·Í·Visual Customizationé·
 Î·Î·Bundles±®
 Ñ·Ñ·Item Bundles¾¦
 Ò·Ò·Services±®
@@ -2142,3 +2150,17 @@ Heat Sinks–Â
 &™Â ™ÂDispersion Stabilizers˜Â
 šÂšÂAdvancedóÊ
 ›Â›Â	PrototypeóÊ
+¼Ä¼Ä	Dropsuitsé·
+½Ä½Ä	Dropsuits¼Ä
+¾Ä¾ÄSkinsé·
+¿Ä¿ÄSkins¾Ä
+ÀÄÀÄAPEX‘»
+ÁÄÁÄAPEXÀÄ
+ÄÄÄÄSKIN­«
+ÅÄÅÄSKINÄÄ
+ÆÄÆÄSKIN®«
+ÇÄÇÄSKINÆÄ
+ÈÄÈÄSKIN¯«
+ÉÄÉÄSKINÈÄ
+ÊÄÊÄSKIN¬«
+ËÄËÄSKINÊÄ
