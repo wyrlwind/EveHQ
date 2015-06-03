@@ -4377,6 +4377,11 @@
             5:
                 bonusText: Turrets fitted to this ship will do reduced damage to small
                     targets
+            6:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         3344:
             1:
                 bonus: 100
@@ -7379,6 +7384,7 @@
         - 89
         - 94
     radius: 39.0
+    sofDnaAddition: mesh?amarr_silver_polished;none;none;none
     soundID: 20074
     traits:
         -1:
@@ -7459,7 +7465,6 @@
         - 89
         - 94
     radius: 149.0
-    sofDnaAddition: mesh?amarr_gold;none;none
     soundID: 20072
     traits:
         -1:
@@ -7578,6 +7583,10 @@
         - 119
     radius: 450.0
     soundID: 20066
+    traits:
+        -1:
+            1:
+                bonusText: Has a bay for holding Planetary Commodities
 2864: {}
 2865:
     graphicID: 11277
@@ -9159,6 +9168,11 @@
             5:
                 bonusText: This ship class is only capable of carrying <a href=showinfo:23069>Fighters</a>
                     and <a href=showinfo:32339>Fighter Bombers</a> in its drone bay
+            6:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         24311:
             1:
                 bonus: 10
@@ -9238,7 +9252,7 @@
         - 93
         - 94
     radius: 35.0
-    sofDnaAddition: mesh?amarr_hull_white;amarr_silver_polished;none
+    sofDnaAddition: mesh?amarr_silver;none;none;amarr_silver_polished
     soundID: 20063
     traits:
         -1:
@@ -10181,6 +10195,11 @@
                 bonusText: Can fit <a href=showinfo:23735>Clone Vat Bay</a>
             4:
                 bonusText: Immune to all forms of Electronic Warfare
+            5:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         3346:
             1:
                 bonus: 100
@@ -10319,7 +10338,7 @@
 3795:
     graphicID: 2359
     radius: 6185.0
-    soundID: 31
+    soundID: 20190
 3796:
     graphicID: 1241
     radius: 10000.0
@@ -11869,7 +11888,7 @@
         - 117
         - 94
     radius: 149.0
-    sofDnaAddition: mesh?quafeultra_white;none;quafeultra_red
+    sofDnaAddition: mesh?none;none;quafeultra_white;quafeultra_red
     soundID: 20074
     traits:
         -1:
@@ -14730,7 +14749,7 @@
     graphicID: 1709
     radius: 280.0
 10242:
-    graphicID: 1710
+    graphicID: 1711
     radius: 280.0
 10243:
     graphicID: 1711
@@ -18032,6 +18051,11 @@
             5:
                 bonusText: Turrets fitted to this ship will do reduced damage to small
                     targets
+            6:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         3347:
             1:
                 bonus: 100
@@ -18935,7 +18959,7 @@
         - 93
         - 94
     radius: 30.0
-    sofDnaAddition: mesh?amarr_silver;amarr_silver_polished;none
+    sofDnaAddition: mesh?amarr_silver;none;none;amarr_silver_polished
     soundID: 20063
     traits:
         3331:
@@ -29825,9 +29849,11 @@
 16732:
     graphicID: 2406
     radius: 39957.0
+    soundID: 20214
 16733:
     graphicID: 2407
     radius: 50752.0
+    soundID: 20214
 16734:
     graphicID: 2408
     radius: 400.0
@@ -30218,7 +30244,7 @@
     graphicID: 1709
     radius: 330.0
 16858:
-    graphicID: 1710
+    graphicID: 1711
     radius: 320.0
     soundID: 20212
 16859:
@@ -31617,7 +31643,7 @@
     radius: 14.0
     soundID: 31
 17275:
-    graphicID: 1710
+    graphicID: 1711
     radius: 372.0
     soundID: 31
 17276:
@@ -31831,6 +31857,7 @@
 17394:
     graphicID: 2514
     radius: 300.0
+    soundID: 20215
 17395:
     graphicID: 2515
     radius: 379.0
@@ -31883,7 +31910,7 @@
 17422:
     graphicID: 2515
     radius: 379.0
-    soundID: 31
+    soundID: 20202
 17423:
     iconID: 1177
 17424:
@@ -32731,7 +32758,7 @@
 17645:
     graphicID: 1717
     radius: 9213.0
-    soundID: 31
+    soundID: 20187
 17646:
     iconID: 2038
 17647:
@@ -35498,7 +35525,7 @@
 18631:
     graphicID: 2357
     radius: 6185.0
-    soundID: 31
+    soundID: 20191
 18632:
     graphicID: 2505
     radius: 2636.0
@@ -35506,11 +35533,11 @@
 18633:
     graphicID: 2363
     radius: 1239.0
-    soundID: 31
+    soundID: 20199
 18634:
     graphicID: 2496
     radius: 738.0
-    soundID: 31
+    soundID: 20200
 18635:
     graphicID: 20064
     iconID: 2663
@@ -36582,7 +36609,7 @@
 19487:
     graphicID: 2357
     radius: 6185.0
-    soundID: 31
+    soundID: 20191
 19489:
     iconID: 1044
 19491:
@@ -36598,7 +36625,7 @@
 19502:
     graphicID: 2514
     radius: 416.0
-    soundID: 31
+    soundID: 20215
 19504:
     graphicID: 1993
     radius: 4737.0
@@ -36648,7 +36675,7 @@
 19558:
     graphicID: 2505
     radius: 2636.0
-    soundID: 31
+    soundID: 20179
 19559:
     graphicID: 2521
     radius: 416.0
@@ -36676,7 +36703,7 @@
 19565:
     graphicID: 2470
     radius: 949.0
-    soundID: 31
+    soundID: 20192
 19582:
     iconID: 1192
 19583:
@@ -36934,6 +36961,11 @@
         -1:
             1:
                 bonusText: Can fit <a href=showinfo:20280>Siege modules</a>
+            2:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         20525:
             1:
                 bonus: 10
@@ -37007,6 +37039,11 @@
                 unitID: 105
             2:
                 bonusText: Can fit <a href=showinfo:20280>Siege modules</a>
+            3:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         20532:
             1:
                 bonus: 5
@@ -37075,6 +37112,11 @@
         -1:
             1:
                 bonusText: Can fit <a href=showinfo:20280>Siege modules</a>
+            2:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         20531:
             1:
                 bonus: 5
@@ -37143,6 +37185,11 @@
         -1:
             1:
                 bonusText: Can fit <a href=showinfo:20280>Siege modules</a>
+            2:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         20530:
             1:
                 bonus: 4
@@ -37186,7 +37233,7 @@
 19742:
     graphicID: 2410
     radius: 5858.0
-    soundID: 31
+    soundID: 20174
 19743:
     graphicID: 2353
     radius: 15000.0
@@ -37363,7 +37410,7 @@
 19957:
     graphicID: 2378
     radius: 1218.0
-    soundID: 31
+    soundID: 20180
 19960:
     graphicID: 1176
     iconID: 16
@@ -37953,7 +38000,7 @@
 20196:
     graphicID: 2405
     radius: 971.0
-    soundID: 31
+    soundID: 20201
 20197:
     iconID: 1044
 20199:
@@ -38103,11 +38150,11 @@
 20325:
     graphicID: 2496
     radius: 738.0
-    soundID: 31
+    soundID: 20200
 20326:
     graphicID: 2599
     radius: 3275.0
-    soundID: 31
+    soundID: 20192
 20327:
     iconID: 33
 20328:
@@ -40677,7 +40724,7 @@
 21622:
     graphicID: 2514
     radius: 416.0
-    soundID: 31
+    soundID: 20215
 21623:
     iconID: 1192
 21624:
@@ -41178,6 +41225,7 @@
 21821:
     graphicID: 2514
     radius: 300.0
+    soundID: 20215
 21822:
     graphicID: 2520
     radius: 300.0
@@ -41187,6 +41235,7 @@
 21824:
     graphicID: 2518
     radius: 300.0
+    soundID: 20215
 21825:
     graphicID: 2517
     radius: 300.0
@@ -42002,7 +42051,7 @@
 22156:
     graphicID: 2600
     radius: 3346.0
-    soundID: 31
+    soundID: 20195
 22157:
     iconID: 2038
 22158:
@@ -42017,7 +42066,7 @@
 22161:
     graphicID: 2372
     radius: 1045.0
-    soundID: 31
+    soundID: 20202
 22162:
     iconID: 2041
 22163:
@@ -42307,7 +42356,7 @@
 22289:
     graphicID: 2505
     radius: 2636.0
-    soundID: 31
+    soundID: 20173
 22291:
     iconID: 2531
 22292:
@@ -42375,7 +42424,7 @@
 22320:
     graphicID: 2514
     radius: 416.0
-    soundID: 31
+    soundID: 20215
 22321:
     iconID: 2543
 22322:
@@ -44426,7 +44475,7 @@
 22709:
     graphicID: 2600
     radius: 3346.0
-    soundID: 31
+    soundID: 20195
 22710:
     graphicID: 1711
     radius: 471.0
@@ -44850,6 +44899,11 @@
             5:
                 bonusText: This ship class is only capable of carrying <a href=showinfo:23069>Fighters</a>
                     and <a href=showinfo:32339>Fighter Bombers</a> in its drone bay
+            6:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         24314:
             1:
                 bonus: 50
@@ -46709,7 +46763,7 @@
 23520:
     graphicID: 2356
     radius: 8380.0
-    soundID: 31
+    soundID: 20193
 23521:
     iconID: 2038
 23522:
@@ -46809,7 +46863,7 @@
 23567:
     graphicID: 2496
     radius: 738.0
-    soundID: 31
+    soundID: 20200
 23571:
     graphicID: 2301
     radius: 700.0
@@ -46841,7 +46895,7 @@
 23600:
     graphicID: 2496
     radius: 738.0
-    soundID: 31
+    soundID: 20195
 23601:
     graphicID: 1824
     radius: 199.86000000000001
@@ -46879,6 +46933,7 @@
 23615:
     graphicID: 2898
     radius: 1800.0
+    soundID: 20187
 23616:
     graphicID: 2156
     radius: 400.0
@@ -47021,6 +47076,7 @@
 23663:
     graphicID: 2898
     radius: 1800.0
+    soundID: 20187
 23664:
     graphicID: 296
     radius: 400.0
@@ -47101,7 +47157,7 @@
 23695:
     graphicID: 2356
     radius: 8380.0
-    soundID: 31
+    soundID: 20193
 23696:
     graphicID: 1712
     radius: 918.0
@@ -47315,6 +47371,11 @@
                 bonusText: Can fit <a href=showinfo:3348>Warfare Link</a> modules
             3:
                 bonusText: Can fit <a href=showinfo:27951>Triage modules</a>
+            4:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         24311:
             1:
                 bonus: 50
@@ -47433,6 +47494,11 @@
             5:
                 bonusText: Turrets fitted to this ship will do reduced damage to small
                     targets
+            6:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         3345:
             1:
                 bonus: 125
@@ -47568,6 +47634,7 @@
 23828:
     graphicID: 2907
     radius: 1274.0
+    soundID: 20211
 23829:
     iconID: 1029
 23830:
@@ -47828,6 +47895,11 @@
                 bonusText: Can fit <a href=showinfo:3348>Warfare Link</a> modules
             3:
                 bonusText: Can fit <a href=showinfo:27951>Triage modules</a>
+            4:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         24313:
             1:
                 bonus: 50
@@ -47918,6 +47990,11 @@
             5:
                 bonusText: This ship class is only capable of carrying <a href=showinfo:23069>Fighters</a>
                     and <a href=showinfo:32339>Fighter Bombers</a> in its drone bay
+            6:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         24313:
             1:
                 bonus: 50
@@ -48007,6 +48084,11 @@
                 bonusText: Can fit <a href=showinfo:3348>Warfare Link</a> modules
             3:
                 bonusText: Can fit <a href=showinfo:27951>Triage modules</a>
+            4:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         24312:
             1:
                 bonus: 50
@@ -48098,6 +48180,11 @@
             5:
                 bonusText: This ship class is only capable of carrying <a href=showinfo:23069>Fighters</a>
                     and <a href=showinfo:32339>Fighter Bombers</a> in its drone bay
+            6:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         24312:
             1:
                 bonus: 50
@@ -48192,6 +48279,11 @@
             5:
                 bonusText: This ship class is only capable of carrying <a href=showinfo:23069>Fighters</a>
                     and <a href=showinfo:32339>Fighter Bombers</a> in its drone bay
+            6:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         24311:
             1:
                 bonus: 50
@@ -48321,7 +48413,7 @@
 23964:
     graphicID: 2707
     radius: 711.0
-    soundID: 31
+    soundID: 20201
 23965:
     graphicID: 1759
     radius: 134.43000000000001
@@ -49441,7 +49533,7 @@
 24262:
     graphicID: 2898
     radius: 2617.0
-    soundID: 31
+    soundID: 20187
 24263:
     iconID: 2038
 24264:
@@ -49937,6 +50029,11 @@
                 bonusText: Can fit <a href=showinfo:3348>Warfare Link</a> modules
             3:
                 bonusText: Can fit <a href=showinfo:27951>Triage modules</a>
+            4:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         24314:
             1:
                 bonus: 50
@@ -50214,7 +50311,7 @@
 24579:
     graphicID: 2356
     radius: 8380.0
-    soundID: 31
+    soundID: 20193
 24580:
     iconID: 2886
 24581:
@@ -52172,7 +52269,7 @@
 25388:
     graphicID: 2372
     radius: 1045.0
-    soundID: 31
+    soundID: 20196
 25389:
     graphicID: 2123
     radius: 350.0
@@ -52394,7 +52491,7 @@
 25524:
     graphicID: 2357
     radius: 6185.0
-    soundID: 31
+    soundID: 20191
 25526:
     graphicID: 1176
     iconID: 16
@@ -53989,15 +54086,15 @@
 26247:
     graphicID: 2440
     radius: 703.0
-    soundID: 31
+    soundID: 20201
 26248:
     graphicID: 2470
     radius: 949.0
-    soundID: 31
+    soundID: 20192
 26249:
     graphicID: 2488
     radius: 753.0
-    soundID: 31
+    soundID: 20199
 26250:
     graphicID: 2496
     radius: 738.0
@@ -54911,7 +55008,7 @@
 26606:
     graphicID: 2363
     radius: 1239.0
-    soundID: 31
+    soundID: 20188
 26607:
     iconID: 1061
 26657:
@@ -55904,7 +56001,7 @@
     graphicID: 3117
     radius: 14.0
 27063:
-    graphicID: 1710
+    graphicID: 1711
     radius: 320.0
 27064:
     iconID: 3194
@@ -58407,20 +58504,20 @@
     graphicID: 2499
     radius: 734.0
 28155:
-    graphicID: 1211
-    radius: 15000.0
+    graphicID: 10026
+    radius: 5000.0
 28156:
-    graphicID: 1211
-    radius: 15000.0
+    graphicID: 10026
+    radius: 5000.0
 28157:
-    graphicID: 1211
-    radius: 15000.0
+    graphicID: 10026
+    radius: 5000.0
 28158:
-    graphicID: 1211
-    radius: 15000.0
+    graphicID: 10026
+    radius: 5000.0
 28159:
-    graphicID: 1211
-    radius: 15000.0
+    graphicID: 10026
+    radius: 5000.0
 28160:
     graphicID: 2739
     radius: 600.0
@@ -58436,8 +58533,8 @@
 28164:
     iconID: 33
 28166:
-    graphicID: 1211
-    radius: 15000.0
+    graphicID: 10026
+    radius: 5000.0
 28167:
     graphicID: 2239
     radius: 250.0
@@ -58881,6 +58978,11 @@
                 bonus: 90
                 bonusText: reduction to effective distance traveled for jump fatigue
                 unitID: 105
+            7:
+                bonus: 5
+                bonusText: penalty to <a href=showinfo:34593>Entosis Link</a> cycle
+                    time
+                unitID: 104
         28374:
             1:
                 bonus: 5
@@ -60869,7 +60971,7 @@
 28998:
     graphicID: 2357
     radius: 6185.0
-    soundID: 31
+    soundID: 20191
 28999:
     iconID: 3348
 29000:
@@ -60921,7 +61023,7 @@
 29020:
     graphicID: 2356
     radius: 8380.0
-    soundID: 31
+    soundID: 20193
 29021:
     graphicID: 1019
     radius: 8960.0
@@ -60929,11 +61031,11 @@
 29022:
     graphicID: 2359
     radius: 8960.0
-    soundID: 31
+    soundID: 20190
 29023:
     graphicID: 2364
     radius: 8960.0
-    soundID: 31
+    soundID: 20188
 29024:
     graphicID: 1813
     radius: 150.0
@@ -60950,16 +61052,16 @@
     graphicID: 2593
     radius: 3394.0
 29033:
-    graphicID: 3099
+    graphicID: 21102
     radius: 14.0
 29034:
-    graphicID: 3075
+    graphicID: 21103
     radius: 14.0
 29035:
-    graphicID: 3087
+    graphicID: 21104
     radius: 14.0
 29036:
-    graphicID: 3113
+    graphicID: 21105
     radius: 14.0
 29039:
     iconID: 2196
@@ -64140,6 +64242,7 @@
 30293:
     graphicID: 3520
     radius: 11361.0
+    soundID: 20218
 30294:
     graphicID: 3523
     radius: 560.0
@@ -64152,12 +64255,15 @@
 30299:
     graphicID: 3517
     radius: 7850.0
+    soundID: 20219
 30300:
     graphicID: 3518
     radius: 4738.0
+    soundID: 20217
 30301:
     graphicID: 3521
     radius: 2759.0
+    soundID: 20186
 30302:
     graphicID: 3519
     radius: 2917.0
@@ -65325,6 +65431,7 @@
 30901:
     graphicID: 3567
     radius: 7684.0
+    soundID: 20187
 30902:
     graphicID: 3531
     radius: 150.0
@@ -68071,6 +68178,7 @@
         - 89
         - 94
     radius: 31.0
+    sofDnaAddition: mesh?amarr_silver_polished;none;none;none
     soundID: 20078
     traits:
         -1:
@@ -68153,7 +68261,6 @@
         - 89
         - 94
     radius: 89.0
-    sofDnaAddition: mesh?none;none;amarr_gold
     soundID: 20076
     traits:
         -1:
@@ -69121,7 +69228,7 @@
         - 87
         - 94
     radius: 174.0
-    sofDnaAddition: mesh?amarr_gold;none;none
+    sofDnaAddition: mesh?none;amarr_gold;none;none
     soundID: 20069
     traits:
         -1:
@@ -69223,7 +69330,7 @@
         - 117
         - 94
     radius: 149.0
-    sofDnaAddition: mesh?none;none;quafeultra_white
+    sofDnaAddition: mesh?none;none;none;quafeultra_white
     soundID: 20074
     traits:
         -1:
@@ -78328,6 +78435,7 @@
 34387:
     graphicID: 2907
     radius: 1274.0
+    soundID: 20211
 34388:
     graphicID: 2412
     radius: 4300.0
@@ -78522,7 +78630,7 @@
 34457:
     graphicID: 20989
     radius: 250.0
-    sofDnaAddition: mesh?black_metal_01;black_paint_01;serenity_acidblue_01
+    sofDnaAddition: mesh?amarr_tech_metal;black_paint_02;black_paint_01;serenity_acidblue_01
     traits:
         3339:
             1:
@@ -78540,6 +78648,7 @@
 34459:
     graphicID: 20986
     radius: 400.0
+    sofDnaAddition: mesh?enamel_white;amarr_gold;amarr_gold;black_paint_02
     traits:
         3339:
             1:
@@ -78556,7 +78665,7 @@
 34461:
     graphicID: 20994
     radius: 500.0
-    sofDnaAddition: mesh?serenity_acidblue_01;black_paint_01;silver_metal_02
+    sofDnaAddition: mesh?black_paint_01;amarr_silver;black_metal_01;serenity_acidblue_01
     traits:
         -1:
             1:
@@ -78585,7 +78694,7 @@
 34463:
     graphicID: 20992
     radius: 250.0
-    sofDnaAddition: mesh?chrome_metal_01;serenity_reddusty_01;serenity_whitedusty_01
+    sofDnaAddition: mesh?serenity_steel;amarr_silver;serenity_reddusty_01;amarr_silver
     traits:
         -1:
             1:
@@ -78608,7 +78717,7 @@
 34465:
     graphicID: 20990
     radius: 250.0
-    sofDnaAddition: mesh?amarr_tech_metal;black_paint_02;chrome_metal_01
+    sofDnaAddition: mesh?amarr_silver_polished;black_paint_02;black_metal_01;none
     traits:
         3336:
             1:
@@ -78626,6 +78735,7 @@
 34467:
     graphicID: 20991
     radius: 250.0
+    sofDnaAddition: mesh?none;none;black_paint_02;enamel_white
     traits:
         3336:
             1:
@@ -78643,6 +78753,7 @@
 34469:
     graphicID: 20993
     radius: 250.0
+    sofDnaAddition: mesh?black_metal_01;serenity_steel;amarr_gold;black_paint_02
     traits:
         3338:
             1:
@@ -78661,6 +78772,7 @@
 34471:
     graphicID: 20987
     radius: 400.0
+    sofDnaAddition: mesh?amarr_gold;amarr_tech_metal;none;enamel_white
     traits:
         3339:
             1:
@@ -78678,6 +78790,7 @@
 34473:
     graphicID: 20995
     radius: 263.0
+    sofDnaAddition: mesh?none;caldari_tech_metal;black_paint_02;enamel_white
     traits:
         -1:
             1:
@@ -78697,6 +78810,7 @@
 34475:
     graphicID: 20996
     radius: 166.0
+    sofDnaAddition: mesh?none;caldari_tech_metal;black_paint_02;amarr_silver_polished
     traits:
         -1:
             1:
@@ -78719,6 +78833,7 @@
 34477:
     graphicID: 20997
     radius: 166.0
+    sofDnaAddition: mesh?none;caldari_tech_metal;black_paint_02;amarr_silver_polished
     traits:
         -1:
             1:
@@ -78752,6 +78867,7 @@
 34479:
     graphicID: 20998
     radius: 110.0
+    sofDnaAddition: mesh?none;none;black_paint_02;enamel_white
     traits:
         -1:
             1:
@@ -78936,86 +79052,87 @@
 34533:
     iconID: 33
 34534:
-    graphicID: 3517
+    graphicID: 21136
     radius: 7850.0
 34535:
-    graphicID: 3517
+    graphicID: 21136
     radius: 7850.0
+    soundID: 20216
 34536:
-    graphicID: 3517
+    graphicID: 21136
     radius: 7850.0
 34537:
-    graphicID: 3517
+    graphicID: 21136
     radius: 7850.0
 34538:
-    graphicID: 3517
+    graphicID: 21136
     radius: 7850.0
 34539:
     graphicID: 3517
     radius: 7850.0
 34540:
-    iconID: 2038
+    iconID: 21417
     radius: 1.0
 34541:
-    iconID: 2038
+    iconID: 21417
     radius: 1.0
 34542:
-    iconID: 2038
+    iconID: 21417
     radius: 1.0
 34543:
-    iconID: 2038
+    iconID: 21417
     radius: 1.0
 34544:
-    iconID: 2038
+    iconID: 21417
     radius: 1.0
 34545:
-    iconID: 2038
+    iconID: 21417
     radius: 1.0
 34546:
-    iconID: 2038
+    iconID: 21417
     radius: 1.0
 34547:
-    iconID: 2038
+    iconID: 21417
     radius: 1.0
 34548:
-    iconID: 2038
+    iconID: 21417
     radius: 1.0
 34549:
-    iconID: 2038
+    iconID: 21417
     radius: 1.0
 34551:
-    iconID: 2038
+    iconID: 21418
     radius: 1.0
 34552:
-    iconID: 2038
+    iconID: 21418
     radius: 1.0
 34553:
-    iconID: 2038
+    iconID: 21418
     radius: 1.0
 34554:
-    iconID: 2038
+    iconID: 21418
     radius: 1.0
 34555:
-    iconID: 2038
+    iconID: 21418
     radius: 1.0
 34556:
-    iconID: 2889
+    iconID: 21419
     radius: 1.0
 34557:
-    iconID: 2889
+    iconID: 21419
     radius: 1.0
 34558:
-    iconID: 2889
+    iconID: 21419
     radius: 1.0
 34559:
-    iconID: 2889
+    iconID: 21419
     radius: 1.0
 34560:
-    iconID: 2889
+    iconID: 21419
     radius: 1.0
 34561:
-    graphicID: 3536
-    radius: 150.0
+    graphicID: 21049
+    radius: 350.0
     soundID: 20207
 34562:
     factionID: 500002
@@ -79205,7 +79322,7 @@
     traits:
         -1:
             1:
-                bonus: 50
+                bonus: 100
                 bonusText: bonus to warp speed and warp acceleration
                 unitID: 105
             2:
@@ -79223,10 +79340,12 @@
 34591:
     graphicID: 49
 34593:
+    graphicID: 21099
     iconID: 21421
 34594:
     iconID: 107
 34595:
+    graphicID: 21099
     iconID: 21421
 34596:
     iconID: 107
@@ -79255,11 +79374,11 @@
     radius: 220.0
     soundID: 20209
 34766:
-    graphicID: 20373
+    graphicID: 21113
     iconID: 398
     radius: 1.0
 34767:
-    graphicID: 20373
+    graphicID: 21114
     iconID: 398
     radius: 1.0
 34768:
@@ -79310,41 +79429,160 @@
 34825:
     iconID: 21415
 34826:
+    graphicID: 21099
     iconID: 21421
 34827:
     iconID: 107
+34828:
+    factionID: 500001
+    graphicID: 21135
+    masteries:
+        0:
+        - 96
+        - 99
+        - 150
+        - 75
+        - 139
+        - 85
+        - 94
+        1:
+        - 96
+        - 99
+        - 150
+        - 75
+        - 139
+        - 85
+        - 94
+        2:
+        - 96
+        - 99
+        - 150
+        - 75
+        - 139
+        - 85
+        - 94
+        3:
+        - 96
+        - 99
+        - 150
+        - 75
+        - 139
+        - 85
+        - 94
+        4:
+        - 96
+        - 99
+        - 150
+        - 75
+        - 139
+        - 85
+        - 118
+        - 94
+    radius: 112.0
+    soundID: 20070
+    traits:
+        -2:
+            1:
+                bonus: 50
+                bonusText: bonus to <a href=showinfo:3321>Light Missile</a> and <a
+                    href=showinfo:3320>Rocket</a> damage
+                unitID: 105
+            2:
+                bonus: 95
+                bonusText: reduction in Scan Probe Launcher CPU requirements
+                unitID: 105
+            3:
+                bonusText: <b>Additional bonuses are available while one of three
+                    Tactical Destroyer Modes are active. Modes may be switched no
+                    more than once every 10 seconds.</b>
+            4:
+                bonusText: <b><u>Defense Mode</b></u>
+            5:
+                bonus: 33.299999999999997
+                bonusText: bonus to all shield resistances while <i>Defense Mode</i>
+                    is enabled
+                unitID: 105
+            6:
+                bonus: 33.299999999999997
+                bonusText: reduction in ship signature radius while <i>Defense Mode</i>
+                    is enabled
+                unitID: 105
+            7:
+                bonusText: <b><u>Propulsion Mode</b></u>
+            8:
+                bonus: 33.299999999999997
+                bonusText: bonus to maximum velocity while <i>Propulsion Mode</i>
+                    is enabled
+                unitID: 105
+            9:
+                bonus: 66.599999999999994
+                bonusText: bonus to ship inertia modifier while <i>Propulsion Mode</i>
+                    is enabled
+                unitID: 105
+            10:
+                bonusText: <b><u>Sharpshooter Mode</b></u>
+            11:
+                bonus: 66.599999999999994
+                bonusText: bonus to <a href=showinfo:3321>Light Missile</a> and <a
+                    href=showinfo:3320>Rocket</a> velocity while <i>Sharpshooter Mode</i>
+                    is enabled
+                unitID: 105
+            12:
+                bonus: 100
+                bonusText: bonus to sensor strength, targeting range and scan resolution
+                    while <i>Sharpshooter Mode</i> is enabled
+                unitID: 105
+        35680:
+            1:
+                bonus: 5
+                bonusText: bonus to <a href=showinfo:3321>Light Missile</a> launcher
+                    and <a href=showinfo:3320>Rocket</a> launcher rate of fire
+                unitID: 105
+            2:
+                bonus: 15
+                bonusText: reduction in missile launcher reload time
+                unitID: 105
+            3:
+                bonus: 5
+                bonusText: reduction in module heat damage amount taken
+                unitID: 105
+34829:
+    graphicID: 1748
+34832:
+    graphicID: 3826
+    radius: 243.0
 34833:
-    graphicID: 20373
+    graphicID: 21115
     iconID: 398
     radius: 1.0
 34834:
-    graphicID: 20373
+    graphicID: 21116
     iconID: 398
     radius: 1.0
 34835:
-    graphicID: 20373
+    graphicID: 21117
     iconID: 398
     radius: 1.0
 34836:
-    graphicID: 20373
+    graphicID: 21118
     iconID: 398
     radius: 1.0
 34837:
-    graphicID: 20373
+    graphicID: 21129
     iconID: 398
     radius: 1.0
 34838:
-    graphicID: 20373
+    graphicID: 21130
     iconID: 398
     radius: 1.0
 34839:
-    graphicID: 20373
+    graphicID: 21133
     iconID: 398
     radius: 1.0
 34840:
-    graphicID: 20373
-    iconID: 398
-    radius: 1.0
+    graphicID: 21134
+    iconID: 0
+    radius: 7850.0
 34841: {}
 34842: {}
 34843: {}
@@ -79407,7 +79645,77 @@
 34883:
     iconID: 1192
     radius: 1.0
+34884:
+    graphicID: 21106
+    radius: 14.0
+35645:
+    graphicID: 10026
+    radius: 1.0
 35646:
     graphicID: 3365
     radius: 39.0
     soundID: 20061
+35647:
+    graphicID: 21137
+35648:
+    graphicID: 21138
+35649:
+    graphicID: 21139
+35650:
+    graphicID: 21050
+    radius: 3000.0
+    soundID: 20206
+35651:
+    graphicID: 21050
+    radius: 3000.0
+    soundID: 20206
+35652:
+    graphicID: 21050
+    radius: 3000.0
+    soundID: 20206
+35653:
+    graphicID: 21050
+    radius: 3000.0
+    soundID: 20206
+35654:
+    graphicID: 21050
+    radius: 3000.0
+    soundID: 20206
+35656:
+    iconID: 96
+35657:
+    iconID: 96
+35658:
+    iconID: 10149
+35659:
+    iconID: 10149
+35660:
+    iconID: 10149
+35661:
+    iconID: 10149
+35662:
+    iconID: 10149
+35663:
+    graphicID: 2421
+    radius: 371.0
+35676:
+    iconID: 1042
+    radius: 50.0
+35677:
+    iconID: 1042
+    radius: 50.0
+35678:
+    iconID: 1042
+    radius: 50.0
+35679:
+    graphicID: 2714
+    radius: 207.0
+35680:
+    iconID: 33
+35681:
+    iconID: 21424
+35682:
+    iconID: 21425
+35689:
+    graphicID: 338
+    radius: 25.0
