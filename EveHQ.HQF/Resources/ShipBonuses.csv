@@ -952,6 +952,15 @@
 # Iteron Inner Zone Shipping Edition,,,,,,,,,,,
 33689,1,3340,10004,1,33689,0,1,0,5,15,Cargo Capacity
 33689,1,3340,37,1,33689,0,1,0,5,15,Max Velocity
+# Jackdaw,,,,,,,,,,,
+34828,1,35680,51,2,507;509,0,1,0,-5,15,Rocket & Light Missile Launcher ROF
+34828,1,35680,1795,2,511;524;506;510;771;507;508;509;1245,0,1,0,-15,15, Missile launcher reload time
+34828,1,35680,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
+34828,0,0,116,2,387;648;384;653;394,0,0,0,50,15,Rocket & Light Missile Explosive Damage
+34828,0,0,117,2,387;648;384;653;394,0,0,0,50,15,Rocket & Light Missile Kinetic Damage
+34828,0,0,114,2,387;648;384;653;394,0,0,0,50,15,Rocket & Light Missile EM Damage
+34828,0,0,118,2,387;648;384;653;394,0,0,0,50,15,Rocket & Light Missile Thermal Damage
+34828,0,0,50,2,481,0,0,0,-95,15,Scan Probe Launcher CPU Need
 # Jaguar,,,,,,,,,,,
 11400,1,3329,10016,4,574;577,0,1,0,5,15,Small Projectile Turret Damage
 11400,1,3329,160,4,574;577,0,1,0,7.5,15,Small Projectile Turret Tracking
