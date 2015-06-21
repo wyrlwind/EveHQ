@@ -181,9 +181,19 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+#Eve SDE
 EveHQ.CacheCreator/eve.db
+EveHQ.CacheCreator/Resources/eve.db
 EveHQ.CacheCreator/Resources/graphicIDs.yaml
 EveHQ.CacheCreator/Resources/blueprints.yaml
-Installer/EveHQ-Setup.exe
-EveHQ.CacheCreator/Resources/eve.db
+#EveHQ Installer
+Installer/EveHQ*.exe
+
+#AssemblyInfo
 EveHQ.CacheCreator/Resources/skinLicenses.yaml
+EveHQ.KillMailViewer/My Project/AssemblyInfo.template.vb
+EveHQ.Market/Properties/AssemblyInfo.template.cs
+EveHQ.Prism/My Project/AssemblyInfo.template.vb
+EveHQ.SettingsConverter/My Project/AssemblyInfo.template.vb
+EveHQ.Void/My Project/AssemblyInfo.template.vb

@@ -41,10 +41,10 @@
 34828,1,0,0,274,1,34828,0,1,2,-33.33333333,15,Defence Mode - Shield Thermal Resistence
 34828,1,0,0,552,1,34828,0,1,0,-33.33333333,15,Defence Mode - Signature Radius
 
-34828,2,0,0,37,2,387;648;384;653;394,0,1,0,33.33333333,15,Sharpshooter Mode - Rocket & Light Missile Velocity
-34828,2,0,0,76,1,34828,0,1,0,100,15,Sharpshooter Mode - Targeting Range
-34828,2,0,0,564,1,34828,0,1,0,100,15,Sharpshooter Mode - Scan Resolution
-34828,2,0,0,209,1,34828,0,1,0,100,15,Sharpshooter Mode - Sensor Strength
+34828,2,0,0,37,2,387;648;384;653;394,0,0,0,66.66666666,15,Sharpshooter Mode - Rocket & Light Missile Velocity
+34828,2,0,0,76,1,34828,0,0,0,100,15,Sharpshooter Mode - Targeting Range
+34828,2,0,0,564,1,34828,0,0,0,100,15,Sharpshooter Mode - Scan Resolution
+34828,2,0,0,209,1,34828,0,0,0,100,15,Sharpshooter Mode - Sensor Strength
 
 34828,3,0,0,37,1,34828,0,1,0,66.66666667,15,Propulsion Mode - Max Velocity
 34828,3,0,0,70,1,34828,0,1,0,-33.33333333,15,Propulsion Mode - Inertia
