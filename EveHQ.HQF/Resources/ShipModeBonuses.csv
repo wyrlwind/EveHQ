@@ -46,5 +46,5 @@
 34828,2,0,0,564,1,34828,0,0,0,100,15,Sharpshooter Mode - Scan Resolution
 34828,2,0,0,209,1,34828,0,0,0,100,15,Sharpshooter Mode - Sensor Strength
 
-34828,3,0,0,37,1,34828,0,1,0,66.66666667,15,Propulsion Mode - Max Velocity
-34828,3,0,0,70,1,34828,0,1,0,-33.33333333,15,Propulsion Mode - Inertia
+34828,3,0,0,37,1,34828,0,1,0,33.66666667,15,Propulsion Mode - Max Velocity
+34828,3,0,0,70,1,34828,0,1,0,-66.66666667,15,Propulsion Mode - Inertia
