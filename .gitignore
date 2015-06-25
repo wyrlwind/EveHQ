@@ -187,10 +187,11 @@ EveHQ.CacheCreator/eve.db
 EveHQ.CacheCreator/Resources/eve.db
 EveHQ.CacheCreator/Resources/graphicIDs.yaml
 EveHQ.CacheCreator/Resources/blueprints.yaml
+EveHQ.CacheCreator/Resources/skinLicenses.yaml
+
 #EveHQ Installer
 Installer/EveHQ*.exe
 
-#AssemblyInfo
-EveHQ.CacheCreator/Resources/skinLicenses.yaml
+#AssemblyInfo template
 AssemblyInfo.template.vb
 AssemblyInfo.template.cs
