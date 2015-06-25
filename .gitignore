@@ -192,8 +192,5 @@ Installer/EveHQ*.exe
 
 #AssemblyInfo
 EveHQ.CacheCreator/Resources/skinLicenses.yaml
-EveHQ.KillMailViewer/My Project/AssemblyInfo.template.vb
-EveHQ.Market/Properties/AssemblyInfo.template.cs
-EveHQ.Prism/My Project/AssemblyInfo.template.vb
-EveHQ.SettingsConverter/My Project/AssemblyInfo.template.vb
-EveHQ.Void/My Project/AssemblyInfo.template.vb
+AssemblyInfo.template.vb
+AssemblyInfo.template.cs
