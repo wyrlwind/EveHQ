@@ -548,7 +548,7 @@ HÇCÇentityChaseMaxDurationChanceentityChaseMaxDurationChance z(
 6Ð1ÐcloakCapacitorBonuscloakCapacitorBonus z(	
 ÒÒDieDie z(	
 2Ó-ÓcapBoostMultiplercapBoostMultipler z(	
-6Ô1ÔexplosionDelayBonusexplosionDelayBonus z(	
+4Ô/ÔexplosionDelayBonusFlight Time Bonus y(
 2Õ-ÕeliteBonusEscortseliteBonusEscorts z(	
 (Ö#ÖshipBonusCB3shipBonusCB3 z(	
 8Ø3ØwarpSpeedMultiplierWarp Speed Multiplier h(
@@ -2111,4 +2111,15 @@ TßOß"shipBonusTacticalDestroyerCaldari1"shipBonusTacticalDestroyerCaldari
 TàOà"shipBonusTacticalDestroyerCaldari2"shipBonusTacticalDestroyerCaldari2 z(	
 TáOá"shipBonusTacticalDestroyerCaldari3"shipBonusTacticalDestroyerCaldari3 z(	
 &ã!ãallowRefillsallowRefills z
+&ä!äshipBonusATshipBonusAT z(	
 Bå=åentosisDurationMultiplierentosisDurationMultiplier z(	
+LçGçaoeCloudSizeBonusBonus&Modification of Explosion Radius Bonus i(
+MèHèaoeVelocityBonusBonus(Modification of Explosion Velocity Bonus i(
+OéJémissileVelocityBonusBonus&Modification of Missile Velocity Bonus i(
+IêDêexplosionDelayBonusBonus!Modification of Flight Time Bonus i(
+VëQë#shipBonusTacticalDestroyerGallente1#shipBonusTacticalDestroyerGallente1 z(	
+VìQì#shipBonusTacticalDestroyerGallente2#shipBonusTacticalDestroyerGallente2 z(	
+VíQí#shipBonusTacticalDestroyerGallente3#shipBonusTacticalDestroyerGallente3 z(	
+FîAîmodeArmorRepDurationPostDivmodeArmorRepDurationPostDiv z(
+<ï7ïmodeMWDVelocityPostDivmodeMWDVelocityPostDiv z(
+2ð-ðmodeMWDCapPostDivmodeMWDCapPostDiv z(
