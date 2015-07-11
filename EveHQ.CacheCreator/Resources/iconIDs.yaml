@@ -77,7 +77,7 @@
   description: Module - ArmoredPlates
   iconFile: '01_10'
 80:
-  description: Module - AutoRepairUnit
+  description: Module - Armor Repair
   iconFile: '01_11'
 81:
   description: Module - ShieldEnhancer
@@ -6149,7 +6149,7 @@
   description: 34211_female_TopMiddle_ShirtQF01_Types_lvf02.png
   iconFile: res:/UI/Asset/mannequin/topmiddle/34211_female_TopMiddle_ShirtQF01_Types_lvf02.png
 21378:
-  description: Hull repair module
+  description: Module - Hull Repair
   iconFile: '1337_22'
 21379:
   description: Cynosural field generators
@@ -6261,10 +6261,31 @@
   iconFile: res:/UI/Texture/Icons/skin-icon-16.png
 21421:
   description: Entosis Link Icon
-  iconFile: res:/UI/Texture/Icons/118_64_6.png
+  iconFile: res:/UI/Texture/Icons/118_64_7.png
 21424:
   description: 35681_male_topMiddle_ShirtQM01_Types_soerfm02
   iconFile: res:/UI/Asset/mannequin/topmiddle/35681_male_topMiddle_ShirtQM01_Types_soerfm02.png
 21425:
   description: 35682_female_TopMiddle_ShirtQF01_Types_soerff02
   iconFile: res:/UI/Asset/mannequin/topmiddle/35682_female_TopMiddle_ShirtQF01_Types_soerff02.png
+21426:
+  description: Module - Remote Armor Repair
+  iconFile: res:/UI/Texture/Icons/remote_armor_repair.png
+21428:
+  description: Module - Remote Hull Repair
+  iconFile: res:/UI/Texture/Icons/remote_hull_repairer.png
+21437:
+  description: Missile Guidance Computer
+  iconFile: res:/UI/Texture/Icons/5_64_17.png
+21439:
+  description: Missile Guidance Enhancer
+  iconFile: res:/UI/Texture/Icons/5_64_18.png
+21440:
+  description: Ballistic Control System (new)
+  iconFile: res:/UI/Texture/Icons/5_64_19.png
+21441:
+  description: Missile Guidance Computer Range Script
+  iconFile: res:/UI/Texture/Icons/5_64_20.png
+21442:
+  description: Missile Guidance Computer Precision Script
+  iconFile: res:/UI/Texture/Icons/5_64_21.png
