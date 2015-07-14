@@ -560,6 +560,12 @@
 12011,1,16591,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
 12011,1,16591,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 12011,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
+# Ecate,,,,,,,,,,,
+35683,1,35685,10012,4,564;561,0,1,0,5,15,Small Hybrid Turret ROF
+35683,1,35685,160,4,564;561,0,1,0,7.5,15,Small Hybrid Turret Tracking
+35683,1,35685,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
+35683,0,0,10015,4,564;561,0,0,0,50,15,Small Hybrid Turret Damage
+35683,0,0,50,2,481,0,0,0,-95,15,Scan Probe Launcher CPU Need
 # Echo,,,,,,,,,,,
 617,0,0,10016,4,574;577,0,0,0,50,15,Small Projectile Turret Damage
 617,0,0,160,4,574;577,0,0,0,22.5,15,Small Projectile Turret Tracking

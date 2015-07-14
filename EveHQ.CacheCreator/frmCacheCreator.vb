@@ -261,7 +261,11 @@ Public Class FrmCacheCreator
                                                         Case "bonus"
                                                             partBonus = Double.Parse(CType(bonusPart.Value, YamlScalarNode).Value, System.Globalization.CultureInfo.InvariantCulture).ToString("0.##")
                                                         Case "bonusText"
-                                                            partBonusText = CType(bonusPart.Value, YamlScalarNode).Value
+                                                            For Each language In CType(bonusPart.Value, YamlMappingNode).Children
+                                                                If String.Compare(language.Key.ToString(), "en") = 0 Then
+                                                                    partBonusText = CType(language.Value, YamlScalarNode).Value
+                                                                End If
+                                                            Next
                                                         Case "unitID"
                                                             Select Case CType(bonusPart.Value, YamlScalarNode).Value
                                                                 Case "105"
@@ -392,11 +396,27 @@ Public Class FrmCacheCreator
                 Else
                     newItem.MarketGroupId = 0
                 End If
-                newItem.Mass = CDbl(itemRow.Item("mass"))
-                newItem.Capacity = CDbl(itemRow.Item("capacity"))
-                newItem.Volume = CDbl(itemRow.Item("volume"))
+                If IsDBNull(itemRow.Item("mass")) = False Then
+                    newItem.Mass = CDbl(itemRow.Item("mass"))
+                Else
+                    newItem.Mass = 0
+                End If
+                If IsDBNull(itemRow.Item("capacity")) = False Then
+                    newItem.Capacity = CDbl(itemRow.Item("capacity"))
+                Else
+                    newItem.Capacity = 0
+                End If
+                If IsDBNull(itemRow.Item("volume")) = False Then
+                    newItem.Volume = CDbl(itemRow.Item("volume"))
+                Else
+                    newItem.Volume = 0
+                End If
                 newItem.PortionSize = CInt(itemRow.Item("portionSize"))
-                newItem.BasePrice = CDbl(itemRow.Item("basePrice"))
+                If IsDBNull(itemRow.Item("basePrice")) = False Then
+                    newItem.BasePrice = CDbl(itemRow.Item("basePrice"))
+                Else
+                    newItem.BasePrice = 0
+                End If
                 StaticData.Types.Add(newItem.Id, newItem)
             End If
         Next
@@ -1866,11 +1886,27 @@ Public Class FrmCacheCreator
                             Else
                                 newShip.MarketGroup = CInt(shipRow.Item("marketGroupID"))
                             End If
-                            newShip.BasePrice = CDbl(shipRow.Item("basePrice"))
+                            If IsDBNull(shipRow.Item("basePrice")) Then
+                                newShip.BasePrice = 0
+                            Else
+                                newShip.BasePrice = CDbl(shipRow.Item("basePrice"))
+                            End If
                             newShip.MarketPrice = 0
-                            newShip.Mass = CDbl(shipRow.Item("mass"))
-                            newShip.Volume = CDbl(shipRow.Item("volume"))
-                            newShip.CargoBay = CDbl(shipRow.Item("capacity"))
+                            If IsDBNull(shipRow.Item("mass")) Then
+                                newShip.Mass = 0
+                            Else
+                                newShip.Mass = CDbl(shipRow.Item("mass"))
+                            End If
+                            If IsDBNull(shipRow.Item("volume")) Then
+                                newShip.Volume = 0
+                            Else
+                                newShip.Volume = CDbl(shipRow.Item("volume"))
+                            End If
+                            If IsDBNull(shipRow.Item("capacity")) Then
+                                newShip.CargoBay = 0
+                            Else
+                                newShip.CargoBay = CDbl(shipRow.Item("capacity"))
+                            End If
                             If IsDBNull(shipRow.Item("raceID")) = False Then
                                 newShip.RaceID = CInt(shipRow.Item("raceID"))
                             Else
@@ -2089,11 +2125,30 @@ Public Class FrmCacheCreator
                 newModule.Name = row.Item("invTypes.typeName").ToString.Trim
                 newModule.DatabaseGroup = CInt(row.Item("invGroups.groupID"))
                 newModule.DatabaseCategory = CInt(row.Item("invCategories.categoryID"))
-                newModule.BasePrice = CDbl(row.Item("invTypes.baseprice"))
-                newModule.Volume = CDbl(row.Item("invTypes.volume"))
-                newModule.Capacity = CDbl(row.Item("invTypes.capacity"))
-                newModule.Attributes.Add(AttributeEnum.ModuleCapacity, CDbl(row.Item("invTypes.capacity")))
-                newModule.Attributes.Add(AttributeEnum.ModuleMass, CDbl(row.Item("invTypes.mass")))
+                If IsDBNull(row.Item("invTypes.baseprice")) = False Then
+                    newModule.BasePrice = CDbl(row.Item("invTypes.baseprice"))
+                Else
+                    newModule.BasePrice = 0
+                End If
+                If IsDBNull(row.Item("invTypes.volume")) = False Then
+                    newModule.Volume = CDbl(row.Item("invTypes.volume"))
+                Else
+                    newModule.Volume = 0
+                End If
+                If IsDBNull(row.Item("invTypes.capacity")) = False Then
+                    newModule.Capacity = CDbl(row.Item("invTypes.capacity"))
+                    newModule.Attributes.Add(AttributeEnum.ModuleCapacity, CDbl(row.Item("invTypes.capacity")))
+                Else
+                    newModule.Capacity = 0
+                    newModule.Attributes.Add(AttributeEnum.ModuleCapacity, 0)
+                End If
+
+                If IsDBNull(row.Item("invTypes.mass")) = False Then
+                    newModule.Attributes.Add(AttributeEnum.ModuleMass, CDbl(row.Item("invTypes.mass")))
+                Else
+                    newModule.Attributes.Add(AttributeEnum.ModuleMass, 0)
+                End If
+
                 newModule.MarketPrice = 0
                 ' Get icon from the YAML parsing
                 'newModule.Icon = row.Item("iconFile").ToString
