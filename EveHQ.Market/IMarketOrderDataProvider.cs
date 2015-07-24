@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,16 +41,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 // 
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="IMarketOrderDataProvider.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
-
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace EveHQ.Market
 {
     /// <summary>
     ///     Defines the functional contract for retrieving current market order results.
     /// </summary>
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
     public interface IMarketOrderDataProvider
     {
         #region Public Methods and Operators
@@ -61,8 +67,11 @@ namespace EveHQ.Market
         /// <param name="systemId">The system id.</param>
         /// <param name="minQuantity">The min quantity.</param>
         /// <returns>The <see cref="Task" />.</returns>
-        Task<ItemMarketOrders> GetMarketOrdersForItemType(int itemTypeId, IEnumerable<int> includedRegions,
-            int? systemId, int minQuantity);
+        Task<ItemMarketOrders> GetMarketOrdersForItemType(
+            int itemTypeId, 
+            IEnumerable<int> includedRegions,
+            int? systemId, 
+            int minQuantity);
 
         #endregion
     }

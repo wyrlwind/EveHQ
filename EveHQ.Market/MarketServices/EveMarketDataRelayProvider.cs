@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,19 +41,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 // 
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="EveMarketDataRelayProvider.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
-
-using System;
-using System.Net;
-using System.Threading.Tasks;
-using EveHQ.Common;
-using EveHQ.Market.UnifiedMarketDataFormat;
 
 namespace EveHQ.Market
 {
     /// <summary>
     ///     Eve Market Data Relay uploader.
     /// </summary>
+    using System;
+    using System.Net;
+    using System.Threading.Tasks;
+    using EveHQ.Common;
+    using EveHQ.Market.UnifiedMarketDataFormat;
+
     public class EveMarketDataRelayProvider : IMarketDataReceiver
     {
         #region Constants
@@ -73,7 +79,7 @@ namespace EveHQ.Market
         /// <summary>
         ///     upload key.
         /// </summary>
-        private readonly UploadKey _uploadKey = new UploadKey {Name = "EVE Market Data Relay", Key = "0"};
+        private readonly UploadKey _uploadKey = new UploadKey { Name = "EVE Market Data Relay", Key = "0" };
 
         /// <summary>
         ///     is this provider enabled;

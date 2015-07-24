@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,23 +41,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 // 
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="TextFileCacheProvider.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
-
-using System;
-using System.Collections.Concurrent;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.IO;
-using System.Text;
-using EveHQ.Common.Extensions;
-using Newtonsoft.Json;
 
 namespace EveHQ.Caching
 {
     /// <summary>
     ///     A simple caching system that uses text files for persistence.
     /// </summary>
+    using System;
+    using System.Collections.Concurrent;
+    using System.Diagnostics;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Globalization;
+    using System.IO;
+    using System.Text;
+    using EveHQ.Common.Extensions;
+    using Newtonsoft.Json;
+
     public class TextFileCacheProvider : ICacheProvider
     {
         #region Constants
@@ -103,7 +109,7 @@ namespace EveHQ.Caching
         /// <typeparam name="T">Type to Cache</typeparam>
         public void Add<T>(string key, T value, DateTimeOffset cacheUntil)
         {
-            var cacheitem = new CacheItem<T> {CacheUntil = cacheUntil, Data = value};
+            var cacheitem = new CacheItem<T> { CacheUntil = cacheUntil, Data = value };
 
             _memCache[key] = cacheitem;
             SaveToFile(key, cacheitem);
@@ -149,8 +155,7 @@ namespace EveHQ.Caching
         /// <returns>The cache item</returns>
         [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times",
             Justification =
-                "The disposal may appear to be happening twice, but it doesn't. Without the 2 using clauses, FXcop also complains about not disposing an object before losing scope."
-            )]
+                "The disposal may appear to be happening twice, but it doesn't. Without the 2 using clauses, FXcop also complains about not disposing an object before losing scope.")]
         private CacheItem<T> GetFromDisk<T>(string key)
         {
             string fileName = string.Format(CultureInfo.InvariantCulture, CacheFileFormat, key);

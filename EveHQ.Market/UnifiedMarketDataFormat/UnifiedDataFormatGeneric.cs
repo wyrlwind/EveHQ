@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,15 +41,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 // 
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="UnifiedDataFormatGeneric.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
-
-using System.Collections.ObjectModel;
-using System.Diagnostics.CodeAnalysis;
 
 namespace EveHQ.Market.UnifiedMarketDataFormat
 {
     /// <summary>The Unfied data format for a specific kind of row schema.</summary>
     /// <typeparam name="T">Type that will make up the row sets.</typeparam>
+    using System.Collections.ObjectModel;
+    using System.Diagnostics.CodeAnalysis;
+
     public class UnifiedDataFormat<T> : UnifiedDataFormat
     {
         #region Constructors and Destructors

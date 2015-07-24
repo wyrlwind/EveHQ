@@ -1,7 +1,7 @@
 '==============================================================================
 '
 ' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2014  EveHQ Development Team
+' Copyright © 2005-2015  EveHQ Development Team
 '
 ' This file is part of EveHQ.
 '
@@ -21,7 +21,7 @@
 '
 ' The MIT License (MIT)
 '
-' Copyright © 2005-2014  EveHQ Development Team
+' Copyright © 2005-2015  EveHQ Development Team
 '
 ' Permission is hereby granted, free of charge, to any person obtaining a copy
 ' of this software and associated documentation files (the "Software"), to deal
@@ -310,7 +310,7 @@ Namespace Forms
         Private Sub PrepareTraits(ByVal itemObject As Object)
 
             Dim traits As String = ""
-            If TypeOf (itemObject) Is Ship Then
+            If typeof(itemObject) Is Ship Then
                 traits = ComposeTraits(CType(itemObject, Ship).ID)
             End If
 
@@ -335,7 +335,7 @@ Namespace Forms
         Private Sub PrepareDescription(ByVal item As Object)
 
             Dim description As String
-            If TypeOf (item) Is ShipModule Then
+            If typeof(item) Is ShipModule Then
                 description = CType(item, ShipModule).Description
             Else
                 description = CType(item, Ship).Description

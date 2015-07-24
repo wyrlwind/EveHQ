@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,26 +41,32 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 // 
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="MarketUploader.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
-
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using EveCacheParser;
-using EveHQ.Common.Extensions;
-using EveHQ.Market.UnifiedMarketDataFormat;
 
 namespace EveHQ.Market
 {
     /// <summary>
     ///     Processes Eve cache files, formats the output into the UMDF for upload to the various market services.
     /// </summary>
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Globalization;
+    using System.IO;
+    using System.Linq;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using EveCacheParser;
+    using EveHQ.Common.Extensions;
+    using EveHQ.Market.UnifiedMarketDataFormat;
+
     [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Uploader",
         Justification = "no spelling error here.")]
     public class MarketUploader
@@ -104,7 +110,9 @@ namespace EveHQ.Market
         /// </param>
         /// <param name="marketReceivers">A collection of receiving market services that this object will send data to.</param>
         /// <param name="eveAppDataPath">The path of where the eve application data is.</param>
-        public MarketUploader(DateTimeOffset lastFileChangeTime, IEnumerable<IMarketDataReceiver> marketReceivers,
+        public MarketUploader(
+            DateTimeOffset lastFileChangeTime, 
+            IEnumerable<IMarketDataReceiver> marketReceivers,
             string eveAppDataPath)
         {
             _lastFileChangeTime = lastFileChangeTime;
@@ -162,7 +170,9 @@ namespace EveHQ.Market
         /// <returns>The strong typed data object.</returns>
         [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly",
             Justification = "the spelling is purposeful.")]
-        private static UnifiedDataFormat NormalizeFormat(KeyValuePair<object, object> result,
+        private static UnifiedDataFormat NormalizeFormat(
+            KeyValuePair<object, 
+                object> result,
             IEnumerable<IMarketDataReceiver> receivers)
         {
             if (result.Key == null)
@@ -228,7 +238,7 @@ namespace EveHQ.Market
                 case "GetNewPriceHistory":
                 case "GetOldPriceHistory":
 
-                    var historyData = new UnifiedDataFormat<HistoryRowset> {Columns = HistoryRowset.ColumnNames};
+                    var historyData = new UnifiedDataFormat<HistoryRowset> { Columns = HistoryRowset.ColumnNames };
                     var historyRows = new HistoryRowset
                     {
                         GeneratedAt = fileGenerationTime.ToString(Iso8601Format, CultureInfo.InvariantCulture),
@@ -259,7 +269,7 @@ namespace EveHQ.Market
 
                     // GetOrders is for the current active order list for an item.
                 case "GetOrders":
-                    var orderData = new UnifiedDataFormat<OrderRowset> {Columns = OrderRowset.ColumnNames};
+                    var orderData = new UnifiedDataFormat<OrderRowset> { Columns = OrderRowset.ColumnNames };
                     var orderRowset = new OrderRowset
                     {
                         GeneratedAt = fileGenerationTime.ToString(Iso8601Format, CultureInfo.InvariantCulture),

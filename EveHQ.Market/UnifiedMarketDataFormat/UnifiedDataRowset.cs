@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,15 +41,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 // 
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="UnifiedDataRowset.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
-
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 
 namespace EveHQ.Market.UnifiedMarketDataFormat
 {
     /// <summary>Rowset for a specific type of rows.</summary>
     /// <typeparam name="T">Format of the rows.</typeparam>
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+
     public abstract class UnifiedDataRowset<T>
     {
         #region Public Properties

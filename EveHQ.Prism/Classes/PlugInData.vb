@@ -1,7 +1,7 @@
 ﻿'==============================================================================
 '
 ' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2014  EveHQ Development Team
+' Copyright © 2005-2015  EveHQ Development Team
 '
 ' This file is part of EveHQ.
 '
@@ -21,7 +21,7 @@
 '
 ' The MIT License (MIT)
 '
-' Copyright © 2005-2014  EveHQ Development Team
+' Copyright © 2005-2015  EveHQ Development Team
 '
 ' Permission is hereby granted, free of charge, to any person obtaining a copy
 ' of this software and associated documentation files (the "Software"), to deal
@@ -82,7 +82,7 @@ Public Class PlugInData
             Case 0 ' Return a location
                 ' TODO: Check if any code actually uses this as it should no longer be that useful
                 ' Check the data is Long return the station name
-                If TypeOf (data) Is Integer Then
+                If typeof(data) Is Integer Then
                     Return StaticData.Stations(CInt(data)).StationName
                 Else
                     Return data

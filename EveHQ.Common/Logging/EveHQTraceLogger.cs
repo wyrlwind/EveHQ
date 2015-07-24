@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,19 +41,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 // 
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="EveHQTraceLogger.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
-
-using System;
-using System.Diagnostics;
-using System.IO;
-using System.Text;
-using EveHQ.Common.Extensions;
 
 namespace EveHQ.Common.Logging
 {
     /// <summary>
     ///     ETW listener for EveHQ to log events to file.
     /// </summary>
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Text;
+    using EveHQ.Common.Extensions;
+
     public class EveHQTraceLogger : TraceListener
     {
         #region Constants
