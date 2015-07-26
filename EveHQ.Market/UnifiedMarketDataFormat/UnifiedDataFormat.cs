@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,19 +41,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 // 
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="UnifiedDataFormat.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
-
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.Reflection;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace EveHQ.Market.UnifiedMarketDataFormat
 {
     /// <summary>The unified data format.</summary>
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Globalization;
+    using System.Reflection;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Serialization;
+
     public abstract class UnifiedDataFormat
     {
         #region Constants
@@ -106,14 +112,13 @@ namespace EveHQ.Market.UnifiedMarketDataFormat
         }
 
         /// <summary>Gets or sets the result type.</summary>
-        [JsonConverter(typeof (ResultKindConverter))]
+        [JsonConverter(typeof(ResultKindConverter))]
         public ResultType ResultType { get; set; }
 
         /// <summary>Gets or sets the upload keys.</summary>
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly",
             Justification = "needed for json serialization")]
-        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "to be refactored later."
-            )]
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "to be refactored later.")]
         public List<UploadKey> UploadKeys { get; set; }
 
         /// <summary>Gets the version.</summary>

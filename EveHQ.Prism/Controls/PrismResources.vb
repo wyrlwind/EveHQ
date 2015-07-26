@@ -1,7 +1,7 @@
 '==============================================================================
 '
 ' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2014  EveHQ Development Team
+' Copyright © 2005-2015  EveHQ Development Team
 '
 ' This file is part of EveHQ.
 '
@@ -21,7 +21,7 @@
 '
 ' The MIT License (MIT)
 '
-' Copyright © 2005-2014  EveHQ Development Team
+' Copyright © 2005-2015  EveHQ Development Team
 '
 ' Permission is hereby granted, free of charge, to any person obtaining a copy
 ' of this software and associated documentation files (the "Software"), to deal
@@ -203,8 +203,8 @@ Namespace Controls
             adtResources.Nodes.Clear()
 
             If _currentJob IsNot Nothing Then
-                Dim priceData As Task(Of Dictionary(Of Integer, Double)) = DataFunctions.GetMarketPrices(From r In _currentJob.Resources.Values Where TypeOf (r) Is JobResource Let res = r Select res.TypeID)
-                Dim jobCostTask As Task(Of Dictionary(Of Integer, Double)) = DataFunctions.GetMarketPrices(From r In _currentJob.SubJobs.Values Where TypeOf (r) Is Job Let res = r Select res.TypeID)
+                Dim priceData As Task(Of Dictionary(Of Integer, Double)) = DataFunctions.GetMarketPrices(From r In _currentJob.Resources.Values Where typeof(r) Is JobResource Let res = r Select res.TypeID)
+                Dim jobCostTask As Task(Of Dictionary(Of Integer, Double)) = DataFunctions.GetMarketPrices(From r In _currentJob.SubJobs.Values Where typeof(r) Is Job Let res = r Select res.TypeID)
                 Task.WaitAll(priceData, jobCostTask)
                 ' resource costs
                 Dim resourceCosts As Dictionary(Of Integer, Double) = priceData.Result
@@ -346,8 +346,8 @@ Namespace Controls
         End Sub
 
         Private Sub DisplayJob(ByVal parentJob As Job, ByVal parentRes As Node)
-            Dim resourceTask As Task(Of Dictionary(Of Integer, Double)) = DataFunctions.GetMarketPrices(From r In parentJob.Resources.Values Where TypeOf (r) Is JobResource Let res = r Select res.TypeID)
-            Dim jobTask As Task(Of Dictionary(Of Integer, Double)) = DataFunctions.GetMarketPrices(From r In parentJob.SubJobs.Values Where TypeOf (r) Is Job Let res = r Select res.TypeID)
+            Dim resourceTask As Task(Of Dictionary(Of Integer, Double)) = DataFunctions.GetMarketPrices(From r In parentJob.Resources.Values Where typeof(r) Is JobResource Let res = r Select res.TypeID)
+            Dim jobTask As Task(Of Dictionary(Of Integer, Double)) = DataFunctions.GetMarketPrices(From r In parentJob.SubJobs.Values Where typeof(r) Is Job Let res = r Select res.TypeID)
             Task.WaitAll(resourceTask, jobTask)
             ' resource costs
             Dim resourceCosts As Dictionary(Of Integer, Double) = resourceTask.Result

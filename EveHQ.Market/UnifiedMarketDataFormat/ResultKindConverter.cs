@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,15 +41,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 // 
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="ResultKindConverter.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
-
-using System;
-using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json;
 
 namespace EveHQ.Market.UnifiedMarketDataFormat
 {
     /// <summary>The result kind converter.</summary>
+    using System;
+    using System.Diagnostics.CodeAnalysis;
+    using Newtonsoft.Json;
+
     public class ResultKindConverter : JsonConverter
     {
         #region Public Methods and Operators
@@ -59,7 +65,7 @@ namespace EveHQ.Market.UnifiedMarketDataFormat
         /// <returns>The <see cref="bool" />.</returns>
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof (ResultType);
+            return objectType == typeof(ResultType);
         }
 
         /// <summary>The read json.</summary>
@@ -68,7 +74,10 @@ namespace EveHQ.Market.UnifiedMarketDataFormat
         /// <param name="existingValue">The existing value.</param>
         /// <param name="serializer">The serializer.</param>
         /// <returns>The <see cref="object" />.</returns>
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue,
+        public override object ReadJson(
+            JsonReader reader, 
+            Type objectType, 
+            object existingValue,
             JsonSerializer serializer)
         {
             if (existingValue == null)
@@ -76,7 +85,7 @@ namespace EveHQ.Market.UnifiedMarketDataFormat
                 return null;
             }
 
-            return Enum.Parse(typeof (ResultType), existingValue.ToString());
+            return Enum.Parse(typeof(ResultType), existingValue.ToString());
         }
 
         /// <summary>The write json.</summary>
@@ -92,7 +101,7 @@ namespace EveHQ.Market.UnifiedMarketDataFormat
                 return;
             }
 
-            var kind = (ResultType) value;
+            var kind = (ResultType)value;
             writer.WriteValue(kind.ToString().ToLowerInvariant());
         }
 

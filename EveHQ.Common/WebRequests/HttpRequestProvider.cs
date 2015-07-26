@@ -1,7 +1,7 @@
 ﻿//  ==============================================================================
 //  
 //  EveHQ - An Eve-Online™ character assistance application
-//  Copyright © 2005-2014  EveHQ Development Team
+//  Copyright © 2005-2015  EveHQ Development Team
 //    
 //  This file is part of EveHQ.
 //   
@@ -21,7 +21,7 @@
 //  
 //  The MIT License (MIT)
 //  
-//  Copyright © 2005-2014  EveHQ Development Team
+//  Copyright © 2005-2015  EveHQ Development Team
 //  
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -41,6 +41,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //  
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="HttpRequestProvider.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
 
 namespace EveHQ.Common
@@ -65,7 +71,7 @@ namespace EveHQ.Common
     /// </summary>
     public sealed class HttpRequestProvider : IHttpRequestProvider
     {
-        //  private static readonly string UserAgent = "EveHQ v" + Assembly.GetExecutingAssembly().GetName().Version;
+        // private static readonly string UserAgent = "EveHQ v" + Assembly.GetExecutingAssembly().GetName().Version;
 
         /// <summary>
         ///     user agent value to send along on requests for provider collection.

@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -965,7 +965,7 @@ namespace EveHQ.EveApi
                 let quantityRemaining = row.Attribute("volRemaining").Value.ToInt32()
                 let minVolumn = row.Attribute("minVolume").Value.ToInt32()
                 let orderState =
-                    (MarketOrderState) Enum.Parse(typeof (MarketOrderState), row.Attribute("orderState").Value)
+                    (MarketOrderState) Enum.Parse(typeof(MarketOrderState), row.Attribute("orderState").Value)
                 let typeId = row.Attribute("typeID").Value.ToInt32()
                 let range = row.Attribute("range").Value.ToInt32()
                 let accountKey = row.Attribute("accountKey").Value.ToInt32()

@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,31 +41,37 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 // 
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="EveHQMarketDataProvider.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
-
-using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EveHQ.Caching;
-using EveHQ.Common;
-using EveHQ.Common.Extensions;
-using EveHQ.Market.Properties;
-using Ionic.Zip;
-using Newtonsoft.Json;
 
 namespace EveHQ.Market.MarketServices
 {
     /// <summary>
     ///     Market data provider, utilizing the EveHQ Market Data Service.
     /// </summary>
+    using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Diagnostics.CodeAnalysis;
+    using System.IO;
+    using System.Linq;
+    using System.Net.Http;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+    using EveHQ.Caching;
+    using EveHQ.Common;
+    using EveHQ.Common.Extensions;
+    using EveHQ.Market.Properties;
+    using Ionic.Zip;
+    using Newtonsoft.Json;
+
     public class EveHQMarketDataProvider : IMarketStatDataProvider
     {
         /// <summary>The cache folder.</summary>
@@ -146,13 +152,13 @@ namespace EveHQ.Market.MarketServices
         /// <summary>Gets the supported regions.</summary>
         public IEnumerable<int> SupportedRegions
         {
-            get { return new[] {10000002}; }
+            get { return new[] { 10000002 }; }
         }
 
         /// <summary>Gets the supported systems.</summary>
         public IEnumerable<int> SupportedSystems
         {
-            get { return new[] {30000142}; }
+            get { return new[] { 30000142 }; }
         }
 
         /// <summary>The get order stats.</summary>
@@ -161,8 +167,11 @@ namespace EveHQ.Market.MarketServices
         /// <param name="systemId">The system id.</param>
         /// <param name="minQuantity">The min quantity.</param>
         /// <returns>The <see cref="Task" />.</returns>
-        public Task<IEnumerable<ItemOrderStats>> GetOrderStats(IEnumerable<int> typeIds, IEnumerable<int> includeRegions,
-            int? systemId, int minQuantity)
+        public Task<IEnumerable<ItemOrderStats>> GetOrderStats(
+            IEnumerable<int> typeIds, 
+            IEnumerable<int> includeRegions,
+            int? systemId, 
+            int minQuantity)
         {
             return
                 Task<IEnumerable<ItemOrderStats>>.Factory.TryRun(
@@ -224,11 +233,13 @@ namespace EveHQ.Market.MarketServices
                     {
                         IEnumerable<ItemOrderStats> locationData = DownloadData(marketLocation);
 
-                        _priceCache.Add(ItemKeyFormat.FormatInvariant(marketLocation), locationData,
+                        _priceCache.Add(
+                            ItemKeyFormat.FormatInvariant(marketLocation), 
+                            locationData,
                             DateTimeOffset.Now.Add(_cacheTtl));
 
                         Trace.TraceInformation(Resources.NewMarketData);
-                        // MessageBox.Show(Resources.NewMarketData, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //// MessageBox.Show(Resources.NewMarketData, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         _priceCache.Add(lastDownloadKey, DateTimeOffset.Now, DateTimeOffset.Now.Add(_cacheTtl));
                     }
@@ -239,7 +250,10 @@ namespace EveHQ.Market.MarketServices
                     // log it.
                     Trace.TraceError(e.FormatException());
                     if (!downloadError &&
-                        MessageBox.Show(Resources.ErrorDownloadingData, Resources.ErrorCaption, MessageBoxButtons.YesNo,
+                        MessageBox.Show(
+                            Resources.ErrorDownloadingData, 
+                            Resources.ErrorCaption, 
+                            MessageBoxButtons.YesNo,
                             MessageBoxIcon.Error) == DialogResult.Yes)
                     {
                         retry = true;
@@ -270,7 +284,7 @@ namespace EveHQ.Market.MarketServices
             // if (MessageBox.Show(Resources.DataNotInitialized, Resources.NoMarketDataCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             // {
             DownloadLatestData(marketLocation);
-            //  }
+            // }
         }
 
         /// <summary>The last market update.</summary>
@@ -279,7 +293,8 @@ namespace EveHQ.Market.MarketServices
         private MarketLocationData LastMarketUpdate(int marketLocationId)
         {
             Task<HttpResponseMessage> requestTask =
-                _requestProvider.GetAsync(new Uri(EveHqBaseLocation + marketLocationId.ToInvariantString()),
+                _requestProvider.GetAsync(
+                    new Uri(EveHqBaseLocation + marketLocationId.ToInvariantString()),
                     "application/json");
 
             requestTask.Wait();
@@ -301,7 +316,9 @@ namespace EveHQ.Market.MarketServices
         /// <param name="includeRegions">The include regions.</param>
         /// <param name="systemId">The system id.</param>
         /// <returns>The <see cref="IEnumerable" />.</returns>
-        private IEnumerable<ItemOrderStats> RetrievePriceData(IEnumerable<int> typeIds, IEnumerable<int> includeRegions,
+        private IEnumerable<ItemOrderStats> RetrievePriceData(
+            IEnumerable<int> typeIds, 
+            IEnumerable<int> includeRegions,
             int? systemId)
         {
             // check that we've had some download of data in the cache

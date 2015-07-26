@@ -1,7 +1,7 @@
 '==============================================================================
 '
 ' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2014  EveHQ Development Team
+' Copyright © 2005-2015  EveHQ Development Team
 '
 ' This file is part of EveHQ.
 '
@@ -21,7 +21,7 @@
 '
 ' The MIT License (MIT)
 '
-' Copyright © 2005-2014  EveHQ Development Team
+' Copyright © 2005-2015  EveHQ Development Team
 '
 ' Permission is hereby granted, free of charge, to any person obtaining a copy
 ' of this software and associated documentation files (the "Software"), to deal
@@ -3364,7 +3364,7 @@ Namespace Forms
 
         Private Sub AppCommandTheme_Executed(ByVal sender As Object, ByVal e As EventArgs) Handles AppCommandTheme.Executed
             Dim source As ICommandSource = CType(sender, ICommandSource)
-            If TypeOf (source.CommandParameter) Is String Then
+            If typeof(source.CommandParameter) Is String Then
                 Dim cs As eStyle = CType([Enum].Parse(GetType(eStyle), source.CommandParameter.ToString()), eStyle)
                 ' This is all that is needed to change the color table for all controls on the form
                 UpdateTheme(cs, Color.Empty)
@@ -3380,7 +3380,7 @@ Namespace Forms
                     btnCanvasColor.Enabled = False
                     HQ.Settings.ThemeTint = Color.Empty
                 End If
-            ElseIf TypeOf (source.CommandParameter) Is Color Then
+            ElseIf typeof(source.CommandParameter) Is Color Then
                 Dim tint As Color = CType(source.CommandParameter, Color)
                 If CType(source, ColorPickerDropDown).Text = "Canvas Color" Then
                     ' Updating then metro canvas color

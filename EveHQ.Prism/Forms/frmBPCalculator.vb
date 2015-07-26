@@ -1,7 +1,7 @@
 ﻿'==============================================================================
 '
 ' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2014  EveHQ Development Team
+' Copyright © 2005-2015  EveHQ Development Team
 '
 ' This file is part of EveHQ.
 '
@@ -21,7 +21,7 @@
 '
 ' The MIT License (MIT)
 '
-' Copyright © 2005-2014  EveHQ Development Team
+' Copyright © 2005-2015  EveHQ Development Team
 '
 ' Permission is hereby granted, free of charge, to any person obtaining a copy
 ' of this software and associated documentation files (the "Software"), to deal
@@ -680,7 +680,7 @@ Namespace Forms
                     ' Enable the various parts
                     gpPilotSkills.Enabled = True
                     _updateBPInfo = False
-                    If TypeOf (cboBPs.SelectedItem) Is BPAssetComboboxItem Then
+                    If typeof(cboBPs.SelectedItem) Is BPAssetComboboxItem Then
                         ' This is an owner blueprint!
                         Dim selBP As BPAssetComboboxItem = CType(cboBPs.SelectedItem, BPAssetComboboxItem)
                         Dim bpID As Integer = StaticData.TypeNames(selBP.Name)

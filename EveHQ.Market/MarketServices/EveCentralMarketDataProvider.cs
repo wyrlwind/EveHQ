@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,28 +41,34 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 // 
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="EveCentralMarketDataProvider.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
-
-using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Web;
-using System.Xml.Linq;
-using EveHQ.Caching;
-using EveHQ.Common;
-using EveHQ.Common.Extensions;
-using EveHQ.Market.UnifiedMarketDataFormat;
 
 namespace EveHQ.Market.MarketServices
 {
     /// <summary>
     ///     Market data provider, sourcing data from Eve-Central.com
     /// </summary>
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.Specialized;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Linq;
+    using System.Net.Http;
+    using System.Threading.Tasks;
+    using System.Web;
+    using System.Xml.Linq;
+    using EveHQ.Caching;
+    using EveHQ.Common;
+    using EveHQ.Common.Extensions;
+    using EveHQ.Market.UnifiedMarketDataFormat;
+
     public class EveCentralMarketDataProvider : IMarketStatDataProvider, IMarketDataReceiver, IMarketOrderDataProvider
     {
         /// <summary>The eve central base url.</summary>
@@ -116,7 +122,7 @@ namespace EveHQ.Market.MarketServices
         private readonly IHttpRequestProvider _requestProvider;
 
         /// <summary>The _upload key.</summary>
-        private readonly UploadKey _uploadKey = new UploadKey {Key = "0", Name = "Eve-Central"};
+        private readonly UploadKey _uploadKey = new UploadKey { Key = "0", Name = "Eve-Central" };
 
         /// <summary>The _next upload attempt.</summary>
         private DateTimeOffset _nextUploadAttempt;
@@ -165,7 +171,7 @@ namespace EveHQ.Market.MarketServices
         {
             // creat the URL for the request
             var requestUri = new Uri(EveCentralBaseUrl + UploadApi);
-            var paramData = new NameValueCollection {{UdfPostParameterName, HttpUtility.UrlEncode(marketData)}};
+            var paramData = new NameValueCollection { { UdfPostParameterName, HttpUtility.UrlEncode(marketData) } };
 
             // send the request and return the task handle after checking the return of the web request
             return _requestProvider.PostAsync(requestUri, paramData).ContinueWith(
@@ -195,8 +201,11 @@ namespace EveHQ.Market.MarketServices
         /// <param name="systemId">Specific system to use to source data (if set will overrride regions)</param>
         /// <param name="minQuantity">Minimum Quantity for an order to be included/</param>
         /// <returns>Returns a reference to the async task.</returns>
-        public Task<ItemMarketOrders> GetMarketOrdersForItemType(int itemTypeId, IEnumerable<int> includedRegions,
-            int? systemId, int minQuantity)
+        public Task<ItemMarketOrders> GetMarketOrdersForItemType(
+            int itemTypeId, 
+            IEnumerable<int> includedRegions,
+            int? systemId, 
+            int minQuantity)
         {
             return Task<ItemMarketOrders>.Factory.TryRun(
                 () =>
@@ -205,7 +214,7 @@ namespace EveHQ.Market.MarketServices
                     IList<int> regionList = includedRegions != null ? includedRegions.ToList() : new List<int>();
                     if (systemId.HasValue)
                     {
-                        cacheKey = CalcCacheKey(new[] {systemId.Value});
+                        cacheKey = CalcCacheKey(new[] { systemId.Value });
                     }
                     else if (includedRegions != null && regionList.Any())
                     {
@@ -213,7 +222,7 @@ namespace EveHQ.Market.MarketServices
                     }
                     else
                     {
-                        cacheKey = CalcCacheKey(new[] {JitaSystemId});
+                        cacheKey = CalcCacheKey(new[] { JitaSystemId });
                     }
 
                     CacheItem<ItemMarketOrders> cachedData =
@@ -222,8 +231,11 @@ namespace EveHQ.Market.MarketServices
                     if (cachedData == null || cachedData.IsDirty)
                     {
                         // make the request for the types we don't have valid caches for
-                        NameValueCollection requestParameters = CreateMarketRequestParameters(new[] {itemTypeId},
-                            regionList, systemId ?? 0, minQuantity);
+                        NameValueCollection requestParameters = CreateMarketRequestParameters(
+                            new[] { itemTypeId },
+                            regionList, 
+                            systemId ?? 0, 
+                            minQuantity);
                         Task<HttpResponseMessage> requestTask =
                             _requestProvider.PostAsync(new Uri(EveCentralBaseUrl + QuickLookApi), requestParameters);
 
@@ -241,7 +253,11 @@ namespace EveHQ.Market.MarketServices
                                     // process result
                                     ItemMarketOrders data = GetMarketOrdersFromXml(stream);
 
-                                    _marketOrderCache.Add(ItemKeyFormat.FormatInvariant(itemTypeId, cacheKey), data,
+                                    _marketOrderCache.Add(
+                                        ItemKeyFormat.FormatInvariant(
+                                            itemTypeId, 
+                                            cacheKey), 
+                                        data,
                                         DateTimeOffset.Now.Add(TimeSpan.FromHours(1)));
 
                                     itemData = data;
@@ -255,7 +271,8 @@ namespace EveHQ.Market.MarketServices
                         }
                         else
                         {
-                            throw new InvalidOperationException("There was a problem requesting the market data.",
+                            throw new InvalidOperationException(
+                                "There was a problem requesting the market data.",
                                 requestTask.Exception);
                         }
                     }
@@ -302,8 +319,11 @@ namespace EveHQ.Market.MarketServices
         /// <returns>The <see cref="Task" />.</returns>
         /// <exception cref="Exception">Thrown when there's an XML exception</exception>
         /// <exception cref="InvalidOperationException">Thrown when there was a problem with the web request.</exception>
-        public Task<IEnumerable<ItemOrderStats>> GetOrderStats(IEnumerable<int> typeIds, IEnumerable<int> includeRegions,
-            int? systemId, int minQuantity)
+        public Task<IEnumerable<ItemOrderStats>> GetOrderStats(
+            IEnumerable<int> typeIds, 
+            IEnumerable<int> includeRegions,
+            int? systemId, 
+            int minQuantity)
         {
             return Task<IEnumerable<ItemOrderStats>>.Factory.TryRun(
                 () =>
@@ -325,7 +345,7 @@ namespace EveHQ.Market.MarketServices
 
                     if (systemId.HasValue)
                     {
-                        cacheKey = CalcCacheKey(new[] {systemId.Value});
+                        cacheKey = CalcCacheKey(new[] { systemId.Value });
                     }
                     else if (includeRegions != null && regionList.Any())
                     {
@@ -333,7 +353,7 @@ namespace EveHQ.Market.MarketServices
                     }
                     else
                     {
-                        cacheKey = CalcCacheKey(new[] {JitaSystemId});
+                        cacheKey = CalcCacheKey(new[] { JitaSystemId });
                     }
 
                     foreach (int typeId in typeIds.Distinct())
@@ -359,8 +379,13 @@ namespace EveHQ.Market.MarketServices
 
                     if (typesToRequest.Any())
                     {
-                        cachedItems.AddRange(RetrieveItems(typesToRequest, regionList, systemId ?? 0, minQuantity,
-                            cacheKey));
+                        cachedItems.AddRange(
+                            RetrieveItems(
+                                typesToRequest, 
+                                regionList, 
+                                systemId ?? 0, 
+                                minQuantity,
+                                cacheKey));
 
                         // add in "dirty/expired" items as filler for items that didn't get downloaded or to smooth over loss of connection issues
                         foreach (
@@ -394,8 +419,11 @@ namespace EveHQ.Market.MarketServices
         /// <param name="systemId">The system id.</param>
         /// <param name="minQuantity">The min quantity.</param>
         /// <returns>The <see cref="Uri" />.</returns>
-        private static NameValueCollection CreateMarketRequestParameters(IEnumerable<int> typesToRequest,
-            IEnumerable<int> regions, int systemId, int minQuantity)
+        private static NameValueCollection CreateMarketRequestParameters(
+            IEnumerable<int> typesToRequest,
+            IEnumerable<int> regions, 
+            int systemId, 
+            int minQuantity)
         {
             var parameters = new NameValueCollection();
 
@@ -568,7 +596,7 @@ namespace EveHQ.Market.MarketServices
                         let buyData = GetOrderData(type.Element("buy"))
                         let sellData = GetOrderData(type.Element("sell"))
                         let allData = GetOrderData(type.Element("all"))
-                        select new ItemOrderStats {ItemTypeId = typeId, Buy = buyData, Sell = sellData, All = allData};
+                        select new ItemOrderStats { ItemTypeId = typeId, Buy = buyData, Sell = sellData, All = allData };
                 }
 
                 // ReSharper restore PossibleNullReferenceException
@@ -584,14 +612,21 @@ namespace EveHQ.Market.MarketServices
         /// <param name="minQuantity">The min quantity.</param>
         /// <param name="cacheKey">The cache key.</param>
         /// <returns>The <see cref="IEnumerable" />.</returns>
-        private IEnumerable<ItemOrderStats> RetrieveItems(List<int> typesToRequest, IEnumerable<int> includeRegions,
-            int systemId, int minQuantity, string cacheKey)
+        private IEnumerable<ItemOrderStats> RetrieveItems(
+            List<int> typesToRequest, 
+            IEnumerable<int> includeRegions,
+            int systemId, 
+            int minQuantity, 
+            string cacheKey)
         {
             var resultItems = new List<ItemOrderStats>();
 
             // make the request for the types we don't have valid caches for
-            NameValueCollection requestParameters = CreateMarketRequestParameters(typesToRequest, includeRegions,
-                systemId, minQuantity);
+            NameValueCollection requestParameters = CreateMarketRequestParameters(
+                typesToRequest, 
+                includeRegions,
+                systemId, 
+                minQuantity);
 
             Task<HttpResponseMessage> requestTask =
                 _requestProvider.PostAsync(new Uri(EveCentralBaseUrl + MarketStatApi), requestParameters);
@@ -613,10 +648,14 @@ namespace EveHQ.Market.MarketServices
                         // cache it.
                         foreach (ItemOrderStats item in retrievedItems)
                         {
-                            _regionDataCache.Add(ItemKeyFormat.FormatInvariant(item.ItemTypeId, cacheKey), item,
+                            _regionDataCache.Add(
+                                ItemKeyFormat.FormatInvariant(item.ItemTypeId, cacheKey), 
+                                item,
                                 DateTimeOffset.Now.Add(_cacheTtl));
                             resultItems.Add(item);
-                            _regionDataCache.Add(ItemKeyFormat.FormatInvariant(item.ItemTypeId, cacheKey), item,
+                            _regionDataCache.Add(
+                                ItemKeyFormat.FormatInvariant(item.ItemTypeId, cacheKey), 
+                                item,
                                 DateTimeOffset.Now.Add(_cacheTtl));
                             resultItems.Add(item);
                         }

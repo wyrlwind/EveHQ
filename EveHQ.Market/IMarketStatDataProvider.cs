@@ -1,7 +1,7 @@
 ﻿// ==============================================================================
 // 
 // EveHQ - An Eve-Online™ character assistance application
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 //   
 // This file is part of EveHQ.
 //  
@@ -21,7 +21,7 @@
 // 
 // The MIT License (MIT)
 // 
-// Copyright © 2005-2014  EveHQ Development Team
+// Copyright © 2005-2015  EveHQ Development Team
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -41,18 +41,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 // 
+// ------------------------------------------------------------------------------
+// 
+// <copyright file="IMarketStatDataProvider.cs" company="EveHQ Development Team">
+//     Copyright © 2005-2015  EveHQ Development Team
+// </copyright>
+// 
 // ==============================================================================
-
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Threading.Tasks;
 
 namespace EveHQ.Market
 {
     /// <summary>
     ///     Defines the functional contract for an object that wishes to provide Eve Market Data for items.
     /// </summary>
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Threading.Tasks;
+
     public interface IMarketStatDataProvider
     {
         #region Public Properties
@@ -84,8 +89,11 @@ namespace EveHQ.Market
         /// <returns>The <see cref="IAsyncResult" />.</returns>
         [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures",
             Justification = "This is the only way to return a strong typed collection from a task.")]
-        Task<IEnumerable<ItemOrderStats>> GetOrderStats(IEnumerable<int> typeIds, IEnumerable<int> includeRegions,
-            int? systemId, int minQuantity);
+        Task<IEnumerable<ItemOrderStats>> GetOrderStats(
+            IEnumerable<int> typeIds, 
+            IEnumerable<int> includeRegions,
+            int? systemId, 
+            int minQuantity);
 
         #endregion
     }
