@@ -1631,10 +1631,10 @@ Hairstylesÿ
 ¢¢
 Ship SKINs
 ££Battlecruisers¢
-¤¤Amarr£
-¥¥Caldari£
-¦¦Gallente£
-§§Minmatar£
+¤¤Amarrµ
+¥¥Caldariµ
+¦¦Gallenteµ
+§§Minmatarµ
 ¨¨Battleships¢
  ©©Faction Battleships¨
 !ªªStandard Battleships¨
@@ -1671,10 +1671,10 @@ Destroyers¢
 ÇÇCaldariì
 ÈÈGallenteì
 ÉÉMinmatarì
-ÊÊAmarrÅ
-ËËCaldariÅ
-ÌÌGallenteÅ
-ÍÍMinmatarÅ
+ÊÊAmarró
+ËËCaldarió
+ÌÌGallenteó
+ÍÍMinmataró
 ÎÎFrigates¢
 ÏÏFaction FrigatesÎ
 ĞĞNavy FactionÏ
@@ -1684,10 +1684,10 @@ Destroyers¢
 ÔÔGallenteÑ
 ÕÕMinmatarÑ
 ÖÖIndustrial Ships¢
-××AmarrÖ
-ØØCaldariÖ
-ÙÙGallenteÖ
-ÚÚMinmatarÖ
+××Amarr¥
+ØØCaldari¥
+ÙÙGallente¥
+ÚÚMinmatar¥
 ÛÛMining Barges¢
 ÜÜExhumersÛ
 İİUnknown Components
@@ -1709,6 +1709,89 @@ Destroyers¢
 ííFaction CruisersÄ
 îîPirate Factioní
 ïïPirate FactionÏ
+'ğ"ğMissile Guidance Computers
+'ñ"ñMissile Guidance Enhancers
+òòGallenteŸ
+ óóStandard DestroyersÅ
+ ôôAdvanced DestroyersÅ
+õõInterdictorsô
+ööAmarrõ
+÷÷Caldariõ
+øøGallenteõ
+ùùMinmatarõ
+úúAdvanced FrigatesÎ
+ûûAssault Frigatesú
+üü
+Covert Opsú
+'ı"ıElectronic Attack Frigatesú
+şşInterceptorsú
+ÿÿAmarrû
+€€Caldariû
+Gallenteû
+‚‚Minmatarû
+ƒƒAmarrü
+„„Caldariü
+……Gallenteü
+††Minmatarü
+‡‡Amarrı
+ˆˆCaldariı
+‰‰Gallenteı
+ŠŠMinmatarı
+‹‹Amarrş
+ŒŒCaldariş
+Gallenteş
+Minmatarş
+Navy Factioní
+Advanced CruisersÄ
+#‘‘Heavy Assault Cruisers
+(’#’Heavy Interdiction Cruisers
+““	Logistics
+””Recon Ships
+••Amarr‘
+––Caldari‘
+——Gallente‘
+˜˜Minmatar‘
+™™Amarr’
+ššCaldari’
+››Gallente’
+œœMinmatar’
+Amarr“
+Caldari“
+ŸŸGallente“
+  Minmatar“
+¡¡Amarr”
+¢¢Caldari”
+££Gallente”
+¤¤Minmatar”
+&¥!¥Standard Industrial ShipsÖ
+&¦!¦Advanced Industrial ShipsÖ
+§§Transport Ships¦
+¨¨Amarr§
+©©Caldari§
+ªªGallente§
+««Minmatar§
+¬¬Caldariµ
+­­Minmatarµ
+®®Jump Freighters°
+¯¯Amarr®
+°°Caldari®
+±±Gallente®
+²²Minmatar®
+$³³Advanced Battlecruisers£
+#´´Faction Battlecruisers£
+$µµStandard Battlecruisers£
+¶¶Command Ships³
+··Navy Faction´
+¸¸Amarr¶
+¹¹Caldari¶
+ººGallente¶
+»»Minmatar¶
+¼¼Navy Faction©
+½½	Black Opsæ
+¾¾Amarr½
+¿¿Caldari½
+ÀÀGallente½
+ÁÁMinmatar½
 ±®±®Infantry Gear
 •Ê•ÊGrenadesŸÊ
 "šÊšÊDropsuits and Gear±®
@@ -1748,7 +1831,7 @@ Propulsion¬Ê
 ÅÊÅÊRailgunÊ
 ÈÊÈÊMissileÊ
 ÍÊÍÊSmallÅÊ
-áÊáÊSkills±®
+áÊáÊSkillsÒÄ
 %óÊóÊHeavy Attack VehiclesÊ
 %ôÊôÊLight Attack VehiclesÊ
 õÊõÊ	DropshipsÊ
@@ -1837,7 +1920,7 @@ Propulsion¬Ê
 ¹Ñ¹ÑLarge®Ñ
 ºÑºÑSmallÈÊ
 »Ñ»ÑLargeÈÊ
-æÑæÑBoosters±®
+æÑæÑBoostersÒÄ
  îÑîÑPassive BoostersæÑ
 ïÑïÑActive BoostersæÑ
 "ƒÒƒÒHeavy Machine Guns‘œ
@@ -2006,7 +2089,7 @@ $ÊªÊªAmmo Expansion Units¸Ê
 ,Ëª&ËªBlaster Ammo Expansion UnitsÊª
 5Ìª/Ìª%Missile Launcher Ammo Expansion UnitsÊª
 ,Íª&ÍªRailgun Ammo Expansion UnitsÊª
-úªúªFitted VehiclesÎ·
+ úªúªVehicle LoadoutsÎ·
 ıªıªDropshipúª
 *şª$şªLight Attack Vehicle (LAV)úª
 *ÿª$ÿªHeavy Attack Vehicle (HAV)úª
@@ -2116,9 +2199,9 @@ $ÊªÊªAmmo Expansion Units¸Ê
 ¢±¢±Advanced ±
 £±£±	Prototype ±
 ş¶ş¶	Services Ò·
-Î·Î·Bundles±®
+Î·Î·Special Offers±®
 Ñ·Ñ·Item Bundles¾¦
-Ò·Ò·Services±®
+Ò·Ò·ServicesÒÄ
 Ó·Ó·AgentsÒ·
 $é·é·Visual Customization±®
 ›¹›¹Salvage±®
@@ -2164,3 +2247,4 @@ Heat Sinks–Â
 ÉÄÉÄSKINÈÄ
 ÊÄÊÄSKIN¬«
 ËÄËÄSKINÊÄ
+#ÒÄÒÄBoosters & Services±®

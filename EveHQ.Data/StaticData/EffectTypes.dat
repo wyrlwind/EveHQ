@@ -3715,4 +3715,42 @@ $ / /shipBonusSentryShieldHPGC3
 +Ð/&Ð/!shipBonusLightMissileAllDamageMC2
 =Ñ/8Ñ/3shipShieldCapacityAdditionCaldariTacticalDestroyer2
 8Ò/3Ò/.shipMissileReloadTimeCaldariTacticalDestroyer2
+Ó/Ó/shipBonusWDFGMass
 !Ø/Ø/entosisDurationMultiply
+$Þ/Þ/missileVelocityBonusOnline
+*ß/%ß/ missileExplosionDelayBonusOnline
+(à/#à/missileAOECloudSizeBonusOnline
+'á/"á/missileAOEVelocityBonusOnline
+!â/â/missileAOEVelocityBonus
+"ã/ã/missileAOECloudSizeBonus
+ä/ä/missileVelocityBonus
+$å/å/missileExplosionDelayBonus
+=ð/8ð/3scriptMissileGuidanceComputerAOECloudSizeBonusBonus
+<ñ/7ñ/2scriptMissileGuidanceComputerAOEVelocityBonusBonus
+@ò/;ò/6scriptMissileGuidanceComputerMissileVelocityBonusBonus
+?ó/:ó/5scriptMissileGuidanceComputerExplosionDelayBonusBonus
+'ô/"ô/missileGuidanceComputerBonus1
+'õ/"õ/missileGuidanceComputerBonus2
+'ö/"ö/missileGuidanceComputerBonus3
+'÷/"÷/missileGuidanceComputerBonus4
+*ø/%ø/ overloadSelfMissileGuidanceBonus
+8ù/3ù/.overloadSelfMissileGuidanceExplosionDelayBonus
+5ú/0ú/+overloadSelfMissileGuidanceAOEVelocityBonus
+6û/1û/,overloadSelfMissileGuidanceAOECloudSizeBonus
++ü/&ü/!overloadSelfMissileGuidanceBonus2
++ý/&ý/!overloadSelfMissileGuidanceBonus3
++þ/&þ/!overloadSelfMissileGuidanceBonus4
+9ÿ/4ÿ//overloadSelfMissileGuidanceMissileVelocityBonus
++€0&€0!overloadSelfMissileGuidanceBonus5
+.0)0$tacticalDestroyerGallenteSkillLevel1
+.‚0)‚0$tacticalDestroyerGallenteSkillLevel2
+.ƒ0)ƒ0$tacticalDestroyerGallenteSkillLevel3
+2„0-„0(shipHeatDamageGallenteTacticalDestroyer3
+.…0)…0$shipSHTRoFGallenteTacticalDestroyer1
+3†0.†0)shipSHTTrackingGallenteTacticalDestroyer2
+"‡0‡0modeHullResonancePostDiv
+(ˆ0#ˆ0shipModeSHTOptimalRangePostDiv
+‰0‰0modeMWDCapPostDiv
+Š0Š0modeMWDBoostPostDiv
+%‹0 ‹0modeArmorRepDurationPostDiv
+Ž0Ž0passiveMassAdd
