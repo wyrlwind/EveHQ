@@ -512,7 +512,7 @@ Public Class FrmCacheCreator
     Private Sub LoadItemGroups()
 
         StaticData.TypeGroups.Clear()
-        Using evehqData As DataSet = DatabaseFunctions.GetStaticData("SELECT * FROM invGroups ORDER BY groupName;")
+        Using evehqData As DataSet = DatabaseFunctions.GetStaticData("SELECT * FROM invGroups inner join invCategories on invGroups.categoryID = invCategories.categoryID where invCategories.published = 1 ORDER BY groupName;")
             Dim iKey As Integer
             Dim iValue As String
             For item As Integer = 0 To evehqData.Tables(0).Rows.Count - 1
@@ -527,7 +527,7 @@ Public Class FrmCacheCreator
     Private Sub LoadGroupCats()
 
         StaticData.GroupCats.Clear()
-        Using evehqData As DataSet = DatabaseFunctions.GetStaticData("SELECT * FROM invGroups ORDER BY groupName;")
+        Using evehqData As DataSet = DatabaseFunctions.GetStaticData("SELECT * FROM invGroups inner join invCategories on invGroups.categoryID = invCategories.categoryID where invCategories.published = 1 ORDER BY groupName;")
             Dim iKey As Integer
             Dim iValue As Integer
             For item As Integer = 0 To evehqData.Tables(0).Rows.Count - 1
@@ -1152,7 +1152,7 @@ Public Class FrmCacheCreator
                 StaticData.Blueprints(CInt(bp.Item("typeID:1"))).Resources(newReq.Activity).Add(newReq.TypeId, newReq)
             End If
         Next
-        
+
         ' Add in material requirements
         evehqData = DatabaseFunctions.GetStaticData("SELECT industryActivityMaterials.*, invTypes.typeName, invGroups.groupID, invGroups.categoryID FROM invGroups INNER JOIN (invTypes INNER JOIN industryActivityMaterials ON invTypes.typeID = industryActivityMaterials.materialTypeID) ON invGroups.groupID = invTypes.groupID ORDER BY industryActivityMaterials.typeID;")
         For Each bp As DataRow In evehqData.Tables(0).Rows
