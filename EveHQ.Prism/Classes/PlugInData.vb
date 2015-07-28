@@ -164,6 +164,11 @@ Public Class PlugInData
         CategoryNames.Clear()
         Products.Clear()
         For Each bp As EveData.Blueprint In StaticData.Blueprints.Values
+
+            If bp.ProductId = 0 Then
+                Continue For
+            End If
+
             If StaticData.Types.ContainsKey(bp.ProductId) Then
                 Dim catID As Integer = StaticData.Types(bp.ProductId).Category
                 If CategoryNames.ContainsKey(StaticData.TypeCats(catID)) = False Then
