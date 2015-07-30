@@ -658,6 +658,10 @@
 1935,2,213,349,6,0,0,0,0,8,Tracking Computer - Falloff
 1935,2,213,351,6,0,0,0,0,8,Tracking Computer - Optimal Range
 1935,2,213,767,6,0,0,0,0,8,Tracking Computer - Tracking Speed
+1935,2,1396,848,6,0,0,0,0,15,Missile Guidance Computer - Explosion Radius
+1935,2,1396,847,6,0,0,0,0,15,Missile Guidance Computer - Explosion Velocity
+1935,2,1396,547,6,0,0,0,0,15,Missile Guidance Computer - Missile Velocity
+1935,2,1396,596,6,0,0,0,0,15,Missile Guidance Computer - Missile Flight Time
 1206,2,899,73,6,0,0,0,0,8,Warp Disruption Field Generator - Cycle Time
 # MODULE ATTRIBUTE MAPPING,,,,,,,,,,
 # FITTING,,,,,,,,,,
@@ -729,6 +733,10 @@
 146,2,372,263,3,6,0,0,0,15,T2 Autocannon - Shield HP
 652,2,372,552,3,6,0,0,0,15,T2 Autocannon - Signature Radius
 # SCRIPTS,,,,,,,,,,
+2023,2,1400,848,6,0,0,0,0,15,Missile Guidance Computer - Explosion Radius
+2024,2,1400,847,6,0,0,0,0,15,Missile Guidance Computer - Explosion Velocity
+2025,2,1400,547,6,0,0,0,0,15,Missile Guidance Computer - Missile Velocity
+2026,2,1400,596,6,0,0,0,0,15,Missile Guidance Computer - Missile Flight Time
 1313,2,910,309,6,0,0,0,0,15,Sensor Booster - Max Target Range
 1314,2,910,566,6,0,0,0,0,15,Sensor Booster - Scan Resolution
 1313,2,911,309,6,0,0,0,0,15,Sensor Dampener - Max Target Range
@@ -986,6 +994,16 @@
 213,2,367,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Damage Bonus - Explosive
 213,2,367,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Damage Bonus - Kinetic
 213,2,367,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Damage Bonus - Thermal
+# Missile guidance enhancers,,,,,,,,,,
+547,2,1395,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Missile Velocity Multiplier			
+847,2,1395,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Missile Explosion Velocity Multiplier		
+848,2,1395,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Missile Explosion Radius Multiplier		
+596,2,1395,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Missile Flight Time
+# Missile guidance computers,,,,,,,,,,
+547,2,1396,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Missile Velocity Multiplier			
+847,2,1396,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Missile Explosion Velocity Multiplier		
+848,2,1396,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Missile Explosion Radius Multiplier		
+596,2,1396,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Missile Flight Time
 # Gyrostabilizers,,,,,,,,,,
 204,2,59,10013,2,55,1,0,0,14,ROF
 64,2,59,10016,2,55,1,0,5,14,Damage Bonus
