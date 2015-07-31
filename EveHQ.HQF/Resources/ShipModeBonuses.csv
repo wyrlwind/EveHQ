@@ -43,7 +43,7 @@
 34828,2,0,0,37,2,387;648;384;653;394,0,0,0,66.66666666,15,Sharpshooter Mode - Rocket & Light Missile Velocity
 34828,2,0,0,76,1,34828,0,0,0,100,15,Sharpshooter Mode - Targeting Range
 34828,2,0,0,564,1,34828,0,0,0,100,15,Sharpshooter Mode - Scan Resolution
-34828,2,0,0,209,1,34828,0,0,0,100,15,Sharpshooter Mode - Sensor Strength
+34828,2,0,0,211,1,34828,0,0,0,100,15,Sharpshooter Mode - Sensor Strength
 
 34828,3,0,0,37,1,34828,0,1,0,33.66666667,15,Propulsion Mode - Max Velocity
 34828,3,0,0,70,1,34828,0,1,0,-66.66666667,15,Propulsion Mode - Inertia
@@ -53,17 +53,17 @@
 35683,1,0,0,268,1,35683,0,1,2,-33.33333333,15,Defence Mode - Armor Explosive Resistence
 35683,1,0,0,269,1,35683,0,1,2,-33.33333333,15,Defence Mode - Armor Kinetic Resistence
 35683,1,0,0,270,1,35683,0,1,2,-33.33333333,15,Defence Mode - Armor Thermal Resistence
-35683,1,0,0,974,1,35683,0,1,2,-33.33333333,15,Defence Mode - Hull EM Resistence
-35683,1,0,0,975,1,35683,0,1,2,-33.33333333,15,Defence Mode - Hull Explosive Resistence
-35683,1,0,0,976,1,35683,0,1,2,-33.33333333,15,Defence Mode - Hull Kinetic Resistence
-35683,1,0,0,977,1,35683,0,1,2,-33.33333333,15,Defence Mode - Hull Thermal Resistence
-#35683,1,0,0,630,1,62;1199,0,1,0,-33.33333333,15,Defence Mode - Armor repair duration
+35683,1,0,0,113,1,35683,0,1,2,-33.33333333,15,Defence Mode - Hull EM Resistence
+35683,1,0,0,111,1,35683,0,1,2,-33.33333333,15,Defence Mode - Hull Explosive Resistence
+35683,1,0,0,109,1,35683,0,1,2,-33.33333333,15,Defence Mode - Hull Kinetic Resistence
+35683,1,0,0,110,1,35683,0,1,2,-33.33333333,15,Defence Mode - Hull Thermal Resistence
+35683,1,0,0,73,2,62;1199,0,1,0,-33.33333333,15,Defence Mode - Armor repair duration
 
-#35683,2,0,0,160,4,564;561,0,0,0,66.66666667,15,Sharpshooter Mode - Small Hybrid Optimal
+35683,2,0,0,54,1,564;561,0,0,0,66.66666667,15,Sharpshooter Mode - Small Hybrid Optimal
 35683,2,0,0,76,1,35683,0,0,0,100,15,Sharpshooter Mode - Targeting Range
 35683,2,0,0,564,1,35683,0,0,0,100,15,Sharpshooter Mode - Scan Resolution
-#35683,2,0,0,209,1,35683,0,0,0,100,15,Sharpshooter Mode - Sensor Strength
+35683,2,0,0,210,1,35683,0,0,0,100,15,Sharpshooter Mode - Sensor Strength
 
-#35683,3,0,0,80,1,131,0,1,0,66.66666667,15,Propulsion Mode - MWD speed boost
-#35683,3,0,0,6,1,131,0,1,0,66.66666667,15,Propulsion Mode - MWD capacitor use
+35683,3,0,0,20,2,46,0,1,0,66.66666667,15,Propulsion Mode - MWD speed boost
+35683,3,0,0,6,2,46,0,1,0,-66.66666667,15,Propulsion Mode - MWD capacitor use
 35683,3,0,0,70,1,35683,0,1,0,-66.66666667,15,Propulsion Mode - Inertia
