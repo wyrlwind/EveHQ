@@ -1371,7 +1371,8 @@
 614,2,782,10004,3,6,0,0,0,15,Cargohold Optimization
 317,2,782,6,2,46,0,0,0,15,Dynamic Fuel Valve
 66,2,782,73,2,46,0,0,0,15,Engine Thermal Shielding
-1131,2,782,10002,3,6,0,0,0,15,Higgs Anchor - Mass
+1131,2,1308,10002,3,6,0,0,0,15,Higgs Anchor - Mass
+315,2,1308,37,3,6,0,0,0,15,Higgs Anchor - Speed
 624,2,782,1281,3,6,1,0,0,15,Hyperspatial Velocity Optimizer
 151,2,782,70,3,6,1,0,0,15,Low Friction Nozzle Joints
 1076,2,782,37,3,6,1,0,0,15,Polycarbon Engine Housing - Velocity
