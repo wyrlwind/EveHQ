@@ -88,32 +88,33 @@ Public Class ShipModule
     <ProtoMember(29)> Public Property IsImplant() As Boolean
     <ProtoMember(30)> Public Property IsBooster() As Boolean
     <ProtoMember(31)> Public Property IsContainer() As Boolean
+    <ProtoMember(32)> Public Property IsMissile() As Boolean
 
     ' Skills
-    <ProtoMember(32)> Public Property RequiredSkills() As New SortedList(Of String, ItemSkills)
+    <ProtoMember(33)> Public Property RequiredSkills() As New SortedList(Of String, ItemSkills)
 
     ' Named Attributes
-    <ProtoMember(33)> Public Property ChargeSize() As Integer
+    <ProtoMember(34)> Public Property ChargeSize() As Integer
 
     ' Attributes
-    <ProtoMember(34)> Public Property Attributes() As New SortedList(Of Integer, Double) ' AttributeID, AttributeValue
+    <ProtoMember(35)> Public Property Attributes() As New SortedList(Of Integer, Double) ' AttributeID, AttributeValue
 
     ' Charges
-    <ProtoMember(35)> Public Property Charges() As New List(Of Integer)
+    <ProtoMember(36)> Public Property Charges() As New List(Of Integer)
 
-    <ProtoMember(36)> Public Property LoadedCharge() As ShipModule
+    <ProtoMember(37)> Public Property LoadedCharge() As ShipModule
 
     'Audit Log
-    <ProtoMember(37)> Public Property AuditLog() As New List(Of String)
+    <ProtoMember(38)> Public Property AuditLog() As New List(Of String)
 
     ' Module State
-    <ProtoMember(38)> Public Property ModuleState() As ModuleStates = ModuleStates.Active
+    <ProtoMember(40)> Public Property ModuleState() As ModuleStates = ModuleStates.Active
 
     ' Implant Groups
-    <ProtoMember(39)> Public Property ImplantGroups() As New List(Of String)
+    <ProtoMember(41)> Public Property ImplantGroups() As New List(Of String)
 
     ' Affected by
-    <ProtoMember(40)> Public Property Affects() As New List(Of String)
+    <ProtoMember(42)> Public Property Affects() As New List(Of String)
 
 #End Region
 

@@ -2174,6 +2174,17 @@ Public Class FrmCacheCreator
                         newModule.IsContainer = True
                     Case 8 ' Charge
                         newModule.IsCharge = True
+
+                        Dim missiles = {654, 656, 655, 653, 648, 657, 772, 386, 385, 384, 387, 89, 476, 1019, 88, 1158, 394, 395, 396}
+                        Dim group = CInt(row.Item("invGroups.groupID"))
+
+                        For Each missileGroup In missiles
+                            If missileGroup = group Then
+                                newModule.IsMissile = True
+                                Exit For
+                            End If
+                        Next
+
                     Case 18 ' Drone
                         newModule.IsDrone = True
                     Case 20 ' Implant
