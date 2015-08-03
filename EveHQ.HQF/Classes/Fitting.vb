@@ -543,7 +543,7 @@ Imports EveHQ.Common.Extensions
         Dim shipPilot As FittingPilot = FittingPilots.HQFPilots(PilotName)
 
         ' Setup performance info - just in case!
-        Const Stages As Integer = 23
+        Const Stages As Integer = 24
         Dim pStages(Stages) As String
         Dim pStageTime(Stages) As DateTime
         pStages(0) = "Start Timing: "
@@ -563,13 +563,14 @@ Imports EveHQ.Common.Extensions
         pStages(14) = "Applying Charge Effects to Ship: "
         pStages(15) = "Rebuilding Module Effects: "
         pStages(16) = "Recalculating Stacking Penalties: "
-        pStages(17) = "Applying Module Effects to Modules: "
-        pStages(18) = "Rebuilding Module Effects: "
-        pStages(19) = "Recalculating Stacking Penalties: "
-        pStages(20) = "Applying Module Effects to Drones: "
-        pStages(21) = "Applying Module Effects to Ship: "
-        pStages(22) = "Calculating Damage Statistics: "
-        pStages(23) = "Calculating Defence Statistics: "
+        pStages(17) = "Applying Module Effects to Missiles: "
+        pStages(18) = "Applying Module Effects to Modules: "
+        pStages(19) = "Rebuilding Module Effects: "
+        pStages(20) = "Recalculating Stacking Penalties: "
+        pStages(21) = "Applying Module Effects to Drones: "
+        pStages(22) = "Applying Module Effects to Ship: "
+        pStages(23) = "Calculating Damage Statistics: "
+        pStages(24) = "Calculating Defence Statistics: "
         ' Apply the pilot skills to the ship
         Dim newShip As New Ship
         Select Case buildMethod
@@ -609,19 +610,21 @@ Imports EveHQ.Common.Extensions
                 pStageTime(16) = Now
                 ApplyModuleEffectsToModules(newShip)
                 pStageTime(17) = Now
-                BuildModuleEffects(newShip)
+                ApplyModuleEffectsToMissiles(newShip)
                 pStageTime(18) = Now
-                ApplyStackingPenalties()
+                BuildModuleEffects(newShip)
                 pStageTime(19) = Now
-                ApplyModuleEffectsToDrones(newShip)
+                ApplyStackingPenalties()
                 pStageTime(20) = Now
-                ApplyModuleEffectsToShip(newShip)
+                ApplyModuleEffectsToDrones(newShip)
                 pStageTime(21) = Now
-                CalculateDamageStatistics(newShip)
+                ApplyModuleEffectsToShip(newShip)
                 pStageTime(22) = Now
+                CalculateDamageStatistics(newShip)
+                pStageTime(23) = Now
                 Ship.MapShipAttributes(newShip)
                 CalculateDefenceStatistics(newShip)
-                pStageTime(23) = Now
+                pStageTime(24) = Now
             Case BuildType.BuildEffectsMaps
                 pStageTime(0) = Now
                 BuildSkillEffects(shipPilot)
@@ -657,20 +660,20 @@ Imports EveHQ.Common.Extensions
                 'Me.ApplyStackingPenalties()
                 pStageTime(16) = Now
                 'Me.ApplyModuleEffectsToModules(newShip)
-                pStageTime(17) = Now
-                'Me.BuildModuleEffects(newShip)
                 pStageTime(18) = Now
-                'Me.ApplyStackingPenalties()
+                'Me.BuildModuleEffects(newShip)
                 pStageTime(19) = Now
-                'Me.ApplyModuleEffectsToDrones(newShip)
+                'Me.ApplyStackingPenalties()
                 pStageTime(20) = Now
-                'Me.ApplyModuleEffectsToShip(newShip)
+                'Me.ApplyModuleEffectsToDrones(newShip)
                 pStageTime(21) = Now
-                'Me.CalculateDamageStatistics(newShip)
+                'Me.ApplyModuleEffectsToShip(newShip)
                 pStageTime(22) = Now
+                'Me.CalculateDamageStatistics(newShip)
+                pStageTime(23) = Now
                 'Ship.MapShipAttributes(newShip)
                 'Me.CalculateDefenceStatistics(newShip)
-                pStageTime(23) = Now
+                pStageTime(24) = Now
             Case BuildType.BuildFromEffectsMaps
                 pStageTime(0) = Now
                 'Me.BuildSkillEffects(shipPilot)
@@ -707,19 +710,21 @@ Imports EveHQ.Common.Extensions
                 pStageTime(16) = Now
                 ApplyModuleEffectsToModules(newShip)
                 pStageTime(17) = Now
-                BuildModuleEffects(newShip)
+                ApplyModuleEffectsToMissiles(newShip)
                 pStageTime(18) = Now
-                ApplyStackingPenalties()
+                BuildModuleEffects(newShip)
                 pStageTime(19) = Now
-                ApplyModuleEffectsToDrones(newShip)
+                ApplyStackingPenalties()
                 pStageTime(20) = Now
-                ApplyModuleEffectsToShip(newShip)
+                ApplyModuleEffectsToDrones(newShip)
                 pStageTime(21) = Now
-                CalculateDamageStatistics(newShip)
+                ApplyModuleEffectsToShip(newShip)
                 pStageTime(22) = Now
+                CalculateDamageStatistics(newShip)
+                pStageTime(23) = Now
                 Ship.MapShipAttributes(newShip)
                 CalculateDefenceStatistics(newShip)
-                pStageTime(23) = Now
+                pStageTime(24) = Now
         End Select
         If PluginSettings.HQFSettings.ShowPerformanceData = True Then
             Dim dTime As TimeSpan
@@ -1678,19 +1683,42 @@ Imports EveHQ.Common.Extensions
         Dim att As Integer
         For Each aModule As ShipModule In newShip.SlotCollection
             If aModule.LoadedCharge IsNot Nothing Then
-                For attNo As Integer = 0 To aModule.LoadedCharge.Attributes.Keys.Count - 1
-                    att = aModule.LoadedCharge.Attributes.Keys(attNo)
-                    If _moduleEffectsTable.ContainsKey(att) = True Then
-                        For Each fEffect As FinalEffect In _moduleEffectsTable(att)
-                            If ProcessFinalEffectForModule(aModule.LoadedCharge, fEffect) = True Then
-                                Call ApplyFinalEffectToModule(aModule.LoadedCharge, fEffect, att)
-                            End If
-                        Next
-                    End If
-                Next
+                If aModule.LoadedCharge.IsMissile = False Then
+                    For attNo As Integer = 0 To aModule.LoadedCharge.Attributes.Keys.Count - 1
+                        att = aModule.LoadedCharge.Attributes.Keys(attNo)
+                        If _moduleEffectsTable.ContainsKey(att) = True Then
+                            For Each fEffect As FinalEffect In _moduleEffectsTable(att)
+                                If ProcessFinalEffectForModule(aModule.LoadedCharge, fEffect) = True Then
+                                    Call ApplyFinalEffectToModule(aModule.LoadedCharge, fEffect, att)
+                                End If
+                            Next
+                        End If
+                    Next
+                End If
             End If
         Next
     End Sub
+
+    Private Sub ApplyModuleEffectsToMissiles(ByRef newShip As Ship)
+        Dim att As Integer
+        For Each aModule As ShipModule In newShip.SlotCollection
+            If aModule.LoadedCharge IsNot Nothing Then
+                If aModule.LoadedCharge.IsMissile Then
+                    For attNo As Integer = 0 To aModule.LoadedCharge.Attributes.Keys.Count - 1
+                        att = aModule.LoadedCharge.Attributes.Keys(attNo)
+                        If _moduleEffectsTable.ContainsKey(att) = True Then
+                            For Each fEffect As FinalEffect In _moduleEffectsTable(att)
+                                If ProcessFinalEffectForModule(aModule.LoadedCharge, fEffect) = True Then
+                                    Call ApplyFinalEffectToModule(aModule.LoadedCharge, fEffect, att)
+                                End If
+                            Next
+                        End If
+                    Next
+                End If
+            End If
+        Next
+    End Sub
+
     Private Sub ApplyModuleEffectsToModules(ByRef newShip As Ship)
         Dim att As Integer
         For Each aModule As ShipModule In newShip.SlotCollection
