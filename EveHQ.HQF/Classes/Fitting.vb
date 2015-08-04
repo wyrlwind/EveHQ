@@ -563,10 +563,10 @@ Imports EveHQ.Common.Extensions
         pStages(14) = "Applying Charge Effects to Ship: "
         pStages(15) = "Rebuilding Module Effects: "
         pStages(16) = "Recalculating Stacking Penalties: "
-        pStages(17) = "Applying Module Effects to Missiles: "
-        pStages(18) = "Applying Module Effects to Modules: "
-        pStages(19) = "Rebuilding Module Effects: "
-        pStages(20) = "Recalculating Stacking Penalties: "
+        pStages(17) = "Applying Module Effects to Modules: "
+        pStages(18) = "Rebuilding Module Effects: "
+        pStages(19) = "Recalculating Stacking Penalties: "
+        pStages(20) = "Applying Module Effects to Missiles: "
         pStages(21) = "Applying Module Effects to Drones: "
         pStages(22) = "Applying Module Effects to Ship: "
         pStages(23) = "Calculating Damage Statistics: "
@@ -610,11 +610,11 @@ Imports EveHQ.Common.Extensions
                 pStageTime(16) = Now
                 ApplyModuleEffectsToModules(newShip)
                 pStageTime(17) = Now
-                ApplyModuleEffectsToMissiles(newShip)
-                pStageTime(18) = Now
                 BuildModuleEffects(newShip)
-                pStageTime(19) = Now
+                pStageTime(18) = Now
                 ApplyStackingPenalties()
+                pStageTime(19) = Now
+                ApplyModuleEffectsToMissiles(newShip)
                 pStageTime(20) = Now
                 ApplyModuleEffectsToDrones(newShip)
                 pStageTime(21) = Now
@@ -710,11 +710,11 @@ Imports EveHQ.Common.Extensions
                 pStageTime(16) = Now
                 ApplyModuleEffectsToModules(newShip)
                 pStageTime(17) = Now
-                ApplyModuleEffectsToMissiles(newShip)
-                pStageTime(18) = Now
                 BuildModuleEffects(newShip)
-                pStageTime(19) = Now
+                pStageTime(18) = Now
                 ApplyStackingPenalties()
+                pStageTime(19) = Now
+                ApplyModuleEffectsToMissiles(newShip)
                 pStageTime(20) = Now
                 ApplyModuleEffectsToDrones(newShip)
                 pStageTime(21) = Now
