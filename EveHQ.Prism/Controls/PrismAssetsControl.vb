@@ -498,7 +498,7 @@ Namespace Controls
             Dim testAsset As Classes.AssetItem
             For Each updatedAsset As Classes.AssetItem In assetsUpdated
                 testAsset = updatedAsset
-                Dim updateTarget As IEnumerable(Of Tuple(Of Node, Classes.AssetItem)) = (From assetNode In _assetNodes Where CLng(assetNode.Key) = testAsset.TypeID And testAsset.RawQuantity > -2 Select assetNode).SelectMany(Function(a) a.Value).Select(Function(n) New Tuple(Of Node, Classes.AssetItem)(n, testAsset)).ToList()
+                Dim updateTarget As IEnumerable(Of Tuple(Of Node, Classes.AssetItem)) = (From assetNode In _assetNodes Where (CLng(assetNode.Key) = testAsset.TypeID Or CLng(assetNode.Key) = testAsset.ItemID) And testAsset.RawQuantity > -2 Select assetNode).SelectMany(Function(a) a.Value).Select(Function(n) New Tuple(Of Node, Classes.AssetItem)(n, testAsset)).ToList()
 
 
                 assetNodesToUpdate.AddRange(updateTarget)
