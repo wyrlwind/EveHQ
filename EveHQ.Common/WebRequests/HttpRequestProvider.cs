@@ -150,6 +150,7 @@ namespace EveHQ.Common
                 handler.AllowAutoRedirect = true;
 
                 var request = new HttpClient(handler);
+                request.DefaultRequestHeaders.Add("User-Agent", "EveHQ");
 
                 if (!acceptContentType.IsNullOrWhiteSpace())
                 {
