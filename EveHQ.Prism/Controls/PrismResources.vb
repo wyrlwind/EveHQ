@@ -213,9 +213,9 @@ Namespace Controls
                 For Each resource As JobResource In _currentJob.Resources.Values
                     ' This is a resource so add it
                     If resource.TypeCategory <> 16 Or (resource.TypeCategory = 16 And chkShowSkills.Checked = True) Then
-                        Dim perfectRaw As Integer = CInt(resource.PerfectUnits) * _currentJob.Runs
+                        Dim perfectRaw As Long = CInt(resource.PerfectUnits) * _currentJob.Runs
                         Dim waste As Integer = CInt(resource.WasteUnits)
-                        Dim total As Integer = perfectRaw + waste
+                        Dim total As Long = perfectRaw + waste
                         Dim price As Double = resourceCosts(resource.TypeID)
                         Dim value As Double = total * price
                         ' Add a new list view item
@@ -280,9 +280,9 @@ Namespace Controls
                 Next
                 For Each subJob As Job In _currentJob.SubJobs.Values
                     ' This is another production job
-                    Dim perfectRaw As Integer = CInt(subJob.PerfectUnits) * _currentJob.Runs
+                    Dim perfectRaw As Long = CInt(subJob.PerfectUnits) * _currentJob.Runs
                     Dim waste As Integer = CInt(subJob.WasteUnits)
-                    Dim total As Integer = perfectRaw + waste
+                    Dim total As Long = perfectRaw + waste
                     Dim price As Double = jobCosts(subJob.TypeID)
                     Dim value As Double = total * price
                     Dim newRes As New Node(subJob.TypeName)
@@ -417,7 +417,7 @@ Namespace Controls
                 ' This is another production job
                 Dim perfectRaw As Integer = CInt(subJob.PerfectUnits)
                 Dim waste As Integer = CInt(subJob.WasteUnits)
-                Dim runs As Integer = parentJob.Runs
+                Dim runs As Long = parentJob.Runs
                 Dim total As Integer = perfectRaw + waste
                 Dim price As Double = jobCosts(subJob.TypeID)
                 Dim value As Double = total * price

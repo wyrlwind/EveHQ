@@ -52,11 +52,11 @@ Public Class SkillFunctions
     ' Shared variables for repeated usage
     Shared sTimeSpan, eTimeSpan, tTimeSpan As TimeSpan
 
-    Public Shared Function Roman(ByVal dec As Integer) As String
+	Public Shared Function Roman(ByVal dec As Long) As String
 
         Roman = ""
 
-        Dim intVal(12) As Integer
+        Dim intVal(12) As Long
         Dim strVal(12) As String, intLoopCounter As Integer
 
         intVal(0) = 1 : strVal(0) = "I"
@@ -723,7 +723,7 @@ Public Class SkillFunctions
         Return True
     End Function
 
-    Public Shared Function IsSkillTrained(ByVal cPilot As EveHQPilot, ByVal skillName As String, Optional ByVal toLevel As Integer = 0) As Boolean
+	Public Shared Function IsSkillTrained(ByVal cPilot As EveHQPilot, ByVal skillName As String, Optional ByVal toLevel As Long = 0) As Boolean
         If cPilot.PilotSkills.ContainsKey(skillName) Then
             Dim mySkill As EveHQPilotSkill = cPilot.PilotSkills(skillName)
             Dim myLevel As Integer = CInt(mySkill.Level)

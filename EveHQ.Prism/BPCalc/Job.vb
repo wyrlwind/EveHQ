@@ -62,11 +62,12 @@ Namespace BPCalc
         Public Property TypeName As String
         Public Property PerfectUnits As Double
         Public Property WasteUnits As Double
-        Public Property Runs As Integer
+        Public Property Runs As Long
         Public Property Manufacturer As String
         Public Property BlueprintOwner As String
         Public Property PESkill As Integer
         Public Property IndSkill As Integer
+        Public Property StnMeBonus As Integer
         Public Property ProdImplant As Integer
         Public Property OverridingME As String
         Public Property OverridingPE As String
@@ -123,11 +124,11 @@ Namespace BPCalc
                         Dim subBP As BlueprintAsset = Nothing
 
                         ' Calculate the current perfect and waste resources
-                        Dim waste As Integer
+                        Dim waste As Long
                         Dim perfectRaw As Integer = resource.Quantity
 
                         ' Calculate Waste
-                        waste = CalculateWasteUnits(resource, wasteFactor, matMod)
+                        waste = CalculateWasteUnits(resource, wasteFactor, matMod, StnMeBonus)
 
                         ' Check if we have component iteration active
                         If componentIteration = True Then
@@ -177,7 +178,7 @@ Namespace BPCalc
                             subJob.TypeName = StaticData.Types(resource.TypeId).Name
                             subJob.PerfectUnits = perfectRaw
                             subJob.WasteUnits = waste
-                            subJob.Runs = (perfectRaw + waste) * Runs
+                            subJob.Runs = perfectRaw * Runs + waste
                             subJob.Manufacturer = Manufacturer
                             subJob.BlueprintOwner = BlueprintOwner
                             subJob.PESkill = PESkill
@@ -186,6 +187,7 @@ Namespace BPCalc
                             subJob.AssemblyArray = AssemblyArray
                             subJob.StartTime = Now
                             subJob.ProduceSubJob = True
+                            subJob.StnMeBonus = StnMeBonus
                             ' Set SubJob ME
                             If SubJobMEs.ContainsKey(resource.TypeId) = False Then
                                 SubJobMEs.Add(resource.TypeId, subBps.MELevel)
@@ -258,11 +260,11 @@ Namespace BPCalc
 
                     Dim resource As EveData.BlueprintResource = CurrentBlueprint.Resources(BlueprintActivity.Manufacturing).Item(itemID)
                     ' Calculate the current perfect and waste resources
-                    Dim waste As Integer
+                    Dim waste As Long
                     Dim perfectRaw As Integer = resource.Quantity
 
                     ' Calculate Waste - Mark II!
-                    waste = CalculateWasteUnits(resource, bpwf, matMod)
+                    waste = CalculateWasteUnits(resource, bpwf, matMod, StnMeBonus)
 
                     ' Remove the existing production job
                     SubJobs.Remove(itemID)
@@ -312,11 +314,11 @@ Namespace BPCalc
 
                     Dim resource As EveData.BlueprintResource = CurrentBlueprint.Resources(BlueprintActivity.Manufacturing).Item(itemID)
                     ' Calculate the current perfect and waste resources
-                    Dim waste As Integer
+                    Dim waste As Long
                     Dim perfectRaw As Integer = resource.Quantity
 
                     ' Calculate Waste - Mark II!
-                    waste = CalculateWasteUnits(resource, bpwf, matMod)
+                    waste = CalculateWasteUnits(resource, bpwf, matMod, StnMeBonus)
 
                     ' Remove the resource
                     Resources.Remove(itemID)
@@ -339,7 +341,7 @@ Namespace BPCalc
                     subJob.TypeName = StaticData.Types(resource.TypeId).Name
                     subJob.PerfectUnits = perfectRaw
                     subJob.WasteUnits = waste
-                    subJob.Runs = (perfectRaw + waste) * Runs
+                    subJob.Runs = perfectRaw * Runs + waste
                     subJob.Manufacturer = Manufacturer
                     subJob.BlueprintOwner = BlueprintOwner
                     subJob.PESkill = PESkill
@@ -347,6 +349,7 @@ Namespace BPCalc
                     subJob.ProdImplant = ProdImplant
                     subJob.AssemblyArray = AssemblyArray
                     subJob.StartTime = Now
+                    subJob.StnMeBonus = StnMeBonus
 
                     ' Do the iteration on the component BP
                     subJob.CalculateResourceRequirements(False, BlueprintOwner)
@@ -385,14 +388,14 @@ Namespace BPCalc
                 wasteFactor = CurrentBlueprint.CalculateWasteFactor(CInt(OverridingME))
             End If
 
-            Dim waste As Integer
+            Dim waste As Long
 
             For Each resource As JobResource In Resources.Values
                 ' Get the resource
                 Dim newResource As JobResource = resource
                 Dim bpResource As EveData.BlueprintResource = CurrentBlueprint.Resources(BlueprintActivity.Manufacturing).Item(newResource.TypeID)
                 ' Calculate Waste - Mark II!
-                waste = CalculateWasteUnits(bpResource, wasteFactor, matMod)
+                waste = CalculateWasteUnits(bpResource, wasteFactor, matMod, StnMeBonus)
                 newResource.WasteUnits = waste
             Next
             For Each subJob As Job In SubJobs.Values
@@ -404,10 +407,12 @@ Namespace BPCalc
                 Else
                     SubJobMEs(bpResource.TypeId) = subJob.CurrentBlueprint.MELevel
                 End If
+                ' Set Station ME Bonus
+                subJob.StnMeBonus = StnMeBonus
                 ' Calculate Waste - Mark II!
-                waste = CalculateWasteUnits(bpResource, wasteFactor, matMod)
+                waste = CalculateWasteUnits(bpResource, wasteFactor, matMod, StnMeBonus)
                 subJob.WasteUnits = waste
-                subJob.Runs = CInt((subJob.PerfectUnits + waste) * Runs)
+                subJob.Runs = CInt(subJob.PerfectUnits) * Runs + waste
                 subJob.RecalculateResourceRequirements()
             Next
 
@@ -415,10 +420,11 @@ Namespace BPCalc
 
         End Sub
 
-        Public Function CalculateWasteUnits(resource As EveData.BlueprintResource, wasteFactor As Double, matMod As Double) As Integer
-            Dim waste As Integer
+        Public Function CalculateWasteUnits(resource As EveData.BlueprintResource, wasteFactor As Double, matMod As Double, stnMeBonus As Integer) As Long
+            Dim waste As Long
             ' Calculate Waste - Updated for Crius therefore these are strictly savings
-            waste = Math.Max(CInt(Math.Ceiling(Math.Round((1 - wasteFactor) * resource.Quantity * Runs, 2))), Runs) - (resource.Quantity * Runs)
+            Dim stnMeFactor As Double = 1.0 - stnMeBonus / 100.0
+            waste = Math.Max(CLng(Math.Ceiling(Math.Round(stnMeFactor * (1 - wasteFactor) * resource.Quantity * Runs, 2))), Runs) - (resource.Quantity * Runs)
             Return waste
         End Function
 

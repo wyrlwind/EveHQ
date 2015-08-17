@@ -177,15 +177,15 @@ Namespace BPCalc
             End If
         End Function
 
-        Public Function CalculateProductionTime(ByVal indSkill As Integer, advIndSkill As Integer, ByVal prodImplantBonus As Double, ByVal productionArray As EveData.AssemblyArray, ByVal bpRuns As Integer) As Long
+        Public Function CalculateProductionTime(ByVal indSkill As Integer, advIndSkill As Integer, ByVal prodImplantBonus As Double, ByVal productionArray As EveData.AssemblyArray, ByVal bpRuns As Long) As Long
             Return CalculateBPProductionTime(PELevel, indSkill, advIndSkill, prodImplantBonus, productionArray, bpRuns)
         End Function
 
-        Public Function CalculateProductionTime(ByVal bppeLevel As Integer, ByVal indSkill As Integer, advIndSkill As Integer, ByVal prodImplantBonus As Double, ByVal productionArray As EveData.AssemblyArray, ByVal bpRuns As Integer) As Long
+        Public Function CalculateProductionTime(ByVal bppeLevel As Integer, ByVal indSkill As Integer, advIndSkill As Integer, ByVal prodImplantBonus As Double, ByVal productionArray As EveData.AssemblyArray, ByVal bpRuns As Long) As Long
             Return CalculateBPProductionTime(bppeLevel, indSkill, advIndSkill, prodImplantBonus, productionArray, bpRuns)
         End Function
 
-        Private Function CalculateBPProductionTime(ByVal bppeLevel As Integer, ByVal indSkill As Integer, advIndSkill As Integer, ByVal prodImplantBonus As Double, ByVal productionArray As EveData.AssemblyArray, ByVal bpRuns As Integer) As Long
+        Private Function CalculateBPProductionTime(ByVal bppeLevel As Integer, ByVal indSkill As Integer, advIndSkill As Integer, ByVal prodImplantBonus As Double, ByVal productionArray As EveData.AssemblyArray, ByVal bpRuns As Long) As Long
             prodImplantBonus = 1 - (prodImplantBonus / 100)
             Dim time As Double = ProductionTime * (1 - (0.04 * indSkill)) * (1 - (0.03 * advIndSkill)) * prodImplantBonus
             time = time * (1 - (bppeLevel / 100))

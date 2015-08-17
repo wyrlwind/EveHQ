@@ -260,6 +260,9 @@ Namespace Forms
             cboScienceImplant.SelectedIndex = 0
             cboIndustryImplant.SelectedIndex = 0
 
+            ' Set Station ME Bonus
+            stnMeBonus.Value = 0
+
             ' Add the skill levels
             cboResearchSkill.BeginUpdate()
             cboMetallurgySkill.BeginUpdate()
@@ -445,7 +448,9 @@ Namespace Forms
                 End If
             End If
 
-            nudRuns.Value = _currentJob.Runs
+            ' This is a risk, but the Runs property needs to be a long so we can support big runs of capitals.  
+            ' But, for the UI, I doubt we will get into 16^2 runs...
+            nudRuns.Value = CInt(_currentJob.Runs)
 
             PPRProduction.ProductionJob = _currentJob
         End Sub
@@ -1649,6 +1654,15 @@ Namespace Forms
 
 #End Region
 
+        Private Sub stnMeBonus_ValueChanged(sender As Object, e As EventArgs) Handles stnMeBonus.ValueChanged
+            If _startUp = False And _updateBPInfo = True Then
+                _currentJob.StnMeBonus = stnMeBonus.Value
+                PPRProduction.ProductionJob = _currentJob
+                ' Set change flag
+                ProductionChanged = True
+            End If
+
+        End Sub
     End Class
 
     Public Enum BPCalcStartMode
