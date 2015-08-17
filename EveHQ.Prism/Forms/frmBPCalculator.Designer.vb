@@ -201,27 +201,35 @@ Namespace Forms
         Me.btnExportToTSV = New DevComponents.DotNetBar.ButtonItem()
         Me.SuperTooltip1 = New DevComponents.DotNetBar.SuperTooltip()
         Me.SaveJobDialogCheckBox = New DevComponents.DotNetBar.Command(Me.components)
-        Me.PanelEx1.SuspendLayout
-        Me.gpPilotSkills.SuspendLayout
-        Me.gpProductionSkills.SuspendLayout
-        Me.gpResearchSkills.SuspendLayout
-        Me.gpBPSelection.SuspendLayout
-        CType(Me.pbBP,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nudCopyRuns,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.tabBPCalcFunctions,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tabBPCalcFunctions.SuspendLayout
-        Me.tcpInvention.SuspendLayout
-        CType(Me.adtInventionProfits,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nudInventionSkill2,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nudInventionSkill3,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nudInventionSkill1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nudInventionBPCRuns,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tcpResearch.SuspendLayout
-        Me.tcpProduction.SuspendLayout
-        CType(Me.nudRuns,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nudTELevel,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nudMELevel,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
+        Me.stnMeBonus = New DevComponents.Editors.IntegerInput()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PACUnitValue = New EveHQ.Prism.Controls.PriceAdjustmentControl()
+        Me.PPRProduction = New EveHQ.Prism.Controls.PrismResources()
+        Me.PPRInvention = New EveHQ.Prism.Controls.PrismResources()
+        Me.PACDecryptor = New EveHQ.Prism.Controls.PriceAdjustmentControl()
+        Me.PACSalesPrice = New EveHQ.Prism.Controls.PriceAdjustmentControl()
+        Me.PanelEx1.SuspendLayout()
+        Me.gpPilotSkills.SuspendLayout()
+        Me.gpProductionSkills.SuspendLayout()
+        Me.gpResearchSkills.SuspendLayout()
+        Me.gpBPSelection.SuspendLayout()
+        CType(Me.pbBP, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudCopyRuns, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tabBPCalcFunctions, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabBPCalcFunctions.SuspendLayout()
+        Me.tcpInvention.SuspendLayout()
+        CType(Me.adtInventionProfits, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudInventionSkill2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudInventionSkill3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudInventionSkill1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudInventionBPCRuns, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tcpResearch.SuspendLayout()
+        Me.tcpProduction.SuspendLayout()
+        CType(Me.nudRuns, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudTELevel, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudMELevel, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.stnMeBonus, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
         '
         'lblBPRuns
         '
@@ -2112,6 +2120,8 @@ Namespace Forms
         '
         'tcpProduction
         '
+        Me.tcpProduction.Controls.Add(Me.stnMeBonus)
+        Me.tcpProduction.Controls.Add(Me.Label1)
         Me.tcpProduction.Controls.Add(Me.lblProfitMarkup)
         Me.tcpProduction.Controls.Add(Me.lblProfitMargin)
         Me.tcpProduction.Controls.Add(Me.lblProfitMarkupLbl)
@@ -2392,6 +2402,87 @@ Namespace Forms
         Me.SaveJobDialogCheckBox.Name = "SaveJobDialogCheckBox"
         Me.SaveJobDialogCheckBox.Text = "Do not show this again"
         '
+        'stnMeBonus
+        '
+        '
+        '
+        '
+        Me.stnMeBonus.BackgroundStyle.Class = "DateTimeInputBackground"
+        Me.stnMeBonus.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.stnMeBonus.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2
+        Me.stnMeBonus.Location = New System.Drawing.Point(119, 93)
+        Me.stnMeBonus.MaxValue = 20
+        Me.stnMeBonus.MinValue = 0
+        Me.stnMeBonus.Name = "stnMeBonus"
+        Me.stnMeBonus.ShowUpDown = True
+        Me.stnMeBonus.Size = New System.Drawing.Size(93, 21)
+        Me.stnMeBonus.TabIndex = 215
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Location = New System.Drawing.Point(10, 95)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(94, 13)
+        Me.Label1.TabIndex = 214
+        Me.Label1.Text = "Station ME Bonus:"
+        '
+        'PACUnitValue
+        '
+        Me.PACUnitValue.Location = New System.Drawing.Point(381, 113)
+        Me.PACUnitValue.Name = "PACUnitValue"
+        Me.PACUnitValue.Price = 0.0R
+        Me.PACUnitValue.Size = New System.Drawing.Size(20, 12)
+        Me.PACUnitValue.TabIndex = 209
+        Me.PACUnitValue.TypeID = 0
+        '
+        'PPRProduction
+        '
+        Me.PPRProduction.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                        Or System.Windows.Forms.AnchorStyles.Left) _
+                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PPRProduction.BatchJob = Nothing
+        Me.PPRProduction.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PPRProduction.InventionBP = Nothing
+        Me.PPRProduction.Location = New System.Drawing.Point(0, 163)
+        Me.PPRProduction.Name = "PPRProduction"
+        Me.PPRProduction.ProductionJob = Nothing
+        Me.PPRProduction.Size = New System.Drawing.Size(836, 362)
+        Me.PPRProduction.TabIndex = 0
+        '
+        'PPRInvention
+        '
+        Me.PPRInvention.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                        Or System.Windows.Forms.AnchorStyles.Left) _
+                        Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PPRInvention.BatchJob = Nothing
+        Me.PPRInvention.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PPRInvention.InventionBP = Nothing
+        Me.PPRInvention.Location = New System.Drawing.Point(0, 229)
+        Me.PPRInvention.Name = "PPRInvention"
+        Me.PPRInvention.ProductionJob = Nothing
+        Me.PPRInvention.Size = New System.Drawing.Size(833, 296)
+        Me.PPRInvention.TabIndex = 0
+        '
+        'PACDecryptor
+        '
+        Me.PACDecryptor.Location = New System.Drawing.Point(429, 18)
+        Me.PACDecryptor.Name = "PACDecryptor"
+        Me.PACDecryptor.Price = 0.0R
+        Me.PACDecryptor.Size = New System.Drawing.Size(20, 12)
+        Me.PACDecryptor.TabIndex = 209
+        Me.PACDecryptor.TypeID = 0
+        '
+        'PACSalesPrice
+        '
+        Me.PACSalesPrice.Location = New System.Drawing.Point(429, 141)
+        Me.PACSalesPrice.Name = "PACSalesPrice"
+        Me.PACSalesPrice.Price = 0.0R
+        Me.PACSalesPrice.Size = New System.Drawing.Size(20, 12)
+        Me.PACSalesPrice.TabIndex = 208
+        Me.PACSalesPrice.TypeID = 0
+        '
         'FrmBPCalculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -2407,35 +2498,36 @@ Namespace Forms
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Blueprint Calculator"
         Me.TransparencyKey = System.Drawing.Color.LavenderBlush
-        Me.PanelEx1.ResumeLayout(false)
-        Me.PanelEx1.PerformLayout
-        Me.gpPilotSkills.ResumeLayout(false)
-        Me.gpPilotSkills.PerformLayout
-        Me.gpProductionSkills.ResumeLayout(false)
-        Me.gpProductionSkills.PerformLayout
-        Me.gpResearchSkills.ResumeLayout(false)
-        Me.gpResearchSkills.PerformLayout
-        Me.gpBPSelection.ResumeLayout(false)
-        Me.gpBPSelection.PerformLayout
-        CType(Me.pbBP,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nudCopyRuns,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.tabBPCalcFunctions,System.ComponentModel.ISupportInitialize).EndInit
-        Me.tabBPCalcFunctions.ResumeLayout(false)
-        Me.tcpInvention.ResumeLayout(false)
-        Me.tcpInvention.PerformLayout
-        CType(Me.adtInventionProfits,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nudInventionSkill2,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nudInventionSkill3,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nudInventionSkill1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nudInventionBPCRuns,System.ComponentModel.ISupportInitialize).EndInit
-        Me.tcpResearch.ResumeLayout(false)
-        Me.tcpResearch.PerformLayout
-        Me.tcpProduction.ResumeLayout(false)
-        Me.tcpProduction.PerformLayout
-        CType(Me.nudRuns,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nudTELevel,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nudMELevel,System.ComponentModel.ISupportInitialize).EndInit
-        Me.ResumeLayout(false)
+            Me.PanelEx1.ResumeLayout(False)
+            Me.PanelEx1.PerformLayout()
+            Me.gpPilotSkills.ResumeLayout(False)
+            Me.gpPilotSkills.PerformLayout()
+            Me.gpProductionSkills.ResumeLayout(False)
+            Me.gpProductionSkills.PerformLayout()
+            Me.gpResearchSkills.ResumeLayout(False)
+            Me.gpResearchSkills.PerformLayout()
+            Me.gpBPSelection.ResumeLayout(False)
+            Me.gpBPSelection.PerformLayout()
+            CType(Me.pbBP, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.nudCopyRuns, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.tabBPCalcFunctions, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.tabBPCalcFunctions.ResumeLayout(False)
+            Me.tcpInvention.ResumeLayout(False)
+            Me.tcpInvention.PerformLayout()
+            CType(Me.adtInventionProfits, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.nudInventionSkill2, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.nudInventionSkill3, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.nudInventionSkill1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.nudInventionBPCRuns, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.tcpResearch.ResumeLayout(False)
+            Me.tcpResearch.PerformLayout()
+            Me.tcpProduction.ResumeLayout(False)
+            Me.tcpProduction.PerformLayout()
+            CType(Me.nudRuns, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.nudTELevel, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.nudMELevel, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.stnMeBonus, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.ResumeLayout(False)
 
 End Sub
         Friend WithEvents lblBPMELbl As System.Windows.Forms.Label
@@ -2611,6 +2703,8 @@ End Sub
         Friend WithEvents chkInventionFlag As DevComponents.DotNetBar.Controls.CheckBoxX
         Friend WithEvents PanelEx1 As DevComponents.DotNetBar.PanelEx
         Friend WithEvents SaveJobDialogCheckBox As DevComponents.DotNetBar.Command
+        Friend WithEvents stnMeBonus As DevComponents.Editors.IntegerInput
+        Friend WithEvents Label1 As System.Windows.Forms.Label
 
     End Class
 End NameSpace
