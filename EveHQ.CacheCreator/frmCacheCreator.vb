@@ -375,7 +375,9 @@ Public Class FrmCacheCreator
 
         StaticData.Types.Clear()
         Dim evehqData As DataSet
-        Dim strSql As String = "SELECT invTypes.*, invGroups.categoryID FROM invGroups INNER JOIN invTypes ON invGroups.groupID = invTypes.groupID where invTypes.published = 1;"
+        Dim strSql As String = ""
+        strSql &= "SELECT invTypes.*, invGroups.categoryID FROM invGroups INNER JOIN invTypes ON invGroups.groupID = invTypes.groupID "
+        strSql &= "where invTypes.published = 1 or invTypes.groupID = 988;" '988 is the group of 'wormholes gates'
         evehqData = DatabaseFunctions.GetStaticData(strSql)
         Dim newItem As EveType
         For Each itemRow As DataRow In evehqData.Tables(0).Rows
