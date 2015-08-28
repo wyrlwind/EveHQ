@@ -1655,6 +1655,7 @@ Imports EveHQ.Common.Extensions
         Dim baseEffectList As List(Of FinalEffect)
         Dim hiPEffectList As New List(Of FinalEffect)
         Dim lowPEffectList As New List(Of FinalEffect)
+        Dim veryLowPEffectList As New List(Of FinalEffect)
         Dim finalEffectList As List(Of FinalEffect)
         Dim att As Integer
         For attNumber As Integer = 0 To _moduleEffectsTable.Keys.Count - 1
@@ -1663,6 +1664,10 @@ Imports EveHQ.Common.Extensions
             hiPEffectList.Clear() : lowPEffectList.Clear()
             For Each fEffect As FinalEffect In baseEffectList
                 Select Case fEffect.CalcType
+                    Case EffectCalcType.AbsoluteMin
+                        veryLowPEffectList.Add(fEffect)
+                    Case EffectCalcType.AbsoluteMax
+                        veryLowPEffectList.Add(fEffect)
                     Case EffectCalcType.Addition
                         hiPEffectList.Add(fEffect)
                     Case Else
@@ -1674,6 +1679,9 @@ Imports EveHQ.Common.Extensions
                 finalEffectList.Add(fEffect)
             Next
             For Each fEffect As FinalEffect In lowPEffectList
+                finalEffectList.Add(fEffect)
+            Next
+            For Each fEffect As FinalEffect In veryLowPEffectList
                 finalEffectList.Add(fEffect)
             Next
             _moduleEffectsTable(att) = finalEffectList

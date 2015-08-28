@@ -961,6 +961,8 @@
 846,2,481,1371,2,479,1,0,0,4,Scan Strength Bonus
 # Scan Rangefinding Array,,,,,,,,,,
 1907,2,1223,1371,2,479,1,0,0,4,Scan Strength Bonus
+# Entosis link,,,,,,,,,,
+2033,2,1313,37,3,6,0,0,13,15,Speed Limit
 # SHIELD,,,,,,,,,,
 # Shield Boost Amplifiers,,,,,,,,,,
 548,2,338,68,2,40;1156,1,0,0,14,Shield Boost Bonus
