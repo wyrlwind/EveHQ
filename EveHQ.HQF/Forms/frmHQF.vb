@@ -2701,25 +2701,32 @@ Namespace Forms
         End Sub
 
         Private Sub btnExportImplants_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnExportImplants.Click
-            Dim implantSetName As String = ActiveFitting.ShipInfoCtrl.cboImplants.SelectedItem.ToString
-            If PluginSettings.HQFSettings.ImplantGroups.ContainsKey(implantSetName) = True Then
-                Dim implantSet As ImplantCollection = PluginSettings.HQFSettings.ImplantGroups(implantSetName)
-                Dim stats As New StringBuilder
-                stats.AppendLine("[Implants - " & implantSet.GroupName & "]")
-                stats.AppendLine("")
-                For slotNo As Integer = 1 To 10
-                    If implantSet.ImplantName(slotNo) <> "" Then
-                        stats.AppendLine("Slot " & slotNo.ToString & ": " & implantSet.ImplantName(slotNo))
-                    Else
-                        stats.AppendLine("Slot " & slotNo.ToString & ": <Empty>")
-                    End If
-                Next
-                Try
-                    Clipboard.SetText(stats.ToString)
-                Catch ex As Exception
-                    MessageBox.Show("There was an error writing data to the clipboard. Please wait a couple of seconds and try again.", "Copy Stats Error")
-                End Try
+
+            If ActiveFitting.ShipInfoCtrl.cboImplants.SelectedItem IsNot Nothing Then
+
+                Dim implantSetName As String = ActiveFitting.ShipInfoCtrl.cboImplants.SelectedItem.ToString
+                If PluginSettings.HQFSettings.ImplantGroups.ContainsKey(implantSetName) = True Then
+                    Dim implantSet As ImplantCollection = PluginSettings.HQFSettings.ImplantGroups(implantSetName)
+                    Dim stats As New StringBuilder
+                    stats.AppendLine("[Implants - " & implantSet.GroupName & "]")
+                    stats.AppendLine("")
+                    For slotNo As Integer = 1 To 10
+                        If implantSet.ImplantName(slotNo) <> "" Then
+                            stats.AppendLine("Slot " & slotNo.ToString & ": " & implantSet.ImplantName(slotNo))
+                        Else
+                            stats.AppendLine("Slot " & slotNo.ToString & ": <Empty>")
+                        End If
+                    Next
+                    Try
+                        Clipboard.SetText(stats.ToString)
+                    Catch ex As Exception
+                        MessageBox.Show("There was an error writing data to the clipboard. Please wait a couple of seconds and try again.", "Copy Stats Error")
+                    End Try
+                End If
+            Else
+                MessageBox.Show("You must select an implant set to export it!", "No Implants selected")
             End If
+
         End Sub
 
         Private Sub btnExportReq_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnExportReq.Click
