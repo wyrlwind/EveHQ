@@ -154,7 +154,7 @@ Namespace Controls.DBControls
             ' Update the WH Details
             If _wormholes.ContainsKey(cboWHType.SelectedItem.ToString) = True Then
                 Dim wh As WormHole = _wormholes(cboWHType.SelectedItem.ToString)
-                If wh.Name <> "K162" Then
+                If wh.Name <> "K162" And wh.TargetClass <> "" Then
                     lblTargetSystemClass.Text = wh.TargetClass
                     Select Case CInt(wh.TargetClass)
                         Case 1 To 6
@@ -170,7 +170,7 @@ Namespace Controls.DBControls
                     lblMaxTotalMass.Text = CLng(wh.MaxMassCapacity).ToString("N0") & " kg"
                     lblStabilityWindow.Text = (CDbl(wh.MaxStabilityWindow) / 60).ToString("N0") & " hours"
                 Else
-                    lblTargetSystemClass.Text = "n/a (Return wormhole)"
+                    lblTargetSystemClass.Text = "n/a"
                     lblMaxJumpableMass.Text = "n/a"
                     lblMaxTotalMass.Text = "n/a"
                     lblStabilityWindow.Text = "n/a"
