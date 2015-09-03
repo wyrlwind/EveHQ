@@ -110,6 +110,14 @@ Public Class FrmVoid
                         lblTargetSystemClass.Text &= " (Low Security Space)"
                     Case 9
                         lblTargetSystemClass.Text &= " (Null Security Space)"
+                    Case 12
+                        lblTargetSystemClass.Text &= " (Wormhole - Thera)"
+                    Case 13
+                        If wh.TargetName IsNot Nothing Then
+                            lblTargetSystemClass.Text &= " (Drifter : " & wh.TargetName & ")"
+                        Else
+                            lblTargetSystemClass.Text &= " (Wormhole Class " & wh.TargetClass & ")"
+                        End If
                 End Select
                 lblMaxJumpableMass.Text = CLng(wh.MaxJumpableMass).ToString("N0") & " kg"
                 lblMaxTotalMass.Text = CLng(wh.MaxMassCapacity).ToString("N0") & " kg"
