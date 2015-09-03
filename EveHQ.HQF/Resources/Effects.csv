@@ -778,9 +778,12 @@
 1255,2,645,64,2,100;101;1159;549;1023,1,0,0,14,Drone Damage Amplifier
 459,2,647,10007,3,6,0,0,1,14,Drone Link Augmenter - Drone Control Range Bonus
 20,2,644,37,3,18,3,0,0,14,Drone Navigation Computer - Drone Velocity
-351,2,646,54,3,18,2,0,0,12,Omni Tracking Link/Enhancer - Optimal Range
-349,2,646,158,2,100;639;549;1023,2,0,0,12,Omni Tracking Link/Enhancer - Falloff
-767,2,646,160,2,100;549;1023,2,0,0,12,Omni Tracking Link/Enhancer - Tracking Speed
+351,2,646,54,3,18,2,0,0,12,Omni Tracking Link - Optimal Range
+349,2,646,158,2,100;639;549;1023,2,0,0,12,Omni Tracking Link - Falloff
+767,2,646,160,2,100;549;1023,2,0,0,12,Omni Tracking Link - Tracking Speed
+351,2,1292,54,3,18,2,0,0,14,Omni Tracking Enhancer - Optimal Range
+349,2,1292,158,2,100;639;549;1023,2,0,0,14,Omni Enhancer - Falloff
+767,2,1292,160,2,100;549;1023,2,0,0,14,Omni Enhancer - Tracking Speed
 # REMOTE DRONES,,,,,,,,,,
 90,2,544,6,6,0,0,0,8,16,Energy Vampire Drone
 517,2,639,158,2,55;53;74,1,0,5,16,TD Drone - Falloff
