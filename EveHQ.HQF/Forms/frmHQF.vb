@@ -1876,22 +1876,27 @@ Namespace Forms
                     .ShowDialog()
                     fittingName = .txtFittingName.Text
                 End With
+
+                If myNewFitting.DialogResult = DialogResult.Cancel Then
+                    'MessageBox.Show("Create New Fitting has been cancelled!", "New Fitting Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    ' Add the Fitting
+                    If fittingName <> "" Then
+                        Dim newFit As New Fitting(shipName, fittingName, PluginSettings.HQFSettings.DefaultPilot)
+                        Fittings.FittingList.Add(newFit.KeyName, newFit)
+                        If CreateNewFittingTab(newFit) = True Then
+                            Call UpdateFilteredShips()
+                            tabHQF.SelectedTab = tabHQF.Tabs(newFit.KeyName)
+                            If tabHQF.SelectedTabIndex = 0 Then Call UpdateSelectedTab()
+                            ActiveFitting.ShipSlotCtrl.UpdateEverything()
+                        End If
+                        Call UpdateFilteredShips()
+                    Else
+                        'MessageBox.Show("Unable to Create New Fitting!", "New Fitting Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    End If
+                End If
             End Using
 
-            ' Add the Fitting
-            If fittingName <> "" Then
-                Dim newFit As New Fitting(shipName, fittingName, PluginSettings.HQFSettings.DefaultPilot)
-                Fittings.FittingList.Add(newFit.KeyName, newFit)
-                If CreateNewFittingTab(newFit) = True Then
-                    Call UpdateFilteredShips()
-                    tabHQF.SelectedTab = tabHQF.Tabs(newFit.KeyName)
-                    If tabHQF.SelectedTabIndex = 0 Then Call UpdateSelectedTab()
-                    ActiveFitting.ShipSlotCtrl.UpdateEverything()
-                End If
-                Call UpdateFilteredShips()
-            Else
-                'MessageBox.Show("Unable to Create New Fitting!", "New Fitting Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
         End Sub
         Private Sub mnuPreviewShip2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuPreviewShip2.Click
             Dim shipName As String = mnuFittingsFittingName.Tag.ToString
