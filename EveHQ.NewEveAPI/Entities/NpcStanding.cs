@@ -65,12 +65,12 @@ namespace EveHQ.EveApi
     public enum NpcType
     {
         /// <summary>The agents.</summary>
-        Agents,
+        agents,
 
         /// <summary>The NPC corporations.</summary>
         NPCCorporations,
 
         /// <summary>The factions.</summary>
-        Factions
+        factions
     }
 }
