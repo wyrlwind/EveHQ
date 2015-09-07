@@ -1,5 +1,6 @@
 #HQF Ship Mode Bonus Mapping Table,,,,,,,,,,,
 #Ship ID,Ship Mode,Affecting Type,Affecting ID,Affected Attribute,Affected Type,Affected ID,Stack Nerf,Per Level,Calc Type,Value,Status,Description
+
 # Confessor,,,,,,,,,,,,
 34317,1,0,0,267,1,34317,0,1,2,-33.33333333,15,Defence Mode - Armor EM Resistence
 34317,1,0,0,268,1,34317,0,1,2,-33.33333333,15,Defence Mode - Armor Explosive Resistence
@@ -14,6 +15,7 @@
 
 34317,3,0,0,37,1,34317,0,1,0,66.66666667,15,Propulsion Mode - Max Velocity
 34317,3,0,0,70,1,34317,0,1,0,-33.33333333,15,Propulsion Mode - Inertia
+
 # Svipul,,,,,,,,,,,,
 34562,1,0,0,267,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor EM Resistence
 34562,1,0,0,268,1,34562,0,1,2,-33.33333333,15,Defence Mode - Armor Explosive Resistence
