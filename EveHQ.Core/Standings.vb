@@ -70,8 +70,8 @@ Public Class Standings
                     Dim standingsList As IEnumerable(Of NpcStanding)
                     Dim standingsNode As NpcStanding
                     Dim standingsResponse As EveServiceResponse(Of IEnumerable(Of NpcStanding)) =
-                            HQ.ApiProvider.Character.NPCStandings(pilotAccount.UserID, pilotAccount.APIKey,
-                                                                  pilot.ID.ToInt32())
+                            HQ.ApiProvider.Character.NPCStandings(pilotAccount.UserID, pilotAccount.APIKey, pilot.ID.ToInt32())
+
                     'Dim apiReq As New EveAPIRequest(HQ.EveHQAPIServerInfo, HQ.RemoteProxy, HQ.Settings.APIFileExtension, HQ.ApiCacheFolder)
                     'Dim standingsXML As XmlDocument = apiReq.GetAPIXML(APITypes.StandingsChar, pilotAccount.ToAPIAccount, pilot.ID, APIReturnMethods.ReturnStandard)
                     If standingsResponse IsNot Nothing Then

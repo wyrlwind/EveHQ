@@ -113,6 +113,20 @@ Namespace Controls.DBControls
             Dim cWh As WormHole
             _wormholes.Clear()
             For Each wh As EveType In StaticData.GetItemsInGroup(988)
+
+                Dim testWHs() As String = {"QA Wormhole A", "QA Wormhole B"}
+                Dim isUnwantedWH As Boolean = False
+
+                For Each testWH In testWHs
+                    If wh.Name.Contains(testWH) Then
+                        isUnwantedWH = True
+                    End If
+                Next
+
+                If isUnwantedWH Then
+                    Continue For
+                End If
+
                 cWh = New WormHole
                 cWh.ID = wh.Id.ToString
                 cWh.Name = wh.Name.Replace("Wormhole ", "")
@@ -131,6 +145,8 @@ Namespace Controls.DBControls
                                 cWh.MaxJumpableMass = whAttributes(cWh.ID).Item(att)
                             Case "1457"
                                 cWh.TargetDistributionID = whAttributes(cWh.ID).Item(att)
+                            Case "1500"
+                                cWh.TargetName = whAttributes(cWh.ID).Item(att)
                         End Select
                     Next
                 Else
@@ -147,6 +163,13 @@ Namespace Controls.DBControls
                 End If
             Next
             whAttributes.Clear()
+
+            For Each wh In _wormholes
+                If (wh.Value.TargetClass = "") Then
+                    Console.WriteLine(wh.Value.Name + " - " + wh.Value.ID)
+                End If
+
+            Next
         End Sub
 #End Region
 
@@ -154,7 +177,7 @@ Namespace Controls.DBControls
             ' Update the WH Details
             If _wormholes.ContainsKey(cboWHType.SelectedItem.ToString) = True Then
                 Dim wh As WormHole = _wormholes(cboWHType.SelectedItem.ToString)
-                If wh.Name <> "K162" Then
+                If wh.Name <> "K162" And wh.TargetClass <> "" Then
                     lblTargetSystemClass.Text = wh.TargetClass
                     Select Case CInt(wh.TargetClass)
                         Case 1 To 6
@@ -165,12 +188,20 @@ Namespace Controls.DBControls
                             lblTargetSystemClass.Text &= " (Low Security Space)"
                         Case 9
                             lblTargetSystemClass.Text &= " (Null Security Space)"
+                        Case 12
+                            lblTargetSystemClass.Text &= " (Wormhole - Thera)"
+                        Case 13
+                            If wh.TargetName IsNot Nothing Then
+                                lblTargetSystemClass.Text &= " (Drifter : " & wh.TargetName & ")"
+                            Else
+                                lblTargetSystemClass.Text &= " (Wormhole Class " & wh.TargetClass & ")"
+                            End If
                     End Select
                     lblMaxJumpableMass.Text = CLng(wh.MaxJumpableMass).ToString("N0") & " kg"
                     lblMaxTotalMass.Text = CLng(wh.MaxMassCapacity).ToString("N0") & " kg"
                     lblStabilityWindow.Text = (CDbl(wh.MaxStabilityWindow) / 60).ToString("N0") & " hours"
                 Else
-                    lblTargetSystemClass.Text = "n/a (Return wormhole)"
+                    lblTargetSystemClass.Text = "n/a"
                     lblMaxJumpableMass.Text = "n/a"
                     lblMaxTotalMass.Text = "n/a"
                     lblStabilityWindow.Text = "n/a"
@@ -190,5 +221,6 @@ Namespace Controls.DBControls
         Public MassRegeneration As String
         Public MaxJumpableMass As String
         Public TargetDistributionID As String
+        Public TargetName As String
     End Class
 End NameSpace

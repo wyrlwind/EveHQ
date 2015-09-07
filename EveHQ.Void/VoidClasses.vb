@@ -59,6 +59,7 @@ Public Class WormHole
     Public Property MassRegeneration As String
     Public Property MaxJumpableMass As String
     Public Property TargetDistributionID As String
+    Public Property TargetName As String
 End Class
 
 Public Class WormholeSystem

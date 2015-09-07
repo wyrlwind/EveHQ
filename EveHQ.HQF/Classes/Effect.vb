@@ -140,6 +140,8 @@ Public Enum EffectCalcType As Integer
     AbsoluteMax = 12 ' Set value only if higher than the existing value
     AbsoluteMin = 13 ' Set value only if lower than the existing value
     CapBoosters = 14 ' For cap and fueled shield boosters
+    ResistanceKiller = 15 ' For resistance killing 
+    HullResistanceKiller = 16 ' For hull resistance killing 
 End Enum
 
 Public Enum EffectStackType As Integer

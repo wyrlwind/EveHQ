@@ -174,6 +174,14 @@ Public Class IGBData
                             strHTML.Append(" (Low Security Space)")
                         Case 9
                             strHTML.Append(" (Null Security Space)")
+                        Case 12
+                            strHTML.Append(" (Wormhole - Thera)")
+                        Case 13
+                            If wh.TargetName IsNot Nothing Then
+                                strHTML.Append(" (Drifter : " & wh.TargetName & ")")
+                            Else
+                                strHTML.Append(" (Wormhole Class " & wh.TargetClass & ")")
+                            End If
                     End Select
                     strHTML.Append("</td></tr>")
                     strHTML.Append("<tr><td>Max Jumpable Mass:</td><td>" & CLng(wh.MaxJumpableMass).ToString("N0") & " kg</td></tr>")

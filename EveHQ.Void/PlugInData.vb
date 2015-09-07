@@ -109,6 +109,20 @@ Public Class PlugInData
         Dim cWormhole As WormHole
         VoidData.Wormholes.Clear()
         For Each wh As EveType In StaticData.GetItemsInGroup(988)
+
+            Dim testWHs() As String = {"QA Wormhole A", "QA Wormhole B"}
+            Dim isUnwantedWH As Boolean = False
+
+            For Each testWH As String In testWHs
+                If wh.Name.Contains(testWH) Then
+                    isUnwantedWH = True
+                End If
+            Next
+
+            If isUnwantedWH Then
+                Continue For
+            End If
+
             cWormhole = New WormHole
             cWormhole.ID = wh.Id.ToString
             cWormhole.Name = wh.Name.Replace("Wormhole ", "")
@@ -127,6 +141,8 @@ Public Class PlugInData
                             cWormhole.MaxJumpableMass = whAttributes(cWormhole.ID).Item(att)
                         Case "1457"
                             cWormhole.TargetDistributionID = whAttributes(cWormhole.ID).Item(att)
+                        Case "1500"
+                            cWormhole.TargetName = whAttributes(cWormhole.ID).Item(att)
                     End Select
                 Next
             Else

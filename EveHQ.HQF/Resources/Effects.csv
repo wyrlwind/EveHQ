@@ -638,6 +638,19 @@
 1205,2,507,51,6,0,0,0,0,8,Rocket Launcher ROF
 1206,2,72,73,6,0,0,0,0,8,Smartbomb ROF
 1205,2,508,51,6,0,0,0,0,8,Torpedo Launcher ROF
+# Polarized weapons
+1978,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;342723;34294,271,3,6,0,0,15,14,shieldEmDamageResonance 
+1978,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;342723;34294,272,3,6,0,0,15,14,shieldExplosiveDamageResonance 
+1978,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;342723;34294,273,3,6,0,0,15,14,shieldKineticDamageResonance 
+1978,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;342723;34294,274,3,6,0,0,15,14,shieldThermalDamageResonance 
+1978,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;342723;34294,267,3,6,0,0,15,14,armorEmDamageResonance 
+1978,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;342723;34294,268,3,6,0,0,15,14,armorExplosiveDamageResonance 
+1978,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;342723;34294,269,3,6,0,0,15,14,armorKineticDamageResonance 
+1978,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;342723;34294,270,3,6,0,0,15,14,armorThermalDamageResonance 
+1979,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;342723;34294,113,3,6,0,0,16,14,hullEmDamageResonance
+1979,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;342723;34294,111,3,6,0,0,16,14,hullExplosiveDamageResonance
+1979,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;342723;34294,109,3,6,0,0,16,14,hullKineticDamageResonance
+1979,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;342723;34294,110,3,6,0,0,16,14,hullThermalDamageResonance
 # MISC,,,,,,,,,,
 1223,2,46,20,6,0,0,0,0,8,AB/MWD Speed
 1206,2,76,73,6,0,0,0,0,8,Cap Booster Duration
@@ -765,9 +778,12 @@
 1255,2,645,64,2,100;101;1159;549;1023,1,0,0,14,Drone Damage Amplifier
 459,2,647,10007,3,6,0,0,1,14,Drone Link Augmenter - Drone Control Range Bonus
 20,2,644,37,3,18,3,0,0,14,Drone Navigation Computer - Drone Velocity
-351,2,646,54,3,18,2,0,0,12,Omni Tracking Link/Enhancer - Optimal Range
-349,2,646,158,2,100;639;549;1023,2,0,0,12,Omni Tracking Link/Enhancer - Falloff
-767,2,646,160,2,100;549;1023,2,0,0,12,Omni Tracking Link/Enhancer - Tracking Speed
+351,2,646,54,3,18,2,0,0,12,Omni Tracking Link - Optimal Range
+349,2,646,158,2,100;639;549;1023,2,0,0,12,Omni Tracking Link - Falloff
+767,2,646,160,2,100;549;1023,2,0,0,12,Omni Tracking Link - Tracking Speed
+351,2,1292,54,3,18,2,0,0,14,Omni Tracking Enhancer - Optimal Range
+349,2,1292,158,2,100;639;549;1023,2,0,0,14,Omni Enhancer - Falloff
+767,2,1292,160,2,100;549;1023,2,0,0,14,Omni Enhancer - Tracking Speed
 # REMOTE DRONES,,,,,,,,,,
 90,2,544,6,6,0,0,0,8,16,Energy Vampire Drone
 517,2,639,158,2,55;53;74,1,0,5,16,TD Drone - Falloff
@@ -961,6 +977,8 @@
 846,2,481,1371,2,479,1,0,0,4,Scan Strength Bonus
 # Scan Rangefinding Array,,,,,,,,,,
 1907,2,1223,1371,2,479,1,0,0,4,Scan Strength Bonus
+# Entosis link,,,,,,,,,,
+2033,2,1313,37,3,6,0,0,13,15,Speed Limit
 # SHIELD,,,,,,,,,,
 # Shield Boost Amplifiers,,,,,,,,,,
 548,2,338,68,2,40;1156,1,0,0,14,Shield Boost Bonus
@@ -1373,6 +1391,7 @@
 66,2,782,73,2,46,0,0,0,15,Engine Thermal Shielding
 1131,2,1308,10002,3,6,0,0,0,15,Higgs Anchor - Mass
 315,2,1308,37,3,6,0,0,0,15,Higgs Anchor - Speed
+151,2,1308,70,3,6,0,0,0,15,Higgs Anchor - Agility
 624,2,782,1281,3,6,1,0,0,15,Hyperspatial Velocity Optimizer
 151,2,782,70,3,6,1,0,0,15,Low Friction Nozzle Joints
 1076,2,782,37,3,6,1,0,0,15,Polycarbon Engine Housing - Velocity

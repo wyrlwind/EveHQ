@@ -1546,7 +1546,7 @@ Imports EveHQ.Common.Extensions
         Next
     End Sub
     Private Sub ApplyStackingPenalties()
-        Call PrioritiseEffects()
+
         Dim baseEffectList As List(Of FinalEffect)
         Dim finalEffectList As List(Of FinalEffect)
         Dim stackingGroupsP As New SortedList(Of Integer, SortedList(Of Integer, FinalEffect)) ' Positive Effect Stacking Groups
@@ -1650,35 +1650,54 @@ Imports EveHQ.Common.Extensions
             Next
             _moduleEffectsTable(att) = finalEffectList
         Next
+
+        Call PrioritiseEffects()
     End Sub
     Private Sub PrioritiseEffects()
         Dim baseEffectList As List(Of FinalEffect)
-        Dim hiPEffectList As New List(Of FinalEffect)
-        Dim lowPEffectList As New List(Of FinalEffect)
+
+        Dim effectPriorityGroups As List(Of List(Of FinalEffect)) = New List(Of List(Of FinalEffect))
+        Dim effectPriorityGroupCount As Integer = 3
         Dim finalEffectList As List(Of FinalEffect)
         Dim att As Integer
         For attNumber As Integer = 0 To _moduleEffectsTable.Keys.Count - 1
             att = CInt(_moduleEffectsTable.Keys(attNumber))
             baseEffectList = _moduleEffectsTable(att)
-            hiPEffectList.Clear() : lowPEffectList.Clear()
+
+            effectPriorityGroups.Clear()
+            For i As Integer = 0 To effectPriorityGroupCount
+                effectPriorityGroups.Add(New List(Of FinalEffect))
+            Next
+
             For Each fEffect As FinalEffect In baseEffectList
                 Select Case fEffect.CalcType
                     Case EffectCalcType.Addition
-                        hiPEffectList.Add(fEffect)
+                        effectPriorityGroups(0).Add(fEffect)
+                    Case EffectCalcType.AbsoluteMin
+                        effectPriorityGroups(2).Add(fEffect)
+                    Case EffectCalcType.AbsoluteMax
+                        effectPriorityGroups(2).Add(fEffect)
+                    Case EffectCalcType.ResistanceKiller
+                        effectPriorityGroups(3).Add(fEffect)
+                    Case EffectCalcType.HullResistanceKiller
+                        effectPriorityGroups(3).Add(fEffect)
                     Case Else
-                        lowPEffectList.Add(fEffect)
+                        effectPriorityGroups(1).Add(fEffect)
                 End Select
             Next
+
             finalEffectList = New List(Of FinalEffect)
-            For Each fEffect As FinalEffect In hiPEffectList
-                finalEffectList.Add(fEffect)
+
+            For Each list In effectPriorityGroups
+                For Each fEffect In list
+                    finalEffectList.Add(fEffect)
+                Next
             Next
-            For Each fEffect As FinalEffect In lowPEffectList
-                finalEffectList.Add(fEffect)
-            Next
+
             _moduleEffectsTable(att) = finalEffectList
         Next
     End Sub
+
     Private Sub ApplyModuleEffectsToCharges(ByRef newShip As Ship)
         Dim att As Integer
         For Each aModule As ShipModule In newShip.SlotCollection
@@ -1758,6 +1777,7 @@ Imports EveHQ.Common.Extensions
             tempAtts.Add(CStr(att), newShip.Attributes(att))
         Next
         For Each att As String In tempAtts.Keys
+            Dim att2 As Integer = CInt(att)
             If _moduleEffectsTable.ContainsKey(CInt(att)) = True Then
                 For Each fEffect As FinalEffect In _moduleEffectsTable(CInt(att))
                     If ProcessFinalEffectForShip(newShip, fEffect) = True Then
@@ -2265,6 +2285,10 @@ Imports EveHQ.Common.Extensions
                 newShip.Attributes(att) = Math.Min(fEffect.AffectedValue, newShip.Attributes(att))
             Case EffectCalcType.CapBoosters
                 newShip.Attributes(att) = Math.Min(newShip.Attributes(att) - fEffect.AffectedValue, 0)
+            Case EffectCalcType.ResistanceKiller
+                newShip.Attributes(att) = newShip.Attributes(att) - newShip.Attributes(att) * fEffect.AffectedValue / 100
+            Case EffectCalcType.HullResistanceKiller
+                newShip.Attributes(att) = If(fEffect.AffectedValue = 1, 0, newShip.Attributes(att))
         End Select
         ' Use only 2 decimal places of precision for PG and CPU output
         If att = AttributeEnum.ShipPowergridOutput Or att = AttributeEnum.ShipCpuOutput Then
