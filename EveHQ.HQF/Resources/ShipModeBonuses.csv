@@ -59,7 +59,7 @@
 35683,1,0,0,110,1,35683,0,1,2,-33.33333333,15,Defence Mode - Hull Thermal Resistence
 35683,1,0,0,73,2,62;1199,0,1,0,-33.33333333,15,Defence Mode - Armor repair duration
 
-35683,2,0,0,54,1,564;561,0,0,0,66.66666667,15,Sharpshooter Mode - Small Hybrid Optimal
+35683,2,0,0,54,4,564;561,0,0,0,66.66666667,15,Sharpshooter Mode - Small Hybrid Optimal
 35683,2,0,0,76,1,35683,0,0,0,100,15,Sharpshooter Mode - Targeting Range
 35683,2,0,0,564,1,35683,0,0,0,100,15,Sharpshooter Mode - Scan Resolution
 35683,2,0,0,210,1,35683,0,0,0,100,15,Sharpshooter Mode - Sensor Strength
