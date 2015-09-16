@@ -225,7 +225,7 @@ Namespace Forms
             ResumeLayout()
 
         End Sub
-        Private Sub LoadFittings()
+        Public Sub LoadFittings()
             Call SavedFittings.LoadFittings()
             Call UpdateFittingsTree(True)
         End Sub
@@ -257,7 +257,7 @@ Namespace Forms
             Call PluginSettings.HQFSettings.SaveHQFSettings()
         End Sub
 
-        Private Sub ShowShipGroups()
+        Public Sub ShowShipGroups()
             Dim sr As New StreamReader(Path.Combine(PluginSettings.HQFCacheFolder, "ShipGroups.bin"))
             Dim shipGroups As String = sr.ReadToEnd
             Dim pathLines() As String = shipGroups.Split(ControlChars.CrLf.ToCharArray)
@@ -2961,7 +2961,7 @@ Namespace Forms
         End Sub
 
         Private Sub btnEditor_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnEditor.Click
-            Using newShipEditor As New FrmShipEditor
+            Using newShipEditor As New FrmShipEditor(Me)
                 newShipEditor.ShowDialog()
             End Using
         End Sub
