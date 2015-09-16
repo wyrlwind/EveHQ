@@ -173,6 +173,10 @@ Namespace Forms
             ' Load up a collection of pilots from the EveHQ Core
             Call LoadPilots()
 
+            ' Load custom ships 
+            Call CustomHQFClasses.LoadCustomShips()
+            Call CustomHQFClasses.ImplementCustomShips()
+
             ' Load saved setups into the fitting array
             Call LoadFittings()
 
