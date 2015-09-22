@@ -376,7 +376,7 @@ Public Class FrmCacheCreator
         StaticData.Types.Clear()
         Dim evehqData As DataSet
         Dim strSql As String = ""
-        strSql &= "SELECT invTypes.*, invGroups.categoryID FROM invGroups INNER JOIN invTypes ON invGroups.groupID = invTypes.groupID "
+        strSql &= "SELECT invTypes.*, invGroups.categoryID FROM invGroups INNER JOIN invTypes ON invGroups.groupID = invTypes.groupID where typeName not like ""%?YC117?%"""
         evehqData = DatabaseFunctions.GetStaticData(strSql)
         Dim newItem As EveType
         For Each itemRow As DataRow In evehqData.Tables(0).Rows
