@@ -66,6 +66,6 @@
 35683,2,0,0,564,1,35683,0,0,0,100,15,Sharpshooter Mode - Scan Resolution
 35683,2,0,0,210,1,35683,0,0,0,100,15,Sharpshooter Mode - Sensor Strength
 
-35683,3,0,0,20,2,46,0,1,0,66.66666667,15,Propulsion Mode - MWD speed boost
-35683,3,0,0,6,2,46,0,1,0,-66.66666667,15,Propulsion Mode - MWD capacitor use
+35683,3,0,0,20,4,131,0,1,0,66.66666667,15,Propulsion Mode - MWD speed boost
+35683,3,0,0,6,4,131,0,1,0,-66.66666667,15,Propulsion Mode - MWD capacitor use
 35683,3,0,0,70,1,35683,0,1,0,-66.66666667,15,Propulsion Mode - Inertia
