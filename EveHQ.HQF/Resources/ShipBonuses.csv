@@ -545,7 +545,10 @@
 24698,1,33096,273,1,24698,0,1,2,-4,15,Shield Kinetic Resistance
 24698,1,33096,274,1,24698,0,1,2,-4,15,Shield Thermal Resistance
 # Drake Navy Issue,,,,,,,,,,,
-33153,1,33096,37,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Velocity
+33153,1,33096,271,1,33153,0,1,2,-4,15,Shield EM Resistance
+33153,1,33096,272,1,33153,0,1,2,-4,15,Shield Explosive Resistance
+33153,1,33096,273,1,33153,0,1,2,-4,15,Shield Kinetic Resistance
+33153,1,33096,274,1,33153,0,1,2,-4,15,Shield Thermal Resistance
 33153,1,33096,654,2,385;655;772;654;395,0,1,0,-5,15,Heavy & HAM Explosion Radius
 # Dramiel,,,,,,,,,,,
 17932,0,0,10016,4,574;577,0,0,0,100,15,Small Projectile Turret Damage
@@ -851,8 +854,8 @@
 24702,1,33098,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
 24702,1,33098,10016,4,575;578,0,1,0,5,15,Medium Projectile Turret Damage
 # Hurricane Fleet Issue,,,,,,,,,,,
-33157,1,33098,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
-33157,1,33098,10016,4,575;578,0,1,0,5,15,Medium Projectile Turret Damage
+33157,1,33098,160,4,575;578,0,1,0,10,15,Medium Projectile Turret Tracking
+33157,1,33098,10016,4,575;578,0,1,0,10,15,Medium Projectile Turret Damage
 # Hyena,,,,,,,,,,,
 11387,1,3329,54,2,379,0,1,0,10,15,Target Painter Optimal Range
 11387,1,3329,554,2,379,0,1,0,10,15,Target Painter Effect Sig Radius
