@@ -249,9 +249,13 @@
 # Brutix,,,,,,,,,,,
 16229,1,33097,10015,4,562;565,0,1,0,10,15,Medium Hybrid Turret Damage
 16229,1,33097,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
+16229,0,0,54,4,562;565,0,1,0,25,15,Medium Hybrid Turret Optimal Range
+16229,0,0,158,4,562;565,0,1,0,25,15,Medium Hybrid Turret Falloff
 # Brutix Navy Issue,,,,,,,,,,,
 33151,1,33097,10015,4,562;565,0,1,0,10,15,Medium Hybrid Turret Damage
 33151,1,33097,160,4,562;565,0,1,0,7.5,15,Medium Hybrid Turret Tracking
+33151,0,0,54,4,562;565,0,1,0,25,15,Medium Hybrid Turret Optimal Range
+33151,0,0,158,4,562;565,0,1,0,25,15,Medium Hybrid Turret Falloff
 # Brutix Serpentis Edition,,,,,,,,,,,
 #33869,1,33097,10015,4,562;565,0,1,0,10,15,Medium Hybrid Turret Damage
 #33869,1,33097,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
@@ -472,6 +476,7 @@
 # Cyclone,,,,,,,,,,,
 16231,1,33098,51,2,510;771,0,1,0,-5,15,Heavy & HAM Launcher ROF
 16231,1,33098,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
+16231,0,0,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,25,15,Missile Velocity
 # Cyclone Thukker Tribe Edition,,,,,,,,,,,
 #33871,1,33098,51,2,510;771,0,1,0,-5,15,Heavy & HAM Launcher ROF
 #33871,1,33098,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
@@ -544,9 +549,14 @@
 24698,1,33096,272,1,24698,0,1,2,-4,15,Shield Explosive Resistance
 24698,1,33096,273,1,24698,0,1,2,-4,15,Shield Kinetic Resistance
 24698,1,33096,274,1,24698,0,1,2,-4,15,Shield Thermal Resistance
+24698,0,0,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,25,15,Missile Velocity
 # Drake Navy Issue,,,,,,,,,,,
-33153,1,33096,37,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Velocity
+33153,1,33096,271,1,33153,0,1,2,-4,15,Shield EM Resistance
+33153,1,33096,272,1,33153,0,1,2,-4,15,Shield Explosive Resistance
+33153,1,33096,273,1,33153,0,1,2,-4,15,Shield Kinetic Resistance
+33153,1,33096,274,1,33153,0,1,2,-4,15,Shield Thermal Resistance
 33153,1,33096,654,2,385;655;772;654;395,0,1,0,-5,15,Heavy & HAM Explosion Radius
+33153,0,0,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,25,15,Missile Velocity
 # Dramiel,,,,,,,,,,,
 17932,0,0,10016,4,574;577,0,0,0,100,15,Small Projectile Turret Damage
 17932,1,3329,158,4,574;577,0,1,0,10,15,Small Projectile Turret Falloff
@@ -637,10 +647,9 @@
 20189,0,0,50,2,78,0,0,0,-100,15,Bulkheads CPU Need
 # Ferox,,,,,,,,,,,
 16227,1,33096,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
-16227,1,33096,271,1,16227,0,1,2,-4,15,Shield EM Resistance
-16227,1,33096,272,1,16227,0,1,2,-4,15,Shield Explosive Resistance
-16227,1,33096,273,1,16227,0,1,2,-4,15,Shield Kinetic Resistance
-16227,1,33096,274,1,16227,0,1,2,-4,15,Shield Thermal Resistance
+16227,1,33096,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
+16227,0,0,54,4,562;565,0,1,0,25,15,Medium Hybrid Turret Optimal Range
+16227,0,0,158,4,562;565,0,1,0,25,15,Medium Hybrid Turret Falloff
 # Ferox Guristas Edition,,,,,,,,,,,
 #33873,1,33096,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
 #33873,1,33096,271,1,33873,0,1,2,-4,15,Shield EM Resistance
@@ -761,9 +770,13 @@
 # Harbinger,,,,,,,,,,,
 24696,1,33095,6,4,568;572,0,1,0,-10,15,Medium Energy Turret Cap Use
 24696,1,33095,10014,4,568;572,0,1,0,10,15,Medium Energy Turret Damage
+24696,0,0,54,4,568;572,0,1,0,25,15,Medium Energy Turret Optimal Range
+24696,0,0,158,4,568;572,0,1,0,25,15,Medium Energy Turret Falloff
 # Harbinger Navy Issue,,,,,,,,,,,
 33155,1,33095,10014,4,568;572,0,1,0,10,15,Medium Energy Turret Damage
 33155,1,33095,160,4,568;572,0,1,0,7.5,15,Medium Energy Turret Tracking
+33155,0,0,54,4,568;572,0,1,0,25,15,Medium Energy Turret Optimal Range
+33155,0,0,158,4,568;572,0,1,0,25,15,Medium Energy Turret Falloff
 # Harpy,,,,,,,,,,,
 11381,1,3330,54,4,561;564,0,1,0,10,15,Small Hybrid Turret Optimal Range
 11381,1,3330,271,1,11381,0,1,2,-4,15,Shield EM Resistance
@@ -853,9 +866,13 @@
 # Hurricane,,,,,,,,,,,
 24702,1,33098,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
 24702,1,33098,10016,4,575;578,0,1,0,5,15,Medium Projectile Turret Damage
+24702,0,0,54,4,575;578,0,1,0,25,15,Medium Projectile Turret Optimal Range
+24702,0,0,158,4,575;578,0,1,0,25,15,Medium Projectile Turret Falloff
 # Hurricane Fleet Issue,,,,,,,,,,,
-33157,1,33098,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
-33157,1,33098,10016,4,575;578,0,1,0,5,15,Medium Projectile Turret Damage
+33157,1,33098,160,4,575;578,0,1,0,10,15,Medium Projectile Turret Tracking
+33157,1,33098,10016,4,575;578,0,1,0,10,15,Medium Projectile Turret Damage
+33157,0,0,54,4,575;578,0,1,0,25,15,Medium Projectile Turret Optimal Range
+33157,0,0,158,4,575;578,0,1,0,25,15,Medium Projectile Turret Falloff
 # Hyena,,,,,,,,,,,
 11387,1,3329,54,2,379,0,1,0,10,15,Target Painter Optimal Range
 11387,1,3329,554,2,379,0,1,0,10,15,Target Painter Effect Sig Radius
@@ -1238,6 +1255,7 @@
 24700,1,33097,9,3,18,0,1,0,10,15,Drone Hull HP
 24700,1,33097,64,3,18,0,1,0,10,15,Drone Damage
 24700,1,33097,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
+24700,0,0,37,3,18,0,1,0,25,15,Drone max velocity
 # Naga,,,,,,,,,,,
 4306,1,33096,10015,4,563;566,0,1,0,5,15,Large Hybrid Turret Damage
 4306,1,33096,54,4,563;566,0,1,0,10,15,Large Hybrid Turret Optimal Range
@@ -1528,6 +1546,7 @@
 16233,1,33095,265,3,18,0,1,0,10,15,Drone Armor HP
 16233,1,33095,9,3,18,0,1,0,10,15,Drone Hull HP
 16233,1,33095,64,3,18,0,1,0,10,15,Drone Damage
+16233,0,0,37,3,18,0,1,0,25,15,Drone max velocity
 # Prophecy Blood Raiders Edition,,,,,,,,,,,
 #33875,1,33095,267,1,33875,0,1,2,-4,15,Armor EM Resistance
 #33875,1,33095,268,1,33875,0,1,2,-4,15,Armor Explosive Resistance

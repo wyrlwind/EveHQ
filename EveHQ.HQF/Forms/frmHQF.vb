@@ -173,6 +173,10 @@ Namespace Forms
             ' Load up a collection of pilots from the EveHQ Core
             Call LoadPilots()
 
+            ' Load custom ships 
+            Call CustomHQFClasses.LoadCustomShips()
+            Call CustomHQFClasses.ImplementCustomShips()
+
             ' Load saved setups into the fitting array
             Call LoadFittings()
 
@@ -221,7 +225,7 @@ Namespace Forms
             ResumeLayout()
 
         End Sub
-        Private Sub LoadFittings()
+        Public Sub LoadFittings()
             Call SavedFittings.LoadFittings()
             Call UpdateFittingsTree(True)
         End Sub
@@ -253,7 +257,7 @@ Namespace Forms
             Call PluginSettings.HQFSettings.SaveHQFSettings()
         End Sub
 
-        Private Sub ShowShipGroups()
+        Public Sub ShowShipGroups()
             Dim sr As New StreamReader(Path.Combine(PluginSettings.HQFCacheFolder, "ShipGroups.bin"))
             Dim shipGroups As String = sr.ReadToEnd
             Dim pathLines() As String = shipGroups.Split(ControlChars.CrLf.ToCharArray)
@@ -1931,13 +1935,14 @@ Namespace Forms
                 If OpenFittingsContains(fitKey) = False Then
                     If Fittings.FittingList.ContainsKey(fitKey) = True Then
                         Dim newfit As Fitting = Fittings.FittingList(fitKey)
-                        Call CreateNewFittingTab(newfit)
-                        newfit.ShipSlotCtrl.UpdateEverything()
+                        If CreateNewFittingTab(newfit) Then
+                            newfit.ShipSlotCtrl.UpdateEverything()
 
-                        ' Set the newly opened fitting
-                        ' NB: Doesn't trigger the event if this is the first tab open
-                        ActiveFitting = newfit
-                        tabHQF.SelectedTab = tabHQF.Tabs(fitKey)
+                            ' Set the newly opened fitting
+                            ' NB: Doesn't trigger the event if this is the first tab open
+                            ActiveFitting = newfit
+                            tabHQF.SelectedTab = tabHQF.Tabs(fitKey)
+                        End If
                     Else
                         MessageBox.Show("Can't load the '" & fitKey & "' fitting as it's not there!!", "Error locating fitting details", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
@@ -2956,7 +2961,7 @@ Namespace Forms
         End Sub
 
         Private Sub btnEditor_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnEditor.Click
-            Using newShipEditor As New FrmShipEditor
+            Using newShipEditor As New FrmShipEditor(Me)
                 newShipEditor.ShowDialog()
             End Using
         End Sub

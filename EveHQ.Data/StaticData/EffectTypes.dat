@@ -3715,7 +3715,6 @@ $†/†/shipBonusSentryShieldHPGC3
 +–/&–/!shipBonusLightMissileAllDamageMC2
 =—/8—/3shipShieldCapacityAdditionCaldariTacticalDestroyer2
 8“/3“/.shipMissileReloadTimeCaldariTacticalDestroyer2
-”/”/shipBonusWDFGMass
 !ÿ/ÿ/entosisDurationMultiply
 $ﬁ/ﬁ/missileVelocityBonusOnline
 *ﬂ/%ﬂ/ missileExplosionDelayBonusOnline
@@ -3756,3 +3755,13 @@ $Â/Â/missileExplosionDelayBonus
 é0é0passiveMassAdd
 ì0ì0passiveSpeedLimit
 %î0 î0systemMaxVelocityPercentage
+$ñ0ñ0shipBonusWDFGnullPenalties
+ö0ö0entosisCPUPenalty
+õ0õ0entosisCPUAddition
+ú0ú0battlecruiserMETRange
+ù0ù0battlecruiserMHTRange
+û0û0battlecruiserMPTRange
+#ü0ü0battlecruiserMissileRange
+!†0†0battlecruiserDroneSpeed
+°0°0shipHybridDmg1CBC2
+)¢0$¢0shipBonusProjectileTrackingMBC2

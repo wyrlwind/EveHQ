@@ -2126,3 +2126,12 @@ FîAîmodeArmorRepDurationPostDivmodeArmorRepDurationPostDiv z(
 $ññ
 speedLimit
 speedLimit (
+Aò<òshieldDamageLimit Shield Damage Limit (per second) q(
+?ó:óarmorDamageLimitArmor Damage Limit (per second) q(
+GôBôstructureDamageLimit#Structure Damage Limit (per second) q(
+Aõ<õshieldRepairLimit Shield Repair Limit (per second) q(
+?ö:öarmorRepairLimitArmor Repair Limit (per second) q(
+G÷B÷structureRepairLimit#Structure Repair Limit (per second) q(
+(ù#ùentosisCPUAddentosisCPUAdd z
+0ú+úentosisCPUPenaltyentosisCPUPenalty z
+(û#ûroleBonusCBCroleBonusCBC z(

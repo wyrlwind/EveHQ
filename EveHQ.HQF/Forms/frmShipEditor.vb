@@ -55,10 +55,19 @@ Namespace Forms
         ReadOnly _shipRaces As New SortedList(Of String, String)
 
 #Region "Form Loading Routines"
+        Private _frmHQF As FrmHQF
+
+        Sub New(frmHQF As FrmHQF)
+            InitializeComponent()
+            _frmHQF = frmHQF
+        End Sub
 
         Private Sub frmShipEditor_FormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles Me.FormClosing
             ' Implement the data before we close the form
+            Call CustomHQFClasses.LoadCustomShips()
             Call CustomHQFClasses.ImplementCustomShips()
+            Call _frmHQF.LoadFittings()
+            Call _frmHQF.ShowShipGroups()
         End Sub
 
         Private Sub frmShipEditor_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load

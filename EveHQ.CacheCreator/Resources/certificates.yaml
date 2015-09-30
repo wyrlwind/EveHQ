@@ -5031,7 +5031,7 @@
     description: This certificate represents a level of competence in passive armor
         buffers. It is mainly used to maximize Effective Hitpoints (EHP) on highly
         competitive ship fittings. This is a good skillset for capsuleers looking
-        of getting the most armor buffer possible on their vessel.
+        to get the most armor buffer possible on their vessel.
     groupID: 1210
     name: Armor Reinforcement
     recommendedFor:
