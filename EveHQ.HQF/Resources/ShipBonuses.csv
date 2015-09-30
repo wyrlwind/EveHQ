@@ -637,10 +637,7 @@
 20189,0,0,50,2,78,0,0,0,-100,15,Bulkheads CPU Need
 # Ferox,,,,,,,,,,,
 16227,1,33096,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
-16227,1,33096,271,1,16227,0,1,2,-4,15,Shield EM Resistance
-16227,1,33096,272,1,16227,0,1,2,-4,15,Shield Explosive Resistance
-16227,1,33096,273,1,16227,0,1,2,-4,15,Shield Kinetic Resistance
-16227,1,33096,274,1,16227,0,1,2,-4,15,Shield Thermal Resistance
+16227,1,33096,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 # Ferox Guristas Edition,,,,,,,,,,,
 #33873,1,33096,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
 #33873,1,33096,271,1,33873,0,1,2,-4,15,Shield EM Resistance
