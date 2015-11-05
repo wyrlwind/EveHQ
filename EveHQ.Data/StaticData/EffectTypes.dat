@@ -3755,6 +3755,7 @@ $å/å/missileExplosionDelayBonus
 Ž0Ž0passiveMassAdd
 “0“0passiveSpeedLimit
 %”0 ”0systemMaxVelocityPercentage
+&•0!•0behaviorNpcRemoteArmorRepair
 $–0–0shipBonusWDFGnullPenalties
 š0š0entosisCPUPenalty
 ›0›0entosisCPUAddition
@@ -3765,3 +3766,14 @@ $–0–0shipBonusWDFGnullPenalties
 ! 0 0battlecruiserDroneSpeed
 ¡0¡0shipHybridDmg1CBC2
 )¢0$¢0shipBonusProjectileTrackingMBC2
+%¨0 ¨0remoteEnergyTransferFalloff
+!©0©0remoteHullRepairFalloff
+%ª0 ª0remoteShieldTransferFalloff
+"«0«0energyNeutralizerFalloff
+"¬0¬0remoteArmorRepairFalloff
+ µ0µ0energyNosferatuFalloff
+1º0,º0'siegeWarfareShieldCapacityBonusReplacer
+%»0 »0armorWarfareArmorHpReplacer
+/½0*½0%informationWarfareMaxTargetRangeBonus
+-¾0(¾0#skirmishWarfareAgilityBonusReplacer
+8¿03¿0.miningForemanMindLinkMiningAmountBonusReplacer
