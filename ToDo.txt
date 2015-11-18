@@ -1,3 +1,0 @@
-Ensure the native G15 LCD files are included with the installer
-Tidy up packages and library files
-Ensure versions of each project work correctly (using the appropriate AssemblyInfo.template file)

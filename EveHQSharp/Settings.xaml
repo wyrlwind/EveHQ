@@ -1,0 +1,21 @@
+﻿<Window x:Class="EveHQSharp.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EveHQSharp"
+        mc:Ignorable="d"
+        Title="Settings" Height="600" Width="300" Closed="Window_Closed">
+    <Grid>
+        <TabControl x:Name="tabControl" TabStripPlacement="Left">
+            <TabItem Header="General">
+                <Grid Background="#FFE5E5E5">
+                    <Label x:Name="label" Content="General Settings" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
