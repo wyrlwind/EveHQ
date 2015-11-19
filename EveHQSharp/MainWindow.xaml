@@ -7,10 +7,6 @@
         mc:Ignorable="d"
         Title="EveHQSharp" Closed="Window_Closed">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="17*"/>
-            <ColumnDefinition Width="21*"/>
-        </Grid.ColumnDefinitions>
         <TabControl x:Name="tabControl" Height="74" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Grid.ColumnSpan="2">
             <TabItem Header="Core">
                 <Grid Background="#FFE5E5E5" Margin="0,0,0,-1">
