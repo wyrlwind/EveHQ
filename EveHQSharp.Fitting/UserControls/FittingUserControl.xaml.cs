@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EveHQSharp.Core
+namespace EveHQSharp.Fitting
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FittingUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FittingUserControl : UserControl
     {
-        public MainWindow()
+        public FittingUserControl()
         {
             InitializeComponent();
         }

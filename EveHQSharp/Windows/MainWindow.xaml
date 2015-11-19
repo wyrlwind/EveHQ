@@ -1,0 +1,38 @@
+﻿<Window x:Class="EveHQSharp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EveHQSharp"
+        mc:Ignorable="d"
+        Title="EveHQSharp" Closed="Window_Closed">
+    <Grid>
+        <TabControl x:Name="tabControl" Height="74" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Grid.ColumnSpan="2">
+            <TabItem Header="Core">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,-1">
+                    <Button x:Name="button4" Content="Manage &#xD;&#xA;    API" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="47" Click="button4_Click" BorderBrush="#FF00C323"/>
+                    <Button x:Name="button5" Content="Settings" HorizontalAlignment="Left" Margin="105,0,0,0" Width="48" Click="button5_Click" BorderBrush="#FF1ED800"/>
+                    <Button x:Name="button6" Content="Update &#xD;&#xA;   API" HorizontalAlignment="Left" Margin="50,0,0,0" Width="50"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Plug-ins">
+                <Grid Background="#FFE5E5E5" Height="46" VerticalAlignment="Top">
+                    <Button x:Name="fitterButton" Content="Fitter" HorizontalAlignment="Left" Width="75" Click="button_Click" BorderBrush="#FF12C900"/>
+                    <Button x:Name="button1" Content="PilotManager" HorizontalAlignment="Left" Margin="80,0,0,0" Width="75" Click="button1_Click" BorderBrush="#FF11BF00"/>
+                    <Button x:Name="button2" Content="Industry" HorizontalAlignment="Left" Margin="160,0,0,0" Width="75" Click="button2_Click" BorderBrush="#FF10B200"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <TabControl x:Name="mainTabControl" Margin="0,74,0,0" Grid.ColumnSpan="2">
+            <TabItem x:Name="fitterTab" Header="Fitter">
+                <Grid x:Name="fitterGrid" Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="pilotManagerTab" Header="PilotManager" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="96" Margin="0">
+                <Grid x:Name="pilotManagerGrid" Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="industryTab" Header="Industry" Height="20" VerticalAlignment="Top" Margin="0,0,-5,0">
+                <Grid x:Name="industryGrid" Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
