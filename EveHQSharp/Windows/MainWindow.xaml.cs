@@ -29,7 +29,7 @@ namespace EveHQSharp
 
         }
 
-        private void button5_Click(object sender, RoutedEventArgs e)
+        private void settingsButton_Click(object sender, RoutedEventArgs e)
         {
             if (!Core.Classes.WindowStates.settingsWindowOpen)
             {
@@ -43,17 +43,17 @@ namespace EveHQSharp
             Environment.Exit(1);
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void fitterButton_Click(object sender, RoutedEventArgs e)
         {
             if (fitterTab.Visibility != Visibility.Visible)
             {
                 fitterTab.Visibility = Visibility.Visible;
-                EveHQSharp.Fitting.FittingUserControl fittingWindow = new EveHQSharp.Fitting.FittingUserControl();
+                Fitting.FittingUserControl fittingWindow = new EveHQSharp.Fitting.FittingUserControl();
                 fitterGrid.Children.Add(fittingWindow);
             }
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void pilotManagerButton_Click(object sender, RoutedEventArgs e)
         {
             if (pilotManagerTab.Visibility != Visibility.Visible)
             {
@@ -62,7 +62,7 @@ namespace EveHQSharp
             }
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void industryButton_Click(object sender, RoutedEventArgs e)
         {
             if (industryTab.Visibility != Visibility.Visible)
             {
@@ -72,7 +72,7 @@ namespace EveHQSharp
 
         }
 
-        private void button4_Click(object sender, RoutedEventArgs e)
+        private void manageAPIButton_Click(object sender, RoutedEventArgs e)
         {
             if (!Core.Classes.WindowStates.manageAPIWindowOpen)
             {
