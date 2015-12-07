@@ -52,7 +52,7 @@ Namespace Forms
     Public Class FrmModifyEveAccounts
         Dim _testV2APIKeyType As String = "Unknown"
         Dim _testV2APIAccessMask As Long = 0
-        Private Const V2URL As String = "https://support.eveonline.com/api"
+        Private Const V2URL As String = "https://community.eveonline.com/support/api-key/"
 
         Private Sub frmModifyEveAccounts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
             lblGetAPIKeyV2.Text = V2URL
