@@ -2123,7 +2123,12 @@ Namespace Forms
         Private Sub mnuShowModuleMarketGroup_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuShowModuleMarketGroup.Click
             Dim moduleID As Integer = CInt(tvwModules.SelectedNodes(0).Name)
             Dim cModule As ShipModule = ModuleLists.ModuleList.Item(moduleID)
-            Dim pathLine As String = Market.MarketGroupPath(CStr(cModule.MarketGroup))
+
+            Dim pathLine As String
+            If cModule.MarketGroup <> 0 Then
+                pathLine = Market.MarketGroupPath(CStr(cModule.MarketGroup))
+            End If
+
             If pathLine IsNot Nothing Then
                 HQFEvents.DisplayedMarketGroup = pathLine
             Else
