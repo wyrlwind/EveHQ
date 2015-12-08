@@ -46,7 +46,7 @@ armorBonus
 armorBonus z(	
 )B%BdurationBonusDuration Bonus i(
 +C'CcapacitorBonusCapacitor Bonus r(
-%D!DshieldBonusshield Bonus q(
+%D!DshieldBonusShield Bonus q(
  EE	rateBonus	rateBonus z(	
 %F!FagilityInertia Modifier h(
 0H,HcapacityBonusShield Hitpoint Bonus q(
@@ -509,7 +509,7 @@ Dü?üdamageCloudChanceReductiondamageCloudChanceReduction z(
 :ß5ßrocketVelocityPercentrocketVelocityPercent z(	
 /®*®signatureRadiusSignature Radius (
 0©+©maxGangSizeBonusmaxGangSizeBonus z(	
-:™5™signatureRadiusBonusSignature Radius Bonus |(
+=™8™signatureRadiusBonusSignature Radius Modifier |(
 4´/´cloakVelocityBonuscloakVelocityBonus i(	
 -¨(¨anchoringDelayAnchoring Delay e(
 3≠.≠maxFlightTimeBonusFlight Time Bonus y(
@@ -1651,8 +1651,8 @@ K‘F‘"shieldThermalDamageResistanceBonusShield Thermal Resistance i(
 I’D’smallWeaponDamageMultiplierSmall weapon damage multiplier h(
 K÷F÷mediumWeaponDamageMultiplierMedium weapon damage multiplier h(
 C◊>◊armorDamageAmountMultiplierRepair amount multiplier h(
-FÿAÿshieldBonusMultiplier!Shield transfer amount multiplier h(
-CŸ>ŸshieldBonusMultiplierRemoteShield repair multiplier h(
+=ÿ8ÿshieldBonusMultiplierShield repair multiplier h(
+LŸGŸshieldBonusMultiplierRemote!Shield transfer amount multiplier h(
 P⁄K⁄!armorDamageAmountMultiplierRemoteRemote repair amount multiplier h(
 N€I€!capacitorCapacityMultiplierSystemCapacitor capacity multiplier h(
 C‹>‹rechargeRateMultiplierCapacitor recharge multiplier h(
@@ -1690,7 +1690,7 @@ J˚E˚subsystemBonusAmarrOffensive3subsystemBonusAmarrOffensive3 z(
 P¸K¸ subsystemBonusGallenteOffensive3 subsystemBonusGallenteOffensive3 z(
 N˝I˝subsystemBonusCaldariOffensive3subsystemBonusCaldariOffensive3 z(
 P˛K˛ subsystemBonusMinmatarOffensive3 subsystemBonusMinmatarOffensive3 z(
-(ˇ#ˇshipBonusCR3shipBonusCR3 z(	
+(ˇ#ˇshipBonusCC3shipBonusCC3 z(	
 ,Ä'ÄecmRangeBonusECM Range Bonus i(
 8Å3ÅeliteBonusReconShip3eliteBonusReconShip3 z(	
 0Ç+ÇwarpBubbleImmunewarpBubbleImmune z(
@@ -2136,8 +2136,24 @@ G˜B˜structureRepairLimit#Structure Repair Limit (per second) q(
 0˙+˙entosisCPUPenaltyentosisCPUPenalty z
 (˚#˚roleBonusCBCroleBonusCBC z(
 9¸4¸falloffEffectivenessEffectiveness Falloff (
-=˝8˝neutralizingResistanceNeutralizing Resistance l(
-@˛;˛entitySuperWeaponMaxRangeentitySuperWeaponMaxRange z
->ˇ9ˇentitySuperWeaponFallOffentitySuperWeaponFallOff z
-JÄEÄentitySuperWeaponTrackingSpeedentitySuperWeaponTrackingSpeed z
-\ÅWÅ'entitySuperWeaponOptimalSignatureRadius'entitySuperWeaponOptimalSignatureRadius z
+F˝A˝capacitorWarfareResistanceCapacitor Warfare Resistance l(
+B˛=˛entitySuperWeaponMaxRangeentitySuperWeaponMaxRange z(!
+@ˇ;ˇentitySuperWeaponFallOffentitySuperWeaponFallOff z(!
+LÄGÄentitySuperWeaponTrackingSpeedentitySuperWeaponTrackingSpeed z(!
+^ÅYÅ'entitySuperWeaponOptimalSignatureRadius'entitySuperWeaponOptimalSignatureRadius z(!
+Dä?äclothingAlsoCoversCategory2clothingAlsoCoversCategory2 z
+Dã?ãeliteBonusCommandDestroyer1eliteBonusCommandDestroyer1 z
+Då?åeliteBonusCommandDestroyer2eliteBonusCommandDestroyer2 z
+Dç?çeliteBonusCommandDestroyer3eliteBonusCommandDestroyer3 z
+Dè?èclothingRemovesCategory2Does Not Require Clothing Type z
+$êêroleBonusCDroleBonusCD z
+0ë+ëcanFitShipGroup9Can be fitted to s(
+)í$ímjdJumpRangeJump Distance (
+,ì'ì
+mjfgRadiusArea Effect Radius (
+NïIïeliteBonusElectronicAttackShip3eliteBonusElectronicAttackShip3 z(
+(ñ#ñshipBonusAC3shipBonusAC3 z(	
+"´´	roleBonus	roleBonus z(	
+6¨1¨eliteBonusLogiFrig1eliteBonusLogiFrig1 z(	
+6≠1≠eliteBonusLogiFrig2eliteBonusLogiFrig2 z(	
+@∂;∂velocityPenaltyReductionvelocityPenaltyReduction z(

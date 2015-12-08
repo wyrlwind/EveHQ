@@ -248,6 +248,15 @@ Cruisers\Standard Cruisers\Minmatar\Scythe
 Cruisers\Standard Cruisers\Minmatar\Stabber
 Destroyers
 Destroyers\Advanced Destroyers
+Destroyers\Advanced Destroyers\Command Destroyers
+Destroyers\Advanced Destroyers\Command Destroyers\Amarr
+Destroyers\Advanced Destroyers\Command Destroyers\Amarr\Pontifex
+Destroyers\Advanced Destroyers\Command Destroyers\Caldari
+Destroyers\Advanced Destroyers\Command Destroyers\Caldari\Stork
+Destroyers\Advanced Destroyers\Command Destroyers\Gallente
+Destroyers\Advanced Destroyers\Command Destroyers\Gallente\Magus
+Destroyers\Advanced Destroyers\Command Destroyers\Minmatar
+Destroyers\Advanced Destroyers\Command Destroyers\Minmatar\Bifrost
 Destroyers\Advanced Destroyers\Interdictors
 Destroyers\Advanced Destroyers\Interdictors\Amarr
 Destroyers\Advanced Destroyers\Interdictors\Amarr\Heretic
@@ -317,6 +326,7 @@ Frigates\Advanced Frigates\Electronic Attack Frigates\Gallente\Keres
 Frigates\Advanced Frigates\Electronic Attack Frigates\Minmatar
 Frigates\Advanced Frigates\Electronic Attack Frigates\Minmatar\Hyena
 Frigates\Advanced Frigates\Expedition Frigates
+Frigates\Advanced Frigates\Expedition Frigates\Endurance
 Frigates\Advanced Frigates\Expedition Frigates\Prospect
 Frigates\Advanced Frigates\Interceptors
 Frigates\Advanced Frigates\Interceptors\Amarr
@@ -331,12 +341,25 @@ Frigates\Advanced Frigates\Interceptors\Gallente\Taranis
 Frigates\Advanced Frigates\Interceptors\Minmatar
 Frigates\Advanced Frigates\Interceptors\Minmatar\Claw
 Frigates\Advanced Frigates\Interceptors\Minmatar\Stiletto
+Frigates\Advanced Frigates\Logistics Frigates
+Frigates\Advanced Frigates\Logistics Frigates\Amarr
+Frigates\Advanced Frigates\Logistics Frigates\Amarr\Deacon
+Frigates\Advanced Frigates\Logistics Frigates\Caldari
+Frigates\Advanced Frigates\Logistics Frigates\Caldari\Kirin
+Frigates\Advanced Frigates\Logistics Frigates\Gallente
+Frigates\Advanced Frigates\Logistics Frigates\Gallente\Thalia
+Frigates\Advanced Frigates\Logistics Frigates\Minmatar
+Frigates\Advanced Frigates\Logistics Frigates\Minmatar\Scalpel
 Frigates\Faction Frigates
 Frigates\Faction Frigates\Navy Faction
 Frigates\Faction Frigates\Navy Faction\Caldari Navy Hookbill
+Frigates\Faction Frigates\Navy Faction\Crucifier Navy Issue
 Frigates\Faction Frigates\Navy Faction\Federation Navy Comet
+Frigates\Faction Frigates\Navy Faction\Griffin Navy Issue
 Frigates\Faction Frigates\Navy Faction\Imperial Navy Slicer
+Frigates\Faction Frigates\Navy Faction\Maulus Navy Issue
 Frigates\Faction Frigates\Navy Faction\Republic Fleet Firetail
+Frigates\Faction Frigates\Navy Faction\Vigil Fleet Issue
 Frigates\Faction Frigates\Pirate Faction
 Frigates\Faction Frigates\Pirate Faction\Astero
 Frigates\Faction Frigates\Pirate Faction\Cruor
