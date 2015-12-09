@@ -2488,6 +2488,10 @@ Namespace Forms
             For Each drone As DroneBayItem In currentship.DroneBayItems.Values
                 fitting.AppendLine(drone.DroneType.Name & " x" & drone.Quantity)
             Next
+            fitting.AppendLine("")
+            For Each cargo As CargoBayItem In currentship.CargoBayItems.Values
+                fitting.AppendLine(cargo.ItemType.Name & " x" & cargo.Quantity)
+            Next
             Try
                 Clipboard.SetText(fitting.ToString)
             Catch ex As Exception
