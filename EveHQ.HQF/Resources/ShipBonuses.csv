@@ -575,6 +575,18 @@
 617,0,0,160,4,574;577,0,0,0,22.5,15,Small Projectile Turret Tracking
 617,0,0,158,4,574;577,0,0,0,22.5,15,Small Projectile Turret Falloff
 617,0,0,54,4,574;577,0,0,0,22.5,15,Small Projectile Turret Optimal Range
+# Endurance,,,,,,,,,,,
+37135,1,32918,73,4,2151,0,1,0,-5,15,Ice Harvester Duration
+37135,1,32918,77,4,1039,0,1,0,5,15,Mining Laser Yield
+37135,1,33856,73,4,2151,0,1,0,-5,15,Ice Harvester Duration
+37135,1,33856,271,1,37135,0,1,2,-4,15,Shield EM Resistance
+37135,1,33856,272,1,37135,0,1,2,-4,15,Shield Explosive Resistance
+37135,1,33856,273,1,37135,0,1,2,-4,15,Shield Kinetic Resistance
+37135,1,33856,274,1,37135,0,1,2,-4,15,Shield Thermal Resistance
+37135,0,0,77,4,1039,0,0,0,200,15,Mining Laser Yield
+37135,0,0,73,4,2151,0,0,0,-50,15,Ice Harvester Duration
+37135,0,0,50,2,330,0,0,0,-50,15,Cloaking Device CPU
+37135,0,0,306,2,330,0,0,4,0,8,Cloaked Velocity Bonus
 # Enyo,,,,,,,,,,,
 12044,1,3328,10015,4,564;561,0,1,0,10,15,Small Hybrid Turret Damage
 12044,1,12095,54,4,564;561,0,1,0,10,15,Small Hybrid Turret Optimal Range
