@@ -2983,7 +2983,7 @@ Imports EveHQ.Common.Extensions
 
         ' Check for ship group restrictions
         Dim shipGroups As New List(Of Integer)
-        Dim shipGroupAttributes() As Integer = {AttributeEnum.ModuleCanFitShipGroup1, AttributeEnum.ModuleCanFitShipGroup2, AttributeEnum.ModuleCanFitShipGroup3, AttributeEnum.ModuleCanFitShipGroup4, AttributeEnum.ModuleCanFitShipGroup5, AttributeEnum.ModuleCanFitShipGroup6, AttributeEnum.ModuleCanFitShipGroup7, AttributeEnum.ModuleCanFitShipGroup8}
+        Dim shipGroupAttributes() As Integer = {AttributeEnum.ModuleCanFitShipGroup1, AttributeEnum.ModuleCanFitShipGroup2, AttributeEnum.ModuleCanFitShipGroup3, AttributeEnum.ModuleCanFitShipGroup4, AttributeEnum.ModuleCanFitShipGroup5, AttributeEnum.ModuleCanFitShipGroup6, AttributeEnum.ModuleCanFitShipGroup7, AttributeEnum.ModuleCanFitShipGroup8, AttributeEnum.ModuleCanFitShipGroup9}
         For Each att As Integer In shipGroupAttributes
             If shipMod.Attributes.ContainsKey(att) = True Then
                 shipGroups.Add(CInt(shipMod.Attributes(att)))
