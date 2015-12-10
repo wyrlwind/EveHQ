@@ -2289,6 +2289,13 @@
 # Vigil,,,,,,,,,,,
 3766,1,3329,54,2,379,0,1,0,10,15,Target Painter Optimal Range
 3766,1,3329,554,2,379,0,1,0,7.5,15,Target Painter Effect Sig Radius
+# Vigil Fleet Issue,,,,,,,,,,,37454
+37454,0,0,54,2,65,0,0,0,50,15,Stasis Web Range
+37454,1,3329,114,2,387;648,0,1,0,20,15,Rocket Damage - EM
+37454,1,3329,116,2,387;648,0,1,0,25,15,Rocket Damage - Exp
+37454,1,3329,117,2,387;648,0,1,0,20,15,Rocket Damage - Kin
+37454,1,3329,118,2,387;648,0,1,0,20,15,Rocket Damage - Therm
+37454,1,3329,654,2,387;648,0,1,0,5,15,Rocket explosion radius
 # Vigilant,,,,,,,,,,,
 17722,0,0,10015,4,562;565,0,0,0,75,15,Medium Hybrid Turret Damage
 17722,1,3332,158,4,562;565,0,1,0,10,15,Medium Hybrid Turret Falloff
