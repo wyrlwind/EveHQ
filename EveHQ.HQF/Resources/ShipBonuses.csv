@@ -463,6 +463,17 @@
 2161,1,3331,351,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Optimal Range
 2161,1,3331,349,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Falloff
 2161,1,3331,54,2,291,0,1,0,10,15,Tracking Disruptor Optimal Range
+# Crucifier Navy Issue,,,,,,,,,,,
+37453,0,0,54,2,291,0,0,0,-85,15,Tracking Disruptor Optimal Range
+37453,0,0,158,2,291,0,0,0,-85,15,Tracking Disruptor Falloff
+37453,1,3331,767,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Tracking
+37453,1,3331,351,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Optimal Range
+37453,1,3331,349,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Falloff
+37453,1,3331,596,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Missile Flight Time
+37453,1,3331,547,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Missile Velocity
+37453,1,3331,848,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion Radius
+37453,1,3331,847,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion velocity
+37453,1,3331,10014,4,567;570,0,1,0,20,15,Small Energy Turret Damage
 # Cruor,,,,,,,,,,,
 17926,0,0,10014,4,567;570,0,0,0,100,15,Small Energy Turret Damage
 17926,1,3331,90,2,68,0,1,0,15,15,Nos Drain Amount
