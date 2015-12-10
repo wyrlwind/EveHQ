@@ -1544,6 +1544,20 @@
 11965,1,22761,50,2,330,0,1,0,-20,15,Cloaking Device CPU
 11965,0,0,714,2,658,0,0,0,-80,15,Cyno Field Fuel
 11965,0,0,73,2,658,0,0,0,-50,15,Cyno Field Duration
+# Pontifex,,,,,,,,,,,
+37481,1,33091,263,3,18,0,1,0,10,15,Drone Shield HP
+37481,1,33091,265,3,18,0,1,0,10,15,Drone Armor HP
+37481,1,33091,9,3,18,0,1,0,10,15,Drone Hull HP
+37481,1,33091,64,3,18,0,1,0,10,15,Drone Damage
+37481,1,33091,267,1,37481,0,1,2,-4,15,Armor EM Resistance
+37481,1,33091,268,1,37481,0,1,2,-4,15,Armor Explosive Resistance
+37481,1,33091,269,1,37481,0,1,2,-4,15,Armor Kinetic Resistance
+37481,1,33091,270,1,37481,0,1,2,-4,15,Armor Thermal Resistance
+37481,1,37615,833,4,1634;1635,0,1,0,2,15,Armored & Information Warfare Link Bonus
+37481,1,37615,73,2,1533,0,1,0,-5,15,Micro Jump Field Generator duration
+37481,0,0,30,2,316,0,0,0,-95,15,Warfare link power need
+37481,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
+37481,0,0,10063,1,37481,0,0,1,2,15,Warfare Link Use
 # Probe,,,,,,,,,,,
 586,1,3329,1371,2,479,0,1,0,7.5,15,Probe Scan Strength Bonus
 586,1,3329,73,4,1715,0,1,0,-5,15,Salvager Cycle Time
