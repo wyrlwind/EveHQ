@@ -520,6 +520,15 @@
 17928,0,0,10015,4,561;564,0,0,0,200,15,Small Hybrid Turret Damage
 17928,1,3328,158,4,561;564,0,1,0,10,15,Small Hybrid Turret Falloff
 17928,1,3329,20,2,65,0,1,0,10,15,Stasis Web Strength
+# Deacon,,,,,,,,,,,
+37457,0,0,54,2,325,0,0,0,50,15,Remote Armor Repair Optimal Range Bonus
+37457,0,0,2044,2,325,0,0,0,600,15,Remote Armor Repair falloff Bonus
+37457,1,3331,84,2,325,0,1,0,10,15,Remote Armor Repairer Rep Amount
+37457,1,3331,6,2,325,0,1,0,-10,15,Remote Armor Repairer Cap Use
+37457,1,40328,6,2,325,0,1,0,-5,15,Remote Armor Repairer Cap Use
+37457,1,40328,73,2,325,0,1,0,-5,15,Remote Armor Repairer Duration
+37457,1,40328,265,1,37457,0,1,0,7.5,15,Armor HP
+37457,1,40328,1159,2,329,0,1,0,7.5,15,Armor HP - Plates
 # Deimos,,,,,,,,,,,
 12023,1,3332,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 12023,1,3332,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
