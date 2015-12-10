@@ -1244,6 +1244,13 @@
 609,1,3328,6,2,208,0,1,0,-10,15,Remote Sensor Damp Cap Use
 609,1,3328,309,2,208,0,1,0,7.5,15,Remote Sensor Damp Effect Range
 609,1,3328,566,2,208,0,1,0,7.5,15,Remote Sensor Damp Effect Scan Res
+# Maulus Navy Issue,,,,,,,,,,,
+37456,0,0,105,4,1936,0,0,1,2,15,Warp Scrambler Strength 
+37456,1,3328,263,3,18,0,1,0,10,15,Drone Shield HP
+37456,1,3328,265,3,18,0,1,0,10,15,Drone Armor HP
+37456,1,3328,9,3,18,0,1,0,10,15,Drone Hull HP
+37456,1,3328,160,3,18,0,1,0,10,15,Drone Tracking
+37456,1,3328,54,4,1936,0,1,0,10,15,Warp Scrambler Range
 # Megathron,,,,,,,,,,,
 641,1,3336,10012,4,563;566,0,1,0,-5,15,Large Hybrid Turret ROF
 641,1,3336,160,4,563;566,0,1,0,7.5,15,Large Hybrid Turret Tracking
