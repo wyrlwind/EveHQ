@@ -801,6 +801,16 @@
 584,1,3330,240,2,201,0,1,0,15,15,ECM Jam Strength Mag
 584,1,3330,241,2,201,0,1,0,15,15,ECM Jam Strength Radar
 584,1,3330,6,2,201,0,1,0,-10,15,ECM Cap Use
+# Griffin Navy Issue,,,,,,,,,,,
+37455,0,0,54,2,201,0,0,0,-85,15,ECM Optimal Range
+37455,0,0,158,2,201,0,0,0,-85,15,ECM Falloff
+37455,0,0,6,2,201,0,0,0,-85,15,ECM Cap Use
+37455,0,0,50,2,201,0,0,0,-85,15,ECM Cap Use
+37455,1,3330,10015,4,564;561,0,1,0,20,15,Small Hybrid Turret Damage
+37455,1,3330,238,2,201,0,1,0,20,15,ECM Jam Strength Grav
+37455,1,3330,239,2,201,0,1,0,20,15,ECM Jam Strength Ladar
+37455,1,3330,240,2,201,0,1,0,20,15,ECM Jam Strength Mag
+37455,1,3330,241,2,201,0,1,0,20,15,ECM Jam Strength Radar
 # Guardian,,,,,,,,,,,
 11987,1,3335,54,2,325,0,1,0,150,15,Remote Armor Repairer Range
 11987,1,3335,91,2,67,0,1,0,150,15,Energy Transfer Range
