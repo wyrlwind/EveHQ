@@ -2088,6 +2088,14 @@
 26842,1,3337,10016,4,576;579,0,1,0,5,15,Large Projectile Turret Damage
 # Tengu,,,,,,,,,,,
 29984,1,30651,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
+# Thalia,,,,,,,,,,,
+37459,0,0,54,2,325,0,0,0,50,15,Remote Armor Repair Optimal Range Bonus
+37459,0,0,2044,2,325,0,0,0,600,15,Remote Armor Repair falloff Bonus
+37459,1,3328,84,2,325,0,1,0,10,15,Remote Armor Repairer Rep Amount
+37459,1,3328,6,2,325,0,1,0,-10,15,Remote Armor Repairer Cap Use
+37459,1,40328,6,2,325,0,1,0,-5,15,Remote Armor Repairer Cap Use
+37459,1,40328,73,2,325,0,1,0,-5,15,Remote Armor Repairer Duration
+37459,1,40328,552,1,37459,0,1,0,-4,15,Signature Radius
 # Thanatos,,,,,,,,,,,
 23911,1,24313,54,4,1056,0,1,0,50,15,Capital Armor Transfer Range
 23911,1,24313,87,4,600,0,1,0,50,15,Capital Shield Transfer Range
