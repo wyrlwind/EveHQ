@@ -620,6 +620,10 @@
 1935,2,291,349,6,0,0,0,0,8,Tracking Disruptor - Falloff
 1935,2,291,351,6,0,0,0,0,8,Tracking Disruptor - Optimal Range
 1935,2,291,767,6,0,0,0,0,8,Tracking Disruptor - Tracking Speed
+1935,2,291,547,6,0,0,0,0,8,Guidance Disruptor - Missile velocity
+1935,2,291,596,6,0,0,0,0,8,Guidance Disruptor - Missile flight time
+1935,2,291,847,6,0,0,0,0,8,Guidance Disruptor - Missile Explosion velocity
+1935,2,291,848,6,0,0,0,0,8,Guidance Disruptor - Missile Explosion radius
 1222,2,52,54,6,0,0,0,0,8,Warp Scrambler Range
 # WEAPONS,,,,,,,,,,
 1205,2,524,51,6,0,0,0,0,8,Citadel Launcher ROF
@@ -757,6 +761,10 @@
 1315,2,909,351,6,0,0,0,0,15,Tracking Disruptor - Optimal Range
 1316,2,909,767,6,0,0,0,0,15,Tracking Disruptor - Tracking Speed
 1332,2,909,349,6,0,0,0,0,15,Tracking Disruptor- Falloff
+2025,2,1569,547,6,0,0,0,0,15,Guidance Disruptor - Missile velocity
+2026,2,1569,596,6,0,0,0,0,15,Guidance Disruptor - Missile flight time
+2024,2,1569,847,6,0,0,0,0,15,Guidance Disruptor - Explosion velocity
+2023,2,1569,848,6,0,0,0,0,15,Guidance Disruptor - Explosion radius
 1315,2,907,351,6,0,0,0,0,15,Tracking Computer - Optimal Range
 1316,2,907,767,6,0,0,0,0,15,Tracking Computer - Tracking Speed
 1332,2,907,349,6,0,0,0,0,15,Tracking Computer - Falloff
@@ -834,10 +842,14 @@
 565,2,1154,564,3,6,1,0,0,14,Scan Resolution
 # Target Painters,,,,,,,,,,
 554,2,379,552,3,6,1,0,0,16,Signature Radius Penalty
-# Tracking Disruptors,,,,,,,,,,
+# Weapon Disruptors,,,,,,,,,,
 349,2,291,158,2,55;53;74,1,0,0,16,Falloff
 351,2,291,54,2,55;53;74,1,0,0,16,Optimal Range
 767,2,291,160,2,55;53;74,1,0,0,16,Tracking Speed
+547,2,291,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,16,Missile velocity
+596,2,291,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,16,Max flight time
+847,2,291,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,16,Explosion velocity
+848,2,291,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,16,Explosion radius
 # Warp Disruption Field Generators,,,,,,,,,,
 554,2,899,552,3,6,1,0,0,12,Signature Radius Penalty
 1131,2,899,10002,3,6,1,0,0,12,Mass Reduction
