@@ -106,6 +106,10 @@
 628,1,3335,351,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Optimal
 628,1,3335,767,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Tracking
 628,1,3335,349,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Falloff
+628,1,3335,596,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Missile Flight Time
+628,1,3335,547,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Missile Velocity
+628,1,3335,848,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion Radius
+628,1,3335,847,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion velocity
 628,1,3335,263,3,18,0,1,0,10,15,Drone Shield HP
 628,1,3335,265,3,18,0,1,0,10,15,Drone Armor HP
 628,1,3335,9,3,18,0,1,0,10,15,Drone Hull HP
@@ -459,10 +463,14 @@
 11176,1,12092,54,2,52,0,1,0,5,15,Warp Disruptor Range
 11176,0,0,6,2,52;65,0,0,0,-80,15,Propulsion Jamming Cap Use
 # Crucifier,,,,,,,,,,,
+2161,1,3331,54,2,291,0,1,0,10,15,Tracking Disruptor Optimal Range
 2161,1,3331,767,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Tracking
 2161,1,3331,351,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Optimal Range
 2161,1,3331,349,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Falloff
-2161,1,3331,54,2,291,0,1,0,10,15,Tracking Disruptor Optimal Range
+2161,1,3331,596,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Missile Flight Time
+2161,1,3331,547,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Missile Velocity
+2161,1,3331,848,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion Radius
+2161,1,3331,847,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion velocity
 # Crucifier Navy Issue,,,,,,,,,,,
 37453,0,0,54,2,291,0,0,0,-85,15,Tracking Disruptor Optimal Range
 37453,0,0,158,2,291,0,0,0,-85,15,Tracking Disruptor Falloff
@@ -489,6 +497,10 @@
 20125,1,3335,351,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Optimal Range
 20125,1,3335,767,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Tracking
 20125,1,3335,349,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Falloff
+20125,1,3335,596,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Missile Flight Time
+20125,1,3335,547,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Missile Velocity
+20125,1,3335,848,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion Radius
+20125,1,3335,847,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion velocity
 20125,1,3335,263,3,18,0,1,0,10,15,Drone Shield HP
 20125,1,3335,265,3,18,0,1,0,10,15,Drone Armor HP
 20125,1,3335,9,3,18,0,1,0,10,15,Drone Hull HP
@@ -972,6 +984,10 @@
 596,0,0,351,2,291,0,0,0,15,15,Tracking Disruptor Effect Optimal Range
 596,0,0,767,2,291,0,0,0,15,15,Tracking Disruptor Effect Tracking
 596,0,0,349,2,291,0,0,0,15,15,Tracking Disruptor Effect Falloff
+596,0,0,596,2,291,0,0,0,15,15,Guidance Disruptor Effect Missile Flight Time
+596,0,0,547,2,291,0,0,0,15,15,Guidance Disruptor Effect Missile Velocity
+596,0,0,848,2,291,0,0,0,15,15,Guidance Disruptor Effect Explosion Radius
+596,0,0,847,2,291,0,0,0,15,15,Guidance Disruptor Effect Explosion velocity
 596,0,0,267,1,596,0,0,2,-8,15,Armor EM Resistance
 596,0,0,268,1,596,0,0,2,-8,15,Armor Explosive Resistance
 596,0,0,269,1,596,0,0,2,-8,15,Armor Kinetic Resistance
@@ -1590,6 +1606,10 @@
 11965,1,3335,351,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Optimal Range
 11965,1,3335,767,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Tracking
 11965,1,3335,349,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Falloff
+11965,1,3335,596,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Missile Flight Time
+11965,1,3335,547,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Missile Velocity
+11965,1,3335,848,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion Radius
+11965,1,3335,847,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion velocity
 11965,1,3335,263,3,18,0,1,0,10,15,Drone Shield HP
 11965,1,3335,265,3,18,0,1,0,10,15,Drone Armor HP
 11965,1,3335,9,3,18,0,1,0,10,15,Drone Hull HP
@@ -1958,6 +1978,10 @@
 11190,1,3331,351,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Optimal Range
 11190,1,3331,767,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Tracking
 11190,1,3331,349,2,291,0,1,0,7.5,15,Tracking Disruptor Effect Falloff
+11190,1,3331,596,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Missile Flight Time
+11190,1,3331,547,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Missile Velocity
+11190,1,3331,848,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion Radius
+11190,1,3331,847,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion velocity
 11190,1,3331,90,2,68,0,1,0,20,15,Nos Drain Amount
 11190,1,3331,97,2,71,0,1,0,20,15,Neut Drain Amount
 11190,1,28615,91,2,68,0,1,0,80,15,Nos Drain Range
