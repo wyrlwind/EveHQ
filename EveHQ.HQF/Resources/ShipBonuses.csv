@@ -144,8 +144,10 @@
 643,1,3339,265,3,18,0,1,0,10,15,Drone Armor HP
 643,1,3339,9,3,18,0,1,0,10,15,Drone Hull HP
 643,1,3339,64,3,18,0,1,0,10,15,Drone Damage
-643,1,3339,91,2,68,0,1,0,10,15,Nos Drain Range
-643,1,3339,98,2,71,0,1,0,10,15,Neut Drain Range
+643,1,3339,91,2,68,0,1,0,10,15,Nos Drain Optimal Range
+643,1,3339,2044,2,68,0,1,0,5,15,Nos Drain Falloff
+643,1,3339,98,2,71,0,1,0,10,15,Neut Drain Optimal Range
+643,1,3339,2044,2,71,0,1,0,5,15,Neut Drain Falloff
 # Armageddon Imperial Issue,,,,,,,,,,,
 11938,1,3339,6,4,569;573,0,1,0,-10,15,Large Energy Turret Cap Use
 11938,1,3339,10011,4,569;573,0,1,0,-5,15,Large Energy Turret ROF
@@ -515,8 +517,10 @@
 20125,1,3335,64,3,18,0,1,0,10,15,Drone Damage
 20125,1,22761,90,2,68,0,1,0,20,15,Nos Drain Amount
 20125,1,22761,97,2,71,0,1,0,20,15,Neut Drain Amount
-20125,1,22761,91,2,68,0,1,0,40,15,Nos Drain Range
-20125,1,22761,98,2,71,0,1,0,40,15,Neut Drain Range
+20125,1,22761,91,2,68,0,1,0,40,15,Nos Drain Optimal Range
+20125,1,22761,2044,2,68,0,1,0,20,15,Nos Drain Falloff
+20125,1,22761,98,2,71,0,1,0,40,15,Neut Drain Optimal Range
+20125,1,22761,2044,2,71,0,1,0,20,15,Neut Drain Falloff
 # Cyclone,,,,,,,,,,,
 16231,1,33098,51,2,510;771,0,1,0,-5,15,Heavy & HAM Launcher ROF
 16231,1,33098,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
@@ -593,8 +597,10 @@
 32874,1,33091,263,3,18,0,1,0,10,15,Drone Shield HP
 32874,1,33091,265,3,18,0,1,0,10,15,Drone Armor HP
 32874,1,33091,9,3,18,0,1,0,10,15,Drone Hull HP
-32874,1,33091,91,2,68,0,1,0,20,15,Nos Drain Range
-32874,1,33091,98,2,71,0,1,0,20,15,Neut Drain Range
+32874,1,33091,91,2,68,0,1,0,20,15,Nos Drain Optimal Range
+32874,1,33091,2044,2,68,0,1,0,10,15,Nos Drain Falloff
+32874,1,33091,98,2,71,0,1,0,20,15,Neut Drain Optimal Range
+32874,1,33091,2044,2,71,0,1,0,10,15,Neut Drain Falloff
 32874,0,0,37,3,18,0,0,0,25,15,Drone MWD Speed
 # Drake,,,,,,,,,,,
 24698,1,33096,117,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Kinetic Damage
@@ -1236,8 +1242,10 @@
 3516,1,3331,270,1,3516,0,1,2,-4,15,Armor Thermal Resistance
 3516,1,3331,90,2,68,0,1,0,20,15,Nos Drain Amount
 3516,1,3331,97,2,71,0,1,0,20,15,Neut Drain Amount
-3516,1,3331,91,2,68,0,1,0,20,15,Nos Drain Range
-3516,1,3331,98,2,71,0,1,0,20,15,Neut Drain Range
+3516,1,3331,91,2,68,0,1,0,20,15,Nos Drain Optimal Range
+3516,1,3331,2044,2,68,0,1,0,10,15,Nos Drain Falloff
+3516,1,3331,98,2,71,0,1,0,20,15,Neut Drain Optimal Range
+3516,1,3331,2044,2,71,0,1,0,10,15,Neut Drain Falloff
 3516,0,0,10014,4,567;570,0,0,0,100,15,Small Energy Turret Damage
 3516,0,0,54,4,567;570,0,0,0,50,15,Small Energy Turret Optimal Range
 # Maller,,,,,,,,,,,
@@ -1644,8 +1652,10 @@
 11965,1,3335,64,3,18,0,1,0,10,15,Drone Damage
 11965,1,22761,90,2,68,0,1,0,10,15,Nos Drain Amount
 11965,1,22761,97,2,71,0,1,0,10,15,Neut Drain Amount
-11965,1,22761,91,2,68,0,1,0,20,15,Nos Drain Range
-11965,1,22761,98,2,71,0,1,0,20,15,Neut Drain Range
+11965,1,22761,91,2,68,0,1,0,20,15,Nos Drain Optimal Range
+11965,1,22761,2044,2,68,0,1,0,10,15,Nos Drain Falloff
+11965,1,22761,98,2,71,0,1,0,20,15,Neut Drain Optimal Range
+11965,1,22761,2044,2,71,0,1,0,10,15,Neut Drain Falloff
 11965,1,22761,50,2,330,0,1,0,-20,15,Cloaking Device CPU
 11965,0,0,714,2,658,0,0,0,-80,15,Cyno Field Fuel
 11965,0,0,73,2,658,0,0,0,-50,15,Cyno Field Duration
@@ -2019,8 +2029,10 @@
 11190,1,3331,847,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion velocity
 11190,1,3331,90,2,68,0,1,0,20,15,Nos Drain Amount
 11190,1,3331,97,2,71,0,1,0,20,15,Neut Drain Amount
-11190,1,28615,91,2,68,0,1,0,80,15,Nos Drain Range
-11190,1,28615,98,2,71,0,1,0,80,15,Neut Drain Range
+11190,1,28615,91,2,68,0,1,0,80,15,Nos Drain Optimal Range
+11190,1,28615,2044,2,68,0,1,0,40,15,Nos Drain Falloff
+11190,1,28615,98,2,71,0,1,0,80,15,Neut Drain Optimal Range
+11190,1,28615,2044,2,71,0,1,0,40,15,Neut Drain Falloff
 11190,1,28615,55,1,11190,0,1,0,-5,15,Capacitor Recharge Rate
 # Sigil,,,,,,,,,,,
 19744,1,3343,10004,1,19744,0,1,0,5,15,Cargo Capacity
@@ -2260,8 +2272,10 @@
 3518,1,3335,270,1,3518,0,1,2,-4,15,Armor Thermal Resistance
 3518,1,3335,90,2,68,0,1,0,20,15,Nos Drain Amount
 3518,1,3335,97,2,71,0,1,0,20,15,Neut Drain Amount
-3518,1,3335,91,2,68,0,1,0,20,15,Nos Drain Range
-3518,1,3335,98,2,71,0,1,0,20,15,Neut Drain Range
+3518,1,3335,91,2,68,0,1,0,20,15,Nos Drain Optimal Range
+3518,1,3335,2044,2,68,0,1,0,10,15,Nos Drain Falloff
+3518,1,3335,98,2,71,0,1,0,20,15,Neut Drain Optimal Range
+3518,1,3335,2044,2,71,0,1,0,10,15,Neut Drain Falloff
 3518,0,0,84,2,62;1199,0,0,0,50,15,Armor Repair Amount
 3518,0,0,51,2,511;524;506;510;771;507;508;509;1245,0,0,0,-50,15,Missile Launcher ROF
 # Vargur,,,,,,,,,,,
