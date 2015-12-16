@@ -251,14 +251,14 @@
 666,Ship Equipment\Engineering Equipment\Capacitor Flux Coils
 667,Ship Equipment\Engineering Equipment\Capacitor Power Relays
 665,Ship Equipment\Engineering Equipment\Capacitor Rechargers
-0,Ship Equipment\Engineering Equipment\Energy Destabilizers
-691,Ship Equipment\Engineering Equipment\Energy Destabilizers\Heavy
-690,Ship Equipment\Engineering Equipment\Energy Destabilizers\Medium
-689,Ship Equipment\Engineering Equipment\Energy Destabilizers\Small
-0,Ship Equipment\Engineering Equipment\Energy Vampires
-694,Ship Equipment\Engineering Equipment\Energy Vampires\Heavy
-693,Ship Equipment\Engineering Equipment\Energy Vampires\Medium
-692,Ship Equipment\Engineering Equipment\Energy Vampires\Small
+0,Ship Equipment\Engineering Equipment\Energy Neutralizers
+691,Ship Equipment\Engineering Equipment\Energy Neutralizers\Heavy
+690,Ship Equipment\Engineering Equipment\Energy Neutralizers\Medium
+689,Ship Equipment\Engineering Equipment\Energy Neutralizers\Small
+0,Ship Equipment\Engineering Equipment\Energy Nosferatu
+694,Ship Equipment\Engineering Equipment\Energy Nosferatu\Heavy
+693,Ship Equipment\Engineering Equipment\Energy Nosferatu\Medium
+692,Ship Equipment\Engineering Equipment\Energy Nosferatu\Small
 658,Ship Equipment\Engineering Equipment\Power Diagnostic Systems
 659,Ship Equipment\Engineering Equipment\Reactor Control Units
 0,Ship Equipment\Engineering Equipment\Remote Capacitor Transmitters
@@ -280,6 +280,7 @@
 0,Ship Equipment\Harvest Equipment
 1037,Ship Equipment\Harvest Equipment\Gas Cloud Harvesters
 1038,Ship Equipment\Harvest Equipment\Ice Harvesters
+2151,Ship Equipment\Harvest Equipment\Ice Mining Lasers
 1039,Ship Equipment\Harvest Equipment\Mining Lasers
 935,Ship Equipment\Harvest Equipment\Mining Upgrades
 1715,Ship Equipment\Harvest Equipment\Salvagers
@@ -338,6 +339,7 @@
 0,Ship Equipment\Propulsion 
 542,Ship Equipment\Propulsion \Afterburners
 1650,Ship Equipment\Propulsion \Micro Jump Drives
+2135,Ship Equipment\Propulsion \Micro Jump Field Generators
 131,Ship Equipment\Propulsion \Microwarpdrives
 0,Ship Equipment\Propulsion \Propulsion Upgrades
 1086,Ship Equipment\Propulsion \Propulsion Upgrades\Inertial Stabilizers

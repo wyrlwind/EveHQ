@@ -176,7 +176,7 @@ Namespace Forms
             Me.lblGetAPIKeyV2.Size = New System.Drawing.Size(172, 13)
             Me.lblGetAPIKeyV2.TabIndex = 20
             Me.lblGetAPIKeyV2.TabStop = True
-            Me.lblGetAPIKeyV2.Text = "https://support.eveonline.com/api"
+            Me.lblGetAPIKeyV2.Text = "https://community.eveonline.com/support/api-key/"
             '
             'lblV2Info
             '

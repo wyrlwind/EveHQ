@@ -193,10 +193,20 @@ Public Class CustomHQFClasses
         For Each cShip As CustomShip In CustomShips.Values
             ' Add the bonuses
             Engine.ShipBonusesMap.Add(cShip.ID, cShip.Bonuses)
+
             ' Add the ship data
-            ShipLists.ShipList.Add(cShip.Name, cShip.ShipData)
-            ShipLists.ShipListKeyID.Add(cShip.ID, cShip.Name)
-            ShipLists.ShipListKeyName.Add(cShip.Name, cShip.ID)
+            If ShipLists.ShipList.ContainsKey(cShip.Name) = False Then
+                ShipLists.ShipList.Add(cShip.Name, cShip.ShipData)
+            End If
+
+            If ShipLists.ShipListKeyID.ContainsKey(cShip.ID) = False Then
+                ShipLists.ShipListKeyID.Add(cShip.ID, cShip.Name)
+            End If
+
+            If ShipLists.ShipListKeyName.ContainsKey(cShip.Name) Then
+                ShipLists.ShipListKeyName.Add(cShip.Name, cShip.ID)
+            End If
+
         Next
 
         ' Rebuild the ship effects

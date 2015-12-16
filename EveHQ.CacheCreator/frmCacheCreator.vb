@@ -1125,8 +1125,13 @@ Public Class FrmCacheCreator
         ' Add in invention probabilities and products from the industryActivityProbabilities table
         evehqData = DatabaseFunctions.GetStaticData("SELECT * FROM industryActivityProbabilities ORDER BY typeID;")
         For Each bp As DataRow In evehqData.Tables(0).Rows
+
             StaticData.Blueprints(CInt(bp.Item("typeID"))).Inventions.Add(CInt(bp.Item("productTypeID")))
-            StaticData.Blueprints(CInt(bp.Item("productTypeID"))).InventFrom.Add(CInt(bp.Item("typeID")))
+
+            If StaticData.Blueprints.ContainsKey(CInt(bp.Item("productTypeID"))) Then
+                StaticData.Blueprints(CInt(bp.Item("productTypeID"))).InventFrom.Add(CInt(bp.Item("typeID")))
+            End If
+
             StaticData.Blueprints(CInt(bp.Item("typeID"))).InventionProbability = CDbl(bp.Item("probability"))
         Next
 

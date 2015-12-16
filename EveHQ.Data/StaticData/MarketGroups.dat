@@ -425,8 +425,8 @@ Heat Sinksè
 %í íPower Diagnostic Systemsè
 "ììReactor Control Unitsè
 %î îAuxiliary Power Controlsè
-!ïïEnergy Destabilizersè
-ññEnergy Vampiresè
+ ïïEnergy Neutralizersè
+ññEnergy Nosferatuè
 *ó%óRemote Capacitor Transmittersè
  òòCapacitor Batteriesè
 !ôôCapacitor Rechargersè
@@ -1308,8 +1308,8 @@ $ˇˇShip Maintenance Arrays±
 "ôôReactor Control Unitsä
 *ö%öRemote Capacitor Transmittersä
 õõCapacitor Boostersä
-úúEnergy Vampiresä
-!ùùEnergy Destabilizersä
+úúEnergy Nosferatuä
+ ùùEnergy Neutralizersä
 ûûElectronic Warfare—
 (ü#üElectronic Counter Measuresû
 ††	ECM Burstû
@@ -1794,6 +1794,38 @@ $µµStandard Battlecruisers£
 ¡¡MinmatarΩ
 %¬ ¬Capital Industrial Ships∞
 8√3√+Special Edition Heavy Interdiction CruisersÃ
+ ««Multiple Hull SKINs¢
+"»»Special Edition SKINs«
+ÀÀCommand DestroyersÃ
+ÃÃAmarrÀ
+ÕÕCommand Destroyers›
+
+ŒŒAmarrÕ
+œœCaldariÀ
+––GallenteÀ
+““MinmatarÀ
+””CaldariÕ
+‘‘GallenteÕ
+’’MinmatarÕ
+(÷#÷Micro Jump Field Generators¸
+'◊"◊Micro Jump Field Generators4
+ÿÿLogistics Frigates˙
+ŸŸAmarrÿ
+⁄⁄Caldariÿ
+€€Gallenteÿ
+‹‹Minmatarÿ
+››Command DestroyersÙ
+ﬁﬁAmarr›
+ﬂﬂCaldari›
+‡‡Gallente›
+··Minmatar›
+‚‚Logistics Frigates‘
+
+„„Amarr‚
+‰‰Caldari‚
+ÂÂGallente‚
+ÊÊMinmatar‚
+ÁÁIce Mining Lasers±
 ±Æ±ÆInfantry Gear
 ï ï Grenadesü 
 "ö ö Dropsuits and Gear±Æ

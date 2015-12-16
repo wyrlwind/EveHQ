@@ -27,6 +27,7 @@
     - 33879
     - 34317
     - 35779
+    - 37453
     skillTypes:
         3300:
             advanced: 5
@@ -402,6 +403,9 @@
     - 33877
     - 33881
     - 35683
+    - 37455
+    - 37456
+    - 37483
     skillTypes:
         3300:
             advanced: 5
@@ -770,6 +774,7 @@
     - 33665
     - 33883
     - 34562
+    - 37480
     skillTypes:
         3300:
             advanced: 5
@@ -1099,6 +1104,9 @@
     - 33673
     - 33816
     - 34828
+    - 37454
+    - 37481
+    - 37482
     skillTypes:
         3319:
             advanced: 5
@@ -1169,7 +1177,7 @@
 76:
     description: This certificate represents a level of competence in operating medium
         missile launchers. The holder has learned that rapid light missile, heavy
-        assault missiles and heavy  missile launchers are short to medium range weapons
+        assault missiles and heavy missile launchers are short to medium range weapons
         with a delayed time to impact. This is a good skillset for capsuleers specializing
         in medium Caldari or Minmatar vessels based on Cruiser and Battlecruiser hulls.
     groupID: 256
@@ -1277,7 +1285,7 @@
             standard: 3
 77:
     description: This certificate represents a level of competence in operating large
-        missile launchers. The holder has learned that rapid heavy missile,  torpedoes
+        missile launchers. The holder has learned that rapid heavy missile, torpedoes
         and cruise missile launchers are medium to long range weapons with a delayed
         time to impact. This is a good skillset for capsuleers specializing in large
         Caldari or Minmatar vessels based on the Battleship hulls.
@@ -1471,7 +1479,7 @@
             improved: 3
             standard: 2
 79:
-    description: This certificate represents a  level of competence in the deployment
+    description: This certificate represents a level of competence in the deployment
         of timed munitions. The holder has learned that bombs are launched straight
         ahead and travel for a period of time before detonating. This is a good skillset
         for capsuleers specializing in Stealth Bombers Tech II Covert Ops Frigates.
@@ -1558,8 +1566,8 @@
 81:
     description: This certificate represents a level of competence in the control
         of all fighters. The holder has learned that fighters are advanced drones
-        with warp capabilities and that they may be destroyed in combat . This is
-        a good skillset for capsuleers specializing in capital vessels of all factions
+        with warp capabilities and that they may be destroyed in combat. This is a
+        good skillset for capsuleers specializing in capital vessels of all factions
         based on the Carrier hulls.
     groupID: 273
     name: Fighters
@@ -1568,6 +1576,10 @@
     - 23911
     - 23915
     - 24483
+    - 37604
+    - 37605
+    - 37606
+    - 37607
     skillTypes:
         3348:
             advanced: 5
@@ -1927,6 +1939,13 @@
     - 34828
     - 35779
     - 35781
+    - 37135
+    - 37454
+    - 37455
+    - 37458
+    - 37460
+    - 37480
+    - 37482
     skillTypes:
         3402:
             advanced: 1
@@ -2020,6 +2039,8 @@
     - 24483
     - 28352
     - 33687
+    - 37605
+    - 37606
     skillTypes:
         3413:
             advanced: 5
@@ -2093,6 +2114,8 @@
     - 29984
     - 29990
     - 32790
+    - 37458
+    - 37460
     skillTypes:
         3402:
             advanced: 2
@@ -2116,7 +2139,7 @@
     description: This certificate represents a level of competence in remote capital
         shield support. The holder has learned that assistance rendered to other vessels
         involved in combat may make the vessel providing assistance a legal target.
-        This is a good skillset for Caldari,  Gallente and Minmatar Carriers and Supercarriers.
+        This is a good skillset for Caldari, Gallente and Minmatar Carriers and Supercarriers.
     groupID: 1209
     name: Capital Remote Shield Booster
     recommendedFor:
@@ -2129,6 +2152,9 @@
     - 24483
     - 28352
     - 33687
+    - 37605
+    - 37606
+    - 37607
     skillTypes:
         3402:
             advanced: 2
@@ -2326,6 +2352,12 @@
     - 34118
     - 34317
     - 35683
+    - 37453
+    - 37456
+    - 37457
+    - 37459
+    - 37481
+    - 37483
     skillTypes:
         3392:
             advanced: 5
@@ -2392,6 +2424,8 @@
     - 23911
     - 23913
     - 23919
+    - 37604
+    - 37607
     skillTypes:
         3392:
             advanced: 5
@@ -2458,6 +2492,8 @@
     - 11989
     - 29986
     - 29988
+    - 37457
+    - 37459
     skillTypes:
         3392:
             advanced: 4
@@ -2491,6 +2527,9 @@
     - 23913
     - 23919
     - 24483
+    - 37604
+    - 37606
+    - 37607
     skillTypes:
         3392:
             advanced: 3
@@ -2597,6 +2636,10 @@
     - 34317
     - 35779
     - 35781
+    - 37453
+    - 37457
+    - 37481
+    - 37604
     skillTypes:
         3426:
             advanced: 4
@@ -2905,6 +2948,19 @@
     - 35683
     - 35779
     - 35781
+    - 37135
+    - 37453
+    - 37454
+    - 37455
+    - 37456
+    - 37457
+    - 37458
+    - 37459
+    - 37460
+    - 37480
+    - 37481
+    - 37482
+    - 37483
     skillTypes:
         3327:
             advanced: 4
@@ -2981,6 +3037,10 @@
     - 24483
     - 28352
     - 33687
+    - 37604
+    - 37605
+    - 37606
+    - 37607
     skillTypes:
         3327:
             advanced: 5
@@ -3362,6 +3422,23 @@
     - 35683
     - 35779
     - 35781
+    - 37135
+    - 37453
+    - 37454
+    - 37455
+    - 37456
+    - 37457
+    - 37458
+    - 37459
+    - 37460
+    - 37480
+    - 37481
+    - 37482
+    - 37483
+    - 37604
+    - 37605
+    - 37606
+    - 37607
     skillTypes:
         3402:
             advanced: 1
@@ -3462,6 +3539,8 @@
     - 23915
     - 23917
     - 23919
+    - 37604
+    - 37605
     skillTypes:
         3402:
             advanced: 2
@@ -3724,6 +3803,15 @@
     - 35683
     - 35779
     - 35781
+    - 37135
+    - 37453
+    - 37454
+    - 37455
+    - 37456
+    - 37480
+    - 37481
+    - 37482
+    - 37483
     skillTypes:
         3426:
             advanced: 3
@@ -3764,6 +3852,7 @@
     - 22436
     - 29984
     - 33675
+    - 37455
     skillTypes:
         3426:
             advanced: 5
@@ -3864,6 +3953,7 @@
     - 11190
     - 11965
     - 20125
+    - 37453
     skillTypes:
         3426:
             advanced: 5
@@ -3905,7 +3995,7 @@
     description: This certificate represents a level of competence in the operation
         of Target Painter modules. The holder has learned that Target Painters increase
         the target's signature radius, allowing it to be locked onto faster and causing
-        most weapons systems to inflict additional damage on it. This  is a good skillset
+        most weapons systems to inflict additional damage on it. This is a good skillset
         for capsuleers specializing in small or medium Minmatar Disruption vessels
         based on the Frigate and Cruiser hulls.
     groupID: 272
@@ -4114,6 +4204,7 @@
     - 32880
     - 33683
     - 33697
+    - 37135
     skillTypes:
         3386:
             advanced: 5
@@ -4160,7 +4251,7 @@
 107:
     description: This certificate represents a level of competence in the operation
         of salvaging modules. The holder has learned that salvager modules allow the
-        extraction of components from ship wrecks. This is  good skillset for capsuleers
+        extraction of components from ship wrecks. This is a good skillset for capsuleers
         specializing in ORE Industrials.
     groupID: 1218
     name: Salvaging
@@ -4240,6 +4331,7 @@
     - 33553
     - 33697
     - 34590
+    - 37135
     skillTypes:
         3392:
             advanced: 3
@@ -4309,6 +4401,10 @@
     - 33871
     - 33873
     - 33875
+    - 37604
+    - 37605
+    - 37606
+    - 37607
     skillTypes:
         3348:
             advanced: 5
@@ -4627,7 +4723,7 @@
             standard: 0
 114:
     description: This certificate represents a level of competence in various kinds
-        of resource reprocessing.  This is a good skillset for resource-harvesting
+        of resource reprocessing. This is a good skillset for resource-harvesting
         capsuleers that wish to sell their materials or use them for production.
     groupID: 1218
     name: Reprocessing
@@ -5008,6 +5104,14 @@
     - 34496
     - 34590
     - 35683
+    - 37453
+    - 37456
+    - 37457
+    - 37459
+    - 37481
+    - 37483
+    - 37604
+    - 37607
     skillTypes:
         3413:
             advanced: 3
@@ -5223,6 +5327,15 @@
     - 34828
     - 35779
     - 35781
+    - 37135
+    - 37454
+    - 37455
+    - 37458
+    - 37460
+    - 37480
+    - 37482
+    - 37605
+    - 37606
     skillTypes:
         3392:
             advanced: 4
@@ -5713,6 +5826,10 @@
     - 33881
     - 34151
     - 34828
+    - 37455
+    - 37458
+    - 37482
+    - 37605
     skillTypes:
         3426:
             advanced: 4
@@ -5842,6 +5959,11 @@
     - 33877
     - 34118
     - 35683
+    - 37135
+    - 37456
+    - 37459
+    - 37483
+    - 37607
     skillTypes:
         3426:
             advanced: 4
@@ -5947,6 +6069,10 @@
     - 33871
     - 33883
     - 34562
+    - 37454
+    - 37460
+    - 37480
+    - 37606
     skillTypes:
         3426:
             advanced: 4
@@ -6003,6 +6129,10 @@
     - 28665
     - 28710
     - 33675
+    - 37604
+    - 37605
+    - 37606
+    - 37607
     skillTypes:
         3426:
             advanced: 1
@@ -6103,6 +6233,10 @@
     - 28848
     - 28850
     - 33687
+    - 37604
+    - 37605
+    - 37606
+    - 37607
     skillTypes:
         3402:
             advanced: 5
@@ -6231,6 +6365,10 @@
     - 23911
     - 23915
     - 24483
+    - 37604
+    - 37605
+    - 37606
+    - 37607
     skillTypes:
         3327:
             advanced: 3
@@ -6546,6 +6684,14 @@
     - 35683
     - 35779
     - 35781
+    - 37453
+    - 37454
+    - 37455
+    - 37456
+    - 37480
+    - 37481
+    - 37482
+    - 37483
     skillTypes:
         3300:
             advanced: 2
@@ -6663,6 +6809,10 @@
     - 33871
     - 33873
     - 33875
+    - 37604
+    - 37605
+    - 37606
+    - 37607
     skillTypes:
         3348:
             advanced: 5
@@ -6738,6 +6888,10 @@
     - 33871
     - 33873
     - 33875
+    - 37604
+    - 37605
+    - 37606
+    - 37607
     skillTypes:
         3348:
             advanced: 5
@@ -6813,6 +6967,10 @@
     - 33871
     - 33873
     - 33875
+    - 37604
+    - 37605
+    - 37606
+    - 37607
     skillTypes:
         3348:
             advanced: 5
@@ -6843,7 +7001,7 @@
         light combat drones. The holder has learned that drones may be targeted and
         destroyed in combat. This is a good skillset for any combat-oriented capsuleer
         as many ships from all factions augment their capabilities through the use
-        of drones
+        of drones.
     groupID: 273
     name: Light Drones
     recommendedFor:
@@ -6895,6 +7053,8 @@
     - 33683
     - 33818
     - 33873
+    - 37453
+    - 37456
     skillTypes:
         3426:
             advanced: 1
@@ -6985,7 +7145,7 @@
         light and medium combat drones. The holder has learned that drones may be
         targeted and destroyed in combat. This is a good skillset for any combat-oriented
         capsuleer as many ships from all factions augment their capabilities through
-        the use of drones
+        the use of drones.
     groupID: 273
     name: Medium Drones
     recommendedFor:
