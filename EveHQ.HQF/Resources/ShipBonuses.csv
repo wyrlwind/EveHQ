@@ -723,7 +723,7 @@
 # Ferox,,,,,,,,,,,
 16227,1,33096,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
 16227,1,33096,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
-16227,0,0,54,4,562;565,0,1,0,25,15,Medium Hybrid Turret Optimal Range
+16227,0,0,54,4,562;565,0,0,0,25,15,Medium Hybrid Turret Optimal Range
 16227,0,0,158,4,562;565,0,0,0,25,15,Medium Hybrid Turret Falloff
 # Ferox Guristas Edition,,,,,,,,,,,
 #33873,1,33096,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
