@@ -148,6 +148,7 @@ Public Enum AttributeEnum
     ModuleExplosionRadius = 654
     ModuleExplosionVelocity = 653
     ModuleFalloff = 158
+    ModuleFalloffEffectiveness = 2044
     ModuleFitsToShipType = 1380
     ModuleHeatDamage = 1211
     ModuleHighSlotModifier = 1374

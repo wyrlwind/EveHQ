@@ -743,6 +743,13 @@ Namespace Controls
                                 Else
                                     slotNode.Cells.Add(New Cell(""))
                                 End If
+                            Case "Effect Falloff"
+                                If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleFalloffEffectiveness) Then
+                                    slotNode.Cells.Add(
+                                        New Cell(shipMod.Attributes(AttributeEnum.ModuleFalloffEffectiveness).ToString("N2")))
+                                Else
+                                    slotNode.Cells.Add(New Cell(""))
+                                End If
                             Case "Tracking"
                                 If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleTrackingSpeed) Then
                                     slotNode.Cells.Add(
@@ -955,6 +962,13 @@ Namespace Controls
                         Case "Falloff"
                             If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleFalloff) Then
                                 slotNode.Cells(idx).Text = shipMod.Attributes(AttributeEnum.ModuleFalloff).ToString("N2")
+                            Else
+                                slotNode.Cells(idx).Text = ""
+                            End If
+                            idx += 1
+                        Case "Effect Falloff"
+                            If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleFalloffEffectiveness) Then
+                                slotNode.Cells(idx).Text = shipMod.Attributes(AttributeEnum.ModuleFalloffEffectiveness).ToString("N2")
                             Else
                                 slotNode.Cells(idx).Text = ""
                             End If
