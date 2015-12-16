@@ -973,6 +973,8 @@
 554,2,762,552,3,6,1,0,0,14,Sig Radius Penalty
 # Micro Jump Drives,,,,,,,,,,
 973,2,1189,552,3,6,1,0,0,12,Sig Radius Penalty
+# Micro Jump Field Generators,,,,,,,,,,
+973,2,1533,552,3,6,1,0,0,12,Sig Radius Penalty
 # Overdrive Injectors,,,,,,,,,,
 1076,2,764,37,3,6,1,0,0,14,Max Velocity Bonus
 149,2,764,10004,3,6,0,0,0,14,Cargo Capacity Penalty

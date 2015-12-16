@@ -144,9 +144,9 @@
 643,1,3339,265,3,18,0,1,0,10,15,Drone Armor HP
 643,1,3339,9,3,18,0,1,0,10,15,Drone Hull HP
 643,1,3339,64,3,18,0,1,0,10,15,Drone Damage
-643,1,3339,91,2,68,0,1,0,10,15,Nos Drain Optimal Range
+643,1,3339,54,2,68,0,1,0,10,15,Nos Drain Optimal Range
 643,1,3339,2044,2,68,0,1,0,5,15,Nos Drain Falloff
-643,1,3339,98,2,71,0,1,0,10,15,Neut Drain Optimal Range
+643,1,3339,54,2,71,0,1,0,10,15,Neut Drain Optimal Range
 643,1,3339,2044,2,71,0,1,0,5,15,Neut Drain Falloff
 # Armageddon Imperial Issue,,,,,,,,,,,
 11938,1,3339,6,4,569;573,0,1,0,-10,15,Large Energy Turret Cap Use
@@ -200,10 +200,10 @@
 648,1,3342,10004,1,648,0,1,0,5,15,Cargo Capacity
 648,1,3342,70,1,648,0,1,0,-5,15,Agility
 # Bantam,,,,,,,,,,,
-582,1,3330,68,2,41,0,1,0,10,15,Shield Transporter Rep Amount
-582,1,3330,6,2,41,0,1,0,-10,15,Shield Transporter Cap Use
-582,0,0,87,2,41,0,0,0,300,15,Shield Transporter Optimal
-582,0,0,2044,2,41,0,0,0,300,15,Shield Transporter Falloff
+582,1,3330,68,2,41,0,1,0,10,15,Remote Shield Booster Rep Amount
+582,1,3330,6,2,41,0,1,0,-10,15,Remote Shield Booster Cap Use
+582,0,0,54,2,41,0,0,0,300,15,Remote Shield Booster Optimal
+582,0,0,2044,2,41,0,0,0,300,15,Remote Shield Booster Falloff
 # Barghest,,,,,,,,,,,
 33820,1,3338,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,10,15,Missile EM Damage
 33820,1,3338,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,10,15,Missile Explosive Damage
@@ -213,14 +213,14 @@
 33820,0,0,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,200,15,Missile Velocity
 33820,0,0,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,-50,15,Missile Flight Time
 # Basilisk,,,,,,,,,,,
-11985,1,3334,87,2,41,0,1,0,60,15,Shield Transporter Optimal
-11985,1,3334,2044,2,41,0,1,0,60,15,Shield Transporter Falloff
+11985,1,3334,54,2,41,0,1,0,60,15,Remote Shield Booster Optimal
+11985,1,3334,2044,2,41,0,1,0,60,15,Remote Shield Booster Falloff
 11985,1,3334,91,2,67,0,1,0,150,15,Energy Transfer Range
 11985,1,3334,84,4,842,0,1,0,20,15,Armor Maintenance Bot Transfer
 11985,1,3334,83,4,842,0,1,0,20,15,Hull Maintenance Bot Transfer
-11985,1,12096,6,2,41,0,1,0,-15,15,Shield Transporter Cap Use
+11985,1,12096,6,2,41,0,1,0,-15,15,Remote Shield Booster Cap Use
 11985,1,12096,6,2,67,0,1,0,-15,15,Energy Transfer Cap Use
-11985,0,0,50,2,41,0,0,0,-50,15,Shield Transporter CPU
+11985,0,0,50,2,41,0,0,0,-50,15,Remote Shield Booster CPU
 11985,0,0,30,2,67,0,0,0,-50,15,Energy Transfer PG
 # Bellicose,,,,,,,,,,,
 630,1,3333,51,2,511;510;771,0,1,0,-5,15,"Rapid Light, Heavy & HAM Launcher ROF"
@@ -285,10 +285,10 @@
 #33869,1,33097,10015,4,562;565,0,1,0,10,15,Medium Hybrid Turret Damage
 #33869,1,33097,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
 # Burst,,,,,,,,,,,
-599,1,3329,68,2,41,0,1,0,10,15,Shield Transporter Rep Amount
-599,1,3329,6,2,41,0,1,0,-10,15,Shield Transporter Cap Use
-599,0,0,87,2,41,0,0,0,300,15,Shield Transporter Optimal
-599,0,0,2044,2,41,0,0,0,300,15,Shield Transporter Falloff
+599,1,3329,68,2,41,0,1,0,10,15,Remote Shield Booster Rep Amount
+599,1,3329,6,2,41,0,1,0,-10,15,Remote Shield Booster Cap Use
+599,0,0,54,2,41,0,0,0,300,15,Remote Shield Booster Optimal
+599,0,0,2044,2,41,0,0,0,300,15,Remote Shield Booster Falloff
 # Bustard,,,,,,,,,,,
 12731,1,3342,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
 12731,1,3342,37,1,12731,0,1,0,5,15,Max Velocity
@@ -400,8 +400,8 @@
 11182,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
 # Chimera,,,,,,,,,,,
 23915,1,24312,91,4,910,0,1,0,40,15,Capital Energy Transfer Range
-23915,1,24312,87,4,600,0,1,0,40,15,Capital Shield Transfer Range
-23915,1,24312,2044,4,600,0,1,0,40,15,Capital Shield Transporter Falloff
+23915,1,24312,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Range
+23915,1,24312,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
 23915,1,24312,271,1,23915,0,1,2,-4,15,Shield EM Resistance
 23915,1,24312,272,1,23915,0,1,2,-4,15,Shield Explosive Resistance
 23915,1,24312,273,1,23915,0,1,2,-4,15,Shield Kinetic Resistance
@@ -517,9 +517,9 @@
 20125,1,3335,64,3,18,0,1,0,10,15,Drone Damage
 20125,1,22761,90,2,68,0,1,0,20,15,Nos Drain Amount
 20125,1,22761,97,2,71,0,1,0,20,15,Neut Drain Amount
-20125,1,22761,91,2,68,0,1,0,40,15,Nos Drain Optimal Range
+20125,1,22761,54,2,68,0,1,0,40,15,Nos Drain Optimal Range
 20125,1,22761,2044,2,68,0,1,0,20,15,Nos Drain Falloff
-20125,1,22761,98,2,71,0,1,0,40,15,Neut Drain Optimal Range
+20125,1,22761,54,2,71,0,1,0,40,15,Neut Drain Optimal Range
 20125,1,22761,2044,2,71,0,1,0,20,15,Neut Drain Falloff
 # Cyclone,,,,,,,,,,,
 16231,1,33098,51,2,510;771,0,1,0,-5,15,Heavy & HAM Launcher ROF
@@ -597,9 +597,9 @@
 32874,1,33091,263,3,18,0,1,0,10,15,Drone Shield HP
 32874,1,33091,265,3,18,0,1,0,10,15,Drone Armor HP
 32874,1,33091,9,3,18,0,1,0,10,15,Drone Hull HP
-32874,1,33091,91,2,68,0,1,0,20,15,Nos Drain Optimal Range
+32874,1,33091,54,2,68,0,1,0,20,15,Nos Drain Optimal Range
 32874,1,33091,2044,2,68,0,1,0,10,15,Nos Drain Falloff
-32874,1,33091,98,2,71,0,1,0,20,15,Neut Drain Optimal Range
+32874,1,33091,54,2,71,0,1,0,20,15,Neut Drain Optimal Range
 32874,1,33091,2044,2,71,0,1,0,10,15,Neut Drain Falloff
 32874,0,0,37,3,18,0,0,0,25,15,Drone MWD Speed
 # Drake,,,,,,,,,,,
@@ -675,15 +675,15 @@
 22460,1,12098,10012,4,564;561,0,1,0,-5,15,Small Hybrid Turret ROF
 22460,1,12098,554,2,46,0,1,0,-10,15,MWD Signature Radius Penalty
 # Etana,,,,,,,,,,,
-32790,1,3334,87,2,41,0,1,0,62,15,Shield Transporter Optimal
-32790,1,3334,2044,2,41,0,1,0,62,15,Shield Transporter Falloff
+32790,1,3334,54,2,41,0,1,0,62,15,Remote Shield Booster Optimal
+32790,1,3334,2044,2,41,0,1,0,62,15,Remote Shield Booster Falloff
 32790,1,3334,91,2,67,0,1,0,160,15,Energy Transfer Range
 32790,1,3334,68,4,842,0,1,0,20,15,Shield Maintenance Bot Transfer
 32790,1,3334,84,4,842,0,1,0,20,15,Armor Maintenance Bot Transfer
 32790,1,3334,83,4,842,0,1,0,20,15,Hull Maintenance Bot Transfer
-32790,1,12096,6,2,41,0,1,0,-17,15,Shield Transporter Cap Use
+32790,1,12096,6,2,41,0,1,0,-17,15,Remote Shield Booster Cap Use
 32790,1,12096,6,2,67,0,1,0,-17,15,Energy Transfer Cap Use
-32790,0,0,50,2,41,0,0,0,-50,15,Shield Transporter CPU
+32790,0,0,50,2,41,0,0,0,-50,15,Remote Shield Booster CPU
 32790,0,0,30,2,67,0,0,0,-50,15,Energy Transfer PG
 32790,0,0,1211,7,1211,0,0,0,-40,15,Heat Damage Reduction
 # Executioner,,,,,,,,,,,
@@ -723,7 +723,7 @@
 # Ferox,,,,,,,,,,,
 16227,1,33096,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
 16227,1,33096,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
-16227,0,0,54,4,562;565,0,1,0,25,15,Medium Hybrid Turret Optimal Range
+16227,0,0,54,4,562;565,0,0,0,25,15,Medium Hybrid Turret Optimal Range
 16227,0,0,158,4,562;565,0,0,0,25,15,Medium Hybrid Turret Falloff
 # Ferox Guristas Edition,,,,,,,,,,,
 #33873,1,33096,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
@@ -889,10 +889,10 @@
 # Hel,,,,,,,,,,,
 22852,1,24314,54,4,1056,0,1,0,40,15,Capital Armor Transfer Optimal
 22852,1,24314,2044,4,1056,0,1,0,40,15,Capital Armor Transfer Falloff
-22852,1,24314,87,4,600,0,1,0,40,15,Capital Shield Transporter Optimal
-22852,1,24314,2044,4,600,0,1,0,40,15,Capital Shield Transporter Falloff
+22852,1,24314,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Optimal
+22852,1,24314,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
 22852,1,24314,84,4,1056,0,1,0,7.5,15,Capital Armor Transfer Amount
-22852,1,24314,68,4,600,0,1,0,7.5,15,Capital Shield Transporter Amount
+22852,1,24314,68,4,600,0,1,0,7.5,15,Capital Remote Shield Booster Amount
 22852,1,24314,10005,1,22852,0,1,1,1,15,Fighter Control Bonus
 22852,1,24314,10063,1,22852,0,1,1,1,15,Warfare Link Bonus
 22852,0,0,64,2,549;1023,0,0,0,100,15,Fighter & FB Damage
@@ -1098,11 +1098,11 @@
 602,1,3330,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,5,15,Therm Missile Damage
 602,1,3330,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,10,15,Missile Velocity
 # Kirin,,,,,,,,,,,
-37458,0,0,2044,2,41,0,0,0,300,15,Shield Transporter falloff
-37458,1,3330,6,2,41,0,1,0,-10,15,Shield Transporter Cap Use
-37458,1,3330,68,2,41,0,1,0,10,15,Shield Transporter Rep Amount
-37458,1,40328,6,2,41,0,1,0,-5,15,Shield Transporter Cap Use
-37458,1,40328,73,2,41,0,1,0,-5,15,Shield Transporter Duration
+37458,0,0,2044,2,41,0,0,0,300,15,Remote Shield Booster falloff
+37458,1,3330,6,2,41,0,1,0,-10,15,Remote Shield Booster Cap Use
+37458,1,3330,68,2,41,0,1,0,10,15,Remote Shield Booster Rep Amount
+37458,1,40328,6,2,41,0,1,0,-5,15,Remote Shield Booster Cap Use
+37458,1,40328,73,2,41,0,1,0,-5,15,Remote Shield Booster Duration
 37458,1,40328,263,1,37458,0,1,0,7.5,15,Shield HP
 37458,1,40328,72,2,38,0,1,0,7.5,15,Shield Extender HP
 # Kitsune,,,,,,,,,,,
@@ -1242,9 +1242,9 @@
 3516,1,3331,270,1,3516,0,1,2,-4,15,Armor Thermal Resistance
 3516,1,3331,90,2,68,0,1,0,20,15,Nos Drain Amount
 3516,1,3331,97,2,71,0,1,0,20,15,Neut Drain Amount
-3516,1,3331,91,2,68,0,1,0,20,15,Nos Drain Optimal Range
+3516,1,3331,54,2,68,0,1,0,20,15,Nos Drain Optimal Range
 3516,1,3331,2044,2,68,0,1,0,10,15,Nos Drain Falloff
-3516,1,3331,98,2,71,0,1,0,20,15,Neut Drain Optimal Range
+3516,1,3331,54,2,71,0,1,0,20,15,Neut Drain Optimal Range
 3516,1,3331,2044,2,71,0,1,0,10,15,Neut Drain Falloff
 3516,0,0,10014,4,567;570,0,0,0,100,15,Small Energy Turret Damage
 3516,0,0,54,4,567;570,0,0,0,50,15,Small Energy Turret Optimal Range
@@ -1430,10 +1430,10 @@
 # Nidhoggur,,,,,,,,,,,
 24483,1,24314,54,4,1056,0,1,0,40,15,Capital Armor Transfer Optimal
 24483,1,24314,2044,4,1056,0,1,0,40,15,Capital Armor Transfer Falloff
-24483,1,24314,87,4,600,0,1,0,40,15,Capital Shield Transporter Optimal
-24483,1,24314,2044,4,600,0,1,0,40,15,Capital Shield Transporter Falloff
+24483,1,24314,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Optimal
+24483,1,24314,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
 24483,1,24314,84,4,1056,0,1,0,7.5,15,Capital Armor Transfer Amount
-24483,1,24314,68,4,600,0,1,0,7.5,15,Capital Shield Transporter Amount
+24483,1,24314,68,4,600,0,1,0,7.5,15,Capital Remote Shield Booster Amount
 24483,1,24314,10005,1,24483,0,1,1,1,15,Fighter Control Bonus
 24483,1,24314,10063,1,24483,0,1,1,1,15,Warfare Link Bonus
 # Nighthawk,,,,,,,,,,,
@@ -1471,8 +1471,8 @@
 # Nyx,,,,,,,,,,,
 23913,1,24313,54,4,1056,0,1,0,40,15,Capital Armor Transfer Optimal
 23913,1,24313,2044,4,1056,0,1,0,40,15,Capital Armor Transfer Falloff
-23913,1,24313,87,4,600,0,1,0,40,15,Capital Shield Transporter Optimal
-23913,1,24313,2044,4,600,0,1,0,40,15,Capital Shield Transporter Falloff
+23913,1,24313,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Optimal
+23913,1,24313,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
 23913,1,24313,64,2,549;1023,0,1,0,5,15,Fighter & FB Damage
 23913,1,24313,10005,1,23913,0,1,1,1,15,Fighter Control Bonus
 23913,1,24313,10063,1,23913,0,1,1,1,15,Warfare Link Bonus
@@ -1559,10 +1559,10 @@
 33818,0,0,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,200,15,Missile Velocity
 33818,0,0,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,-50,15,Missile Flight Time
 # Osprey,,,,,,,,,,,
-620,1,3334,6,2,41,0,1,0,-5,15,Shield Transporter Cap Use
-620,1,3334,68,2,41,0,1,0,12.5,15,Shield Transporter Rep Amount
-620,0,0,87,2,41,0,0,0,430,15,Shield Transporter Optimal
-620,0,0,2044,2,41,0,0,0,430,15,Shield Transporter Falloff
+620,1,3334,6,2,41,0,1,0,-5,15,Remote Shield Booster Cap Use
+620,1,3334,68,2,41,0,1,0,12.5,15,Remote Shield Booster Rep Amount
+620,0,0,54,2,41,0,0,0,430,15,Remote Shield Booster Optimal
+620,0,0,2044,2,41,0,0,0,430,15,Remote Shield Booster Falloff
 620,0,0,91,2,67,0,0,0,1000,15,Energy Transfer Range
 620,0,0,90,2,67,0,0,0,200,15,Energy Transfer Amount
 # Osprey Navy Issue,,,,,,,,,,,
@@ -1652,9 +1652,9 @@
 11965,1,3335,64,3,18,0,1,0,10,15,Drone Damage
 11965,1,22761,90,2,68,0,1,0,10,15,Nos Drain Amount
 11965,1,22761,97,2,71,0,1,0,10,15,Neut Drain Amount
-11965,1,22761,91,2,68,0,1,0,20,15,Nos Drain Optimal Range
+11965,1,22761,54,2,68,0,1,0,20,15,Nos Drain Optimal Range
 11965,1,22761,2044,2,68,0,1,0,10,15,Nos Drain Falloff
-11965,1,22761,98,2,71,0,1,0,20,15,Neut Drain Optimal Range
+11965,1,22761,54,2,71,0,1,0,20,15,Neut Drain Optimal Range
 11965,1,22761,2044,2,71,0,1,0,10,15,Neut Drain Falloff
 11965,1,22761,50,2,330,0,1,0,-20,15,Cloaking Device CPU
 11965,0,0,714,2,658,0,0,0,-80,15,Cyno Field Fuel
@@ -1861,8 +1861,8 @@
 3514,1,24311,37,2,549;1023,0,1,0,10,15,Fighter & FB Max Velocity
 3514,1,24311,10063,1,3514,0,1,1,1,15,Warfare Link Bonus
 3514,1,24312,91,4,910,0,1,0,40,15,Capital Energy Transfer Range
-3514,1,24312,87,4,600,0,1,0,40,15,Capital Shield Transfer Range
-3514,1,24312,2044,4,600,0,1,0,40,15,Capital Shield Transporter Falloff
+3514,1,24312,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Range
+3514,1,24312,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
 3514,1,24312,552,2,549;1023,0,1,0,-10,15,Fighter & FB Signature Radius
 3514,0,0,64,2,549;1023,0,0,0,300,15,Fighter & FB Damage
 3514,0,0,263,2,549;1023,0,0,0,300,15,Fighter & FB Shield HP
@@ -1914,8 +1914,8 @@
 11959,1,22761,241,2,201,0,1,0,30,15,ECM Jam Strength Radar
 11959,1,22761,37,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Velocity
 # Rorqual,,,,,,,,,,,
-28352,1,28374,87,4,600,0,1,0,40,15,Capital Shield Transfer Optimal
-28352,1,28374,2044,4,600,0,1,0,40,15,Capital Shield Transporter Falloff
+28352,1,28374,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Optimal
+28352,1,28374,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
 28352,1,28374,263,3,18,0,1,0,20,15,Drone Shield HP
 28352,1,28374,265,3,18,0,1,0,20,15,Drone Armor HP
 28352,1,28374,9,3,18,0,1,0,20,15,Drone Hull HP
@@ -1926,7 +1926,7 @@
 28352,0,0,126,2,47,0,0,0,200,15,Cargo Scanner Range
 28352,0,0,10063,1,28352,0,0,1,2,15,Warfare Link Use
 # Rorqual ORE Development Edition,,,,,,,,,,,
-#33687,1,28374,87,4,600,0,1,0,50,15,Capital Shield Transfer Range
+#33687,1,28374,54,4,600,0,1,0,50,15,Capital Remote Shield Booster Range
 #33687,1,28374,263,3,18,0,1,0,20,15,Drone Shield HP
 #33687,1,28374,265,3,18,0,1,0,20,15,Drone Armor HP
 #33687,1,28374,9,3,18,0,1,0,20,15,Drone Hull HP
@@ -1957,24 +1957,24 @@
 12019,1,16591,51,2,511;524;506;510;771;507;508;509;1245,0,1,0,-5,15,Missile Launcher ROF
 12019,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
 # Scalpel,,,,,,,,,,,
-37460,0,0,2044,2,41,0,0,0,300,15,Shield Transporter falloff
-37460,1,3329,6,2,41,0,1,0,-10,15,Shield Transporter Cap Use
-37460,1,3329,68,2,41,0,1,0,10,15,Shield Transporter Rep Amount
-37460,1,40328,6,2,41,0,1,0,-5,15,Shield Transporter Cap Use
-37460,1,40328,73,2,41,0,1,0,-5,15,Shield Transporter Duration
+37460,0,0,2044,2,41,0,0,0,300,15,Remote Shield Booster falloff
+37460,1,3329,6,2,41,0,1,0,-10,15,Remote Shield Booster Cap Use
+37460,1,3329,68,2,41,0,1,0,10,15,Remote Shield Booster Rep Amount
+37460,1,40328,6,2,41,0,1,0,-5,15,Remote Shield Booster Cap Use
+37460,1,40328,73,2,41,0,1,0,-5,15,Remote Shield Booster Duration
 37460,1,40328,552,1,37460,0,1,0,-4,15,Signature Radius
 # Scimitar,,,,,,,,,,,
-11978,1,3333,87,2,41,0,1,0,60,15,Shield Transporter Optimal
-11978,1,3333,2044,2,41,0,1,0,60,15,Shield Transporter Falloff
+11978,1,3333,54,2,41,0,1,0,60,15,Remote Shield Booster Optimal
+11978,1,3333,2044,2,41,0,1,0,60,15,Remote Shield Booster Falloff
 11978,1,3333,54,2,209,0,1,0,150,15,Tracking Link Optimal Range
 11978,1,3333,68,4,842,0,1,0,20,15,Shield Maintenance Bot Transfer
 11978,1,3333,84,4,842,0,1,0,20,15,Armor Maintenance Bot Transfer
 11978,1,3333,83,4,842,0,1,0,20,15,Hull Maintenance Bot Transfer
-11978,1,12096,6,2,41,0,1,0,-15,15,Shield Transporter Cap Use
+11978,1,12096,6,2,41,0,1,0,-15,15,Remote Shield Booster Cap Use
 11978,1,12096,351,2,209,0,1,0,10,15,Tracking Link Effect Optimal Range
 11978,1,12096,767,2,209,0,1,0,10,15,Tracking Link Effect Tracking
 11978,1,12096,349,2,209,0,1,0,10,15,Tracking Link Effect Falloff
-11978,0,0,50,2,41,0,0,0,-50,15,Shield Transporter CPU
+11978,0,0,50,2,41,0,0,0,-50,15,Remote Shield Booster CPU
 # Scorpion,,,,,,,,,,,
 640,1,3338,54,2,201,0,1,0,25,15,ECM Optimal Range
 640,1,3338,158,2,201,0,1,0,25,15,ECM Falloff
@@ -2006,10 +2006,10 @@
 32309,1,3338,273,1,32309,0,1,2,-4,15,Shield Kinetic Resistance
 32309,1,3338,274,1,32309,0,1,2,-4,15,Shield Thermal Resistance
 # Scythe,,,,,,,,,,,
-631,1,3333,6,2,41,0,1,0,-5,15,Shield Transporter Cap Use
-631,1,3333,68,2,41,0,1,0,12.5,15,Shield Transporter Rep Amount
-631,0,0,87,2,41,0,0,0,430,15,Shield Transporter optimal
-631,0,0,2044,2,41,0,0,0,430,15,Shield Transporter Falloff
+631,1,3333,6,2,41,0,1,0,-5,15,Remote Shield Booster Cap Use
+631,1,3333,68,2,41,0,1,0,12.5,15,Remote Shield Booster Rep Amount
+631,0,0,54,2,41,0,0,0,430,15,Remote Shield Booster optimal
+631,0,0,2044,2,41,0,0,0,430,15,Remote Shield Booster Falloff
 631,0,0,68,4,842,0,0,0,100,15,Shield Maintenance Bot Transfer
 631,0,0,84,4,842,0,0,0,100,15,Armor Maintenance Bot Transfer
 631,0,0,83,4,842,0,0,0,100,15,Hull Maintenance Bot Transfer
@@ -2029,9 +2029,9 @@
 11190,1,3331,847,2,291,0,1,0,7.5,15,Guidance Disruptor Effect Explosion velocity
 11190,1,3331,90,2,68,0,1,0,20,15,Nos Drain Amount
 11190,1,3331,97,2,71,0,1,0,20,15,Neut Drain Amount
-11190,1,28615,91,2,68,0,1,0,80,15,Nos Drain Optimal Range
+11190,1,28615,54,2,68,0,1,0,80,15,Nos Drain Optimal Range
 11190,1,28615,2044,2,68,0,1,0,40,15,Nos Drain Falloff
-11190,1,28615,98,2,71,0,1,0,80,15,Neut Drain Optimal Range
+11190,1,28615,54,2,71,0,1,0,80,15,Neut Drain Optimal Range
 11190,1,28615,2044,2,71,0,1,0,40,15,Neut Drain Falloff
 11190,1,28615,55,1,11190,0,1,0,-5,15,Capacitor Recharge Rate
 # Sigil,,,,,,,,,,,
@@ -2205,8 +2205,8 @@
 # Thanatos,,,,,,,,,,,
 23911,1,24313,54,4,1056,0,1,0,40,15,Capital Armor Transfer Optimal Range
 23911,1,24313,2044,4,1056,0,1,0,40,15,Capital Armor Transfer Falloff
-23911,1,24313,87,4,600,0,1,0,40,15,Capital Shield Transfer Optimal Range
-23911,1,24313,2044,4,600,0,1,0,40,15,Capital Shield Transporter Falloff
+23911,1,24313,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Optimal Range
+23911,1,24313,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
 23911,1,24313,64,2,549,0,1,0,5,15,Deployed Fighter Damage
 23911,1,24313,10005,1,23911,0,1,1,1,15,Fighter Control Bonus
 # Thorax,,,,,,,,,,,
@@ -2272,9 +2272,9 @@
 3518,1,3335,270,1,3518,0,1,2,-4,15,Armor Thermal Resistance
 3518,1,3335,90,2,68,0,1,0,20,15,Nos Drain Amount
 3518,1,3335,97,2,71,0,1,0,20,15,Neut Drain Amount
-3518,1,3335,91,2,68,0,1,0,20,15,Nos Drain Optimal Range
+3518,1,3335,54,2,68,0,1,0,20,15,Nos Drain Optimal Range
 3518,1,3335,2044,2,68,0,1,0,10,15,Nos Drain Falloff
-3518,1,3335,98,2,71,0,1,0,20,15,Neut Drain Optimal Range
+3518,1,3335,54,2,71,0,1,0,20,15,Neut Drain Optimal Range
 3518,1,3335,2044,2,71,0,1,0,10,15,Neut Drain Falloff
 3518,0,0,84,2,62;1199,0,0,0,50,15,Armor Repair Amount
 3518,0,0,51,2,511;524;506;510;771;507;508;509;1245,0,0,0,-50,15,Missile Launcher ROF
@@ -2444,8 +2444,8 @@
 653,1,3341,70,1,653,0,1,0,-5,15,Agility
 # Wyvern,,,,,,,,,,,
 23917,1,24312,91,4,910,0,1,0,40,15,Capital Energy Transfer Range
-23917,1,24312,87,4,600,0,1,0,40,15,Capital Shield Transfer Range
-23917,1,24312,2044,4,600,0,1,0,40,15,Capital Shield Transporter Falloff
+23917,1,24312,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Range
+23917,1,24312,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
 23917,1,24312,271,1,23917,0,1,2,-4,15,Shield EM Resistance
 23917,1,24312,272,1,23917,0,1,2,-4,15,Shield Explosive Resistance
 23917,1,24312,273,1,23917,0,1,2,-4,15,Shield Kinetic Resistance

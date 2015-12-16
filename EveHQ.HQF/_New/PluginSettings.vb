@@ -514,10 +514,15 @@ Imports Newtonsoft.Json
             Next
         Next
 
+        ' Update standard columns it needed
+        'If HQFSettings.StandardSlotColumns.Count <> _standardSlotColumns.Count Then
+        'HQFSettings.StandardSlotColumns = _standardSlotColumns
+        'End If
+
         ' Check if the standard columns have changed and we need to add columns
         If HQFSettings.UserSlotColumns.Count <> HQFSettings.StandardSlotColumns.Count Then
             Dim missingFlag As Boolean
-            For Each stdCol As UserSlotColumn In _StandardSlotColumns
+            For Each stdCol As UserSlotColumn In _standardSlotColumns
                 missingFlag = True
                 For Each testUserCol As UserSlotColumn In HQFSettings.UserSlotColumns
                     If stdCol.Name = testUserCol.Name Then
@@ -547,7 +552,8 @@ Imports Newtonsoft.Json
         _StandardSlotColumns.Add(New UserSlotColumn("ROF", "ROF", 75, False))
         _StandardSlotColumns.Add(New UserSlotColumn("Damage", "Damage", 75, False))
         _StandardSlotColumns.Add(New UserSlotColumn("DPS", "DPS", 75, False))
-        _StandardSlotColumns.Add(New UserSlotColumn("Falloff", "Falloff", 75, False))
+        _standardSlotColumns.Add(New UserSlotColumn("Falloff", "Falloff", 75, False))
+        _standardSlotColumns.Add(New UserSlotColumn("Effect Falloff", "Falloff Effectiveness", 75, False))
         _StandardSlotColumns.Add(New UserSlotColumn("Tracking", "Tracking", 75, False))
         _StandardSlotColumns.Add(New UserSlotColumn("ExpRad", "Explosion Radius", 75, False))
         _StandardSlotColumns.Add(New UserSlotColumn("ExpVel", "Explosion Velocity", 75, False))
