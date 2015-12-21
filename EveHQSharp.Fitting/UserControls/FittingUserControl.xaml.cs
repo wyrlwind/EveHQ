@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace EveHQSharp.Fitting
 {
     /// <summary>
-    /// Interaction logic for Fitting.xaml
+    /// Interaction logic for FittingUserControl.xaml
     /// </summary>
-    public partial class Fitting : Window
+    public partial class FittingUserControl : UserControl
     {
-        public Fitting()
+        public FittingUserControl()
         {
             InitializeComponent();
         }

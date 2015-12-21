@@ -10,19 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EveHQSharp.EveAPI
+namespace EveHQSharp.EveAPI.Windows
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ManageAPI.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ManageAPI : Window
     {
-        public MainWindow()
+        public ManageAPI()
         {
+            Core.Classes.WindowStates.manageAPIWindowOpen = true;
             InitializeComponent();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Core.Classes.WindowStates.manageAPIWindowOpen = false;
         }
     }
 }

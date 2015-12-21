@@ -21,13 +21,13 @@ namespace EveHQSharp
     {
         public Settings()
         {
-            MainWindow.settingsWindowOpen = true;
+            Core.Classes.WindowStates.settingsWindowOpen = true;
             InitializeComponent();        
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            MainWindow.settingsWindowOpen = false;
+            Core.Classes.WindowStates.settingsWindowOpen = false;
         }
     }
 }

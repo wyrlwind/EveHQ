@@ -1,0 +1,8 @@
+
+NAMESPACES
+The EveHQSharp name-space is for main UI resources and code.
+The EveHQSharp.Core name-space is to be used whenever access to shared resources (StaticData, save files, static variables, static methods, etc) is required.
+The EveHQSharp.EveApi name-space is used for whenever CREST or XML API calls are required.
+The EveHQSharp.SDEConverter name-space is close to a standalone project.
+
+This also needs more stuff.
