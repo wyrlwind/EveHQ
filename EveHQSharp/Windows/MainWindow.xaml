@@ -6,33 +6,27 @@
         xmlns:local="clr-namespace:EveHQSharp"
         mc:Ignorable="d"
         Title="EveHQSharp" Closed="Window_Closed">
-    <Grid>
-        <TabControl x:Name="TopTabControl" Height="74" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Grid.ColumnSpan="2">
-            <TabItem x:Name="coreTab" Header="Core">
-                <Grid Background="#FFE5E5E5" Margin="0,0,0,-1">
-                    <Button x:Name="manageAPIButton" Content="Manage &#xD;&#xA;    API" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="47" Click="manageAPIButton_Click" BorderBrush="#FF00C323"/>
-                    <Button x:Name="settingsButton" Content="Settings" HorizontalAlignment="Left" Margin="105,0,0,0" Width="48" Click="settingsButton_Click" BorderBrush="#FF1ED800"/>
-                    <Button x:Name="UpdateAPIButton" Content="Update &#xD;&#xA;   API" HorizontalAlignment="Left" Margin="50,0,0,0" Width="50"/>
-                </Grid>
-            </TabItem>
-            <TabItem x:Name="pluginsTab" Header="Plug-ins">
-                <Grid Background="#FFE5E5E5" Height="46" VerticalAlignment="Top">
-                    <Button x:Name="fitterButton" Content="Fitter" HorizontalAlignment="Left" Width="75" Click="fitterButton_Click" BorderBrush="#FF12C900"/>
-                    <Button x:Name="pilotManagerButton" Content="PilotManager" HorizontalAlignment="Left" Margin="80,0,0,0" Width="75" Click="pilotManagerButton_Click" BorderBrush="#FF11BF00"/>
-                    <Button x:Name="industryButton" Content="Industry" HorizontalAlignment="Left" Margin="160,0,0,0" Width="75" Click="industryButton_Click" BorderBrush="#FF10B200"/>
-                </Grid>
-            </TabItem>
-        </TabControl>
-        <TabControl x:Name="mainTabControl" Margin="0,74,0,0" Grid.ColumnSpan="2">
-            <TabItem x:Name="fitterTab" Header="Fitter">
-                <Grid x:Name="fitterGrid" Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem x:Name="pilotManagerTab" Header="PilotManager" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="96" Margin="0">
-                <Grid x:Name="pilotManagerGrid" Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem x:Name="industryTab" Header="Industry" Height="20" VerticalAlignment="Top" Margin="0,0,-5,0">
-                <Grid x:Name="industryGrid" Background="#FFE5E5E5"/>
-            </TabItem>
-        </TabControl>
-    </Grid>
+    <TabControl x:Name="tabControl" Margin="0,-1,0,0" SelectionChanged="tabControl_SelectionChanged" TabStripPlacement="Left">
+        <TabItem x:Name="coreTab" Header="Core" Margin="-2,0,1,0">
+            <Grid x:Name="coreGrid" Background="#FF001F72"/>
+        </TabItem>
+        <TabItem Header="Fitting" Margin="-2,0,1,0">
+            <Grid Background="#FF720000"/>
+        </TabItem>
+        <TabItem Header="Pilots" Margin="-2,0,1,0">
+            <Grid Background="#FF800074"/>
+        </TabItem>
+        <TabItem Header="Market" Margin="-2,0,1,0">
+            <Grid Background="#FF86D300"/>
+        </TabItem>
+        <TabItem Header="Industry" Margin="-2,0,1,0">
+            <Grid Background="#FF006A52" Margin="0,0,0,-30"/>
+        </TabItem>
+        <TabItem Header="TabItem" Margin="-2,0,1,0">
+            <Grid Background="#FFE5E5E5"/>
+        </TabItem>
+        <TabItem Header="TabItem" Margin="-2,0,0,0">
+            <Grid Background="#FFE5E5E5"/>
+        </TabItem>
+    </TabControl>
 </Window>

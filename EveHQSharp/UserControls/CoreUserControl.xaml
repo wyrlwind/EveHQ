@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="EveHQSharp.UserControls.CoreUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EveHQSharp.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Margin="0,0,-636,-146" Background="#FF838383">
+        <Grid HorizontalAlignment="Left" Width="200" Background="#FF535353">
+            <Label x:Name="label" Content="Pilot Training" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" FontSize="26.667"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Margin="200,0,0,0" Width="200" Background="#FF979595">
+            <Label x:Name="label2" Content="Settings" HorizontalAlignment="Left" Margin="42,0,0,0" VerticalAlignment="Top" FontSize="26.667"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Margin="400,0,0,0" Width="200" Background="#FFB6B6B6">
+            <Label x:Name="label1" Content="?" HorizontalAlignment="Left" Margin="88,0,0,0" VerticalAlignment="Top" FontSize="26.667"/>
+        </Grid>
+
+    </Grid>
+</UserControl>
