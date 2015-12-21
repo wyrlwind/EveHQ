@@ -160,13 +160,9 @@
       <Project>{87437f1e-0ed9-4dc7-98ea-71705260a3f7}</Project>
       <Name>EveHQSharp.Industry</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EveHQSharp.SDEConverter\EveHQSharp.SDEConverter.csproj">
-      <Project>{981dbf19-7435-4be5-a167-0a2f77b4b811}</Project>
-      <Name>EveHQSharp.SDEConverter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EveHQSharp.SkillManager\EveHQSharp.SkillManager.csproj">
-      <Project>{67291dfc-5869-4332-8d3d-264ad6c64f1c}</Project>
-      <Name>EveHQSharp.SkillManager</Name>
+    <ProjectReference Include="..\EveHQSharp.PilotManager\EveHQSharp.PilotManager.csproj">
+      <Project>{235716c6-bfba-4687-98ca-38a72024166d}</Project>
+      <Name>EveHQSharp.PilotManager</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

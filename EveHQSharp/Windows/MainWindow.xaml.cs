@@ -58,7 +58,8 @@ namespace EveHQSharp
             if (pilotManagerTab.Visibility != Visibility.Visible)
             {
                 pilotManagerTab.Visibility = Visibility.Visible;
-                //pilotManagerGrid.Children.Add();
+                PilotManager.UserControls.PilotManagerUserControl skillManagerWindow = new PilotManager.UserControls.PilotManagerUserControl();
+                pilotManagerGrid.Children.Add(skillManagerWindow);
             }
         }
 
@@ -67,7 +68,8 @@ namespace EveHQSharp
             if (industryTab.Visibility != Visibility.Visible)
             {
                 industryTab.Visibility = Visibility.Visible;
-                //industryGrid.Children.Add();
+                Industry.UserControls.IndustryUserControl industryWindow = new Industry.UserControls.IndustryUserControl();
+                industryGrid.Children.Add(industryWindow);
             }
 
         }

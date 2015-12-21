@@ -1,7 +1,7 @@
-﻿<Application x:Class="EveHQSharp.SkillManager.App"
+﻿<Application x:Class="EveHQSharp.PilotManager.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:EveHQSharp.SkillManager"
+             xmlns:local="clr-namespace:EveHQSharp.PilotManager"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

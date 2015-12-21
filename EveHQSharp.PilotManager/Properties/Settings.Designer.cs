@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EveHQSharp.SkillManager.Properties
+namespace EveHQSharp.PilotManager.Properties
 {
 
 
