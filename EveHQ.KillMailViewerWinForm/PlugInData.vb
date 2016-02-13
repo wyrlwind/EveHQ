@@ -58,10 +58,10 @@ Public Class PlugInData
     Public Function GetEveHQPlugInInfo() As Core.EveHQPlugIn Implements Core.IEveHQPlugIn.GetEveHQPlugInInfo
         ' Returns data to EveHQ to identify it as a plugin
         Dim eveHQPlugIn As New Core.EveHQPlugIn
-        eveHQPlugIn.Name = "EveHQ Killmail Viewer"
+        eveHQPlugIn.Name = "EveHQ Killmail Viewer WinForm"
         eveHQPlugIn.Description = "Views killmails for a specified character"
         eveHQPlugIn.Author = "EveHQ Team"
-        eveHQPlugIn.MainMenuText = "Killmail Viewer"
+        eveHQPlugIn.MainMenuText = "Killmail Viewer WinForm"
         eveHQPlugIn.RunAtStartup = True
         eveHQPlugIn.RunInIGB = False
         eveHQPlugIn.MenuImage = My.Resources.plugin_icon
@@ -74,7 +74,7 @@ Public Class PlugInData
     End Function
 
     Public Function RunEveHQPlugIn() As Windows.Forms.Form Implements Core.IEveHQPlugIn.RunEveHQPlugIn
-        Return New frmKMV
+        Return New winForm
     End Function
 
     Public Function SaveAll() As Boolean Implements Core.IEveHQPlugIn.SaveAll

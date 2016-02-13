@@ -44,42 +44,48 @@
 ' ==============================================================================
 
 
-Public Class PlugInData
-    Implements Core.IEveHQPlugIn
+Public Class KillmailItem
+    Public Property TypeID As Integer
+    Public Property Flag As Integer
+    Public Property QtyDropped As Integer
+    Public Property QtyDestroyed As Integer
+End Class
 
-    Public Function GetPlugInData(ByVal data As Object, ByVal dataType As Integer) As Object Implements Core.IEveHQPlugIn.GetPlugInData
-        Return Nothing
-    End Function
+Public Class KillmailVictim
+    Public Property CharID As String
+    Public Property CharName As String
+    Public Property CorpID As String
+    Public Property CorpName As String
+    Public Property AllianceID As String
+    Public Property AllianceName As String
+    Public Property FactionID As String
+    Public Property FactionName As String
+    Public Property DamageTaken As Double
+    Public Property ShipTypeID As Integer
+End Class
 
-    Public Function EveHQStartUp() As Boolean Implements Core.IEveHQPlugIn.EveHQStartUp
-        Return True
-    End Function
+Public Class KillmailAttacker
+    Public Property CharID As String
+    Public Property CharName As String
+    Public Property CorpID As String
+    Public Property CorpName As String
+    Public Property AllianceID As String
+    Public Property AllianceName As String
+    Public Property FactionID As String
+    Public Property FactionName As String
+    Public Property SecStatus As Double
+    Public Property DamageDone As Double
+    Public Property FinalBlow As Boolean
+    Public Property WeaponTypeID As Integer
+    Public Property ShipTypeID As Integer
+End Class
 
-    Public Function GetEveHQPlugInInfo() As Core.EveHQPlugIn Implements Core.IEveHQPlugIn.GetEveHQPlugInInfo
-        ' Returns data to EveHQ to identify it as a plugin
-        Dim eveHQPlugIn As New Core.EveHQPlugIn
-        eveHQPlugIn.Name = "EveHQ Killmail Viewer"
-        eveHQPlugIn.Description = "Views killmails for a specified character"
-        eveHQPlugIn.Author = "EveHQ Team"
-        eveHQPlugIn.MainMenuText = "Killmail Viewer"
-        eveHQPlugIn.RunAtStartup = True
-        eveHQPlugIn.RunInIGB = False
-        eveHQPlugIn.MenuImage = My.Resources.plugin_icon
-        eveHQPlugIn.Version = My.Application.Info.Version.ToString
-        Return eveHQPlugIn
-    End Function
-
-    Public Function IGBService(ByVal igbContext As Net.HttpListenerContext) As String Implements Core.IEveHQPlugIn.IGBService
-        Return ""
-    End Function
-
-    Public Function RunEveHQPlugIn() As Windows.Forms.Form Implements Core.IEveHQPlugIn.RunEveHQPlugIn
-        Return New frmKMV
-    End Function
-
-    Public Function SaveAll() As Boolean Implements Core.IEveHQPlugIn.SaveAll
-        ' No data or settings to save
-        Return False
-    End Function
-
+Public Class KillMail
+    Public Property KillID As Integer
+    Public Property SystemID As Integer
+    Public Property KillTime As Date
+    Public Property MoonID As String
+    Public Property Victim As KillmailVictim
+    Public Property Attackers As New SortedList
+    Public Property Items As New List(Of KillmailItem)
 End Class

@@ -1,53 +1,8 @@
-﻿'==============================================================================
-'
-' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2015  EveHQ Development Team
-'
-' This file is part of EveHQ.
-'
-' The source code for EveHQ is free and you may redistribute 
-' it and/or modify it under the terms of the MIT License. 
-'
-' Refer to the NOTICES file in the root folder of EVEHQ source
-' project for details of 3rd party components that are covered
-' under their own, separate licenses.
-'
-' EveHQ is distributed in the hope that it will be useful,
-' but WITHOUT ANY WARRANTY; without even the implied warranty of
-' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the MIT 
-' license below for details.
-'
-' ------------------------------------------------------------------------------
-'
-' The MIT License (MIT)
-'
-' Copyright © 2005-2015  EveHQ Development Team
-'
-' Permission is hereby granted, free of charge, to any person obtaining a copy
-' of this software and associated documentation files (the "Software"), to deal
-' in the Software without restriction, including without limitation the rights
-' to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-' copies of the Software, and to permit persons to whom the Software is
-' furnished to do so, subject to the following conditions:
-'
-' The above copyright notice and this permission notice shall be included in
-' all copies or substantial portions of the Software.
-' 
-' THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-' IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-' FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-' AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-' LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-' OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-' THE SOFTWARE.
-'
-' ==============================================================================
+﻿''Wyrlwind : wwyrlwind8@gmail.net
 
 Imports System.Globalization
-Imports DevComponents.AdvTree
-Imports DevComponents.DotNetBar
 Imports EveHQ.EveData
-Imports EveHQ.EveApi
+Imports EveHQ.EveAPI
 Imports EveHQ.Core
 Imports System.Xml
 Imports System.Windows.Forms
@@ -56,7 +11,7 @@ Imports System.Text
 Imports System.Net
 Imports System.IO
 
-Public Class frmKMV
+Public Class winForm
     Private Const KillTimeFormat As String = "yyyy-MM-dd HH:mm:ss"
     ReadOnly _culture As CultureInfo = New CultureInfo("en-GB")
     Dim _kmAccount As New EveHQAccount
@@ -64,50 +19,52 @@ Public Class frmKMV
     Dim _charID As String = ""
     ReadOnly _kms As New SortedList(Of Long, KillMail)
 
-    Private Sub frmKMV_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+    Private Sub winfrmKMV_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call UpdateAccounts()
+
     End Sub
 
     Private Sub UpdateAccounts()
-        cboAccount.BeginUpdate()
-        cboAccount.Items.Clear()
+        cb_UseExistingAccount.BeginUpdate()
+        cb_UseExistingAccount.Items.Clear()
         For Each cAccount As EveHQAccount In HQ.Settings.Accounts.Values
             If cAccount.FriendlyName <> "" Then
-                cboAccount.Items.Add(cAccount.FriendlyName)
+                cb_UseExistingAccount.Items.Add(cAccount.FriendlyName)
             Else
-                cboAccount.Items.Add(cAccount.UserID)
+                cb_UseExistingAccount.Items.Add(cAccount.UserID)
             End If
         Next
-        cboAccount.EndUpdate()
+        cb_UseExistingAccount.EndUpdate()
     End Sub
 
-    Private Sub radUseAccount_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) _
-        Handles radUseAccount.CheckedChanged
-        cboAccount.Enabled = radUseAccount.Checked
+    Private Sub rb_UseExistingAccount_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) _
+        Handles rb_UseExistingAccount.CheckedChanged
+        rb_UseExistingAccount.Enabled = rb_UseExistingAccount.Checked
     End Sub
 
-    Private Sub radUseAPI_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles radUseAPI.CheckedChanged
-        lblUserID.Enabled = radUseAPI.Checked
-        txtUserID.Enabled = radUseAPI.Checked
-        lblAPIKey.Enabled = radUseAPI.Checked
-        txtAPIKey.Enabled = radUseAPI.Checked
-        lblAPIStatus.Enabled = radUseAPI.Checked
-        btnGetCharacters.Enabled = radUseAPI.Checked
+    Private Sub rb_UseSpecificAPI_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rb_UseSpecificAPI.CheckedChanged
+        lb_UserID.Enabled = rb_UseSpecificAPI.Checked
+        tb_UserID.Enabled = rb_UseSpecificAPI.Checked
+        lb_APIKey.Enabled = rb_UseSpecificAPI.Checked
+        tb_APIKey.Enabled = rb_UseSpecificAPI.Checked
+        lb_APIStatus.Enabled = rb_UseSpecificAPI.Checked
+        bt_GetCharacters.Enabled = rb_UseSpecificAPI.Checked
     End Sub
 
-    Private Sub cboAccount_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) _
-        Handles cboAccount.SelectedIndexChanged
-
+    Private Sub cb_UseExistingAccount_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) _
+    Handles cb_UseExistingAccount.SelectedIndexChanged
+        Dim itm As ListViewItem
         ' Get the accountID and pilots
+        lv_AvaibleCharacters.BeginUpdate()
+        lv_AvaibleCharacters.Items.Clear()
         For Each cAccount As EveHQAccount In HQ.Settings.Accounts.Values
             If _
-                cAccount.FriendlyName = cboAccount.SelectedItem.ToString Or
-                cAccount.UserID = cboAccount.SelectedItem.ToString Then
+                cAccount.FriendlyName = cb_UseExistingAccount.SelectedItem.ToString Or
+                cAccount.UserID = cb_UseExistingAccount.SelectedItem.ToString Then
                 _kmAccount = cAccount
                 ' Get the list of characters and the character IDs
                 If cAccount.Characters IsNot Nothing Then
-                    lvwCharacters.BeginUpdate()
-                    lvwCharacters.Items.Clear()
+
                     For Each character As String In cAccount.Characters
                         Dim newPilot As New ListViewItem
                         newPilot.Text = character
@@ -120,12 +77,13 @@ Public Class frmKMV
                                 newPilot.Name = character
                             End If
                         End If
-                        lvwCharacters.Items.Add(newPilot)
+                        lv_AvaibleCharacters.Items.Add(newPilot)
+
                     Next
-                    lvwCharacters.Sort()
-                    lvwCharacters.EndUpdate()
+
+
                     ' Enable the Fetch Killmails button
-                    btnFetchKillMails.Enabled = True
+                    bt_FetchKillmails.Enabled = True
                     ' Check the account - disable the Get Corp Killmails box for v2
                     Exit For
                 Else
@@ -135,12 +93,14 @@ Public Class frmKMV
                 End If
             End If
         Next
+        lv_AvaibleCharacters.Sort()
+        lv_AvaibleCharacters.EndUpdate()
     End Sub
 
-    Private Sub btnGetCharacters_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnGetCharacters.Click
+    Private Sub bt_GetCharacters_Click(ByVal sender As Object, ByVal e As EventArgs) Handles bt_GetCharacters.Click
 
         ' Check for blank UserID and APIKey
-        If txtUserID.Text = "" Or txtAPIKey.Text = "" Then
+        If tb_UserID.Text = "" Or tb_APIKey.Text = "" Then
             MessageBox.Show("UserID and APIKey cannot be blank. Please enter the required information.",
                             "API Information Incomplete", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
@@ -148,8 +108,8 @@ Public Class frmKMV
 
         ' Create a dummy account for the information
         _kmAccount = New EveHQAccount
-        _kmAccount.UserID = txtUserID.Text
-        _kmAccount.APIKey = txtAPIKey.Text
+        _kmAccount.UserID = tb_UserID.Text
+        _kmAccount.APIKey = tb_APIKey.Text
         _kmAccount.FriendlyName = "Killmail Viewing Account"
 
         Dim accountCharacters As EveServiceResponse(Of IEnumerable(Of AccountCharacter)) =
@@ -164,8 +124,8 @@ Public Class frmKMV
             MessageBox.Show("There was an error retrieving character information from the API.", "API Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            lblAPIStatus.Text = "API Status: Character retrieval failed."
-            lblAPIStatus.Refresh()
+            lb_APIStatus.Text = "API Status: Character retrieval failed."
+            lb_APIStatus.Refresh()
             Exit Sub
 
         End If
@@ -174,36 +134,36 @@ Public Class frmKMV
             ' Seems ok so let's add the characters to the list
 
             ' Get the list of characters and the character IDs
-            lvwCharacters.BeginUpdate()
-            lvwCharacters.Items.Clear()
+            lv_AvaibleCharacters.BeginUpdate()
+            lv_AvaibleCharacters.Items.Clear()
             For Each character As AccountCharacter In accountCharacters.ResultData
                 Dim newPilot As New ListViewItem
                 newPilot.Text = character.Name
                 newPilot.Name = character.CharacterId.ToInvariantString()
-                lvwCharacters.Items.Add(newPilot)
+                lv_AvaibleCharacters.Items.Add(newPilot)
             Next
-            lvwCharacters.Sort()
-            lvwCharacters.EndUpdate()
+            lv_AvaibleCharacters.Sort()
+            lv_AvaibleCharacters.EndUpdate()
 
             ' Enable the Fetch Killmails button
-            btnFetchKillMails.Enabled = True
-            lblAPIStatus.Text = "API Status: Successfully retrieved characters."
-            lblAPIStatus.Refresh()
+            bt_FetchKillmails.Enabled = True
+            lb_APIStatus.Text = "API Status: Successfully retrieved characters."
+            lb_APIStatus.Refresh()
         End If
     End Sub
 
-    Private Sub btnFetchKillMails_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnFetchKillMails.Click
+    Private Sub bt_FetchKillmails_Click(ByVal sender As Object, ByVal e As EventArgs) Handles bt_FetchKillmails.Click
 
         ' Check we have a character selected
-        If lvwCharacters.SelectedItems.Count = 0 Then
+        If lv_AvaibleCharacters.SelectedItems.Count = 0 Then
             MessageBox.Show("You must select a character before fetching the killmails", "Character required",
                             MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End If
 
         ' Get the name and ID of the character
-        _charName = lvwCharacters.SelectedItems(0).Text
-        _charID = lvwCharacters.SelectedItems(0).Name
+        _charName = lv_AvaibleCharacters.SelectedItems(0).Text
+        _charID = lv_AvaibleCharacters.SelectedItems(0).Name
 
         ' Clear the list of Killmails
         _kms.Clear()
@@ -341,54 +301,86 @@ Public Class frmKMV
 
     Private Sub DrawKillmailSummary()
         ' Update the list of killmails
-        adtKillmails.BeginUpdate()
-        adtKillmails.Nodes.Clear()
+        Dim itm As ListViewItem
+        Dim str(4) As String
+        ' str(0) = ID
+        ' str(1) = Name
+        ' str(2) = Kill type
+        ' str(3) = Kill date
+
+
+
+
+
+        lv_KillmailSummary.BeginUpdate()
+        'lv_KillmailSummary.Clear()
         For Each charKillmail As KillMail In _kms.Values
-            Dim newKillmail As New Node
-            newKillmail.Tag = charKillmail.KillID
+
+            str(0) = CType(charKillmail.KillID, String)
             If charKillmail.Victim.CharName = "" Then
-                newKillmail.Text = charKillmail.Victim.CorpName
+                str(1) = charKillmail.Victim.CorpName
             Else
-                newKillmail.Text = charKillmail.Victim.CharName
+                str(1) = charKillmail.Victim.CharName
             End If
-            adtKillmails.Nodes.Add(newKillmail)
-            newKillmail.Cells.Add(New Cell(StaticData.Types(charKillmail.Victim.ShipTypeID).Name))
-            newKillmail.Cells.Add(New Cell(charKillmail.KillTime.ToString))
+
+            str(2) = StaticData.Types(charKillmail.Victim.ShipTypeID).Name
+            str(3) = charKillmail.KillTime.ToString
+
+            itm = New ListViewItem(str)
+            lv_KillmailSummary.Items.Add(itm)
+
+
+
         Next
-        adtKillmails.EndUpdate()
+        lv_KillmailSummary.EndUpdate()
         ' Update the summary label
-        lblKMSummary.Text = "Killmail Summary for " & _charName & " (" & adtKillmails.Nodes.Count & " items)"
+        lb_KillmailSummary.Text = "Killmail Summary for " & _charName & " (" & lv_KillmailSummary.Items.Count & " items)"
         ' Clear the killmail detail text
-        txtKillMailDetails.Text = ""
-        AdvTreeSorter.Sort(adtKillmails, 1, True, True)
+        rtb_KillmailDetails.Text = ""
+        'AdvTreeSorter.Sort(adtKillmails, 1, True, True)
     End Sub
 
-    Private Sub adtKillmails_ColumnHeaderMouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) _
-        Handles adtKillmails.ColumnHeaderMouseDown
-        Dim ch As DevComponents.AdvTree.ColumnHeader = CType(sender, DevComponents.AdvTree.ColumnHeader)
-        AdvTreeSorter.Sort(ch, True, False)
-    End Sub
 
-    Private Sub adtKillmails_SelectionChanged(ByVal sender As Object, ByVal e As EventArgs) _
-        Handles adtKillmails.SelectionChanged
-        If adtKillmails.SelectedNodes.Count > 0 Then
-            ' Get the killID of the selected Killmail
-            Dim killID As Long = CInt(adtKillmails.SelectedNodes(0).Tag)
+    'Private Sub adtKillmails_ColumnHeaderMouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) _
+    '    Handles adtKillmails.ColumnHeaderMouseDown
+    '    Dim ch As DevComponents.AdvTree.ColumnHeader = CType(sender, DevComponents.AdvTree.ColumnHeader)
+    '    AdvTreeSorter.Sort(ch, True, False)
+    'End Sub
+
+    'Private Sub lv_KillmailSummary_SelectionChanged(ByVal sender As Object, ByVal e As EventArgs) _
+    '    Handles lv_KillmailSummary.SelectionChanged
+
+    '    If adtKillmails.SelectedNodes.Count > 0 Then
+    '        ' Get the killID of the selected Killmail
+    '        Dim killID As Long = CInt(adtKillmails.SelectedNodes(0).Tag)
+    '        Dim selKillmail As New KillMail
+    '        If _kms.TryGetValue(killID, selKillmail) Then
+    '            ' Write the killmail detail
+    '            Call DrawKillmailDetail(selKillmail)
+    '            btnCopyKillmail.Enabled = True
+    '            btnExportToHQF.Enabled = True
+    '        End If
+
+    '    End If
+    'End Sub
+    Private Sub lv_KillmailSummary_MouseClick(sender As Object, e As MouseEventArgs) Handles lv_KillmailSummary.MouseClick
+        If lv_KillmailSummary.SelectedItems.Count = 1 Then
+            Dim killID As Long = CType(lv_KillmailSummary.SelectedItems(0).Text, Long)
             Dim selKillmail As New KillMail
             If _kms.TryGetValue(killID, selKillmail) Then
                 ' Write the killmail detail
                 Call DrawKillmailDetail(selKillmail)
-                btnCopyKillmail.Enabled = True
-                btnExportToHQF.Enabled = True
+                bt_CopyKillmail.Enabled = True
+                bt_ExportToHQF.Enabled = True
             End If
-
         End If
     End Sub
+
 
     Private Sub DrawKillmailDetail(ByVal selKillmail As KillMail)
 
         ' Write the killmail text to the label
-        txtKillMailDetails.Text = BuildKillmailDetails(selKillmail)
+        rtb_KillmailDetails.Text = BuildKillmailDetails(selKillmail)
     End Sub
 
     Private Function BuildKillmailDetails(ByVal selKillmail As KillMail) As String
@@ -545,151 +537,155 @@ Public Class frmKMV
         Return killmailText.ToString
     End Function
 
-    Private Sub btnUploadToBC_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnUploadToBC.Click
-        ' Only do selected KM for now for testing purposes
-        Const Uri As String = "http://eve.battleclinic.com/killboard/index.php"
-
-        If adtKillmails.SelectedNodes.Count > 0 Then
-            ' Get the killID of the selected Killmail
-            Dim killID As Long = CLng(adtKillmails.SelectedNodes(0).Tag)
-            Dim selKillmail As New KillMail
-            If _kms.TryGetValue(killID, selKillmail) Then
-                ' Check for valid attackers (i.e. not all NPC ones)
-                Dim validKillmail As Boolean =
-                        selKillmail.Attackers.Values.Cast(Of KillmailAttacker)().Any(
-                            Function(attacker) attacker.CharName <> "")
-                If validKillmail = False Then
-                    MessageBox.Show(
-                        "There does not appear to be any valid Attackers on this killmail other than NPCs. The killmail will therefore not be uploaded.",
-                        "Non-NPC Attackers Required.", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    ' Write the killmail detail
-                    Call UploadKillmail(Uri, BuildKillmailDetails(selKillmail))
-                End If
-            End If
-        End If
-    End Sub
-
-    Private Sub UploadKillmail(ByVal remoteURL As String, ByVal killmailText As String)
-
-        ' Build the POST data
-        Dim postData As String = ""
-        postData &= "mail=" & killmailText
-        postData &= "&option=return"
-        postData &= "&Submit=Submit"
-        Try
-            ' Create the requester
-            ServicePointManager.DefaultConnectionLimit = 20
-            ServicePointManager.Expect100Continue = False
-            ServicePointManager.FindServicePoint(New Uri(remoteURL))
-            Dim request As HttpWebRequest = CType(WebRequest.Create(remoteURL), HttpWebRequest)
-            ' Setup proxy server (if required)
-            Call ProxyServerFunctions.SetupWebProxy(request)
-            ' Setup request parameters
-            request.Method = "POST"
-            request.ContentLength = postData.Length
-            request.ContentType = "application/x-www-form-urlencoded"
-            request.Headers.Set(HttpRequestHeader.AcceptEncoding, "identity")
-            ' Setup a stream to write the HTTP "POST" data
-            Dim webEncoding As New ASCIIEncoding()
-            Dim byte1 As Byte() = webEncoding.GetBytes(postData)
-            Dim newStream As Stream = request.GetRequestStream()
-            newStream.Write(byte1, 0, byte1.Length)
-            newStream.Close()
-            ' Prepare for a response from the server
-            Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
-            ' Get the stream associated with the response.
-            Dim receiveStream As Stream = response.GetResponseStream()
-            ' Pipes the stream to a higher level stream reader with the required encoding format. 
-            Dim readStream As New StreamReader(receiveStream, Encoding.UTF8)
-            readStream.ReadToEnd()
-            ' Need to check here for bad responses!
-        Catch ex As Exception
-
-        End Try
-    End Sub
 
 
-    Private Sub btnCopyKillmail_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnCopyKillmail.Click
-        If txtKillMailDetails.Text <> "" Then
-            Try
-                Clipboard.SetText(txtKillMailDetails.Text)
-            Catch ex As Exception
-                MessageBox.Show(
-                    "There was an error copying the killmail details to the clipboard. The error was: " & ex.Message,
-                    "Killmail Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        Else
-            MessageBox.Show("Please select a killmail before copying to the clipboard", "Killmail Required",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-    End Sub
+    'Private Sub bt_UploadToBattleClinic_Click(ByVal sender As Object, ByVal e As EventArgs) Handles bt_UploadToBattleClinic.Click
+    '    ' Only do selected KM for now for testing purposes
+    '    Const Uri As String = "http://eve.battleclinic.com/killboard/index.php"
 
-    Private Sub btnExportToHQF_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnExportToHQF.Click
+    '    If adtKillmails.SelectedNodes.Count > 0 Then
+    '        ' Get the killID of the selected Killmail
+    '        Dim killID As Long = CLng(adtKillmails.SelectedNodes(0).Tag)
+    '        Dim selKillmail As New KillMail
+    '        If _kms.TryGetValue(killID, selKillmail) Then
+    '            ' Check for valid attackers (i.e. not all NPC ones)
+    '            Dim validKillmail As Boolean =
+    '                    selKillmail.Attackers.Values.Cast(Of KillmailAttacker)().Any(
+    '                        Function(attacker) attacker.CharName <> "")
+    '            If validKillmail = False Then
+    '                MessageBox.Show(
+    '                    "There does not appear to be any valid Attackers on this killmail other than NPCs. The killmail will therefore not be uploaded.",
+    '                    "Non-NPC Attackers Required.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '            Else
+    '                ' Write the killmail detail
+    '                Call UploadKillmail(Uri, BuildKillmailDetails(selKillmail))
+    '            End If
+    '        End If
+    '    End If
+    'End Sub
 
-        If adtKillmails.SelectedNodes.Count > 0 Then
+    'Private Sub UploadKillmail(ByVal remoteURL As String, ByVal killmailText As String)
 
-            Dim fittedItems As New SortedList(Of Integer, Integer)
+    '    ' Build the POST data
+    '    Dim postData As String = ""
+    '    postData &= "mail=" & killmailText
+    '    postData &= "&option=return"
+    '    postData &= "&Submit=Submit"
+    '    Try
+    '        ' Create the requester
+    '        ServicePointManager.DefaultConnectionLimit = 20
+    '        ServicePointManager.Expect100Continue = False
+    '        ServicePointManager.FindServicePoint(New Uri(remoteURL))
+    '        Dim request As HttpWebRequest = CType(WebRequest.Create(remoteURL), HttpWebRequest)
+    '        ' Setup proxy server (if required)
+    '        Call ProxyServerFunctions.SetupWebProxy(request)
+    '        ' Setup request parameters
+    '        request.Method = "POST"
+    '        request.ContentLength = postData.Length
+    '        request.ContentType = "application/x-www-form-urlencoded"
+    '        request.Headers.Set(HttpRequestHeader.AcceptEncoding, "identity")
+    '        ' Setup a stream to write the HTTP "POST" data
+    '        Dim webEncoding As New ASCIIEncoding()
+    '        Dim byte1 As Byte() = webEncoding.GetBytes(postData)
+    '        Dim newStream As Stream = request.GetRequestStream()
+    '        newStream.Write(byte1, 0, byte1.Length)
+    '        newStream.Close()
+    '        ' Prepare for a response from the server
+    '        Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
+    '        ' Get the stream associated with the response.
+    '        Dim receiveStream As Stream = response.GetResponseStream()
+    '        ' Pipes the stream to a higher level stream reader with the required encoding format. 
+    '        Dim readStream As New StreamReader(receiveStream, Encoding.UTF8)
+    '        readStream.ReadToEnd()
+    '        ' Need to check here for bad responses!
+    '    Catch ex As Exception
 
-            ' Get the killID of the selected Killmail
-            Dim killID As Long = CLng(adtKillmails.SelectedNodes(0).Tag)
-            Dim selKillmail As New KillMail
-            If _kms.TryGetValue(killID, selKillmail) Then
+    '    End Try
+    'End Sub
 
-                ' Make a list of dropped and destroyed items
 
-                For Each item As KillmailItem In selKillmail.Items
-                    If (item.QtyDestroyed + item.QtyDropped) > 0 Then
-                        Select Case item.Flag
-                            Case 5, 87, 90, 133 To 143 ' Cargo, drone bay & specialised storage
-                                'fittedItems.Add(item.TypeID, item.QtyDestroyed + item.QtyDropped)
-                            Case 11 To 18, 19 To 26, 27 To 34, 92 To 99, 125 To 132 ' Low, Mid, High, Rig and Sub slots
-                                If fittedItems.ContainsKey(item.TypeID) Then
-                                    fittedItems(item.TypeID) += item.QtyDestroyed + item.QtyDropped
-                                Else
-                                    fittedItems.Add(item.TypeID, item.QtyDestroyed + item.QtyDropped)
-                                End If
-                        End Select
-                    End If
-                Next
+    'Private Sub bt_CopyKillmail_Click(ByVal sender As Object, ByVal e As EventArgs) Handles bt_CopyKillmail.Click
 
-                ' Create Fitting DNA string
-                Dim dna As New StringBuilder
-                dna.Append("fitting://evehq/")
-                dna.Append(selKillmail.Victim.ShipTypeID.ToString)
-                For Each item As Integer In fittedItems.Keys
-                    dna.Append(":" & item & "*" & fittedItems(item).ToString)
-                Next
-                ' Add a basic loadout name
-                dna.Append(
-                    "?LoadoutName=" & selKillmail.Victim.CharName & "'s " &
-                    StaticData.Types(selKillmail.Victim.ShipTypeID).Name)
+    '    If txtKillMailDetails.Text <> "" Then
+    '        Try
+    '            Clipboard.SetText(txtKillMailDetails.Text)
+    '        Catch ex As Exception
+    '            MessageBox.Show(
+    '                "There was an error copying the killmail details to the clipboard. The error was: " & ex.Message,
+    '                "Killmail Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '        End Try
+    '    Else
+    '        MessageBox.Show("Please select a killmail before copying to the clipboard", "Killmail Required",
+    '                        MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '    End If
+    'End Sub
 
-                ' Start the HQF plug-in if it's active
-                Const PluginName As String = "EveHQ Fitter"
-                Dim myPlugIn As EveHQPlugIn = HQ.Plugins(PluginName)
-                If myPlugIn.Status = EveHQPlugInStatus.Active Then
-                    Dim mainTab As TabStrip = CType(HQ.MainForm.Controls("tabEveHQMDI"), TabStrip)
-                    Dim tp As TabItem = HQ.GetMdiTab(PluginName)
-                    If tp IsNot Nothing Then
-                        mainTab.SelectedTab = tp
-                    Else
-                        Dim plugInForm As Form = myPlugIn.Instance.RunEveHQPlugIn
-                        plugInForm.MdiParent = HQ.MainForm
-                        plugInForm.Show()
-                    End If
-                    myPlugIn.Instance.GetPlugInData(dna.ToString, 0)
-                Else
-                    ' Plug-in is not loaded so best not try to access it!
-                    Dim msg As String = ""
-                    msg &= "The " & myPlugIn.MainMenuText & " Plug-in is not currently active." & ControlChars.CrLf &
-                           ControlChars.CrLf
-                    msg &= "Please load the plug-in before proceeding."
-                    MessageBox.Show(msg, "Error Starting " & myPlugIn.MainMenuText & " Plug-in!", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information)
-                End If
-            End If
+    'Private Sub bt_ExportToHQFF_Click(ByVal sender As Object, ByVal e As EventArgs) Handles bt_ExportToHQF.Click
 
-        End If
-    End Sub
+    '    If adtKillmails.SelectedNodes.Count > 0 Then
+
+    '        Dim fittedItems As New SortedList(Of Integer, Integer)
+
+    '        ' Get the killID of the selected Killmail
+    '        Dim killID As Long = CLng(adtKillmails.SelectedNodes(0).Tag)
+    '        Dim selKillmail As New KillMail
+    '        If _kms.TryGetValue(killID, selKillmail) Then
+
+    '            ' Make a list of dropped and destroyed items
+
+    '            For Each item As KillmailItem In selKillmail.Items
+    '                If (item.QtyDestroyed + item.QtyDropped) > 0 Then
+    '                    Select Case item.Flag
+    '                        Case 5, 87, 90, 133 To 143 ' Cargo, drone bay & specialised storage
+    '                            'fittedItems.Add(item.TypeID, item.QtyDestroyed + item.QtyDropped)
+    '                        Case 11 To 18, 19 To 26, 27 To 34, 92 To 99, 125 To 132 ' Low, Mid, High, Rig and Sub slots
+    '                            If fittedItems.ContainsKey(item.TypeID) Then
+    '                                fittedItems(item.TypeID) += item.QtyDestroyed + item.QtyDropped
+    '                            Else
+    '                                fittedItems.Add(item.TypeID, item.QtyDestroyed + item.QtyDropped)
+    '                            End If
+    '                    End Select
+    '                End If
+    '            Next
+
+    '            ' Create Fitting DNA string
+    '            Dim dna As New StringBuilder
+    '            dna.Append("fitting://evehq/")
+    '            dna.Append(selKillmail.Victim.ShipTypeID.ToString)
+    '            For Each item As Integer In fittedItems.Keys
+    '                dna.Append(":" & item & "*" & fittedItems(item).ToString)
+    '            Next
+    '            ' Add a basic loadout name
+    '            dna.Append(
+    '                "?LoadoutName=" & selKillmail.Victim.CharName & "'s " &
+    '                StaticData.Types(selKillmail.Victim.ShipTypeID).Name)
+
+    '            ' Start the HQF plug-in if it's active
+    '            Const PluginName As String = "EveHQ Fitter"
+    '            Dim myPlugIn As EveHQPlugIn = HQ.Plugins(PluginName)
+    '            If myPlugIn.Status = EveHQPlugInStatus.Active Then
+    '                Dim mainTab As TabStrip = CType(HQ.MainForm.Controls("tabEveHQMDI"), TabStrip)
+    '                Dim tp As TabItem = HQ.GetMdiTab(PluginName)
+    '                If tp IsNot Nothing Then
+    '                    mainTab.SelectedTab = tp
+    '                Else
+    '                    Dim plugInForm As Form = myPlugIn.Instance.RunEveHQPlugIn
+    '                    plugInForm.MdiParent = HQ.MainForm
+    '                    plugInForm.Show()
+    '                End If
+    '                myPlugIn.Instance.GetPlugInData(dna.ToString, 0)
+    '            Else
+    '                ' Plug-in is not loaded so best not try to access it!
+    '                Dim msg As String = ""
+    '                msg &= "The " & myPlugIn.MainMenuText & " Plug-in is not currently active." & ControlChars.CrLf &
+    '                       ControlChars.CrLf
+    '                msg &= "Please load the plug-in before proceeding."
+    '                MessageBox.Show(msg, "Error Starting " & myPlugIn.MainMenuText & " Plug-in!", MessageBoxButtons.OK,
+    '                                MessageBoxIcon.Information)
+    '            End If
+    '        End If
+
+    '    End If
+    'End Sub
+
 End Class
