@@ -45,7 +45,7 @@
 
 using System.Collections.Generic;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi.Entities
 {
     /// <summary>The corporate data.</summary>
     public class CorporateData

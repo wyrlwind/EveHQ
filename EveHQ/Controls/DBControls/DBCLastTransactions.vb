@@ -50,6 +50,7 @@ Imports DevComponents.DotNetBar
 Imports System.Globalization
 Imports System.Xml
 Imports EveHQ.Common.Extensions
+Imports EveHQ.NewEveApi.Entities
 
 Namespace Controls.DBControls
 

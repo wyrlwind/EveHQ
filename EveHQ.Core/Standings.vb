@@ -67,9 +67,9 @@ Public Class Standings
 
                 ' Stage 1 - Get the NPC Standings
                 Try
-                    Dim standingsList As IEnumerable(Of NpcStanding)
-                    Dim standingsNode As NpcStanding
-                    Dim standingsResponse As EveServiceResponse(Of IEnumerable(Of NpcStanding)) =
+                    Dim standingsList As IEnumerable(Of NewEveApi.Entities.NpcStanding)
+                    Dim standingsNode As NewEveApi.Entities.NpcStanding
+                    Dim standingsResponse As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.NpcStanding)) =
                             HQ.ApiProvider.Character.NPCStandings(pilotAccount.UserID, pilotAccount.APIKey, pilot.ID.ToInt32())
 
                     'Dim apiReq As New EveAPIRequest(HQ.EveHQAPIServerInfo, HQ.RemoteProxy, HQ.Settings.APIFileExtension, HQ.ApiCacheFolder)
@@ -87,11 +87,11 @@ Public Class Standings
                                         Dim currentStandingsType As StandingType = StandingType.Unknown
 
                                         Select Case standingsNode.Kind
-                                            Case NpcType.Agents
+                                            Case NewEveApi.Entities.NpcType.agents
                                                 currentStandingsType = StandingType.Agent
-                                            Case NpcType.NPCCorporations
+                                            Case NewEveApi.Entities.NpcType.NPCCorporations
                                                 currentStandingsType = StandingType.NPCCorporation
-                                            Case NpcType.Factions
+                                            Case NewEveApi.Entities.NpcType.factions
                                                 currentStandingsType = StandingType.Faction
                                         End Select
 
@@ -118,8 +118,8 @@ Public Class Standings
 
                 ' Stage 2 - Get the player and corp standings
                 Try
-                    Dim standingsList As IEnumerable(Of Contact)
-                    Dim contactResponse As EveServiceResponse(Of IEnumerable(Of Contact)) = HQ.ApiProvider.Character.ContactList(pilotAccount.UserID, pilotAccount.APIKey, pilot.ID.ToInt32())
+                    Dim standingsList As IEnumerable(Of NewEveApi.Entities.Contact)
+                    Dim contactResponse As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.Contact)) = HQ.ApiProvider.Character.ContactList(pilotAccount.UserID, pilotAccount.APIKey, pilot.ID.ToInt32())
                     'Dim _
                     '    apiReq As _
                     '        New EveAPIRequest(HQ.EveHqapiServerInfo, HQ.RemoteProxy, HQ.Settings.APIFileExtension,
@@ -137,7 +137,7 @@ Public Class Standings
 
                                 Const currentStandingsType As StandingType = StandingType.PlayerCorp
 
-                                For Each entity As Contact In standingsList
+                                For Each entity As NewEveApi.Entities.Contact In standingsList
 
                                     Dim newStanding As New PilotStanding
                                     newStanding.ID = entity.ContactId

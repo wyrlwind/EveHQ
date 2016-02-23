@@ -46,7 +46,7 @@
 Imports System.Windows.Forms
 Imports EveHQ.Common
 Imports DevComponents.DotNetBar
-Imports EveHQ.EveAPI
+Imports EveHQ.NewEveApi
 Imports EveHQ.Market
 Imports System.IO
 Imports EveHQ.Common.Logging
@@ -100,7 +100,7 @@ Public Class HQ
     Public Shared EveHQServerMessage As EveHQMessage
     Public Shared RestoredSettings As Boolean = False
     Public Shared BcAppKey As String = "B23079B49E1FCBB9C224C9D9CC591DF9904C193F"
-    Public Shared EveHqapiServerInfo As New APIServerInfo
+    'Public Shared EveHqapiServerInfo As New APIServerInfo
     Public Shared EveHQIsUpdating As Boolean = False
     Private Shared _marketStatDataProvider As IMarketStatDataProvider
     Private Shared _marketOrderDataProvider As IMarketOrderDataProvider
@@ -111,7 +111,7 @@ Public Class HQ
     Private Shared _loggingStream As Stream
     Private Shared _eveHqTracer As EveHQTraceLogger
     Private Shared _proxyDetails As WebProxyDetails
-    Private Shared _apiProvider As EveAPI.EveAPI
+    Private Shared _apiProvider As NewEveApi.EveAPI
     Private Shared _updateLocation As String
     Private Shared _plugins As Dictionary(Of String, EveHQPlugIn)
     Private Shared _eveCentralProvider As EveCentralMarketDataProvider
@@ -278,10 +278,10 @@ Public Class HQ
         End Set
     End Property
 
-    Public Shared ReadOnly Property ApiProvider As EveAPI.EveAPI
+    Public Shared ReadOnly Property ApiProvider As NewEveApi.EveAPI
         Get
             If _apiProvider Is Nothing Then
-                _apiProvider = New EveAPI.EveAPI(ApiCacheFolder, New HttpRequestProvider(ProxyDetails))
+                _apiProvider = New NewEveApi.EveAPI(ApiCacheFolder, New HttpRequestProvider(ProxyDetails))
             End If
             Return _apiProvider
         End Get

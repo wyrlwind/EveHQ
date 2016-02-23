@@ -51,8 +51,10 @@ using System.Xml.Linq;
 using EveHQ.Caching;
 using EveHQ.Common;
 using EveHQ.Common.Extensions;
+using EveHQ.NewEveApi.Entities.Killmail;
+using EveHQ.NewEveApi.Entities;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi
 {
     /// <summary>
     ///     Client object for interacting with the Character Data methods on the Eve Web Service.

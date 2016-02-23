@@ -51,6 +51,7 @@ Imports EveHQ.Core
 Imports DevComponents.AdvTree
 Imports System.IO
 Imports SearchOption = Microsoft.VisualBasic.FileIO.SearchOption
+Imports EveHQ.NewEveApi
 
 Namespace Forms
 
@@ -233,7 +234,7 @@ Namespace Forms
                     End If
                 Catch e As Exception
                     ' Possible cache corruption
-                    If frmEveHQ.CacheErrorHandler() = True Then Exit Sub
+                    If FrmEveHQ.CacheErrorHandler() = True Then Exit Sub
                 End Try
 
                 ' Display Account Info
@@ -506,7 +507,7 @@ Namespace Forms
                     End If
 
                 Catch e As Exception
-                    If frmEveHQ.CacheErrorHandler() = True Then Exit Sub
+                    If FrmEveHQ.CacheErrorHandler() = True Then Exit Sub
                 End Try
             Next
 
@@ -669,7 +670,7 @@ Namespace Forms
                         End Select
                     Else
                         ' Cache corruption here??
-                        If frmEveHQ.CacheErrorHandler() = True Then Exit Sub
+                        If FrmEveHQ.CacheErrorHandler() = True Then Exit Sub
                     End If
                 End If
 
@@ -712,8 +713,8 @@ Namespace Forms
 
         Private Sub mnuViewDetails_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuViewDetails.Click
             Dim skillID As Integer = CInt(mnuSkillName.Tag)
-            frmSkillDetails.DisplayPilotName = _displayPilot.Name
-            Call frmSkillDetails.ShowSkillDetails(skillID)
+            FrmSkillDetails.DisplayPilotName = _displayPilot.Name
+            Call FrmSkillDetails.ShowSkillDetails(skillID)
         End Sub
 
         Private Sub ctxSkills_Opening(ByVal sender As Object, ByVal e As CancelEventArgs) Handles ctxSkills.Opening
@@ -750,8 +751,8 @@ Namespace Forms
 
             If openSkillDetails = True Then
                 Dim skillID As Integer = SkillFunctions.SkillNameToID(e.Node.Text)
-                frmSkillDetails.DisplayPilotName = _displayPilot.Name
-                Call frmSkillDetails.ShowSkillDetails(skillID)
+                FrmSkillDetails.DisplayPilotName = _displayPilot.Name
+                Call FrmSkillDetails.ShowSkillDetails(skillID)
             End If
         End Sub
 
@@ -798,7 +799,7 @@ Namespace Forms
         End Sub
         Private Sub mnuSavePortrait_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuSavePortrait.Click
             Dim imgFilename As String = _displayPilot.ID & ".png"
-            picPilot.Image.Save(Path.Combine(HQ.imageCacheFolder, imgFilename))
+            picPilot.Image.Save(Path.Combine(HQ.ImageCacheFolder, imgFilename))
         End Sub
 #End Region
 
@@ -827,9 +828,9 @@ Namespace Forms
 
         Private Sub mnuViewCertDetails_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuViewCertDetails.Click
             Dim certID As Integer = CInt(mnuCertName.Tag)
-            frmCertificateDetails.Text = mnuCertName.Text
-            frmCertificateDetails.DisplayPilotName = _displayPilot.Name
-            frmCertificateDetails.ShowCertDetails(certID)
+            FrmCertificateDetails.Text = mnuCertName.Text
+            FrmCertificateDetails.DisplayPilotName = _displayPilot.Name
+            FrmCertificateDetails.ShowCertDetails(certID)
         End Sub
 
         Private Sub cboPilots_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cboPilots.SelectedIndexChanged
@@ -859,7 +860,7 @@ Namespace Forms
                 If cboPilots.SelectedItem IsNot Nothing Then
                     If adtStandings.Nodes.Count > 0 Then
                         ' Export the current list of standings
-                        Dim sw As New StreamWriter(Path.Combine(HQ.reportFolder, "Standings (" & cboPilots.SelectedItem.ToString & ").csv"))
+                        Dim sw As New StreamWriter(Path.Combine(HQ.ReportFolder, "Standings (" & cboPilots.SelectedItem.ToString & ").csv"))
                         sw.WriteLine("Standings Export for " & cboPilots.SelectedItem.ToString & " (dated: " & Now.ToString & ")")
                         sw.WriteLine("Entity Name,Entity ID,Entity Type,Raw Standing Value,Actual Standing Value")
                         For Each iStanding As Node In adtStandings.Nodes
@@ -1009,14 +1010,14 @@ Namespace Forms
         End Sub
 
         Private Sub btnEditManualImplants_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnEditManualImplants.Click
-            frmEditImplants.DisplayPilotName = _displayPilot.Name
-            frmEditImplants.ShowDialog()
+            FrmEditImplants.DisplayPilotName = _displayPilot.Name
+            FrmEditImplants.ShowDialog()
             Call UpdatePilotInfo()
         End Sub
 
         Private Sub btnUpdateAPI_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnUpdateAPI.Click
             btnUpdateAPI.Enabled = False
-            Call frmEveHQ.QueryMyEveServer()
+            Call FrmEveHQ.QueryMyEveServer()
         End Sub
 
         Private Sub adtCerts_ColumnHeaderMouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles adtCerts.ColumnHeaderMouseDown

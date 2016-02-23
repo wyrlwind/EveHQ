@@ -52,6 +52,7 @@ Imports EveHQ.EveAPI
 Imports EveHQ.Core
 Imports EveHQ.EveData
 Imports EveHQ.Common.Extensions
+Imports EveHQ.NewEveApi.Entities
 
 Namespace Classes
 
@@ -713,7 +714,7 @@ Namespace Classes
             End If
         End Function
 
-        Public Shared Function WriteInstallerIdsToDB(ByVal jobs As IEnumerable(Of EveAPI.IndustryJob)) As Boolean
+        Public Shared Function WriteInstallerIdsToDB(ByVal jobs As IEnumerable(Of NewEveApi.Entities.IndustryJob)) As Boolean
 
             Dim idList As New HashSet(Of String)
 
@@ -730,7 +731,7 @@ Namespace Classes
 
         End Function
 
-        Public Shared Function WriteContractIdsToDB(ByVal contracts As IEnumerable(Of EveAPI.Contract)) As Boolean
+        Public Shared Function WriteContractIdsToDB(ByVal contracts As IEnumerable(Of NewEveApi.Entities.Contract)) As Boolean
 
             Dim idList As New List(Of Integer)
 
@@ -747,7 +748,7 @@ Namespace Classes
 
         End Function
 
-        Public Shared Function WriteInventionResultsToDB(ByVal jobs As IEnumerable(Of EveAPI.IndustryJob)) As Boolean
+        Public Shared Function WriteInventionResultsToDB(ByVal jobs As IEnumerable(Of NewEveApi.Entities.IndustryJob)) As Boolean
 
             ' Parse the list of jobs
             Dim inventionList As Dictionary(Of Long, InventionAPIJob) = InventionAPIJob.ParseInventionJobsFromAPI(jobs)

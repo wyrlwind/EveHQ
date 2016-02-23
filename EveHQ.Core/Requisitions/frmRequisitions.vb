@@ -52,6 +52,7 @@ Imports System.Xml
 Imports System.Threading.Tasks
 Imports EveHQ.Common.Extensions
 Imports System.Text
+Imports EveHQ.NewEveApi.Entities
 
 Namespace Requisitions
     Public Class FrmRequisitions
@@ -84,7 +85,7 @@ Namespace Requisitions
             For Each cCorp As Corporation In HQ.Settings.Corporations.Values
                 If HQ.Settings.Accounts.ContainsKey(cCorp.Accounts(0)) Then
                     Dim cAccount As EveHQAccount = HQ.Settings.Accounts(cCorp.Accounts(0))
-                    If cAccount.CanUseCorporateAPI(CorporateAccessMasks.AssetList) = True Then
+                    If cAccount.CanUseCorporateAPI(NewEveApi.CorporateAccessMasks.AssetList) = True Then
                         cboAssetSelection.Items.Add(cCorp.Name)
                     End If
                 End If
@@ -567,7 +568,7 @@ Namespace Requisitions
 
                 ' Fetch the resources owned
                 ' Parse the Assets XML
-                Dim assests As EveServiceResponse(Of IEnumerable(Of AssetItem))
+                Dim assests As NewEveApi.EveServiceResponse(Of IEnumerable(Of AssetItem))
                 If isCorp = True Then
                     assests = HQ.ApiProvider.Corporation.AssetList(assetAccount.UserID, assetAccount.APIKey,
                                                                    Integer.Parse(ownerID))

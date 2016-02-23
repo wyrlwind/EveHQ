@@ -567,20 +567,20 @@ Namespace Controls
                     If ownerAccount IsNot Nothing Then
 
                         If owner.IsCorp = True Then
-                            Dim corpResponse As EveServiceResponse(Of CorporateData) = HQ.ApiProvider.Corporation.CorporationSheet(ownerAccount.UserID, ownerAccount.APIKey)
+                            Dim corpResponse As NewEveApi.EveServiceResponse(Of NewEveApi.Entities.CorporateData) = HQ.ApiProvider.Corporation.CorporationSheet(ownerAccount.UserID, ownerAccount.APIKey)
                             If corpResponse IsNot Nothing Then
 
                                 If corpResponse.IsSuccess Then
                                     ' No errors so parse the files
                                     Dim divList As XmlNodeList
 
-                                    For Each div As CorporateDivision In corpResponse.ResultData.Divisions
+                                    For Each div As NewEveApi.Entities.CorporateDivision In corpResponse.ResultData.Divisions
                                         If _divisions.ContainsKey(ownerID & "_" & div.AccountKey) = False Then
                                             _divisions.Add(owner.ID & "_" & div.AccountKey, StrConv(div.Description, VbStrConv.ProperCase))
                                         End If
                                     Next
 
-                                    For Each wallDiv As CorporateDivision In corpResponse.ResultData.WalletDivisions
+                                    For Each wallDiv As NewEveApi.Entities.CorporateDivision In corpResponse.ResultData.WalletDivisions
                                         If _walletDivisions.ContainsKey(ownerID & "_" & wallDiv.AccountKey) = False Then
                                             _walletDivisions.Add(owner.ID & "_" & wallDiv.AccountKey, wallDiv.Description)
                                         End If
@@ -611,7 +611,7 @@ Namespace Controls
                     owner = PlugInData.PrismOwners(cOwner.Text)
                     Dim ownerAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(owner, CorpRepType.Assets)
                     Dim ownerID As String = PlugInData.GetAccountOwnerIDForCorpOwner(owner, CorpRepType.Assets)
-                    Dim assetResponse As EveServiceResponse(Of IEnumerable(Of EveApi.AssetItem))
+                    Dim assetResponse As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.AssetItem))
                     If ownerAccount IsNot Nothing Then
 
                         If owner.IsCorp = True Then
@@ -624,7 +624,7 @@ Namespace Controls
 
                         If assetResponse IsNot Nothing Then
 
-                            Dim assetItem As EveApi.AssetItem
+                            Dim assetItem As NewEveApi.Entities.AssetItem
                             Dim eveLocation As SolarSystem
 
                             If assetResponse.IsSuccess Then
@@ -932,9 +932,9 @@ Namespace Controls
             End If
 
         End Sub
-        Private Function PopulateAssetNode(ByVal parentAsset As Node, ByVal assetItem As EveApi.AssetItem, ByVal assetOwner As String, ByVal assetLocation As String, owner As PrismOwner, ByVal eveLocation As SolarSystem, ByVal stationLocation As String, corpHangarName As String) As Double
-            Dim subAssets As IEnumerable(Of EveApi.AssetItem)
-            Dim subAssetItem As EveApi.AssetItem
+        Private Function PopulateAssetNode(ByVal parentAsset As Node, ByVal assetItem As NewEveApi.Entities.AssetItem, ByVal assetOwner As String, ByVal assetLocation As String, owner As PrismOwner, ByVal eveLocation As SolarSystem, ByVal stationLocation As String, corpHangarName As String) As Double
+            Dim subAssets As IEnumerable(Of NewEveApi.Entities.AssetItem)
+            Dim subAssetItem As NewEveApi.Entities.AssetItem
             Dim containerPrice As Double
             Dim assetIsInHanger As Boolean
             Dim hangarPrice As Double
@@ -1160,7 +1160,7 @@ Namespace Controls
                     owner = PlugInData.PrismOwners(cOwner.Text)
                     Dim ownerAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(owner, CorpRepType.Balances)
                     Dim ownerID As String = PlugInData.GetAccountOwnerIDForCorpOwner(owner, CorpRepType.Balances)
-                    Dim accountBalances As EveServiceResponse(Of IEnumerable(Of AccountBalance))
+                    Dim accountBalances As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.AccountBalance))
                     If ownerAccount IsNot Nothing Then
 
                         If owner.IsCorp = True Then
@@ -1173,7 +1173,7 @@ Namespace Controls
                                     If _corpWallets.Contains(owner.Name) = False Then
                                         _corpWallets.Add(owner.Name, owner.ID)
 
-                                        For Each account As AccountBalance In accountBalances.ResultData
+                                        For Each account As NewEveApi.Entities.AccountBalance In accountBalances.ResultData
                                             Dim isk As Double = account.Balance
                                             Dim accountKey As String = account.AccountKey.ToInvariantString()
                                             If _corpWalletDivisions.ContainsKey(owner.ID & "_" & accountKey) = False Then
@@ -1196,7 +1196,7 @@ Namespace Controls
                                 If accountBalances.IsSuccess Then
                                     ' No errors so parse the files
 
-                                    For Each account As AccountBalance In accountBalances.ResultData
+                                    For Each account As NewEveApi.Entities.AccountBalance In accountBalances.ResultData
                                         Dim isk As Double = account.Balance
                                         If _charWallets.ContainsKey(owner.Name) = False Then
                                             _charWallets.Add(owner.Name, isk)
@@ -1421,7 +1421,7 @@ Namespace Controls
                 owner = PlugInData.PrismOwners(orderOwner)
                 Dim ownerAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(owner, CorpRepType.Orders)
                 Dim ownerID As String = PlugInData.GetAccountOwnerIDForCorpOwner(owner, CorpRepType.Orders)
-                Dim ordersResponse As EveServiceResponse(Of IEnumerable(Of EveApi.MarketOrder))
+                Dim ordersResponse As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.MarketOrder))
                 If ownerAccount IsNot Nothing Then
 
                     If owner.IsCorp = True Then
@@ -1431,7 +1431,7 @@ Namespace Controls
                     End If
                     If ordersResponse.IsSuccess Then
 
-                        For Each order As EveApi.MarketOrder In ordersResponse.ResultData
+                        For Each order As NewEveApi.Entities.MarketOrder In ordersResponse.ResultData
                             Dim newOrder As New Classes.MarketOrder
                             newOrder.OrderID = order.OrderId
                             newOrder.CharID = order.CharId
@@ -1494,7 +1494,7 @@ Namespace Controls
                     ' Dim prices As Dictionary(Of String, Double) = priceData.Result
 
                     For Each job As Classes.IndustryJob In jobList
-                        If job.Status <> IndustryJobStatus.Delivered Then
+                        If job.Status <> NewEveApi.Entities.IndustryJobStatus.Delivered Then
                             Dim rNode As New Node
                             CreateNodeCells(rNode)
                             rNode.Tag = job.BlueprintTypeId.ToString
@@ -1928,7 +1928,7 @@ Namespace Controls
                         owner = PlugInData.PrismOwners(cOwner.Text)
                         Dim ownerAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(owner, CorpRepType.Assets)
                         Dim ownerID As String = PlugInData.GetAccountOwnerIDForCorpOwner(owner, CorpRepType.Assets)
-                        Dim assetResponse As EveServiceResponse(Of IEnumerable(Of EveApi.AssetItem))
+                        Dim assetResponse As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.AssetItem))
                         If ownerAccount IsNot Nothing Then
 
 
@@ -1942,13 +1942,13 @@ Namespace Controls
 
 
                                 If assetResponse.IsSuccess Then
-                                    For Each assetItem As EveApi.AssetItem In assetResponse.ResultData
+                                    For Each assetItem As NewEveApi.Entities.AssetItem In assetResponse.ResultData
                                         ' Let's search for our asset!
                                         If assetItem.TypeId.ToInvariantString() = assetID Then
                                             ' We found our ship so extract the subitem data
                                             Dim catID As String
-                                            Dim modList As IEnumerable(Of EveApi.AssetItem)
-                                            Dim mods As EveApi.AssetItem
+                                            Dim modList As IEnumerable(Of NewEveApi.Entities.AssetItem)
+                                            Dim mods As NewEveApi.Entities.AssetItem
                                             If assetItem.Contents.Any() Then
                                                 modList = assetItem.Contents
                                                 For Each mods In modList
@@ -1985,9 +1985,9 @@ Namespace Controls
             Next
 
         End Sub
-        Private Sub SearchForShipNode(ByVal loc As EveApi.AssetItem, ByVal assetID As String)
-            Dim subLocList As IEnumerable(Of EveApi.AssetItem)
-            Dim subLoc As EveApi.AssetItem
+        Private Sub SearchForShipNode(ByVal loc As NewEveApi.Entities.AssetItem, ByVal assetID As String)
+            Dim subLocList As IEnumerable(Of NewEveApi.Entities.AssetItem)
+            Dim subLoc As NewEveApi.Entities.AssetItem
             subLocList = loc.Contents
             For Each subLoc In subLocList
                 ' Let's search for our asset!
@@ -1995,8 +1995,8 @@ Namespace Controls
                     If subLoc.ItemId.ToInvariantString() = assetID Then
                         ' We found our ship so extract the subitem data
                         Dim catID As String
-                        Dim modList As IEnumerable(Of EveApi.AssetItem)
-                        Dim mods As EveApi.AssetItem
+                        Dim modList As IEnumerable(Of NewEveApi.Entities.AssetItem)
+                        Dim mods As NewEveApi.Entities.AssetItem
                         If subLoc.Contents.Any() Then
                             modList = subLoc.Contents
                             For Each mods In modList

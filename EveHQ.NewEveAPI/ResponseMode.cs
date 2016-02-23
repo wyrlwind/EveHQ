@@ -43,7 +43,7 @@
 // 
 // ==============================================================================
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi
 {
     /// <summary>The response mode.</summary>
     public enum ResponseMode

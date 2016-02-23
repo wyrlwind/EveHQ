@@ -47,6 +47,7 @@ Imports System.Text
 Imports EveHQ.EveAPI
 Imports EveHQ.Common.Extensions
 Imports EveHQ.Core
+Imports EveHQ.NewEveApi.Entities
 
 Namespace Classes
     Public Class Contract
@@ -90,8 +91,8 @@ Namespace Classes
                 Dim ownerAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(owner, CorpRepType.Contracts)
                 Dim ownerID As String = PlugInData.GetAccountOwnerIDForCorpOwner(owner, CorpRepType.Contracts)
 
-                Dim contractResponse As EveServiceResponse(Of IEnumerable(Of EveApi.Contract))
-                Dim contractItemsResponse As EveServiceResponse(Of IEnumerable(Of ContractItem))
+                Dim contractResponse As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.Contract))
+                Dim contractItemsResponse As NewEveApi.EveServiceResponse(Of IEnumerable(Of ContractItem))
 
                 If ownerAccount IsNot Nothing Then
 
@@ -112,7 +113,7 @@ Namespace Classes
                         ' Parse the Node List
                         ' TODO: if both the API entity and prism class are identical, they should use the same type
                         Dim contractList As New SortedList(Of Long, Contract)
-                        For Each contract As EveAPI.Contract In contractResponse.ResultData
+                        For Each contract As NewEveApi.Entities.Contract In contractResponse.ResultData
                             Dim newContract As New Contract
                             newContract.ContractID = contract.ContractId
                             newContract.Owner = owner.Name
