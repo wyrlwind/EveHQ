@@ -130,33 +130,6 @@ Public Class EveAPIStatusForm
         End If
     End Sub
 
-    'Private Sub lvwStatus_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lvwStatus.MouseDown
-    '    lvwStatus.BeginUpdate()
-    '    Dim hti As ListViewHitTestInfo = lvwStatus.HitTest(e.Location)
-    '    If hti.SubItem IsNot Nothing Then
-    '        Dim sID As Integer = hti.Item.SubItems.IndexOf(hti.SubItem)
-    '        Call ClearItemSelection()
-    '        hti.Item.SubItems(sID).BackColor = Drawing.Color.LightSteelBlue
-    '        lvwStatus.EndUpdate()
-    '        If hti.Item.SubItems(sID).Tag IsNot Nothing Then
-    '            Dim errorCode As Integer = CInt(hti.Item.SubItems(sID).Tag)
-    '            If errorCode < 0 Then
-    '                errorCode *= -1
-    '            End If
-    '            lblErrorDetails.Text = CStr(EveHQ.Core.HQ.APIErrors(CStr(errorCode)))
-    '        End If
-    '    End If
-    'End Sub
-
-    'Private Sub ClearItemSelection()
-    '    For row As Integer = 0 To lvwStatus.Items.Count - 1
-    '        lvwStatus.Items(row).BackColor = Control.DefaultBackColor
-    '        For col As Integer = 0 To 4
-    '            lvwStatus.Items(row).SubItems(col).BackColor = DefaultColor
-    '        Next
-    '    Next
-    'End Sub
-
     Private Sub DisplayAPIResult(ByVal idx As Integer, ByVal result As Integer, ByRef lvItem As ListViewItem)
         LVItem.SubItems(idx).Tag = result
         Select Case result

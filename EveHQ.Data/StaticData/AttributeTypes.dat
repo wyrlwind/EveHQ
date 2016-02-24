@@ -2136,11 +2136,13 @@ G˜B˜structureRepairLimit#Structure Repair Limit (per second) q(
 0˙+˙entosisCPUPenaltyentosisCPUPenalty z
 (˚#˚roleBonusCBCroleBonusCBC z(
 9¸4¸falloffEffectivenessEffectiveness Falloff (
-F˝A˝capacitorWarfareResistanceCapacitor Warfare Resistance l(
+C˝>˝energyWarfareResistanceCapacitor Warfare Resistance l($
 B˛=˛entitySuperWeaponMaxRangeentitySuperWeaponMaxRange z(!
 @ˇ;ˇentitySuperWeaponFallOffentitySuperWeaponFallOff z(!
 LÄGÄentitySuperWeaponTrackingSpeedentitySuperWeaponTrackingSpeed z(!
 ^ÅYÅ'entitySuperWeaponOptimalSignatureRadius'entitySuperWeaponOptimalSignatureRadius z(!
+/á*áfighterCapacityFighter Capacity 	(
+
 Dä?äclothingAlsoCoversCategory2clothingAlsoCoversCategory2 z
 Dã?ãeliteBonusCommandDestroyer1eliteBonusCommandDestroyer1 z
 Då?åeliteBonusCommandDestroyer2eliteBonusCommandDestroyer2 z
@@ -2157,3 +2159,38 @@ NïIïeliteBonusElectronicAttackShip3eliteBonusElectronicAttackShip3 z(
 6¨1¨eliteBonusLogiFrig1eliteBonusLogiFrig1 z(	
 6≠1≠eliteBonusLogiFrig2eliteBonusLogiFrig2 z(	
 @∂;∂velocityPenaltyReductionvelocityPenaltyReduction z(
+/∑*∑canFitShipType6Can be fitted to t(
+A¿<¿sensorDampenerResistanceSensor Warfare Resistance l($
+F¡A¡weaponDisruptionResistanceWeapon Disruption Resistance l($
+@¬;¬targetPainterResistanceTarget Painter Resistance l($
+B√=√stasisWebifierResistanceStasis Webifier Resistance l($
+=ƒ8ƒremoteRepairImpedanceRemote Repair Resistance l($
+D◊?◊remoteAssistanceImpedanceRemote Assistance Impedance l($
+Dÿ?ÿmaxTargetRangeBonusInterimmaxTargetRangeBonusInterim i(
+DŸ?ŸscanResolutionBonusInterimscanResolutionBonusInterim i(
+4⁄/⁄remoteResistanceIDremoteResistanceID w($
+8€3€maxRangeBonusInterimmaxRangeBonusInterim i(
+6‹1‹falloffBonusInterimfalloffBonusInterim i(
+B›=›trackingSpeedBonusInterimtrackingSpeedBonusInterim i(
+@ﬁ;ﬁaoeCloudSizeBonusInterimaoeCloudSizeBonusInterim i(
+>ﬂ9ﬂaoeVelocityBonusInterimaoeVelocityBonusInterim i(
+D‡?‡explosionDelayBonusInterimexplosionDelayBonusInterim y(
+F·A·missileVelocityBonusInterimmissileVelocityBonusInterim i(
+F„A„signatureRadiusBonusInterimsignatureRadiusBonusInterim |(
+4‰/‰speedFactorInterimspeedFactorInterim |(
+.é)éshipBonusAFAux1shipBonusAFAux1 z(%
+.è)èshipBonusAFAux2shipBonusAFAux2 z(%
+.ê)êshipBonusAFAux3shipBonusAFAux3 z(%
+.ë)ëshipBonusCFAux1shipBonusCFAux1 z(%
+.í)íshipBonusCFAux2shipBonusCFAux2 z(%
+.ì)ìshipBonusCFAux3shipBonusCFAux3 z(%
+.î)îshipBonusGFAux1shipBonusGFAux1 z(%
+.ï)ïshipBonusGFAux2shipBonusGFAux2 z(%
+.ñ)ñshipBonusGFAux3shipBonusGFAux3 z(%
+.ò)òshipBonusMFAux1shipBonusMFAux1 z(%
+.ô)ôshipBonusMFAux2shipBonusMFAux2 z(%
+.ö)öshipBonusMFAux3shipBonusMFAux3 z(%
+ZœUœ%scanGravimetricStrengthPercentInterim%scanGravimetricStrengthPercentInterim i(
+N–I–scanLadarStrengthPercentInterimscanLadarStrengthPercentInterim i(
+^—Y—'scanMagnetometricStrengthPercentInterim'scanMagnetometricStrengthPercentInterim i(
+N“I“scanRadarStrengthPercentInterimscanRadarStrengthPercentInterim i(

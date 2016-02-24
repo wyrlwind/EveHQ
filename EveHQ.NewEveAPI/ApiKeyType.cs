@@ -43,7 +43,7 @@
 // 
 // ==============================================================================
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi
 {
     public enum ApiKeyType
     {

@@ -12,13 +12,13 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("EveHQ team")> 
 <Assembly: AssemblyProduct("EveHQ")> 
-<Assembly: AssemblyCopyright("")> 
-<Assembly: AssemblyTrademark("2015-12-16")> 
+<Assembly: AssemblyCopyright("")>
+<Assembly: AssemblyTrademark("2015-02-24")>
 
 <Assembly: ComVisible(False)> 
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("51b66d9e-063c-4cc9-a59a-3349906e26a0")> 
+<Assembly: Guid("51b66d9e-063c-4cc9-a59a-3349906e26a0")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -30,5 +30,5 @@ Imports System.Runtime.InteropServices
 ' You can specify all the values or you can default the Build and Revision Numbers 
 ' by using the '*' as shown below:
 
-<Assembly: AssemblyVersion("2.25.1.0")> 
-<Assembly: AssemblyFileVersion("2.25.1.0")> 
+<Assembly: AssemblyVersion("2.25.2.0")>
+<Assembly: AssemblyFileVersion("2.25.2.0")>

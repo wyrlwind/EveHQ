@@ -43,7 +43,7 @@
 // 
 // ==============================================================================
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi.Entities
 {
     /// <summary>
     ///     The calendar event attendee.

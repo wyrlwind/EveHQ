@@ -53,7 +53,7 @@ using EveHQ.Caching;
 using EveHQ.Common;
 using EveHQ.Common.Extensions;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi
 {
     using System.Diagnostics;
     using System.Net;

@@ -45,7 +45,7 @@
 
 using System;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi.Entities
 {
     /// <summary>The character info.</summary>
     public class CharacterInfo

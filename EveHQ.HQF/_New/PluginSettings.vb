@@ -515,9 +515,9 @@ Imports Newtonsoft.Json
         Next
 
         ' Update standard columns it needed
-        'If HQFSettings.StandardSlotColumns.Count <> _standardSlotColumns.Count Then
-        'HQFSettings.StandardSlotColumns = _standardSlotColumns
-        'End If
+        If HQFSettings.StandardSlotColumns.Count <> _standardSlotColumns.Count Then
+            HQFSettings.StandardSlotColumns = _standardSlotColumns
+        End If
 
         ' Check if the standard columns have changed and we need to add columns
         If HQFSettings.UserSlotColumns.Count <> HQFSettings.StandardSlotColumns.Count Then

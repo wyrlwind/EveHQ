@@ -43,7 +43,7 @@
 // 
 // ==============================================================================
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi.Entities
 {
     /// <summary>
     ///     Represents the balance of one account.

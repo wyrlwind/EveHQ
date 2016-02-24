@@ -142,6 +142,10 @@
     <Compile Include="Corporation.vb" />
     <Compile Include="CustomDataFunctions.vb" />
     <Compile Include="DataFunctions.vb" />
+    <Compile Include="Deprecated\APIResults.vb" />
+    <Compile Include="Deprecated\APITypes.vb" />
+    <Compile Include="Deprecated\RemoteProxyServer.vb" />
+    <Compile Include="EveApiKey.vb" />
     <Compile Include="frmModifyQueues.Designer.vb">
       <DependentUpon>frmModifyQueues.vb</DependentUpon>
     </Compile>
@@ -428,10 +432,6 @@
     <ProjectReference Include="..\EveHQ.Common\EveHQ.Common.csproj">
       <Project>{7CD9A34B-9635-4D69-B451-1CE93B8280D8}</Project>
       <Name>EveHQ.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EveHQ.EveAPI\EveHQ.EveAPI.vbproj">
-      <Project>{A936DB0B-2C9B-406C-85E4-D7AC13E605EC}</Project>
-      <Name>EveHQ.EveAPI</Name>
     </ProjectReference>
     <ProjectReference Include="..\EveHQ.EveData\EveHQ.EveData.csproj">
       <Project>{C3FEE7B0-5E02-4910-BBB9-A03425294B7A}</Project>

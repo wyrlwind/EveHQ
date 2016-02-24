@@ -43,7 +43,7 @@
 // 
 // ==============================================================================
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi.Entities
 {
     /// <summary>The character corporation roles.</summary>
     public sealed class CharacterCorporationRoles

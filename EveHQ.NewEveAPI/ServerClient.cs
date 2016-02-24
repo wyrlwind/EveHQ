@@ -49,8 +49,9 @@ using System.Xml.Linq;
 using EveHQ.Caching;
 using EveHQ.Common;
 using EveHQ.Common.Extensions;
+using EveHQ.NewEveApi.Entities;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi
 {
     public class ServerClient : BaseApiClient
     {

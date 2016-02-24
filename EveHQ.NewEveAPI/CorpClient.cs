@@ -50,8 +50,9 @@ using System.Xml.Linq;
 using EveHQ.Caching;
 using EveHQ.Common;
 using EveHQ.Common.Extensions;
+using EveHQ.NewEveApi.Entities;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi
 {
     /// <summary>The corp client.</summary>
     public sealed class CorpClient : CorpCharBaseClient

@@ -45,7 +45,7 @@
 
 using System;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi.Entities
 {
     /// <summary>The queued skill.</summary>
     public sealed class QueuedSkill

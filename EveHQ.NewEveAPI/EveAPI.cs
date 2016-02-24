@@ -47,7 +47,7 @@ using System;
 using EveHQ.Caching;
 using EveHQ.Common;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi
 {
     /// <summary>The eve api.</summary>
     public sealed class EveAPI : IDisposable

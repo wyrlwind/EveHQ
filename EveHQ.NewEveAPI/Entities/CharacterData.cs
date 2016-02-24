@@ -46,7 +46,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi.Entities
 {
     /// <summary>The character data.</summary>
     public sealed class CharacterData

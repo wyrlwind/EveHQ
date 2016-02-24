@@ -45,7 +45,7 @@
 
 using System;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi.Entities
 {
     /// <summary>
     ///     A notification from a contact about them adding you to their watch list.

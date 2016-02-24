@@ -45,6 +45,7 @@
 
 Imports EveHQ.EveApi
 Imports System.Xml
+Imports EveHQ.NewEveApi
 
 <Serializable()>
 Public Class EveHQAccount
@@ -94,9 +95,9 @@ Public Class EveHQAccount
 
     Public Property APIAccountStatus() As APIAccountStatuses
 
-    Public Function ToAPIAccount() As EveAPIAccount
-        Dim apiAccount As New EveAPIAccount
-        apiAccount.userID = UserID
+    Public Function ToAPIAccount() As EveApiKey
+        Dim apiAccount As New EveApiKey
+        apiAccount.UserID = UserID
         apiAccount.APIKey = APIKey
         apiAccount.APIVersion = CType(ApiKeySystem, APIKeyVersions)
         Return apiAccount
@@ -112,18 +113,18 @@ Public Class EveHQAccount
                     ' Should be version 2 info, get Access mask
                     AccessMask = 0
                     If apiResponse.ResultData IsNot Nothing Then
-                      
+
                         AccessMask = apiResponse.ResultData.AccessMask
                         Select Case apiResponse.ResultData.ApiType
-                            Case EveApi.ApiKeyType.Corporation
+                            Case NewEveApi.ApiKeyType.Corporation
                                 APIKeyType = APIKeyTypes.Corporation
-                            Case EveApi.ApiKeyType.Character
+                            Case NewEveApi.ApiKeyType.Character
                                 APIKeyType = APIKeyTypes.Character
-                            Case EveApi.ApiKeyType.Account
+                            Case NewEveApi.ApiKeyType.Account
                                 APIKeyType = APIKeyTypes.Account
                         End Select
-                            Exit Select
-                        End If
+                        Exit Select
+                    End If
                 Else
                     ' Still unknown!
                     AccessMask = 0
@@ -142,7 +143,7 @@ Public Class EveHQAccount
         ' Get characters
         If characters.IsSuccess Then
             Dim characterList = characters.ResultData
-            For Each character As EveApi.AccountCharacter In characterList
+            For Each character As NewEveApi.Entities.AccountCharacter In characterList
                 Select Case ApiKeySystem
                     Case APIKeySystems.Version2
                         If APIKeyType = APIKeyTypes.Corporation Then

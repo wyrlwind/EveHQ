@@ -7,8 +7,8 @@
     <ProjectGuid>{7CAAEB13-6EB8-482C-B63C-F78CB30B2289}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EveHQ.EveApi</RootNamespace>
-    <AssemblyName>EveHQ.EveApi</AssemblyName>
+    <RootNamespace>EveHQ.NewEveAPI</RootNamespace>
+    <AssemblyName>EveHQ.NewEveAPI</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <CodeAnalysisRuleSet>..\Ref\FxCop\EveHQ.ruleset</CodeAnalysisRuleSet>
@@ -123,6 +123,7 @@
     <Compile Include="Entities\ApiKeyInfo.cs" />
     <Compile Include="Entities\AssetItem.cs" />
     <Compile Include="Entities\AttendeeResponseType.cs" />
+    <Compile Include="Entities\Blueprint.cs" />
     <Compile Include="Entities\CalendarEventAttendee.cs" />
     <Compile Include="Entities\AccountCharacter.cs" />
     <Compile Include="BaseApiClient.cs" />
@@ -147,6 +148,10 @@
     <Compile Include="Entities\FactionalWarfareStats.cs" />
     <Compile Include="Entities\IndustryJob.cs" />
     <Compile Include="Entities\IndustryJobCompletedStatus.cs" />
+    <Compile Include="Entities\Killmail\Attacker.cs" />
+    <Compile Include="Entities\Killmail\Killitem.cs" />
+    <Compile Include="Entities\Killmail\KillMail.cs" />
+    <Compile Include="Entities\Killmail\Victim.cs" />
     <Compile Include="Entities\MailBody.cs" />
     <Compile Include="Entities\MailHeader.cs" />
     <Compile Include="Entities\MailingList.cs" />

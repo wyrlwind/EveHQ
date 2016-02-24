@@ -64,7 +64,7 @@ Namespace Classes
         Private Const IndustryTimeFormat As String = "yyyy-MM-dd HH:mm:ss"
         Private Shared ReadOnly Culture As CultureInfo = New CultureInfo("en-GB")
 
-        Public Shared Function ParseInventionJobsFromAPI(jobs As IEnumerable(Of EveAPI.IndustryJob)) As Dictionary(Of Long, InventionAPIJob)
+        Public Shared Function ParseInventionJobsFromAPI(jobs As IEnumerable(Of NewEveApi.Entities.IndustryJob)) As Dictionary(Of Long, InventionAPIJob)
 
             If jobs IsNot Nothing Then
 
@@ -74,7 +74,7 @@ Namespace Classes
                     ' Check for invention jobs
                     If CType(job.ActivityId, BlueprintActivity) = BlueprintActivity.Invention Then
                         ' Check the job is actually completed first!
-                        If job.Status <> EveApi.IndustryJobStatus.Cancelled Then
+                        If job.Status <> NewEveApi.Entities.IndustryJobStatus.Cancelled Then
                             Dim newJob As New InventionAPIJob
                             newJob.JobID = job.JobId
                             newJob.ResultDate = job.EndDate.DateTime

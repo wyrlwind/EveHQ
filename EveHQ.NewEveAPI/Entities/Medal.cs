@@ -45,7 +45,7 @@
 
 using System;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi.Entities
 {
     /// <summary>
     ///     Describes a medal assigned to the character.
