@@ -6493,6 +6493,57 @@
 21510:
   description: 37866_male_topMiddle_ShirtCM01_Types_ShirtM01_Serpentis.png
   iconFile: res:/UI/Asset/mannequin/topmiddle/37866_male_topMiddle_ShirtCM01_Types_ShirtM01_Serpentis.png
+21512:
+  description: icon for the station service slot
+  iconFile: res:/UI/Texture/classes/Fitting/stationServiceSlot.png
 21513:
   description: Focused Warp Disruption Script
   iconFile: '118_12'
+21514:
+  description: Upwell Male Jacket
+  iconFile: res:/UI/Asset/mannequin/outer/40522_male_outer_JacketMilM02_Types_JacketMilM02_upwell.png
+21515:
+  description: Upwell Jacket Female
+  iconFile: res:/UI/Asset/mannequin/outer/40523_female_Outer_JacketMilF01_Types_JacketMilF01_upwell.png
+21517:
+  description: Upwell Shirt Male
+  iconFile: res:/UI/Asset/mannequin/topmiddle/40526_male_topMiddle_ShirtQM01_Types_shirtqm01_upwell.png
+21518:
+  description: Upwell Shirt Female
+  iconFile: res:/UI/Asset/mannequin/topmiddle/40527_female_TopMiddle_ShirtQF01_Types_shirtqf01_upwell.png
+21519:
+  description: Upwell Pants Male
+  iconFile: res:/UI/Asset/mannequin/bottomouter/40524_male_bottomOuter_PantsMilM01_Types_PantsMilM01_upwell.png
+21520:
+  description: Upwell Pants Female
+  iconFile: res:/UI/Asset/mannequin/bottomouter/40525_female_bottomOuter_PantsMilF01_Types_PantsMilF01_upwell.png
+21522:
+  description: Labcoat Female Black/Red
+  iconFile: res:/UI/Asset/mannequin/outer/40457_female_Outer_LabCoatF01_Types_LabCoatF01_BlackRed.png
+21523:
+  description: Labcoat Female Cyan
+  iconFile: res:/UI/Asset/mannequin/outer/40458_female_Outer_LabCoatF01_Types_LabCoatF01_Cyan.png
+21524:
+  description: Labcoat Female Orange
+  iconFile: res:/UI/Asset/mannequin/outer/40459_female_Outer_LabCoatF01_Types_LabCoatF01_Orange.png
+21525:
+  description: Labcoat Female Green
+  iconFile: res:/UI/Asset/mannequin/outer/40460_female_Outer_LabCoatF01_Types_LabCoatF01_Green.png
+21526:
+  description: Labcoat Male Black/Red
+  iconFile: res:/UI/Asset/mannequin/outer/40461_male_outer_LabCoatM01_Types_LabCoatM01_BlackRed.png
+21527:
+  description: Labcoat Male Cyan
+  iconFile: res:/UI/Asset/mannequin/outer/40462_male_outer_LabCoatM01_Types_LabCoatM01_Cyan.png
+21528:
+  description: Labcoat Male Green
+  iconFile: res:/UI/Asset/mannequin/outer/40463_male_outer_LabCoatM01_Types_LabCoatM01_Green.png
+21529:
+  description: Labcoat Male Orange
+  iconFile: res:/UI/Asset/mannequin/outer/40464_male_outer_LabCoatM01_Types_LabCoatM01_Orange.png
+21530:
+  description: Skill Extractor
+  iconFile: res:/UI/Texture/Icons/skillExtractor_64.png
+21531:
+  description: Skill Injector
+  iconFile: res:/UI/Texture/Icons/skillInjector_64.png
