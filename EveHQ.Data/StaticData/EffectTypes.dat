@@ -3929,3 +3929,25 @@ $Ò1Ò1ignoreCloakVelocityPenalty
 (Ú1#Ú1ewSkillGuidanceDisruptionBonus
 /˙1*˙1%gangInformationWarfareSuperiorityAll2
 0˚1+˚1&shipBonusEwWeaponDisruptionStrengthAC1
+!ñ2ñ2remoteSensorDampFalloff
+&ó2!ó2remoteGuidanceDisruptFalloff
+&ò2!ò2remoteTrackingDisruptFalloff
+"ô2ô2remoteTargetPaintFalloff
+ö2ö2remoteWebifierFalloff
+"õ2õ2remoteSensorBoostFalloff
+%ú2 ú2remoteTrackingAssistFalloff
+%ù2 ù2remoteGuidanceAssistFalloff
+¥2¥2AmarrFAuxSkillMul1
+µ2µ2AmarrFAuxSkillMul2
+∂2∂2AmarrFAuxSkillMul3
+∑2∑2CaldariFAuxSkillMul1
+∏2∏2CaldariFAuxSkillMul2
+π2π2CaldariFAuxSkillMul3
+∫2∫2GallenteFAuxSkillMul1
+ª2ª2GallenteFAuxSkillMul2
+º2º2GallenteFAuxSkillMul3
+Ω2Ω2MinmatarFAuxSkillMul1
+æ2æ2MinmatarFAuxSkillMul2
+ø2ø2MinmatarFAuxSkillMul3
+∆2∆2remoteECMFalloff
+«2«2remoteECCMFalloff
