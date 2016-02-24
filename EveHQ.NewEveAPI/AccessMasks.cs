@@ -45,7 +45,7 @@
 
 using System;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi
 {
     /// <summary>The character access masks.</summary>
     [Flags]

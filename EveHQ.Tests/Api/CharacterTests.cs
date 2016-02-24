@@ -50,7 +50,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using EveHQ.Common;
 using EveHQ.Common.Extensions;
-using EveHQ.EveApi;
+using EveHQ.NewEveApi;
+using EveHQ.NewEveApi.Entities;
 using NUnit.Framework;
 
 namespace EveHQ.Tests.Api

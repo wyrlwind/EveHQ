@@ -47,7 +47,6 @@ Imports System.Globalization
 Imports DevComponents.AdvTree
 Imports DevComponents.DotNetBar
 Imports EveHQ.EveData
-Imports EveHQ.EveApi
 Imports EveHQ.Core
 Imports System.Xml
 Imports System.Windows.Forms
@@ -62,7 +61,7 @@ Public Class FrmKmv
     Dim _kmAccount As New EveHQAccount
     Dim _charName As String = ""
     Dim _charID As String = ""
-    ReadOnly _kms As New SortedList(Of Long, KillMail)
+    ReadOnly _kms As New SortedList(Of Long, EveHQ.NewEveApi.Entities.Killmail.KillMail)
 
     Private Sub frmKMV_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         Call UpdateAccounts()
@@ -152,7 +151,7 @@ Public Class FrmKmv
         _kmAccount.APIKey = txtAPIKey.Text
         _kmAccount.FriendlyName = "Killmail Viewing Account"
 
-        Dim accountCharacters As EveServiceResponse(Of IEnumerable(Of AccountCharacter)) =
+        Dim accountCharacters As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.AccountCharacter)) =
                 HQ.ApiProvider.Account.Characters(_kmAccount.UserID, _kmAccount.APIKey)
 
 
@@ -176,7 +175,7 @@ Public Class FrmKmv
             ' Get the list of characters and the character IDs
             lvwCharacters.BeginUpdate()
             lvwCharacters.Items.Clear()
-            For Each character As AccountCharacter In accountCharacters.ResultData
+            For Each character As NewEveApi.Entities.AccountCharacter In accountCharacters.ResultData
                 Dim newPilot As New ListViewItem
                 newPilot.Text = character.Name
                 newPilot.Name = character.CharacterId.ToInvariantString()
@@ -209,52 +208,32 @@ Public Class FrmKmv
         _kms.Clear()
         Dim allKMsDownloaded As Boolean = False
         Dim lastKillID As String = ""
-        Dim kmxml As XmlDocument
+        Dim killMails As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.Killmail.KillMail))
+        Dim killMail As NewEveApi.Entities.Killmail.KillMail
 
-        Do
-            ' Let's try and get the killmail details (use the standard caching method for this)
-            Dim _
-                apiReq As _
-                    New EveAPIRequest(HQ.EveHqapiServerInfo, HQ.RemoteProxy, HQ.Settings.APIFileExtension,
-                                      HQ.ApiCacheFolder)
-            If _kmAccount.APIKeyType = APIKeyTypes.Corporation Then
-                kmxml = apiReq.GetAPIXML(APITypes.KillLogCorp, _kmAccount.ToAPIAccount, _charID, lastKillID,
-                                         APIReturnMethods.ReturnStandard)
+        'Let's try and get the killmail details (use the standard caching method for this)
+        Dim apiInfo As NewEveApi.EveServiceResponse(Of NewEveApi.Entities.ApiKeyInfo) = HQ.ApiProvider.Account.ApiKeyInfo(_kmAccount.UserID, _kmAccount.APIKey)
+        If apiInfo.ResultData.ApiType = NewEveApi.ApiKeyType.Corporation Then
+            killMails = HQ.ApiProvider.Corporation.KillMails(_kmAccount.UserID, _kmAccount.APIKey, _charID.ToInt32())
+        Else
+            killMails = HQ.ApiProvider.Character.KillMails(_kmAccount.UserID, _kmAccount.APIKey, _charID.ToInt32())
+        End If
+
+        If killMails.ResultData IsNot Nothing Then
+            If killMails.ResultData.Count() > 0 Then
+                For Each killMail In killMails.ResultData
+                    _kms.Add(killMail.KillID, killMail)
+                    lastKillID = killMail.KillID.toString()
+                Next
             Else
-                kmxml = apiReq.GetAPIXML(APITypes.KillLogChar, _kmAccount.ToAPIAccount, _charID, lastKillID,
-                                         APIReturnMethods.ReturnStandard)
-            End If
-
-            ' Check for any Errors
-            If kmxml IsNot Nothing Then
-                If kmxml.InnerText <> "" Then
-                    ' Check XML for any error codes (do we have the full API key?)
-                    Dim errlist As XmlNodeList = kmxml.SelectNodes("/eveapi/error")
-                    If errlist.Count <> 0 Then
-                        allKMsDownloaded = True
-                    Else
-                        ' Parse the current killmail XML
-                        Call ParseKillmailXML(kmxml)
-                        ' Get the last killmailID
-                        Dim kmList As XmlNodeList = kmxml.SelectNodes("/eveapi/result/rowset/row")
-                        If kmList.Count > 0 Then
-                            lastKillID = kmList(kmList.Count - 1).Attributes.GetNamedItem("killID").Value
-                        Else
-                            allKMsDownloaded = True
-                        End If
-                    End If
-                Else
-                    If (String.IsNullOrEmpty(lastKillID)) Then
-                        MessageBox.Show("A null XML document was returned. Check the API Server and internet connection.",
-                                        "API Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Else
-                        Exit Do 'Work around for bug EVEHQ-165: KillLog API only returns up to the last month of data now.
-                    End If
+                If Not killMails.IsSuccess Then
+                    MessageBox.Show(killMails.EveErrorText, "API Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
-            Else
                 allKMsDownloaded = True
             End If
-        Loop Until allKMsDownloaded = True
+        Else
+            allKMsDownloaded = True
+        End If
 
         ' Do a summary of the killmails
         Call DrawKillmailSummary()
@@ -330,12 +309,6 @@ Public Class FrmKmv
                 newKillmail.Items.Add(newItem)
             Next
 
-            ' Add the killmail to the collection
-            Dim temp As New KillMail
-            If _kms.TryGetValue(newKillmail.KillID, temp) = False Then
-                _kms.Add(newKillmail.KillID, newKillmail)
-            End If
-
         Next
     End Sub
 
@@ -343,16 +316,16 @@ Public Class FrmKmv
         ' Update the list of killmails
         adtKillmails.BeginUpdate()
         adtKillmails.Nodes.Clear()
-        For Each charKillmail As KillMail In _kms.Values
+        For Each charKillmail As NewEveApi.Entities.Killmail.KillMail In _kms.Values
             Dim newKillmail As New Node
             newKillmail.Tag = charKillmail.KillID
-            If charKillmail.Victim.CharName = "" Then
-                newKillmail.Text = charKillmail.Victim.CorpName
+            If charKillmail.Victim.CharacterName = "" Then
+                newKillmail.Text = charKillmail.Victim.CorporationName
             Else
-                newKillmail.Text = charKillmail.Victim.CharName
+                newKillmail.Text = charKillmail.Victim.CharacterName
             End If
             adtKillmails.Nodes.Add(newKillmail)
-            newKillmail.Cells.Add(New Cell(StaticData.Types(charKillmail.Victim.ShipTypeID).Name))
+            newKillmail.Cells.Add(New Cell(StaticData.Types(charKillmail.Victim.ShipTypeID.ToInt32()).Name))
             newKillmail.Cells.Add(New Cell(charKillmail.KillTime.ToString))
         Next
         adtKillmails.EndUpdate()
@@ -374,7 +347,7 @@ Public Class FrmKmv
         If adtKillmails.SelectedNodes.Count > 0 Then
             ' Get the killID of the selected Killmail
             Dim killID As Long = CInt(adtKillmails.SelectedNodes(0).Tag)
-            Dim selKillmail As New KillMail
+            Dim selKillmail As New NewEveApi.Entities.Killmail.KillMail
             If _kms.TryGetValue(killID, selKillmail) Then
                 ' Write the killmail detail
                 Call DrawKillmailDetail(selKillmail)
@@ -385,29 +358,29 @@ Public Class FrmKmv
         End If
     End Sub
 
-    Private Sub DrawKillmailDetail(ByVal selKillmail As KillMail)
+    Private Sub DrawKillmailDetail(ByVal selKillmail As NewEveApi.Entities.Killmail.KillMail)
 
         ' Write the killmail text to the label
         txtKillMailDetails.Text = BuildKillmailDetails(selKillmail)
     End Sub
 
-    Private Function BuildKillmailDetails(ByVal selKillmail As KillMail) As String
+    Private Function BuildKillmailDetails(ByVal selKillmail As NewEveApi.Entities.Killmail.KillMail) As String
         Dim killmailText As New StringBuilder
 
         ' Write the time
-        killmailText.AppendLine(Format(selKillmail.KillTime, "yyyy.MM.dd HH:mm:ss"))
+        'killmailText.AppendLine(Format(selKillmail.KillTime, "yyyy.MM.dd HH:mm:ss"))
         killmailText.AppendLine("")
 
         ' Get the solar system details
-        Dim ss As SolarSystem = StaticData.SolarSystems(selKillmail.SystemID)
+        Dim ss As SolarSystem = StaticData.SolarSystems(selKillmail.SolarSystemID.ToInt32())
 
         ' Write the victim details
-        If selKillmail.Victim.CharName = "" Then
-            killmailText.AppendLine("Victim: " & selKillmail.Victim.CorpName)
+        If selKillmail.Victim.CharacterName = "" Then
+            killmailText.AppendLine("Victim: " & selKillmail.Victim.CorporationName)
         Else
-            killmailText.AppendLine("Victim: " & selKillmail.Victim.CharName)
+            killmailText.AppendLine("Victim: " & selKillmail.Victim.CharacterName)
         End If
-        killmailText.AppendLine("Corp: " & selKillmail.Victim.CorpName)
+        killmailText.AppendLine("Corp: " & selKillmail.Victim.CorporationName)
         If selKillmail.Victim.AllianceName = "" Then
             killmailText.AppendLine("Alliance: NONE")
         Else
@@ -418,14 +391,14 @@ Public Class FrmKmv
         Else
             killmailText.AppendLine("Faction: " & selKillmail.Victim.FactionName)
         End If
-        killmailText.AppendLine("Destroyed: " & StaticData.Types(selKillmail.Victim.ShipTypeID).Name)
+        killmailText.AppendLine("Destroyed: " & StaticData.Types(selKillmail.Victim.ShipTypeID.ToInt32()).Name)
         killmailText.AppendLine("System: " & ss.Name)
         killmailText.AppendLine("Security: " & Math.Max(ss.Security, 0).ToString("N1"))
         killmailText.AppendLine("Damage Taken: " & selKillmail.Victim.DamageTaken.ToString)
 
         ' Put the attackers into the correct order
-        Dim attackers As New List(Of KillmailAttacker)
-        For Each attacker As KillmailAttacker In selKillmail.Attackers.Values
+        Dim attackers As New List(Of NewEveApi.Entities.Killmail.Attacker)
+        For Each attacker As NewEveApi.Entities.Killmail.Attacker In selKillmail.Attackers
             attackers.Add(attacker)
         Next
         attackers.Reverse()
@@ -434,16 +407,16 @@ Public Class FrmKmv
         killmailText.AppendLine("")
         killmailText.AppendLine("Involved parties:")
         killmailText.AppendLine("")
-        For Each attacker As KillmailAttacker In attackers
-            If attacker.CharName <> "" Then
-                killmailText.Append("Name: " & attacker.CharName)
+        For Each attacker As NewEveApi.Entities.Killmail.Attacker In attackers
+            If attacker.CharacterName <> "" Then
+                killmailText.Append("Name: " & attacker.CharacterName)
                 If attacker.FinalBlow = True Then
                     killmailText.AppendLine(" (laid the final blow)")
                 Else
                     killmailText.AppendLine("")
                 End If
-                killmailText.AppendLine("Security: " & attacker.SecStatus.ToString("N1"))
-                killmailText.AppendLine("Corp: " & attacker.CorpName)
+                killmailText.AppendLine("Security: " & attacker.SecurityStatus.ToString("N1"))
+                killmailText.AppendLine("Corp: " & attacker.CorporationName)
                 If attacker.AllianceName = "" Then
                     killmailText.AppendLine("Alliance: NONE")
                 Else
@@ -457,15 +430,15 @@ Public Class FrmKmv
                 If attacker.ShipTypeID = 0 Then
                     killmailText.AppendLine("Ship: Unknown")
                 Else
-                    killmailText.AppendLine("Ship: " & StaticData.Types(attacker.ShipTypeID).Name)
+                    killmailText.AppendLine("Ship: " & StaticData.Types(attacker.ShipTypeID.ToInt32()).Name)
                 End If
-                killmailText.AppendLine("Weapon: " & StaticData.Types(attacker.WeaponTypeID).Name)
+                killmailText.AppendLine("Weapon: " & StaticData.Types(attacker.WeaponTypeID.ToInt32()).Name)
             Else
-                If attacker.CorpName = "" Then
-                    killmailText.Append("Name: " & StaticData.Types(attacker.ShipTypeID).Name & " / Unknown")
+                If attacker.CorporationName = "" Then
+                    killmailText.Append("Name: " & StaticData.Types(attacker.ShipTypeID.ToInt32()).Name & " / Unknown")
                 Else
                     killmailText.Append(
-                        "Name: " & StaticData.Types(attacker.ShipTypeID).Name & " / " & attacker.CorpName)
+                        "Name: " & StaticData.Types(attacker.ShipTypeID.ToInt32()).Name & " / " & attacker.CorporationName)
                 End If
                 If attacker.FinalBlow = True Then
                     killmailText.AppendLine(" (laid the final blow)")
@@ -480,45 +453,13 @@ Public Class FrmKmv
         ' Make a list of dropped and destroyed items
         Dim droppedItems, destroyedItems As New List(Of String)
         Dim itemName As String
-        For Each item As KillmailItem In selKillmail.Items
-            itemName = StaticData.Types(item.TypeID).Name
+        For Each item As NewEveApi.Entities.Killmail.KillItem In selKillmail.Items
+            itemName = StaticData.Types(item.TypeID.ToInt32()).Name
             If item.QtyDestroyed > 0 Then
-
-                destroyedItems.Add(itemName & ", Qty: " & item.QtyDestroyed.ToString & " (" & StaticData.ItemMarkers(item.Flag) & ")")
-
-                'If item.QtyDestroyed = 1 Then
-                '    If item.Flag = 0 Then
-                '        destroyedItems.Add(itemName)
-                '    Else
-                '        destroyedItems.Add(itemName & " (Cargo)")
-                '    End If
-                'Else
-                '    If item.Flag = 0 Then
-                '        destroyedItems.Add(itemName & ", Qty: " & item.QtyDestroyed.ToString)
-                '    Else
-                '        destroyedItems.Add(itemName & ", Qty: " & item.QtyDestroyed.ToString & " (Cargo)")
-                '    End If
-                'End If
-
+                destroyedItems.Add(itemName & ", Qty: " & item.QtyDestroyed.ToString & " (" & StaticData.ItemMarkers(item.Flag.ToInt32()) & ")")
             End If
             If item.QtyDropped > 0 Then
-
-                droppedItems.Add(itemName & ", Qty: " & item.QtyDropped.ToString & " (" & StaticData.ItemMarkers(item.Flag) & ")")
-
-                'If item.QtyDropped = 1 Then
-                '    If item.Flag = 0 Then
-                '        droppedItems.Add(itemName)
-                '    Else
-                '        droppedItems.Add(itemName & " (Cargo)")
-                '    End If
-                'Else
-                '    If item.Flag = 0 Then
-                '        droppedItems.Add(itemName & ", Qty: " & item.QtyDropped.ToString)
-                '    Else
-                '        droppedItems.Add(itemName & ", Qty: " & item.QtyDropped.ToString & " (Cargo)")
-                '    End If
-                'End If
-
+                droppedItems.Add(itemName & ", Qty: " & item.QtyDropped.ToString & " (" & StaticData.ItemMarkers(item.Flag.ToInt32()) & ")")
             End If
         Next
 
@@ -552,12 +493,12 @@ Public Class FrmKmv
         If adtKillmails.SelectedNodes.Count > 0 Then
             ' Get the killID of the selected Killmail
             Dim killID As Long = CLng(adtKillmails.SelectedNodes(0).Tag)
-            Dim selKillmail As New KillMail
+            Dim selKillmail As New NewEveApi.Entities.Killmail.KillMail
             If _kms.TryGetValue(killID, selKillmail) Then
                 ' Check for valid attackers (i.e. not all NPC ones)
                 Dim validKillmail As Boolean =
-                        selKillmail.Attackers.Values.Cast(Of KillmailAttacker)().Any(
-                            Function(attacker) attacker.CharName <> "")
+                        selKillmail.Attackers.Cast(Of NewEveApi.Entities.Killmail.Attacker)().Any(
+                            Function(attacker) attacker.CharacterName <> "")
                 If validKillmail = False Then
                     MessageBox.Show(
                         "There does not appear to be any valid Attackers on this killmail other than NPCs. The killmail will therefore not be uploaded.",
@@ -633,21 +574,21 @@ Public Class FrmKmv
 
             ' Get the killID of the selected Killmail
             Dim killID As Long = CLng(adtKillmails.SelectedNodes(0).Tag)
-            Dim selKillmail As New KillMail
+            Dim selKillmail As New NewEveApi.Entities.Killmail.KillMail
             If _kms.TryGetValue(killID, selKillmail) Then
 
                 ' Make a list of dropped and destroyed items
 
-                For Each item As KillmailItem In selKillmail.Items
+                For Each item As NewEveApi.Entities.Killmail.KillItem In selKillmail.Items
                     If (item.QtyDestroyed + item.QtyDropped) > 0 Then
                         Select Case item.Flag
                             Case 5, 87, 90, 133 To 143 ' Cargo, drone bay & specialised storage
                                 'fittedItems.Add(item.TypeID, item.QtyDestroyed + item.QtyDropped)
                             Case 11 To 18, 19 To 26, 27 To 34, 92 To 99, 125 To 132 ' Low, Mid, High, Rig and Sub slots
-                                If fittedItems.ContainsKey(item.TypeID) Then
-                                    fittedItems(item.TypeID) += item.QtyDestroyed + item.QtyDropped
+                                If fittedItems.ContainsKey(item.TypeID.ToInt32()) Then
+                                    fittedItems(item.TypeID.ToInt32()) += item.QtyDestroyed.ToInt32() + item.QtyDropped.ToInt32()
                                 Else
-                                    fittedItems.Add(item.TypeID, item.QtyDestroyed + item.QtyDropped)
+                                    fittedItems.Add(item.TypeID.ToInt32(), item.QtyDestroyed.ToInt32() + item.QtyDropped.ToInt32())
                                 End If
                         End Select
                     End If
@@ -662,8 +603,8 @@ Public Class FrmKmv
                 Next
                 ' Add a basic loadout name
                 dna.Append(
-                    "?LoadoutName=" & selKillmail.Victim.CharName & "'s " &
-                    StaticData.Types(selKillmail.Victim.ShipTypeID).Name)
+                    "?LoadoutName=" & selKillmail.Victim.CharacterName & "'s " &
+                    StaticData.Types(selKillmail.Victim.ShipTypeID.ToInt32()).Name)
 
                 ' Start the HQF plug-in if it's active
                 Const PluginName As String = "EveHQ Fitter"

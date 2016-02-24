@@ -48,7 +48,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using EveHQ.Caching;
-using EveHQ.EveApi;
+using EveHQ.NewEveApi;
 using Moq;
 using NUnit.Framework;
 

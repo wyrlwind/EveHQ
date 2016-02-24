@@ -52,8 +52,9 @@ using System.Xml.Linq;
 using EveHQ.Caching;
 using EveHQ.Common;
 using EveHQ.Common.Extensions;
+using EveHQ.NewEveApi.Entities;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi
 {
     /// <summary>The information client.</summary>
     public abstract class CorpCharBaseClient : BaseApiClient
@@ -367,6 +368,56 @@ namespace EveHQ.EveApi
 
             return GetServiceResponseAsync(keyId, vCode, characterId, MethodPath.FormatInvariant(PathPrefix), null,
                 cacheKey, ApiConstants.SixtyMinuteCache, responseMode, ParseIndustryJobsResponse);
+        }
+
+        /// <summary>The kill mails</summary>
+        /// <param name="keyId">API Key ID to query</param>
+        /// <param name="vCode">The Verification Code for this ID</param>
+        /// <param name="characterId">Character to query.</param>
+        /// <param name="responseMode">The response Mode.</param>
+        /// <returns></returns>
+        public EveServiceResponse<IEnumerable<Entities.Killmail.KillMail>> KillMails(string keyId, string vCode, int characterId,
+            ResponseMode responseMode = ResponseMode.Normal)
+        {
+            return RunAsyncMethod(KillMailsAsync, keyId, vCode, characterId, responseMode);
+        }
+
+        public Task<EveServiceResponse<IEnumerable<Entities.Killmail.KillMail>>> KillMailsAsync(string keyId, string vCode,
+            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+        {
+            Guard.Ensure(!keyId.IsNullOrWhiteSpace());
+            Guard.Ensure(!vCode.IsNullOrWhiteSpace());
+            Guard.Ensure(characterId > 0);
+
+            const string MethodPath = "{0}/KillMails.xml.aspx";
+            const string CacheKeyFormat = "{0}KillMails{1}_{2}";
+
+            string cacheKey = CacheKeyFormat.FormatInvariant(PathPrefix, keyId, characterId);
+
+            return GetServiceResponseAsync(keyId, vCode, characterId, MethodPath.FormatInvariant(PathPrefix), null,
+                cacheKey, ApiConstants.FiveMinuteCache, responseMode, ProcessKillMailResponse);
+        }
+
+        public EveServiceResponse<IEnumerable<Entities.Blueprint>> Blueprints(string keyId, string vCode, int characterId,
+            ResponseMode responseMode = ResponseMode.Normal)
+        {
+            return RunAsyncMethod(BlueprintsAsync, keyId, vCode, characterId, responseMode);
+        }
+
+        public Task<EveServiceResponse<IEnumerable<Entities.Blueprint>>> BlueprintsAsync(string keyId, string vCode, int characterId,
+            ResponseMode responseMode = ResponseMode.Normal)
+        {
+            Guard.Ensure(!keyId.IsNullOrWhiteSpace());
+            Guard.Ensure(!vCode.IsNullOrWhiteSpace());
+            Guard.Ensure(characterId > 0);
+
+            const string MethodPath = "{0}/Blueprints.xml.aspx";
+            const string CacheKeyFormat = "{0}Blueprints{1}_{2}";
+
+            string cacheKey = CacheKeyFormat.FormatInvariant(PathPrefix, keyId, characterId);
+
+            return GetServiceResponseAsync(keyId, vCode, characterId, MethodPath.FormatInvariant(PathPrefix), null,
+                cacheKey, ApiConstants.SixHourCache, responseMode, ProcessBlueprintsResponse);
         }
 
         /// <summary>The market orders.</summary>
@@ -1359,6 +1410,124 @@ namespace EveHQ.EveApi
                 Contents = children,
                 ParentItemId = parentId
             };
+        }
+
+        private static IEnumerable<Entities.Killmail.KillMail> ProcessKillMailResponse(XElement result)
+        {
+            if (result == null)
+            {
+                return new Entities.Killmail.KillMail[0]; // empty collection
+            }
+
+            return from rowset in result.Elements(ApiConstants.Rowset)
+                   from row in rowset.Elements(ApiConstants.Row)
+                   let killID = Convert.ToUInt32(row.Attribute("killID").Value)
+                   let solarSystemID = Convert.ToUInt32(row.Attribute("solarSystemID").Value)
+                   let killTime = DateTimeOffset.Parse(row.Attribute("killTime").Value)
+                   let moonID = Convert.ToUInt32(row.Attribute("moonID").Value)
+                   let victim = ParseKillMailVictim(row.Element(ApiConstants.Victim))
+                   let attackers = ParseKillMailAttackers((from x in row.Elements(ApiConstants.Rowset) where x.Attribute("name").Value == ApiConstants.Attackers select x).First())
+                   let items = ParseKillMailItems((from x in row.Elements(ApiConstants.Rowset) where x.Attribute("name").Value == ApiConstants.Items select x).First())
+                   select new Entities.Killmail.KillMail
+                   { KillID = killID, SolarSystemID = solarSystemID, KillTime = killTime, MoonID = moonID, Victim = victim, Attackers = attackers, Items = items };
+                   }
+
+        private static Entities.Killmail.Victim ParseKillMailVictim(XElement result)
+        {
+            if (result == null)
+            {
+                return new Entities.Killmail.Victim();
+            }
+
+            return new Entities.Killmail.Victim
+            {
+                CharacterID = Convert.ToUInt32(result.Attribute("characterID").Value),
+                CharacterName = result.Attribute("characterName").Value,
+                CorporationID = Convert.ToUInt32(result.Attribute("corporationID").Value),
+                CorporationName = result.Attribute("corporationName").Value,
+                AllianceID = Convert.ToUInt32(result.Attribute("allianceID").Value),
+                AllianceName = result.Attribute("allianceName").Value,
+                FactionID = Convert.ToUInt32(result.Attribute("factionID").Value),
+                FactionName = result.Attribute("factionName").Value,
+                DamageTaken = Convert.ToUInt32(result.Attribute("damageTaken").Value),
+                ShipTypeID = Convert.ToUInt32(result.Attribute("shipTypeID").Value),
+                X = result.Attribute("x").Value.ToDouble(),
+                Y = result.Attribute("y").Value.ToDouble(),
+                Z = result.Attribute("z").Value.ToDouble()
+            };
+        }
+
+        private static IEnumerable<Entities.Killmail.Attacker> ParseKillMailAttackers(XElement rowset)
+        {
+            if (rowset == null)
+                return new Entities.Killmail.Attacker[0];
+
+            return from row in rowset.Elements(ApiConstants.Row)
+                   let characterId = Convert.ToUInt32(row.Attribute("characterID").Value)
+                   let characterName = row.Attribute("characterName").Value
+                   let corporationId = Convert.ToUInt32(row.Attribute("corporationID").Value)
+                   let corporationName = row.Attribute("corporationName").Value
+                   let allianceId = Convert.ToUInt32(row.Attribute("allianceID").Value)
+                   let allianceName = row.Attribute("allianceName").Value
+                   let factionId = Convert.ToUInt32(row.Attribute("factionID").Value)
+                   let factionName = row.Attribute("factionName").Value
+                   let securityStatus = row.Attribute("securityStatus").Value.ToDouble()
+                   let damageDone = Convert.ToUInt32(row.Attribute("damageDone").Value)
+                   let finalBlow = row.Attribute("finalBlow").Value.ToBoolean()
+                   let weaponTypeId = Convert.ToUInt32(row.Attribute("weaponTypeID").Value)
+                   let shipTypeId = Convert.ToUInt32(row.Attribute("shipTypeID").Value)
+                   select new Entities.Killmail.Attacker
+                   {
+                       CharacterID = characterId,
+                       CharacterName = characterName,
+                       CorporationID = corporationId,
+                       CorporationName = corporationName,
+                       AllianceID = allianceId,
+                       AllianceName = allianceName,
+                       FactionID = factionId,
+                       FactionName = factionName,
+                       SecurityStatus = securityStatus,
+                       DamageDone = damageDone,
+                       FinalBlow = finalBlow,
+                       WeaponTypeID = weaponTypeId,
+                       ShipTypeID = shipTypeId
+                   };
+        }
+
+        private static IEnumerable<Entities.Killmail.KillItem> ParseKillMailItems(XElement rowset)
+        {
+            if (rowset == null)
+                return new Entities.Killmail.KillItem[0];
+
+            return from row in rowset.Elements(ApiConstants.Row)
+                   let typeId = Convert.ToUInt32(row.Attribute("typeID").Value)
+                   let flag = Convert.ToUInt32(row.Attribute("flag").Value)
+                   let qtyDropped = Convert.ToUInt32(row.Attribute("qtyDropped").Value)
+                   let qtyDestroyed = Convert.ToUInt32(row.Attribute("qtyDestroyed").Value)
+                   let singleton = row.Attribute("singleton").Value.ToInt32()
+                   select new Entities.Killmail.KillItem { TypeID = typeId, Flag = flag, QtyDropped = qtyDropped, QtyDestroyed = qtyDestroyed, Singleton = singleton };
+        }
+
+        private static IEnumerable<Entities.Blueprint> ProcessBlueprintsResponse(XElement result)
+        {
+            if (result == null)
+            {
+                return new Entities.Blueprint[0]; // empty collection
+            }
+
+            return from rowset in result.Elements(ApiConstants.Rowset)
+                   from row in rowset.Elements(ApiConstants.Row)
+                   let itemId = row.Attribute("itemID").Value.ToInt64()
+                   let locationId = row.Attribute("locationID").Value.ToInt64()
+                   let typeId = row.Attribute("typeID").Value.ToInt32()
+                   let typeName = row.Attribute("typeName").Value
+                   let quantity = row.Attribute("quantity").Value.ToInt64()
+                   let flagId = row.Attribute("flagID").Value.ToInt64()
+                   let timeEfficiency = row.Attribute("timeEfficiency").Value.ToInt64()
+                   let materialEfficiency = row.Attribute("materialEfficiency").Value.ToInt64()
+                   let runs = row.Attribute("runs").Value.ToInt64()
+                   select new Entities.Blueprint { ItemID = itemId, LocationID = locationId, TypeID = typeId, TypeName = typeName, Quantity = quantity,
+                       FlagID = flagId, TimeEfficiency = timeEfficiency, MaterialEfficiency = materialEfficiency, Runs = runs };
         }
     }
 }

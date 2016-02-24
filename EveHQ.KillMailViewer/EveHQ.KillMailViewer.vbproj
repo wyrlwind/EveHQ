@@ -167,10 +167,6 @@
       <Project>{AD4AA9C0-F258-44D8-9D71-07493198B580}</Project>
       <Name>EveHQ.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EveHQ.EveAPI\EveHQ.EveAPI.vbproj">
-      <Project>{A936DB0B-2C9B-406C-85E4-D7AC13E605EC}</Project>
-      <Name>EveHQ.EveAPI</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EveHQ.NewEveAPI\EveHQ.NewEveAPI.csproj">
       <Project>{7caaeb13-6eb8-482c-b63c-f78cb30b2289}</Project>
       <Name>EveHQ.NewEveAPI</Name>

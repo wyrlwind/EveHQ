@@ -52,8 +52,9 @@ using System.Xml.Linq;
 using EveHQ.Caching;
 using EveHQ.Common;
 using EveHQ.Common.Extensions;
+using EveHQ.NewEveApi.Entities;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi
 {
     /// <summary>
     ///     Client class for interacting with the Account API methods of the EVE Web Service.

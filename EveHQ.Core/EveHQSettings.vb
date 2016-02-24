@@ -745,8 +745,8 @@ Public Class EveHQSettings
         Call InitialiseRemoteProxyServer()
 
         ' Set Global APIServerInfo
-        HQ.EveHQAPIServerInfo = New APIServerInfo(HQ.Settings.CCPAPIServerAddress, HQ.Settings.APIRSAddress,
-                                                  HQ.Settings.UseAPIRS, HQ.Settings.UseCCPAPIBackup)
+        'HQ.EveHqapiServerInfo = New APIServerInfo(HQ.Settings.CcpapiServerAddress, HQ.Settings.ApirsAddress,
+        '                                          HQ.Settings.UseApirs, HQ.Settings.UseCcpapiBackup)
 
     End Sub
 
@@ -820,8 +820,8 @@ Public Class EveHQSettings
             End If
 
             ' Set Global APIServerInfo
-            HQ.EveHQAPIServerInfo = New APIServerInfo(HQ.Settings.CcpapiServerAddress, HQ.Settings.ApirsAddress, HQ.Settings.UseApirs, HQ.Settings.UseCcpapiBackup)
-            
+            'HQ.EveHQAPIServerInfo = New APIServerInfo(HQ.Settings.CcpapiServerAddress, HQ.Settings.ApirsAddress, HQ.Settings.UseApirs, HQ.Settings.UseCcpapiBackup)
+
         End If
 
         Return True
