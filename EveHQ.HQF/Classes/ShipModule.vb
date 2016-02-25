@@ -181,7 +181,7 @@ Public Class ShipModule
         End If
         If newModule.Attributes.ContainsKey(AttributeEnum.ModuleMiningAmount) = True Then
             Select Case newModule.MarketGroup
-                Case ModuleEnum.MarketgroupIceHarvesters
+                Case ModuleEnum.MarketgroupIceMiningLasers, ModuleEnum.MarketgroupIceHarvesters
                     newModule.Attributes(AttributeEnum.ModuleTurretIceMiningRate) = CDbl(newModule.Attributes(AttributeEnum.ModuleMiningAmount)) / CDbl(newModule.Attributes(AttributeEnum.ModuleActivationTime))
                 Case ModuleEnum.MarketgroupMiningLasers, ModuleEnum.MarketgroupStripMiners
                     newModule.Attributes(AttributeEnum.ModuleTurretOreMiningRate) = CDbl(newModule.Attributes(AttributeEnum.ModuleMiningAmount)) / CDbl(newModule.Attributes(AttributeEnum.ModuleActivationTime))
@@ -334,5 +334,6 @@ Public Enum ModuleEnum
     MarketgroupOrbitalProjectileAmmo = 1598
     MarketgroupOreCapitalIndustrials = 1048
     MarketgroupStripMiners = 1040
+	MarketgroupIceMiningLasers = 2151
 
 End Enum
