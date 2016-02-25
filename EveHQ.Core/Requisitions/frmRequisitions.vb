@@ -323,6 +323,7 @@ Namespace Requisitions
             Dim totalVolumeReqd As Double = 0
             Dim totalCost As Double = 0
             Dim totalCostReqd As Double = 0
+            Dim surplusCost As Double = 0
             ' Set style
             Dim numberStyle As New ElementStyle
             numberStyle.TextAlignment = eStyleTextAlignment.Far
@@ -411,7 +412,7 @@ Namespace Requisitions
                                                           Dim quantity As Long
                                                           If (priceData.TryGetValue(StaticData.TypeNames(row.Name), price)) Then
                                                               row.Cells(4).Text = price.ToInvariantString("F2")
-                                                              Long.TryParse(row.Cells(1).Text, quantity)
+                                                              Long.TryParse(row.Cells(1).Text, Globalization.NumberStyles.AllowThousands, Globalization.NumberFormatInfo.CurrentInfo, quantity)
                                                               row.Cells(5).Text = (price * quantity).ToInvariantString("F2")
 
                                                           End If
@@ -422,6 +423,8 @@ Namespace Requisitions
                                                           End If
                                                           totalCost += (price * quantity)
                                                           totalCostReqd += (price * (Math.Max(quantity - owned, 0)))
+                                                          surplusCost = price * Math.Max((owned - quantity), 0)
+                                                          row.Cells(8).Text = surplusCost.ToInvariantString("N2")
                                                       Next
                                                       lblTotalItems.Text = totalItems.ToString("N0") & " (" & totalItemsReqd.ToString("N0") & ")"
                                                       lblTotalCost.Text = "Total: " & totalCost.ToString("N2") & " ISK" & ControlChars.CrLf & "Reqd: " &
