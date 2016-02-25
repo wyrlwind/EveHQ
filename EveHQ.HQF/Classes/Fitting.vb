@@ -1892,7 +1892,7 @@ Imports EveHQ.Common.Extensions
                             cModule.Attributes(AttributeEnum.ModuleTurretOreMiningRate) = cModule.Attributes(AttributeEnum.ModuleMiningAmount) / cModule.Attributes(AttributeEnum.ModuleActivationTime)
                             newShip.Attributes(AttributeEnum.ShipTurretOreMiningRate) += cModule.Attributes(AttributeEnum.ModuleTurretOreMiningRate)
                             newShip.Attributes(AttributeEnum.ShipOreMiningRate) += cModule.Attributes(AttributeEnum.ModuleTurretOreMiningRate)
-                        Case ModuleEnum.MarketgroupIceHarvesters
+                        Case ModuleEnum.MarketgroupIceMiningLasers, ModuleEnum.MarketgroupIceHarvesters
                             newShip.Attributes(AttributeEnum.ShipTurretIceMiningAmount) += cModule.Attributes(AttributeEnum.ModuleMiningAmount)
                             newShip.Attributes(AttributeEnum.ShipIceMiningAmount) += cModule.Attributes(AttributeEnum.ModuleMiningAmount)
                             cModule.Attributes(AttributeEnum.ModuleTurretIceMiningRate) = cModule.Attributes(AttributeEnum.ModuleMiningAmount) / cModule.Attributes(AttributeEnum.ModuleActivationTime)
