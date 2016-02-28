@@ -86,6 +86,9 @@ Namespace Forms
         Dim _inventionSuccessCost As Double = 0
         Dim _resetInventedBP As Boolean = False
 
+        ' New CREST Lib variables
+        Dim _industrySolarSystem As EveCrest.Models.Crest.IndustrySystem
+
 #End Region
 
 #Region "Old Property Variables"
@@ -292,7 +295,7 @@ Namespace Forms
                     If cboOwner.Items.Contains(cPilot.Corp) = False Then
                         If cPilot.Updated = True Then
                             If StaticData.NpcCorps.ContainsKey(CInt(cPilot.CorpID)) = False Then
-                                 cboOwner.Items.Add(cPilot.Corp)
+                                cboOwner.Items.Add(cPilot.Corp)
                             End If
                         End If
                     End If
@@ -406,6 +409,19 @@ Namespace Forms
                     Call DisplayProductionJobDetails()
                     tabBPCalcFunctions.SelectedTab = tiInvention
             End Select
+
+            ' Load the systems inside the combobox
+            cboFactoryLocation.BeginUpdate()
+            cboFactoryLocation.Items.Clear()
+            cboFactoryLocation.DisplayMember = "Name"
+            cboFactoryLocation.ValueMember = "Id"
+            For Each solarSystem In EveHQ.EveData.StaticData.SolarSystems
+                ' Excluding WH systems
+                If solarSystem.Value.Gates.Count > 0 Then
+                    cboFactoryLocation.Items.Add(solarSystem.Value)
+                End If
+            Next
+            cboFactoryLocation.EndUpdate()
 
             ' Reset the changed flag - nothing has really changed as we've just finished loading the form!
             _productionChanged = False
@@ -685,7 +701,7 @@ Namespace Forms
                     ' Enable the various parts
                     gpPilotSkills.Enabled = True
                     _updateBPInfo = False
-                    If typeof(cboBPs.SelectedItem) Is BPAssetComboboxItem Then
+                    If TypeOf (cboBPs.SelectedItem) Is BPAssetComboboxItem Then
                         ' This is an owner blueprint!
                         Dim selBP As BPAssetComboboxItem = CType(cboBPs.SelectedItem, BPAssetComboboxItem)
                         Dim bpID As Integer = StaticData.TypeNames(selBP.Name)
@@ -1013,12 +1029,14 @@ Namespace Forms
             cboPOSArrays.Enabled = chkPOSProduction.Checked
             If _updateBPInfo = True Then
                 If chkPOSProduction.Checked = True Then
+                    cboFactoryLocation.Enabled = False
                     If cboPOSArrays.SelectedItem IsNot Nothing Then
                         _productionArray = StaticData.AssemblyArrays(cboPOSArrays.SelectedItem.ToString)
                     Else
                         _productionArray = Nothing
                     End If
                 Else
+                    cboFactoryLocation.Enabled = True
                     _productionArray = Nothing
                 End If
                 _currentJob.AssemblyArray = _productionArray
@@ -1096,6 +1114,13 @@ Namespace Forms
                 ' Update the Blueprint information
                 Call UpdateBlueprintInformation()
             End If
+        End Sub
+
+        Private Sub cboFactoryLocation_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cboFactoryLocation.SelectedIndexChanged
+            Dim crestLib As EveCrest.EveCrest = EveCrest.EveCrest.getInstance()
+            Dim selectedSystem As SolarSystem = CType(cboFactoryLocation.SelectedItem, SolarSystem)
+            _industrySolarSystem = crestLib.getIndustrySystem(selectedSystem.Id)
+            Call UpdateBlueprintInformation()
         End Sub
 
         Private Sub cboMetallurgySkill_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cboMetallurgySkill.SelectedIndexChanged
@@ -1181,8 +1206,30 @@ Namespace Forms
             Dim product As EveType = StaticData.Types(productID)
             lblBatchSize.Text = product.PortionSize.ToString("N0")
             lblProdQuantity.Text = (product.PortionSize * _currentJob.Runs).ToString("N0")
+
+            ' New CREST feature
+            ' Fetch factory cost based on CREST query result
+            ' >>
+            Dim newFactoryCosts As Double = 0.0
+            Dim newBaseJobCost As Double = 0.0
+            Dim itemPrice As Double = 0.0
+            Dim crestLib As EveCrest.EveCrest = EveCrest.EveCrest.getInstance()
+
+            If _industrySolarSystem IsNot Nothing Then
+                newFactoryCosts = _industrySolarSystem.getSystemCostIndice(EveCrest.Models.Crest.FactoryActivity.Manufacturing).costIndex
+            End If
+
+            For Each item In _currentJob.Resources
+                itemPrice = crestLib.getMarketPrice(item.Value.TypeID).adjustedPrice
+                newBaseJobCost += itemPrice * item.Value.BaseUnits
+            Next
+
+            newFactoryCosts *= newBaseJobCost
+            ' <<
+
             ' Calculate the factory costs
-            Dim factoryCosts As Double = Math.Round((PrismSettings.UserSettings.FactoryRunningCost / 3600 * _currentJob.RunTime) + PrismSettings.UserSettings.FactoryInstallCost, 2, MidpointRounding.AwayFromZero)
+            ' Dim factoryCosts As Double = Math.Round((PrismSettings.UserSettings.FactoryRunningCost / 3600 * _currentJob.RunTime) + PrismSettings.UserSettings.FactoryInstallCost, 2, MidpointRounding.AwayFromZero)
+            Dim factoryCosts As Double = Math.Round(newFactoryCosts, 2, MidpointRounding.AwayFromZero)
             ' Display Build Time Information
             lblUnitBuildTime.Text = SkillFunctions.TimeToString(_currentJob.RunTime / _currentJob.Runs, False)
             lblTotalBuildTime.Text = SkillFunctions.TimeToString(_currentJob.RunTime, False)
@@ -1312,7 +1359,7 @@ Namespace Forms
             End If
         End Sub
 
-       Private Sub nudInventionBPCRuns_LockUpdateChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nudInventionBPCRuns.LockUpdateChanged
+        Private Sub nudInventionBPCRuns_LockUpdateChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nudInventionBPCRuns.LockUpdateChanged
             If _inventionStartUp = False Then
                 Call CalculateInvention()
                 ProductionChanged = True
@@ -1334,15 +1381,6 @@ Namespace Forms
         Private Sub nudInventionBPCRuns_ButtonCustom2Click(ByVal sender As Object, ByVal e As EventArgs) Handles nudInventionBPCRuns.ButtonCustom2Click
             ' Set single run
             nudInventionBPCRuns.Value = 1
-        End Sub
-
-        Private Sub lblFactoryCostsLbl_LinkClicked(ByVal sender As Object, ByVal e As LinkLabelLinkClickedEventArgs) Handles lblFactoryCostsLbl.LinkClicked
-            Using newSettingsForm As New FrmPrismSettings
-                newSettingsForm.Tag = "nodeCosts"
-                newSettingsForm.ShowDialog()
-                Call UpdateBlueprintInformation()
-                Call CalculateInvention()
-            End Using
         End Sub
 
         Private Sub lblInventionLabCostsLbl_LinkClicked(ByVal sender As Object, ByVal e As LinkLabelLinkClickedEventArgs) Handles lblInventionLabCostsLbl.LinkClicked
