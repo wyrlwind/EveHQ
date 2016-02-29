@@ -62,7 +62,7 @@ namespace EveHQ.NewEveApi.Entities
         public bool IsInWatchList { get; set; }
 
         /// <summary>Gets the standing.</summary>
-        public int Standing { get; set; }
+        public double Standing { get; set; }
     }
 
     public enum ContactType
