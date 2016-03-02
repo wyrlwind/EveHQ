@@ -1117,10 +1117,9 @@ Namespace Forms
         End Sub
 
         Private Sub cboFactoryLocation_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cboFactoryLocation.SelectedIndexChanged
-            Dim crestLib As EveCrest.EveCrest = EveCrest.EveCrest.getInstance()
-            Dim selectedSystem As SolarSystem = CType(cboFactoryLocation.SelectedItem, SolarSystem)
-            _industrySolarSystem = crestLib.getIndustrySystem(selectedSystem.Id)
-            Call UpdateBlueprintInformation()
+            If cboFactoryLocation.SelectedItem IsNot Nothing Then
+                Call UpdateBlueprintInformation()
+            End If
         End Sub
 
         Private Sub cboMetallurgySkill_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cboMetallurgySkill.SelectedIndexChanged
@@ -1215,20 +1214,56 @@ Namespace Forms
             Dim itemPrice As Double = 0.0
             Dim crestLib As EveCrest.EveCrest = EveCrest.EveCrest.getInstance()
 
-            If _industrySolarSystem IsNot Nothing Then
-                newFactoryCosts = _industrySolarSystem.getSystemCostIndice(EveCrest.Models.Crest.FactoryActivity.Manufacturing).costIndex
-            End If
+            ' get the factory location before fetching CREST data (once threads are started, we no longer have access to the owner data)
+            Dim selectedFactorySystem = CType(cboFactoryLocation.SelectedItem, SolarSystem)
+            ' prepare to get industrial indices from CREST in a detach thread
+            Dim indices As Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.IndustrySystem)) = crestLib.getIndustrySystems()
+            ' this is the CREST indices callback
+            Dim indicesContinuation As Action(Of Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.IndustrySystem))) =
+                Sub(dataTask As Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.IndustrySystem)))
+                    ' do the job only when everything is done
+                    If dataTask.IsCanceled = False And dataTask.IsFaulted = False And dataTask.Exception Is Nothing And dataTask.Result IsNot Nothing Then
+                        ' check that we have something in the selected factory
+                        ' avoid null exception
+                        If selectedFactorySystem IsNot Nothing Then
+                            _industrySolarSystem = dataTask.Result(selectedFactorySystem.Id)
+                            ' update the factory cost using the manufacturing indice
+                            ' TODO : take the indice according to the job type
+                            If _industrySolarSystem IsNot Nothing Then
+                                newFactoryCosts = _industrySolarSystem.getSystemCostIndice(EveCrest.Models.Crest.FactoryActivity.Manufacturing).costIndex
+                            End If
+                        End If
+                    End If
 
-            For Each item In _currentJob.Resources
-                itemPrice = crestLib.getMarketPrice(item.Value.TypeID).adjustedPrice
-                newBaseJobCost += itemPrice * item.Value.BaseUnits
-            Next
+                    ' prepare to get item prices from CREST in a detach thread
+                    Dim prices As Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.MarketPrice)) = crestLib.fetchMarketPrices()
+                    ' this is the CREST prices callback
+                    Dim pricesContinuation As Action(Of Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.MarketPrice))) =
+                        Sub(subDataTask As Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.MarketPrice)))
+                            ' do the job only when everything is done
+                            If subDataTask.IsCanceled = False And subDataTask.IsFaulted = False And subDataTask.Exception Is Nothing And subDataTask.Result IsNot Nothing Then
+                                ' iterate over each base component and get its ajusted price
+                                For Each item In _currentJob.Resources
+                                    If subDataTask.Result.ContainsKey(item.Value.TypeID) Then
+                                        newBaseJobCost += subDataTask.Result(item.Value.TypeID).adjustedPrice * item.Value.BaseUnits
+                                    End If
+                                Next
 
-            newFactoryCosts *= newBaseJobCost
+                                ' update the factory cost and the view
+                                newFactoryCosts *= newBaseJobCost
+                                Invoke(Sub() UpdateFactoryLabel(newFactoryCosts))
+                            End If
+                        End Sub
+
+                    ' Start the thread
+                    prices.ContinueWith(pricesContinuation)
+                End Sub
+
+            ' Start the thread
+            indices.ContinueWith(indicesContinuation)
             ' <<
 
             ' Calculate the factory costs
-            ' Dim factoryCosts As Double = Math.Round((PrismSettings.UserSettings.FactoryRunningCost / 3600 * _currentJob.RunTime) + PrismSettings.UserSettings.FactoryInstallCost, 2, MidpointRounding.AwayFromZero)
             Dim factoryCosts As Double = Math.Round(newFactoryCosts, 2, MidpointRounding.AwayFromZero)
             ' Display Build Time Information
             lblUnitBuildTime.Text = SkillFunctions.TimeToString(_currentJob.RunTime / _currentJob.Runs, False)
@@ -1262,6 +1297,13 @@ Namespace Forms
                     lblProfitRate.ForeColor = Color.Black
                 End If
             End If
+        End Sub
+
+        ' Enable to update the Factory Costs on the view
+        ' Mandatory for async calls
+        Private Sub UpdateFactoryLabel(cost As Double)
+            Dim factoryCost As Double = Math.Round(cost, 2, MidpointRounding.AwayFromZero)
+            lblFactoryCosts.Text = factoryCost.ToString("N2") & " isk"
         End Sub
 
         Private Sub btnSaveProductionJob_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSaveProductionJob.Click
