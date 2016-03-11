@@ -281,7 +281,7 @@ Namespace Forms
         End Sub
 
         Private Sub DisplaySkills()
-            Const MaxGroups As Integer = 21
+            Const MaxGroups As Integer = 22
             Dim groupHeaders(MaxGroups, 3) As String
             groupHeaders(0, 0) = "Armor"
             groupHeaders(1, 0) = "Corporation Management"
@@ -302,9 +302,10 @@ Namespace Forms
             groupHeaders(16, 0) = "Shields"
             groupHeaders(17, 0) = "Social"
             groupHeaders(18, 0) = "Spaceship Command"
-            groupHeaders(19, 0) = "Subsystems"
-            groupHeaders(20, 0) = "Targeting"
-            groupHeaders(21, 0) = "Trade"
+            groupHeaders(19, 0) = "Structure Management"
+            groupHeaders(20, 0) = "Subsystems"
+            groupHeaders(21, 0) = "Targeting"
+            groupHeaders(22, 0) = "Trade"
             groupHeaders(0, 1) = "1210"
             groupHeaders(1, 1) = "266"
             groupHeaders(2, 1) = "273"
@@ -324,9 +325,11 @@ Namespace Forms
             groupHeaders(16, 1) = "1209"
             groupHeaders(17, 1) = "278"
             groupHeaders(18, 1) = "257"
-            groupHeaders(19, 1) = "1240"
-            groupHeaders(20, 1) = "1213"
-            groupHeaders(21, 1) = "274"
+            groupHeaders(19, 1) = "1545"
+            groupHeaders(20, 1) = "1240"
+            groupHeaders(21, 1) = "1213"
+            groupHeaders(22, 1) = "274"
+
 
             ' Set Styles
             Dim skillGroupStyle As ElementStyle = adtSkills.Styles("SkillGroup").Copy
