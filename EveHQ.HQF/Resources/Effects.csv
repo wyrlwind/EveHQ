@@ -869,9 +869,17 @@
 # Remote Sensor Boosters,,,,,,,,,,
 309,2,290,76,3,6,1,0,0,16,Remote Sensor Booster - Max Targeting Range
 566,2,290,564,3,6,1,0,0,16,Remote Sensor Booster - Scan Resolution
+1027,2,290,211,3,6,1,0,0,12,Grav Strength
+1028,2,290,209,3,6,1,0,0,12,Ladar Strength
+1029,2,290,210,3,6,1,0,0,12,Mag Strength
+1030,2,290,208,3,6,1,0,0,12,Radar Strength
 # Sensor Boosters,,,,,,,,,,
 309,2,212,76,3,6,1,0,0,12,Sensor Booster - Max Targeting Range
 566,2,212,564,3,6,1,0,0,12,Sensor Booster - Scan Resolution
+1027,2,212,211,3,6,1,0,0,12,Grav Strength
+1028,2,212,209,3,6,1,0,0,12,Ladar Strength
+1029,2,212,210,3,6,1,0,0,12,Mag Strength
+1030,2,212,208,3,6,1,0,0,12,Radar Strength
 # Signal Amplifiers,,,,,,,,,,
 235,2,210,192,3,6,0,0,1,14,Signal Amplifier - Max Locked Targets
 309,2,210,76,3,6,1,0,0,14,Signal Amplifier - Max Targeting Range
