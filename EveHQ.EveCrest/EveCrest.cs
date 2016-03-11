@@ -5,6 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Threading.Tasks;
+using EveHQ.Common;
+using EveHQ.Common.Extensions;
+using System.Net.Http;
 
 namespace EveHQ.EveCrest
 {
@@ -12,6 +16,7 @@ namespace EveHQ.EveCrest
     {
         private static Dictionary<Uri, CacheItem> _cache;
         private static EveCrest _instance;
+        private readonly IHttpRequestProvider _requestProvider;
 
         public static EveCrest getInstance()
         {
@@ -23,131 +28,105 @@ namespace EveHQ.EveCrest
         private EveCrest()
         {
             _cache = new Dictionary<Uri, CacheItem>();
+            _requestProvider = new HttpRequestProvider(null);
         }
 
         #region "Industry"
         /// <summary>
-        /// Enable to get information from a specific system (including system name and system indices)
-        /// </summary>
-        /// <param name="systemId">The system ID from which you're looking data for</param>
-        public IndustrySystem getIndustrySystem(int systemId)
-        {
-            var systems = getIndustrySystems();
-            if (systems != null)
-            {
-                foreach (var system in systems)
-                {
-                    if (system.solarSystem.id == systemId)
-                        return system;
-                }
-            }
-
-            return null;
-        }
-
-        /// <summary>
         /// Fetch industry system data from CREST (including system name and indices)
         /// </summary>
-        private IEnumerable<IndustrySystem> getIndustrySystems()
+        public Task<Dictionary<long, IndustrySystem>> getIndustrySystems()
         {
-            string result;
-            Uri crestEndpoint = new Uri("https://public-crest.eveonline.com/industry/systems/");
-            CrestResult<IndustrySystem> parsedResult;
+            return Task<Dictionary<long, IndustrySystem>>.Factory.TryRun(
+                () =>
+                {
+                    IEnumerable<IndustrySystem> result;
+                    Uri crestEndpoint = new Uri("https://public-crest.eveonline.com/industry/systems/");
+                    Dictionary<long, IndustrySystem> systems = new Dictionary<long, IndustrySystem>();
 
-            // parse the result
-            result = fetchData(crestEndpoint).ToString();
+                    if (!isCached(crestEndpoint))
+                    {
+                        fetchData(crestEndpoint);
+                    }
 
-            if (!String.IsNullOrEmpty(result))
-            {
-                try {
-                    parsedResult = Newtonsoft.Json.JsonConvert.DeserializeObject<CrestResult<IndustrySystem>>(result);
-                    return parsedResult.items;
-                } catch (Exception e) {
+                    result = Newtonsoft.Json.JsonConvert.DeserializeObject<CrestResult<IndustrySystem>>(_cache[crestEndpoint].cachedData).items;
 
+                    if (result != null)
+                    {
+                        foreach (var system in result)
+                        {
+                            if (!systems.ContainsKey(system.solarSystem.id))
+                                systems.Add(system.solarSystem.id, system);
+                        }
+                    }
+
+                    return systems;
                 }
-            }
-
-            return null;
+            );
         }
         #endregion
 
         #region "Market"
         /// <summary>
-        /// Enable to return market adjusted and average prices for a specific item
-        /// </summary>
-        /// <param name="itemId">The item ID</param>
-        public MarketPrice getMarketPrice(int itemId)
-        {
-            var marketPrices = fetchMarketPrices();
-            if (marketPrices != null)
-            {
-                foreach (var marketPrice in marketPrices)
-                {
-                    if (marketPrice.type.id == itemId)
-                        return marketPrice;
-                }
-            }
-
-            return null;
-        }
-
-        /// <summary>
         /// Fetch market prices (average and adjusted) from CREST
         /// </summary>
-        private IEnumerable<MarketPrice> fetchMarketPrices()
+        public Task<Dictionary<long, MarketPrice>> fetchMarketPrices()
         {
-            string result;
-            Uri crestEndpoint = new Uri("https://public-crest.eveonline.com/market/prices/");
-            CrestResult<MarketPrice> parsedResult;
+            return Task<Dictionary<long, MarketPrice>>.Factory.TryRun(
+                () =>
+                {
+                    IEnumerable<MarketPrice> result;
+                    Uri crestEndpoint = new Uri("https://public-crest.eveonline.com/market/prices/");
+                    Dictionary<long, MarketPrice> prices = new Dictionary<long, MarketPrice>();
 
-            // parse the result
-            result = fetchData(crestEndpoint).ToString();
+                    if (!isCached(crestEndpoint))
+                    {
+                        fetchData(crestEndpoint);
+                    }
 
-            if (!String.IsNullOrEmpty(result))
-            {
-                try {
-                    parsedResult = Newtonsoft.Json.JsonConvert.DeserializeObject<CrestResult<MarketPrice>>(result);
-                    return parsedResult.items;
-                } catch (Exception e) {
+                    result = Newtonsoft.Json.JsonConvert.DeserializeObject<CrestResult<MarketPrice>>(_cache[crestEndpoint].cachedData).items;
 
+                    if (result != null)
+                    {
+                        foreach (var price in result)
+                        {
+                            if (!prices.ContainsKey(price.type.id))
+                                prices.Add(price.type.id, price);
+                        }
+                    }
+
+                    return prices;
                 }
-            }
-
-            return null;
+            );
         }
         #endregion
 
         #region "Helpers"
         /// <summary>
-        /// Enable to fetch data from CREST
+        /// Send request to CREST, fetch data in an async process and store the result to the cache
         /// </summary>
-        /// <param name="crestEndpoint">The CREST url to call</param>
-        private string fetchData(Uri crestEndpoint)
+        /// <param name="crestEndpoint"></param>
+        public void fetchData(Uri crestEndpoint)
         {
-            string result = "";
-            
-            if (isCached(crestEndpoint))
-                return _cache[crestEndpoint].cachedData;
+            // call data, parse, and so on
+            Task<HttpResponseMessage> requestTask = _requestProvider.GetAsync(crestEndpoint);
+            requestTask.Wait();
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(crestEndpoint);
-            request.UserAgent = String.Format("{0} {1}",
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().Name,
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
-
-            using (WebResponse response = request.GetResponse())
+            if (requestTask.IsCompleted && !requestTask.IsCanceled && !requestTask.IsFaulted &&
+                requestTask.Exception == null && requestTask.Result != null)
             {
-                using (Stream stream = response.GetResponseStream())
+                Task<Stream> contentStreamTask = requestTask.Result.Content.ReadAsStreamAsync();
+                contentStreamTask.Wait();
+
+                using (Stream stream = contentStreamTask.Result)
                 {
-                    using (StreamReader reader = new StreamReader(stream)) {
-                        result = reader.ReadToEnd();
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        if (!_cache.ContainsKey(crestEndpoint))
+                            _cache.Add(crestEndpoint, new CacheItem(1, reader.ReadToEnd()));
                     }
                 }
             }
-            
-            if (!String.IsNullOrEmpty(result))
-                _cache.Add(crestEndpoint, new CacheItem(1, result));
-
-            return result;
         }
         
         /// <summary>

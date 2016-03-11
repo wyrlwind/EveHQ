@@ -6547,3 +6547,105 @@
 21531:
   description: Skill Injector
   iconFile: res:/UI/Texture/Icons/skillInjector_64.png
+21532:
+  description: Structure Electromagnetic Sensor
+  iconFile: '118_3'
+21533:
+  description: Structure Acceleration Coils
+  iconFile: '118_4'
+21534:
+  description: Structure Advertisement Nexus
+  iconFile: '118_8'
+21560:
+  description: Structure Repulsor Field
+  iconFile: '123_5'
+21561:
+  description: Structure Point Defense Battery
+  iconFile: '123_6'
+21562:
+  description: Structure Resistance Switcher
+  iconFile: '123_7'
+21563:
+  description: Structure Ship Tractor Beam
+  iconFile: '123_8'
+21564:
+  description: Structure Guided Bomb Launcher
+  iconFile: '123_9'
+21565:
+  description: Structure Anticapital Launcher
+  iconFile: '123_10'
+21566:
+  description: Structure Antisubcapital Launcher
+  iconFile: '123_11'
+21567:
+  description: Structure Long Range Anticapital Missile
+  iconFile: '124_5'
+21568:
+  description: Structure Long Range Antisubcapital Missile
+  iconFile: '124_6'
+21569:
+  description: Structure Antibattleship Guided Bomb
+  iconFile: '124_7'
+21570:
+  description: Structure Medium Range Anticapital Missile
+  iconFile: '124_9'
+21571:
+  description: Structure Medium Range Antisubcapital Missile
+  iconFile: '124_10'
+21572:
+  description: Structure Capacitor Draining Guided Bomb
+  iconFile: '124_11'
+21573:
+  description: Structure Short Range Anticapital Missile
+  iconFile: '124_13'
+21574:
+  description: Structure Short Range Antisubcapital Missile
+  iconFile: '124_14'
+21575:
+  description: Structure Antifrigate Guided Bomb
+  iconFile: '124_15'
+21578:
+  description: Serenity icon for Clevo token
+  iconFile: '1337_23'
+21579:
+  description: 41049_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V0
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41049_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V0_.png
+21581:
+  description: Stasis Grappler
+  iconFile: res:/UI/Texture/Icons/125_64_1.png
+21582:
+  description: 41036_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V2
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41036_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V2_.png
+21583:
+  description: 41050_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V4
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41050_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V4_.png
+21584:
+  description: 41051_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V3
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41051_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V3_.png
+21585:
+  description: 41047_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V1
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41047_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V1_.png
+21586:
+  description: 41052_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V1
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41052_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V1_.png
+21587:
+  description: 41053_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V5
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41053_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V5_.png
+21588:
+  description: 41046_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V5
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41046_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V5_.png
+21589:
+  description: 41043_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V4
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41043_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V4_.png
+21590:
+  description: 41044_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V3
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41044_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V3_.png
+21591:
+  description: 41048_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V2
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41048_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V2_.png
+21592:
+  description: 41045_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V0
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41045_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V0_.png
+21593:
+  description: ECCM Script
+  iconFile: res:/UI/Texture/Icons/126_64_1.png
