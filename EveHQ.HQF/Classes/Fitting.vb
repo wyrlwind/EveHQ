@@ -122,6 +122,7 @@ Imports EveHQ.Common.Extensions
     Dim cFittedShip As Ship
     Dim cShipSlotCtrl As ShipSlotControl
     Dim cShipInfoCtrl As ShipInfoControl
+    Dim cShipMode As ShipModes
     ' ReSharper restore InconsistentNaming
 
 #End Region
@@ -503,8 +504,15 @@ Imports EveHQ.Common.Extensions
     ''' <value></value>
     ''' <returns>The ship mode</returns>
     ''' <remarks></remarks>
-    Public Property ShipMode As ShipModes
-    
+    Public Property ShipMode() As ShipModes
+        Get
+            Return cShipMode
+        End Get
+        Set(ByVal value As ShipModes)
+            cShipMode = value
+        End Set
+    End Property
+
     ' ReSharper restore InconsistentNaming
 
 #End Region
@@ -3511,6 +3519,8 @@ End Class
     Dim cFleetEffects As New List(Of FleetEffect)
     Dim cRemoteEffects As New List(Of RemoteEffect)
 
+    Dim cShipMode As ShipModes
+
     ''' <summary>
     ''' Gets or sets the the Ship Name used for the fitting
     ''' </summary>
@@ -3761,6 +3771,21 @@ End Class
         End Get
         Set(ByVal value As List(Of RemoteEffect))
             cRemoteEffects = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the ship mode
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>The ship mode</returns>
+    ''' <remarks></remarks>
+    Public Property ShipMode() As ShipModes
+        Get
+            Return cShipMode
+        End Get
+        Set(ByVal value As ShipModes)
+            cShipMode = value
         End Set
     End Property
 
