@@ -1212,8 +1212,8 @@ $ÆÆshipBonusDroneHitpointsBC1
 ∂∂armorTankingGang2
 '∑"∑skirmishWarfareVelocityBonus2
 ∏∏implantVelocityBonus2
-%π πshipTrackingLinkRange1Fixed
-%∫ ∫shipTrackingLinkRange2Group
+2π-π(shipBonusRemoteTrackingComputerFalloffMC
+3∫.∫)shipBonusRemoteTrackingComputerFalloffGC2
 #ªªewSkillEcmBurstRangeBonus
 %º ºewSkillEcmBurstCapNeedBonus
 3æ.æ)eliteBonusCommandShipsMissilePrecisionCS2
@@ -3752,6 +3752,7 @@ $Â/Â/missileExplosionDelayBonus
 â0â0modeMWDCapPostDiv
 ä0ä0modeMWDBoostPostDiv
 %ã0 ã0modeArmorRepDurationPostDiv
+ç0ç0cpuMultiplierToSelf
 é0é0passiveMassAdd
 ì0ì0passiveSpeedLimit
 %î0 î0systemMaxVelocityPercentage
@@ -3792,6 +3793,17 @@ $ñ0ñ0shipBonusWDFGnullPenalties
 *√0%√0 commandDestroyerSkillMultiplier3
 1≈0,≈0'eliteBonusCommandDestroyerMWDSigRadius3
 %∆0 ∆0roleBonusCDLinksPGReduction
++»0&»0!structureEnergyNeutralizerFalloff
+D…0?…0:structureTargetMaxTargetRangeAndScanResolutionBonusHostile
+" 0 0structureEwTestEffectJam
+&À0!À0structureDecreaseTargetSpeed
+NÃ0IÃ0DstructureTargetGunneryMaxRangeAndTrackingSpeedAndFalloffBonusHostile
+ Õ0Õ0structureEwTargetPaint
+4Œ0/Œ0*structureWarpScrambleBlockMWDWithNPCEffect
+Gœ0Bœ0=structureTargetMaxTargetRangeAndScanResolutionBonusAssistance
+0–0+–0&structureSensorBoosterActivePercentage
+K—0F—0AstructureTargetGunneryMaxRangeFalloffTrackingSpeedBonusAssistance
+0“0+“0&structureMissileGuidanceComputerBonus4
 '’0"’0shipBonusEnergyNeutOptimalRS2
 '÷0"÷0shipBonusEnergyNeutOptimalRS1
 '◊0"◊0shipBonusEnergyNeutFalloffRS1
@@ -3857,6 +3869,7 @@ $ñ0ñ0shipBonusWDFGnullPenalties
 &ü1!ü1shipBonusEnergyNosFalloffAC1
 &†1!†1shipBonusEnergyNosFalloffAC2
 &°1!°1shipBonusEnergyNosFalloffAC3
+¢1¢1serviceSlot
 %£1 £1shipBonusThermMissileDmgMD1
 "§1§1shipBonusEMMissileDmgMD1
 '•1"•1shipBonusKineticMissileDmgMD1
@@ -3872,6 +3885,10 @@ $ñ0ñ0shipBonusWDFGnullPenalties
 -Ø1(Ø1#shipBonusKineticShieldResistanceMD2
 -∞1(∞1#shipBonusThermalShieldResistanceMD2
 /±1*±1%shipBonusExplosiveShieldResistanceMD2
+1≤1,≤1'scriptscanGravimetricStrengthBonusBonus
++≥1&≥1!scriptscanLadarStrengthBonusBonus
+3¥1.¥1)scriptscanMagnetometricStrengthBonusBonus
++µ1&µ1!scriptscanRadarStrengthBonusBonus
 *∂1%∂1 shipBonusThermalMissileDamageCD1
 %∑1 ∑1shipBonusEMMissileDamageCD1
 *∏1%∏1 shipBonusKineticMissileDamageCD1
@@ -3891,6 +3908,10 @@ $ñ0ñ0shipBonusWDFGnullPenalties
 ,∆1'∆1"shipBonusThermalArmorResistanceGD2
 .«1)«1$shipBonusExplosiveArmorResistanceGD2
 /»1*»1%eliteBonusCommandDestroyerInfoHidden1
++…1&…1!scriptStasisWebifierMaxRangeBonus
+. 1) 1$scriptStasisWebifierSpeedFactorBonus
+5À10À1+structureTargetMissileGuidanceComputerBonus
+Ã1Ã1setFixedResonance
 #Œ1Œ1shipSmallMissileKinDmgCF3
 !œ1œ1shipMissileKinDamageCC3
 –1–1roleBonusWDRange
@@ -3929,6 +3950,28 @@ $Ò1Ò1ignoreCloakVelocityPenalty
 (Ú1#Ú1ewSkillGuidanceDisruptionBonus
 /˙1*˙1%gangInformationWarfareSuperiorityAll2
 0˚1+˚1&shipBonusEwWeaponDisruptionStrengthAC1
+3¸1.¸1)skillStructureOffensiveSystemsDamageBonus
+;˝16˝11skillStructureOffensiveSystemsDoomsdayDamageBonus
+4˛1/˛1*skillStructureOffensiveSystemsCapNeedBonus
+4ˇ1/ˇ1*skillStructureDefensiveSystemsCapNeedBonus
+5Ä20Ä2+skillStructureElectronicSystemsCapNeedBonus
+6Å21Å2,skillStructureEngineeringSystemsCapNeedBonus
+:Ç25Ç20structureRigAoeVelocityBonusSingleTargetMissiles
+7É22É2-structureRigVelocityBonusSingleTargetMissiles
+=Ñ28Ñ23structureRigNeutralizerMaxRangeFalloffEffectiveness
+.Ö2)Ö2$structureRigNeutralizerCapacitorNeed
+'Ü2"Ü2structureRigEWMaxRangeFalloff
+%á2 á2structureRigEWCapacitorNeed
+ à2à2structureRigMaxTargets
+&â2!â2structureRigSensorResolution
+1ä2,ä2'structureRigAoeVelocityBonusAoEMissiles
+.ã2)ã2$structureRigVelocityBonusAoeMissiles
+!å2å2structureRigPDBmaxRange
+&ç2!ç2structureRigPDBCapacitorNeed
+é2é2structureRigFighterHP
+(è2#è2structureRigFighterMaxVelocity
+)ê2$ê2structureRigDoomsdayTargetRange
+(ë2#ë2structureRigDoomsdayDamageLoss
 !ñ2ñ2remoteSensorDampFalloff
 &ó2!ó2remoteGuidanceDisruptFalloff
 &ò2!ò2remoteTrackingDisruptFalloff
@@ -3937,6 +3980,14 @@ $Ò1Ò1ignoreCloakVelocityPenalty
 "õ2õ2remoteSensorBoostFalloff
 %ú2 ú2remoteTrackingAssistFalloff
 %ù2 ù2remoteGuidanceAssistFalloff
+´2´2pointDefense
+≠2≠2tractorBeamShip
+ Æ2Æ2structureBumpingModule
+Ø2Ø2lightningWeapon
+*∞2%∞2 structureMissileGuidanceEnhancer
+)±2$±2structureBallisticControlSystem
+0≤2+≤2&structureMissileGuidanceComputerBonus5
+1≥2,≥2'structureScanResolutionActivePercentage
 ¥2¥2AmarrFAuxSkillMul1
 µ2µ2AmarrFAuxSkillMul2
 ∂2∂2AmarrFAuxSkillMul3
@@ -3951,3 +4002,6 @@ $Ò1Ò1ignoreCloakVelocityPenalty
 ø2ø2MinmatarFAuxSkillMul3
 ∆2∆2remoteECMFalloff
 «2«2remoteECCMFalloff
+/À2*À2%structureRigDoomsdayTargetAmountBonus
+'◊2"◊2modifyEnergyWarfareResistance
+5ÿ20ÿ2+scriptSensorBoosterSensorStrengthBonusBonus

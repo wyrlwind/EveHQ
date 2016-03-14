@@ -95,6 +95,8 @@ Namespace Forms
                     btnScreenGrab.Enabled = False
                     btnExportReq.Enabled = False
                 End If
+                ' Disabling forum export which will be no longer supported
+                btnExportFitting.SubItems(2).Enabled = False
             End Set
         End Property
 
@@ -2906,36 +2908,38 @@ Namespace Forms
                         shipMod = shipMod.TrimStart("Drones_Active=".ToCharArray)
                         shipMod = shipMod.TrimStart("Drones_Inactive=".ToCharArray)
                     End If
+                    ' Deprecated, forum format is no longer supported
                     ' Check for forum format (to shut the fucking whiners up)
-                    Dim moduleMatch As Match = Regex.Match(shipMod, "(?<quantity>\d)*x\s(?<module>.+)\s\((?<charge>.+)\)|(?<quantity>\d)*x\s(?<module>.+)")
-                    If moduleMatch.Success = True Then
-                        Dim modName As String = moduleMatch.Groups.Item("module").Value
-                        ' Check for module replacement
-                        If PlugInData.ModuleChanges.ContainsKey(modName) Then
-                            modName = PlugInData.ModuleChanges(modName)
-                        End If
-                        Dim chargeName As String = moduleMatch.Groups.Item("charge").Value
-                        Dim quantity As String = moduleMatch.Groups.Item("quantity").Value
-                        If IsNumeric(quantity) = True Then
-                            If ModuleLists.ModuleListName.ContainsKey(modName) = True Then
-                                Dim testMod As ShipModule = ModuleLists.ModuleList(ModuleLists.ModuleListName(modName)).Clone
-                                If testMod.IsDrone = True Then
-                                    newFit.Add(modName & ", " & quantity)
-                                Else
-                                    If CInt(quantity) > 1 Then
-                                        modName = modName & " x" & quantity
-                                    End If
-                                    If chargeName <> "" Then
-                                        newFit.Add(modName & ", " & chargeName)
-                                    Else
-                                        newFit.Add(modName)
-                                    End If
-                                End If
-                            End If
-                        End If
-                    Else
-                        ' Check for module replacement
-                        If PlugInData.ModuleChanges.ContainsKey(shipMod) Then
+                    'Dim moduleMatch As Match = Regex.Match(shipMod, "(?<quantity>\d)+x\s(?<module>.+)\s\((?<charge>.+)\)|(?<quantity>\d)+x\s(?<module>.+)")
+                    'If moduleMatch.Success = True Then
+                    '    Dim modName As String = moduleMatch.Groups.Item("module").Value
+                    '    ' Check for module replacement
+                    '    If PlugInData.ModuleChanges.ContainsKey(modName) Then
+                    '        modName = PlugInData.ModuleChanges(modName)
+                    '    End If
+                    '    Dim chargeName As String = moduleMatch.Groups.Item("charge").Value
+                    '    Dim quantity As String = moduleMatch.Groups.Item("quantity").Value
+                    '    If IsNumeric(quantity) = True Then
+                    '        If ModuleLists.ModuleListName.ContainsKey(modName) = True Then
+                    '            Dim testMod As ShipModule = ModuleLists.ModuleList(ModuleLists.ModuleListName(modName)).Clone
+                    '            If testMod.IsDrone = True Then
+                    '                newFit.Add(modName & ", " & quantity)
+                    '            Else
+                    '                If CInt(quantity) > 1 Then
+                    '                    modName = modName & " x" & quantity
+                    '                End If
+                    '                If chargeName <> "" Then
+                    '                    newFit.Add(modName & ", " & chargeName)
+                    '                Else
+                    '                    newFit.Add(modName)
+                    '                End If
+                    '            End If
+                    '        End If
+                    '    End If
+                    '    ' Deprecated stuff, forum format is no longer supported
+                    'Else
+                    ' Check for module replacement
+                    If PlugInData.ModuleChanges.ContainsKey(shipMod) Then
                             shipMod = PlugInData.ModuleChanges(shipMod)
                         End If
                         Dim droneMatch As Match = Regex.Match(shipMod, "(?<module>.+)\sx(?<quantity>\d+)|(?<module>.+)")
@@ -2962,7 +2966,7 @@ Namespace Forms
                             newFit.Add(shipMod)
                         End If
                     End If
-                End If
+                'End If
             Next
             Dim newFitting As Fitting = Fittings.ConvertOldFitToNewFit(shipName & ", " & fittingName, newFit)
             Fittings.FittingList.Add(newFitting.KeyName, newFitting)

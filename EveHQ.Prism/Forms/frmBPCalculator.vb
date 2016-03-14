@@ -86,6 +86,9 @@ Namespace Forms
         Dim _inventionSuccessCost As Double = 0
         Dim _resetInventedBP As Boolean = False
 
+        ' New CREST Lib variables
+        Dim _industrySolarSystem As EveCrest.Models.Crest.IndustrySystem
+
 #End Region
 
 #Region "Old Property Variables"
@@ -292,7 +295,7 @@ Namespace Forms
                     If cboOwner.Items.Contains(cPilot.Corp) = False Then
                         If cPilot.Updated = True Then
                             If StaticData.NpcCorps.ContainsKey(CInt(cPilot.CorpID)) = False Then
-                                 cboOwner.Items.Add(cPilot.Corp)
+                                cboOwner.Items.Add(cPilot.Corp)
                             End If
                         End If
                     End If
@@ -406,6 +409,19 @@ Namespace Forms
                     Call DisplayProductionJobDetails()
                     tabBPCalcFunctions.SelectedTab = tiInvention
             End Select
+
+            ' Load the systems inside the combobox
+            cboFactoryLocation.BeginUpdate()
+            cboFactoryLocation.Items.Clear()
+            cboFactoryLocation.DisplayMember = "Name"
+            cboFactoryLocation.ValueMember = "Id"
+            For Each solarSystem In EveHQ.EveData.StaticData.SolarSystems
+                ' Excluding WH systems
+                If solarSystem.Value.Gates.Count > 0 Then
+                    cboFactoryLocation.Items.Add(solarSystem.Value)
+                End If
+            Next
+            cboFactoryLocation.EndUpdate()
 
             ' Reset the changed flag - nothing has really changed as we've just finished loading the form!
             _productionChanged = False
@@ -685,7 +701,7 @@ Namespace Forms
                     ' Enable the various parts
                     gpPilotSkills.Enabled = True
                     _updateBPInfo = False
-                    If typeof(cboBPs.SelectedItem) Is BPAssetComboboxItem Then
+                    If TypeOf (cboBPs.SelectedItem) Is BPAssetComboboxItem Then
                         ' This is an owner blueprint!
                         Dim selBP As BPAssetComboboxItem = CType(cboBPs.SelectedItem, BPAssetComboboxItem)
                         Dim bpID As Integer = StaticData.TypeNames(selBP.Name)
@@ -1013,12 +1029,14 @@ Namespace Forms
             cboPOSArrays.Enabled = chkPOSProduction.Checked
             If _updateBPInfo = True Then
                 If chkPOSProduction.Checked = True Then
+                    cboFactoryLocation.Enabled = False
                     If cboPOSArrays.SelectedItem IsNot Nothing Then
                         _productionArray = StaticData.AssemblyArrays(cboPOSArrays.SelectedItem.ToString)
                     Else
                         _productionArray = Nothing
                     End If
                 Else
+                    cboFactoryLocation.Enabled = True
                     _productionArray = Nothing
                 End If
                 _currentJob.AssemblyArray = _productionArray
@@ -1094,6 +1112,12 @@ Namespace Forms
         Private Sub cboResearchSkill_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cboResearchSkill.SelectedIndexChanged
             If _startUp = False And _updateBPInfo = True Then
                 ' Update the Blueprint information
+                Call UpdateBlueprintInformation()
+            End If
+        End Sub
+
+        Private Sub cboFactoryLocation_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cboFactoryLocation.SelectedIndexChanged
+            If cboFactoryLocation.SelectedItem IsNot Nothing Then
                 Call UpdateBlueprintInformation()
             End If
         End Sub
@@ -1181,8 +1205,66 @@ Namespace Forms
             Dim product As EveType = StaticData.Types(productID)
             lblBatchSize.Text = product.PortionSize.ToString("N0")
             lblProdQuantity.Text = (product.PortionSize * _currentJob.Runs).ToString("N0")
+
+            ' New CREST feature
+            ' Fetch factory cost based on CREST query result
+            ' >>
+            Dim newFactoryCosts As Double = 0.0
+            Dim newBaseJobCost As Double = 0.0
+            Dim itemPrice As Double = 0.0
+            Dim crestLib As EveCrest.EveCrest = EveCrest.EveCrest.getInstance()
+
+            ' get the factory location before fetching CREST data (once threads are started, we no longer have access to the owner data)
+            Dim selectedFactorySystem = CType(cboFactoryLocation.SelectedItem, SolarSystem)
+            ' prepare to get industrial indices from CREST in a detach thread
+            Dim indices As Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.IndustrySystem)) = crestLib.getIndustrySystems()
+            ' this is the CREST indices callback
+            Dim indicesContinuation As Action(Of Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.IndustrySystem))) =
+                Sub(dataTask As Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.IndustrySystem)))
+                    ' do the job only when everything is done
+                    If dataTask.IsCanceled = False And dataTask.IsFaulted = False And dataTask.Exception Is Nothing And dataTask.Result IsNot Nothing Then
+                        ' check that we have something in the selected factory
+                        ' avoid null exception
+                        If selectedFactorySystem IsNot Nothing Then
+                            _industrySolarSystem = dataTask.Result(selectedFactorySystem.Id)
+                            ' update the factory cost using the manufacturing indice
+                            ' TODO : take the indice according to the job type
+                            If _industrySolarSystem IsNot Nothing Then
+                                newFactoryCosts = _industrySolarSystem.getSystemCostIndice(EveCrest.Models.Crest.FactoryActivity.Manufacturing).costIndex
+                            End If
+                        End If
+                    End If
+
+                    ' prepare to get item prices from CREST in a detach thread
+                    Dim prices As Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.MarketPrice)) = crestLib.fetchMarketPrices()
+                    ' this is the CREST prices callback
+                    Dim pricesContinuation As Action(Of Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.MarketPrice))) =
+                        Sub(subDataTask As Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.MarketPrice)))
+                            ' do the job only when everything is done
+                            If subDataTask.IsCanceled = False And subDataTask.IsFaulted = False And subDataTask.Exception Is Nothing And subDataTask.Result IsNot Nothing Then
+                                ' iterate over each base component and get its ajusted price
+                                For Each item In _currentJob.Resources
+                                    If subDataTask.Result.ContainsKey(item.Value.TypeID) Then
+                                        newBaseJobCost += subDataTask.Result(item.Value.TypeID).adjustedPrice * item.Value.BaseUnits
+                                    End If
+                                Next
+
+                                ' update the factory cost and the view
+                                newFactoryCosts *= newBaseJobCost
+                                Invoke(Sub() UpdateFactoryLabel(newFactoryCosts))
+                            End If
+                        End Sub
+
+                    ' Start the thread
+                    prices.ContinueWith(pricesContinuation)
+                End Sub
+
+            ' Start the thread
+            indices.ContinueWith(indicesContinuation)
+            ' <<
+
             ' Calculate the factory costs
-            Dim factoryCosts As Double = Math.Round((PrismSettings.UserSettings.FactoryRunningCost / 3600 * _currentJob.RunTime) + PrismSettings.UserSettings.FactoryInstallCost, 2, MidpointRounding.AwayFromZero)
+            Dim factoryCosts As Double = Math.Round(newFactoryCosts, 2, MidpointRounding.AwayFromZero)
             ' Display Build Time Information
             lblUnitBuildTime.Text = SkillFunctions.TimeToString(_currentJob.RunTime / _currentJob.Runs, False)
             lblTotalBuildTime.Text = SkillFunctions.TimeToString(_currentJob.RunTime, False)
@@ -1215,6 +1297,13 @@ Namespace Forms
                     lblProfitRate.ForeColor = Color.Black
                 End If
             End If
+        End Sub
+
+        ' Enable to update the Factory Costs on the view
+        ' Mandatory for async calls
+        Private Sub UpdateFactoryLabel(cost As Double)
+            Dim factoryCost As Double = Math.Round(cost, 2, MidpointRounding.AwayFromZero)
+            lblFactoryCosts.Text = factoryCost.ToString("N2") & " isk"
         End Sub
 
         Private Sub btnSaveProductionJob_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSaveProductionJob.Click
@@ -1312,7 +1401,7 @@ Namespace Forms
             End If
         End Sub
 
-       Private Sub nudInventionBPCRuns_LockUpdateChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nudInventionBPCRuns.LockUpdateChanged
+        Private Sub nudInventionBPCRuns_LockUpdateChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nudInventionBPCRuns.LockUpdateChanged
             If _inventionStartUp = False Then
                 Call CalculateInvention()
                 ProductionChanged = True
@@ -1334,15 +1423,6 @@ Namespace Forms
         Private Sub nudInventionBPCRuns_ButtonCustom2Click(ByVal sender As Object, ByVal e As EventArgs) Handles nudInventionBPCRuns.ButtonCustom2Click
             ' Set single run
             nudInventionBPCRuns.Value = 1
-        End Sub
-
-        Private Sub lblFactoryCostsLbl_LinkClicked(ByVal sender As Object, ByVal e As LinkLabelLinkClickedEventArgs) Handles lblFactoryCostsLbl.LinkClicked
-            Using newSettingsForm As New FrmPrismSettings
-                newSettingsForm.Tag = "nodeCosts"
-                newSettingsForm.ShowDialog()
-                Call UpdateBlueprintInformation()
-                Call CalculateInvention()
-            End Using
         End Sub
 
         Private Sub lblInventionLabCostsLbl_LinkClicked(ByVal sender As Object, ByVal e As LinkLabelLinkClickedEventArgs) Handles lblInventionLabCostsLbl.LinkClicked

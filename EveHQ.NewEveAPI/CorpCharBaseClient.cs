@@ -1309,12 +1309,13 @@ namespace EveHQ.NewEveApi
             // convert the xml into collections of objects.
             // only the personal list has the "inWatchlist" attribute...others defaulted to false    
             return from rowset in result.Elements(ApiConstants.Rowset)
+                where rowset.Attribute("columns").Value.Contains("contactID")
                 from row in rowset.Elements(ApiConstants.Row)
                 let contactId = int.Parse(row.Attribute("contactID").Value)
                 let contactName = row.Attribute("contactName").Value
                 let isInWatchList =
                     row.Attributes("inWatchlist").Any() && bool.Parse(row.Attribute("inWatchlist").Value)
-                let standing = int.Parse(row.Attribute("standing").Value)
+                let standing = row.Attribute("standing").Value.ToDouble()
                 let kind = rowset.Attribute("name").Value.ToEnum<ContactType>()
                 select
                     new Contact
