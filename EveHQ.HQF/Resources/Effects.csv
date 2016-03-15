@@ -676,10 +676,10 @@
 1935,2,209,767,6,0,0,0,0,8,Remote Tracking Computer - Tracking Speed
 1936,2,212,309,6,0,0,0,0,8,Sensor Booster - Max Targeting Range
 1936,2,212,566,6,0,0,0,0,8,Sensor Booster - Scan Resolution
-1936,2,212,1027,6,0,0,0,0,8,Remote Sensor Booster - Grav Strength
-1936,2,212,1028,6,0,0,0,0,8,Remote Sensor Booster - Ladar Strength
-1936,2,212,1029,6,0,0,0,0,8,Remote Sensor Booster - Mag Strength
-1936,2,212,1030,6,0,0,0,0,8,Remote Sensor Booster - Radar Strength
+1936,2,212,1027,6,0,0,0,0,8,Sensor Booster - Grav Strength
+1936,2,212,1028,6,0,0,0,0,8,Sensor Booster - Ladar Strength
+1936,2,212,1029,6,0,0,0,0,8,Sensor Booster - Mag Strength
+1936,2,212,1030,6,0,0,0,0,8,Sensor Booster - Radar Strength
 1181,2,1154,73,6,0,0,0,0,8,Target Spectrum Breaker Duration
 1935,2,213,349,6,0,0,0,0,8,Tracking Computer - Falloff
 1935,2,213,351,6,0,0,0,0,8,Tracking Computer - Optimal Range
@@ -881,10 +881,10 @@
 # Remote Sensor Boosters,,,,,,,,,,
 309,2,290,76,3,6,1,0,0,16,Remote Sensor Booster - Max Targeting Range
 566,2,290,564,3,6,1,0,0,16,Remote Sensor Booster - Scan Resolution
-1027,2,290,211,3,6,1,0,0,12,Remote Sensor Booster - Grav Strength
-1028,2,290,209,3,6,1,0,0,12,Remote Sensor Booster - Ladar Strength
-1029,2,290,210,3,6,1,0,0,12,Remote Sensor Booster - Mag Strength
-1030,2,290,208,3,6,1,0,0,12,Remote Sensor Booster - Radar Strength
+1027,2,290,211,3,6,1,0,0,16,Remote Sensor Booster - Grav Strength
+1028,2,290,209,3,6,1,0,0,16,Remote Sensor Booster - Ladar Strength
+1029,2,290,210,3,6,1,0,0,16,Remote Sensor Booster - Mag Strength
+1030,2,290,208,3,6,1,0,0,16,Remote Sensor Booster - Radar Strength
 # Sensor Boosters,,,,,,,,,,
 309,2,212,76,3,6,1,0,0,12,Sensor Booster - Max Targeting Range
 566,2,212,564,3,6,1,0,0,12,Sensor Booster - Scan Resolution
