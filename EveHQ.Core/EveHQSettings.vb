@@ -603,6 +603,8 @@ Public Class EveHQSettings
         BackupStart = Now
         BackupFreq = 1
         BackupLast = New DateTime(1999, 1, 1)
+        EnableAutomaticSave = True
+        AutomaticSaveTime = 15
         ProxyUseDefault = True
         ShutdownNotifyPeriod = 8
         EMailPort = 25
@@ -648,7 +650,6 @@ Public Class EveHQSettings
         EveHqBackupWarnFreq = 1
         ThemeStyle = eStyle.Office2007Black
         ThemeTint = Color.Empty
-        AutomaticSaveTime = 60
         LastMessageDate = New DateTime(1999, 1, 1)
         AccountTimeLimit = 168
         SkillQueuePanelWidth = 440
