@@ -52,6 +52,7 @@ Imports System.Xml
 Imports System.Threading.Tasks
 Imports EveHQ.Common.Extensions
 Imports System.Text
+Imports EveHQ.NewEveApi.Entities
 
 Namespace Requisitions
     Public Class FrmRequisitions
@@ -84,7 +85,7 @@ Namespace Requisitions
             For Each cCorp As Corporation In HQ.Settings.Corporations.Values
                 If HQ.Settings.Accounts.ContainsKey(cCorp.Accounts(0)) Then
                     Dim cAccount As EveHQAccount = HQ.Settings.Accounts(cCorp.Accounts(0))
-                    If cAccount.CanUseCorporateAPI(CorporateAccessMasks.AssetList) = True Then
+                    If cAccount.CanUseCorporateAPI(NewEveApi.CorporateAccessMasks.AssetList) = True Then
                         cboAssetSelection.Items.Add(cCorp.Name)
                     End If
                 End If
@@ -322,6 +323,7 @@ Namespace Requisitions
             Dim totalVolumeReqd As Double = 0
             Dim totalCost As Double = 0
             Dim totalCostReqd As Double = 0
+            Dim surplusCost As Double = 0
             ' Set style
             Dim numberStyle As New ElementStyle
             numberStyle.TextAlignment = eStyleTextAlignment.Far
@@ -410,7 +412,7 @@ Namespace Requisitions
                                                           Dim quantity As Long
                                                           If (priceData.TryGetValue(StaticData.TypeNames(row.Name), price)) Then
                                                               row.Cells(4).Text = price.ToInvariantString("F2")
-                                                              Long.TryParse(row.Cells(1).Text, quantity)
+                                                              Long.TryParse(row.Cells(1).Text, Globalization.NumberStyles.AllowThousands, Globalization.NumberFormatInfo.CurrentInfo, quantity)
                                                               row.Cells(5).Text = (price * quantity).ToInvariantString("F2")
 
                                                           End If
@@ -421,6 +423,8 @@ Namespace Requisitions
                                                           End If
                                                           totalCost += (price * quantity)
                                                           totalCostReqd += (price * (Math.Max(quantity - owned, 0)))
+                                                          surplusCost = price * Math.Max((owned - quantity), 0)
+                                                          row.Cells(8).Text = surplusCost.ToInvariantString("N2")
                                                       Next
                                                       lblTotalItems.Text = totalItems.ToString("N0") & " (" & totalItemsReqd.ToString("N0") & ")"
                                                       lblTotalCost.Text = "Total: " & totalCost.ToString("N2") & " ISK" & ControlChars.CrLf & "Reqd: " &
@@ -567,7 +571,7 @@ Namespace Requisitions
 
                 ' Fetch the resources owned
                 ' Parse the Assets XML
-                Dim assests As EveServiceResponse(Of IEnumerable(Of AssetItem))
+                Dim assests As NewEveApi.EveServiceResponse(Of IEnumerable(Of AssetItem))
                 If isCorp = True Then
                     assests = HQ.ApiProvider.Corporation.AssetList(assetAccount.UserID, assetAccount.APIKey,
                                                                    Integer.Parse(ownerID))

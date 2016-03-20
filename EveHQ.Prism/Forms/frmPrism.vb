@@ -63,6 +63,7 @@ Imports EveHQ.Prism.BPCalc
 Imports EveHQ.Prism.Classes
 Imports EveHQ.Prism.Controls
 Imports EveHQ.Common.Extensions
+Imports EveHQ.NewEveApi
 
 Namespace Forms
 
@@ -163,14 +164,14 @@ Namespace Forms
             _styleRight.TextAlignment = eStyleTextAlignment.Far
 
             ' Create BPM Styles
-            _bpmStyleBPC = adtBlueprints.Styles("BP").Copy
+            _bpmStyleBpc = adtBlueprints.Styles("BP").Copy
             _bpmStyleBpo = adtBlueprints.Styles("BP").Copy
             _bpmStyleExhausted = adtBlueprints.Styles("BP").Copy
             _bpmStyleMissing = adtBlueprints.Styles("BP").Copy
             _bpmStyleUnknown = adtBlueprints.Styles("BP").Copy
             _bpmStyleUser = adtBlueprints.Styles("BP").Copy
-            _bpmStyleBPC.BackColor2 = Color.LightSteelBlue
-            _bpmStyleBPC.BackColor = Color.FromArgb(128, _bpmStyleBPC.BackColor2)
+            _bpmStyleBpc.BackColor2 = Color.LightSteelBlue
+            _bpmStyleBpc.BackColor = Color.FromArgb(128, _bpmStyleBpc.BackColor2)
             _bpmStyleBpo.BackColor2 = Color.LightGreen
             _bpmStyleBpo.BackColor = Color.FromArgb(128, _bpmStyleBpo.BackColor2)
             _bpmStyleExhausted.BackColor2 = Color.Orange
@@ -233,7 +234,7 @@ Namespace Forms
             cboStatusFilter.EndUpdate()
             cboStatusFilter.SelectedIndex = 0
 
-            Call ScanForExistingXMLFiles()
+            Call ScanForExistingXmlFiles()
 
             ' Initialise default Prism character
             If PrismSettings.UserSettings.DefaultCharacter <> "" And PlugInData.PrismOwners.ContainsKey(PrismSettings.UserSettings.DefaultCharacter) Then
@@ -392,11 +393,11 @@ Namespace Forms
             Next
 
             For Each xmlOwner As PrismOwner In PlugInData.PrismOwners.Values
-                Call CheckXMLFiles(xmlOwner)
+                Call CheckXmlFiles(xmlOwner)
             Next
 
             lvwCurrentAPIs.EndUpdate()
-            Invoke(Sub() CompleteAPIUpdate())
+            Invoke(Sub() CompleteApiUpdate())
         End Sub
 
         ''' <summary>
@@ -406,9 +407,9 @@ Namespace Forms
         Private Sub CheckXmlFiles(ByVal pOwner As PrismOwner)
             Select Case pOwner.IsCorp
                 Case True
-                    Call CheckCorpXMLFiles(pOwner)
+                    Call CheckCorpXmlFiles(pOwner)
                 Case False
-                    Call CheckCharXMLFiles(pOwner)
+                    Call CheckCharXmlFiles(pOwner)
             End Select
         End Sub
 
@@ -528,7 +529,7 @@ Namespace Forms
 
         Private Sub btnRefreshAPI_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnRefreshAPI.Click
             _startup = True
-            Call ScanForExistingXMLFiles()
+            Call ScanForExistingXmlFiles()
             _startup = False
         End Sub
 
@@ -567,14 +568,14 @@ Namespace Forms
 
         Private Sub StartGetXmlDataThread()
             ' Perform this so that the API download process doesn't block the main UI thread
-            GetXMLData()
+            GetXmlData()
         End Sub
 
         Private Sub GetXmlData()
 
             _prismThreadMax = 16
             _prismThreadCurrent = 0
-            
+
             ' Setup separate threads for getting each type of API
             ThreadPool.QueueUserWorkItem(AddressOf GetCharAssets2)
             ThreadPool.QueueUserWorkItem(AddressOf GetCorpAssets2)
@@ -725,7 +726,7 @@ Namespace Forms
             lblCurrentAPI.Text = "Cached APIs Loaded:"
             btnDownloadAPIData.Enabled = True
             If _startup = False And PrismSettings.UserSettings.HideAPIDownloadDialog = False Then
-                DisplayAPICompleteDialog()
+                DisplayApiCompleteDialog()
             End If
         End Sub
 
@@ -813,11 +814,11 @@ Namespace Forms
                 Try
                     If pOwner.IsCorp = False Then
 
-                        Dim charAssets As EveServiceResponse(Of IEnumerable(Of EveAPI.AssetItem))
+                        Dim charAssets As EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.AssetItem))
                         Dim pilotAccount As EveHQAccount = pOwner.Account
 
                         ' Check for valid API Usage
-                        If CanUseAPI(pOwner, CorpRepType.Assets) = True Then
+                        If CanUseApi(pOwner, CorpRepType.Assets) = True Then
 
                             ' Make a call to the EveHQ.Core.API to fetch the relevant API
                             Dim retries As Integer = 0
@@ -845,7 +846,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -855,11 +856,11 @@ Namespace Forms
                 Try
                     If pOwner.IsCorp = False Then
 
-                        Dim accountBalance As EveServiceResponse(Of IEnumerable(Of AccountBalance))
+                        Dim accountBalance As EveServiceResponse(Of IEnumerable(Of Entities.AccountBalance))
                         Dim pilotAccount As EveHQAccount = pOwner.Account
 
                         ' Check for valid API Usage
-                        If CanUseAPI(pOwner, CorpRepType.Balances) = True Then
+                        If CanUseApi(pOwner, CorpRepType.Balances) = True Then
 
                             ' Make a call to the EveHQ.Core.API to fetch the relevant API
                             Dim retries As Integer = 0
@@ -887,7 +888,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -897,12 +898,12 @@ Namespace Forms
                 Try
                     If pOwner.IsCorp = False Then
 
-                        Dim charIndustry As EveServiceResponse(Of IEnumerable(Of EveAPI.IndustryJob))
+                        Dim charIndustry As EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.IndustryJob))
                         Dim pilotAccount As EveHQAccount = pOwner.Account
 
 
                         ' Check for valid API Usage
-                        If CanUseAPI(pOwner, CorpRepType.Jobs) = True Then
+                        If CanUseApi(pOwner, CorpRepType.Jobs) = True Then
 
                             ' Make a call to the EveHQ.Core.API to fetch the relevant API
                             Dim retries As Integer = 0
@@ -935,7 +936,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -945,13 +946,13 @@ Namespace Forms
                 Try
                     If pOwner.IsCorp = False Then
 
-                        Dim journalResponse As EveServiceResponse(Of IEnumerable(Of WalletJournalEntry))
+                        Dim journalResponse As EveServiceResponse(Of IEnumerable(Of Entities.WalletJournalEntry))
 
                         Dim pilotAccount As EveHQAccount = pOwner.Account
 
 
                         ' Check for valid API Usage
-                        If CanUseAPI(pOwner, CorpRepType.WalletJournal) = True Then
+                        If CanUseApi(pOwner, CorpRepType.WalletJournal) = True Then
 
                             ' Get the last referenceID for the wallet
                             Dim lastTrans As Long = PrismDataFunctions.GetLastWalletID(WalletTypes.Journal, CInt(pOwner.ID), 1000)
@@ -1011,7 +1012,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -1023,9 +1024,9 @@ Namespace Forms
 
                         Dim pilotAccount As EveHQAccount = pOwner.Account
 
-                        Dim orders As EveServiceResponse(Of IEnumerable(Of EveAPI.MarketOrder))
+                        Dim orders As EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.MarketOrder))
                         ' Check for valid API Usage
-                        If CanUseAPI(pOwner, CorpRepType.Orders) = True Then
+                        If CanUseApi(pOwner, CorpRepType.Orders) = True Then
 
                             ' Make a call to the EveHQ.Core.API to fetch the relevant API
                             Dim retries As Integer = 0
@@ -1053,7 +1054,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -1063,7 +1064,7 @@ Namespace Forms
                 Try
                     If pOwner.IsCorp = False Then
 
-                        Dim transactions As EveServiceResponse(Of IEnumerable(Of WalletTransaction))
+                        Dim transactions As EveServiceResponse(Of IEnumerable(Of Entities.WalletTransaction))
 
                         Dim pilotAccount As EveHQAccount = pOwner.Account
 
@@ -1111,7 +1112,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -1121,14 +1122,14 @@ Namespace Forms
                 Try
                     If pOwner.IsCorp = False Then
 
-                        Dim contracts As EveServiceResponse(Of IEnumerable(Of EveAPI.Contract))
+                        Dim contracts As EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.Contract))
 
 
                         Dim pilotAccount As EveHQAccount = pOwner.Account
 
 
                         ' Check for valid API Usage
-                        If CanUseAPI(pOwner, CorpRepType.Contracts) = True Then
+                        If CanUseApi(pOwner, CorpRepType.Contracts) = True Then
 
                             ' Make a call to the EveHQ.Core.API to fetch the contracts
                             Dim retries As Integer = 0
@@ -1167,7 +1168,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -1179,7 +1180,7 @@ Namespace Forms
 
                         ' Update the display
                         If IsHandleCreated = True Then
-                            Invoke(Sub() CheckApiResult(Of CharacterData)(Nothing, pOwner, CorpRepType.CorpSheet))
+                            Invoke(Sub() CheckApiResult(Of Entities.CharacterData)(Nothing, pOwner, CorpRepType.CorpSheet))
                         End If
 
                     End If
@@ -1193,7 +1194,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
         End Sub
 
@@ -1203,7 +1204,7 @@ Namespace Forms
                 Try
                     If pOwner.IsCorp = True Then
 
-                        Dim corpAssets As EveServiceResponse(Of IEnumerable(Of EveAPI.AssetItem))
+                        Dim corpAssets As EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.AssetItem))
                         Dim pilotAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(pOwner, CorpRepType.Assets)
                         Dim ownerId As String = PlugInData.GetAccountOwnerIDForCorpOwner(pOwner, CorpRepType.Assets)
                         ' Check for valid API Usage
@@ -1242,7 +1243,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -1251,7 +1252,7 @@ Namespace Forms
             For Each pOwner As PrismOwner In PlugInData.PrismOwners.Values
                 Try
                     If pOwner.IsCorp = True Then
-                        Dim corpBalance As EveServiceResponse(Of IEnumerable(Of AccountBalance))
+                        Dim corpBalance As EveServiceResponse(Of IEnumerable(Of Entities.AccountBalance))
 
                         Dim pilotAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(pOwner, CorpRepType.Balances)
                         Dim ownerId As String = PlugInData.GetAccountOwnerIDForCorpOwner(pOwner, CorpRepType.Balances)
@@ -1286,7 +1287,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -1295,7 +1296,7 @@ Namespace Forms
             For Each pOwner As PrismOwner In PlugInData.PrismOwners.Values
                 Try
                     If pOwner.IsCorp = True Then
-                        Dim corpJobs As EveServiceResponse(Of IEnumerable(Of EveAPI.IndustryJob))
+                        Dim corpJobs As EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.IndustryJob))
 
                         Dim pilotAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(pOwner, CorpRepType.Jobs)
                         Dim ownerId As String = PlugInData.GetAccountOwnerIDForCorpOwner(pOwner, CorpRepType.Jobs)
@@ -1339,7 +1340,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -1348,7 +1349,7 @@ Namespace Forms
             For Each pOwner As PrismOwner In PlugInData.PrismOwners.Values
                 Try
                     If pOwner.IsCorp = True Then
-                        Dim corpJournal As EveServiceResponse(Of IEnumerable(Of WalletJournalEntry))
+                        Dim corpJournal As EveServiceResponse(Of IEnumerable(Of Entities.WalletJournalEntry))
 
                         Dim pilotAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(pOwner, CorpRepType.WalletJournal)
 
@@ -1421,7 +1422,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -1431,7 +1432,7 @@ Namespace Forms
                 Try
                     If pOwner.IsCorp = True Then
 
-                        Dim corpOrders As New EveServiceResponse(Of IEnumerable(Of EveAPI.MarketOrder))
+                        Dim corpOrders As New EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.MarketOrder))
                         Dim pilotAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(pOwner, CorpRepType.Orders)
                         Dim ownerId As String = PlugInData.GetAccountOwnerIDForCorpOwner(pOwner, CorpRepType.Orders)
                         If pilotAccount IsNot Nothing And ownerId <> "" Then
@@ -1466,7 +1467,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -1476,7 +1477,7 @@ Namespace Forms
                 Try
                     If pOwner.IsCorp = True Then
 
-                        Dim corpTransactions As EveServiceResponse(Of IEnumerable(Of WalletTransaction))
+                        Dim corpTransactions As EveServiceResponse(Of IEnumerable(Of Entities.WalletTransaction))
                         Dim pilotAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(pOwner, CorpRepType.WalletTransactions)
                         Dim ownerId As String = PlugInData.GetAccountOwnerIDForCorpOwner(pOwner, CorpRepType.WalletTransactions)
                         If pilotAccount IsNot Nothing And ownerId <> "" Then
@@ -1530,7 +1531,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -1540,9 +1541,9 @@ Namespace Forms
                 Try
                     If pOwner.IsCorp = True Then
 
-                        Dim corpContacts As EveServiceResponse(Of IEnumerable(Of EveAPI.Contract))
+                        Dim corpContacts As EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.Contract))
 
-                        Dim contractItems As EveServiceResponse(Of IEnumerable(Of ContractItem))
+                        Dim contractItems As EveServiceResponse(Of IEnumerable(Of Entities.ContractItem))
                         Dim pilotAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(pOwner, CorpRepType.Contracts)
                         Dim ownerId As String = PlugInData.GetAccountOwnerIDForCorpOwner(pOwner, CorpRepType.Contracts)
                         If pilotAccount IsNot Nothing And ownerId <> "" Then
@@ -1589,7 +1590,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -1599,7 +1600,7 @@ Namespace Forms
                 Try
                     If pOwner.IsCorp = True Then
 
-                        Dim info As EveServiceResponse(Of CorporateData)
+                        Dim info As EveServiceResponse(Of Entities.CorporateData)
 
                         Dim pilotAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(pOwner, CorpRepType.CorpSheet)
 
@@ -1636,7 +1637,7 @@ Namespace Forms
             Next
             _prismThreadCurrent += 1
             If _prismThreadCurrent = _prismThreadMax Then
-                Invoke(Sub() CompleteAPIUpdate())
+                Invoke(Sub() CompleteApiUpdate())
             End If
 
         End Sub
@@ -1659,7 +1660,7 @@ Namespace Forms
                     pOwner = PlugInData.PrismOwners(cboOrdersOwner.SelectedItem.ToString)
                     Dim ownerAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(pOwner, CorpRepType.Orders)
                     Dim ownerId As String = PlugInData.GetAccountOwnerIDForCorpOwner(pOwner, CorpRepType.Orders)
-                    Dim marketOrders As EveServiceResponse(Of IEnumerable(Of EveApi.MarketOrder))
+                    Dim marketOrders As EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.MarketOrder))
 
                     If ownerAccount IsNot Nothing Then
 
@@ -1678,7 +1679,7 @@ Namespace Forms
                             adtSellOrders.Nodes.Clear()
                             For Each order In marketOrders.ResultData
                                 If order.IsBuyOrder = False Then
-                                    If order.OrderState = EveApi.MarketOrderState.Active Then
+                                    If order.OrderState = NewEveApi.Entities.MarketOrderState.Active Then
                                         Dim sOrder As New Node
                                         adtSellOrders.Nodes.Add(sOrder)
                                         sOrder.CreateCells()
@@ -1715,7 +1716,7 @@ Namespace Forms
                                         totalOrders = totalOrders + 1
                                     End If
                                 Else
-                                    If order.OrderState = EveApi.MarketOrderState.Active Then
+                                    If order.OrderState = NewEveApi.Entities.MarketOrderState.Active Then
                                         Dim bOrder As New Node
                                         adtBuyOrders.Nodes.Add(bOrder)
                                         bOrder.CreateCells()
@@ -2948,7 +2949,7 @@ Namespace Forms
                                     displayJob = True
                                 Else
                                     Select Case job.Status
-                                        Case IndustryJobStatus.Ready
+                                        Case Entities.IndustryJobStatus.Ready
                                             If job.EndDate.ToLocalTime < DateTime.Now Then
                                                 ' Job finished but not delivered
                                                 If cboStatusFilter.SelectedItem.ToString = PlugInData.Statuses("B") Then
@@ -3904,17 +3905,17 @@ Namespace Forms
                     If adtBlueprints.SelectedNodes(0).Tag IsNot Nothing Then
                         Dim bpid As Long = CLng(adtBlueprints.SelectedNodes(0).Tag)
                         Dim bpCalc As New FrmBPCalculator(PrismSettings.UserSettings.DefaultBPOwner, bpid)
-                        Call OpenBPCalculator(bpCalc)
+                        Call OpenBpCalculator(bpCalc)
                     End If
                 Else
                     ' Start a standard BPCalc
                     Dim bpCalc As New FrmBPCalculator(bpName)
-                    Call OpenBPCalculator(bpCalc)
+                    Call OpenBpCalculator(bpCalc)
                 End If
             ElseIf adtBlueprints.SelectedNodes.Count = 0 Then
                 ' Start a blank BP Calc
                 Dim bpCalc As New FrmBPCalculator(chkShowOwnedBPs.Checked)
-                Call OpenBPCalculator(bpCalc)
+                Call OpenBpCalculator(bpCalc)
             End If
         End Sub
 
@@ -3929,11 +3930,11 @@ Namespace Forms
 
             _bpManagerUpdate = False
 
-            Call UpdateBPList()
+            Call UpdateBpList()
         End Sub
 
         Private Sub chkShowOwnedBPs_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles chkShowOwnedBPs.CheckedChanged
-            Call UpdateBPList()
+            Call UpdateBpList()
         End Sub
 
         Private Sub UpdateBpList()
@@ -4075,7 +4076,7 @@ Namespace Forms
                                             newBpItem.Text = bpName
                                             newBpItem.Tag = blueprint.AssetID
                                             newBpItem.Cells(5).Text = bpData.TechLevel.ToString
-                                            Call UpdateOwnerBPItem(prismOwner, locationName, blueprint, newBpItem)
+                                            Call UpdateOwnerBpItem(prismOwner, locationName, blueprint, newBpItem)
                                         End If
                                     End If
                                 End If
@@ -4097,7 +4098,7 @@ Namespace Forms
                     newBpItem.Cells(1).Text = "<Unknown>"
                     newBpItem.Cells(2).Text = "<Unknown>"
                 End If
-             End If
+            End If
             newBpItem.Cells(6).Text = bpAsset.MELevel.ToString("N0")
             newBpItem.Cells(7).Text = bpAsset.PELevel.ToString("N0")
             Select Case bpAsset.BPType
@@ -4154,7 +4155,7 @@ Namespace Forms
 
                     Dim ownerAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(pOwner, CorpRepType.Assets)
                     Dim ownerId As String = PlugInData.GetAccountOwnerIDForCorpOwner(pOwner, CorpRepType.Assets)
-                    Dim assetData As EveServiceResponse(Of IEnumerable(Of EveApi.AssetItem))
+                    Dim assetData As EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.AssetItem))
                     If pOwner.IsCorp = True Then
                         assetData = HQ.ApiProvider.Corporation.AssetList(ownerAccount.UserID, ownerAccount.APIKey, ownerId.ToInt32())
                     Else
@@ -4280,7 +4281,7 @@ Namespace Forms
 
                     ' Update the owner list if the option requires it
                     If chkShowOwnedBPs.Checked = True Then
-                        Call UpdateOwnerBPList()
+                        Call UpdateOwnerBpList()
                     End If
 
                 End If
@@ -4289,7 +4290,7 @@ Namespace Forms
             End If
 
         End Sub
-        Private Sub GetAssetFromNode(ByVal parentItem As EveApi.AssetItem, ByVal categories As ArrayList, ByVal groups As ArrayList, ByVal types As ArrayList, ByRef assets As SortedList(Of Long, BlueprintAsset), ByVal locationId As String, ByVal locationDetails As String, ByVal prismOwner As PrismOwner)
+        Private Sub GetAssetFromNode(ByVal parentItem As NewEveApi.Entities.AssetItem, ByVal categories As ArrayList, ByVal groups As ArrayList, ByVal types As ArrayList, ByRef assets As SortedList(Of Long, BlueprintAsset), ByVal locationId As String, ByVal locationDetails As String, ByVal prismOwner As PrismOwner)
             Dim itemList = parentItem.Contents
             Dim itemData As EveType
             Dim assetId As Long
@@ -4321,7 +4322,7 @@ Namespace Forms
                     If categories.Contains(itemData.Category) Or groups.Contains(itemData.Group) Or types.Contains(itemData.Id) Then
                         Dim newBp As New BlueprintAsset
                         newBp.AssetID = CStr(assetId)
-                        newBp.LocationID = locationID
+                        newBp.LocationID = locationId
                         If prismOwner.IsCorp = True And StaticData.Types(itemId).Group <> 16 Then
                             Dim accountId As Integer = flagId + 885
                             If accountId = 889 Then accountId = 1000
@@ -4350,7 +4351,7 @@ Namespace Forms
                 ' Check child items if they exist
                 If item.Contents IsNot Nothing Then
                     If item.Contents.Any() Then
-                        Call GetAssetFromNode(item, categories, groups, types, assets, locationID, flagName, prismOwner)
+                        Call GetAssetFromNode(item, categories, groups, types, assets, locationId, flagName, prismOwner)
                     End If
                 End If
             Next
@@ -4370,33 +4371,31 @@ Namespace Forms
                     Else
                         PlugInData.BlueprintAssets.Add(pOwner.Name, ownerBPs)
                     End If
-                    Dim apiReq As New EveAPIRequest(HQ.EveHqapiServerInfo, HQ.RemoteProxy, HQ.Settings.APIFileExtension, HQ.ApiCacheFolder)
+
                     Dim ownerAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(pOwner, CorpRepType.Assets)
                     Dim ownerId As String = PlugInData.GetAccountOwnerIDForCorpOwner(pOwner, CorpRepType.Assets)
-                    Dim assetXml As XmlDocument
-                    If pOwner.IsCorp = True Then
-                        assetXml = apiReq.GetAPIXML(APITypes.BlueprintsCorp, ownerAccount.ToAPIAccount, ownerId, APIReturnMethods.ReturnStandard)
+                    Dim bpList As NewEveApi.EveServiceResponse(Of IEnumerable(Of Entities.Blueprint))
+                    Dim bpData As NewEveApi.Entities.Blueprint
+                    Dim updateBp As BlueprintAsset
+
+                    If pOwner.IsCorp Then
+                        bpList = HQ.ApiProvider.Corporation.Blueprints(ownerAccount.UserID, ownerAccount.APIKey, ownerId.ToInt32())
                     Else
-                        assetXml = apiReq.GetAPIXML(APITypes.BlueprintsChar, ownerAccount.ToAPIAccount, ownerId, APIReturnMethods.ReturnStandard)
+                        bpList = HQ.ApiProvider.Character.Blueprints(ownerAccount.UserID, ownerAccount.APIKey, ownerId.ToInt32())
                     End If
 
-                    ' Cycle through the XML to find the blueprint details
-                    If assetXml IsNot Nothing Then
-                        Dim bpList As XmlNodeList
-                        Dim bpData As XmlNode
-                        bpList = assetXml.SelectNodes("/eveapi/result/rowset/row")
-                        If bpList.Count > 0 Then
-                            For Each bpData In bpList
-                                Dim itemId As Long = CLng(bpData.Attributes.GetNamedItem("itemID").Value)
-                                If ownerBPs.ContainsKey(itemId) Then
-                                    Dim updateBp As BlueprintAsset = ownerBPs(itemId)
-                                    updateBp.MELevel = CInt(bpData.Attributes.GetNamedItem("materialEfficiency").Value)
-                                    updateBp.PELevel = CInt(bpData.Attributes.GetNamedItem("timeEfficiency").Value)
-                                    updateBp.Runs = CInt(bpData.Attributes.GetNamedItem("runs").Value)
-                                    If updateBp.Runs = -1 Then
-                                        updateBp.BPType = BPType.Original
-                                    Else
+                    If bpList.ResultData IsNot Nothing Then
+                        If bpList.ResultData.Count() > 0 Then
+                            For Each bpData In bpList.ResultData
+                                If ownerBPs.ContainsKey(bpData.ItemID) Then
+                                    updateBp = ownerBPs(bpData.ItemID)
+                                    updateBp.MELevel = bpData.MaterialEfficiency.ToInt32()
+                                    updateBp.PELevel = bpData.TimeEfficiency.ToInt32()
+                                    updateBp.Runs = bpData.Runs.ToInt32()
+                                    If bpData.Quantity = -2 Then
                                         updateBp.BPType = BPType.Copy
+                                    Else
+                                        updateBp.BPType = BPType.Original
                                     End If
                                 End If
                             Next
@@ -4445,17 +4444,17 @@ Namespace Forms
                     If adtBlueprints.SelectedNodes(0).Tag IsNot Nothing Then
                         Dim bpid As Long = CLng(adtBlueprints.SelectedNodes(0).Tag)
                         Dim bpCalc As New FrmBPCalculator(cboBPOwner.SelectedItem.ToString, bpid)
-                        Call OpenBPCalculator(bpCalc)
+                        Call OpenBpCalculator(bpCalc)
                     End If
                 Else
                     ' Start a standard BPCalc
                     Dim bpCalc As New FrmBPCalculator(bpName)
-                    Call OpenBPCalculator(bpCalc)
+                    Call OpenBpCalculator(bpCalc)
                 End If
             ElseIf adtBlueprints.SelectedNodes.Count = 0 Then
                 ' Start a blank BP Calc
                 Dim bpCalc As New FrmBPCalculator(chkShowOwnedBPs.Checked)
-                Call OpenBPCalculator(bpCalc)
+                Call OpenBpCalculator(bpCalc)
             End If
         End Sub
 
@@ -4484,7 +4483,7 @@ Namespace Forms
                     For Each selitem As Node In adtBlueprints.SelectedNodes
                         bpAsset = PlugInData.BlueprintAssets(bpForm.OwnerName).Item(CLng(selitem.Tag))
                         locationName = Locations.GetLocationNameFromID(CInt(bpAsset.LocationID))
-                        Call UpdateOwnerBPItem(bpForm.OwnerName, locationName, bpAsset, selitem)
+                        Call UpdateOwnerBpItem(bpForm.OwnerName, locationName, bpAsset, selitem)
                     Next
                 Else
                     Dim msg As New StringBuilder
@@ -4498,7 +4497,7 @@ Namespace Forms
         End Sub
 
         Private Sub txtBPSearch_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtBPSearch.TextChanged
-            Call UpdateBPList()
+            Call UpdateBpList()
         End Sub
 
         Private Sub btnResetBPSearch_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnResetBPSearch.Click
@@ -4511,7 +4510,7 @@ Namespace Forms
                     bpForm.BPOwner = cboBPOwner.SelectedItem.ToString
                     bpForm.ShowDialog()
                     If bpForm.DialogResult = DialogResult.OK Then
-                        Call UpdateBPList()
+                        Call UpdateBpList()
                     End If
                 Else
                     MessageBox.Show("Please select an BP Owner before adding a custom blueprint.", "BP Owner Required", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -4542,13 +4541,13 @@ Namespace Forms
 
         Private Sub cboTechFilter_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cboTechFilter.SelectedIndexChanged
             If _startup = False And _bpManagerUpdate = False Then
-                Call UpdateBPList()
+                Call UpdateBpList()
             End If
         End Sub
 
         Private Sub cboTypeFilter_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cboTypeFilter.SelectedIndexChanged
             If _startup = False And _bpManagerUpdate = False Then
-                Call UpdateBPList()
+                Call UpdateBpList()
             End If
         End Sub
 
@@ -4597,17 +4596,17 @@ Namespace Forms
                     If adtBlueprints.SelectedNodes(0).Tag IsNot Nothing Then
                         Dim bpid As Long = CLng(adtBlueprints.SelectedNodes(0).Tag)
                         Dim bpCalc As New FrmBPCalculator(cboBPOwner.SelectedItem.ToString, bpid)
-                        Call OpenBPCalculator(bpCalc)
+                        Call OpenBpCalculator(bpCalc)
                     End If
                 Else
                     ' Start a standard BPCalc
                     Dim bpCalc As New FrmBPCalculator(bpName)
-                    Call OpenBPCalculator(bpCalc)
+                    Call OpenBpCalculator(bpCalc)
                 End If
             ElseIf adtBlueprints.SelectedNodes.Count = 0 Then
                 ' Start a blank BP Calc
                 Dim bpCalc As New FrmBPCalculator(chkShowOwnedBPs.Checked)
-                Call OpenBPCalculator(bpCalc)
+                Call OpenBpCalculator(bpCalc)
             End If
         End Sub
 
@@ -4703,7 +4702,7 @@ Namespace Forms
             Next
 
             ' Get XMLs
-            Call StartGetXMLDataThread()
+            Call StartGetXmlDataThread()
 
         End Sub
 
@@ -4761,7 +4760,7 @@ Namespace Forms
         Private Sub btnBlueprintCalc_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnBlueprintCalc.Click
             ' Start a blank BP Calc
             Dim bpCalc As New FrmBPCalculator(chkShowOwnedBPs.Checked)
-            Call OpenBPCalculator(bpCalc)
+            Call OpenBpCalculator(bpCalc)
         End Sub
 
         Private Sub btnProductionManager_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnProductionManager.Click
@@ -4846,12 +4845,12 @@ Namespace Forms
                     Dim bpName As String = lblSelectedBP.Tag.ToString
                     ' Start a standard BP Calc
                     Dim bpCalc As New FrmBPCalculator(bpName)
-                    Call OpenBPCalculator(bpCalc)
+                    Call OpenBpCalculator(bpCalc)
                 Case "Production"
                     If Jobs.JobList.ContainsKey(keyName) Then
                         Dim pJob As Job = Jobs.JobList(keyName)
                         Dim bpCalc As New FrmBPCalculator(pJob, False)
-                        Call OpenBPCalculator(bpCalc)
+                        Call OpenBpCalculator(bpCalc)
                     End If
             End Select
         End Sub
@@ -4905,7 +4904,7 @@ Namespace Forms
 
         Private Sub CreateRequisitionFromJob(ByVal orders As SortedList(Of String, Integer), ByVal currentJob As Job)
             If currentJob IsNot Nothing Then
-                Dim priceTask As Task(Of Dictionary(Of Integer, Double)) = DataFunctions.GetMarketPrices(From r In currentJob.Resources.Values Where typeof(r) Is JobResource Select r.TypeID)
+                Dim priceTask As Task(Of Dictionary(Of Integer, Double)) = DataFunctions.GetMarketPrices(From r In currentJob.Resources.Values Where TypeOf (r) Is JobResource Select r.TypeID)
                 priceTask.Wait()
                 For Each resource As JobResource In currentJob.Resources.Values
                     ' This is a resource so add it
@@ -5017,13 +5016,13 @@ Namespace Forms
                     If bpid <> 0 Then
                         ' Start a standard BP Calc
                         Dim bpCalc As New FrmBPCalculator(bpName)
-                        Call OpenBPCalculator(bpCalc)
+                        Call OpenBpCalculator(bpCalc)
                     End If
                 Case "Production"
                     If Jobs.JobList.ContainsKey(keyName) Then
                         Dim pJob As Job = Jobs.JobList(keyName)
                         Dim bpCalc As New FrmBPCalculator(pJob, False)
-                        Call OpenBPCalculator(bpCalc)
+                        Call OpenBpCalculator(bpCalc)
                     End If
             End Select
         End Sub
@@ -5564,7 +5563,7 @@ Namespace Forms
                     Dim ownerId As String = PlugInData.GetAccountOwnerIDForCorpOwner(pOwner, CorpRepType.Assets)
 
                     If ownerAccount IsNot Nothing Then
-                        Dim assetData As EveServiceResponse(Of IEnumerable(Of EveApi.AssetItem))
+                        Dim assetData As EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.AssetItem))
                         If pOwner.IsCorp = True Then
                             assetData = HQ.ApiProvider.Corporation.AssetList(ownerAccount.UserID, ownerAccount.APIKey, ownerId.ToInt32())
                         Else
@@ -5602,7 +5601,7 @@ Namespace Forms
                 End If
             Next
         End Sub
-        Private Sub GetSalvageNode(ByVal salvageList As SortedList(Of Integer, Long), ByVal parentItem As EveApi.AssetItem)
+        Private Sub GetSalvageNode(ByVal salvageList As SortedList(Of Integer, Long), ByVal parentItem As NewEveApi.Entities.AssetItem)
             Dim subLocList = parentItem.Contents
             For Each item In subLocList
                 Try
@@ -5638,13 +5637,13 @@ Namespace Forms
             Call GetSalvage()
 
             Dim bpName As String
-            _rigBPData = New SortedList(Of String, SortedList(Of Integer, Long))
+            _rigBpData = New SortedList(Of String, SortedList(Of Integer, Long))
 
             ' Get the items in the group and build the materials
             Dim items As IEnumerable(Of EveType) = StaticData.GetItemsInGroup(787)
             For Each item As EveType In items
                 bpName = item.Name.TrimEnd(" Blueprint".ToCharArray)
-                _rigBPData.Add(bpName, New SortedList(Of Integer, Long))
+                _rigBpData.Add(bpName, New SortedList(Of Integer, Long))
                 Dim rigBp As EveData.Blueprint = StaticData.Blueprints(item.Id)
                 For Each br As EveData.BlueprintResource In rigBp.Resources(1).Values
                     ' Check if the resource is salvage
@@ -5663,16 +5662,16 @@ Namespace Forms
             Dim rigCost As Double
             adtRigs.BeginUpdate()
             adtRigs.Nodes.Clear()
-            Dim bpCostsTask As Task(Of Dictionary(Of Integer, Double)) = DataFunctions.GetMarketPrices(From blueprint In _rigBPData.Keys Select StaticData.TypeNames(CStr(blueprint)))
+            Dim bpCostsTask As Task(Of Dictionary(Of Integer, Double)) = DataFunctions.GetMarketPrices(From blueprint In _rigBpData.Keys Select StaticData.TypeNames(CStr(blueprint)))
             bpCostsTask.Wait()
             Dim bpCosts As Dictionary(Of Integer, Double) = bpCostsTask.Result
-            For Each blueprint As String In _rigBPData.Keys
+            For Each blueprint As String In _rigBpData.Keys
                 If StaticData.TypeNames.ContainsKey(blueprint) = True Then
                     buildableBp = True
                     minQuantity = 1.0E+99
                     buildCost = 0
                     ' Fetch the build requirements
-                    _rigBuildData = _rigBPData(blueprint)
+                    _rigBuildData = _rigBpData(blueprint)
                     ' Go through the requirements and see if have sufficient materials
                     For Each material In _rigBuildData.Keys
                         If _salvageList.ContainsKey(material) = True Then
@@ -5742,7 +5741,7 @@ Namespace Forms
                 newRig.Cells.Add(New Cell(currentRig.Cells(subI).Text))
             Next
             'Get the salvage used by the rig and reduce the main list
-            Dim rigSalvageList As SortedList(Of Integer, Long) = _rigBPData(currentRig.Text)
+            Dim rigSalvageList As SortedList(Of Integer, Long) = _rigBpData(currentRig.Text)
             For Each salvage As Integer In rigSalvageList.Keys
                 _salvageList(salvage) = CInt(_salvageList(salvage)) - (CInt(rigSalvageList(salvage)) * CInt(currentRig.Cells(1).Text))
             Next
@@ -5751,7 +5750,7 @@ Namespace Forms
             ' Remove the selected rig to the build list
             adtRigBuildList.Nodes.Remove(currentRig)
             ' Get the salvage used by the rig and reduce the main list
-            Dim rigSalvageList As SortedList(Of Integer, Long) = _rigBPData(currentRig.Text)
+            Dim rigSalvageList As SortedList(Of Integer, Long) = _rigBpData(currentRig.Text)
             For Each salvage As Integer In rigSalvageList.Keys
                 _salvageList(salvage) = CInt(_salvageList(salvage)) + (CInt(rigSalvageList(salvage)) * CInt(currentRig.Cells(1).Text))
             Next

@@ -280,6 +280,7 @@ Namespace Forms
                         RemoveHandler tq.QueueAdded, AddressOf QueueAdded
                     End If
                     tabQueues.Tabs.Remove(ti)
+                    tq.Dispose()
                     ti.Dispose()
                 End If
             Next

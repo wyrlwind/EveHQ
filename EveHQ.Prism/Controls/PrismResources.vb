@@ -671,7 +671,7 @@ Namespace Controls
 
                     If ownerAccount IsNot Nothing Then
 
-                        Dim assetData As EveServiceResponse(Of IEnumerable(Of EveAPI.AssetItem))
+                        Dim assetData As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.AssetItem))
                         If owner.IsCorp = True Then
                             assetData = HQ.ApiProvider.Corporation.AssetList(ownerAccount.UserID, ownerAccount.APIKey, ownerID.ToInt32())
                         Else
@@ -694,7 +694,7 @@ Namespace Controls
 
         End Sub
 
-        Private Sub GetAssetQuantitesFromNode(ByVal root As EveAPI.AssetItem, ByVal item As EveAPI.AssetItem, ByVal categories As ArrayList, ByVal groups As ArrayList, ByRef assets As SortedList(Of Integer, SortedList(Of String, Long)))
+        Private Sub GetAssetQuantitesFromNode(ByVal root As NewEveApi.Entities.AssetItem, ByVal item As NewEveApi.Entities.AssetItem, ByVal categories As ArrayList, ByVal groups As ArrayList, ByRef assets As SortedList(Of Integer, SortedList(Of String, Long)))
             Dim itemData As EveType
             Dim itemID As Integer = item.TypeId
             Dim locationKey = root.LocationId.ToInvariantString()

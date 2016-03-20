@@ -46,7 +46,7 @@
 using System;
 using System.Net;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi
 {
     /// <summary>
     ///     Describes the response data from a call to the EveAPI Service.

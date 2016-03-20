@@ -43,7 +43,7 @@
 // 
 // ==============================================================================
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi.Entities
 {
     /// <summary>
     ///     A Contact in EVE that is part of a Contact List.
@@ -62,7 +62,7 @@ namespace EveHQ.EveApi
         public bool IsInWatchList { get; set; }
 
         /// <summary>Gets the standing.</summary>
-        public int Standing { get; set; }
+        public double Standing { get; set; }
     }
 
     public enum ContactType

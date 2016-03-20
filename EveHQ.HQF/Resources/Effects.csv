@@ -202,6 +202,7 @@
 780,1,16281,73,4,1038,0,1,0,0,Ice Harvesting
 885,1,28585,714,1,28583,0,1,8,0,Industrial Reconfiguration
 434,1,3386,77,4,1039,0,1,0,0,Mining - Mining Laser
+434,1,3386,77,4,2151,0,1,0,0,Mining - Ice Mining Laser
 434,1,3386,77,4,1040,0,1,0,0,Mining - Strip Miner
 927,1,22578,1082,2,546,0,1,0,0,Mining Upgrades
 # LEADERSHIP,,,,,,,,,,
@@ -655,7 +656,7 @@
 1979,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;34272;34294,111,3,6,0,0,16,14,hullExplosiveDamageResonance
 1979,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;34272;34294,109,3,6,0,0,16,14,hullKineticDamageResonance
 1979,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;34272;34294,110,3,6,0,0,16,14,hullThermalDamageResonance
-# MISC,,,,,,,,,,
+# MISC (Overload,...) ,,,,,,,,,,
 1223,2,46,20,6,0,0,0,0,8,AB/MWD Speed
 1206,2,76,73,6,0,0,0,0,8,Cap Booster Duration
 1206,2,67,73,6,0,0,0,0,8,Energy Transfer Duration
@@ -666,11 +667,19 @@
 1935,2,646,767,6,0,0,0,0,8,Omni Tracking Link - Tracking Speed
 1936,2,290,309,6,0,0,0,0,8,Remote Sensor Booster - Max Targeting Range
 1936,2,290,566,6,0,0,0,0,8,Remote Sensor Booster - Scan Resolution
+1936,2,290,1027,6,0,0,0,0,8,Remote Sensor Booster - Grav Strength
+1936,2,290,1028,6,0,0,0,0,8,Remote Sensor Booster - Ladar Strength
+1936,2,290,1029,6,0,0,0,0,8,Remote Sensor Booster - Mag Strength
+1936,2,290,1030,6,0,0,0,0,8,Remote Sensor Booster - Radar Strength
 1935,2,209,349,6,0,0,0,0,8,Remote Tracking Computer - Falloff
 1935,2,209,351,6,0,0,0,0,8,Remote Tracking Computer - Optimal Range
 1935,2,209,767,6,0,0,0,0,8,Remote Tracking Computer - Tracking Speed
 1936,2,212,309,6,0,0,0,0,8,Sensor Booster - Max Targeting Range
 1936,2,212,566,6,0,0,0,0,8,Sensor Booster - Scan Resolution
+1936,2,212,1027,6,0,0,0,0,8,Sensor Booster - Grav Strength
+1936,2,212,1028,6,0,0,0,0,8,Sensor Booster - Ladar Strength
+1936,2,212,1029,6,0,0,0,0,8,Sensor Booster - Mag Strength
+1936,2,212,1030,6,0,0,0,0,8,Sensor Booster - Radar Strength
 1181,2,1154,73,6,0,0,0,0,8,Target Spectrum Breaker Duration
 1935,2,213,349,6,0,0,0,0,8,Tracking Computer - Falloff
 1935,2,213,351,6,0,0,0,0,8,Tracking Computer - Optimal Range
@@ -756,6 +765,10 @@
 2026,2,1400,596,6,0,0,0,0,15,Missile Guidance Computer - Missile Flight Time
 1313,2,910,309,6,0,0,0,0,15,Sensor Booster - Max Target Range
 1314,2,910,566,6,0,0,0,0,15,Sensor Booster - Scan Resolution
+2282,2,910,1027,6,0,0,0,0,15,Sensor Booster - Grav Strength
+2282,2,910,1028,6,0,0,0,0,15,Sensor Booster - Ladar Strength
+2282,2,910,1029,6,0,0,0,0,15,Sensor Booster - Mag Strength
+2282,2,910,1030,6,0,0,0,0,15,Sensor Booster - Radar Strength
 1313,2,911,309,6,0,0,0,0,15,Sensor Dampener - Max Target Range
 1314,2,911,566,6,0,0,0,0,15,Sensor Dampener - Scan Resolution
 1315,2,909,351,6,0,0,0,0,15,Tracking Disruptor - Optimal Range
@@ -868,13 +881,25 @@
 # Remote Sensor Boosters,,,,,,,,,,
 309,2,290,76,3,6,1,0,0,16,Remote Sensor Booster - Max Targeting Range
 566,2,290,564,3,6,1,0,0,16,Remote Sensor Booster - Scan Resolution
+1027,2,290,211,3,6,1,0,0,16,Remote Sensor Booster - Grav Strength
+1028,2,290,209,3,6,1,0,0,16,Remote Sensor Booster - Ladar Strength
+1029,2,290,210,3,6,1,0,0,16,Remote Sensor Booster - Mag Strength
+1030,2,290,208,3,6,1,0,0,16,Remote Sensor Booster - Radar Strength
 # Sensor Boosters,,,,,,,,,,
 309,2,212,76,3,6,1,0,0,12,Sensor Booster - Max Targeting Range
 566,2,212,564,3,6,1,0,0,12,Sensor Booster - Scan Resolution
+1027,2,212,211,3,6,1,0,0,12,Remote Sensor Booster - Grav Strength
+1028,2,212,209,3,6,1,0,0,12,Remote Sensor Booster - Ladar Strength
+1029,2,212,210,3,6,1,0,0,12,Remote Sensor Booster - Mag Strength
+1030,2,212,208,3,6,1,0,0,12,Remote Sensor Booster - Radar Strength
 # Signal Amplifiers,,,,,,,,,,
 235,2,210,192,3,6,0,0,1,14,Signal Amplifier - Max Locked Targets
 309,2,210,76,3,6,1,0,0,14,Signal Amplifier - Max Targeting Range
 566,2,210,564,3,6,1,0,0,14,Signal Amplifier - Scan Resolution
+1027,2,210,211,3,6,1,0,0,14,Signal Amplifier - Grav Strength
+1028,2,210,209,3,6,1,0,0,14,Signal Amplifier - Ladar Strength
+1029,2,210,210,3,6,1,0,0,14,Signal Amplifier - Mag Strength
+1030,2,210,208,3,6,1,0,0,14,Signal Amplifier - Radar Strength
 # ENGINEERING EQUIPMENT,,,,,,,,,,
 # Capacitor Batteries,,,,,,,,,,
 67,2,61,482,3,6,0,0,1,14,Capacitor Battery - Capacitor Capacity
@@ -1149,8 +1174,8 @@
 434,2,546,77,4,1039;1040,0,0,0,14,Mining Amount
 1082,2,546,50,4,1039;1040,0,0,0,14,CPU Penalty
 # Ice Harvester Upgrade,,,,,,,,,,
-780,2,546,73,4,1038,0,0,0,14,Cycle Time
-1082,2,546,50,4,1038,0,0,0,14,CPU Penalty
+780,2,546,73,4,1038;2151,0,0,0,14,Cycle Time
+1082,2,546,50,4,1038;2151,0,0,0,14,CPU Penalty
 # GANG MODULES,,,,,,,,,,
 # Armored Warfare Links,,,,,,,,,,
 833,1,20069,6,4,1049;1050;1051,0,0,0,16,Armored Warfare Link - Damage Control - Armor Repairers
@@ -1770,3 +1795,8 @@
 554,1,28682,552,3,6,0,0,0,15,Synth Xinstinct - Sig Radius Bonus
 315,1,3898,37,3,6,0,0,0,15,Quafe Zero - Velocity Bonus
 566,1,3898,564,3,6,0,0,0,15,Quafe Zero - Scan Res Bonus
+548,1,36908,68,2,40;1156,0,0,0,15,Antipharmakon Thureo - Shield Boost Bonus
+895,1,36909,84,2,62;1199,0,0,0,15,Antipharmakon Kosybo - Armor Repair Bonus
+767,1,36910,160,2,55;53;74,0,0,0,15,Antipharmakon Iokira - Tracking Speed Bonus
+557,1,36911,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,15,Antipharmakon Toxot - Missile Flight Time Bonus
+1079,1,36912,482,3,6,0,0,0,15,Antipharmakon Aeolis - Capacitor Bonus

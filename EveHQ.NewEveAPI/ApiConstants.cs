@@ -43,7 +43,7 @@
 // 
 // ==============================================================================
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi
 {
     /// <summary>
     ///     The api constants.
@@ -195,5 +195,20 @@ namespace EveHQ.EveApi
         public const string Ids = "ids";
 
         public const string Names = "names";
+
+        /// <summary>
+        /// The victim data inside KillMail
+        /// </summary>
+        public const string Victim = "victim";
+
+        /// <summary>
+        /// The attackers data inside KillMail
+        /// </summary>
+        public const string Attackers = "attackers";
+
+        /// <summary>
+        /// The items data inside KillMail
+        /// </summary>
+        public const string Items = "items";
     }
 }

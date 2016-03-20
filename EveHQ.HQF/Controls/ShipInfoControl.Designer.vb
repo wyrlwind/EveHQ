@@ -75,6 +75,8 @@
             Me.pbAlignTime = New System.Windows.Forms.PictureBox()
             Me.lblInertia = New System.Windows.Forms.Label()
             Me.pbInertia = New System.Windows.Forms.PictureBox()
+            Me.lblMass = New System.Windows.Forms.Label()
+            Me.pbMass = New System.Windows.Forms.PictureBox()
             Me.lblWarpSpeed = New System.Windows.Forms.Label()
             Me.pbWarpSpeed = New System.Windows.Forms.PictureBox()
             Me.lblSpeed = New System.Windows.Forms.Label()
@@ -708,7 +710,7 @@
             '
             Me.lblAlignTime.AutoSize = True
             Me.lblAlignTime.BackColor = System.Drawing.Color.Transparent
-            Me.lblAlignTime.Location = New System.Drawing.Point(125, 48)
+            Me.lblAlignTime.Location = New System.Drawing.Point(129, 48)
             Me.lblAlignTime.Name = "lblAlignTime"
             Me.lblAlignTime.Size = New System.Drawing.Size(43, 13)
             Me.lblAlignTime.TabIndex = 11
@@ -719,7 +721,7 @@
             '
             Me.pbAlignTime.BackColor = System.Drawing.Color.Transparent
             Me.pbAlignTime.Image = Global.EveHQ.HQF.My.Resources.Resources.imgWarpAlign
-            Me.pbAlignTime.Location = New System.Drawing.Point(101, 45)
+            Me.pbAlignTime.Location = New System.Drawing.Point(105, 45)
             Me.pbAlignTime.Name = "pbAlignTime"
             Me.pbAlignTime.Size = New System.Drawing.Size(24, 24)
             Me.pbAlignTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -731,7 +733,7 @@
             '
             Me.lblInertia.AutoSize = True
             Me.lblInertia.BackColor = System.Drawing.Color.Transparent
-            Me.lblInertia.Location = New System.Drawing.Point(29, 48)
+            Me.lblInertia.Location = New System.Drawing.Point(35, 48)
             Me.lblInertia.Name = "lblInertia"
             Me.lblInertia.Size = New System.Drawing.Size(41, 13)
             Me.lblInertia.TabIndex = 8
@@ -750,11 +752,34 @@
             Me.pbInertia.TabStop = False
             Me.ToolTip1.SetToolTip(Me.pbInertia, "Inertia")
             '
+            'lblMass
+            '
+            Me.lblMass.AutoSize = True
+            Me.lblMass.BackColor = System.Drawing.Color.Transparent
+            Me.lblMass.Location = New System.Drawing.Point(35, 72)
+            Me.lblMass.Name = "lblMass"
+            Me.lblMass.Size = New System.Drawing.Size(41, 13)
+            Me.lblMass.TabIndex = 8
+            Me.lblMass.Text = "0.0000"
+            Me.ToolTip1.SetToolTip(Me.lblMass, "Mass")
+            '
+            'pbMass
+            '
+            Me.pbMass.BackColor = System.Drawing.Color.Transparent
+            Me.pbMass.Image = Global.EveHQ.HQF.My.Resources.Resources.MassIcon
+            Me.pbMass.Location = New System.Drawing.Point(5, 68)
+            Me.pbMass.Name = "pbMass"
+            Me.pbMass.Size = New System.Drawing.Size(24, 24)
+            Me.pbMass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+            Me.pbMass.TabIndex = 6
+            Me.pbMass.TabStop = False
+            Me.ToolTip1.SetToolTip(Me.pbMass, "Mass")
+            '
             'lblWarpSpeed
             '
             Me.lblWarpSpeed.AutoSize = True
             Me.lblWarpSpeed.BackColor = System.Drawing.Color.Transparent
-            Me.lblWarpSpeed.Location = New System.Drawing.Point(125, 25)
+            Me.lblWarpSpeed.Location = New System.Drawing.Point(129, 25)
             Me.lblWarpSpeed.Name = "lblWarpSpeed"
             Me.lblWarpSpeed.Size = New System.Drawing.Size(59, 13)
             Me.lblWarpSpeed.TabIndex = 5
@@ -765,7 +790,7 @@
             '
             Me.pbWarpSpeed.BackColor = System.Drawing.Color.Transparent
             Me.pbWarpSpeed.Image = Global.EveHQ.HQF.My.Resources.Resources.imgWarpSpeed
-            Me.pbWarpSpeed.Location = New System.Drawing.Point(101, 22)
+            Me.pbWarpSpeed.Location = New System.Drawing.Point(105, 22)
             Me.pbWarpSpeed.Name = "pbWarpSpeed"
             Me.pbWarpSpeed.Size = New System.Drawing.Size(24, 24)
             Me.pbWarpSpeed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -777,7 +802,7 @@
             '
             Me.lblSpeed.AutoSize = True
             Me.lblSpeed.BackColor = System.Drawing.Color.Transparent
-            Me.lblSpeed.Location = New System.Drawing.Point(30, 25)
+            Me.lblSpeed.Location = New System.Drawing.Point(35, 25)
             Me.lblSpeed.Name = "lblSpeed"
             Me.lblSpeed.Size = New System.Drawing.Size(61, 13)
             Me.lblSpeed.TabIndex = 2
@@ -1547,9 +1572,11 @@
             Me.epPropulsion.Controls.Add(Me.lblSpeed)
             Me.epPropulsion.Controls.Add(Me.pbWarpSpeed)
             Me.epPropulsion.Controls.Add(Me.lblInertia)
+            Me.epPropulsion.Controls.Add(Me.pbMass)
+            Me.epPropulsion.Controls.Add(Me.lblMass)
             Me.epPropulsion.Location = New System.Drawing.Point(3, 622)
             Me.epPropulsion.Name = "epPropulsion"
-            Me.epPropulsion.Size = New System.Drawing.Size(240, 71)
+            Me.epPropulsion.Size = New System.Drawing.Size(240, 94)
             Me.epPropulsion.Style.Alignment = System.Drawing.StringAlignment.Center
             Me.epPropulsion.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
             Me.epPropulsion.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -1749,6 +1776,8 @@
         Friend WithEvents pbAlignTime As System.Windows.Forms.PictureBox
         Friend WithEvents lblInertia As System.Windows.Forms.Label
         Friend WithEvents pbInertia As System.Windows.Forms.PictureBox
+        Friend WithEvents lblMass As System.Windows.Forms.Label
+        Friend WithEvents pbMass As System.Windows.Forms.PictureBox
         Friend WithEvents lblWarpSpeed As System.Windows.Forms.Label
         Friend WithEvents pbWarpSpeed As System.Windows.Forms.PictureBox
         Friend WithEvents lblSpeed As System.Windows.Forms.Label

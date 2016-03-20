@@ -276,8 +276,8 @@ Public Class PlugInData
             Call ParseConquerableXML(stations.ResultData)
         End If
     End Sub
-    Public Shared Sub ParseConquerableXML(ByVal stations As IEnumerable(Of ConquerableStation))
-        
+    Public Shared Sub ParseConquerableXML(ByVal stations As IEnumerable(Of NewEveApi.Entities.ConquerableStation))
+
         Dim stationID As Integer
         If stations.Any() Then
             Corps.Clear()

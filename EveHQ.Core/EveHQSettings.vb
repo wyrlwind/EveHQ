@@ -603,6 +603,8 @@ Public Class EveHQSettings
         BackupStart = Now
         BackupFreq = 1
         BackupLast = New DateTime(1999, 1, 1)
+        EnableAutomaticSave = True
+        AutomaticSaveTime = 15
         ProxyUseDefault = True
         ShutdownNotifyPeriod = 8
         EMailPort = 25
@@ -648,7 +650,6 @@ Public Class EveHQSettings
         EveHqBackupWarnFreq = 1
         ThemeStyle = eStyle.Office2007Black
         ThemeTint = Color.Empty
-        AutomaticSaveTime = 60
         LastMessageDate = New DateTime(1999, 1, 1)
         AccountTimeLimit = 168
         SkillQueuePanelWidth = 440
@@ -745,8 +746,8 @@ Public Class EveHQSettings
         Call InitialiseRemoteProxyServer()
 
         ' Set Global APIServerInfo
-        HQ.EveHQAPIServerInfo = New APIServerInfo(HQ.Settings.CCPAPIServerAddress, HQ.Settings.APIRSAddress,
-                                                  HQ.Settings.UseAPIRS, HQ.Settings.UseCCPAPIBackup)
+        'HQ.EveHqapiServerInfo = New APIServerInfo(HQ.Settings.CcpapiServerAddress, HQ.Settings.ApirsAddress,
+        '                                          HQ.Settings.UseApirs, HQ.Settings.UseCcpapiBackup)
 
     End Sub
 
@@ -820,8 +821,8 @@ Public Class EveHQSettings
             End If
 
             ' Set Global APIServerInfo
-            HQ.EveHQAPIServerInfo = New APIServerInfo(HQ.Settings.CcpapiServerAddress, HQ.Settings.ApirsAddress, HQ.Settings.UseApirs, HQ.Settings.UseCcpapiBackup)
-            
+            'HQ.EveHQAPIServerInfo = New APIServerInfo(HQ.Settings.CcpapiServerAddress, HQ.Settings.ApirsAddress, HQ.Settings.UseApirs, HQ.Settings.UseCcpapiBackup)
+
         End If
 
         Return True

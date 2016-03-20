@@ -659,6 +659,7 @@
     <None Include="Resources\105_32_12.png" />
     <None Include="Resources\defence.png" />
     <Content Include="Resources\icon01_16.png" />
+    <Content Include="Resources\icon1333_32.png" />
     <Content Include="Resources\icon53_16.png" />
   </ItemGroup>
   <ItemGroup />

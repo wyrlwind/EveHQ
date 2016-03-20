@@ -2136,11 +2136,13 @@ G˜B˜structureRepairLimit#Structure Repair Limit (per second) q(
 0˙+˙entosisCPUPenaltyentosisCPUPenalty z
 (˚#˚roleBonusCBCroleBonusCBC z(
 9¸4¸falloffEffectivenessEffectiveness Falloff (
-F˝A˝capacitorWarfareResistanceCapacitor Warfare Resistance l(
+C˝>˝energyWarfareResistanceCapacitor Warfare Resistance l($
 B˛=˛entitySuperWeaponMaxRangeentitySuperWeaponMaxRange z(!
 @ˇ;ˇentitySuperWeaponFallOffentitySuperWeaponFallOff z(!
 LÄGÄentitySuperWeaponTrackingSpeedentitySuperWeaponTrackingSpeed z(!
 ^ÅYÅ'entitySuperWeaponOptimalSignatureRadius'entitySuperWeaponOptimalSignatureRadius z(!
+6á1áfighterCapacityFighter Hanger Capacity 	(&
+)à$àserviceSlotsService Slots z(
 Dä?äclothingAlsoCoversCategory2clothingAlsoCoversCategory2 z
 Dã?ãeliteBonusCommandDestroyer1eliteBonusCommandDestroyer1 z
 Då?åeliteBonusCommandDestroyer2eliteBonusCommandDestroyer2 z
@@ -2153,7 +2155,95 @@ $êêroleBonusCDroleBonusCD z
 mjfgRadiusArea Effect Radius (
 NïIïeliteBonusElectronicAttackShip3eliteBonusElectronicAttackShip3 z(
 (ñ#ñshipBonusAC3shipBonusAC3 z(	
+.ó)óbumpingStrengthbumpingStrength z(
+[òVò!scanGravimetricStrengthBonusBonus*Modification of Gravimetric Strength Bonus i(
+OôJôscanLadarStrengthBonusBonus$Modification of Ladar Strength Bonus i(
+_öZö#scanMagnetometricStrengthBonusBonus,Modification of Magnetometric Strength Bonus i(
+OõJõscanRadarStrengthBonusBonus$Modification of Radar Strength Bonus i(
+8ú3úlauncherGroup4Used with (Launcher Group) s(
+8ù3ùlauncherGroup5Used with (Launcher Group) s(
+8û3ûlauncherGroup6Used with (Launcher Group) s(
+RüMü$armorEmDamageResonancePostAssignmentSet Armor EM Damage Resistance l(
+`†[†+armorExplosiveDamageResonancePostAssignment%Set Armor Explosive Damage Resistance l(
+\°W°)armorKineticDamageResonancePostAssignment#Set Armor Kinetic Damage Resistance z(
+\¢W¢)armorThermalDamageResonancePostAssignment#Set Armor Thermal Damage Resistance l(
+T£O£%shieldEmDamageResonancePostAssignmentSet Shield EM Damage Resistance l(
+b§]§,shieldExplosiveDamageResonancePostAssignment&Set Shield Explosive Damage Resistance l(
+^•Y•*shieldKineticDamageResonancePostAssignment$Set Shield Kinetic Damage Resistance l(
+^¶Y¶*shieldThermalDamageResonancePostAssignment$Set Shield Thermal Damage Resistance l(
+LßGßemDamageResonancePostAssignmentSet Hull EM Damage Resistance l(
+Z®U®&explosiveDamageResonancePostAssignment$Set Hull Explosive Damage Resistance l(
+V©Q©$thermalDamageResonancePostAssignment"Set Hull Thermal Damage Resistance l(
+V™Q™$kineticDamageResonancePostAssignment"Set Hull Kinetic Damage Resistance l(
 "´´	roleBonus	roleBonus z(	
 6¨1¨eliteBonusLogiFrig1eliteBonusLogiFrig1 z(	
 6≠1≠eliteBonusLogiFrig2eliteBonusLogiFrig2 z(	
+4Ø/ØstructureRigBonus1structureRigBonus1 z(
+4∞/∞structureRigBonus2structureRigBonus2 z(
+4±/±structureRigBonus3structureRigBonus3 z(
+4≤/≤structureRigBonus4structureRigBonus4 z(
+4≥/≥structureRigBonus5structureRigBonus5 z(
+4¥/¥structureRigBonus6structureRigBonus6 z(
+4µ/µstructureRigBonus7structureRigBonus7 z(
 @∂;∂velocityPenaltyReductionvelocityPenaltyReduction z(
+/∑*∑canFitShipType6Can be fitted to t(
+G∏B∏lightningWeaponTargetAmountlightningWeaponTargetAmount ä(
+Dπ?πlightningWeaponTargetRangelightningWeaponTargetRange (
+N∫I∫lightningWeaponDamageLossTargetlightningWeaponDamageLossTarget h(
+IºDº!serviceModuleFuelConsumptionGroupService Module Fuel Need t(
+FΩAΩserviceModuleFuelAmountService Module Cycle Fuel Need ä(
+MæHæserviceModuleFuelOnlineAmountService Module Online Fuel Need ä(
+;ø6øvulnerabilityRequiredvulnerabilityRequired Å(
+A¿<¿sensorDampenerResistanceSensor Warfare Resistance l($
+F¡A¡weaponDisruptionResistanceWeapon Disruption Resistance l($
+@¬;¬targetPainterResistanceTarget Painter Resistance l($
+B√=√stasisWebifierResistanceStasis Webifier Resistance l($
+=ƒ8ƒremoteRepairImpedanceRemote Repair Resistance l($
+D◊?◊remoteAssistanceImpedanceRemote Assistance Impedance l($
+Dÿ?ÿmaxTargetRangeBonusInterimmaxTargetRangeBonusInterim i(
+DŸ?ŸscanResolutionBonusInterimscanResolutionBonusInterim i(
+4⁄/⁄remoteResistanceIDremoteResistanceID w($
+8€3€maxRangeBonusInterimmaxRangeBonusInterim i(
+6‹1‹falloffBonusInterimfalloffBonusInterim i(
+B›=›trackingSpeedBonusInterimtrackingSpeedBonusInterim i(
+@ﬁ;ﬁaoeCloudSizeBonusInterimaoeCloudSizeBonusInterim i(
+>ﬂ9ﬂaoeVelocityBonusInterimaoeVelocityBonusInterim i(
+D‡?‡explosionDelayBonusInterimexplosionDelayBonusInterim y(
+F·A·missileVelocityBonusInterimmissileVelocityBonusInterim i(
+F„A„signatureRadiusBonusInterimsignatureRadiusBonusInterim |(
+4‰/‰speedFactorInterimspeedFactorInterim |(
+6Ê1ÊfighterSquadronSizefighterSquadronSize z(&
+T˙O˙"fighterAbilityMissilesResistanceID"fighterAbilityMissilesResistanceID w("
+dç_ç*fighterAbilityAntiFighterMissileResistance*fighterAbilityAntiFighterMissileResistance o(&
+.é)éshipBonusAFAux1shipBonusAFAux1 z(%
+.è)èshipBonusAFAux2shipBonusAFAux2 z(%
+.ê)êshipBonusAFAux3shipBonusAFAux3 z(%
+.ë)ëshipBonusCFAux1shipBonusCFAux1 z(%
+.í)íshipBonusCFAux2shipBonusCFAux2 z(%
+.ì)ìshipBonusCFAux3shipBonusCFAux3 z(%
+.î)îshipBonusGFAux1shipBonusGFAux1 z(%
+.ï)ïshipBonusGFAux2shipBonusGFAux2 z(%
+.ñ)ñshipBonusGFAux3shipBonusGFAux3 z(%
+.ò)òshipBonusMFAux1shipBonusMFAux1 z(%
+.ô)ôshipBonusMFAux2shipBonusMFAux2 z(%
+.ö)öshipBonusMFAux3shipBonusMFAux3 z(%
+<§7§fighterSquadronIsLightfighterSquadronIsLight z(&
+@•;•fighterSquadronIsSupportfighterSquadronIsSupport z(&
+<¶7¶fighterSquadronIsHeavyfighterSquadronIsHeavy z(&
+<ß7ßfighterSquadronMaxSizefighterSquadronMaxSize z(&
+0®+®fighterTubesFighter Launch Tubes z(&
+=©8©fighterLightSlotsLight Fighter Squadron Slots z(&
+A™<™fighterSupportSlotsSupport Fighter Squadron Slots z(&
+=´8´fighterHeavySlotsHeavy Fighter Squadron Slots z(&
+JÃEÃfighterAbilityECMResistanceIDfighterAbilityECMResistanceID w("
+*Õ%ÕECMResistanceECMResistance l($
+ZœUœ%scanGravimetricStrengthPercentInterim%scanGravimetricStrengthPercentInterim i(
+N–I–scanLadarStrengthPercentInterimscanLadarStrengthPercentInterim i(
+^—Y—'scanMagnetometricStrengthPercentInterim'scanMagnetometricStrengthPercentInterim i(
+N“I“scanRadarStrengthPercentInterimscanRadarStrengthPercentInterim i(
+0⁄+⁄speedFactorFloorspeedFactorFloor |(
+N€I€energyWarfareResistanceBonus"Capacitor Warfare Resistance Bonus i($
+,‹'‹tetheringRangetetheringRange (
+UÂPÂ"structureDoomsdayTargetAmountBonus"structureDoomsdayTargetAmountBonus ä(
+\ÊWÊ&structureDoomsdayDamageLossTargetBonus&structureDoomsdayDamageLossTargetBonus (
+MÍHÍsensorStrengthBonusBonus%Modification of Sensor Strength Bonus i(

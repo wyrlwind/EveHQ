@@ -48,6 +48,8 @@ Imports EveHQ.Core
 Imports System.IO
 Imports EveHQ.Common.Extensions
 Imports Newtonsoft.Json
+Imports EveHQ.NewEveApi.Entities
+Imports EveHQ.NewEveApi
 
 Namespace Forms
 
@@ -93,9 +95,9 @@ Namespace Forms
 
             ' Store the raceID and raceName
             _raceName = CStr(cboRace.SelectedItem)
-            _raceID = CInt(_eveRaces.Item(_raceName))
+            _raceId = CInt(_eveRaces.Item(_raceName))
 
-            Call CalcRaceSkills(CStr(_raceID))
+            Call CalcRaceSkills(CStr(_raceId))
 
             ' Set the list of skills & attributes
             lvwSkills.Items.Clear()
@@ -133,7 +135,7 @@ Namespace Forms
             Dim raceSkillLines() As String = raceSkillsTable.Split(ControlChars.CrLf.ToCharArray)
             For Each raceSkill As String In raceSkillLines
                 Dim raceSkillData() As String = raceSkill.Split(",".ToCharArray)
-                If raceSkillData(0) = raceID Then
+                If raceSkillData(0) = raceId Then
                     raceSkills.Add(raceSkillData(1) & "," & raceSkillData(2))
                 End If
             Next
@@ -234,7 +236,7 @@ Namespace Forms
             fakeServiceResponse.HttpStatusCode = Net.HttpStatusCode.OK
             fakeServiceResponse.IsSuccessfulHttpStatus = True
             fakeServiceResponse.EveErrorCode = 0
-            
+
             Dim charData As String = JsonConvert.SerializeObject(fakeServiceResponse)
 
             ' Write fake training JSON
@@ -257,7 +259,7 @@ Namespace Forms
 
             End Using
             ' Write Training XML
-          
+
             Using writer As New StreamWriter(txmlFile)
                 writer.Write(trainingData)
                 writer.Flush()
@@ -265,7 +267,7 @@ Namespace Forms
             End Using
 
             ' Import the data!
-            Call PilotParseFunctions.ImportPilotFromXML(fakeServiceResponse, fakeTrainingResponse)
+            Call PilotParseFunctions.ImportPilotFromXml(fakeServiceResponse, fakeTrainingResponse)
 
             ' Refresh the list of pilots in EveHQ
             PilotParseFunctions.StartPilotRefresh = True

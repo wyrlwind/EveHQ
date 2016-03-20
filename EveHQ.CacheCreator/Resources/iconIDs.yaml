@@ -6493,6 +6493,159 @@
 21510:
   description: 37866_male_topMiddle_ShirtCM01_Types_ShirtM01_Serpentis.png
   iconFile: res:/UI/Asset/mannequin/topmiddle/37866_male_topMiddle_ShirtCM01_Types_ShirtM01_Serpentis.png
+21512:
+  description: icon for the station service slot
+  iconFile: res:/UI/Texture/classes/Fitting/stationServiceSlot.png
 21513:
   description: Focused Warp Disruption Script
   iconFile: '118_12'
+21514:
+  description: Upwell Male Jacket
+  iconFile: res:/UI/Asset/mannequin/outer/40522_male_outer_JacketMilM02_Types_JacketMilM02_upwell.png
+21515:
+  description: Upwell Jacket Female
+  iconFile: res:/UI/Asset/mannequin/outer/40523_female_Outer_JacketMilF01_Types_JacketMilF01_upwell.png
+21517:
+  description: Upwell Shirt Male
+  iconFile: res:/UI/Asset/mannequin/topmiddle/40526_male_topMiddle_ShirtQM01_Types_shirtqm01_upwell.png
+21518:
+  description: Upwell Shirt Female
+  iconFile: res:/UI/Asset/mannequin/topmiddle/40527_female_TopMiddle_ShirtQF01_Types_shirtqf01_upwell.png
+21519:
+  description: Upwell Pants Male
+  iconFile: res:/UI/Asset/mannequin/bottomouter/40524_male_bottomOuter_PantsMilM01_Types_PantsMilM01_upwell.png
+21520:
+  description: Upwell Pants Female
+  iconFile: res:/UI/Asset/mannequin/bottomouter/40525_female_bottomOuter_PantsMilF01_Types_PantsMilF01_upwell.png
+21522:
+  description: Labcoat Female Black/Red
+  iconFile: res:/UI/Asset/mannequin/outer/40457_female_Outer_LabCoatF01_Types_LabCoatF01_BlackRed.png
+21523:
+  description: Labcoat Female Cyan
+  iconFile: res:/UI/Asset/mannequin/outer/40458_female_Outer_LabCoatF01_Types_LabCoatF01_Cyan.png
+21524:
+  description: Labcoat Female Orange
+  iconFile: res:/UI/Asset/mannequin/outer/40459_female_Outer_LabCoatF01_Types_LabCoatF01_Orange.png
+21525:
+  description: Labcoat Female Green
+  iconFile: res:/UI/Asset/mannequin/outer/40460_female_Outer_LabCoatF01_Types_LabCoatF01_Green.png
+21526:
+  description: Labcoat Male Black/Red
+  iconFile: res:/UI/Asset/mannequin/outer/40461_male_outer_LabCoatM01_Types_LabCoatM01_BlackRed.png
+21527:
+  description: Labcoat Male Cyan
+  iconFile: res:/UI/Asset/mannequin/outer/40462_male_outer_LabCoatM01_Types_LabCoatM01_Cyan.png
+21528:
+  description: Labcoat Male Green
+  iconFile: res:/UI/Asset/mannequin/outer/40463_male_outer_LabCoatM01_Types_LabCoatM01_Green.png
+21529:
+  description: Labcoat Male Orange
+  iconFile: res:/UI/Asset/mannequin/outer/40464_male_outer_LabCoatM01_Types_LabCoatM01_Orange.png
+21530:
+  description: Skill Extractor
+  iconFile: res:/UI/Texture/Icons/skillExtractor_64.png
+21531:
+  description: Skill Injector
+  iconFile: res:/UI/Texture/Icons/skillInjector_64.png
+21532:
+  description: Structure Electromagnetic Sensor
+  iconFile: '118_3'
+21533:
+  description: Structure Acceleration Coils
+  iconFile: '118_4'
+21534:
+  description: Structure Advertisement Nexus
+  iconFile: '118_8'
+21560:
+  description: Structure Repulsor Field
+  iconFile: '123_5'
+21561:
+  description: Structure Point Defense Battery
+  iconFile: '123_6'
+21562:
+  description: Structure Resistance Switcher
+  iconFile: '123_7'
+21563:
+  description: Structure Ship Tractor Beam
+  iconFile: '123_8'
+21564:
+  description: Structure Guided Bomb Launcher
+  iconFile: '123_9'
+21565:
+  description: Structure Anticapital Launcher
+  iconFile: '123_10'
+21566:
+  description: Structure Antisubcapital Launcher
+  iconFile: '123_11'
+21567:
+  description: Structure Long Range Anticapital Missile
+  iconFile: '124_5'
+21568:
+  description: Structure Long Range Antisubcapital Missile
+  iconFile: '124_6'
+21569:
+  description: Structure Antibattleship Guided Bomb
+  iconFile: '124_7'
+21570:
+  description: Structure Medium Range Anticapital Missile
+  iconFile: '124_9'
+21571:
+  description: Structure Medium Range Antisubcapital Missile
+  iconFile: '124_10'
+21572:
+  description: Structure Capacitor Draining Guided Bomb
+  iconFile: '124_11'
+21573:
+  description: Structure Short Range Anticapital Missile
+  iconFile: '124_13'
+21574:
+  description: Structure Short Range Antisubcapital Missile
+  iconFile: '124_14'
+21575:
+  description: Structure Antifrigate Guided Bomb
+  iconFile: '124_15'
+21578:
+  description: Serenity icon for Clevo token
+  iconFile: '1337_23'
+21579:
+  description: 41049_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V0
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41049_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V0_.png
+21581:
+  description: Stasis Grappler
+  iconFile: res:/UI/Texture/Icons/125_64_1.png
+21582:
+  description: 41036_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V2
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41036_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V2_.png
+21583:
+  description: 41050_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V4
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41050_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V4_.png
+21584:
+  description: 41051_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V3
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41051_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V3_.png
+21585:
+  description: 41047_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V1
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41047_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V1_.png
+21586:
+  description: 41052_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V1
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41052_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V1_.png
+21587:
+  description: 41053_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V5
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41053_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V5_.png
+21588:
+  description: 41046_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V5
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41046_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V5_.png
+21589:
+  description: 41043_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V4
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41043_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V4_.png
+21590:
+  description: 41044_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V3
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41044_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V3_.png
+21591:
+  description: 41048_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V2
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41048_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V2_.png
+21592:
+  description: 41045_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V0
+  iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41045_male_Makeup_Augmentations_Face_01_Types_Face_01_M_V0_.png
+21593:
+  description: ECCM Script
+  iconFile: res:/UI/Texture/Icons/126_64_1.png

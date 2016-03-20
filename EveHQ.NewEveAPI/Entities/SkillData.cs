@@ -45,7 +45,7 @@
 
 using System.Collections.Generic;
 
-namespace EveHQ.EveApi
+namespace EveHQ.NewEveApi.Entities
 {
     public class SkillData
     {

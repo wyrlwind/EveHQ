@@ -48,6 +48,8 @@ Imports EveHQ.EveData
 Imports System.Windows.Forms
 Imports EveHQ.Common.Extensions
 Imports System.Xml.Linq
+Imports EveHQ.NewEveApi
+Imports EveHQ.NewEveApi.Entities
 
 Public Class PilotParseFunctions
     Public Shared Event RefreshPilots()
@@ -490,8 +492,8 @@ Public Class PilotParseFunctions
 
             ' Parse the API data
             Call ParsePilotSkills(cPilot, characterSheetResponse.ResultData)
-            Call ParsePilotXML(cPilot, characterSheetResponse)
-            Call ParseTrainingXML(cPilot, skillResponse)
+            Call ParsePilotXml(cPilot, characterSheetResponse)
+            Call ParseTrainingXml(cPilot, skillResponse)
             Call BuildAttributeData(cPilot)
         End If
     End Sub
@@ -854,7 +856,7 @@ Public Class PilotParseFunctions
                     MessageBox.Show("File does not exist. Please re-try.", "File Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 End If
                 pilotXmlFile = .FileName
-                Call ExaminePilotXML(pilotXmlFile)
+                Call ExaminePilotXml(pilotXmlFile)
             Else
                 MessageBox.Show("Import cancelled by user.", "Pilot Import Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Exit Sub
@@ -893,7 +895,7 @@ Public Class PilotParseFunctions
                 End If
                 reply = MessageBox.Show("You will be importing pilot " & pilotName & " (id: " & pilotId & "). Do you want to import the training XML?", "Import Training XML?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If reply = DialogResult.Yes Then
-                    pilotTxml = ImportTrainingXML()
+                    pilotTxml = ImportTrainingXml()
                     If pilotTxml Is Nothing Then
                         MessageBox.Show("Import of Training XML failed.", "Import Training XML failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     End If

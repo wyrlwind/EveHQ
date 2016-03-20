@@ -50,6 +50,8 @@ Imports System.Windows.Forms
 Imports System.Text
 Imports System.Xml
 Imports EveHQ.Common.Extensions
+Imports EveHQ.NewEveApi
+Imports EveHQ.NewEveApi.Entities
 
 ''' <summary>
 ''' Class for handling the custom database - based on SQLite format
@@ -66,7 +68,7 @@ Public Class CustomDataFunctions
     ''' <remarks></remarks>
     Public Shared Function SetEveHQDataConnectionString() As Boolean
 
-        HQ.EveHQDataConnectionString = "Data Source=" & ControlChars.Quote & HQ.Settings.CustomDBFilename & ControlChars.Quote & ";Version=3;"
+        HQ.EveHQDataConnectionString = "Data Source=" & ControlChars.Quote & HQ.Settings.CustomDBFileName & ControlChars.Quote & ";Version=3;"
         Return True
     End Function
 
@@ -128,7 +130,7 @@ Public Class CustomDataFunctions
             conn.Close()
             Return evehqData
         Catch e As Exception
-            HQ.dataError = e.Message
+            HQ.DataError = e.Message
             Return Nothing
         Finally
             If conn.State = ConnectionState.Open Then
@@ -153,7 +155,7 @@ Public Class CustomDataFunctions
             recordsAffected = keyCommand.ExecuteNonQuery()
             Return recordsAffected
         Catch e As Exception
-            HQ.dataError = e.Message
+            HQ.DataError = e.Message
             HQ.WriteLogEvent("Database Error: " & e.Message)
             HQ.WriteLogEvent("SQL: " & strSQL)
             Return -2
@@ -186,7 +188,7 @@ Public Class CustomDataFunctions
             Return True
 
         Catch e As Exception
-            HQ.dataError = "Unable to create SQL CE database in " & outputFile & ControlChars.CrLf & ControlChars.CrLf & e.Message
+            HQ.DataError = "Unable to create SQL CE database in " & outputFile & ControlChars.CrLf & ControlChars.CrLf & e.Message
             Return False
         End Try
     End Function
@@ -381,7 +383,7 @@ Public Class CustomDataFunctions
             If SetCustomData(strSQL.ToString) <> -2 Then
                 Return True
             Else
-                MessageBox.Show("There was an error creating the Custom Prices database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.dataError, "Error Creating Market Dates Database", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("There was an error creating the Custom Prices database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.DataError, "Error Creating Market Dates Database", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Return False
             End If
         Else
@@ -434,7 +436,7 @@ Public Class CustomDataFunctions
             If SetCustomData(strSQL.ToString) <> -2 Then
                 Return True
             Else
-                MessageBox.Show("There was an error creating the Market Prices database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.dataError, "Error Creating Market Dates Database", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("There was an error creating the Market Prices database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.DataError, "Error Creating Market Dates Database", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Return False
             End If
         Else
@@ -486,7 +488,7 @@ Public Class CustomDataFunctions
             If SetCustomData(strSQL.ToString) <> -2 Then
                 Return True
             Else
-                MessageBox.Show("There was an error creating the Eve ID-To-Name database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.dataError, "Error Creating Eve ID-To-Name Table", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("There was an error creating the Eve ID-To-Name database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.DataError, "Error Creating Eve ID-To-Name Table", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Return False
             End If
         Else
@@ -547,7 +549,7 @@ Public Class CustomDataFunctions
             If SetCustomData(strSQL.ToString) <> -2 Then
                 Return True
             Else
-                MessageBox.Show("There was an error creating the Eve Mail database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.dataError, "Error Creating Eve Mail Table", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("There was an error creating the Eve Mail database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.DataError, "Error Creating Eve Mail Table", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Return False
             End If
         Else
@@ -605,7 +607,7 @@ Public Class CustomDataFunctions
             If SetCustomData(strSQL.ToString) <> -2 Then
                 Return True
             Else
-                MessageBox.Show("There was an error creating the Eve Notification database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.dataError, "Error Creating Eve Notification Table", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("There was an error creating the Eve Notification database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.DataError, "Error Creating Eve Notification Table", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Return False
             End If
         Else
@@ -663,7 +665,7 @@ Public Class CustomDataFunctions
                 SetCustomData("CREATE INDEX idxReqName ON requisitions (requisition);")
                 Return True
             Else
-                MessageBox.Show("There was an error creating the Requisitions database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.dataError, "Error Creating Requisitions Database Table", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show("There was an error creating the Requisitions database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.DataError, "Error Creating Requisitions Database Table", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Return False
             End If
         Else
@@ -690,7 +692,7 @@ Public Class CustomDataFunctions
                 Next
             End If
         Catch ex As Exception
-            MessageBox.Show("There was an error fetching the Custom Price data. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.dataError, "Error Creating Market Stats Database", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("There was an error fetching the Custom Price data. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.DataError, "Error Creating Market Stats Database", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Finally
             If eveData IsNot Nothing Then
                 eveData.Dispose()
@@ -769,7 +771,7 @@ Public Class CustomDataFunctions
             Return recordsAffected
 
         Catch e As Exception
-            HQ.dataError = e.Message
+            HQ.DataError = e.Message
             HQ.WriteLogEvent("Database Error: " & e.Message)
             HQ.WriteLogEvent("SQL: " & "")
             Return -2
@@ -793,7 +795,7 @@ Public Class CustomDataFunctions
         End If
         Dim priceSQL As String = "DELETE FROM customPrices WHERE typeID=" & typeID & ";"
         If SetCustomData(priceSQL) = -2 Then
-            MessageBox.Show("There was an error deleting data from the Custom Prices database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.dataError & ControlChars.CrLf & ControlChars.CrLf & "Data: " & priceSQL, "Error Writing Price Date", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("There was an error deleting data from the Custom Prices database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.DataError & ControlChars.CrLf & ControlChars.CrLf & "Data: " & priceSQL, "Error Writing Price Date", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Return False
         Else
             Return True
@@ -1070,7 +1072,7 @@ Public Class CustomDataFunctions
             Dim mAccount As EveHQAccount = HQ.Settings.Accounts.Item(accountName)
             ' Send this to the API
             Dim mailingListResponse As EveServiceResponse(Of IEnumerable(Of MailingList)) = HQ.ApiProvider.Character.MailingLists(mAccount.UserID, mAccount.APIKey, Int32.Parse(mPilot.ID))
-            
+
             ' Parse this XML
             If mailingListResponse.IsSuccess Then
                 Dim mailingLists As IEnumerable(Of MailingList) = mailingListResponse.ResultData
@@ -1135,7 +1137,7 @@ Public Class CustomDataFunctions
             Return recordsAffected
 
         Catch e As Exception
-            HQ.dataError = e.Message
+            HQ.DataError = e.Message
             HQ.WriteLogEvent("Database Error: " & e.Message)
             HQ.WriteLogEvent("SQL: " & "")
             Return -2

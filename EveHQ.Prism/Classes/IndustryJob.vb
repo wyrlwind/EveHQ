@@ -74,7 +74,7 @@ Namespace Classes
         Public Probability As Double
         Public ProductTypeId As Integer
         Public ProductTypeName As String
-        Public Status As IndustryJobStatus
+        Public Status As NewEveApi.Entities.IndustryJobStatus
         Public TimeInSeconds As Integer
         Public StartDate As DateTimeOffset
         Public EndDate As DateTimeOffset
@@ -95,7 +95,7 @@ Namespace Classes
                 Dim ownerAccount As EveHQAccount = PlugInData.GetAccountForCorpOwner(owner, CorpRepType.Jobs)
                 Dim ownerID As String = PlugInData.GetAccountOwnerIDForCorpOwner(owner, CorpRepType.Jobs)
                 Dim transXML As XmlDocument
-                Dim jobsResponse As EveServiceResponse(Of IEnumerable(Of EveApi.IndustryJob))
+                Dim jobsResponse As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.IndustryJob))
                 If ownerAccount IsNot Nothing Then
 
                     If owner.IsCorp = True Then
@@ -111,7 +111,7 @@ Namespace Classes
                         ' Get the Node List
                         ' Parse the Node List
                         Dim jobList As New List(Of IndustryJob)
-                        For Each tran As EveApi.IndustryJob In jobsResponse.ResultData
+                        For Each tran As NewEveApi.Entities.IndustryJob In jobsResponse.ResultData
                             Dim newJob As New IndustryJob
                             newJob.JobId = tran.JobId
                             newJob.InstallerId = tran.InstallerId
@@ -158,8 +158,8 @@ Namespace Classes
         Public Shared Function GetInstallerList(ByVal jobList As List(Of IndustryJob)) As SortedList(Of Long, String)
             Dim idList As New List(Of String)
             For Each job As IndustryJob In jobList
-                If idList.Contains(job.InstallerID.ToString) = False Then
-                    idList.Add(job.InstallerID.ToString)
+                If idList.Contains(job.InstallerId.ToString) = False Then
+                    idList.Add(job.InstallerId.ToString)
                 End If
             Next
             Dim installerList As New SortedList(Of Long, String)

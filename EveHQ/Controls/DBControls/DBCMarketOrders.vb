@@ -49,6 +49,8 @@ Imports EveHQ.EveApi
 Imports EveHQ.Core
 Imports System.Xml
 Imports EveHQ.Common.Extensions
+Imports EveHQ.NewEveApi
+Imports EveHQ.NewEveApi.Entities
 
 Namespace Controls.DBControls
     Public Class DBCMarketOrders
@@ -156,7 +158,7 @@ Namespace Controls.DBControls
                                     sOrder.SubItems.Add(SkillFunctions.TimeToString(orderExpires.TotalSeconds, False))
                                 End If
                                 sOrder.SubItems(4).Tag = orderExpires
-                                sellTotal = sellTotal + quantity*price
+                                sellTotal = sellTotal + quantity * price
                                 totalOrders = totalOrders + 1
                             ElseIf order.OrderState = MarketOrderState.Expired Then
                                 Dim sOrder As New ListViewItem
@@ -213,7 +215,7 @@ Namespace Controls.DBControls
                                     bOrder.SubItems.Add(SkillFunctions.TimeToString(orderExpires.TotalSeconds, False))
                                 End If
                                 bOrder.SubItems(4).Tag = orderExpires
-                                buyTotal = buyTotal + quantity*price
+                                buyTotal = buyTotal + quantity * price
                                 totalEscrow = totalEscrow + order.Escrow
 
                                 totalOrders = totalOrders + 1
@@ -257,13 +259,13 @@ Namespace Controls.DBControls
                     clvSellOrders.EndUpdate()
                 End If
 
-                Dim maxorders As Integer = 5 + (selPilot.KeySkills(KeySkill.Trade)*4) +
-                                           (selPilot.KeySkills(KeySkill.Tycoon)*32) +
-                                           (selPilot.KeySkills(KeySkill.Retail)*8) +
-                                           (selPilot.KeySkills(KeySkill.Wholesale)*16)
+                Dim maxorders As Integer = 5 + (selPilot.KeySkills(KeySkill.Trade) * 4) +
+                                           (selPilot.KeySkills(KeySkill.Tycoon) * 32) +
+                                           (selPilot.KeySkills(KeySkill.Retail) * 8) +
+                                           (selPilot.KeySkills(KeySkill.Wholesale) * 16)
                 Dim cover As Double = buyTotal - totalEscrow
-                Dim transTax As Double = 1*(1.5 - 0.15*(selPilot.KeySkills(KeySkill.Accounting)))
-                Dim brokerFee As Double = 1*(1 - 0.05*(selPilot.KeySkills(KeySkill.BrokerRelations)))
+                Dim transTax As Double = 1 * (1.5 - 0.15 * (selPilot.KeySkills(KeySkill.Accounting)))
+                Dim brokerFee As Double = 1 * (1 - 0.05 * (selPilot.KeySkills(KeySkill.BrokerRelations)))
                 lblTotalOrders.Text = maxorders.ToString
                 lblOrders.Text = (maxorders - totalOrders).ToString
                 lblSellTotal.Text = sellTotal.ToString("N2") & " isk"
@@ -326,4 +328,4 @@ Namespace Controls.DBControls
             Call ParseOrders()
         End Sub
     End Class
-End NameSpace
+End Namespace

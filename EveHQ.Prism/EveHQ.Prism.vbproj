@@ -395,9 +395,9 @@
       <Project>{AD4AA9C0-F258-44D8-9D71-07493198B580}</Project>
       <Name>EveHQ.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EveHQ.EveAPI\EveHQ.EveAPI.vbproj">
-      <Project>{A936DB0B-2C9B-406C-85E4-D7AC13E605EC}</Project>
-      <Name>EveHQ.EveAPI</Name>
+    <ProjectReference Include="..\EveHQ.EveCrest\EveHQ.EveCrest.csproj">
+      <Project>{3f84fc66-8ec7-4a56-9aa2-ed30f5565e24}</Project>
+      <Name>EveHQ.EveCrest</Name>
     </ProjectReference>
     <ProjectReference Include="..\EveHQ.EveData\EveHQ.EveData.csproj">
       <Project>{C3FEE7B0-5E02-4910-BBB9-A03425294B7A}</Project>

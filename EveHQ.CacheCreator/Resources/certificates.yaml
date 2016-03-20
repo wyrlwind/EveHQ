@@ -28,6 +28,7 @@
     - 34317
     - 35779
     - 37453
+    - 37481
     skillTypes:
         3300:
             advanced: 5
@@ -405,6 +406,7 @@
     - 35683
     - 37455
     - 37456
+    - 37482
     - 37483
     skillTypes:
         3300:
@@ -774,7 +776,6 @@
     - 33665
     - 33883
     - 34562
-    - 37480
     skillTypes:
         3300:
             advanced: 5
@@ -1105,8 +1106,7 @@
     - 33816
     - 34828
     - 37454
-    - 37481
-    - 37482
+    - 37480
     skillTypes:
         3319:
             advanced: 5
@@ -1384,10 +1384,10 @@
             standard: 3
 78:
     description: This certificate represents a level of competence in operating capital
-        missile launchers. The holder has learned that citadel torpedoes and cruise
-        missiles are medium to long range weapons with a delayed time to impact. This
-        is a good skillset for capsuleers specializing in capital Caldari vessels
-        based on Dreadnought and Titan hulls.
+        missile launchers. The holder has learned that XL torpedoes and cruise missiles
+        are medium to long range weapons with a delayed time to impact. This is a
+        good skillset for capsuleers specializing in capital Caldari vessels based
+        on Dreadnought and Titan hulls.
     groupID: 256
     name: Capital Missiles
     recommendedFor:
@@ -2901,7 +2901,6 @@
     - 33397
     - 33468
     - 33470
-    - 33472
     - 33553
     - 33639
     - 33641
@@ -2932,7 +2931,6 @@
     - 33697
     - 33816
     - 33818
-    - 33820
     - 33869
     - 33871
     - 33873
@@ -4401,6 +4399,10 @@
     - 33871
     - 33873
     - 33875
+    - 37480
+    - 37481
+    - 37482
+    - 37483
     - 37604
     - 37605
     - 37606
@@ -5682,6 +5684,7 @@
     - 32307
     - 32309
     - 32311
+    - 33472
     - 33623
     - 33625
     - 33627
@@ -5690,6 +5693,7 @@
     - 33633
     - 33635
     - 33637
+    - 33820
     - 34118
     - 34151
     skillTypes:
@@ -6809,6 +6813,10 @@
     - 33871
     - 33873
     - 33875
+    - 37480
+    - 37481
+    - 37482
+    - 37483
     - 37604
     - 37605
     - 37606
@@ -6888,6 +6896,10 @@
     - 33871
     - 33873
     - 33875
+    - 37480
+    - 37481
+    - 37482
+    - 37483
     - 37604
     - 37605
     - 37606
@@ -6967,6 +6979,10 @@
     - 33871
     - 33873
     - 33875
+    - 37480
+    - 37481
+    - 37482
+    - 37483
     - 37604
     - 37605
     - 37606
@@ -7055,6 +7071,7 @@
     - 33873
     - 37453
     - 37456
+    - 37483
     skillTypes:
         3426:
             advanced: 1
