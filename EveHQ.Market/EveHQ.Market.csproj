@@ -67,12 +67,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="StyleCop">
-      <HintPath>..\packages\StyleCop.4.7.44.0\lib\net35\StyleCop.dll</HintPath>
-    </Reference>
-    <Reference Include="StyleCop.CSharp">
-      <HintPath>..\packages\StyleCop.4.7.44.0\lib\net35\StyleCop.CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="StyleCop">
       <HintPath>C:\Program Files (x86)\StyleCop 4.7\StyleCop.dll</HintPath>
     </Reference>
     <Reference Include="StyleCop.CSharp">
