@@ -69,8 +69,8 @@ Namespace Controls
                     lblSkill.Text = "Account: " & cAccount.FriendlyName
                     lblTime.Text = "ACCOUNT HAS EXPIRED!"
                     ToolTip1.SetToolTip(lblTime, "Account '" & cAccount.FriendlyName & "' has expired!")
-                    lblQueue.Text = "Click here to buy Eve GTCs!"
-                    ToolTip1.SetToolTip(lblQueue, "Purchase your GTCs from EveTimeCode.com and help support EveHQ!")
+                    lblQueue.Text = ""
+                    'ToolTip1.SetToolTip(lblQueue, "Purchase your GTCs from EveTimeCode.com and help support EveHQ!")
                     lblSkill.ForeColor = Color.Red
                     lblTime.LinkColor = Color.Red
                     lblQueue.LinkColor = Color.Red
@@ -207,18 +207,6 @@ Namespace Controls
                 Else
                     lblQueue.LinkColor = Color.Black
                 End If
-            End If
-        End Sub
-
-        Private Sub lblQueue_LinkClicked(ByVal sender As System.Object, ByVal e As LinkLabelLinkClickedEventArgs) Handles lblQueue.LinkClicked
-            If _usingAccount <> "" Then
-                ' Start a link to the eve time code site via the sharesale gateway url
-                Try
-                    Dim sInfo As ProcessStartInfo = New ProcessStartInfo("http://www.shareasale.com/r.cfm?B=284450&U=879816&M=31243&urllink=")
-                    Process.Start(sInfo)
-                Catch ex As Exception
-                    MessageBox.Show("Unable to browse to the selected website", "Account Expiry Link Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
             End If
         End Sub
 
