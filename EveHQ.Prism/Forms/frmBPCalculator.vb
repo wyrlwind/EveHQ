@@ -413,6 +413,8 @@ Namespace Forms
             ' Load the systems inside the combobox
             cboFactoryLocation.BeginUpdate()
             cboFactoryLocation.Items.Clear()
+            cboFactoryLocation.AutoCompleteMode = AutoCompleteMode.Append
+            cboFactoryLocation.AutoCompleteSource = AutoCompleteSource.ListItems
             cboFactoryLocation.DisplayMember = "Name"
             cboFactoryLocation.ValueMember = "Id"
             For Each solarSystem In EveHQ.EveData.StaticData.SolarSystems
@@ -421,6 +423,7 @@ Namespace Forms
                     cboFactoryLocation.Items.Add(solarSystem.Value)
                 End If
             Next
+            cboFactoryLocation.Sorted = True
             cboFactoryLocation.EndUpdate()
 
             ' Reset the changed flag - nothing has really changed as we've just finished loading the form!
