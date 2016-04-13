@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EveHQ.NewEveApi.Entities
 {
-    public sealed class PlanetaryPins
+    public sealed class PlanetaryPin
     {
         public long PinID { get; set; }
         public int TypeID { get; set; }

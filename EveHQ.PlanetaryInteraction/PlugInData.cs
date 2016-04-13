@@ -21,7 +21,7 @@ namespace EveHQ.PlanetaryInteraction
             eveHQPlugIn.MainMenuText = "EveHQ Planetary Colonies";
             eveHQPlugIn.RunAtStartup = true;
             eveHQPlugIn.RunInIGB = true;
-            //eveHQPlugIn.MenuImage = Properties.plugin_icon;
+            eveHQPlugIn.MenuImage = Properties.Resources.NeoComPlanets;
             eveHQPlugIn.Version = Application.ProductVersion.ToString();
             return eveHQPlugIn;
         }

@@ -28,48 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupBoxCharacterInfo = new System.Windows.Forms.GroupBox();
+            this.listViewCapabilities = new System.Windows.Forms.ListView();
+            this.columnHeaderCapability = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewCharacterSkills = new System.Windows.Forms.ListView();
             this.columnHeaderSkillName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBoxCharacterImage = new System.Windows.Forms.PictureBox();
             this.listViewCharacterSelector = new System.Windows.Forms.ListView();
             this.groupBoxPlanetaryColonies = new System.Windows.Forms.GroupBox();
-            this.dataGridViewPlanetaryColonies = new System.Windows.Forms.DataGridView();
-            this.ColumnSolarSystemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSolarSystemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPlanetID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPlanetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPlanetTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPlanetTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnOwnerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnOwnerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnLastUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnUpgradeLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNumberOfPins = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.planetaryColoniesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.objectListViewPins = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumnInstallation = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnCycleTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnQuantityPerCycle = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnExpiryTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnContentType = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnContentQuantity = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.objectListViewColonies = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumnPlanet = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnSystem = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnPlanetType = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnUpgradeLevel = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnInstallations = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnLastUpdate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnVolume = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.groupBoxCharacterInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacterImage)).BeginInit();
             this.groupBoxPlanetaryColonies.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlanetaryColonies)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planetaryColoniesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewPins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewColonies)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxCharacterInfo
             // 
             this.groupBoxCharacterInfo.AutoSize = true;
             this.groupBoxCharacterInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBoxCharacterInfo.Controls.Add(this.listViewCapabilities);
             this.groupBoxCharacterInfo.Controls.Add(this.listViewCharacterSkills);
             this.groupBoxCharacterInfo.Controls.Add(this.pictureBoxCharacterImage);
             this.groupBoxCharacterInfo.Controls.Add(this.listViewCharacterSelector);
             this.groupBoxCharacterInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBoxCharacterInfo.Location = new System.Drawing.Point(0, 0);
             this.groupBoxCharacterInfo.Name = "groupBoxCharacterInfo";
-            this.groupBoxCharacterInfo.Size = new System.Drawing.Size(784, 187);
+            this.groupBoxCharacterInfo.Size = new System.Drawing.Size(923, 187);
             this.groupBoxCharacterInfo.TabIndex = 0;
             this.groupBoxCharacterInfo.TabStop = false;
             this.groupBoxCharacterInfo.Text = "Character Info";
+            // 
+            // listViewCapabilities
+            // 
+            this.listViewCapabilities.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderCapability,
+            this.columnHeaderValue});
+            this.listViewCapabilities.FullRowSelect = true;
+            this.listViewCapabilities.GridLines = true;
+            this.listViewCapabilities.Location = new System.Drawing.Point(699, 17);
+            this.listViewCapabilities.Name = "listViewCapabilities";
+            this.listViewCapabilities.Size = new System.Drawing.Size(224, 150);
+            this.listViewCapabilities.TabIndex = 3;
+            this.listViewCapabilities.UseCompatibleStateImageBehavior = false;
+            this.listViewCapabilities.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderCapability
+            // 
+            this.columnHeaderCapability.Text = "Capability";
+            this.columnHeaderCapability.Width = 172;
+            // 
+            // columnHeaderValue
+            // 
+            this.columnHeaderValue.Text = "Value";
+            this.columnHeaderValue.Width = 48;
             // 
             // listViewCharacterSkills
             // 
@@ -80,7 +109,7 @@
             this.listViewCharacterSkills.GridLines = true;
             this.listViewCharacterSkills.Location = new System.Drawing.Point(447, 17);
             this.listViewCharacterSkills.Name = "listViewCharacterSkills";
-            this.listViewCharacterSkills.Size = new System.Drawing.Size(334, 150);
+            this.listViewCharacterSkills.Size = new System.Drawing.Size(245, 150);
             this.listViewCharacterSkills.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listViewCharacterSkills.TabIndex = 2;
             this.listViewCharacterSkills.UseCompatibleStateImageBehavior = false;
@@ -89,11 +118,12 @@
             // columnHeaderSkillName
             // 
             this.columnHeaderSkillName.Text = "Skill Name";
-            this.columnHeaderSkillName.Width = 263;
+            this.columnHeaderSkillName.Width = 194;
             // 
             // columnHeaderLevel
             // 
             this.columnHeaderLevel.Text = "Level";
+            this.columnHeaderLevel.Width = 46;
             // 
             // pictureBoxCharacterImage
             // 
@@ -125,103 +155,167 @@
             // 
             this.groupBoxPlanetaryColonies.AutoSize = true;
             this.groupBoxPlanetaryColonies.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxPlanetaryColonies.Controls.Add(this.dataGridViewPlanetaryColonies);
+            this.groupBoxPlanetaryColonies.Controls.Add(this.objectListViewColonies);
+            this.groupBoxPlanetaryColonies.Controls.Add(this.objectListViewPins);
             this.groupBoxPlanetaryColonies.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxPlanetaryColonies.Location = new System.Drawing.Point(0, 187);
             this.groupBoxPlanetaryColonies.Name = "groupBoxPlanetaryColonies";
-            this.groupBoxPlanetaryColonies.Size = new System.Drawing.Size(784, 474);
+            this.groupBoxPlanetaryColonies.Size = new System.Drawing.Size(923, 474);
             this.groupBoxPlanetaryColonies.TabIndex = 1;
             this.groupBoxPlanetaryColonies.TabStop = false;
             this.groupBoxPlanetaryColonies.Text = "Planetary Colonies";
             // 
-            // dataGridViewPlanetaryColonies
+            // objectListViewPins
             // 
-            this.dataGridViewPlanetaryColonies.AllowUserToAddRows = false;
-            this.dataGridViewPlanetaryColonies.AllowUserToDeleteRows = false;
-            this.dataGridViewPlanetaryColonies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPlanetaryColonies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnSolarSystemID,
-            this.ColumnSolarSystemName,
-            this.ColumnPlanetID,
-            this.ColumnPlanetName,
-            this.ColumnPlanetTypeID,
-            this.ColumnPlanetTypeName,
-            this.ColumnOwnerID,
-            this.ColumnOwnerName,
-            this.ColumnLastUpdate,
-            this.ColumnUpgradeLevel,
-            this.ColumnNumberOfPins});
-            this.dataGridViewPlanetaryColonies.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewPlanetaryColonies.Location = new System.Drawing.Point(3, 17);
-            this.dataGridViewPlanetaryColonies.Name = "dataGridViewPlanetaryColonies";
-            this.dataGridViewPlanetaryColonies.Size = new System.Drawing.Size(778, 454);
-            this.dataGridViewPlanetaryColonies.TabIndex = 0;
+            this.objectListViewPins.AllColumns.Add(this.olvColumnInstallation);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnCycleTime);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnQuantityPerCycle);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnExpiryTime);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnContentType);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnContentQuantity);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnVolume);
+            this.objectListViewPins.CellEditUseWholeCell = false;
+            this.objectListViewPins.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumnInstallation,
+            this.olvColumnCycleTime,
+            this.olvColumnQuantityPerCycle,
+            this.olvColumnExpiryTime,
+            this.olvColumnContentType,
+            this.olvColumnContentQuantity,
+            this.olvColumnVolume});
+            this.objectListViewPins.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListViewPins.FullRowSelect = true;
+            this.objectListViewPins.GridLines = true;
+            this.objectListViewPins.HighlightBackgroundColor = System.Drawing.Color.Empty;
+            this.objectListViewPins.HighlightForegroundColor = System.Drawing.Color.Empty;
+            this.objectListViewPins.Location = new System.Drawing.Point(3, 160);
+            this.objectListViewPins.MultiSelect = false;
+            this.objectListViewPins.Name = "objectListViewPins";
+            this.objectListViewPins.ShowGroups = false;
+            this.objectListViewPins.Size = new System.Drawing.Size(707, 315);
+            this.objectListViewPins.TabIndex = 1;
+            this.objectListViewPins.UseCompatibleStateImageBehavior = false;
+            this.objectListViewPins.View = System.Windows.Forms.View.Details;
             // 
-            // ColumnSolarSystemID
+            // olvColumnInstallation
             // 
-            this.ColumnSolarSystemID.HeaderText = "SolarSystemID";
-            this.ColumnSolarSystemID.Name = "ColumnSolarSystemID";
+            this.olvColumnInstallation.AspectName = "Type";
+            this.olvColumnInstallation.Text = "Installation";
+            this.olvColumnInstallation.Width = 190;
             // 
-            // ColumnSolarSystemName
+            // olvColumnCycleTime
             // 
-            this.ColumnSolarSystemName.HeaderText = "SolarSystemName";
-            this.ColumnSolarSystemName.Name = "ColumnSolarSystemName";
+            this.olvColumnCycleTime.AspectName = "CycleTime";
+            this.olvColumnCycleTime.Text = "CycleTime";
+            this.olvColumnCycleTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.olvColumnCycleTime.Width = 68;
             // 
-            // ColumnPlanetID
+            // olvColumnQuantityPerCycle
             // 
-            this.ColumnPlanetID.HeaderText = "PlanetID";
-            this.ColumnPlanetID.Name = "ColumnPlanetID";
+            this.olvColumnQuantityPerCycle.AspectName = "QuantityPerCycle";
+            this.olvColumnQuantityPerCycle.Text = "Quantity/Cycle";
+            this.olvColumnQuantityPerCycle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.olvColumnQuantityPerCycle.Width = 98;
             // 
-            // ColumnPlanetName
+            // olvColumnExpiryTime
             // 
-            this.ColumnPlanetName.HeaderText = "PlanetName";
-            this.ColumnPlanetName.Name = "ColumnPlanetName";
+            this.olvColumnExpiryTime.AspectName = "Expiration";
+            this.olvColumnExpiryTime.Text = "Expiration";
+            this.olvColumnExpiryTime.Width = 87;
             // 
-            // ColumnPlanetTypeID
+            // olvColumnContentType
             // 
-            this.ColumnPlanetTypeID.HeaderText = "PlanetTypeID";
-            this.ColumnPlanetTypeID.Name = "ColumnPlanetTypeID";
+            this.olvColumnContentType.AspectName = "Commodity";
+            this.olvColumnContentType.Text = "Commodity";
+            this.olvColumnContentType.Width = 123;
             // 
-            // ColumnPlanetTypeName
+            // olvColumnContentQuantity
             // 
-            this.ColumnPlanetTypeName.HeaderText = "PlanetTypeName";
-            this.ColumnPlanetTypeName.Name = "ColumnPlanetTypeName";
+            this.olvColumnContentQuantity.AspectName = "Quantity";
+            this.olvColumnContentQuantity.Text = "Quantity";
+            this.olvColumnContentQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.olvColumnContentQuantity.Width = 66;
             // 
-            // ColumnOwnerID
+            // objectListViewColonies
             // 
-            this.ColumnOwnerID.HeaderText = "OwnerID";
-            this.ColumnOwnerID.Name = "ColumnOwnerID";
+            this.objectListViewColonies.AllColumns.Add(this.olvColumnPlanet);
+            this.objectListViewColonies.AllColumns.Add(this.olvColumnSystem);
+            this.objectListViewColonies.AllColumns.Add(this.olvColumnPlanetType);
+            this.objectListViewColonies.AllColumns.Add(this.olvColumnUpgradeLevel);
+            this.objectListViewColonies.AllColumns.Add(this.olvColumnInstallations);
+            this.objectListViewColonies.AllColumns.Add(this.olvColumnLastUpdate);
+            this.objectListViewColonies.CellEditUseWholeCell = false;
+            this.objectListViewColonies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumnPlanet,
+            this.olvColumnSystem,
+            this.olvColumnPlanetType,
+            this.olvColumnUpgradeLevel,
+            this.olvColumnInstallations,
+            this.olvColumnLastUpdate});
+            this.objectListViewColonies.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListViewColonies.FullRowSelect = true;
+            this.objectListViewColonies.GridLines = true;
+            this.objectListViewColonies.HighlightBackgroundColor = System.Drawing.Color.Empty;
+            this.objectListViewColonies.HighlightForegroundColor = System.Drawing.Color.Empty;
+            this.objectListViewColonies.Location = new System.Drawing.Point(3, 20);
+            this.objectListViewColonies.Name = "objectListViewColonies";
+            this.objectListViewColonies.ShowGroups = false;
+            this.objectListViewColonies.Size = new System.Drawing.Size(490, 137);
+            this.objectListViewColonies.TabIndex = 2;
+            this.objectListViewColonies.UseCompatibleStateImageBehavior = false;
+            this.objectListViewColonies.View = System.Windows.Forms.View.Details;
             // 
-            // ColumnOwnerName
+            // olvColumnPlanet
             // 
-            this.ColumnOwnerName.HeaderText = "OwnerName";
-            this.ColumnOwnerName.Name = "ColumnOwnerName";
+            this.olvColumnPlanet.AspectName = "Planet";
+            this.olvColumnPlanet.Text = "Planet";
+            this.olvColumnPlanet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.olvColumnPlanet.Width = 72;
             // 
-            // ColumnLastUpdate
+            // olvColumnSystem
             // 
-            this.ColumnLastUpdate.HeaderText = "LastUpdate";
-            this.ColumnLastUpdate.Name = "ColumnLastUpdate";
+            this.olvColumnSystem.AspectName = "System";
+            this.olvColumnSystem.Text = "System";
+            this.olvColumnSystem.Width = 70;
             // 
-            // ColumnUpgradeLevel
+            // olvColumnPlanetType
             // 
-            this.ColumnUpgradeLevel.HeaderText = "UpgradeLevel";
-            this.ColumnUpgradeLevel.Name = "ColumnUpgradeLevel";
+            this.olvColumnPlanetType.AspectName = "PlanetType";
+            this.olvColumnPlanetType.Text = "Planet Type";
+            this.olvColumnPlanetType.Width = 82;
             // 
-            // ColumnNumberOfPins
+            // olvColumnUpgradeLevel
             // 
-            this.ColumnNumberOfPins.HeaderText = "NumberOfPins";
-            this.ColumnNumberOfPins.Name = "ColumnNumberOfPins";
+            this.olvColumnUpgradeLevel.AspectName = "UpgradeLevel";
+            this.olvColumnUpgradeLevel.Text = "Upgrade Level";
+            this.olvColumnUpgradeLevel.Width = 83;
             // 
-            // planetaryColoniesBindingSource
+            // olvColumnInstallations
             // 
-            this.planetaryColoniesBindingSource.DataSource = typeof(EveHQ.NewEveApi.Entities.PlanetaryColonies);
+            this.olvColumnInstallations.AspectName = "InstallationCount";
+            this.olvColumnInstallations.Text = "Installations";
+            this.olvColumnInstallations.Width = 73;
+            // 
+            // olvColumnLastUpdate
+            // 
+            this.olvColumnLastUpdate.AspectName = "LastUpdate";
+            this.olvColumnLastUpdate.Text = "Last Update";
+            this.olvColumnLastUpdate.Width = 105;
+            // 
+            // olvColumnVolume
+            // 
+            this.olvColumnVolume.AspectName = "Volume";
+            this.olvColumnVolume.AspectToStringFormat = "{0:n}";
+            this.olvColumnVolume.Text = "Volume";
+            this.olvColumnVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.olvColumnVolume.Width = 66;
             // 
             // FrmPI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
-            this.ClientSize = new System.Drawing.Size(784, 661);
+            this.ClientSize = new System.Drawing.Size(923, 661);
             this.Controls.Add(this.groupBoxPlanetaryColonies);
             this.Controls.Add(this.groupBoxCharacterInfo);
             this.DoubleBuffered = true;
@@ -232,8 +326,8 @@
             this.groupBoxCharacterInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacterImage)).EndInit();
             this.groupBoxPlanetaryColonies.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlanetaryColonies)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planetaryColoniesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewPins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewColonies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,22 +339,27 @@
         private System.Windows.Forms.PictureBox pictureBoxCharacterImage;
         private System.Windows.Forms.ListView listViewCharacterSelector;
         private System.Windows.Forms.GroupBox groupBoxPlanetaryColonies;
-        private System.Windows.Forms.DataGridView dataGridViewPlanetaryColonies;
         private System.Windows.Forms.ListView listViewCharacterSkills;
         private System.Windows.Forms.ColumnHeader columnHeaderSkillName;
         private System.Windows.Forms.ColumnHeader columnHeaderLevel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSolarSystemID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSolarSystemName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPlanetID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPlanetName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPlanetTypeID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPlanetTypeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnOwnerID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnOwnerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnLastUpdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUpgradeLevel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumberOfPins;
-        private System.Windows.Forms.BindingSource planetaryColoniesBindingSource;
+        private System.Windows.Forms.ListView listViewCapabilities;
+        private System.Windows.Forms.ColumnHeader columnHeaderCapability;
+        private System.Windows.Forms.ColumnHeader columnHeaderValue;
+        private BrightIdeasSoftware.ObjectListView objectListViewPins;
+        private BrightIdeasSoftware.OLVColumn olvColumnInstallation;
+        private BrightIdeasSoftware.OLVColumn olvColumnCycleTime;
+        private BrightIdeasSoftware.OLVColumn olvColumnQuantityPerCycle;
+        private BrightIdeasSoftware.OLVColumn olvColumnExpiryTime;
+        private BrightIdeasSoftware.OLVColumn olvColumnContentType;
+        private BrightIdeasSoftware.OLVColumn olvColumnContentQuantity;
+        private BrightIdeasSoftware.ObjectListView objectListViewColonies;
+        private BrightIdeasSoftware.OLVColumn olvColumnPlanet;
+        private BrightIdeasSoftware.OLVColumn olvColumnSystem;
+        private BrightIdeasSoftware.OLVColumn olvColumnPlanetType;
+        private BrightIdeasSoftware.OLVColumn olvColumnUpgradeLevel;
+        private BrightIdeasSoftware.OLVColumn olvColumnInstallations;
+        private BrightIdeasSoftware.OLVColumn olvColumnLastUpdate;
+        private BrightIdeasSoftware.OLVColumn olvColumnVolume;
     }
 }
 

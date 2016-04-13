@@ -3,12 +3,6 @@ using EveHQ.NewEveApi;
 using EveHQ.NewEveApi.Entities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EveHQ.PlanetaryInteraction
@@ -81,6 +75,10 @@ namespace EveHQ.PlanetaryInteraction
 
         private void InitCharacterSkills()
         {
+            int maxColonies = 1;
+            int lyScanned = 0;
+            int commandCenter = 1;
+
             listViewCharacterSkills.BeginUpdate();
             listViewCharacterSkills.Items.Clear();
             foreach (EveSkill skill in HQ.SkillListName.Values)
@@ -90,56 +88,101 @@ namespace EveHQ.PlanetaryInteraction
                     int skillLevel = SkillFunctions.CalcCurrentLevel(_pilot, skill);
                     ListViewItem item = new ListViewItem(new[] { skill.Name, skillLevel.ToString() });
                     listViewCharacterSkills.Items.Add(item);
+                    if (skill.ID == 2495)
+                    {
+                        // Interplanetary Consolidation - number of planets
+                        maxColonies += skillLevel;
+                    }
+                    if (skill.ID == 13279)
+                    {
+                        if (skillLevel != 0)
+                        {
+                            // Remote sensing - lightyears scanned 1,3,5,7,9
+                            lyScanned += (skillLevel * 2) - 1;
+                        }
+                    }
+                    if (skill.ID == 2505)
+                    {
+                        // Command center upgrades - command center level
+                        commandCenter += skillLevel;
+                    }
                 }
             }
             listViewCharacterSkills.EndUpdate();
+
+            listViewCapabilities.BeginUpdate();
+            listViewCapabilities.Items.Clear();
+            ListViewItem capability = new ListViewItem(new[] { "Max number of colonies", maxColonies.ToString() });
+            listViewCapabilities.Items.Add(capability);
+            capability = new ListViewItem(new[] { "Scanning distance (lightyears)", lyScanned.ToString() });
+            listViewCapabilities.Items.Add(capability);
+            capability = new ListViewItem(new[] { "Max command center level", commandCenter.ToString() });
+            listViewCapabilities.Items.Add(capability);
+            listViewCapabilities.EndUpdate();
         }
 
         private void InitCharacterColonies()
         {
+            objectListViewColonies.BeginUpdate();
+            objectListViewColonies.Items.Clear();
+            objectListViewPins.Items.Clear();
             string accountName = _pilot.Account;
             if (HQ.Settings.Accounts.ContainsKey(accountName))
             {
                 EveHQAccount pilotAccount;
                 HQ.Settings.Accounts.TryGetValue(accountName, out pilotAccount);
 
-                EveServiceResponse<IEnumerable<PlanetaryColonies>> jobsResponse =
+                EveServiceResponse<IEnumerable<PlanetaryColony>> coloniesResponse =
                         HQ.ApiProvider.Character.PlanetaryColonies(pilotAccount.UserID, pilotAccount.APIKey, Convert.ToInt32(_pilot.ID));
 
-                if (jobsResponse.IsSuccess)
+                if (coloniesResponse.IsSuccess)
                 {
-                    List<PlanetaryColonies> colonyList = new List<PlanetaryColonies>();
-                    foreach (PlanetaryColonies colony in jobsResponse.ResultData)
+                    List<Colony> colonies = new List<Colony>();
+                    foreach (PlanetaryColony colony in coloniesResponse.ResultData)
                     {
-                        PlanetaryColonies newColony = new PlanetaryColonies();
-                        newColony.SolarSystemID = colony.SolarSystemID;
-                        newColony.SolarSystemName = colony.SolarSystemName;
-                        newColony.PlanetID = colony.PlanetID;
-                        newColony.PlanetName = colony.PlanetName;
-                        newColony.PlanetTypeID = colony.PlanetTypeID;
-                        newColony.PlanetTypeName = colony.PlanetTypeName;
-                        newColony.OwnerID = colony.OwnerID;
-                        newColony.OwnerName = colony.OwnerName;
-                        newColony.LastUpdate = colony.LastUpdate;
-                        newColony.UpgradeLevel = colony.UpgradeLevel;
-                        newColony.NumberOfPins = colony.NumberOfPins;
-                        colonyList.Add(newColony);
+                        Colony newPlanet = new Colony(colony);
+                        colonies.Add(newPlanet);
                     }
-                    var _bind = colonyList.Select(a => new
+                    objectListViewColonies.AddObjects(colonies);
+                    objectListViewColonies.EndUpdate();
+                    objectListViewPins.BeginUpdate();
+                    foreach (Colony colony in colonies)
                     {
-                        ColumnSolarSystemID = a.SolarSystemID,
-                        ColumnSolarSystemName = a.SolarSystemName,
-                        ColumnPlanetID = a.PlanetID,
-                        ColumnPlanetName = a.PlanetName,
-                        ColumnPlanetTypeID = a.PlanetTypeID,
-                        ColumnPlanetTypeName = a.PlanetTypeName,
-                        ColumnOwnerID = a.OwnerID,
-                        ColumnOwnerName = a.OwnerName,
-                        ColumnLastUpdate = a.LastUpdate,
-                        ColumnUpgradeLevel = a.UpgradeLevel,
-                        ColumnNumberOfPins = a.NumberOfPins
-                    });
-                    dataGridViewPlanetaryColonies.DataSource = _bind;
+                        EveServiceResponse<IEnumerable<PlanetaryPin>> pinsResponse =
+                                HQ.ApiProvider.Character.PlanetaryPins(pilotAccount.UserID, pilotAccount.APIKey, Convert.ToInt32(_pilot.ID), colony.PlanetID);
+
+                        if (pinsResponse.IsSuccess)
+                        {
+                            foreach (PlanetaryPin pin in pinsResponse.ResultData)
+                            {
+                                colony.addInstallation(pin);
+                            }
+                            objectListViewPins.AddObjects(colony.Installations);
+                            objectListViewPins.EndUpdate();
+                        }
+
+                        EveServiceResponse<IEnumerable<PlanetaryLink>> linksResponse =
+                                HQ.ApiProvider.Character.PlanetaryLinks(pilotAccount.UserID, pilotAccount.APIKey, Convert.ToInt32(_pilot.ID), colony.PlanetID);
+
+                        if (linksResponse.IsSuccess)
+                        {
+                            foreach (PlanetaryLink link in linksResponse.ResultData)
+                            {
+                                colony.addLink(link);
+                            }
+                        }
+
+                        EveServiceResponse<IEnumerable<PlanetaryRoute>> routesResponse =
+                                HQ.ApiProvider.Character.PlanetaryRoutes(pilotAccount.UserID, pilotAccount.APIKey, Convert.ToInt32(_pilot.ID), colony.PlanetID);
+
+                        if (routesResponse.IsSuccess)
+                        {
+                            foreach (PlanetaryRoute route in routesResponse.ResultData)
+                            {
+                                colony.addRoute(route);
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EveHQ.NewEveApi.Entities
 {
-    public sealed class PlanetaryRoutes
+    public sealed class PlanetaryRoute
     {
         public long RouteID { get; set; }
         public long SourcePinID { get; set; }

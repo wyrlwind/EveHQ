@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EveHQ.NewEveApi.Entities
 {
-    public sealed class PlanetaryColonies
+    public sealed class PlanetaryColony
     {
         public int SolarSystemID { get; set; }
         public string SolarSystemName { get; set; }

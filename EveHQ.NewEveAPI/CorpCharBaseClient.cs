@@ -1536,7 +1536,7 @@ namespace EveHQ.NewEveApi
         /// <param name="characterId">The character id.</param>
         /// <param name="responseMode">The response mode.</param>
         /// <returns></returns>
-        public EveServiceResponse<IEnumerable<PlanetaryColonies>> PlanetaryColonies(string keyId, string vCode, int characterId,
+        public EveServiceResponse<IEnumerable<PlanetaryColony>> PlanetaryColonies(string keyId, string vCode, int characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(PlanetaryColoniesAsync, keyId, vCode, characterId, responseMode);
@@ -1548,7 +1548,7 @@ namespace EveHQ.NewEveApi
         /// <param name="characterId">Character to query.</param>
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>An enumerable collection of all the characters planetary colonies.</returns>
-        public Task<EveServiceResponse<IEnumerable<PlanetaryColonies>>> PlanetaryColoniesAsync(string keyId, string vCode,
+        public Task<EveServiceResponse<IEnumerable<PlanetaryColony>>> PlanetaryColoniesAsync(string keyId, string vCode,
             int characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
@@ -1564,11 +1564,11 @@ namespace EveHQ.NewEveApi
                 cacheKey, ApiConstants.SixtyMinuteCache, responseMode, ParsePlanetaryColoniesResponse);
         }
 
-        private static IEnumerable<Entities.PlanetaryColonies> ParsePlanetaryColoniesResponse(XElement result)
+        private static IEnumerable<Entities.PlanetaryColony> ParsePlanetaryColoniesResponse(XElement result)
         {
             if (result == null)
             {
-                return new Entities.PlanetaryColonies[0]; // empty collection
+                return new Entities.PlanetaryColony[0]; // empty collection
             }
 
             return from rowset in result.Elements(ApiConstants.Rowset)
@@ -1584,7 +1584,7 @@ namespace EveHQ.NewEveApi
                    let lastUpdate = row.TryAttribute("lastUpdate").Value.ToDateTimeOffset(0)
                    let upgradeLevel = row.Attribute("upgradeLevel").Value.ToInt32()
                    let numberOfPins = row.Attribute("numberOfPins").Value.ToInt32()
-                   select new Entities.PlanetaryColonies
+                   select new Entities.PlanetaryColony
                    {
                        SolarSystemID = solarSystemID,
                        SolarSystemName = solarSystemName,
@@ -1607,7 +1607,7 @@ namespace EveHQ.NewEveApi
         /// <param name="planetId">The character id.</param>
         /// <param name="responseMode">The response mode.</param>
         /// <returns></returns>
-        public EveServiceResponse<IEnumerable<PlanetaryPins>> PlanetaryPins(string keyId, string vCode, int characterId, int planetId,
+        public EveServiceResponse<IEnumerable<PlanetaryPin>> PlanetaryPins(string keyId, string vCode, int characterId, int planetId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(PlanetaryPinsAsync, keyId, vCode, characterId, planetId, responseMode);
@@ -1620,7 +1620,7 @@ namespace EveHQ.NewEveApi
         /// <param name="planetId">The character id.</param>
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>An enumerable collection of all the characters planetary pins.</returns>
-        public Task<EveServiceResponse<IEnumerable<PlanetaryPins>>> PlanetaryPinsAsync(string keyId, string vCode,
+        public Task<EveServiceResponse<IEnumerable<PlanetaryPin>>> PlanetaryPinsAsync(string keyId, string vCode,
             int characterId, int planetId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
@@ -1642,11 +1642,11 @@ namespace EveHQ.NewEveApi
                 cacheKey, ApiConstants.SixtyMinuteCache, responseMode, ParsePlanetaryPinsResponse);
         }
 
-        private static IEnumerable<Entities.PlanetaryPins> ParsePlanetaryPinsResponse(XElement result)
+        private static IEnumerable<Entities.PlanetaryPin> ParsePlanetaryPinsResponse(XElement result)
         {
             if (result == null)
             {
-                return new Entities.PlanetaryPins[0]; // empty collection
+                return new Entities.PlanetaryPin[0]; // empty collection
             }
 
             return from rowset in result.Elements(ApiConstants.Rowset)
@@ -1665,7 +1665,7 @@ namespace EveHQ.NewEveApi
                    let contentQuantity = row.Attribute("contentQuantity").Value.ToInt32()
                    let longitude = row.Attribute("longitude").Value.ToDouble()
                    let latitude = row.Attribute("latitude").Value.ToDouble()
-                   select new Entities.PlanetaryPins
+                   select new Entities.PlanetaryPin
                    {
                        PinID = pinID,
                        TypeID = typeID,
@@ -1691,7 +1691,7 @@ namespace EveHQ.NewEveApi
         /// <param name="planetId">The character id.</param>
         /// <param name="responseMode">The response mode.</param>
         /// <returns></returns>
-        public EveServiceResponse<IEnumerable<PlanetaryLinks>> PlanetaryLinks(string keyId, string vCode, int characterId, int planetId,
+        public EveServiceResponse<IEnumerable<PlanetaryLink>> PlanetaryLinks(string keyId, string vCode, int characterId, int planetId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(PlanetaryLinksAsync, keyId, vCode, characterId, planetId, responseMode);
@@ -1704,7 +1704,7 @@ namespace EveHQ.NewEveApi
         /// <param name="planetId">The character id.</param>
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>An enumerable collection of all the characters planetary pins.</returns>
-        public Task<EveServiceResponse<IEnumerable<PlanetaryLinks>>> PlanetaryLinksAsync(string keyId, string vCode,
+        public Task<EveServiceResponse<IEnumerable<PlanetaryLink>>> PlanetaryLinksAsync(string keyId, string vCode,
             int characterId, int planetId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
@@ -1726,11 +1726,11 @@ namespace EveHQ.NewEveApi
                 cacheKey, ApiConstants.SixtyMinuteCache, responseMode, ParsePlanetaryLinksResponse);
         }
 
-        private static IEnumerable<Entities.PlanetaryLinks> ParsePlanetaryLinksResponse(XElement result)
+        private static IEnumerable<Entities.PlanetaryLink> ParsePlanetaryLinksResponse(XElement result)
         {
             if (result == null)
             {
-                return new Entities.PlanetaryLinks[0]; // empty collection
+                return new Entities.PlanetaryLink[0]; // empty collection
             }
 
             return from rowset in result.Elements(ApiConstants.Rowset)
@@ -1738,7 +1738,7 @@ namespace EveHQ.NewEveApi
                    let sourcePinID = row.Attribute("sourcePinID").Value.ToInt64()
                    let destinationPinID = row.Attribute("destinationPinID").Value.ToInt64()
                    let linkLevel = row.Attribute("linkLevel").Value.ToInt32()
-                   select new Entities.PlanetaryLinks
+                   select new Entities.PlanetaryLink
                    {
                        SourcePinID = sourcePinID,
                        DestinationPinID = destinationPinID,
@@ -1753,7 +1753,7 @@ namespace EveHQ.NewEveApi
         /// <param name="planetId">The character id.</param>
         /// <param name="responseMode">The response mode.</param>
         /// <returns></returns>
-        public EveServiceResponse<IEnumerable<PlanetaryRoutes>> PlanetaryRoutes(string keyId, string vCode, int characterId, int planetId,
+        public EveServiceResponse<IEnumerable<PlanetaryRoute>> PlanetaryRoutes(string keyId, string vCode, int characterId, int planetId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(PlanetaryRoutesAsync, keyId, vCode, characterId, planetId, responseMode);
@@ -1766,7 +1766,7 @@ namespace EveHQ.NewEveApi
         /// <param name="planetId">The character id.</param>
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>An enumerable collection of all the characters planetary pins.</returns>
-        public Task<EveServiceResponse<IEnumerable<PlanetaryRoutes>>> PlanetaryRoutesAsync(string keyId, string vCode,
+        public Task<EveServiceResponse<IEnumerable<PlanetaryRoute>>> PlanetaryRoutesAsync(string keyId, string vCode,
             int characterId, int planetId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
@@ -1788,11 +1788,11 @@ namespace EveHQ.NewEveApi
                 cacheKey, ApiConstants.SixtyMinuteCache, responseMode, ParsePlanetaryRoutesResponse);
         }
 
-        private static IEnumerable<Entities.PlanetaryRoutes> ParsePlanetaryRoutesResponse(XElement result)
+        private static IEnumerable<Entities.PlanetaryRoute> ParsePlanetaryRoutesResponse(XElement result)
         {
             if (result == null)
             {
-                return new Entities.PlanetaryRoutes[0]; // empty collection
+                return new Entities.PlanetaryRoute[0]; // empty collection
             }
 
             return from rowset in result.Elements(ApiConstants.Rowset)
@@ -1808,7 +1808,7 @@ namespace EveHQ.NewEveApi
                    let waypoint3 = row.Attribute("waypoint3").Value.ToInt64()
                    let waypoint4 = row.Attribute("waypoint4").Value.ToInt64()
                    let waypoint5 = row.Attribute("waypoint5").Value.ToInt64()
-                   select new Entities.PlanetaryRoutes
+                   select new Entities.PlanetaryRoute
                    {
                        RouteID = routeID,
                        SourcePinID = sourcePinID,
