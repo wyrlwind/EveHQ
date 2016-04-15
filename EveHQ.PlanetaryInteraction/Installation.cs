@@ -62,5 +62,19 @@ namespace EveHQ.PlanetaryInteraction
                 return volume;
             }
         }
+
+        public TimeSpan TimeLeft
+        {
+            get
+            {
+                DateTimeOffset utcTime = DateTimeOffset.UtcNow;
+                if (DateTimeOffset.Compare(_pin.ExpiryTime, utcTime) > 0)
+                {
+                    TimeSpan timediff = _pin.ExpiryTime - utcTime;
+                    return timediff;
+                }
+                return new TimeSpan(0);
+            }
+        }
     }
 }
