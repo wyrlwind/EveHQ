@@ -10,10 +10,12 @@ namespace EveHQ.PlanetaryInteraction
     class Installation
     {
         private PlanetaryPin _pin;
+        private Colony _colony;
 
-        public Installation(PlanetaryPin pin)
+        public Installation(PlanetaryPin pin, Colony colony)
         {
             _pin = pin;
+            _colony = colony;
         }
 
         public string Type
@@ -76,5 +78,11 @@ namespace EveHQ.PlanetaryInteraction
                 return new TimeSpan(0);
             }
         }
+
+        public string Planet
+        {
+            get { return _colony.Planet; }
+        }
+
     }
 }

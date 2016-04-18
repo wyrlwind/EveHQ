@@ -21,7 +21,7 @@ namespace EveHQ.PlanetaryInteraction
             {
                 _installations = new List<Installation>();
             }
-            _installations.Add(new Installation(pin));
+            _installations.Add(new Installation(pin, this));
         }
 
         public void addLink(PlanetaryLink link)

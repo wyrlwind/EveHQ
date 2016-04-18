@@ -38,12 +38,6 @@
             this.pictureBoxCharacterImage = new System.Windows.Forms.PictureBox();
             this.listViewCharacterSelector = new System.Windows.Forms.ListView();
             this.groupBoxPlanetaryColonies = new System.Windows.Forms.GroupBox();
-            this.objectListViewColonies = new BrightIdeasSoftware.ObjectListView();
-            this.olvColumnPlanet = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnSystem = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnPlanetType = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnUpgradeLevel = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnInstallations = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.objectListViewPins = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnInstallation = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnCycleTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -53,11 +47,18 @@
             this.olvColumnContentType = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnContentQuantity = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnVolume = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.objectListViewColonies = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumnPlanet = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnSystem = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnPlanetType = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnUpgradeLevel = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnInstallations = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnPinPlanet = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.groupBoxCharacterInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacterImage)).BeginInit();
             this.groupBoxPlanetaryColonies.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListViewColonies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewPins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewColonies)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxCharacterInfo
@@ -165,6 +166,99 @@
             this.groupBoxPlanetaryColonies.TabStop = false;
             this.groupBoxPlanetaryColonies.Text = "Planetary Colonies";
             // 
+            // objectListViewPins
+            // 
+            this.objectListViewPins.AllColumns.Add(this.olvColumnPinPlanet);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnInstallation);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnCycleTime);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnQuantityPerCycle);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnTimeLeft);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnExpiryTime);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnContentType);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnContentQuantity);
+            this.objectListViewPins.AllColumns.Add(this.olvColumnVolume);
+            this.objectListViewPins.AllowColumnReorder = true;
+            this.objectListViewPins.CellEditUseWholeCell = false;
+            this.objectListViewPins.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumnPinPlanet,
+            this.olvColumnInstallation,
+            this.olvColumnCycleTime,
+            this.olvColumnQuantityPerCycle,
+            this.olvColumnTimeLeft,
+            this.olvColumnExpiryTime,
+            this.olvColumnContentType,
+            this.olvColumnContentQuantity,
+            this.olvColumnVolume});
+            this.objectListViewPins.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListViewPins.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectListViewPins.FullRowSelect = true;
+            this.objectListViewPins.GridLines = true;
+            this.objectListViewPins.HighlightBackgroundColor = System.Drawing.Color.Empty;
+            this.objectListViewPins.HighlightForegroundColor = System.Drawing.Color.Empty;
+            this.objectListViewPins.Location = new System.Drawing.Point(3, 154);
+            this.objectListViewPins.MultiSelect = false;
+            this.objectListViewPins.Name = "objectListViewPins";
+            this.objectListViewPins.ShowGroups = false;
+            this.objectListViewPins.Size = new System.Drawing.Size(917, 317);
+            this.objectListViewPins.TabIndex = 2;
+            this.objectListViewPins.UseCompatibleStateImageBehavior = false;
+            this.objectListViewPins.View = System.Windows.Forms.View.Details;
+            // 
+            // olvColumnInstallation
+            // 
+            this.olvColumnInstallation.AspectName = "Type";
+            this.olvColumnInstallation.AspectToStringFormat = "";
+            this.olvColumnInstallation.Text = "Installation";
+            this.olvColumnInstallation.Width = 190;
+            // 
+            // olvColumnCycleTime
+            // 
+            this.olvColumnCycleTime.AspectName = "CycleTime";
+            this.olvColumnCycleTime.Text = "CycleTime";
+            this.olvColumnCycleTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.olvColumnCycleTime.Width = 68;
+            // 
+            // olvColumnQuantityPerCycle
+            // 
+            this.olvColumnQuantityPerCycle.AspectName = "QuantityPerCycle";
+            this.olvColumnQuantityPerCycle.Text = "Quantity/Cycle";
+            this.olvColumnQuantityPerCycle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.olvColumnQuantityPerCycle.Width = 98;
+            // 
+            // olvColumnTimeLeft
+            // 
+            this.olvColumnTimeLeft.AspectName = "TimeLeft";
+            this.olvColumnTimeLeft.AspectToStringFormat = "{0:dd\\.hh\\:mm\\:ss}";
+            this.olvColumnTimeLeft.Text = "TTC";
+            this.olvColumnTimeLeft.Width = 81;
+            // 
+            // olvColumnExpiryTime
+            // 
+            this.olvColumnExpiryTime.AspectName = "Expiration";
+            this.olvColumnExpiryTime.Text = "Expiration";
+            this.olvColumnExpiryTime.Width = 87;
+            // 
+            // olvColumnContentType
+            // 
+            this.olvColumnContentType.AspectName = "Commodity";
+            this.olvColumnContentType.Text = "Commodity";
+            this.olvColumnContentType.Width = 123;
+            // 
+            // olvColumnContentQuantity
+            // 
+            this.olvColumnContentQuantity.AspectName = "Quantity";
+            this.olvColumnContentQuantity.Text = "Quantity";
+            this.olvColumnContentQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.olvColumnContentQuantity.Width = 66;
+            // 
+            // olvColumnVolume
+            // 
+            this.olvColumnVolume.AspectName = "Volume";
+            this.olvColumnVolume.AspectToStringFormat = "{0:n}";
+            this.olvColumnVolume.Text = "Volume";
+            this.olvColumnVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.olvColumnVolume.Width = 66;
+            // 
             // objectListViewColonies
             // 
             this.objectListViewColonies.AllColumns.Add(this.olvColumnPlanet);
@@ -224,95 +318,10 @@
             this.olvColumnInstallations.Text = "Installations";
             this.olvColumnInstallations.Width = 73;
             // 
-            // objectListViewPins
+            // olvColumnPinPlanet
             // 
-            this.objectListViewPins.AllColumns.Add(this.olvColumnInstallation);
-            this.objectListViewPins.AllColumns.Add(this.olvColumnCycleTime);
-            this.objectListViewPins.AllColumns.Add(this.olvColumnQuantityPerCycle);
-            this.objectListViewPins.AllColumns.Add(this.olvColumnTimeLeft);
-            this.objectListViewPins.AllColumns.Add(this.olvColumnExpiryTime);
-            this.objectListViewPins.AllColumns.Add(this.olvColumnContentType);
-            this.objectListViewPins.AllColumns.Add(this.olvColumnContentQuantity);
-            this.objectListViewPins.AllColumns.Add(this.olvColumnVolume);
-            this.objectListViewPins.AllowColumnReorder = true;
-            this.objectListViewPins.CellEditUseWholeCell = false;
-            this.objectListViewPins.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumnInstallation,
-            this.olvColumnCycleTime,
-            this.olvColumnQuantityPerCycle,
-            this.olvColumnTimeLeft,
-            this.olvColumnExpiryTime,
-            this.olvColumnContentType,
-            this.olvColumnContentQuantity,
-            this.olvColumnVolume});
-            this.objectListViewPins.Cursor = System.Windows.Forms.Cursors.Default;
-            this.objectListViewPins.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.objectListViewPins.FullRowSelect = true;
-            this.objectListViewPins.GridLines = true;
-            this.objectListViewPins.HighlightBackgroundColor = System.Drawing.Color.Empty;
-            this.objectListViewPins.HighlightForegroundColor = System.Drawing.Color.Empty;
-            this.objectListViewPins.Location = new System.Drawing.Point(3, 154);
-            this.objectListViewPins.MultiSelect = false;
-            this.objectListViewPins.Name = "objectListViewPins";
-            this.objectListViewPins.ShowGroups = false;
-            this.objectListViewPins.Size = new System.Drawing.Size(917, 317);
-            this.objectListViewPins.TabIndex = 2;
-            this.objectListViewPins.UseCompatibleStateImageBehavior = false;
-            this.objectListViewPins.View = System.Windows.Forms.View.Details;
-            // 
-            // olvColumnInstallation
-            // 
-            this.olvColumnInstallation.AspectName = "Type";
-            this.olvColumnInstallation.AspectToStringFormat = "";
-            this.olvColumnInstallation.Text = "Installation";
-            this.olvColumnInstallation.Width = 190;
-            // 
-            // olvColumnCycleTime
-            // 
-            this.olvColumnCycleTime.AspectName = "CycleTime";
-            this.olvColumnCycleTime.Text = "CycleTime";
-            this.olvColumnCycleTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.olvColumnCycleTime.Width = 68;
-            // 
-            // olvColumnQuantityPerCycle
-            // 
-            this.olvColumnQuantityPerCycle.AspectName = "QuantityPerCycle";
-            this.olvColumnQuantityPerCycle.Text = "Quantity/Cycle";
-            this.olvColumnQuantityPerCycle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.olvColumnQuantityPerCycle.Width = 98;
-            // 
-            // olvColumnTimeLeft
-            // 
-            this.olvColumnTimeLeft.AspectName = "TimeLeft";
-            this.olvColumnTimeLeft.AspectToStringFormat = "{0:dd\\.hh\\:mm\\:ss}";
-            this.olvColumnTimeLeft.Text = "TTC";
-            // 
-            // olvColumnExpiryTime
-            // 
-            this.olvColumnExpiryTime.AspectName = "Expiration";
-            this.olvColumnExpiryTime.Text = "Expiration";
-            this.olvColumnExpiryTime.Width = 87;
-            // 
-            // olvColumnContentType
-            // 
-            this.olvColumnContentType.AspectName = "Commodity";
-            this.olvColumnContentType.Text = "Commodity";
-            this.olvColumnContentType.Width = 123;
-            // 
-            // olvColumnContentQuantity
-            // 
-            this.olvColumnContentQuantity.AspectName = "Quantity";
-            this.olvColumnContentQuantity.Text = "Quantity";
-            this.olvColumnContentQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.olvColumnContentQuantity.Width = 66;
-            // 
-            // olvColumnVolume
-            // 
-            this.olvColumnVolume.AspectName = "Volume";
-            this.olvColumnVolume.AspectToStringFormat = "{0:n}";
-            this.olvColumnVolume.Text = "Volume";
-            this.olvColumnVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.olvColumnVolume.Width = 66;
+            this.olvColumnPinPlanet.AspectName = "Planet";
+            this.olvColumnPinPlanet.Text = "Planet";
             // 
             // FrmPI
             // 
@@ -330,8 +339,8 @@
             this.groupBoxCharacterInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacterImage)).EndInit();
             this.groupBoxPlanetaryColonies.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.objectListViewColonies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewPins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewColonies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,6 +373,7 @@
         private BrightIdeasSoftware.OLVColumn olvColumnInstallations;
         private BrightIdeasSoftware.OLVColumn olvColumnVolume;
         private BrightIdeasSoftware.OLVColumn olvColumnTimeLeft;
+        private BrightIdeasSoftware.OLVColumn olvColumnPinPlanet;
     }
 }
 
