@@ -39,6 +39,7 @@
             this.listViewCharacterSelector = new System.Windows.Forms.ListView();
             this.groupBoxPlanetaryColonies = new System.Windows.Forms.GroupBox();
             this.objectListViewPins = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumnPinPlanet = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnInstallation = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnCycleTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnQuantityPerCycle = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -53,7 +54,6 @@
             this.olvColumnPlanetType = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnUpgradeLevel = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnInstallations = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumnPinPlanet = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.groupBoxCharacterInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacterImage)).BeginInit();
             this.groupBoxPlanetaryColonies.SuspendLayout();
@@ -204,6 +204,12 @@
             this.objectListViewPins.UseCompatibleStateImageBehavior = false;
             this.objectListViewPins.View = System.Windows.Forms.View.Details;
             // 
+            // olvColumnPinPlanet
+            // 
+            this.olvColumnPinPlanet.AspectName = "Planet";
+            this.olvColumnPinPlanet.Text = "Planet";
+            this.olvColumnPinPlanet.Width = 72;
+            // 
             // olvColumnInstallation
             // 
             this.olvColumnInstallation.AspectName = "Type";
@@ -317,11 +323,6 @@
             this.olvColumnInstallations.AspectName = "InstallationCount";
             this.olvColumnInstallations.Text = "Installations";
             this.olvColumnInstallations.Width = 73;
-            // 
-            // olvColumnPinPlanet
-            // 
-            this.olvColumnPinPlanet.AspectName = "Planet";
-            this.olvColumnPinPlanet.Text = "Planet";
             // 
             // FrmPI
             // 
