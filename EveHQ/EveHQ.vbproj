@@ -37,7 +37,6 @@
     <AssemblyInfoDescription>Eve Online game tool</AssemblyInfoDescription>
     <AssemblyInfoGUID>f8be6b56-f761-4ee7-a722-da54af312ecb</AssemblyInfoGUID>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
     <PublishUrl>C:\deploy\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -93,12 +92,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Ionic.Zip, Version=1.9.8.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetZip.1.9.8\lib\net20\Ionic.Zip.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\DotNetZip.1.9.8\lib\net20\Ionic.Zip.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -109,31 +108,31 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Extensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http.Primitives, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Primitives.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web" />
@@ -141,11 +140,11 @@
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.XML" />
     <Reference Include="YamlDotNet.Core, Version=2.0.1.27808, Culture=neutral, PublicKeyToken=2b53052c5884d7a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\YamlDotNet.Core.2.2.0\lib\net35\YamlDotNet.Core.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\YamlDotNet.Core.2.2.0\lib\net35\YamlDotNet.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="YamlDotNet.RepresentationModel, Version=2.0.1.27808, Culture=neutral, PublicKeyToken=2b53052c5884d7a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\YamlDotNet.RepresentationModel.2.2.0\lib\net35\YamlDotNet.RepresentationModel.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\YamlDotNet.RepresentationModel.2.2.0\lib\net35\YamlDotNet.RepresentationModel.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -960,15 +959,7 @@
   </Target>-->
   <Target Name="AfterBuild">
   </Target>
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
-  </Target>
   <PropertyGroup>
     <StyleCopMSBuildTargetsFile>..\packages\StyleCop.MSBuild.4.7.45.0\tools\StyleCop.targets</StyleCopMSBuildTargetsFile>
   </PropertyGroup>
@@ -993,3 +984,5 @@
     <PrepareForBuildDependsOn Condition="!Exists('$(StyleCopMSBuildTargetsFile)')">StyleCopMSBuildTargetsNotFound;$(PrepareForBuildDependsOn)</PrepareForBuildDependsOn>
   </PropertyGroup>
 </Project>
+
+
