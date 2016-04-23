@@ -46,10 +46,10 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\debug\</OutputPath>
+    <OutputPath>$(SolutionDir)BuildOutput\$(Configuration)\</OutputPath>
     <DocumentationFile>EveHQ.Void.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355,40010</NoWarn>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -57,7 +57,7 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>bin\release\</OutputPath>
+    <OutputPath>$(SolutionDir)BuildOutput\$(Configuration)\</OutputPath>
     <DocumentationFile>EveHQ.Void.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355,40010</NoWarn>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -187,7 +187,10 @@
   <Target Name="AfterBuild">
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)*.*" ..\..\..\evehq\$(outdir)
-copy /Y "$(TargetDir)*.*" "$(SolutionDir)BuildOutput\$(ConfigurationName)\"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent />
   </PropertyGroup>
 </Project>
