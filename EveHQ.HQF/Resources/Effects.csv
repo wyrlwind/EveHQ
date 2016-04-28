@@ -892,6 +892,13 @@
 1028,2,212,209,3,6,1,0,0,12,Remote Sensor Booster - Ladar Strength
 1029,2,212,210,3,6,1,0,0,12,Remote Sensor Booster - Mag Strength
 1030,2,212,208,3,6,1,0,0,12,Remote Sensor Booster - Radar Strength
+# Networked Sensor Array
+1027,2,1706,211,3,6,1,0,0,12,Networked Sensor Array - Grav Strength
+1028,2,1706,209,3,6,1,0,0,12,Networked Sensor Array - Ladar Strength
+1029,2,1706,210,3,6,1,0,0,12,Networked Sensor Array - Mag Strength
+1030,2,1706,208,3,6,1,0,0,12,Networked Sensor Array - Radar Strength
+235,2,1706,192,3,6,1,0,1,12,Networked Sensor Array - Max Locked Targets
+565,2,1706,564,3,6,1,0,0,12,Networked Sensor Array - Scan Resolution
 # Signal Amplifiers,,,,,,,,,,
 235,2,210,192,3,6,0,0,1,14,Signal Amplifier - Max Locked Targets
 309,2,210,76,3,6,1,0,0,14,Signal Amplifier - Max Targeting Range
