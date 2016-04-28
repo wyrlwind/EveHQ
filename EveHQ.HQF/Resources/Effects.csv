@@ -578,10 +578,10 @@
 # ARMOR,,,,,,,,,,
 1230,2,1199,84,6,0,0,0,0,8,Ancillary Armor Rep Amount
 1206,2,1199,73,6,0,0,0,0,8,Ancillary Armor Rep Duration
-1208,2,328,984,6,0,0,0,0,8,Armor Hardener - EM
-1208,2,328,985,6,0,0,0,0,8,Armor Hardener - Exp
-1208,2,328,986,6,0,0,0,0,8,Armor Hardener - Kin
-1208,2,328,987,6,0,0,0,0,8,Armor Hardener - Therm
+1208,2,328;1699,984,6,0,0,0,0,8,Armor Hardener - EM
+1208,2,328;1699,985,6,0,0,0,0,8,Armor Hardener - Exp
+1208,2,328;1699,986,6,0,0,0,0,8,Armor Hardener - Kin
+1208,2,328;1699,987,6,0,0,0,0,8,Armor Hardener - Therm
 1230,2,62,84,6,0,0,0,0,8,Armor Rep Amount
 1206,2,62,73,6,0,0,0,0,8,Armor Rep Duration
 1206,2,325,73,6,0,0,0,0,8,Remote Armor Rep Duration
@@ -792,6 +792,10 @@
 2403,2,1702,985,6,0,0,0,0,15,Captital Flex Shield Hardener - Explosive 
 2404,2,1702,986,6,0,0,0,0,15,Captital Flex Shield Hardener - kinetic 
 2405,2,1702,987,6,0,0,0,0,15,Captital Flex Shield Hardener - thermal 
+2402,2,1701,984,6,0,0,0,0,15,Captital Flex Armor Hardener - EM 
+2403,2,1701,985,6,0,0,0,0,15,Captital Flex Armor Hardener - Explosive 
+2404,2,1701,986,6,0,0,0,0,15,Captital Flex Armor Hardener - kinetic 
+2405,2,1701,987,6,0,0,0,0,15,Captital Flex Armor Hardener - thermal 
 # MINING CRYSTALS,,,,,,,,,,
 782,2,482,77,6,483,0,0,5,15,Mining Crystal - Mining Amount
 317,2,482,6,6,483,0,0,0,15,Mining Crystal - Capacitor Penalty
@@ -944,10 +948,10 @@
 # Ancillary Armor Repairers,,,,,,,,,,
 1886,2,1199,84,2,1199,0,0,5,14,AAR Charged Repair Amount Bonus
 # Armor Hardeners,,,,,,,,,,
-984,2,328,267,3,6,1,0,2,12,Armor Hardeners - Active EM Resist
-985,2,328,268,3,6,1,0,2,12,Armor Hardeners - Active Exp Resist
-986,2,328,269,3,6,1,0,2,12,Armor Hardeners - Active Kin Resist
-987,2,328,270,3,6,1,0,2,12,Armor Hardeners - Active Therm Resist
+984,2,328;1699,267,3,6,1,0,2,12,Armor Hardeners - Active EM Resist
+985,2,328;1699,268,3,6,1,0,2,12,Armor Hardeners - Active Exp Resist
+986,2,328;1699,269,3,6,1,0,2,12,Armor Hardeners - Active Kin Resist
+987,2,328;1699,270,3,6,1,0,2,12,Armor Hardeners - Active Therm Resist
 # Armor Plates,,,,,,,,,,
 796,2,329,10002,3,6,0,0,1,14,Armor Plates - Mass Addition
 1159,2,329,265,3,6,0,0,1,14,Armor Plates - Armor HP
