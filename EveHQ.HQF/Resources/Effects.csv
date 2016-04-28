@@ -578,10 +578,10 @@
 # ARMOR,,,,,,,,,,
 1230,2,1199,84,6,0,0,0,0,8,Ancillary Armor Rep Amount
 1206,2,1199,73,6,0,0,0,0,8,Ancillary Armor Rep Duration
-1208,2,328,984,6,0,0,0,0,8,Armor Hardener - EM
-1208,2,328,985,6,0,0,0,0,8,Armor Hardener - Exp
-1208,2,328,986,6,0,0,0,0,8,Armor Hardener - Kin
-1208,2,328,987,6,0,0,0,0,8,Armor Hardener - Therm
+1208,2,328;1699,984,6,0,0,0,0,8,Armor Hardener - EM
+1208,2,328;1699,985,6,0,0,0,0,8,Armor Hardener - Exp
+1208,2,328;1699,986,6,0,0,0,0,8,Armor Hardener - Kin
+1208,2,328;1699,987,6,0,0,0,0,8,Armor Hardener - Therm
 1230,2,62,84,6,0,0,0,0,8,Armor Rep Amount
 1206,2,62,73,6,0,0,0,0,8,Armor Rep Duration
 1206,2,325,73,6,0,0,0,0,8,Remote Armor Rep Duration
@@ -590,10 +590,10 @@
 1206,2,1156,73,6,0,0,0,0,8,Ancillary Shield Booster Duration
 1231,2,40,68,6,0,0,0,0,8,Shield Booster Boost Amount
 1206,2,40,73,6,0,0,0,0,8,Shield Booster Duration
-1208,2,77,984,6,0,0,0,0,8,Shield Hardener - EM
-1208,2,77,985,6,0,0,0,0,8,Shield Hardener - Exp
-1208,2,77,986,6,0,0,0,0,8,Shield Hardener - Kin
-1208,2,77,987,6,0,0,0,0,8,Shield Hardener - Therm
+1208,2,77;1700,984,6,0,0,0,0,8,Shield Hardener - EM
+1208,2,77;1700,985,6,0,0,0,0,8,Shield Hardener - Exp
+1208,2,77;1700,986,6,0,0,0,0,8,Shield Hardener - Kin
+1208,2,77;1700,987,6,0,0,0,0,8,Shield Hardener - Therm
 1206,2,41,73,6,0,0,0,0,8,Shield Transporter Duration
 # EWAR,,,,,,,,,,
 1226,2,202,1027,6,0,0,0,0,8,ECCM Strength - Grav
@@ -781,13 +781,21 @@
 1315,2,907,351,6,0,0,0,0,15,Tracking Computer - Optimal Range
 1316,2,907,767,6,0,0,0,0,15,Tracking Computer - Tracking Speed
 1332,2,907,349,6,0,0,0,0,15,Tracking Computer - Falloff
-66,2,908,73,6,0,0,0,0,15,Warp Disruption Field – Duration Bonus
-317,2,908,6,6,0,0,0,0,15,Warp Disruption Field – Capacitor Need
-1227,2,908,554,6,0,0,0,0,15,Warp Disruption Field – Signature Radius
-1324,2,908,1131,6,0,0,0,0,15,Warp Disruption Field – Mass Reduction
-1325,2,908,1164,6,0,0,0,0,15,Warp Disruption Field – AB/MWD Max Velocity
-1326,2,908,1270,6,0,0,0,0,15,Warp Disruption Field – AB/MWD Thrust
-1327,2,908,103,6,0,0,0,0,15,Warp Disruption Field – Scramble Range
+66,2,908,73,6,0,0,0,0,15,Warp Disruption Field - Duration Bonus
+317,2,908,6,6,0,0,0,0,15,Warp Disruption Field - Capacitor Need
+1227,2,908,554,6,0,0,0,0,15,Warp Disruption Field - Signature Radius
+1324,2,908,1131,6,0,0,0,0,15,Warp Disruption Field - Mass Reduction
+1325,2,908,1164,6,0,0,0,0,15,Warp Disruption Field - AB/MWD Max Velocity
+1326,2,908,1270,6,0,0,0,0,15,Warp Disruption Field - AB/MWD Thrust
+1327,2,908,103,6,0,0,0,0,15,Warp Disruption Field - Scramble Range
+2402,2,1702,984,6,0,0,0,0,15,Captital Flex Shield Hardener - EM 
+2403,2,1702,985,6,0,0,0,0,15,Captital Flex Shield Hardener - Explosive 
+2404,2,1702,986,6,0,0,0,0,15,Captital Flex Shield Hardener - kinetic 
+2405,2,1702,987,6,0,0,0,0,15,Captital Flex Shield Hardener - thermal 
+2402,2,1701,984,6,0,0,0,0,15,Captital Flex Armor Hardener - EM 
+2403,2,1701,985,6,0,0,0,0,15,Captital Flex Armor Hardener - Explosive 
+2404,2,1701,986,6,0,0,0,0,15,Captital Flex Armor Hardener - kinetic 
+2405,2,1701,987,6,0,0,0,0,15,Captital Flex Armor Hardener - thermal 
 # MINING CRYSTALS,,,,,,,,,,
 782,2,482,77,6,483,0,0,5,15,Mining Crystal - Mining Amount
 317,2,482,6,6,483,0,0,0,15,Mining Crystal - Capacitor Penalty
@@ -892,6 +900,13 @@
 1028,2,212,209,3,6,1,0,0,12,Remote Sensor Booster - Ladar Strength
 1029,2,212,210,3,6,1,0,0,12,Remote Sensor Booster - Mag Strength
 1030,2,212,208,3,6,1,0,0,12,Remote Sensor Booster - Radar Strength
+# Networked Sensor Array
+1027,2,1706,211,3,6,1,0,0,12,Networked Sensor Array - Grav Strength
+1028,2,1706,209,3,6,1,0,0,12,Networked Sensor Array - Ladar Strength
+1029,2,1706,210,3,6,1,0,0,12,Networked Sensor Array - Mag Strength
+1030,2,1706,208,3,6,1,0,0,12,Networked Sensor Array - Radar Strength
+235,2,1706,192,3,6,1,0,1,12,Networked Sensor Array - Max Locked Targets
+565,2,1706,564,3,6,1,0,0,12,Networked Sensor Array - Scan Resolution
 # Signal Amplifiers,,,,,,,,,,
 235,2,210,192,3,6,0,0,1,14,Signal Amplifier - Max Locked Targets
 309,2,210,76,3,6,1,0,0,14,Signal Amplifier - Max Targeting Range
@@ -933,10 +948,10 @@
 # Ancillary Armor Repairers,,,,,,,,,,
 1886,2,1199,84,2,1199,0,0,5,14,AAR Charged Repair Amount Bonus
 # Armor Hardeners,,,,,,,,,,
-984,2,328,267,3,6,1,0,2,12,Armor Hardeners - Active EM Resist
-985,2,328,268,3,6,1,0,2,12,Armor Hardeners - Active Exp Resist
-986,2,328,269,3,6,1,0,2,12,Armor Hardeners - Active Kin Resist
-987,2,328,270,3,6,1,0,2,12,Armor Hardeners - Active Therm Resist
+984,2,328;1699,267,3,6,1,0,2,12,Armor Hardeners - Active EM Resist
+985,2,328;1699,268,3,6,1,0,2,12,Armor Hardeners - Active Exp Resist
+986,2,328;1699,269,3,6,1,0,2,12,Armor Hardeners - Active Kin Resist
+987,2,328;1699,270,3,6,1,0,2,12,Armor Hardeners - Active Therm Resist
 # Armor Plates,,,,,,,,,,
 796,2,329,10002,3,6,0,0,1,14,Armor Plates - Mass Addition
 1159,2,329,265,3,6,0,0,1,14,Armor Plates - Armor HP
@@ -1028,10 +1043,10 @@
 146,2,770,263,3,6,0,0,0,14,Shield Flux Coil - Shield HP
 134,2,770,479,3,6,0,0,0,14,Shield Flux Coil - Shield Recharge Rate
 # Shield Hardeners,,,,,,,,,,
-984,2,77,271,3,6,1,0,2,12,Shield Hardeners - Active EM Resist
-985,2,77,272,3,6,1,0,2,12,Shield Hardeners - Active Exp Resist
-986,2,77,273,3,6,1,0,2,12,Shield Hardeners - Active Kin Resist
-987,2,77,274,3,6,1,0,2,12,Shield Hardeners - Active Therm Resist
+984,2,77;1700,271,3,6,1,0,2,12,Shield Hardeners - Active EM Resist
+985,2,77;1700,272,3,6,1,0,2,12,Shield Hardeners - Active Exp Resist
+986,2,77;1700,273,3,6,1,0,2,12,Shield Hardeners - Active Kin Resist
+987,2,77;1700,274,3,6,1,0,2,12,Shield Hardeners - Active Therm Resist
 # Shield Power Relays,,,,,,,,,,
 338,2,57,479,3,6,0,0,0,14,Shield Power Relay - Shield Recharge Rate
 144,2,57,55,3,6,0,0,0,14,Shield Power Relay - Capacitor Recharge Rate

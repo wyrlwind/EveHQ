@@ -55,13 +55,19 @@ Namespace Forms
 
     Public Class FrmEveImport
 
-        ReadOnly _eveFolder As String = Path.Combine(Path.Combine(My.Computer.FileSystem.SpecialDirectories.MyDocuments, "Eve"), "fittings")
+        Dim _eveFolder As String
         Dim _currentShip As Ship
         Dim _currentFit As New ArrayList
         Dim _currentFitName As String = ""
         Dim _currentFitting As Fitting
 
         Public Sub New()
+
+            Try
+                _eveFolder = Path.Combine(Path.Combine(My.Computer.FileSystem.SpecialDirectories.MyDocuments, "Eve"), "fittings")
+            Catch ex As Exception
+                _eveFolder = Nothing
+            End Try
 
             ' This call is required by the Windows Form Designer.
             InitializeComponent()
@@ -321,7 +327,7 @@ Namespace Forms
         Private Sub GetEveFittings()
 
             ' Check for the fittings directory and create it
-            If My.Computer.FileSystem.DirectoryExists(_eveFolder) = False Then
+            If _eveFolder IsNot Nothing Or My.Computer.FileSystem.DirectoryExists(_eveFolder) = False Then
                 MessageBox.Show("The Eve fittings folder is not present on your system and is required for this feature to work. You will need some fittings present in this folder either exported from Eve or EveHQ before proceeding.", "Fittings Folder Required", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Close()
                 Exit Sub

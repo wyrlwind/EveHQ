@@ -1631,7 +1631,7 @@
 19726,1,20530,272,1,19726,0,1,2,-4,15,Shield Explosive Resistance
 19726,1,20530,273,1,19726,0,1,2,-4,15,Shield Kinetic Resistance
 19726,1,20530,274,1,19726,0,1,2,-4,15,Shield Thermal Resistance
-19726,1,20530,51,2,524,0,1,0,-5,15,Citadel Launcher ROF
+19726,1,20530,51,2,524;1673,0,1,0,-5,15,Citadel Launcher ROF
 # Phoenix Wiyrkomi Edition,,,,,,,,,,,
 #34343,1,20530,271,1,34343,0,1,2,-4,15,Shield EM Resistance
 #34343,1,20530,272,1,34343,0,1,2,-4,15,Shield Explosive Resistance

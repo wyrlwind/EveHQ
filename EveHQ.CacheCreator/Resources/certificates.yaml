@@ -360,6 +360,18 @@
             elite: 5
             improved: 3
             standard: 2
+        41407:
+            advanced: 1
+            basic: 0
+            elite: 5
+            improved: 0
+            standard: 0
+        41408:
+            advanced: 1
+            basic: 0
+            elite: 5
+            improved: 0
+            standard: 0
 67:
     description: This certificate represents a level of competence in handling small
         hybrid turrets. The holder has learned that blasters are extremely close range
@@ -406,7 +418,6 @@
     - 35683
     - 37455
     - 37456
-    - 37482
     - 37483
     skillTypes:
         3300:
@@ -748,6 +759,18 @@
             elite: 5
             improved: 3
             standard: 2
+        41405:
+            advanced: 1
+            basic: 0
+            elite: 5
+            improved: 0
+            standard: 0
+        41406:
+            advanced: 1
+            basic: 0
+            elite: 5
+            improved: 0
+            standard: 0
 71:
     description: This certificate represents a level of competence in handling small
         projectile turrets. The holder has learned that autocannons are close range
@@ -1077,6 +1100,18 @@
             elite: 5
             improved: 3
             standard: 2
+        41403:
+            advanced: 1
+            basic: 0
+            elite: 5
+            improved: 0
+            standard: 0
+        41404:
+            advanced: 1
+            basic: 0
+            elite: 5
+            improved: 0
+            standard: 0
 75:
     description: This certificate represents a level of competence in operating small
         missile launchers. The holder has learned rocket and light missile launchers
@@ -1107,6 +1142,7 @@
     - 34828
     - 37454
     - 37480
+    - 37482
     skillTypes:
         3319:
             advanced: 5
@@ -1478,6 +1514,18 @@
             elite: 5
             improved: 3
             standard: 2
+        41409:
+            advanced: 1
+            basic: 0
+            elite: 5
+            improved: 0
+            standard: 0
+        41410:
+            advanced: 1
+            basic: 0
+            elite: 5
+            improved: 0
+            standard: 0
 79:
     description: This certificate represents a level of competence in the deployment
         of timed munitions. The holder has learned that bombs are launched straight
@@ -1565,10 +1613,8 @@
             standard: 3
 81:
     description: This certificate represents a level of competence in the control
-        of all fighters. The holder has learned that fighters are advanced drones
-        with warp capabilities and that they may be destroyed in combat. This is a
-        good skillset for capsuleers specializing in capital vessels of all factions
-        based on the Carrier hulls.
+        of all fighters. This is a good skillset for capsuleers specializing in capital
+        vessels of all factions based on the Carrier hulls.
     groupID: 273
     name: Fighters
     recommendedFor:
@@ -1599,7 +1645,25 @@
             elite: 5
             improved: 5
             standard: 5
+        12305:
+            advanced: 4
+            basic: 1
+            elite: 5
+            improved: 3
+            standard: 2
         23069:
+            advanced: 4
+            basic: 1
+            elite: 5
+            improved: 3
+            standard: 2
+        23606:
+            advanced: 4
+            basic: 1
+            elite: 5
+            improved: 3
+            standard: 2
+        23618:
             advanced: 4
             basic: 1
             elite: 5
@@ -1611,14 +1675,26 @@
             elite: 5
             improved: 3
             standard: 2
+        40572:
+            advanced: 4
+            basic: 1
+            elite: 5
+            improved: 3
+            standard: 2
+        40573:
+            advanced: 4
+            basic: 1
+            elite: 5
+            improved: 3
+            standard: 2
 82:
     description: This certificate represents a level of competence in the control
-        of all fighter-bombers. The holder has learned that fighter-bombers are advanced
-        drones that may be destroyed in combat, can warp around and are specifically
-        designed to attack capital ships. This is a good skillset for capsuleers specializing
-        in capital vessels of all factions based on the Carrier hulls.
+        of all heavy fighters. The holder has learned that heavy fighters are advanced
+        fighters that may be destroyed in combat and are specifically designed to
+        attack capital ships. This is a good skillset for capsuleers specializing
+        in capital vessels of all factions based on the Supercarrier hulls.
     groupID: 273
-    name: Fighter Bombers
+    name: Heavy Fighters
     recommendedFor:
     - 3514
     - 22852
@@ -1644,12 +1720,30 @@
             elite: 5
             improved: 5
             standard: 5
-        23069:
-            advanced: 5
-            basic: 5
+        12305:
+            advanced: 4
+            basic: 1
             elite: 5
-            improved: 5
-            standard: 5
+            improved: 3
+            standard: 2
+        23069:
+            advanced: 4
+            basic: 1
+            elite: 5
+            improved: 3
+            standard: 2
+        23606:
+            advanced: 4
+            basic: 1
+            elite: 5
+            improved: 3
+            standard: 2
+        23618:
+            advanced: 4
+            basic: 1
+            elite: 5
+            improved: 3
+            standard: 2
         24613:
             advanced: 4
             basic: 1
@@ -2096,6 +2190,12 @@
             elite: 5
             improved: 3
             standard: 2
+        32797:
+            advanced: 4
+            basic: 0
+            elite: 5
+            improved: 3
+            standard: 1
 87:
     description: This certificate represents a level of competence in remote shield
         support. The holder has learned that assistance rendered to other vessels
@@ -2470,6 +2570,12 @@
             improved: 3
             standard: 1
         22809:
+            advanced: 4
+            basic: 0
+            elite: 5
+            improved: 3
+            standard: 1
+        32797:
             advanced: 4
             basic: 0
             elite: 5
