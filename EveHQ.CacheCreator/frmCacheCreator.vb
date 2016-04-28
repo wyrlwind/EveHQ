@@ -755,6 +755,7 @@ Public Class FrmCacheCreator
     Private Sub LoadSolarSystems()
 
         StaticData.SolarSystems.Clear()
+        StaticData.Planets.Clear()
         Dim strSql As String = "SELECT mapSolarSystems.regionID AS mapSolarSystems_regionID, mapSolarSystems.constellationID AS mapSolarSystems_constellationID, mapSolarSystems.solarSystemID, mapSolarSystems.solarSystemName, mapSolarSystems.x, mapSolarSystems.y, mapSolarSystems.z, mapSolarSystems.xMin, mapSolarSystems.xMax, mapSolarSystems.yMin, mapSolarSystems.yMax, mapSolarSystems.zMin, mapSolarSystems.zMax, mapSolarSystems.luminosity, mapSolarSystems.border, mapSolarSystems.fringe, mapSolarSystems.corridor, mapSolarSystems.hub, mapSolarSystems.international, mapSolarSystems.regional, mapSolarSystems.constellation, mapSolarSystems.security, mapSolarSystems.factionID, mapSolarSystems.radius, mapSolarSystems.sunTypeID, mapSolarSystems.securityClass, mapRegions.regionID AS mapRegions_regionID, mapRegions.regionName, mapConstellations.constellationID AS mapConstellations_constellationID, mapConstellations.constellationName"
         strSql &= " FROM (mapRegions INNER JOIN mapConstellations ON mapRegions.regionID = mapConstellations.regionID) INNER JOIN mapSolarSystems ON mapConstellations.constellationID = mapSolarSystems.constellationID;"
         Using evehqData As DataSet = DatabaseFunctions.GetStaticData(strSql)
@@ -811,6 +812,12 @@ Public Class FrmCacheCreator
                             Select Case CInt(reader.Item("groupID"))
                                 Case 7 ' Planet
                                     'MapData.eveSystems(id).Planets.Add(reader.Item("itemName").ToString)
+                                    Dim planetName As String
+                                    planetName = reader.Item("itemName").ToString
+                                    Dim radius As Double
+                                    radius = CDbl(reader.Item("radius"))
+                                    AddPlanet(CInt(reader.Item("itemID")), planetName, radius)
+                                    StaticData.SolarSystems(id).Planets.Add(CInt(reader.Item("itemID")))
                                     StaticData.SolarSystems(id).PlanetCount += 1
                                 Case 8 ' Moon
                                     'MapData.eveSystems(id).Moons.Add(reader.Item("itemName").ToString)
@@ -838,6 +845,15 @@ Public Class FrmCacheCreator
 
         End Using
 
+    End Sub
+
+    Private Sub AddPlanet(planetId As Integer, planetName As String, planetRadius As Double)
+        Dim p As Planet
+        p = New Planet
+        p.Id = planetId
+        p.Name = planetName
+        p.Radius = planetRadius
+        StaticData.Planets.Add(p.Id, p)
     End Sub
 
     Private Sub LoadStations()
@@ -1437,6 +1453,12 @@ Public Class FrmCacheCreator
         ' Solar Systems
         s = New FileStream(Path.Combine(coreCacheFolder, "Systems.dat"), FileMode.Create)
         Serializer.Serialize(s, StaticData.SolarSystems)
+        s.Flush()
+        s.Close()
+
+        ' Planets
+        s = New FileStream(Path.Combine(coreCacheFolder, "Planets.dat"), FileMode.Create)
+        Serializer.Serialize(s, StaticData.Planets)
         s.Flush()
         s.Close()
 

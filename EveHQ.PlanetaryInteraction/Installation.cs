@@ -84,5 +84,19 @@ namespace EveHQ.PlanetaryInteraction
             get { return _colony.Planet; }
         }
 
+        public long Id
+        {
+            get { return _pin.PinID; }
+        }
+
+        public double Latitude
+        {
+            get { return _pin.Latitude; }
+        }
+
+        public double Longitude
+        {
+            get { return _pin.Longitude; }
+        }
     }
 }

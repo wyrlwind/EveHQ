@@ -1,5 +1,8 @@
-﻿using EveHQ.NewEveApi.Entities;
+﻿using EveHQ.Core;
+using EveHQ.EveData;
+using EveHQ.NewEveApi.Entities;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace EveHQ.PlanetaryInteraction
 {
@@ -7,8 +10,8 @@ namespace EveHQ.PlanetaryInteraction
     {
         private PlanetaryColony _colony;
         private List<Installation> _installations;
-        private List<PlanetaryLink> _links;
-        private List<PlanetaryRoute> _routes;
+        private List<Link> _links;
+        private List<Route> _routes;
 
         public Colony(PlanetaryColony colony)
         {
@@ -28,28 +31,30 @@ namespace EveHQ.PlanetaryInteraction
         {
             if (_links == null)
             {
-                _links = new List<PlanetaryLink>();
+                _links = new List<Link>();
             }
-            _links.Add(link);
+            _links.Add(new Link(link, this));
         }
 
         public void addRoute(PlanetaryRoute route)
         {
             if (_routes == null)
             {
-                _routes = new List<PlanetaryRoute>();
+                _routes = new List<Route>();
             }
-            _routes.Add(route);
+            _routes.Add(new Route(route, this));
         }
 
-        public void setLinks(List<PlanetaryLink> links)
+        public List<Route> Routes
         {
-            _links = links;
+            get { return _routes; }
+            set { _routes = value; }
         }
 
-        public void setRoutes(List<PlanetaryRoute> routes)
+        public List<Link> Links
         {
-            _routes = routes;
+            get { return _links; }
+            set { _links = value; }
         }
 
         public List<Installation> Installations
@@ -98,6 +103,31 @@ namespace EveHQ.PlanetaryInteraction
         public int InstallationCount
         {
             get { return _colony.NumberOfPins; }
+        }
+
+        public int LinksCount
+        {
+            get { return _links.Count; }
+        }
+        public int RoutesCount
+        {
+            get { return _routes.Count; }
+        }
+
+        public Image PlanetIcon
+        {
+            get
+            {
+                return ImageHandler.GetImage(_colony.PlanetTypeID, 32);
+            }
+        }
+
+        public double PlanetRadius
+        {
+            get
+            {
+                return StaticData.Planets[_colony.PlanetID].Radius/1000;
+            }
         }
     }
 }

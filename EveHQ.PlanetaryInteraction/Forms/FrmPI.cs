@@ -10,6 +10,7 @@ namespace EveHQ.PlanetaryInteraction
     public partial class FrmPI : Form
     {
         EveHQPilot _pilot = null;
+        private List<Colony> _colonies;
 
         public FrmPI()
         {
@@ -42,6 +43,12 @@ namespace EveHQ.PlanetaryInteraction
         private void listViewCharacterSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
             _pilot = null;
+            listViewCharacterSkills.Items.Clear();
+            listViewCapabilities.Items.Clear();
+            objectListViewColonies.Items.Clear();
+            objectListViewPins.Items.Clear();
+            objectListViewLinks.Items.Clear();
+            objectListViewRoutes.Items.Clear();
             if (listViewCharacterSelector.SelectedItems.Count != 0)
             {
                 foreach (EveHQAccount account in HQ.Settings.Accounts.Values)
@@ -126,6 +133,8 @@ namespace EveHQ.PlanetaryInteraction
             objectListViewColonies.BeginUpdate();
             objectListViewColonies.Items.Clear();
             objectListViewPins.Items.Clear();
+            objectListViewLinks.Items.Clear();
+            objectListViewRoutes.Items.Clear();
             string accountName = _pilot.Account;
             if (HQ.Settings.Accounts.ContainsKey(accountName))
             {
@@ -143,9 +152,7 @@ namespace EveHQ.PlanetaryInteraction
                         Colony newPlanet = new Colony(colony);
                         colonies.Add(newPlanet);
                     }
-                    objectListViewColonies.AddObjects(colonies);
-                    objectListViewColonies.EndUpdate();
-                    objectListViewPins.BeginUpdate();
+                    _colonies = colonies;
                     foreach (Colony colony in colonies)
                     {
                         EveServiceResponse<IEnumerable<PlanetaryPin>> pinsResponse =
@@ -157,8 +164,6 @@ namespace EveHQ.PlanetaryInteraction
                             {
                                 colony.addInstallation(pin);
                             }
-                            objectListViewPins.AddObjects(colony.Installations);
-                            objectListViewPins.EndUpdate();
                         }
 
                         EveServiceResponse<IEnumerable<PlanetaryLink>> linksResponse =
@@ -183,9 +188,62 @@ namespace EveHQ.PlanetaryInteraction
                             }
                         }
                     }
+                    objectListViewColonies.AddObjects(colonies);
+                    objectListViewColonies.EndUpdate();
+                    showInstallations(colonies);
+                    showLinks(colonies);
+                    showRoutes(colonies);
                 }
             }
         }
 
+        private void objectListViewColonies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Colony> colonies = new List<Colony>();
+            foreach (var selectedObject in objectListViewColonies.SelectedObjects)
+            {
+                colonies.Add((Colony)selectedObject);
+            }
+            if (colonies.Count == 0)
+            {
+                colonies = _colonies;
+            }
+            showInstallations(colonies);
+            showLinks(colonies);
+            showRoutes(colonies);
+        }
+
+        private void showInstallations(List<Colony> colonies)
+        {
+            objectListViewPins.Items.Clear();
+            objectListViewPins.BeginUpdate();
+            foreach (Colony colony in colonies)
+            {
+                objectListViewPins.AddObjects(colony.Installations);
+            }
+            objectListViewPins.EndUpdate();
+        }
+
+        private void showLinks(List<Colony> colonies)
+        {
+            objectListViewLinks.Items.Clear();
+            objectListViewLinks.BeginUpdate();
+            foreach (Colony colony in colonies)
+            {
+                objectListViewLinks.AddObjects(colony.Links);
+            }
+            objectListViewLinks.EndUpdate();
+        }
+
+        private void showRoutes(List<Colony> colonies)
+        {
+            objectListViewRoutes.Items.Clear();
+            objectListViewRoutes.BeginUpdate();
+            foreach (Colony colony in colonies)
+            {
+                objectListViewRoutes.AddObjects(colony.Routes);
+            }
+            objectListViewRoutes.EndUpdate();
+        }
     }
 }
