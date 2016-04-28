@@ -590,10 +590,10 @@
 1206,2,1156,73,6,0,0,0,0,8,Ancillary Shield Booster Duration
 1231,2,40,68,6,0,0,0,0,8,Shield Booster Boost Amount
 1206,2,40,73,6,0,0,0,0,8,Shield Booster Duration
-1208,2,77,984,6,0,0,0,0,8,Shield Hardener - EM
-1208,2,77,985,6,0,0,0,0,8,Shield Hardener - Exp
-1208,2,77,986,6,0,0,0,0,8,Shield Hardener - Kin
-1208,2,77,987,6,0,0,0,0,8,Shield Hardener - Therm
+1208,2,77;1700,984,6,0,0,0,0,8,Shield Hardener - EM
+1208,2,77;1700,985,6,0,0,0,0,8,Shield Hardener - Exp
+1208,2,77;1700,986,6,0,0,0,0,8,Shield Hardener - Kin
+1208,2,77;1700,987,6,0,0,0,0,8,Shield Hardener - Therm
 1206,2,41,73,6,0,0,0,0,8,Shield Transporter Duration
 # EWAR,,,,,,,,,,
 1226,2,202,1027,6,0,0,0,0,8,ECCM Strength - Grav
@@ -781,13 +781,17 @@
 1315,2,907,351,6,0,0,0,0,15,Tracking Computer - Optimal Range
 1316,2,907,767,6,0,0,0,0,15,Tracking Computer - Tracking Speed
 1332,2,907,349,6,0,0,0,0,15,Tracking Computer - Falloff
-66,2,908,73,6,0,0,0,0,15,Warp Disruption Field – Duration Bonus
-317,2,908,6,6,0,0,0,0,15,Warp Disruption Field – Capacitor Need
-1227,2,908,554,6,0,0,0,0,15,Warp Disruption Field – Signature Radius
-1324,2,908,1131,6,0,0,0,0,15,Warp Disruption Field – Mass Reduction
-1325,2,908,1164,6,0,0,0,0,15,Warp Disruption Field – AB/MWD Max Velocity
-1326,2,908,1270,6,0,0,0,0,15,Warp Disruption Field – AB/MWD Thrust
-1327,2,908,103,6,0,0,0,0,15,Warp Disruption Field – Scramble Range
+66,2,908,73,6,0,0,0,0,15,Warp Disruption Field - Duration Bonus
+317,2,908,6,6,0,0,0,0,15,Warp Disruption Field - Capacitor Need
+1227,2,908,554,6,0,0,0,0,15,Warp Disruption Field - Signature Radius
+1324,2,908,1131,6,0,0,0,0,15,Warp Disruption Field - Mass Reduction
+1325,2,908,1164,6,0,0,0,0,15,Warp Disruption Field - AB/MWD Max Velocity
+1326,2,908,1270,6,0,0,0,0,15,Warp Disruption Field - AB/MWD Thrust
+1327,2,908,103,6,0,0,0,0,15,Warp Disruption Field - Scramble Range
+2402,2,1702,984,6,0,0,0,0,15,Captital Flex Shield Hardener - EM 
+2403,2,1702,985,6,0,0,0,0,15,Captital Flex Shield Hardener - Explosive 
+2404,2,1702,986,6,0,0,0,0,15,Captital Flex Shield Hardener - kinetic 
+2405,2,1702,987,6,0,0,0,0,15,Captital Flex Shield Hardener - thermal 
 # MINING CRYSTALS,,,,,,,,,,
 782,2,482,77,6,483,0,0,5,15,Mining Crystal - Mining Amount
 317,2,482,6,6,483,0,0,0,15,Mining Crystal - Capacitor Penalty
@@ -1035,10 +1039,10 @@
 146,2,770,263,3,6,0,0,0,14,Shield Flux Coil - Shield HP
 134,2,770,479,3,6,0,0,0,14,Shield Flux Coil - Shield Recharge Rate
 # Shield Hardeners,,,,,,,,,,
-984,2,77,271,3,6,1,0,2,12,Shield Hardeners - Active EM Resist
-985,2,77,272,3,6,1,0,2,12,Shield Hardeners - Active Exp Resist
-986,2,77,273,3,6,1,0,2,12,Shield Hardeners - Active Kin Resist
-987,2,77,274,3,6,1,0,2,12,Shield Hardeners - Active Therm Resist
+984,2,77;1700,271,3,6,1,0,2,12,Shield Hardeners - Active EM Resist
+985,2,77;1700,272,3,6,1,0,2,12,Shield Hardeners - Active Exp Resist
+986,2,77;1700,273,3,6,1,0,2,12,Shield Hardeners - Active Kin Resist
+987,2,77;1700,274,3,6,1,0,2,12,Shield Hardeners - Active Therm Resist
 # Shield Power Relays,,,,,,,,,,
 338,2,57,479,3,6,0,0,0,14,Shield Power Relay - Shield Recharge Rate
 144,2,57,55,3,6,0,0,0,14,Shield Power Relay - Capacitor Recharge Rate
