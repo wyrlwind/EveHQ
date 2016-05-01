@@ -2016,7 +2016,7 @@ Public Class FrmCacheCreator
             Dim strSql As String = ""
             strSql &= "SELECT invCategories.categoryID, invGroups.groupID, invTypes.typeID, invTypes.description, invTypes.typeName, invTypes.mass, invTypes.volume, invTypes.capacity, invTypes.basePrice, invTypes.published, invTypes.raceID, invTypes.marketGroupID"
             strSql &= " FROM invCategories INNER JOIN (invGroups INNER JOIN invTypes ON invGroups.groupID = invTypes.groupID) ON invCategories.categoryID = invGroups.categoryID"
-            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010"
+            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32,87)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010"
             strSql &= " ORDER BY invTypes.typeName;"
             moduleData = DatabaseFunctions.GetStaticData(strSql)
             If moduleData IsNot Nothing Then
@@ -2202,6 +2202,8 @@ Public Class FrmCacheCreator
                                 newModule.IsImplant = True
                             End If
                         End If
+                    Case 87 ' Fighter
+                        newModule.IsFighter = True
                 End Select
             Next
 
@@ -2646,6 +2648,11 @@ Public Class FrmCacheCreator
                     newEffect.IsPerLevel = CBool(effectData(7))
                     newEffect.CalcType = CType(effectData(8), EffectCalcType)
                     newEffect.Status = CInt(effectData(9))
+
+                    If Attributes.AttributeQuickList(newEffect.AffectedAtt) = Nothing Then
+                        MessageBox.Show("Error parsing data - Missing attribute for " & newEffect.AffectedAtt, "BuildModuleEffects Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Throw New NotImplementedException()
+                    End If
 
                     Select Case newEffect.AffectingType
                         ' Setup the name as Item;Type;Attribute

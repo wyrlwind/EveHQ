@@ -59,6 +59,7 @@ Namespace Controls
     Public Class ShipSlotControl
         Dim _updateAll As Boolean = False
         Dim _updateDrones As Boolean = False
+        Dim _updateFighters As Boolean = False
         Dim _updateBoosters As Boolean = False
         Dim _cancelDroneActivation As Boolean = False
         ReadOnly _rigGroups As New ArrayList
@@ -201,19 +202,23 @@ Namespace Controls
             Call UpdateShipSlotColumns()
             lvwCargoBay.BeginUpdate()
             lvwDroneBay.BeginUpdate()
+            lvwFighterBay.BeginUpdate()
             ClearShipSlots()
             ClearDroneBay()
+            ClearFighterBay()
             ClearCargoBay()
             ClearShipBay()
             ParentFitting.UpdateBaseShipFromFitting()
             UpdateShipSlotLayout()
             lvwCargoBay.EndUpdate()
             lvwDroneBay.EndUpdate()
+            lvwFighterBay.EndUpdate()
             ParentFitting.ShipInfoCtrl.UpdateImplantList()
             ParentFitting.ApplyFitting(BuildType.BuildEverything)
             If ParentFitting.FittedShip IsNot Nothing Then
                 UpdateShipDetails()
                 RedrawDroneBay()
+                RedrawFighterBay()
                 RedrawCargoBay()
                 RedrawShipBay()
                 UpdateBoosterSlots()
@@ -311,6 +316,11 @@ Namespace Controls
                 From dbi As Object In ParentFitting.FittedShip.DroneBayItems.Values
                                 Select CInt(CType(dbi, DroneBayItem).DroneType.ID))
 
+            'Fighter bay
+            itemIds.AddRange(
+                From dbi As Object In ParentFitting.FittedShip.FighterBayItems.Values
+                Select CInt(CType(dbi, FighterBayItem).FighterType.ID))
+
             'Cargo bay
             For Each item As Object In ParentFitting.FittedShip.CargoBayItems.Values
                 itemIds.Add(CInt(CType(item, CargoBayItem).ItemType.ID))
@@ -386,6 +396,7 @@ Namespace Controls
                 adtSlots.EndUpdate()
                 Call RedrawCargoBayCapacity()
                 Call RedrawDroneBayCapacity()
+                Call RedrawFighterBayCapacity()
                 Call RedrawShipBayCapacity()
             End If
             'eTime = Now
@@ -1469,6 +1480,13 @@ Namespace Controls
             End If
         End Sub
 
+        Private Sub ClearFighterBay()
+            If ParentFitting.BaseShip IsNot Nothing Then
+                ParentFitting.BaseShip.FighterBayItems.Clear()
+                ParentFitting.BaseShip.FighterBayUsed = 0
+            End If
+        End Sub
+
         Private Sub ClearCargoBay()
             If ParentFitting.BaseShip IsNot Nothing Then
                 ParentFitting.BaseShip.CargoBayItems.Clear()
@@ -1492,7 +1510,7 @@ Namespace Controls
 
 #End Region
 
-#Region "Removing Mods/Drones/Items"
+#Region "Removing Mods/Drones/Fighters/Items"
 
         Private Sub RemoveModules(ByVal sender As Object, ByVal e As EventArgs)
             Dim removedSubsystems As Boolean = False
@@ -2812,6 +2830,31 @@ Namespace Controls
             Call RedrawDroneBayCapacity()
         End Sub
 
+        Private Sub RedrawFighterBay()
+            lvwFighterBay.BeginUpdate()
+            lvwFighterBay.Items.Clear()
+            ParentFitting.BaseShip.FighterBayUsed = 0
+            Dim dbi As FighterBayItem
+            Dim holdingBay As New SortedList
+            For Each dbi In ParentFitting.BaseShip.FighterBayItems.Values
+                holdingBay.Add(holdingBay.Count, dbi)
+            Next
+            ParentFitting.BaseShip.FighterBayItems.Clear()
+            For Each dbi In holdingBay.Values
+                Dim newFighterItem As New ListViewItem(dbi.FighterType.Name)
+                newFighterItem.Name = CStr(lvwFighterBay.Items.Count)
+                newFighterItem.SubItems.Add(CStr(dbi.Quantity))
+                If dbi.IsActive = True Then
+                    newFighterItem.Checked = True
+                End If
+                ParentFitting.BaseShip.FighterBayItems.Add(lvwFighterBay.Items.Count, dbi)
+                ParentFitting.BaseShip.FighterBayUsed += dbi.FighterType.Volume * dbi.Quantity
+                lvwFighterBay.Items.Add(newFighterItem)
+            Next
+            lvwFighterBay.EndUpdate()
+            Call RedrawFighterBayCapacity()
+        End Sub
+
         Private Sub RedrawShipBay()
             lvwShipBay.BeginUpdate()
             lvwShipBay.Items.Clear()
@@ -2827,9 +2870,9 @@ Namespace Controls
                 newCargoItem.Name = CStr(lvwShipBay.Items.Count)
                 newCargoItem.SubItems.Add(CStr(sbi.Quantity))
                 newCargoItem.SubItems.Add(sbi.ShipType.Volume.ToString("N0"))
-                newCargoItem.SubItems.Add((sbi.ShipType.Volume*sbi.Quantity).ToString("N0"))
+                newCargoItem.SubItems.Add((sbi.ShipType.Volume * sbi.Quantity).ToString("N0"))
                 ParentFitting.BaseShip.ShipBayItems.Add(lvwShipBay.Items.Count, sbi)
-                ParentFitting.BaseShip.ShipBayUsed += sbi.ShipType.Volume*sbi.Quantity
+                ParentFitting.BaseShip.ShipBayUsed += sbi.ShipType.Volume * sbi.Quantity
                 lvwShipBay.Items.Add(newCargoItem)
             Next
             lvwShipBay.EndUpdate()
@@ -2872,6 +2915,22 @@ Namespace Controls
                 pbDroneBay.Value = CInt(ParentFitting.FittedShip.DroneBay)
             Else
                 pbDroneBay.Value = CInt(ParentFitting.BaseShip.DroneBayUsed)
+            End If
+        End Sub
+
+        Private Sub RedrawFighterBayCapacity()
+            lvwFighterBay.EndUpdate()
+            lblFighterBay.Text = ParentFitting.BaseShip.FighterBayUsed.ToString("N2") & " / " &
+                               ParentFitting.FittedShip.FighterBay.ToString("N2") & " m³"
+            If ParentFitting.FittedShip.FighterBay > 0 Then
+                pbFighterBay.Maximum = CInt(ParentFitting.FittedShip.FighterBay)
+            Else
+                pbFighterBay.Maximum = 1
+            End If
+            If ParentFitting.BaseShip.FighterBayUsed > ParentFitting.FittedShip.FighterBay Then
+                pbFighterBay.Value = CInt(ParentFitting.FittedShip.FighterBay)
+            Else
+                pbFighterBay.Value = CInt(ParentFitting.BaseShip.FighterBayUsed)
             End If
         End Sub
 
@@ -2944,6 +3003,9 @@ Namespace Controls
                         If ctxBays.Items.ContainsKey("Drone Skills") = True Then
                             ctxBays.Items.RemoveByKey("Drone Skills")
                         End If
+                        If ctxBays.Items.ContainsKey("Fighter Skills") = True Then
+                            ctxBays.Items.RemoveByKey("Fighter Skills")
+                        End If
                         ctxSplitBatch.Enabled = False
                         ctxShowBayInfoItem.Enabled = True
                     Else
@@ -2954,6 +3016,9 @@ Namespace Controls
                         ctxShowBayInfoItem.Text = "Show Ship Info"
                         If ctxBays.Items.ContainsKey("Drone Skills") = True Then
                             ctxBays.Items.RemoveByKey("Drone Skills")
+                        End If
+                        If ctxBays.Items.ContainsKey("Fighter Skills") = True Then
+                            ctxBays.Items.RemoveByKey("Fighter Skills")
                         End If
                         ctxSplitBatch.Enabled = False
                         ctxShowBayInfoItem.Enabled = False
@@ -3102,6 +3167,148 @@ Namespace Controls
                     Else
                         e.Cancel = True
                     End If
+                Case "lvwFighterBay"
+                    If _lvwBay.SelectedItems.Count > 0 Then
+                        ctxShowBayInfoItem.Text = "Show Fighter Info"
+                        ctxShowBayInfoItem.Enabled = True
+                        ctxSplitBatch.Enabled = True
+                        Dim selItem As ListViewItem = _lvwBay.SelectedItems(0)
+                        Dim idx As Integer = CInt(selItem.Name)
+                        Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+                        Dim currentMod As ShipModule = fbi.FighterType
+
+                        ' Check for Relevant Skills in Modules/Charges
+                        Dim relModuleSkills, relChargeSkills As New ArrayList
+                        Dim affects(3) As String
+                        For Each affect As String In currentMod.Affects
+                            If affect.Contains(";Skill;") = True Then
+                                affects = affect.Split((";").ToCharArray)
+                                If relModuleSkills.Contains(affects(0)) = False Then
+                                    relModuleSkills.Add(affects(0))
+                                End If
+                            End If
+                            If affect.Contains(";Ship Bonus;") = True Then
+                                affects = affect.Split((";").ToCharArray)
+                                If ParentFitting.ShipName = affects(0) Then
+                                    If relModuleSkills.Contains(affects(3)) = False Then
+                                        relModuleSkills.Add(affects(3))
+                                    End If
+                                End If
+                            End If
+                        Next
+                        relModuleSkills.Sort()
+                        If currentMod.LoadedCharge IsNot Nothing Then
+                            For Each affect As String In currentMod.LoadedCharge.Affects
+                                If affect.Contains(";Skill;") = True Then
+                                    affects = affect.Split((";").ToCharArray)
+                                    If relChargeSkills.Contains(affects(0)) = False Then
+                                        relChargeSkills.Add(affects(0))
+                                    End If
+                                End If
+                                If affect.Contains(";Ship Bonus;") = True Then
+                                    affects = affect.Split((";").ToCharArray)
+                                    If ParentFitting.ShipName = affects(0) Then
+                                        If relChargeSkills.Contains(affects(3)) = False Then
+                                            relChargeSkills.Add(affects(3))
+                                        End If
+                                    End If
+                                End If
+                            Next
+                        End If
+                        relChargeSkills.Sort()
+                        If relModuleSkills.Count > 0 Or relChargeSkills.Count > 0 Then
+                            ' Add the Main menu item
+                            Dim alterRelevantSkills As New ToolStripMenuItem
+                            alterRelevantSkills.Name = "Fighter Skills"
+                            alterRelevantSkills.Text = "Alter Relevant Skills"
+                            For Each relSkill As String In relModuleSkills
+                                Dim newRelSkill As New ToolStripMenuItem
+                                newRelSkill.Name = relSkill
+                                newRelSkill.Text = relSkill
+                                Dim pilotLevel As Integer =
+                                        FittingPilots.HQFPilots(_currentInfo.cboPilots.SelectedItem.ToString).SkillSet(
+                                            relSkill).Level
+                                newRelSkill.Image =
+                                    CType(My.Resources.ResourceManager.GetObject("Level" & pilotLevel.ToString), Image)
+                                For skillLevel As Integer = 0 To 5
+                                    Dim newRelSkillLevel As New ToolStripMenuItem
+                                    newRelSkillLevel.Name = relSkill & skillLevel.ToString
+                                    newRelSkillLevel.Text = "Level " & skillLevel.ToString
+                                    If skillLevel = pilotLevel Then
+                                        newRelSkillLevel.Checked = True
+                                    End If
+                                    AddHandler newRelSkillLevel.Click, AddressOf SetPilotSkillLevel
+                                    newRelSkill.DropDownItems.Add(newRelSkillLevel)
+                                Next
+                                newRelSkill.DropDownItems.Add("-")
+                                Dim defaultLevel As Integer = 0
+                                If _
+                                    HQ.Settings.Pilots(_currentInfo.cboPilots.SelectedItem.ToString).PilotSkills.
+                                        ContainsKey(relSkill) = True Then
+                                    defaultLevel =
+                                        HQ.Settings.Pilots(_currentInfo.cboPilots.SelectedItem.ToString).PilotSkills(
+                                            relSkill).Level
+                                End If
+                                Dim newRelSkillDefault As New ToolStripMenuItem
+                                newRelSkillDefault.Name = relSkill & defaultLevel.ToString
+                                newRelSkillDefault.Text = "Actual (Level " & defaultLevel.ToString & ")"
+                                AddHandler newRelSkillDefault.Click, AddressOf SetPilotSkillLevel
+                                newRelSkill.DropDownItems.Add(newRelSkillDefault)
+                                alterRelevantSkills.DropDownItems.Add(newRelSkill)
+                            Next
+                            If alterRelevantSkills.DropDownItems.Count > 0 And relChargeSkills.Count > 0 Then
+                                alterRelevantSkills.DropDownItems.Add("-")
+                            End If
+                            For Each relSkill As String In relChargeSkills
+                                Dim newRelSkill As New ToolStripMenuItem
+                                newRelSkill.Name = relSkill
+                                newRelSkill.Text = relSkill
+                                Dim pilotLevel As Integer =
+                                        FittingPilots.HQFPilots(_currentInfo.cboPilots.SelectedItem.ToString).SkillSet(
+                                            relSkill).Level
+                                newRelSkill.Image =
+                                    CType(My.Resources.ResourceManager.GetObject("Level" & pilotLevel.ToString), Image)
+                                For skillLevel As Integer = 0 To 5
+                                    Dim newRelSkillLevel As New ToolStripMenuItem
+                                    newRelSkillLevel.Name = relSkill & skillLevel.ToString
+                                    newRelSkillLevel.Text = "Level " & skillLevel.ToString
+                                    If skillLevel = pilotLevel Then
+                                        newRelSkillLevel.Checked = True
+                                    End If
+                                    AddHandler newRelSkillLevel.Click, AddressOf SetPilotSkillLevel
+                                    newRelSkill.DropDownItems.Add(newRelSkillLevel)
+                                Next
+                                newRelSkill.DropDownItems.Add("-")
+                                Dim defaultLevel As Integer = 0
+                                If _
+                                    HQ.Settings.Pilots(_currentInfo.cboPilots.SelectedItem.ToString).PilotSkills.
+                                        ContainsKey(relSkill) = True Then
+                                    defaultLevel =
+                                        HQ.Settings.Pilots(_currentInfo.cboPilots.SelectedItem.ToString).PilotSkills(
+                                            relSkill).Level
+                                End If
+                                Dim newRelSkillDefault As New ToolStripMenuItem
+                                newRelSkillDefault.Name = relSkill & defaultLevel.ToString
+                                newRelSkillDefault.Text = "Actual (Level " & defaultLevel.ToString & ")"
+                                AddHandler newRelSkillDefault.Click, AddressOf SetPilotSkillLevel
+                                newRelSkill.DropDownItems.Add(newRelSkillDefault)
+                                alterRelevantSkills.DropDownItems.Add(newRelSkill)
+                            Next
+                            If ctxBays.Items.ContainsKey("Fighter Skills") = True Then
+                                ctxBays.Items.RemoveByKey("Fighter Skills")
+                            End If
+                            ctxBays.Items.Add(alterRelevantSkills)
+                        End If
+                        If _lvwBay.SelectedItems.Count > 1 Then
+                            ctxAlterQuantity.Enabled = False
+                            ctxSplitBatch.Enabled = False
+                        Else
+                            ctxAlterQuantity.Enabled = True
+                            ctxSplitBatch.Enabled = True
+                        End If
+                    Else
+                        e.Cancel = True
+                    End If
             End Select
         End Sub
 
@@ -3134,6 +3341,17 @@ Namespace Controls
                     Call RedrawDroneBay()
                     _updateDrones = False
                     ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+                Case "lvwFighterBay"
+                    ' Removes the item from the fighter bay
+                    For Each remItem As ListViewItem In lvwFighterBay.SelectedItems
+                        ParentFitting.BaseShip.FighterBayItems.Remove(CInt(remItem.Name))
+                        lvwFighterBay.Items.RemoveByKey(remItem.Name)
+                    Next
+                    Call ParentFitting.UpdateFittingFromBaseShip()
+                    _updateFighters = True
+                    Call RedrawFighterBay()
+                    _updateFighters = False
+                    ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
             End Select
         End Sub
 
@@ -3150,6 +3368,10 @@ Namespace Controls
                     Dim idx As Integer = CInt(selItem.Name)
                     Dim dbi As DroneBayItem = ParentFitting.FittedShip.DroneBayItems.Item(idx)
                     sModule = dbi.DroneType
+                Case "lvwFighterBay"
+                    Dim idx As Integer = CInt(selItem.Name)
+                    Dim dbi As FighterBayItem = ParentFitting.FittedShip.FighterBayItems.Item(idx)
+                    sModule = dbi.FighterType
             End Select
             Dim showInfo As New FrmShowInfo
             Dim hPilot As EveHQPilot
@@ -3234,6 +3456,30 @@ Namespace Controls
                         Call RedrawDroneBay()
                         _updateDrones = False
                     End Using
+                Case "lvwFighterBay"
+                    Dim selItem As ListViewItem = lvwFighterBay.SelectedItems(0)
+                    Dim idx As Integer = CInt(selItem.Name)
+                    Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+                    Using newSelectForm As New FrmSelectQuantity
+                        newSelectForm.FittedShip = ParentFitting.FittedShip
+                        newSelectForm.Fbi = fbi
+                        newSelectForm.BayType = FrmSelectQuantity.BayTypes.FighterBay
+                        newSelectForm.IsSplit = False
+                        newSelectForm.nudQuantity.Minimum = 1
+                        newSelectForm.nudQuantity.Maximum = fbi.Quantity +
+                                                            CInt(
+                                                                Int(
+                                                                    (ParentFitting.FittedShip.FighterBay -
+                                                                     ParentFitting.BaseShip.FighterBayUsed) /
+                                                                    fbi.FighterType.Volume))
+                        newSelectForm.nudQuantity.Value = fbi.Quantity
+                        newSelectForm.ShowDialog()
+                        ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+                        Call ParentFitting.UpdateFittingFromBaseShip()
+                        _updateFighters = True
+                        Call RedrawFighterBay()
+                        _updateFighters = False
+                    End Using
             End Select
         End Sub
 
@@ -3293,6 +3539,26 @@ Namespace Controls
                         Call RedrawDroneBay()
                         _updateDrones = False
                     End Using
+                Case "lvwFighterBay"
+                    Dim selItem As ListViewItem = lvwFighterBay.SelectedItems(0)
+                    Dim idx As Integer = CInt(selItem.Name)
+                    Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+                    Using newSelectForm As New FrmSelectQuantity
+                        newSelectForm.FittedShip = ParentFitting.FittedShip
+                        newSelectForm.CurrentShip = ParentFitting.BaseShip
+                        newSelectForm.Fbi = fbi
+                        newSelectForm.BayType = FrmSelectQuantity.BayTypes.FighterBay
+                        newSelectForm.IsSplit = True
+                        newSelectForm.nudQuantity.Value = 1
+                        newSelectForm.nudQuantity.Minimum = 1
+                        newSelectForm.nudQuantity.Maximum = fbi.Quantity - 1
+                        newSelectForm.ShowDialog()
+                        ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+                        Call ParentFitting.UpdateFittingFromBaseShip()
+                        _updateFighters = True
+                        Call RedrawFighterBay()
+                        _updateFighters = False
+                    End Using
             End Select
         End Sub
 
@@ -3335,6 +3601,45 @@ Namespace Controls
             ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
         End Sub
 
+        Private Sub btnMergeFighters_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnMergeFighters.Click
+            _updateFighters = True
+            lvwFighterBay.BeginUpdate()
+            lvwFighterBay.Items.Clear()
+            ParentFitting.BaseShip.FighterBayUsed = 0
+            Dim dbi As FighterBayItem
+            Dim holdingBay As New SortedList
+            Dim fighterQuantities As New SortedList
+            For Each dbi In ParentFitting.BaseShip.FighterBayItems.Values
+                If holdingBay.Contains(dbi.FighterType.Name) = False Then
+                    holdingBay.Add(dbi.FighterType.Name, dbi.FighterType)
+                End If
+                If fighterQuantities.Contains(dbi.FighterType.Name) = True Then
+                    Dim cq As Integer = CInt(fighterQuantities(dbi.FighterType.Name))
+                    fighterQuantities(dbi.FighterType.Name) = cq + dbi.Quantity
+                Else
+                    fighterQuantities.Add(dbi.FighterType.Name, dbi.Quantity)
+                End If
+            Next
+            ParentFitting.BaseShip.FighterBayItems.Clear()
+            For Each fighter As String In holdingBay.Keys
+                dbi = New FighterBayItem
+                dbi.FighterType = CType(holdingBay(fighter), ShipModule)
+                dbi.IsActive = False
+                dbi.Quantity = CInt(fighterQuantities(fighter))
+                Dim newFighterItem As New ListViewItem(dbi.FighterType.Name)
+                newFighterItem.Name = CStr(lvwFighterBay.Items.Count)
+                newFighterItem.SubItems.Add(CStr(dbi.Quantity))
+                ParentFitting.BaseShip.FighterBayItems.Add(lvwFighterBay.Items.Count, dbi)
+                ParentFitting.BaseShip.FighterBayUsed += dbi.FighterType.Volume * dbi.Quantity
+                lvwFighterBay.Items.Add(newFighterItem)
+            Next
+            lvwFighterBay.EndUpdate()
+            Call RedrawFighterBayCapacity()
+            _updateFighters = False
+            ' Rebuild the ship to account for any disabled fighters
+            ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+        End Sub
+
         Private Sub btnMergeCargo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnMergeCargo.Click
             lvwCargoBay.BeginUpdate()
             lvwCargoBay.Items.Clear()
@@ -3363,9 +3668,9 @@ Namespace Controls
                 newCargoItem.Name = CStr(lvwCargoBay.Items.Count)
                 newCargoItem.SubItems.Add(CStr(cbi.Quantity))
                 ParentFitting.BaseShip.CargoBayItems.Add(lvwCargoBay.Items.Count, cbi)
-                ParentFitting.BaseShip.CargoBayUsed += cbi.ItemType.Volume*cbi.Quantity
+                ParentFitting.BaseShip.CargoBayUsed += cbi.ItemType.Volume * cbi.Quantity
                 If cbi.ItemType.IsContainer Then _
-                    ParentFitting.BaseShip.CargoBayAdditional += (cbi.ItemType.Capacity - cbi.ItemType.Volume)*
+                    ParentFitting.BaseShip.CargoBayAdditional += (cbi.ItemType.Capacity - cbi.ItemType.Volume) *
                                                                  cbi.Quantity
                 lvwCargoBay.Items.Add(newCargoItem)
             Next
@@ -3630,6 +3935,18 @@ Namespace Controls
                                 newRemoteItem.Tag = remoteDrone
                                 newRemoteItem.Name = pPilot.PilotName
                                 newRemoteItem.Text = remoteDrone.DroneType.Name & " (x" & remoteDrone.Quantity & ")"
+                                lvwRemoteEffects.Items.Add(newRemoteItem)
+                            End If
+                        End If
+                    Next
+                    For Each remoteFighter As FighterBayItem In remoteShip.FighterBayItems.Values
+                        If _remoteGroups.Contains(CInt(remoteFighter.FighterType.DatabaseGroup)) = True Then
+                            If remoteFighter.IsActive = True Then
+                                remoteFighter.FighterType.ModuleState = ModuleStates.Gang
+                                Dim newRemoteItem As New ListViewItem
+                                newRemoteItem.Tag = remoteFighter
+                                newRemoteItem.Name = pPilot.PilotName
+                                newRemoteItem.Text = remoteFighter.FighterType.Name & " (x" & remoteFighter.Quantity & ")"
                                 lvwRemoteEffects.Items.Add(newRemoteItem)
                             End If
                         End If
@@ -4667,6 +4984,14 @@ Namespace Controls
             _updateDrones = True
             Call RedrawDroneBay()
             _updateDrones = False
+            Call UpdatePrices()
+            Call ParentFitting.UpdateFittingFromBaseShip()
+        End Sub
+
+        Public Sub UpdateFighterBay()
+            _updateFighters = True
+            Call RedrawFighterBay()
+            _updateFighters = False
             Call UpdatePrices()
             Call ParentFitting.UpdateFittingFromBaseShip()
         End Sub

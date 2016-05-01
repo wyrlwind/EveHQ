@@ -57,6 +57,7 @@ Namespace Forms
         Public Dbi As DroneBayItem
         Public Cbi As CargoBayItem
         Public Sbi As ShipBayItem
+        Public Fbi As FighterBayItem
 
         Private Sub btnCancel_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnCancel.Click
             Close()
@@ -177,6 +178,7 @@ Namespace Forms
             CargoBay = 2
             ShipBay = 3
             FuelBay = 4
+            FighterBay = 5
         End Enum
 
     End Class
