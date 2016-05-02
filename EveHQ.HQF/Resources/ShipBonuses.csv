@@ -193,9 +193,17 @@
 29337,1,3335,265,1,29337,0,1,0,10,15,Armor HP
 29337,1,3335,1159,2,329,0,1,0,10,15,Armor HP - Plates
 # Avatar,,,,,,,,,,,
-11567,1,3347,10014,4,773;774,0,1,0,100,15,Capital Energy Turret Damage
+11567,1,3347,10014,4,773;774,0,1,0,180,15,Capital Energy Turret Damage
+11567,1,3347,6,4,773;774,0,1,0,-10,15,Small Energy Turret Cap Use
 11567,1,3347,55,3,6,0,1,0,-7.5,16,Gang Capacitor Recharge
 11567,1,3347,10063,1,11567,0,1,1,1,15,Warfare Link Bonus
+11567,0,0,72,2,38,0,0,0,500,15,Shield Extender HP
+11567,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
+11567,0,0,2112,1,11567,0,0,0,80,15,Sensor Dampener resistance
+11567,0,0,2113,1,11567,0,0,0,80,15,Weapon Disruption resistance
+11567,0,0,2115,1,11567,0,0,0,80,15,Stasis effect resistance
+11567,0,0,2135,1,11567,0,0,0,80,15,Remote Electronic Assistance impedance
+11567,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Badger,,,,,,,,,,,
 648,1,3342,10004,1,648,0,1,0,5,15,Cargo Capacity
 648,1,3342,70,1,648,0,1,0,-5,15,Agility
@@ -666,9 +674,17 @@
 655,1,3340,1653,1,655,0,1,0,10,15,PI Commodities Capacity
 655,1,3340,37,1,655,0,1,0,5,15,Max Velocity
 # Erebus,,,,,,,,,,,
-671,1,3344,10015,4,771;772,0,1,0,100,15,Capital Hybrid Turret Damage
+671,1,3344,10015,4,771;772,0,1,0,180,15,Capital Hybrid Turret Damage
+671,1,3344,10012,4,771;772,0,1,0,-5,15,Capital Hybrid Turret ROF
 671,1,3344,265,3,6,0,1,0,7.5,16,Gang Armor Amount
 671,1,3344,10063,1,671,0,1,1,1,15,Warfare Link Bonus
+671,0,0,72,2,38,0,0,0,500,15,Shield Extender HP
+671,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
+671,0,0,2112,1,671,0,0,0,80,15,Sensor Dampener resistance
+671,0,0,2113,1,671,0,0,0,80,15,Weapon Disruption resistance
+671,0,0,2115,1,671,0,0,0,80,15,Stasis effect resistance
+671,0,0,2135,1,671,0,0,0,80,15,Remote Electronic Assistance impedance
+671,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Eris,,,,,,,,,,,
 22460,1,33093,160,4,561;564,0,1,0,10,15,Small Hybrid Turret Tracking
 22460,1,33093,54,4,561;564,0,1,0,10,15,Small Hybrid Turret Optimal Range
@@ -1161,9 +1177,21 @@
 # Legion,,,,,,,,,,,
 29986,1,30650,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
 # Leviathan,,,,,,,,,,,
-3764,1,3346,117,2,476;1019,0,1,0,100,15,Citadel Torpedo & Citadel Cruise Missile Kinetic Damage
+3764,1,3346,117,2,476;1019;89,0,1,0,50,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile Kinetic Damage
+3764,1,3346,114,2,476;1019;89,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile EM Damage
+3764,1,3346,116,2,476;1019;89,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise explosive Damage
+3764,1,3346,118,2,476;1019;89,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise thermal Damage
+3764,1,3346,51,2,524;1673,0,1,0,15,15,Citadel launcher and Rapid Torpedo ROF
 3764,1,3346,263,3,6,0,1,0,7.5,16,Gang Shield HP
 3764,1,3346,10063,1,3764,0,1,1,1,15,Warfare Link Bonus
+3764,0,0,37,2,89;476,0,0,0,100,15,Torpedo Velocity
+3764,0,0,72,2,38,0,0,0,500,15,Shield Extender HP
+3764,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
+3764,0,0,2112,1,3764,0,0,0,80,15,Sensor Dampener resistance
+3764,0,0,2113,1,3764,0,0,0,80,15,Weapon Disruption resistance
+3764,0,0,2115,1,3764,0,0,0,80,15,Stasis effect resistance
+3764,0,0,2135,1,3764,0,0,0,80,15,Remote Electronic Assistance impedance
+3764,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Loki,,,,,,,,,,,
 29990,1,30653,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
 # Machariel,,,,,,,,,,,
@@ -1762,9 +1790,17 @@
 12038,0,0,50,2,330,0,0,0,-50,15,Cloaking Device CPU
 12038,0,0,560,2,330,0,0,0,-100,15,Sensor Recalibration Time Bonus
 # Ragnarok,,,,,,,,,,,
-23773,1,3345,10016,4,775;776,0,1,0,125,15,Capital Projectile Turret Damage
+23773,1,3345,10016,4,775;776,0,1,0,180,15,Capital Projectile Turret Damage
+23773,1,3345,10013,4,775;776,0,1,0,-5,15,Capital Projectile Turret ROF
 23773,1,3345,552,3,6,0,1,0,-7.5,16,Gang Sig Radius
 23773,1,3345,10063,1,23773,0,1,1,1,15,Warfare Link Bonus
+23773,0,0,72,2,38,0,0,0,500,15,Shield Extender HP
+23773,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
+23773,0,0,2112,1,23773,0,0,0,80,15,Sensor Dampener resistance
+23773,0,0,2113,1,23773,0,0,0,80,15,Weapon Disruption resistance
+23773,0,0,2115,1,23773,0,0,0,80,15,Stasis effect resistance
+23773,0,0,2135,1,23773,0,0,0,80,15,Remote Electronic Assistance impedance
+23773,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Rapier,,,,,,,,,,,
 #11963,1,3333,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
 11963,1,3333,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,10,15,EM Missile Damage
