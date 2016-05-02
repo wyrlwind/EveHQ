@@ -53,6 +53,11 @@ Namespace Controls
             Me.lvwDroneBay = New DevComponents.DotNetBar.Controls.ListViewEx()
             Me.colDroneBayType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.colDroneBayQty = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+            Me.pbFighterBay = New DevComponents.DotNetBar.Controls.ProgressBarX()
+            Me.lblFighterBay = New System.Windows.Forms.Label()
+            Me.lvwFighterBay = New DevComponents.DotNetBar.Controls.ListViewEx()
+            Me.colFighterBayType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+            Me.colFighterBayQty = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.pbCargoBay = New DevComponents.DotNetBar.Controls.ProgressBarX()
             Me.lblCargoBay = New System.Windows.Forms.Label()
             Me.lvwCargoBay = New DevComponents.DotNetBar.Controls.ListViewEx()
@@ -100,8 +105,11 @@ Namespace Controls
             Me.ExpandableSplitter1 = New DevComponents.DotNetBar.ExpandableSplitter()
             Me.tcStorage = New DevComponents.DotNetBar.TabControl()
             Me.tcpDroneBay = New DevComponents.DotNetBar.TabControlPanel()
+            Me.tcpFighterBay = New DevComponents.DotNetBar.TabControlPanel()
             Me.btnMergeDrones = New DevComponents.DotNetBar.ButtonX()
             Me.tiDroneBay = New DevComponents.DotNetBar.TabItem(Me.components)
+            Me.btnMergeFighters = New DevComponents.DotNetBar.ButtonX()
+            Me.tiFighterBay = New DevComponents.DotNetBar.TabItem(Me.components)
             Me.TabControlPanel1 = New DevComponents.DotNetBar.TabControlPanel()
             Me.rateFitting = New DevComponents.DotNetBar.Controls.RatingStar()
             Me.lblTags = New DevComponents.DotNetBar.LabelX()
@@ -208,6 +216,7 @@ Namespace Controls
             CType(Me.tcStorage, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.tcStorage.SuspendLayout()
             Me.tcpDroneBay.SuspendLayout()
+            Me.tcpFighterBay.SuspendLayout()
             Me.TabControlPanel1.SuspendLayout()
             Me.tcpCargoBay.SuspendLayout()
             Me.tcpRemoteEffects.SuspendLayout()
@@ -424,6 +433,67 @@ Namespace Controls
             Me.colDroneBayQty.Text = "Qty"
             Me.colDroneBayQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
             Me.colDroneBayQty.Width = 50
+            '
+            'pbFighterBay
+            '
+            Me.pbFighterBay.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            '
+            '
+            '
+            Me.pbFighterBay.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+            Me.pbFighterBay.Location = New System.Drawing.Point(4, 17)
+            Me.pbFighterBay.Name = "pbFighterBay"
+            Me.pbFighterBay.Size = New System.Drawing.Size(967, 10)
+            Me.pbFighterBay.TabIndex = 4
+            Me.pbFighterBay.Text = "ProgressBarX1"
+            Me.pbFighterBay.Value = 50
+            '
+            'lblFighterBay
+            '
+            Me.lblFighterBay.AutoSize = True
+            Me.lblFighterBay.BackColor = System.Drawing.Color.Transparent
+            Me.lblFighterBay.Location = New System.Drawing.Point(4, 1)
+            Me.lblFighterBay.Name = "lblFighterBay"
+            Me.lblFighterBay.Size = New System.Drawing.Size(89, 13)
+            Me.lblFighterBay.TabIndex = 0
+            Me.lblFighterBay.Text = "0.00 / 000.00 m³"
+            '
+            'lvwFighterBay
+            '
+            Me.lvwFighterBay.AllowDrop = True
+            Me.lvwFighterBay.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                Or System.Windows.Forms.AnchorStyles.Left) _
+                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            '
+            '
+            '
+            Me.lvwFighterBay.Border.Class = "ListViewBorder"
+            Me.lvwFighterBay.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+            Me.lvwFighterBay.CheckBoxes = False
+            Me.lvwFighterBay.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colFighterBayType, Me.colFighterBayQty})
+            Me.lvwFighterBay.ContextMenuStrip = Me.ctxBays
+            Me.lvwFighterBay.DisabledBackColor = System.Drawing.Color.Empty
+            Me.lvwFighterBay.FullRowSelect = True
+            Me.lvwFighterBay.GridLines = True
+            Me.lvwFighterBay.Location = New System.Drawing.Point(4, 31)
+            Me.lvwFighterBay.Name = "lvwFighterBay"
+            Me.lvwFighterBay.Size = New System.Drawing.Size(1053, 200)
+            Me.lvwFighterBay.Sorting = System.Windows.Forms.SortOrder.Ascending
+            Me.lvwFighterBay.TabIndex = 2
+            Me.lvwFighterBay.UseCompatibleStateImageBehavior = False
+            Me.lvwFighterBay.View = System.Windows.Forms.View.Details
+            '
+            'colFighterBayType
+            '
+            Me.colFighterBayType.Text = "Fighter Type"
+            Me.colFighterBayType.Width = 225
+            '
+            'colFighterBayQty
+            '
+            Me.colFighterBayQty.Text = "Qty"
+            Me.colFighterBayQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+            Me.colFighterBayQty.Width = 50
             '
             'pbCargoBay
             '
@@ -893,6 +963,7 @@ Namespace Controls
             '
             Me.tcStorage.CanReorderTabs = False
             Me.tcStorage.Controls.Add(Me.tcpDroneBay)
+            Me.tcStorage.Controls.Add(Me.tcpFighterBay)
             Me.tcStorage.Controls.Add(Me.TabControlPanel1)
             Me.tcStorage.Controls.Add(Me.tcpCargoBay)
             Me.tcStorage.Controls.Add(Me.tcpRemoteEffects)
@@ -912,6 +983,7 @@ Namespace Controls
             Me.tcStorage.TabIndex = 9
             Me.tcStorage.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox
             Me.tcStorage.Tabs.Add(Me.tiDroneBay)
+            Me.tcStorage.Tabs.Add(Me.tiFighterBay)
             Me.tcStorage.Tabs.Add(Me.tiCargoBay)
             Me.tcStorage.Tabs.Add(Me.tiRemoteEffects)
             Me.tcStorage.Tabs.Add(Me.tiFleetEffects)
@@ -944,6 +1016,28 @@ Namespace Controls
             Me.tcpDroneBay.TabIndex = 1
             Me.tcpDroneBay.TabItem = Me.tiDroneBay
             '
+            'tcpFighterBay
+            '
+            Me.tcpFighterBay.Controls.Add(Me.btnMergeFighters)
+            Me.tcpFighterBay.Controls.Add(Me.pbFighterBay)
+            Me.tcpFighterBay.Controls.Add(Me.lblFighterBay)
+            Me.tcpFighterBay.Controls.Add(Me.lvwFighterBay)
+            Me.tcpFighterBay.DisabledBackColor = System.Drawing.Color.Empty
+            Me.tcpFighterBay.Dock = System.Windows.Forms.DockStyle.Fill
+            Me.tcpFighterBay.Location = New System.Drawing.Point(0, 23)
+            Me.tcpFighterBay.Name = "tcpFighterBay"
+            Me.tcpFighterBay.Padding = New System.Windows.Forms.Padding(1)
+            Me.tcpFighterBay.Size = New System.Drawing.Size(1061, 235)
+            Me.tcpFighterBay.Style.BackColor1.Color = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(253, Byte), Integer), CType(CType(254, Byte), Integer))
+            Me.tcpFighterBay.Style.BackColor2.Color = System.Drawing.Color.FromArgb(CType(CType(157, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(227, Byte), Integer))
+            Me.tcpFighterBay.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine
+            Me.tcpFighterBay.Style.BorderColor.Color = System.Drawing.Color.FromArgb(CType(CType(146, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(199, Byte), Integer))
+            Me.tcpFighterBay.Style.BorderSide = CType(((DevComponents.DotNetBar.eBorderSide.Left Or DevComponents.DotNetBar.eBorderSide.Right) _
+                Or DevComponents.DotNetBar.eBorderSide.Bottom), DevComponents.DotNetBar.eBorderSide)
+            Me.tcpFighterBay.Style.GradientAngle = 90
+            Me.tcpFighterBay.TabIndex = 1
+            Me.tcpFighterBay.TabItem = Me.tiFighterBay
+            '
             'btnMergeDrones
             '
             Me.btnMergeDrones.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
@@ -956,11 +1050,29 @@ Namespace Controls
             Me.btnMergeDrones.TabIndex = 5
             Me.btnMergeDrones.Text = "Merge Drones"
             '
+            'btnMergeFighters
+            '
+            Me.btnMergeFighters.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+            Me.btnMergeFighters.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Me.btnMergeFighters.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
+            Me.btnMergeFighters.Location = New System.Drawing.Point(977, 7)
+            Me.btnMergeFighters.Name = "btnMergeFighters"
+            Me.btnMergeFighters.Size = New System.Drawing.Size(80, 20)
+            Me.btnMergeFighters.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+            Me.btnMergeFighters.TabIndex = 5
+            Me.btnMergeFighters.Text = "Merge Fighters"
+            '
             'tiDroneBay
             '
             Me.tiDroneBay.AttachedControl = Me.tcpDroneBay
             Me.tiDroneBay.Name = "tiDroneBay"
             Me.tiDroneBay.Text = "Drone Bay"
+            '
+            'tiFighterBay
+            '
+            Me.tiFighterBay.AttachedControl = Me.tcpFighterBay
+            Me.tiFighterBay.Name = "tiFighterBay"
+            Me.tiFighterBay.Text = "Fighter Bay"
             '
             'TabControlPanel1
             '
@@ -2048,6 +2160,8 @@ Namespace Controls
             Me.tcStorage.ResumeLayout(False)
             Me.tcpDroneBay.ResumeLayout(False)
             Me.tcpDroneBay.PerformLayout()
+            Me.tcpFighterBay.ResumeLayout(False)
+            Me.tcpFighterBay.PerformLayout()
             Me.TabControlPanel1.ResumeLayout(False)
             Me.tcpCargoBay.ResumeLayout(False)
             Me.tcpCargoBay.PerformLayout()
@@ -2074,9 +2188,13 @@ Namespace Controls
         Friend WithEvents ShowInfoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
         Friend WithEvents lblDroneBay As System.Windows.Forms.Label
         Friend WithEvents lvwDroneBay As DevComponents.DotNetBar.Controls.ListViewEx
+        Friend WithEvents lblFighterBay As System.Windows.Forms.Label
+        Friend WithEvents lvwFighterBay As DevComponents.DotNetBar.Controls.ListViewEx
         Friend WithEvents lblCargoBay As System.Windows.Forms.Label
         Friend WithEvents colDroneBayType As System.Windows.Forms.ColumnHeader
         Friend WithEvents colDroneBayQty As System.Windows.Forms.ColumnHeader
+        Friend WithEvents colFighterBayType As System.Windows.Forms.ColumnHeader
+        Friend WithEvents colFighterBayQty As System.Windows.Forms.ColumnHeader
         Friend WithEvents lvwCargoBay As DevComponents.DotNetBar.Controls.ListViewEx
         Friend WithEvents colCargoBayType As System.Windows.Forms.ColumnHeader
         Friend WithEvents colCargoBayQty As System.Windows.Forms.ColumnHeader
@@ -2161,13 +2279,16 @@ Namespace Controls
         Friend WithEvents btnUndo As DevComponents.DotNetBar.ButtonX
         Friend WithEvents btnRedo As DevComponents.DotNetBar.ButtonX
         Friend WithEvents pbDroneBay As DevComponents.DotNetBar.Controls.ProgressBarX
+        Friend WithEvents pbFighterBay As DevComponents.DotNetBar.Controls.ProgressBarX
         Friend WithEvents pbCargoBay As DevComponents.DotNetBar.Controls.ProgressBarX
         Friend WithEvents pbShipBay As DevComponents.DotNetBar.Controls.ProgressBarX
         Friend WithEvents tcStorage As DevComponents.DotNetBar.TabControl
         Friend WithEvents tcpCargoBay As DevComponents.DotNetBar.TabControlPanel
         Friend WithEvents tiCargoBay As DevComponents.DotNetBar.TabItem
         Friend WithEvents tcpDroneBay As DevComponents.DotNetBar.TabControlPanel
+        Friend WithEvents tcpFighterBay As DevComponents.DotNetBar.TabControlPanel
         Friend WithEvents tiDroneBay As DevComponents.DotNetBar.TabItem
+        Friend WithEvents tiFighterBay As DevComponents.DotNetBar.TabItem
         Friend WithEvents tcpRemoteEffects As DevComponents.DotNetBar.TabControlPanel
         Friend WithEvents tiRemoteEffects As DevComponents.DotNetBar.TabItem
         Friend WithEvents tcpFleetEffects As DevComponents.DotNetBar.TabControlPanel
@@ -2182,6 +2303,7 @@ Namespace Controls
         Friend WithEvents tiHistory As DevComponents.DotNetBar.TabItem
         Friend WithEvents btnMergeCargo As DevComponents.DotNetBar.ButtonX
         Friend WithEvents btnMergeDrones As DevComponents.DotNetBar.ButtonX
+        Friend WithEvents btnMergeFighters As DevComponents.DotNetBar.ButtonX
         Friend WithEvents cboPilot As DevComponents.DotNetBar.Controls.ComboBoxEx
         Friend WithEvents cboFitting As DevComponents.DotNetBar.Controls.ComboBoxEx
         Friend WithEvents btnUpdateRemoteEffects As DevComponents.DotNetBar.ButtonX

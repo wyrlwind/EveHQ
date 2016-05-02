@@ -2016,7 +2016,7 @@ Public Class FrmCacheCreator
             Dim strSql As String = ""
             strSql &= "SELECT invCategories.categoryID, invGroups.groupID, invTypes.typeID, invTypes.description, invTypes.typeName, invTypes.mass, invTypes.volume, invTypes.capacity, invTypes.basePrice, invTypes.published, invTypes.raceID, invTypes.marketGroupID"
             strSql &= " FROM invCategories INNER JOIN (invGroups INNER JOIN invTypes ON invGroups.groupID = invTypes.groupID) ON invCategories.categoryID = invGroups.categoryID"
-            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010"
+            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32,87)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010"
             strSql &= " ORDER BY invTypes.typeName;"
             moduleData = DatabaseFunctions.GetStaticData(strSql)
             If moduleData IsNot Nothing Then
@@ -2040,7 +2040,7 @@ Public Class FrmCacheCreator
             Dim strSql As String = ""
             strSql &= "SELECT invCategories.categoryID, invGroups.groupID, invTypes.typeID, invTypes.description, invTypes.typeName, invTypes.mass, invTypes.volume, invTypes.capacity, invTypes.basePrice, invTypes.published, invTypes.marketGroupID, dgmTypeEffects.effectID"
             strSql &= " FROM ((invCategories INNER JOIN invGroups ON invCategories.categoryID=invGroups.categoryID) INNER JOIN invTypes ON invGroups.groupID=invTypes.groupID) INNER JOIN dgmTypeEffects ON invTypes.typeID=dgmTypeEffects.typeID"
-            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010"
+            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32,87)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010"
             strSql &= " ORDER BY typeName, effectID;"
             moduleEffectData = DatabaseFunctions.GetStaticData(strSql)
             If moduleEffectData IsNot Nothing Then
@@ -2064,7 +2064,7 @@ Public Class FrmCacheCreator
             Dim strSql As String = ""
             strSql &= "SELECT invCategories.categoryID, invGroups.groupID, invTypes.typeID, invTypes.description, invTypes.typeName, invTypes.mass, invTypes.volume, invTypes.capacity, invTypes.basePrice, invTypes.published, invTypes.marketGroupID, dgmTypeAttributes.attributeID, dgmTypeAttributes.valueInt, dgmTypeAttributes.valueFloat, dgmAttributeTypes.attributeName, dgmAttributeTypes.displayName, dgmAttributeTypes.unitID"
             strSql &= " FROM invCategories INNER JOIN ((invGroups INNER JOIN invTypes ON invGroups.groupID = invTypes.groupID) INNER JOIN (dgmAttributeTypes INNER JOIN dgmTypeAttributes ON dgmAttributeTypes.attributeID = dgmTypeAttributes.attributeID) ON invTypes.typeID = dgmTypeAttributes.typeID) ON invCategories.categoryID = invGroups.categoryID"
-            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010"
+            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32,87)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010"
             strSql &= " ORDER BY invTypes.typeName, dgmTypeAttributes.attributeID;"
 
             moduleAttributeData = DatabaseFunctions.GetStaticData(strSql)
@@ -2089,7 +2089,7 @@ Public Class FrmCacheCreator
             Dim strSql As String = ""
             strSql &= "SELECT invTypes.typeID AS invTypes_typeID, invMetaTypes.parentTypeID, invMetaGroups.metaGroupID AS invMetaGroups_metaGroupID"
             strSql &= " FROM (invGroups INNER JOIN invTypes ON invGroups.groupID = invTypes.groupID) INNER JOIN (invMetaGroups INNER JOIN invMetaTypes ON invMetaGroups.metaGroupID = invMetaTypes.metaGroupID) ON invTypes.typeID = invMetaTypes.typeID"
-            strSql &= " WHERE (((invGroups.categoryID) In (7,8,18,20,22,32)) AND (invTypes.published=1))"
+            strSql &= " WHERE (((invGroups.categoryID) In (7,8,18,20,22,32,87)) AND (invTypes.published=1))"
             Dim metaTypeData As DataSet = DatabaseFunctions.GetStaticData(strSql)
             If metaTypeData IsNot Nothing Then
                 If metaTypeData.Tables(0).Rows.Count <> 0 Then
@@ -2202,6 +2202,8 @@ Public Class FrmCacheCreator
                                 newModule.IsImplant = True
                             End If
                         End If
+                    Case 87 ' Fighter
+                        newModule.IsFighter = True
                 End Select
             Next
 
@@ -2646,6 +2648,11 @@ Public Class FrmCacheCreator
                     newEffect.IsPerLevel = CBool(effectData(7))
                     newEffect.CalcType = CType(effectData(8), EffectCalcType)
                     newEffect.Status = CInt(effectData(9))
+
+                    If Attributes.AttributeQuickList(newEffect.AffectedAtt) = Nothing Then
+                        MessageBox.Show("Error parsing data - Missing attribute for " & newEffect.AffectedAtt, "BuildModuleEffects Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Throw New NotImplementedException()
+                    End If
 
                     Select Case newEffect.AffectingType
                         ' Setup the name as Item;Type;Attribute

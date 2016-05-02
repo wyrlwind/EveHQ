@@ -74,10 +74,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="YamlDotNet.Core">
-      <HintPath>packages\YamlDotNet.Core.1.1.17\lib\YamlDotNet.Core.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\YamlDotNet.Core.1.1.17\lib\YamlDotNet.Core.dll</HintPath>
     </Reference>
     <Reference Include="YamlDotNet.RepresentationModel">
-      <HintPath>..\..\packages\YamlDotNet.RepresentationModel.1.1.16\lib\YamlDotNet.RepresentationModel.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\YamlDotNet.RepresentationModel.1.1.16\lib\YamlDotNet.RepresentationModel.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -127,3 +127,4 @@
   </Target>
   -->
 </Project>
+

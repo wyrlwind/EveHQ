@@ -89,6 +89,7 @@ Public Class ShipModule
     <ProtoMember(30)> Public Property IsBooster() As Boolean
     <ProtoMember(31)> Public Property IsContainer() As Boolean
     <ProtoMember(32)> Public Property IsMissile() As Boolean
+    <ProtoMember(43)> Public Property IsFighter() As Boolean
 
     ' Skills
     <ProtoMember(33)> Public Property RequiredSkills() As New SortedList(Of String, ItemSkills)
@@ -284,6 +285,7 @@ Public Enum ModuleEnum
     CategoryDrones = 18
     CategoryImplants = 20
     CategorySubsystems = 32
+    CategoryFighters = 87
 
     ' groupIDs (see invGroups)
     GroupArmorRepairers = 62

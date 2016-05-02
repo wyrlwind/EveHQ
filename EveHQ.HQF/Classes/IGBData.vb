@@ -277,6 +277,7 @@ Namespace Classes
                         Dim lowSlots As New SortedList(Of String, Integer)
                         Dim rigSlots As New SortedList(Of String, Integer)
                         Dim drones As New SortedList(Of String, Integer)
+                        Dim fighters As New SortedList(Of String, Integer)
                         For slot As Integer = 1 To currentFitting.FittedShip.HiSlots
                             If currentFitting.FittedShip.HiSlot(slot) IsNot Nothing Then
                                 If hiSlots.ContainsKey(currentFitting.FittedShip.HiSlot(slot).Name) = False Then
@@ -318,6 +319,13 @@ Namespace Classes
                                 drones.Add(dbi.DroneType.Name, dbi.Quantity)
                             Else
                                 drones(dbi.DroneType.Name) += dbi.Quantity
+                            End If
+                        Next
+                        For Each fbi As FighterBayItem In currentFitting.FittedShip.FighterBayItems.Values
+                            If fighters.ContainsKey(fbi.FighterType.Name) = False Then
+                                fighters.Add(fbi.FighterType.Name, fbi.Quantity)
+                            Else
+                                fighters(fbi.FighterType.Name) += fbi.Quantity
                             End If
                         Next
 
@@ -472,6 +480,16 @@ Namespace Classes
                                     strHTML.Append("<tr><td colspan=2 bgcolor=#333333>" & drones(droneName).ToString("N0") & "x " & droneName & "</td></tr>")
                                 Else
                                     strHTML.Append("<tr><td colspan=2 bgcolor=#333333><font color=""red"">" & drones(droneName).ToString("N0") & "x " & droneName & "</font></td></tr>")
+                                End If
+                            Next
+                        End If
+                        If currentFitting.FittedShip.FighterBayItems.Count > 0 Then
+                            strHTML.Append("<tr><td colspan=2 bgcolor=#111111><b>Fighter Bay</b></td></tr>")
+                            For Each fighterName As String In fighters.Keys
+                                If Engine.IsUsable(FittingPilots.HQFPilots(currentFitting.PilotName), ModuleLists.ModuleList(ModuleLists.ModuleListName(fighterName))) Then
+                                    strHTML.Append("<tr><td colspan=2 bgcolor=#333333>" & fighters(fighterName).ToString("N0") & "x " & fighterName & "</td></tr>")
+                                Else
+                                    strHTML.Append("<tr><td colspan=2 bgcolor=#333333><font color=""red"">" & fighters(fighterName).ToString("N0") & "x " & fighterName & "</font></td></tr>")
                                 End If
                             Next
                         End If
