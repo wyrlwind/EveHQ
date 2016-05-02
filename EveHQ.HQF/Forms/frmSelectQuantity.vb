@@ -108,6 +108,18 @@ Namespace Forms
                     If newQuantity <> DBI.Quantity Then
                         DBI.Quantity = newQuantity
                     End If
+                Case BayTypes.FighterBay
+                    ' For fighter bay
+                    Dim reqQ As Integer = NewQuantity - Fbi.Quantity
+                    ' Double-check we can get them in the fighter bay
+                    If FittedShip.FighterBayUsed + (reqQ * Fbi.FighterType.Volume) > FittedShip.FighterBay Then
+                        ' Cannot do this because our fighter bay space is insufficient
+                        MessageBox.Show("You do not have the space in the Fighter Bay to store that many fighters. Please try again.", "Fighter Bay Volume Exceeded", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        Exit Sub
+                    End If
+                    If NewQuantity <> Fbi.Quantity Then
+                        Fbi.Quantity = NewQuantity
+                    End If
                 Case BayTypes.CargoBay
                     ' For cargo bay
                     Dim reqQ As Integer = NewQuantity - Cbi.Quantity
@@ -147,6 +159,17 @@ Namespace Forms
                         CurrentShip.DroneBayItems.Add(CurrentShip.DroneBayItems.Count, newDbi)
                         ' Modify the existing quantity
                         DBI.Quantity = newQuantity
+                    End If
+                Case BayTypes.FighterBay
+                    ' For fighter bay
+                    If NewQuantity <> Fbi.Quantity Then
+                        ' Add a new fighter bay item
+                        Dim newFbi As New FighterBayItem
+                        newFbi.FighterType = Fbi.FighterType.Clone
+                        newFbi.Quantity = Fbi.Quantity - NewQuantity
+                        CurrentShip.FighterBayItems.Add(CurrentShip.FighterBayItems.Count, newFbi)
+                        ' Modify the existing quantity
+                        Fbi.Quantity = NewQuantity
                     End If
                 Case BayTypes.CargoBay
                     ' For cargo bay

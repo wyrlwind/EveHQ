@@ -245,6 +245,18 @@ Namespace Forms
                 fitNode.AppendChild(hardware)
             Next
 
+            For Each fbi As FighterBayItem In expFitting.BaseShip.FighterBayItems.Values
+                ' Add the XML data
+                hardware = fitXML.CreateElement("hardware")
+                hardwareAtt = fitXML.CreateAttribute("qty") : hardwareAtt.Value = fbi.Quantity.ToString
+                hardware.Attributes.Append(hardwareAtt)
+                hardwareAtt = fitXML.CreateAttribute("slot") : hardwareAtt.Value = "fighter bay"
+                hardware.Attributes.Append(hardwareAtt)
+                hardwareAtt = fitXML.CreateAttribute("type") : hardwareAtt.Value = fbi.FighterType.Name
+                hardware.Attributes.Append(hardwareAtt)
+                fitNode.AppendChild(hardware)
+            Next
+
             For Each cbi As CargoBayItem In expFitting.BaseShip.CargoBayItems.Values
                 ' Add the XML data
                 hardware = fitXML.CreateElement("hardware")
