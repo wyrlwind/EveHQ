@@ -2757,6 +2757,48 @@ Imports EveHQ.Common.Extensions
         End If
     End Sub
 
+    Public Sub AddFighter(ByVal fighter As ShipModule, ByVal qty As Integer, ByVal active As Boolean, ByVal updateAll As Boolean)
+        ' Set grouping flag
+        Dim grouped As Boolean = False
+        ' See if there is sufficient space
+        Dim vol As Double = fighter.Volume
+        Dim myShip As Ship
+        If FittedShip IsNot Nothing Then
+            myShip = FittedShip
+        Else
+            myShip = BaseShip
+        End If
+        If myShip.FighterBay - BaseShip.FighterBayUsed >= vol * qty Then
+            ' Scan through existing items and see if we can group this new one
+            For Each FighterGroup As FighterBayItem In BaseShip.FighterBayItems.Values
+                If fighter.Name = FighterGroup.FighterType.Name And updateAll = False Then
+                    ' Add to existing fighter group
+                    FighterGroup.Quantity += qty
+                    grouped = True
+                    Exit For
+                End If
+            Next
+            ' Put the fighter into the fighter bay if not grouped
+            If grouped = False Then
+                Dim fbi As New FighterBayItem
+                fbi.FighterType = fighter
+                fbi.Quantity = qty
+                BaseShip.FighterBayItems.Add(BaseShip.FighterBayItems.Count, fbi)
+            End If
+            ' Update stuff
+            If updateAll = False Then
+                ApplyFitting(BuildType.BuildFromEffectsMaps)
+                If ShipSlotCtrl IsNot Nothing Then
+                    Call ShipSlotCtrl.UpdateFighterBay()
+                End If
+            Else
+                BaseShip.FighterBayUsed += vol * qty
+            End If
+        Else
+            MessageBox.Show("There is not enough space in the Fighter Bay to hold " & qty & " unit(s) of " & fighter.Name & " on '" & FittingName & "' (" & ShipName & ").", "Insufficient Space", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
     Public Sub AddItem(ByVal item As ShipModule, ByVal qty As Integer, ByVal updateAll As Boolean)
         If BaseShip IsNot Nothing Then
             ' Set grouping flag

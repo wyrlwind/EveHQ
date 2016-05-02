@@ -1227,7 +1227,7 @@ Namespace Forms
 
 
             For Each shipmod As ShipModule In _lastModuleResults.Values
-                If shipmod.SlotType <> 0 Or (shipmod.SlotType = 0 And (shipmod.IsBooster Or shipmod.IsCharge Or shipmod.IsDrone Or shipmod.DatabaseCategory = 22)) Then
+                If shipmod.SlotType <> 0 Or (shipmod.SlotType = 0 And (shipmod.IsBooster Or shipmod.IsCharge Or shipmod.IsDrone Or shipmod.IsFighter Or shipmod.DatabaseCategory = 22 Or shipmod.DatabaseCategory = 87)) Then
                     If (shipmod.MetaType And PluginSettings.HQFSettings.ModuleFilter) = shipmod.MetaType Then
                         Dim newModule As New Node
                         newModule.Name = CStr(shipmod.ID)
@@ -1353,6 +1353,8 @@ Namespace Forms
                         Dim shipMod As ShipModule = ModuleLists.ModuleList(moduleID).Clone
                         If shipMod.IsDrone = True Then
                             Call ActiveFitting.AddDrone(shipMod, 1, False, False)
+                        ElseIf shipMod.IsFighter = True Then
+                            Call ActiveFitting.AddFighter(shipMod, 1, False, False)
                         Else
                             ' Check if module is a charge
                             If shipMod.IsCharge = True Or shipMod.IsContainer Or shipMod.DatabaseCategory = 22 Then
