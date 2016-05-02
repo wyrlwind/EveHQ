@@ -90,6 +90,19 @@ Public Class ShipModule
     <ProtoMember(31)> Public Property IsContainer() As Boolean
     <ProtoMember(32)> Public Property IsMissile() As Boolean
     <ProtoMember(43)> Public Property IsFighter() As Boolean
+    <ProtoMember(44)> Public Property FighterEffectMissiles() As Boolean
+    <ProtoMember(45)> Public Property FighterEffectEnergyNeutralizer() As Boolean
+    <ProtoMember(46)> Public Property FighterEffectStasisWebifier() As Boolean
+    <ProtoMember(47)> Public Property FighterEffectWarpDisruption() As Boolean
+    <ProtoMember(48)> Public Property FighterEffectEcm() As Boolean
+    <ProtoMember(49)> Public Property FighterEffectEvasiveManeuvers() As Boolean
+    <ProtoMember(50)> Public Property FighterEffectAfterburner() As Boolean
+    <ProtoMember(51)> Public Property FighterEffectMicroWarpDrive() As Boolean
+    <ProtoMember(52)> Public Property FighterEffectMicroJumpDrive() As Boolean
+    <ProtoMember(53)> Public Property FighterEffectKamikaze() As Boolean
+    <ProtoMember(54)> Public Property FighterEffectTackle() As Boolean
+    <ProtoMember(55)> Public Property FighterEffectAttackM() As Boolean
+    <ProtoMember(56)> Public Property FighterEffectLaunchBomb() As Boolean
 
     ' Skills
     <ProtoMember(33)> Public Property RequiredSkills() As New SortedList(Of String, ItemSkills)

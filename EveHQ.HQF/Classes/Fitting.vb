@@ -105,6 +105,7 @@ Imports EveHQ.Common.Extensions
 
     Dim cModules As New List(Of ModuleWithState)
     Dim cDrones As New List(Of ModuleQWithState)
+    Dim cFighters As New List(Of ModuleQWithState)
     Dim cItems As New List(Of ModuleQWithState)
     Dim cShips As New List(Of ModuleQWithState)
 
@@ -278,6 +279,21 @@ Imports EveHQ.Common.Extensions
         End Get
         Set(ByVal value As List(Of ModuleQWithState))
             cDrones = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the collection of fighters used in the fitting
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A collection of fighters used in the fitting</returns>
+    ''' <remarks></remarks>
+    Public Property Fighters() As List(Of ModuleQWithState)
+        Get
+            Return cFighters
+        End Get
+        Set(ByVal value As List(Of ModuleQWithState))
+            cFighters = value
         End Set
     End Property
 
@@ -1360,6 +1376,9 @@ Imports EveHQ.Common.Extensions
         For Each dbidx As Integer In cShip.DroneBayItems.Keys
             newShip.DroneBayItems.Add(dbidx, cShip.DroneBayItems(dbidx))
         Next
+        For Each fbidx As Integer In cShip.FighterBayItems.Keys
+            newShip.FighterBayItems.Add(fbidx, cShip.FighterBayItems(fbidx))
+        Next
         For Each sbidx As Integer In cShip.ShipBayItems.Keys
             newShip.ShipBayItems.Add(sbidx, cShip.ShipBayItems(sbidx))
         Next
@@ -1887,6 +1906,107 @@ Imports EveHQ.Common.Extensions
                         newShip.Attributes(AttributeEnum.ShipKinDPS) += (cModule.Attributes(AttributeEnum.ModuleKinDamage) / rof) * dbi.Quantity
                         newShip.Attributes(AttributeEnum.ShipThermDPS) += (cModule.Attributes(AttributeEnum.ModuleThermDamage) / rof) * dbi.Quantity
                 End Select
+            End If
+        Next
+        For Each fbi As FighterBayItem In newShip.FighterBayItems.Values
+            If fbi.IsActive = True Then
+                cModule = fbi.FighterType
+                Dim squadronQuantity As Integer = fbi.Quantity
+                If fbi.FighterType.Attributes(2215) < squadronQuantity Then
+                    squadronQuantity = CInt(fbi.FighterType.Attributes(2215))
+                End If
+
+                ' Turret Damage
+                Dim turretRof As Double = 1
+                Dim turretDmgMod As Double = 0
+                Dim turretBaseDamage As Double = 0
+                Dim turretEMDamage As Double = 0
+                Dim turretExpDamage As Double = 0
+                Dim turretKinDamage As Double = 0
+                Dim turretThermDamage As Double = 0
+                If cModule.Attributes.ContainsKey(2233) = True Then
+                    turretRof = cModule.Attributes(2233)
+                    turretDmgMod = cModule.Attributes(2226)
+                    If cModule.Attributes.ContainsKey(2227) Then
+                        turretBaseDamage += cModule.Attributes(2227)
+                        turretEMDamage = cModule.Attributes(2227) * turretDmgMod
+                    Else
+                        turretEMDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2230) Then
+                        turretBaseDamage += cModule.Attributes(2230)
+                        turretExpDamage = cModule.Attributes(2230) * turretDmgMod
+                    Else
+                        turretExpDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2229) Then
+                        turretBaseDamage += cModule.Attributes(2229)
+                        turretKinDamage = cModule.Attributes(2229) * turretDmgMod
+                    Else
+                        turretKinDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2228) Then
+                        turretBaseDamage += cModule.Attributes(2228)
+                        turretThermDamage = cModule.Attributes(2228) * turretDmgMod
+                    Else
+                        turretThermDamage = 0
+                    End If
+                End If
+                ' Missile damage
+                Dim missileRof As Double = 1
+                Dim missileDmgMod As Double = 0
+                Dim missileBaseDamage As Double = 0
+                Dim missileEMDamage As Double = 0
+                Dim missileExpDamage As Double = 0
+                Dim missileKinDamage As Double = 0
+                Dim missileThermDamage As Double = 0
+                If cModule.Attributes.ContainsKey(2182) = True Then
+                    missileRof = cModule.Attributes(2182)
+                    missileDmgMod = cModule.Attributes(2130)
+                    If cModule.Attributes.ContainsKey(2131) Then
+                        missileBaseDamage += cModule.Attributes(2131)
+                        missileEMDamage = cModule.Attributes(2131) * missileDmgMod
+                    Else
+                        missileEMDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2134) Then
+                        missileBaseDamage += cModule.Attributes(2134)
+                        missileExpDamage = cModule.Attributes(2134) * missileDmgMod
+                    Else
+                        missileExpDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2133) Then
+                        missileBaseDamage += cModule.Attributes(2133)
+                        missileKinDamage = cModule.Attributes(2133) * missileDmgMod
+                    Else
+                        missileKinDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2132) Then
+                        missileBaseDamage += cModule.Attributes(2132)
+                        missileThermDamage = cModule.Attributes(2132) * missileDmgMod
+                    Else
+                        missileThermDamage = 0
+                    End If
+                End If
+                cModule.Attributes(AttributeEnum.ModuleBaseDamage) = 0
+                cModule.Attributes(AttributeEnum.ModuleVolleyDamage) = (turretDmgMod * turretBaseDamage) + (missileDmgMod * missileBaseDamage)
+                cModule.Attributes(AttributeEnum.ModuleDPS) = ((turretDmgMod * turretBaseDamage) / turretRof) + ((missileDmgMod * missileBaseDamage) / missileRof)
+                cModule.Attributes(AttributeEnum.ModuleEMDamage) = turretEMDamage + missileEMDamage
+                cModule.Attributes(AttributeEnum.ModuleExpDamage) = turretExpDamage + missileExpDamage
+                cModule.Attributes(AttributeEnum.ModuleKinDamage) = turretKinDamage + missileKinDamage
+                cModule.Attributes(AttributeEnum.ModuleThermDamage) = turretThermDamage + missileThermDamage
+                newShip.Attributes(AttributeEnum.ShipDroneVolleyDamage) += cModule.Attributes(AttributeEnum.ModuleVolleyDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipDroneDPS) += cModule.Attributes(AttributeEnum.ModuleDPS) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipVolleyDamage) += cModule.Attributes(AttributeEnum.ModuleVolleyDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipDPS) += cModule.Attributes(AttributeEnum.ModuleDPS) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipEMDamage) += cModule.Attributes(AttributeEnum.ModuleEMDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipExpDamage) += cModule.Attributes(AttributeEnum.ModuleExpDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipKinDamage) += cModule.Attributes(AttributeEnum.ModuleKinDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipThermDamage) += cModule.Attributes(AttributeEnum.ModuleThermDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipEmDPS) += ((turretEMDamage / turretRof) + (missileEMDamage / missileRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipExpDPS) += ((turretExpDamage / turretRof) + (missileExpDamage / missileRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipKinDPS) += ((turretKinDamage / turretRof) + (missileKinDamage / missileRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipThermDPS) += ((turretThermDamage / turretRof) + (missileThermDamage / missileRof)) * squadronQuantity
             End If
         Next
         For slot As Integer = 1 To newShip.HiSlots
@@ -2443,6 +2563,22 @@ Imports EveHQ.Common.Extensions
             End If
         Next
 
+        ' Add the fighters
+        For Each mws As ModuleQWithState In Fighters
+            Dim temp As New ShipModule
+            If ModuleLists.ModuleList.TryGetValue(CInt(mws.ID), temp) Then
+                Dim newMod As ShipModule = temp.Clone
+                newMod.ModuleState = mws.State
+                If mws.State = ModuleStates.Active Then
+                    Call AddFighter(newMod, mws.Quantity, True, True)
+                Else
+                    Call AddFighter(newMod, mws.Quantity, False, True)
+                End If
+            Else
+                Trace.TraceWarning(String.Format(UnknownModuleFitted, mws.ID))
+            End If
+        Next
+
         ' Add items
         For Each mws As ModuleQWithState In Items
             'Bug EVEHQ-380 : There is a key not found error in the module list. 
@@ -2563,6 +2699,16 @@ Imports EveHQ.Common.Extensions
                 Drones.Add(New ModuleQWithState(CStr(dbi.DroneType.ID), ModuleStates.Active, dbi.Quantity))
             Else
                 Drones.Add(New ModuleQWithState(CStr(dbi.DroneType.ID), ModuleStates.Inactive, dbi.Quantity))
+            End If
+        Next
+
+        ' Add fighters
+        Fighters.Clear()
+        For Each fbi As FighterBayItem In BaseShip.FighterBayItems.Values
+            If fbi.IsActive = True Then
+                Fighters.Add(New ModuleQWithState(CStr(fbi.FighterType.ID), ModuleStates.Active, fbi.Quantity))
+            Else
+                Fighters.Add(New ModuleQWithState(CStr(fbi.FighterType.ID), ModuleStates.Inactive, fbi.Quantity))
             End If
         Next
 
@@ -2771,7 +2917,7 @@ Imports EveHQ.Common.Extensions
         If myShip.FighterBay - BaseShip.FighterBayUsed >= vol * qty Then
             ' Scan through existing items and see if we can group this new one
             For Each FighterGroup As FighterBayItem In BaseShip.FighterBayItems.Values
-                If fighter.Name = FighterGroup.FighterType.Name And updateAll = False Then
+                If fighter.Name = FighterGroup.FighterType.Name And active = FighterGroup.IsActive And updateAll = False Then
                     ' Add to existing fighter group
                     FighterGroup.Quantity += qty
                     grouped = True
@@ -2783,6 +2929,12 @@ Imports EveHQ.Common.Extensions
                 Dim fbi As New FighterBayItem
                 fbi.FighterType = fighter
                 fbi.Quantity = qty
+                'todo
+                If active = True And myShip.MaxDrones - BaseShip.UsedDrones >= qty Then
+                    fbi.IsActive = True
+                Else
+                    fbi.IsActive = False
+                End If
                 BaseShip.FighterBayItems.Add(BaseShip.FighterBayItems.Count, fbi)
             End If
             ' Update stuff
@@ -3521,6 +3673,21 @@ Imports EveHQ.Common.Extensions
                 rSkill.CurLevel = 0
                 rSkill.NeededFor = dbi.DroneType.Name
                 nSkills.Add("Drone" & count.ToString, rSkill)
+            Next
+        Next
+
+        ' Get Fighter skills
+        count = 0
+        For Each fbi As FighterBayItem In cShip.FighterBayItems.Values
+            For Each nSkill As ItemSkills In fbi.FighterType.RequiredSkills.Values
+                count += 1
+                rSkill = New ReqSkill
+                rSkill.Name = nSkill.Name
+                rSkill.ID = nSkill.ID
+                rSkill.ReqLevel = nSkill.Level
+                rSkill.CurLevel = 0
+                rSkill.NeededFor = fbi.FighterType.Name
+                nSkills.Add("Fighter" & count.ToString, rSkill)
             Next
         Next
 

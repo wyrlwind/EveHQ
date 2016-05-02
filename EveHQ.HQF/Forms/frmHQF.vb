@@ -2417,6 +2417,14 @@ Namespace Forms
                 End If
             Next
             fitting.AppendLine("")
+            For Each fighter As FighterBayItem In currentShip.FighterBayItems.Values
+                If fighter.IsActive = True Then
+                    fitting.AppendLine(fighter.FighterType.Name & ", " & fighter.Quantity & "a")
+                Else
+                    fitting.AppendLine(fighter.FighterType.Name & ", " & fighter.Quantity & "i")
+                End If
+            Next
+            fitting.AppendLine("")
             For Each cargo As CargoBayItem In currentShip.CargoBayItems.Values
                 fitting.AppendLine(cargo.ItemType.Name & ", " & cargo.Quantity)
             Next
@@ -2491,6 +2499,10 @@ Namespace Forms
             fitting.AppendLine("")
             For Each drone As DroneBayItem In currentship.DroneBayItems.Values
                 fitting.AppendLine(drone.DroneType.Name & " x" & drone.Quantity)
+            Next
+            fitting.AppendLine("")
+            For Each fighter As FighterBayItem In currentship.FighterBayItems.Values
+                fitting.AppendLine(fighter.FighterType.Name & " x" & fighter.Quantity)
             Next
             fitting.AppendLine("")
             For Each cargo As CargoBayItem In currentship.CargoBayItems.Values
@@ -2687,6 +2699,12 @@ Namespace Forms
                     fitting.AppendLine(drone.Quantity & "x " & drone.DroneType.Name)
                 Next
             End If
+            If currentship.FighterBayItems.Count > 0 Then
+                fitting.AppendLine("")
+                For Each fighter As FighterBayItem In currentship.FighterBayItems.Values
+                    fitting.AppendLine(fighter.Quantity & "x " & fighter.FighterType.Name)
+                Next
+            End If
 
             If currentship.CargoBayItems.Count > 0 Then
                 fitting.AppendLine("")
@@ -2830,6 +2848,17 @@ Namespace Forms
                         modList(drone.DroneType.Name) += drone.Quantity
                     Else
                         modList.Add(drone.DroneType.Name, drone.Quantity)
+                    End If
+                Next
+            End If
+
+            ' Parse fighters
+            If currentship.FighterBayItems.Count > 0 Then
+                For Each fighter As FighterBayItem In currentship.FighterBayItems.Values
+                    If modList.ContainsKey(fighter.FighterType.Name) = True Then
+                        modList(fighter.FighterType.Name) += fighter.Quantity
+                    Else
+                        modList.Add(fighter.FighterType.Name, fighter.Quantity)
                     End If
                 Next
             End If
