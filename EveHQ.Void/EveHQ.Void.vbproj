@@ -141,7 +141,7 @@
       <Name>EveHQ.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\EveHQ.EveData\EveHQ.EveData.csproj">
-      <Project>{C3FEE7B0-5E02-4910-BBB9-A03425294B7A}</Project>
+      <Project>{c3fee7b0-5e02-4910-bbb9-a03425294b7a}</Project>
       <Name>EveHQ.EveData</Name>
     </ProjectReference>
   </ItemGroup>
