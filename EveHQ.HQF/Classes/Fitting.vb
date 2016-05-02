@@ -105,6 +105,7 @@ Imports EveHQ.Common.Extensions
 
     Dim cModules As New List(Of ModuleWithState)
     Dim cDrones As New List(Of ModuleQWithState)
+    Dim cFighters As New List(Of ModuleQWithState)
     Dim cItems As New List(Of ModuleQWithState)
     Dim cShips As New List(Of ModuleQWithState)
 
@@ -278,6 +279,21 @@ Imports EveHQ.Common.Extensions
         End Get
         Set(ByVal value As List(Of ModuleQWithState))
             cDrones = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the collection of fighters used in the fitting
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A collection of fighters used in the fitting</returns>
+    ''' <remarks></remarks>
+    Public Property Fighters() As List(Of ModuleQWithState)
+        Get
+            Return cFighters
+        End Get
+        Set(ByVal value As List(Of ModuleQWithState))
+            cFighters = value
         End Set
     End Property
 
@@ -1359,6 +1375,9 @@ Imports EveHQ.Common.Extensions
         Next
         For Each dbidx As Integer In cShip.DroneBayItems.Keys
             newShip.DroneBayItems.Add(dbidx, cShip.DroneBayItems(dbidx))
+        Next
+        For Each fbidx As Integer In cShip.FighterBayItems.Keys
+            newShip.FighterBayItems.Add(fbidx, cShip.FighterBayItems(fbidx))
         Next
         For Each sbidx As Integer In cShip.ShipBayItems.Keys
             newShip.ShipBayItems.Add(sbidx, cShip.ShipBayItems(sbidx))
@@ -2443,6 +2462,22 @@ Imports EveHQ.Common.Extensions
             End If
         Next
 
+        ' Add the fighters
+        For Each mws As ModuleQWithState In Fighters
+            Dim temp As New ShipModule
+            If ModuleLists.ModuleList.TryGetValue(CInt(mws.ID), temp) Then
+                Dim newMod As ShipModule = temp.Clone
+                newMod.ModuleState = mws.State
+                If mws.State = ModuleStates.Active Then
+                    Call AddFighter(newMod, mws.Quantity, True, True)
+                Else
+                    Call AddFighter(newMod, mws.Quantity, False, True)
+                End If
+            Else
+                Trace.TraceWarning(String.Format(UnknownModuleFitted, mws.ID))
+            End If
+        Next
+
         ' Add items
         For Each mws As ModuleQWithState In Items
             'Bug EVEHQ-380 : There is a key not found error in the module list. 
@@ -2564,6 +2599,12 @@ Imports EveHQ.Common.Extensions
             Else
                 Drones.Add(New ModuleQWithState(CStr(dbi.DroneType.ID), ModuleStates.Inactive, dbi.Quantity))
             End If
+        Next
+
+        ' Add fighters
+        Fighters.Clear()
+        For Each fbi As FighterBayItem In BaseShip.FighterBayItems.Values
+            Fighters.Add(New ModuleQWithState(CStr(fbi.FighterType.ID), ModuleStates.Inactive, fbi.Quantity))
         Next
 
         ' Add items
@@ -3521,6 +3562,21 @@ Imports EveHQ.Common.Extensions
                 rSkill.CurLevel = 0
                 rSkill.NeededFor = dbi.DroneType.Name
                 nSkills.Add("Drone" & count.ToString, rSkill)
+            Next
+        Next
+
+        ' Get Fighter skills
+        count = 0
+        For Each fbi As FighterBayItem In cShip.FighterBayItems.Values
+            For Each nSkill As ItemSkills In fbi.FighterType.RequiredSkills.Values
+                count += 1
+                rSkill = New ReqSkill
+                rSkill.Name = nSkill.Name
+                rSkill.ID = nSkill.ID
+                rSkill.ReqLevel = nSkill.Level
+                rSkill.CurLevel = 0
+                rSkill.NeededFor = fbi.FighterType.Name
+                nSkills.Add("Fighter" & count.ToString, rSkill)
             Next
         Next
 

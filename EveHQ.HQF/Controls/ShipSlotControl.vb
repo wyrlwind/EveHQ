@@ -312,18 +312,24 @@ Namespace Controls
             Next
 
             'Drone bay
-            itemIds.AddRange(
-                From dbi As Object In ParentFitting.FittedShip.DroneBayItems.Values
-                                Select CInt(CType(dbi, DroneBayItem).DroneType.ID))
+            For Each dbi As Object In ParentFitting.FittedShip.DroneBayItems.Values
+                For count As Integer = 0 To CType(dbi, DroneBayItem).Quantity
+                    itemIds.Add(CInt(CType(dbi, DroneBayItem).DroneType.ID))
+                Next
+            Next
 
             'Fighter bay
-            itemIds.AddRange(
-                From dbi As Object In ParentFitting.FittedShip.FighterBayItems.Values
-                Select CInt(CType(dbi, FighterBayItem).FighterType.ID))
+            For Each fbi As Object In ParentFitting.FittedShip.FighterBayItems.Values
+                For count As Integer = 0 To CType(fbi, FighterBayItem).Quantity
+                    itemIds.Add(CInt(CType(fbi, FighterBayItem).FighterType.ID))
+                Next
+            Next
 
             'Cargo bay
             For Each item As Object In ParentFitting.FittedShip.CargoBayItems.Values
-                itemIds.Add(CInt(CType(item, CargoBayItem).ItemType.ID))
+                For count As Integer = 0 To CType(item, CargoBayItem).Quantity
+                    itemIds.Add(CInt(CType(item, CargoBayItem).ItemType.ID))
+                Next
             Next
 
             ' Calculate the fitted prices

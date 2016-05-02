@@ -421,6 +421,8 @@ Namespace Forms
                 _currentShip.FleetSlotCollection.Clear()
                 _currentShip.DroneBayItems.Clear()
                 _currentShip.DroneBayUsed = 0
+                _currentShip.FighterBayItems.Clear()
+                _currentShip.FighterBayUsed = 0
                 _currentShip.CargoBayItems.Clear()
                 _currentShip.CargoBayUsed = 0
             End If
