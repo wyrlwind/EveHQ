@@ -1181,7 +1181,7 @@
 3764,1,3346,114,2,476;1019;89,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile EM Damage
 3764,1,3346,116,2,476;1019;89,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise explosive Damage
 3764,1,3346,118,2,476;1019;89,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise thermal Damage
-3764,1,3346,51,2,524;1673,0,1,0,15,15,Citadel launcher and Rapid Torpedo ROF
+3764,1,3346,51,2,524;1673;1674,0,1,0,15,15,Citadel launcher and Rapid Torpedo ROF
 3764,1,3346,263,3,6,0,1,0,7.5,16,Gang Shield HP
 3764,1,3346,10063,1,3764,0,1,1,1,15,Warfare Link Bonus
 3764,0,0,37,2,89;476,0,0,0,100,15,Torpedo Velocity
