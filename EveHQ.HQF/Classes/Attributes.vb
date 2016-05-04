@@ -124,6 +124,7 @@ Public Enum AttributeEnum
     ModuleCanFitShipGroup7 = 1880
     ModuleCanFitShipGroup8 = 1881
     ModuleCanFitShipGroup9 = 2065
+    ModuleCanFitShipGroup10 = 2396
     ModuleCanFitShipType1 = 1302
     ModuleCanFitShipType2 = 1303
     ModuleCanFitShipType3 = 1304

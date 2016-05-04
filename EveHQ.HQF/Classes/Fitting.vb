@@ -3083,7 +3083,8 @@ Imports EveHQ.Common.Extensions
             AttributeEnum.ModuleCanFitShipGroup6,
             AttributeEnum.ModuleCanFitShipGroup7,
             AttributeEnum.ModuleCanFitShipGroup8,
-            AttributeEnum.ModuleCanFitShipGroup9
+            AttributeEnum.ModuleCanFitShipGroup9,
+            AttributeEnum.ModuleCanFitShipGroup10
         }
 
         For Each att As Integer In shipGroupAttributes
