@@ -117,14 +117,12 @@
 628,1,3335,64,3,18,0,1,0,10,15,Drone Damage
 628,1,3335,77,3,18,0,1,0,10,15,Drone Mining Yield
 # Archon,,,,,,,,,,,
-23757,1,24311,91,4,910,0,1,0,40,15,Capital Energy Transfer Range
-23757,1,24311,54,4,1056,0,1,0,40,15,Capital Armor Transfer Range
-23757,1,24311,2044,4,1056,0,1,0,40,15,Capital Armor Transfer Falloff
 23757,1,24311,267,1,23757,0,1,2,-4,15,Armor EM Resistance
 23757,1,24311,268,1,23757,0,1,2,-4,15,Armor Explosive Resistance
 23757,1,24311,269,1,23757,0,1,2,-4,15,Armor Kinetic Resistance
 23757,1,24311,270,1,23757,0,1,2,-4,15,Armor Thermal Resistance
-23757,1,24311,10005,1,23757,0,1,1,1,15,Fighter Control Bonus
+23757,1,24311,2209,1,37599;40568,0,1,0,5,15,Cenobite optimal range
+23757,1,24311,833,4,1634;1635,0,1,0,1,15,Armored & Information Warfare Link Bonus
 # Ares,,,,,,,,,,,
 11202,1,3328,54,4,561;564,0,1,0,10,15,Small Hybrid Turret Optimal Range
 11202,1,3328,160,4,561;564,0,1,0,10,15,Small Hybrid Turret Tracking
@@ -407,14 +405,12 @@
 11182,1,12093,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
 11182,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
 # Chimera,,,,,,,,,,,
-23915,1,24312,91,4,910,0,1,0,40,15,Capital Energy Transfer Range
-23915,1,24312,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Range
-23915,1,24312,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
 23915,1,24312,271,1,23915,0,1,2,-4,15,Shield EM Resistance
 23915,1,24312,272,1,23915,0,1,2,-4,15,Shield Explosive Resistance
 23915,1,24312,273,1,23915,0,1,2,-4,15,Shield Kinetic Resistance
 23915,1,24312,274,1,23915,0,1,2,-4,15,Shield Thermal Resistance
-23915,1,24312,10005,1,23915,0,1,1,1,15,Fighter Control Bonus
+23915,1,24312,2221,1,40345;40569,0,1,0,5,15,Scarab optimal range
+23915,1,24312,833,4,1636;1635,0,1,0,1,15,Siege & Information Warfare Link Bonus
 # Chremoas,,,,,,,,,,,
 33397,1,3328,160,4,574;577,0,1,0,15,15,Small Projectile Turret Tracking
 33397,1,3329,54,4,574;577,0,1,0,10,15,Small Projectile Turret Optimal Range
@@ -1460,14 +1456,10 @@
 33472,0,0,1371,2,479,0,0,0,50,15,Probe Scan Strength Bonus
 33472,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
 # Nidhoggur,,,,,,,,,,,
-24483,1,24314,54,4,1056,0,1,0,40,15,Capital Armor Transfer Optimal
-24483,1,24314,2044,4,1056,0,1,0,40,15,Capital Armor Transfer Falloff
-24483,1,24314,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Optimal
-24483,1,24314,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
-24483,1,24314,84,4,1056,0,1,0,7.5,15,Capital Armor Transfer Amount
-24483,1,24314,68,4,600,0,1,0,7.5,15,Capital Remote Shield Booster Amount
-24483,1,24314,10005,1,24483,0,1,1,1,15,Fighter Control Bonus
-24483,1,24314,10063,1,24483,0,1,1,1,15,Warfare Link Bonus
+24483,1,24314,64,3,87,0,1,0,5,15,Fighter Damage
+24483,1,24314,37,3,87,0,1,0,2.5,15,Fighter Velocity
+24483,1,24314,2186,1,40347;40571,0,1,0,5,15,Dromi Web Range
+24483,1,24314,833,4,1636;1637,0,1,0,1,15,Siege & Skirmish Warfare Link Bonus
 # Nighthawk,,,,,,,,,,,
 22470,1,33096,271,1,22470,0,1,2,-4,15,Shield EM Resistance
 22470,1,33096,272,1,22470,0,1,2,-4,15,Shield Explosive Resistance
@@ -2253,12 +2245,12 @@
 37459,1,40328,73,2,325,0,1,0,-5,15,Remote Armor Repairer Duration
 37459,1,40328,552,1,37459,0,1,0,-4,15,Signature Radius
 # Thanatos,,,,,,,,,,,
-23911,1,24313,54,4,1056,0,1,0,40,15,Capital Armor Transfer Optimal Range
-23911,1,24313,2044,4,1056,0,1,0,40,15,Capital Armor Transfer Falloff
-23911,1,24313,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Optimal Range
-23911,1,24313,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
-23911,1,24313,64,2,549,0,1,0,5,15,Deployed Fighter Damage
-23911,1,24313,10005,1,23911,0,1,1,1,15,Fighter Control Bonus
+23911,1,24313,64,3,87,0,1,0,5,15,Fighter Damage
+23911,1,24313,263,3,87,0,1,0,2.5,15,Fighter Shield HP
+23911,1,24313,265,3,87,0,1,0,2.5,15,Fighter Armor HP
+23911,1,24313,9,3,87,0,1,0,2.5,15,Fighter Hull HP
+23911,1,24313,2204,1,40346;40570,0,1,0,5,15,Siren Warp Disruption Range
+23911,1,24313,833,4,1634;1637,0,1,0,1,15,Armored & Skirmish Warfare Link Bonus
 # Thorax,,,,,,,,,,,
 627,1,3332,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 627,1,3332,160,4,562;565,0,1,0,7.5,15,Medium Hybrid Turret Tracking
