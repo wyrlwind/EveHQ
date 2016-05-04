@@ -1393,6 +1393,8 @@
 # Moros,,,,,,,,,,,
 19724,1,20531,10015,4,771;772,0,1,0,5,15,Capital Hybrid Turret Damage
 19724,1,20531,10012,4,771;772,0,1,0,-5,15,Capital Hybrid Turret ROF
+19724,1,20531,73,2,62;1199,0,1,0,-5,15,Armor Repair Duration
+19724,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Moros Interbus Edition,,,,,,,,,,,
 #34339,1,20531,10015,4,771;772,0,1,0,5,15,Capital Hybrid Turret Damage
 #34339,1,20531,10012,4,771;772,0,1,0,-5,15,Capital Hybrid Turret ROF
@@ -1418,7 +1420,9 @@
 # Naglfar,,,,,,,,,,,
 19722,1,20532,10013,4,775;776,0,1,0,-5,15,Capital Projectile Turret ROF
 19722,1,20532,10016,4,775;776,0,1,0,5,15,Capital Projectile Turret Damage
+19722,1,20532,73,2,40;1156,0,1,0,-5,15,Shield Booster Duration
 19722,0,0,10016,4,775;776,0,0,0,50,15,Capital Projectile Turret Damage
+19722,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Naglfar Justice Edition,,,,,,,,,,,
 #34341,1,20532,10013,4,775;776,0,1,0,-5,15,Capital Projectile Turret ROF
 #34341,1,20532,10016,4,775;776,0,1,0,5,15,Capital Projectile Turret Damage
@@ -1659,7 +1663,12 @@
 19726,1,20530,272,1,19726,0,1,2,-4,15,Shield Explosive Resistance
 19726,1,20530,273,1,19726,0,1,2,-4,15,Shield Kinetic Resistance
 19726,1,20530,274,1,19726,0,1,2,-4,15,Shield Thermal Resistance
-19726,1,20530,51,2,524;1673,0,1,0,-5,15,Citadel Launcher ROF
+19726,1,20530,117,2,476;1019;89,0,1,0,5,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile Kinetic Damage
+19726,1,20530,114,2,476;1019;89,0,1,0,5,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile EM Damage
+19726,1,20530,116,2,476;1019;89,0,1,0,5,15,Citadel Torpedo, Torpedo & Citadel Cruise explosive Damage
+19726,1,20530,118,2,476;1019;89,0,1,0,5,15,Citadel Torpedo, Torpedo & Citadel Cruise thermal Damage
+19726,1,20530,1795,2,511;524;506;510;771;507;508;509;1245;1673;1674,0,1,0,-10,15,Missile launcher reload time
+19726,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Phoenix Wiyrkomi Edition,,,,,,,,,,,
 #34343,1,20530,271,1,34343,0,1,2,-4,15,Shield EM Resistance
 #34343,1,20530,272,1,34343,0,1,2,-4,15,Shield Explosive Resistance
@@ -1888,8 +1897,13 @@
 17478,0,0,73,4,1038,0,0,0,-20,15,Ice Harvester Duration
 17478,0,0,6,4,1038,0,0,0,-20,15,Ice Harvester Cap Use
 # Revelation,,,,,,,,,,,
+19720,1,20525,10014,4,773;774,0,1,0,5,15,Capital Energy Turret Damage
 19720,1,20525,6,4,773;774,0,1,0,-10,15,Capital Energy Turret Cap Use
-19720,1,20525,10011,4,773;774,0,1,0,-5,15,Capital Energy Turret ROF
+19720,1,20525,267,1,19720,0,1,2,-4,15,Armor EM Resistance
+19720,1,20525,268,1,19720,0,1,2,-4,15,Armor Explosive Resistance
+19720,1,20525,269,1,19720,0,1,2,-4,15,Armor Kinetic Resistance
+19720,1,20525,270,1,19720,0,1,2,-4,15,Armor Thermal Resistance
+19720,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Revelation Sarum Edition,,,,,,,,,,,
 #34345,1,20525,6,4,773;774,0,1,0,-10,15,Capital Energy Turret Cap Use
 #34345,1,20525,10011,4,773;774,0,1,0,-5,15,Capital Energy Turret ROF
