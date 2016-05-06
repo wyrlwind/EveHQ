@@ -1492,6 +1492,12 @@ Namespace Controls
                 ParentFitting.BaseShip.FighterBayItems.Clear()
                 ParentFitting.BaseShip.FighterBayUsed = 0
             End If
+            ' Remove the fighter bay tab if we don't need it (to avoid confusion)
+            If ParentFitting.BaseShip.FighterBay = 0 Then
+                tiFighterBay.Visible = False
+            Else
+                tiFighterBay.Visible = True
+            End If
         End Sub
 
         Private Sub ClearCargoBay()

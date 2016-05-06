@@ -1988,13 +1988,29 @@ Imports EveHQ.Common.Extensions
                         missileThermDamage = 0
                     End If
                 End If
+                Dim bombRof As Double = 1
+                Dim bombDmgMod As Double = 1
+                Dim bombBaseDamage As Double = 0
+                Dim bombEMDamage As Double = 0
+                Dim bombExpDamage As Double = 0
+                Dim bombKinDamage As Double = 0
+                Dim bombThermDamage As Double = 0
+                If cModule.LoadedCharge IsNot Nothing Then
+                    bombRof = cModule.Attributes(2349)
+                    bombDmgMod = 1
+                    bombBaseDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseEMDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseExpDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseKinDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseThermDamage)
+                    bombEMDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseEMDamage) * bombDmgMod
+                    bombExpDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseExpDamage) * bombDmgMod
+                    bombKinDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseKinDamage) * bombDmgMod
+                    bombThermDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseThermDamage) * bombDmgMod
+                End If
                 cModule.Attributes(AttributeEnum.ModuleBaseDamage) = 0
-                cModule.Attributes(AttributeEnum.ModuleVolleyDamage) = (turretDmgMod * turretBaseDamage) + (missileDmgMod * missileBaseDamage)
-                cModule.Attributes(AttributeEnum.ModuleDPS) = ((turretDmgMod * turretBaseDamage) / turretRof) + ((missileDmgMod * missileBaseDamage) / missileRof)
-                cModule.Attributes(AttributeEnum.ModuleEMDamage) = turretEMDamage + missileEMDamage
-                cModule.Attributes(AttributeEnum.ModuleExpDamage) = turretExpDamage + missileExpDamage
-                cModule.Attributes(AttributeEnum.ModuleKinDamage) = turretKinDamage + missileKinDamage
-                cModule.Attributes(AttributeEnum.ModuleThermDamage) = turretThermDamage + missileThermDamage
+                cModule.Attributes(AttributeEnum.ModuleVolleyDamage) = (turretDmgMod * turretBaseDamage) + (missileDmgMod * missileBaseDamage) + (bombDmgMod * bombBaseDamage)
+                cModule.Attributes(AttributeEnum.ModuleDPS) = ((turretDmgMod * turretBaseDamage) / turretRof) + ((missileDmgMod * missileBaseDamage) / missileRof) * ((bombDmgMod * bombBaseDamage) / bombRof)
+                cModule.Attributes(AttributeEnum.ModuleEMDamage) = turretEMDamage + missileEMDamage + bombEMDamage
+                cModule.Attributes(AttributeEnum.ModuleExpDamage) = turretExpDamage + missileExpDamage + bombExpDamage
+                cModule.Attributes(AttributeEnum.ModuleKinDamage) = turretKinDamage + missileKinDamage + bombKinDamage
+                cModule.Attributes(AttributeEnum.ModuleThermDamage) = turretThermDamage + missileThermDamage + bombThermDamage
                 newShip.Attributes(AttributeEnum.ShipDroneVolleyDamage) += cModule.Attributes(AttributeEnum.ModuleVolleyDamage) * squadronQuantity
                 newShip.Attributes(AttributeEnum.ShipDroneDPS) += cModule.Attributes(AttributeEnum.ModuleDPS) * squadronQuantity
                 newShip.Attributes(AttributeEnum.ShipVolleyDamage) += cModule.Attributes(AttributeEnum.ModuleVolleyDamage) * squadronQuantity
@@ -2003,10 +2019,10 @@ Imports EveHQ.Common.Extensions
                 newShip.Attributes(AttributeEnum.ShipExpDamage) += cModule.Attributes(AttributeEnum.ModuleExpDamage) * squadronQuantity
                 newShip.Attributes(AttributeEnum.ShipKinDamage) += cModule.Attributes(AttributeEnum.ModuleKinDamage) * squadronQuantity
                 newShip.Attributes(AttributeEnum.ShipThermDamage) += cModule.Attributes(AttributeEnum.ModuleThermDamage) * squadronQuantity
-                newShip.Attributes(AttributeEnum.ShipEmDPS) += ((turretEMDamage / turretRof) + (missileEMDamage / missileRof)) * squadronQuantity
-                newShip.Attributes(AttributeEnum.ShipExpDPS) += ((turretExpDamage / turretRof) + (missileExpDamage / missileRof)) * squadronQuantity
-                newShip.Attributes(AttributeEnum.ShipKinDPS) += ((turretKinDamage / turretRof) + (missileKinDamage / missileRof)) * squadronQuantity
-                newShip.Attributes(AttributeEnum.ShipThermDPS) += ((turretThermDamage / turretRof) + (missileThermDamage / missileRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipEmDPS) += ((turretEMDamage / turretRof) + (missileEMDamage / missileRof) + (bombEMDamage / bombRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipExpDPS) += ((turretExpDamage / turretRof) + (missileExpDamage / missileRof) + (bombExpDamage / bombRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipKinDPS) += ((turretKinDamage / turretRof) + (missileKinDamage / missileRof) + (bombKinDamage / bombRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipThermDPS) += ((turretThermDamage / turretRof) + (missileThermDamage / missileRof) + (bombThermDamage / bombRof)) * squadronQuantity
             End If
         Next
         For slot As Integer = 1 To newShip.HiSlots

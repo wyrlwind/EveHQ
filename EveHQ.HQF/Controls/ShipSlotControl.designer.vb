@@ -985,8 +985,8 @@ Namespace Controls
             'tcStorage
             '
             Me.tcStorage.CanReorderTabs = False
-            Me.tcStorage.Controls.Add(Me.tcpFighterBay)
             Me.tcStorage.Controls.Add(Me.tcpDroneBay)
+            Me.tcStorage.Controls.Add(Me.tcpFighterBay)
             Me.tcStorage.Controls.Add(Me.TabControlPanel1)
             Me.tcStorage.Controls.Add(Me.tcpCargoBay)
             Me.tcStorage.Controls.Add(Me.tcpRemoteEffects)
@@ -1005,8 +1005,8 @@ Namespace Controls
             Me.tcStorage.Style = DevComponents.DotNetBar.eTabStripStyle.Office2007Document
             Me.tcStorage.TabIndex = 9
             Me.tcStorage.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox
-            Me.tcStorage.Tabs.Add(Me.tiFighterBay)
             Me.tcStorage.Tabs.Add(Me.tiDroneBay)
+            Me.tcStorage.Tabs.Add(Me.tiFighterBay)
             Me.tcStorage.Tabs.Add(Me.tiCargoBay)
             Me.tcStorage.Tabs.Add(Me.tiRemoteEffects)
             Me.tcStorage.Tabs.Add(Me.tiFleetEffects)
@@ -1036,7 +1036,7 @@ Namespace Controls
             Me.tcpDroneBay.Style.BorderSide = CType(((DevComponents.DotNetBar.eBorderSide.Left Or DevComponents.DotNetBar.eBorderSide.Right) _
             Or DevComponents.DotNetBar.eBorderSide.Bottom), DevComponents.DotNetBar.eBorderSide)
             Me.tcpDroneBay.Style.GradientAngle = 90
-            Me.tcpDroneBay.TabIndex = 2
+            Me.tcpDroneBay.TabIndex = 1
             Me.tcpDroneBay.TabItem = Me.tiDroneBay
             '
             'btnMergeDrones
@@ -1076,7 +1076,7 @@ Namespace Controls
             Me.tcpFighterBay.Style.BorderSide = CType(((DevComponents.DotNetBar.eBorderSide.Left Or DevComponents.DotNetBar.eBorderSide.Right) _
             Or DevComponents.DotNetBar.eBorderSide.Bottom), DevComponents.DotNetBar.eBorderSide)
             Me.tcpFighterBay.Style.GradientAngle = 90
-            Me.tcpFighterBay.TabIndex = 1
+            Me.tcpFighterBay.TabIndex = 2
             Me.tcpFighterBay.TabItem = Me.tiFighterBay
             '
             'btnMergeFighters
