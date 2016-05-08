@@ -1908,6 +1908,123 @@ Imports EveHQ.Common.Extensions
                 End Select
             End If
         Next
+        For Each fbi As FighterBayItem In newShip.FighterBayItems.Values
+            If fbi.IsActive = True Then
+                cModule = fbi.FighterType
+                Dim squadronQuantity As Integer = fbi.Quantity
+                If fbi.FighterType.Attributes(2215) < squadronQuantity Then
+                    squadronQuantity = CInt(fbi.FighterType.Attributes(2215))
+                End If
+
+                ' Turret Damage
+                Dim turretRof As Double = 1
+                Dim turretDmgMod As Double = 0
+                Dim turretBaseDamage As Double = 0
+                Dim turretEMDamage As Double = 0
+                Dim turretExpDamage As Double = 0
+                Dim turretKinDamage As Double = 0
+                Dim turretThermDamage As Double = 0
+                If cModule.Attributes.ContainsKey(2233) = True Then
+                    turretRof = cModule.Attributes(2233)
+                    turretDmgMod = cModule.Attributes(2226)
+                    If cModule.Attributes.ContainsKey(2227) Then
+                        turretBaseDamage += cModule.Attributes(2227)
+                        turretEMDamage = cModule.Attributes(2227) * turretDmgMod
+                    Else
+                        turretEMDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2230) Then
+                        turretBaseDamage += cModule.Attributes(2230)
+                        turretExpDamage = cModule.Attributes(2230) * turretDmgMod
+                    Else
+                        turretExpDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2229) Then
+                        turretBaseDamage += cModule.Attributes(2229)
+                        turretKinDamage = cModule.Attributes(2229) * turretDmgMod
+                    Else
+                        turretKinDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2228) Then
+                        turretBaseDamage += cModule.Attributes(2228)
+                        turretThermDamage = cModule.Attributes(2228) * turretDmgMod
+                    Else
+                        turretThermDamage = 0
+                    End If
+                End If
+                ' Missile damage
+                Dim missileRof As Double = 1
+                Dim missileDmgMod As Double = 0
+                Dim missileBaseDamage As Double = 0
+                Dim missileEMDamage As Double = 0
+                Dim missileExpDamage As Double = 0
+                Dim missileKinDamage As Double = 0
+                Dim missileThermDamage As Double = 0
+                If cModule.Attributes.ContainsKey(2182) = True Then
+                    missileRof = cModule.Attributes(2182)
+                    missileDmgMod = cModule.Attributes(2130)
+                    If cModule.Attributes.ContainsKey(2131) Then
+                        missileBaseDamage += cModule.Attributes(2131)
+                        missileEMDamage = cModule.Attributes(2131) * missileDmgMod
+                    Else
+                        missileEMDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2134) Then
+                        missileBaseDamage += cModule.Attributes(2134)
+                        missileExpDamage = cModule.Attributes(2134) * missileDmgMod
+                    Else
+                        missileExpDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2133) Then
+                        missileBaseDamage += cModule.Attributes(2133)
+                        missileKinDamage = cModule.Attributes(2133) * missileDmgMod
+                    Else
+                        missileKinDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2132) Then
+                        missileBaseDamage += cModule.Attributes(2132)
+                        missileThermDamage = cModule.Attributes(2132) * missileDmgMod
+                    Else
+                        missileThermDamage = 0
+                    End If
+                End If
+                Dim bombRof As Double = 1
+                Dim bombDmgMod As Double = 1
+                Dim bombBaseDamage As Double = 0
+                Dim bombEMDamage As Double = 0
+                Dim bombExpDamage As Double = 0
+                Dim bombKinDamage As Double = 0
+                Dim bombThermDamage As Double = 0
+                If cModule.LoadedCharge IsNot Nothing Then
+                    bombRof = cModule.Attributes(2349)
+                    bombDmgMod = 1
+                    bombBaseDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseEMDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseExpDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseKinDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseThermDamage)
+                    bombEMDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseEMDamage) * bombDmgMod
+                    bombExpDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseExpDamage) * bombDmgMod
+                    bombKinDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseKinDamage) * bombDmgMod
+                    bombThermDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseThermDamage) * bombDmgMod
+                End If
+                cModule.Attributes(AttributeEnum.ModuleBaseDamage) = 0
+                cModule.Attributes(AttributeEnum.ModuleVolleyDamage) = (turretDmgMod * turretBaseDamage) + (missileDmgMod * missileBaseDamage) + (bombDmgMod * bombBaseDamage)
+                cModule.Attributes(AttributeEnum.ModuleDPS) = ((turretDmgMod * turretBaseDamage) / turretRof) + ((missileDmgMod * missileBaseDamage) / missileRof) * ((bombDmgMod * bombBaseDamage) / bombRof)
+                cModule.Attributes(AttributeEnum.ModuleEMDamage) = turretEMDamage + missileEMDamage + bombEMDamage
+                cModule.Attributes(AttributeEnum.ModuleExpDamage) = turretExpDamage + missileExpDamage + bombExpDamage
+                cModule.Attributes(AttributeEnum.ModuleKinDamage) = turretKinDamage + missileKinDamage + bombKinDamage
+                cModule.Attributes(AttributeEnum.ModuleThermDamage) = turretThermDamage + missileThermDamage + bombThermDamage
+                newShip.Attributes(AttributeEnum.ShipDroneVolleyDamage) += cModule.Attributes(AttributeEnum.ModuleVolleyDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipDroneDPS) += cModule.Attributes(AttributeEnum.ModuleDPS) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipVolleyDamage) += cModule.Attributes(AttributeEnum.ModuleVolleyDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipDPS) += cModule.Attributes(AttributeEnum.ModuleDPS) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipEMDamage) += cModule.Attributes(AttributeEnum.ModuleEMDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipExpDamage) += cModule.Attributes(AttributeEnum.ModuleExpDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipKinDamage) += cModule.Attributes(AttributeEnum.ModuleKinDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipThermDamage) += cModule.Attributes(AttributeEnum.ModuleThermDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipEmDPS) += ((turretEMDamage / turretRof) + (missileEMDamage / missileRof) + (bombEMDamage / bombRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipExpDPS) += ((turretExpDamage / turretRof) + (missileExpDamage / missileRof) + (bombExpDamage / bombRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipKinDPS) += ((turretKinDamage / turretRof) + (missileKinDamage / missileRof) + (bombKinDamage / bombRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipThermDPS) += ((turretThermDamage / turretRof) + (missileThermDamage / missileRof) + (bombThermDamage / bombRof)) * squadronQuantity
+            End If
+        Next
         For slot As Integer = 1 To newShip.HiSlots
             cModule = newShip.HiSlot(slot)
             If cModule IsNot Nothing Then
@@ -2604,7 +2721,11 @@ Imports EveHQ.Common.Extensions
         ' Add fighters
         Fighters.Clear()
         For Each fbi As FighterBayItem In BaseShip.FighterBayItems.Values
-            Fighters.Add(New ModuleQWithState(CStr(fbi.FighterType.ID), ModuleStates.Inactive, fbi.Quantity))
+            If fbi.IsActive = True Then
+                Fighters.Add(New ModuleQWithState(CStr(fbi.FighterType.ID), ModuleStates.Active, fbi.Quantity))
+            Else
+                Fighters.Add(New ModuleQWithState(CStr(fbi.FighterType.ID), ModuleStates.Inactive, fbi.Quantity))
+            End If
         Next
 
         ' Add items
@@ -2812,7 +2933,7 @@ Imports EveHQ.Common.Extensions
         If myShip.FighterBay - BaseShip.FighterBayUsed >= vol * qty Then
             ' Scan through existing items and see if we can group this new one
             For Each FighterGroup As FighterBayItem In BaseShip.FighterBayItems.Values
-                If fighter.Name = FighterGroup.FighterType.Name And updateAll = False Then
+                If fighter.Name = FighterGroup.FighterType.Name And active = FighterGroup.IsActive And updateAll = False Then
                     ' Add to existing fighter group
                     FighterGroup.Quantity += qty
                     grouped = True
@@ -2824,6 +2945,12 @@ Imports EveHQ.Common.Extensions
                 Dim fbi As New FighterBayItem
                 fbi.FighterType = fighter
                 fbi.Quantity = qty
+                'todo
+                If active = True Then
+                    fbi.IsActive = True
+                Else
+                    fbi.IsActive = False
+                End If
                 BaseShip.FighterBayItems.Add(BaseShip.FighterBayItems.Count, fbi)
             End If
             ' Update stuff
