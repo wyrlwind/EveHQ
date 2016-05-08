@@ -63,6 +63,7 @@ Namespace Controls
             Me.colDroneBayQty = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.pbFighterBay = New DevComponents.DotNetBar.Controls.ProgressBarX()
             Me.lblFighterBay = New System.Windows.Forms.Label()
+            Me.lblFighterSquadrons = New System.Windows.Forms.Label()
             Me.lvwFighterBay = New DevComponents.DotNetBar.Controls.ListViewEx()
             Me.colFighterBayType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.colFighterBayQty = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -469,6 +470,16 @@ Namespace Controls
             Me.lblFighterBay.Size = New System.Drawing.Size(89, 13)
             Me.lblFighterBay.TabIndex = 0
             Me.lblFighterBay.Text = "0.00 / 000.00 m³"
+            '
+            'lblFighterSquadrons
+            '
+            Me.lblFighterSquadrons.AutoSize = True
+            Me.lblFighterSquadrons.BackColor = System.Drawing.Color.Transparent
+            Me.lblFighterSquadrons.Location = New System.Drawing.Point(200, 1)
+            Me.lblFighterSquadrons.Name = "lblFighterSquadrons"
+            Me.lblFighterSquadrons.Size = New System.Drawing.Size(200, 13)
+            Me.lblFighterSquadrons.TabIndex = 0
+            Me.lblFighterSquadrons.Text = "Squadron Limits: 0 Total / 0 Light / 0 Support / 0 Heavy"
             '
             'lvwFighterBay
             '
@@ -1062,6 +1073,7 @@ Namespace Controls
             Me.tcpFighterBay.Controls.Add(Me.btnMergeFighters)
             Me.tcpFighterBay.Controls.Add(Me.pbFighterBay)
             Me.tcpFighterBay.Controls.Add(Me.lblFighterBay)
+            Me.tcpFighterBay.Controls.Add(Me.lblFighterSquadrons)
             Me.tcpFighterBay.Controls.Add(Me.lvwFighterBay)
             Me.tcpFighterBay.DisabledBackColor = System.Drawing.Color.Empty
             Me.tcpFighterBay.Dock = System.Windows.Forms.DockStyle.Fill
@@ -2252,6 +2264,7 @@ Namespace Controls
         Friend WithEvents lblDroneBay As System.Windows.Forms.Label
         Friend WithEvents lvwDroneBay As DevComponents.DotNetBar.Controls.ListViewEx
         Friend WithEvents lblFighterBay As System.Windows.Forms.Label
+        Friend WithEvents lblFighterSquadrons As System.Windows.Forms.Label
         Friend WithEvents lvwFighterBay As DevComponents.DotNetBar.Controls.ListViewEx
         Friend WithEvents lblCargoBay As System.Windows.Forms.Label
         Friend WithEvents colDroneBayType As System.Windows.Forms.ColumnHeader

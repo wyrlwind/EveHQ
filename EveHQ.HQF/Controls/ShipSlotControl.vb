@@ -404,6 +404,7 @@ Namespace Controls
                 Call RedrawCargoBayCapacity()
                 Call RedrawDroneBayCapacity()
                 Call RedrawFighterBayCapacity()
+                Call RedrawFighterSquadronCounts()
                 Call RedrawShipBayCapacity()
             End If
             'eTime = Now
@@ -2969,6 +2970,7 @@ Namespace Controls
             Next
             lvwFighterBay.EndUpdate()
             Call RedrawFighterBayCapacity()
+            Call RedrawFighterSquadronCounts()
         End Sub
 
         Private Sub RedrawShipBay()
@@ -3048,6 +3050,14 @@ Namespace Controls
             Else
                 pbFighterBay.Value = CInt(ParentFitting.BaseShip.FighterBayUsed)
             End If
+        End Sub
+
+        Private Sub RedrawFighterSquadronCounts()
+            Dim total As Integer = ParentFitting.FittedShip.FighterSquadronLaunchTubes
+            Dim light As Integer = ParentFitting.FittedShip.LightFighterSquadronLimit
+            Dim support As Integer = ParentFitting.FittedShip.SupportFighterSquadronLimit
+            Dim heavy As Integer = ParentFitting.FittedShip.HeavyFighterSquadronLimit
+            lblFighterSquadrons.Text = "Squadron Limits: " & total & " Total / " & light & " Light / " & support & " Support / " & heavy & " Heavy"
         End Sub
 
         Private Sub RedrawShipBayCapacity()

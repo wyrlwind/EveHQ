@@ -2946,7 +2946,7 @@ Imports EveHQ.Common.Extensions
                 fbi.FighterType = fighter
                 fbi.Quantity = qty
                 'todo
-                If active = True And myShip.MaxDrones - BaseShip.UsedDrones >= qty Then
+                If active = True Then
                     fbi.IsActive = True
                 Else
                     fbi.IsActive = False
