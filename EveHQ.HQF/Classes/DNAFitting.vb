@@ -184,6 +184,11 @@ Public Class DNAFitting
             mods.Add(dbi.DroneType.ID, dbi.Quantity)
         Next
 
+        ' Add fighters
+        For Each fbi As FighterBayItem In newFit.BaseShip.FighterBayItems.Values
+            mods.Add(fbi.FighterType.ID, fbi.Quantity)
+        Next
+
         ' Add charges
         For Each cbi As CargoBayItem In newFit.BaseShip.CargoBayItems.Values
             If ModuleLists.ModuleList.ContainsKey(cbi.ItemType.ID) Then
