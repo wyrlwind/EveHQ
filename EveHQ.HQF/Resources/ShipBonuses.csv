@@ -914,6 +914,14 @@
 35683,0,0,10015,4,564;561,0,0,0,50,15,Small Hybrid Turret Damage
 35683,0,0,50,2,481,0,0,0,-95,15,Scan Probe Launcher CPU Need
 # Hel,,,,,,,,,,,
+22852,1,24314,2131,3,87,0,1,0,10,15,Fighter Attack Missile EM Damage
+22852,1,24314,2132,3,87,0,1,0,10,15,Fighter Attack Missile Thermal Damage
+22852,1,24314,2133,3,87,0,1,0,10,15,Fighter Attack Missile Kinetic Damage
+22852,1,24314,2134,3,87,0,1,0,10,15,Fighter Attack Missile Explosive Damage
+22852,1,24314,2227,3,87,0,1,0,10,15,Fighter Ability EM Damage
+22852,1,24314,2228,3,87,0,1,0,10,15,Fighter Ability Thermal Damage
+22852,1,24314,2229,3,87,0,1,0,10,15,Fighter Ability Kinetic Damage
+22852,1,24314,2230,3,87,0,1,0,10,15,Fighter Ability Explosive Damage
 22852,1,24314,37,3,87,0,1,0,5,15,Fighter Velocity
 22852,1,24314,10009,1,22852,0,1,1,5,15,Warp Core Strength
 22852,1,24314,2397,1,40698,0,1,0,-5,15,Target Illumination Burst Projector Duration
@@ -1517,6 +1525,14 @@
 28846,1,20342,70,1,28846,0,1,0,-5,15,Agility
 28846,0,0,50,2,78,0,0,0,-100,15,Bulkheads CPU Need
 # Nyx,,,,,,,,,,,
+23913,1,24313,2131,3,87,0,1,0,10,15,Fighter Attack Missile EM Damage
+23913,1,24313,2132,3,87,0,1,0,10,15,Fighter Attack Missile Thermal Damage
+23913,1,24313,2133,3,87,0,1,0,10,15,Fighter Attack Missile Kinetic Damage
+23913,1,24313,2134,3,87,0,1,0,10,15,Fighter Attack Missile Explosive Damage
+23913,1,24313,2227,3,87,0,1,0,10,15,Fighter Ability EM Damage
+23913,1,24313,2228,3,87,0,1,0,10,15,Fighter Ability Thermal Damage
+23913,1,24313,2229,3,87,0,1,0,10,15,Fighter Ability Kinetic Damage
+23913,1,24313,2230,3,87,0,1,0,10,15,Fighter Ability Explosive Damage
 23913,1,24313,263,3,87,0,1,0,5,15,Fighter Shield HP
 23913,1,24313,9,3,87,0,1,0,5,15,Fighter Hull HP
 23913,1,24313,10009,1,23913,0,1,1,5,15,Warp Core Strength
