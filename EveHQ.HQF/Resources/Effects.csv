@@ -909,6 +909,7 @@
 1030,2,1706,208,3,6,1,0,0,12,Networked Sensor Array - Radar Strength
 235,2,1706,192,3,6,1,0,1,12,Networked Sensor Array - Max Locked Targets
 565,2,1706,564,3,6,1,0,0,12,Networked Sensor Array - Scan Resolution
+1190,2,1706,6,2,52;65;80;201;291;379;1672,1,0,0,12,Networked Sensor Array - Ewar Cap Malus
 # Signal Amplifiers,,,,,,,,,,
 235,2,210,192,3,6,0,0,1,14,Signal Amplifier - Max Locked Targets
 309,2,210,76,3,6,1,0,0,14,Signal Amplifier - Max Targeting Range
