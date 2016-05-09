@@ -15,8 +15,10 @@
 591,1,12305,37,3,18,0,1,0,0,Drone Navigation
 294,1,23606,54,3,18,0,1,0,0,Drone Sharpshooting
 353,1,3436,10005,3,6,0,1,1,0,Drones
-292,1,23069,64,2,549,0,1,0,0,Fighters
-292,1,32339,64,2,1023,0,1,0,0,Fighter Bombers
+292,1,23069,64,3,87,0,1,0,0,Fighters
+306,1,40572,37,2,1652,0,1,0,0,Light Fighters
+68,1,40573,263,2,1537,0,1,0,0,Support Fighters
+292,1,32339,64,2,1653,0,1,0,0,Heavy Fighters
 292,1,12486,64,5,12486,0,1,0,0,Gallente Drone Specialization
 292,1,3441,64,4,839,0,1,0,0,Heavy Drone Operation
 292,1,24241,64,4,837,0,1,0,0,Light Drone Operation
