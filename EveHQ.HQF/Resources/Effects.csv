@@ -15,10 +15,24 @@
 591,1,12305,37,3,18,0,1,0,0,Drone Navigation
 294,1,23606,54,3,18,0,1,0,0,Drone Sharpshooting
 353,1,3436,10005,3,6,0,1,1,0,Drones
-292,1,23069,64,3,87,0,1,0,0,Fighters
+292,1,23069,2131,3,87,0,1,0,0,Fighters -  Attack Missile EM Damage
+292,1,23069,2132,3,87,0,1,0,0,Fighters -  Attack Missile Thermal Damage
+292,1,23069,2133,3,87,0,1,0,0,Fighters -  Attack Missile Kinetic Damage
+292,1,23069,2134,3,87,0,1,0,0,Fighters -  Attack Missile Explosive Damage
+292,1,23069,2227,3,87,0,1,0,0,Fighters -  Ability EM Damage
+292,1,23069,2228,3,87,0,1,0,0,Fighters -  Ability Thermal Damage
+292,1,23069,2229,3,87,0,1,0,0,Fighters -  Ability Kinetic Damage
+292,1,23069,2230,3,87,0,1,0,0,Fighters -  Ability Explosive Damage
 306,1,40572,37,2,1652,0,1,0,0,Light Fighters
 68,1,40573,263,2,1537,0,1,0,0,Support Fighters
-292,1,32339,64,2,1653,0,1,0,0,Heavy Fighters
+292,1,32339,2131,2,1653,0,1,0,0,Heavy Fighters -  Attack Missile EM Damage
+292,1,32339,2132,2,1653,0,1,0,0,Heavy Fighters -  Attack Missile Thermal Damage
+292,1,32339,2133,2,1653,0,1,0,0,Heavy Fighters -  Attack Missile Kinetic Damage
+292,1,32339,2134,2,1653,0,1,0,0,Heavy Fighters -  Attack Missile Explosive Damage
+292,1,32339,2227,2,1653,0,1,0,0,Heavy Fighters -  Ability EM Damage
+292,1,32339,2228,2,1653,0,1,0,0,Heavy Fighters -  Ability Thermal Damage
+292,1,32339,2229,2,1653,0,1,0,0,Heavy Fighters -  Ability Kinetic Damage
+292,1,32339,2230,2,1653,0,1,0,0,Heavy Fighters -  Ability Explosive Damage
 292,1,12486,64,5,12486,0,1,0,0,Gallente Drone Specialization
 292,1,3441,64,4,839,0,1,0,0,Heavy Drone Operation
 292,1,24241,64,4,837,0,1,0,0,Light Drone Operation
@@ -805,13 +819,28 @@
 317,2,663,6,6,483,0,0,0,15,Mercoxit Mining Crystal - Capacitor Penalty
 # DRONES,,,,,,,,,,
 # DRONE UPGRADES,,,,,,,,,,
-353,2,407,10005,3,6,0,0,1,4,Drone Control Unit - Drone Bonus
-1255,2,645,64,2,100;101;1159;549;1023,1,0,0,14,Drone Damage Amplifier
+2335,2,407,263,3,87,1,0,0,14,Fighter Support Unit - Shield HP
+2336,2,407,37,3,87,1,0,0,14,Fighter Support Unit - Velocity
+2337,2,407,2233,3,87,1,0,0,14,Fighter Support Unit - ROF
+1255,2,645,64,3,87,1,0,0,14,Drone Damage Amplifier
+1255,2,645,2131,3,87,1,0,0,14,Drone Damage Amplifier - Fighter Attack Missile EM Damage
+1255,2,645,2132,3,87,1,0,0,14,Drone Damage Amplifier - Fighter Attack Missile Thermal Damage
+1255,2,645,2133,3,87,1,0,0,14,Drone Damage Amplifier - Fighter Attack Missile Kinetic Damage
+1255,2,645,2134,3,87,1,0,0,14,Drone Damage Amplifier - Fighter Attack Missile Explosive Damage
+1255,2,645,2227,3,87,1,0,0,14,Drone Damage Amplifier - Fighter Ability EM Damage
+1255,2,645,2228,3,87,1,0,0,14,Drone Damage Amplifier - Fighter Ability Thermal Damage
+1255,2,645,2229,3,87,1,0,0,14,Drone Damage Amplifier - Fighter Ability Kinetic Damage
+1255,2,645,2230,3,87,1,0,0,14,Drone Damage Amplifier - Fighter Ability Explosive Damage
 459,2,647,10007,3,6,0,0,1,14,Drone Link Augmenter - Drone Control Range Bonus
-20,2,644,37,3,18,3,0,0,14,Drone Navigation Computer - Drone Velocity
+20,2,644,37,3,18;87,3,0,0,14,Drone Navigation Computer - Drone Velocity
 351,2,646,54,3,18,2,0,0,12,Omni Tracking Link - Optimal Range
-349,2,646,158,2,100;639;549;1023,2,0,0,12,Omni Tracking Link - Falloff
+351,2,646,2149,3,87,2,0,0,12,Omni Tracking Link - Fighter Optimal Range
+351,2,646,2236,3,87,2,0,0,12,Omni Tracking Link - Fighter Ability Optimal Range
+349,2,646,158,2,100;639;549;1023,2,0,0,12,Omni Tracking Link - Drone Falloff
+349,2,646,2237,3,87,2,0,0,12,Omni Tracking Link - Fighter Falloff
 767,2,646,160,2,100;549;1023,2,0,0,12,Omni Tracking Link - Tracking Speed
+847,2,646,2235,3,87,2,0,0,12,Omni Tracking Link - Fighter Explosion Velocity
+848,2,646,2234,3,87,2,0,0,12,Omni Tracking Link - Fighter Explosion Radius
 351,2,1292,54,3,18,2,0,0,14,Omni Tracking Enhancer - Optimal Range
 349,2,1292,158,2,100;639;549;1023,2,0,0,14,Omni Enhancer - Falloff
 767,2,1292,160,2,100;549;1023,2,0,0,14,Omni Enhancer - Tracking Speed
