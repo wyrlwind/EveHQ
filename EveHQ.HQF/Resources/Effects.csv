@@ -3,7 +3,7 @@
 # SKILL ATTRIBUTE MAPPING,,,,,,,,,,
 # DRONES,,,,,,,,,,
 459,1,23566,10007,3,6,0,1,1,0,Advanced Drone Avionics
-280,1,24613,763,2,407,0,1,10,0,Advanced Drone Interfacing
+2340,1,24613,2055,3,6,0,1,0,0,Fighter Hangar Management
 292,1,12484,64,5,12484,0,1,0,0,Amarr Drone Specialization
 292,1,12487,64,5,12487,0,1,0,0,Caldari Drone Specialization
 459,1,3437,10007,3,6,0,1,1,0,Drone Avionics
@@ -15,8 +15,10 @@
 591,1,12305,37,3,18,0,1,0,0,Drone Navigation
 294,1,23606,54,3,18,0,1,0,0,Drone Sharpshooting
 353,1,3436,10005,3,6,0,1,1,0,Drones
-292,1,23069,64,2,549,0,1,0,0,Fighters
-292,1,32339,64,2,1023,0,1,0,0,Fighter Bombers
+292,1,23069,64,3,87,0,1,0,0,Fighters
+306,1,40572,37,2,1652,0,1,0,0,Light Fighters
+68,1,40573,263,2,1537,0,1,0,0,Support Fighters
+292,1,32339,64,2,1653,0,1,0,0,Heavy Fighters
 292,1,12486,64,5,12486,0,1,0,0,Gallente Drone Specialization
 292,1,3441,64,4,839,0,1,0,0,Heavy Drone Operation
 292,1,24241,64,4,837,0,1,0,0,Light Drone Operation
@@ -47,7 +49,7 @@
 294,1,19759,54,2,209,0,1,0,0,Long Distance Jamming - Tracking Links
 309,1,3428,76,3,6,0,1,0,0,Long Range Targeting
 311,1,3430,10064,3,6,0,1,1,0,Multitasking
-1193,1,27911,669,2,842,0,1,0,0,Projected Electronic Counter Measures
+1193,1,27911,669,2,842,0,1,0,0,Burst Projector Operation
 317,1,3435,6,2,52,0,1,0,0,Propulsion Jamming - Warp Scrambler
 317,1,3435,6,2,65,0,1,0,0,Propulsion Jamming - Stasis Webifier
 317,1,3435,6,2,899,0,1,0,0,Propulsion Jamming - WDFG
@@ -907,6 +909,7 @@
 1030,2,1706,208,3,6,1,0,0,12,Networked Sensor Array - Radar Strength
 235,2,1706,192,3,6,1,0,1,12,Networked Sensor Array - Max Locked Targets
 565,2,1706,564,3,6,1,0,0,12,Networked Sensor Array - Scan Resolution
+1190,2,1706,6,2,52;65;80;201;291;379;1672,1,0,0,12,Networked Sensor Array - Ewar Cap Malus
 # Signal Amplifiers,,,,,,,,,,
 235,2,210,192,3,6,0,0,1,14,Signal Amplifier - Max Locked Targets
 309,2,210,76,3,6,1,0,0,14,Signal Amplifier - Max Targeting Range
@@ -1061,7 +1064,7 @@
 # Bomb Launchers,,,,,,,,,,
 983,2,862,552,3,6,0,0,1,15,Signature Radius
 # Ballistic Control Systems,,,,,,,,,,
-204,2,367,51,2,511;524;506;510;771;507;508;509;1245,1,0,0,14,ROF Bonus
+204,2,367,51,2,511;524;506;510;771;507;508;509;1245;1673,1,0,0,14,ROF Bonus
 213,2,367,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Damage Bonus - EM
 213,2,367,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Damage Bonus - Explosive
 213,2,367,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Damage Bonus - Kinetic
@@ -1108,32 +1111,28 @@
 20,1,28583,37,3,6,0,0,0,4,Max Velocity Bonus
 1238,1,28583,833,4,1638,0,0,5,4,Mining Foreman Ganglink Bonus
 # Siege Modules,,,,,,,,,,
-20,1,20280,37,3,6,0,0,0,4,Max Velocity Bonus
-292,1,20280,114,2,476;1019,0,0,0,4,Damage Bonus - EM Citadel Missiles
-292,1,20280,116,2,476;1019,0,0,0,4,Damage Bonus - Explosive Citadel Missiles
-292,1,20280,117,2,476;1019,0,0,0,4,Damage Bonus - Kinetic Citadel Missiles
-292,1,20280,118,2,476;1019,0,0,0,4,Damage Bonus - Thermal Citadel Missiles
-292,1,20280,10016,4,775;776,0,0,0,4,Damage Bonus - Projectiles
-292,1,20280,10014,4,773;774,0,0,0,4,Damage Bonus - Energy
-292,1,20280,10015,4,771;772,0,0,0,4,Damage Bonus - Hybrids
-548,1,20280,68,4,778,1,0,0,4,Shield Boost Bonus
-565,1,20280,564,3,6,0,0,0,4,Scan Resolution Penalty
-895,1,20280,84,4,1052,1,0,0,4,Armor Repair Amount
-896,1,20280,73,4,1052,0,0,0,4,Armor Repair Duration
-897,1,20280,73,4,778,0,0,0,4,Shield Booster Duration
-20,1,4292,37,3,6,0,0,0,4,Max Velocity Bonus
-292,1,4292,114,2,476;1019,0,0,0,4,Damage Bonus - EM Citadel Missiles
-292,1,4292,116,2,476;1019,0,0,0,4,Damage Bonus - Explosive Citadel Missiles
-292,1,4292,117,2,476;1019,0,0,0,4,Damage Bonus - Kinetic Citadel Missiles
-292,1,4292,118,2,476;1019,0,0,0,4,Damage Bonus - Thermal Citadel Missiles
-292,1,4292,10016,4,775;776,0,0,0,4,Damage Bonus - Projectiles
-292,1,4292,10014,4,773;774,0,0,0,4,Damage Bonus - Energy
-292,1,4292,10015,4,771;772,0,0,0,4,Damage Bonus - Hybrids
-548,1,4292,68,4,778,1,0,0,4,Shield Boost Bonus
-565,1,4292,564,3,6,0,0,0,4,Scan Resolution Penalty
-895,1,4292,84,4,1052,1,0,0,4,Armor Repair Amount
-896,1,4292,73,4,1052,0,0,0,4,Armor Repair Duration
-897,1,4292,73,4,778,0,0,0,4,Shield Booster Duration
+20,1,4292;20280,37,3,6,0,0,0,4,Max Velocity Bonus
+1027,1,4292;20280,211,3,6,0,0,0,4,Gravimetric Sensor Strength
+1028,1,4292;20280,209,3,6,0,0,0,4,Ladar Sensor Strength
+1029,1,4292;20280,210,3,6,0,0,0,4,Magnetrometric Sensor Strength
+1030,1,4292;20280,208,3,6,0,0,0,4,Radar Sensor Strength
+1471,1,4292;20280,10002,3,6,0,0,0,4,Mass Multiplier
+2304,1,4292;20280,37,2,89,0,0,0,4,Torpedo Velocity
+2305,1,4292;20280,51,2,524;1673;1674,0,0,0,4,Citadel launcher and Rapid Torpedo ROF
+2306,1,4292;20280,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,4,Damage Bonus - EM
+2306,1,4292;20280,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,4,Damage Bonus - Explosive
+2306,1,4292;20280,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,4,Damage Bonus - Kinetic
+2306,1,4292;20280,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,4,Damage Bonus - Thermal
+2307,1,4292;20280,10016,4,775;776,0,0,0,4,Capital Projectile Turret Damage
+2307,1,4292;20280,10014,4,773;774,0,0,0,4,Capital Energy Turret Damage
+2307,1,4292;20280,10015,4,771;772,0,0,0,4,Capital Hybrid Turret Damage
+2346,1,4292;20280,73,2,62;1199,0,0,0,4,Armor Repair Duration
+2346,1,4292;20280,73,2,40;1156,0,0,0,4,Shield Booster Duration
+2347,1,4292;20280,68,2,40;1156,0,0,0,4,Shield Boost Bonus
+2347,1,4292;20280,84,2,62;1199,0,0,0,4,Armor Repair Amount
+2351,1,4292;20280,2112,3,6,0,0,0,4,Sensor Dampener resistance
+2352,1,4292;20280,2135,3,6,0,0,0,4,Remote Electronic Assistance impedance
+2353,1,4292;20280,2113,3,6,0,0,0,4,Weapon Disruption resistance
 # Triage Modules,,,,,,,,,,
 20,1,27951,37,3,6,0,0,0,4,Max Velocity Bonus
 235,1,27951,192,3,6,0,0,1,4,Max Locked Targets Bonus
