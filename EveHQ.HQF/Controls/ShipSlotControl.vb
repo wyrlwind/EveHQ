@@ -3822,7 +3822,7 @@ Namespace Controls
                 lvwFighterBay.Items.Add(newFighterItem)
             Next
             lvwFighterBay.EndUpdate()
-            Call RedrawFighterBayCapacity()
+            Call RedrawFighterBay()
             _updateFighters = False
             ' Rebuild the ship to account for any disabled fighters
             ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
