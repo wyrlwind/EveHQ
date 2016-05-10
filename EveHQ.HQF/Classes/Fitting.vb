@@ -2966,12 +2966,16 @@ Imports EveHQ.Common.Extensions
 
             Dim fbi As New FighterBayItem
             fbi.FighterType = fighter
-            Dim squadMax As Integer = CInt(fbi.FighterType.Attributes(2215))
+            fbi.Quantity = qty
 
-            If myShip.FighterBay - BaseShip.FighterBayUsed >= vol * squadMax Then
-                fbi.Quantity = squadMax
-            Else
-                fbi.Quantity = CInt((Fix(((myShip.FighterBay - BaseShip.FighterBayUsed) / vol) * 100)) / 100)
+            If updateAll = False Then
+                Dim squadMax As Integer = CInt(fbi.FighterType.Attributes(2215))
+
+                If myShip.FighterBay - BaseShip.FighterBayUsed >= vol * squadMax Then
+                    fbi.Quantity = squadMax
+                Else
+                    fbi.Quantity = CInt((Fix(((myShip.FighterBay - BaseShip.FighterBayUsed) / vol) * 100)) / 100)
+                End If
             End If
 
             'todo
