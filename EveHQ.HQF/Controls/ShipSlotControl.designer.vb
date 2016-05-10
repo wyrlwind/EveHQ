@@ -509,7 +509,7 @@ Namespace Controls
             '
             'colFighterBayQty
             '
-            Me.colFighterBayQty.Text = "Qty (Squadron Max Size)"
+            Me.colFighterBayQty.Text = "Qty / Squadron Size"
             Me.colFighterBayQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
             Me.colFighterBayQty.Width = 150
             '

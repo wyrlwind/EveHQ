@@ -2864,7 +2864,7 @@ Namespace Controls
                 newFighterItem.Name = CStr(lvwFighterBay.Items.Count)
                 Dim squadMax As Integer = CInt(fbi.FighterType.Attributes(2215))
                 Dim squadMaxSize As String = CStr(squadMax)
-                newFighterItem.SubItems.Add(CStr(fbi.Quantity) & " (" & CStr(squadMaxSize) & ")")
+                newFighterItem.SubItems.Add(CStr(fbi.Quantity) & "/" & CStr(squadMaxSize))
                 Dim type As String
                 If fbi.FighterType.Attributes.ContainsKey(2212) Then
                     type = "Light"
