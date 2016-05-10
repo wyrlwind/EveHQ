@@ -295,7 +295,7 @@ $óóAdvanced Moon MaterialsŠ
 ööExtra LargeÍ
 ÷÷Extra LargeÓ
 øøExtra LargeĞ
-ùùCitadel Torpedoesr
+ùùXL Torpedoesr
 #úúCorporate Hangar Array…
 
 €€Arkonor6
@@ -391,7 +391,7 @@ DestroyersÌ
 ææCriminal Evidence
 ççDamage Controls
 èè	Insignias
-ééCitadel Torpedoesº
+ééXL Torpedoesº
 êêImplant Slot 01”
 ëëImplant Slot 02”
 ììImplant Slot 03”
@@ -539,7 +539,7 @@ Freighterså
 ††Extra Large®
 ‡‡Extra Large°
 ˆˆExtra Large¯
-‰‰Citadel LaunchersŒ
+‰‰XL LaunchersŒ
 ŠŠCapital¨
 $‹‹Fleet Assistance Modules	
 -( Standard Capital Ship Components‹
@@ -598,7 +598,7 @@ Components‘
 ÅÅLight Scout DronesŸ
  ÆÆMedium Scout DronesŸ
  ÇÇHeavy Attack DronesŸ
-ÈÈFightersŸ
+ÈÈLight Fighters¼
 &É!ÉElectronic Warfare Drones
 ÊÊLogistic Drones
 "ËËCombat Utility Drones
@@ -766,7 +766,7 @@ $ôôCynosural System Jammer…
 ııOutpost Components‹
 "şşImprovement Platformsı
 &ƒ!ƒOutpost Upgrade Platformsı
-„„Fightersú
+„„Light Fighters½
 &…!…Electronic Warfare Droneså
 ††Logistic Droneså
 ‡‡Raw Materials•
@@ -869,8 +869,8 @@ Subsystems»
 !ûûSubsystem Components‹
 !§	§	Subsystem Components 
 "¨	¨	Faction Auto-Targetings
-'©	"©	Standard Citadel Torpedoesù
-&ª	!ª	Faction Citadel Torpedoesù
+"©	©	Standard XL Torpedoesù
+!ª	ª	Faction XL Torpedoesù
 !«	«	Reinforced Bulkheads‡
 *¬	%¬	Nanofiber Internal Structures‡
  ­	­	Expanded Cargoholds‡
@@ -955,25 +955,25 @@ $ü	ü	Infrastructure Upgradesø
  …
 …
 Starbase Structuresİ
-$†
-†
-Citadel Cruise Missilesº
--‡
-(‡
- Standard Citadel Cruise Missiles¤
+†
+†
+XL Cruise Missilesº
+(‡
+#‡
+Standard XL Cruise Missiles¤
 
-
-
-Fighter BombersŸ
-¡
-¡
-Fighter Bombersú
-#¤
-¤
-Citadel Cruise Missilesr
-,¥
-'¥
-Faction Citadel Cruise Missiles¤
+
+
+Heavy Fighters¼
+¡
+¡
+Heavy Fighters½
+¤
+¤
+XL Cruise Missilesr
+'¥
+"¥
+Faction XL Cruise Missiles¤
 
 "¨
 ¨
@@ -1218,7 +1218,7 @@ $ß
 
 #‚‚Orbital Infrastructure¨
 
-#ˆˆReactive Armor Hardener
+%ˆ ˆReactive Armor Hardeners—
 ’’Target Breaker‘
 ““Aurum Tokens
 ½½Armor Implants“
@@ -1824,6 +1824,135 @@ $µµStandard Battlecruisers£
 !èèStructure Management–
 ééStasis Grapplers
 êêStasis Grapplers‘
+ììCitadelsº
+
+#ííStructure Modifications
+îîStructure Equipment
+"ïïStructure Combat Rigsí
+ğğReprocessing Rigsí
+ññElectronic Warfareî
+,ò'òElectronics and Sensor Upgradesî
+"óóEngineering Equipmentî
+ôôStructure Weaponsî
+õõFighter Upgradesî
+ööService Modulesî
+(÷#÷Electronic Counter Measuresñ
+$øøRemote Sensor Dampenersñ
+ùùStasis Webifiersñ
+úúTarget Paintersñ
+ ûûTracking Disruptorsñ
+üüWarp Scramblersñ
+ııCPU Upgradesò
+şşSignal Amplifiersò
+ÿÿCapacitor Boostersó
+ €€Energy Neutralizersó
+"Reactor Control Unitsó
+‚‚Missile Launchersô
+ƒƒWeapon Upgradesô
+„„Doomsday Devicesô
+$……Citadel Service Modulesö
+)†$†Reprocessing Service Modulesö
++‡&‡Structure Anticapital Launcher‚
+.ˆ)ˆ!Structure Antisubcapital Launcher‚
+"‰‰Guided Bomb Launchersô
+$ŠŠPoint Defense Batteriesó
+‹‹Ship Tractor Beamsò
+ŒŒRepulsor Fieldsó
+&!Ballistic Control Systemsƒ
+'"Missile Guidance Enhancersƒ
++&Structure Anticapital Missilesº
+.)!Structure Antisubcapital Missilesº
+#‘‘Structure Guided BombsÓ
+-”(”!Structure Antisubcapital Missilesr
+*•%•Structure Anticapital Missilesr
+"––Structure Guided Bombs
+——Citadelsİ
+˜˜Faction Citadels—
+™™Standard Citadels—
+ššStructure Equipment
+!››Structure Modifications
+œœReprocessing Rigs›
+"Structure Combat Rigs›
+Electronic Warfareš
+,Ÿ'ŸElectronics and Sensor Upgradesš
+"  Engineering Equipmentš
+¡¡Structure Weaponsš
+¢¢Service Modulesš
+(£#£Electronic Counter Measures
+$¤¤Remote Sensor Dampeners
+¥¥Stasis Webifiers
+¦¦Target Painters
+ §§Tracking Disruptors
+¨¨Warp Scramblers
+©©Ship Tractor BeamsŸ
+ªªCPU UpgradesŸ
+««Signal AmplifiersŸ
+¬¬Repulsor Fields 
+$­­Point Defense Batteries 
+"®®Reactor Control Units 
+ ¯¯Energy Neutralizers 
+°°Capacitor Boosters 
+±±Fighter Upgradesš
+²²Missile Launchers¡
+³³Weapon Upgrades¡
+´´Doomsday Devices¡
+"µµGuided Bomb Launchers¡
++¶&¶Structure Anticapital Launcher²
+.·)·!Structure Antisubcapital Launcher²
+$¸¸Citadel Service Modules¢
+)¹$¹Reprocessing Service Modules¢
+&º!ºBallistic Control Systems³
+'»"»Missile Guidance Enhancers³
+¼¼Fighters
+½½Fighterså
+¾¾Support Fighters½
+¿¿Support Fighters¼
+ ÀÀ25000mm Armor Plate…
+ÁÁCapital§
+ÂÂCapital˜
+ÃÃCapitalœ
+ÄÄCapitalš
+'Å"ÅScriptable Armor Hardeners—
+(Æ#ÆScriptable Shield Hardeners©
+$ÇÇRapid Torpedo LaunchersŒ
+ÈÈBurst Projectors
+ÉÉBurst Projectors‘
+ÊÊCapital•
+ËËCapital–
+ÌÌExtra LargeÎ
+ÍÍExtra LargeÏ
+ÎÎExtra LargeÑ
+ÏÏExtra LargeÒ
+ĞĞExtra LargeÕ
+ÑÑExtra LargeÔ
+,Ò'ÒAdvanced Anti-Ship XL Torpedoesù
+-Ó(Ó Advanced Long Range XL Torpedoesù
+7Ô2Ô*Advanced High Precision XL Cruise Missiles¤
+
+4Õ/Õ'Advanced High Damage XL Cruise Missiles¤
+
+ÖÖForce AuxiliarysÌ
+××AmarrÖ
+ØØCaldariÖ
+ÙÙGallenteÖ
+ÚÚMinmatarÖ
+ÛÛAmarr
+ÜÜCaldari
+İİGallente
+ŞŞMinmatar
+ßßForce Auxiliarieså
+
+ààAmarrß
+ááCaldariß
+ââGallenteß
+ããMinmatarß
+ää
+Non-Racial
+ååForce Auxiliaries°
+ææAmarrå
+ççCaldariå
+èèGallenteå
+ééMinmatarå
 ±®±®Infantry Gear
 •Ê•ÊGrenadesŸÊ
 "šÊšÊDropsuits and Gear±®

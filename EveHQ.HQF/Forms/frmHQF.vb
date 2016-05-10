@@ -1227,7 +1227,7 @@ Namespace Forms
 
 
             For Each shipmod As ShipModule In _lastModuleResults.Values
-                If shipmod.SlotType <> 0 Or (shipmod.SlotType = 0 And (shipmod.IsBooster Or shipmod.IsCharge Or shipmod.IsDrone Or shipmod.DatabaseCategory = 22)) Then
+                If shipmod.SlotType <> 0 Or (shipmod.SlotType = 0 And (shipmod.IsBooster Or shipmod.IsCharge Or shipmod.IsDrone Or shipmod.IsFighter Or shipmod.DatabaseCategory = 22 Or shipmod.DatabaseCategory = 87)) Then
                     If (shipmod.MetaType And PluginSettings.HQFSettings.ModuleFilter) = shipmod.MetaType Then
                         Dim newModule As New Node
                         newModule.Name = CStr(shipmod.ID)
@@ -1353,6 +1353,8 @@ Namespace Forms
                         Dim shipMod As ShipModule = ModuleLists.ModuleList(moduleID).Clone
                         If shipMod.IsDrone = True Then
                             Call ActiveFitting.AddDrone(shipMod, 1, False, False)
+                        ElseIf shipMod.IsFighter = True Then
+                            Call ActiveFitting.AddFighter(shipMod, 1, False, False)
                         Else
                             ' Check if module is a charge
                             If shipMod.IsCharge = True Or shipMod.IsContainer Or shipMod.DatabaseCategory = 22 Then
@@ -2415,6 +2417,14 @@ Namespace Forms
                 End If
             Next
             fitting.AppendLine("")
+            For Each fighter As FighterBayItem In currentShip.FighterBayItems.Values
+                If fighter.IsActive = True Then
+                    fitting.AppendLine(fighter.FighterType.Name & ", " & fighter.Quantity & "a")
+                Else
+                    fitting.AppendLine(fighter.FighterType.Name & ", " & fighter.Quantity & "i")
+                End If
+            Next
+            fitting.AppendLine("")
             For Each cargo As CargoBayItem In currentShip.CargoBayItems.Values
                 fitting.AppendLine(cargo.ItemType.Name & ", " & cargo.Quantity)
             Next
@@ -2489,6 +2499,10 @@ Namespace Forms
             fitting.AppendLine("")
             For Each drone As DroneBayItem In currentship.DroneBayItems.Values
                 fitting.AppendLine(drone.DroneType.Name & " x" & drone.Quantity)
+            Next
+            fitting.AppendLine("")
+            For Each fighter As FighterBayItem In currentship.FighterBayItems.Values
+                fitting.AppendLine(fighter.FighterType.Name & " x" & fighter.Quantity)
             Next
             fitting.AppendLine("")
             For Each cargo As CargoBayItem In currentship.CargoBayItems.Values
@@ -2685,6 +2699,12 @@ Namespace Forms
                     fitting.AppendLine(drone.Quantity & "x " & drone.DroneType.Name)
                 Next
             End If
+            If currentship.FighterBayItems.Count > 0 Then
+                fitting.AppendLine("")
+                For Each fighter As FighterBayItem In currentship.FighterBayItems.Values
+                    fitting.AppendLine(fighter.Quantity & "x " & fighter.FighterType.Name)
+                Next
+            End If
 
             If currentship.CargoBayItems.Count > 0 Then
                 fitting.AppendLine("")
@@ -2828,6 +2848,17 @@ Namespace Forms
                         modList(drone.DroneType.Name) += drone.Quantity
                     Else
                         modList.Add(drone.DroneType.Name, drone.Quantity)
+                    End If
+                Next
+            End If
+
+            ' Parse fighters
+            If currentship.FighterBayItems.Count > 0 Then
+                For Each fighter As FighterBayItem In currentship.FighterBayItems.Values
+                    If modList.ContainsKey(fighter.FighterType.Name) = True Then
+                        modList(fighter.FighterType.Name) += fighter.Quantity
+                    Else
+                        modList.Add(fighter.FighterType.Name, fighter.Quantity)
                     End If
                 Next
             End If

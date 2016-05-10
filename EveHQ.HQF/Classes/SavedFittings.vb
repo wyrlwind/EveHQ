@@ -142,7 +142,8 @@ Imports Newtonsoft.Json
         savedFit.DamageProfileName = Fit.DamageProfileName
         savedFit.Modules = Fit.Modules
         savedFit.Drones = Fit.Drones
-        savedFit.Items = Fit.Items
+        savedFit.Fighters = fit.Fighters
+        savedFit.Items = fit.Items
         savedFit.Ships = Fit.Ships
         savedFit.ImplantGroup = Fit.ImplantGroup
         savedFit.Implants = Fit.Implants
@@ -182,7 +183,8 @@ Imports Newtonsoft.Json
             newFit.DamageProfileName = Fit.DamageProfileName
             newFit.Modules = Fit.Modules
             newFit.Drones = Fit.Drones
-            newFit.Items = Fit.Items
+            newFit.Fighters = fit.Fighters
+            newFit.Items = fit.Items
             newFit.Ships = Fit.Ships
             newFit.ImplantGroup = Fit.ImplantGroup
             newFit.Implants = Fit.Implants

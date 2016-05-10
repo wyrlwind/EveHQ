@@ -3,9 +3,6 @@
 
 speedBoost
 		missileLaunching
-
-
-targetAttack
 loPower
 hiPower
 medPower
@@ -22,7 +19,6 @@ speedBoost
 modifyTargetSpeed
 energyTransfer
   energyVampire
-""projectileFired
 $$energyDestabilization
 &&empWave
 ''warpScramble
@@ -131,7 +127,6 @@ XòSòNaccerationControlSpeedFBonusPostPercentSpeedFactorLocationShipGroupAf
 +û&û!hullUpgradesSkillBoostHullHpBonus
 TıOıJshadowBarrageDmgMultiplierWithDamageMultiplierPostPercentBarrageDmgMutator
 IşDş?shadowBarrageFalloffWithFalloffPostPercentBarrageFalloffMutator
-‡‡barrage
 0‹+‹&amarrCruiserSkillBoostPowerOutputBonus
 ,'"hullUpgradesSkillBoostArmorHpBonus
 ;61hullUpgradesArmorHpBonusPostPercentHpLocationShip
@@ -289,12 +284,10 @@ cû^ûYlongRangeTargetingMaxTargetRangeBonusPostPercentMaxTargetRangeLocatio
 ;¬6¬1caldariBattleshipSkillLevelPreMulShipBonus2CBShip
 S®N®ImetallurgyMineralNeedResearchBonusPostPercentMineralNeedResearchSpeedChar
 ²²shipHTDmgBonusfixedGC
-³³warpScrambleForEntity
 C¶>¶9laboratoryOperationSkillLevelModAddMaxLaborotorySlotsChar
 @¸;¸6massProductionSkillLevelModAddManufactureSlotLimitChar
 #¹¹missileLaunchingForEntity
 T»O»JreverseEngineeringInventionBonusModAddReverseEngineeringChanceLocationChar
-¿¿modifyTargetSpeed2
 UÅPÅKweaponUpgradesCpuNeedBonusPostPercentCpuLocationShipModulesRequiringGunnery
 PÆKÆFrapidFiringRofBonusPostPercentSpeedLocationShipModulesRequiringGunnery
 9Ç4Ç/amarrIndustrialSkillLevelPreMulShipBonusAI2Ship
@@ -407,8 +400,6 @@ jĞeĞ`cloakingTargetingDelayBonusPostPercentCloakingTargetingDelayBonusForS
 $ããmissileFlightTimeAndDamage
 (ê#êshipProjectileOptimalBonuseMF2
 "ëëshipLaserOptimalBonuseAF
-#ììshieldBoostingForEntities
- îîarmorRepairForEntities
 ññimplantEWcpuneed
 !òòshipHybridRangeBonusCF2
 õõsuicideBomb
@@ -516,7 +507,6 @@ $™™shipShieldTransferRangeMC2
 7¹2¹-eliteBonusHeavyGunshipHeavyMissileFlightTime1
 7º2º-eliteBonusHeavyGunshipLightMissileFlightTime1
 2¼-¼(eliteBonusHeavyGunshipDroneControlRange1
-$¾¾projectileFiredForEntities
 .¿)¿$eliteBonusHeavyGunshipProjectileDmg2
 $ÇÇdestroyerPenalityTurretROF
 #ËËshipProjectileTrackingMF2
@@ -578,7 +568,6 @@ massFactor
  «	«	shipArmorRepairingGBC2
 ­	­	shipMiningBonusORE2
 ®	®	shipHybridFallOffGD1
-#¯	¯	targetAttackForStructures
 °	°	miningInfoMultiplier
  ²	²	shipMissileEMDamage2AF
 1³	,³	'controlTowerCaldariMissileVelocityBonus
@@ -631,7 +620,6 @@ $ğ	ğ	interceptor2HybridTracking
  ø	ø	newEwTestswarpScramble
 .ù	)ù	$newEwTestssensorBoostTargetedHostile
 Gú	Bú	=newEwTeststurretWeaponRangeTrackingSpeedMultiplyTargetHostile
-'û	"û	newEwTestsdecreaseTargetSpeed
 %ş	 ş	interceptor2MissileEmDamage
 @ÿ	;ÿ	6interceptors2SkillLevelPreMulEliteBonusInterceptorShip
 1€
@@ -777,7 +765,7 @@ $Ü
 $eliteBonusCoverOpsScanProbeDuration2
 -(#systemScanDurationSkillAstrometrics
 /‚*‚%propulsionSkillCapNeedBonusSkillLevel
-ƒƒgangBonusSignature
+8ƒ3ƒ.moduleBonusSkirmishWarfareLinkEvasiveManeuvers
 "„„shipBonusHybridOptimalCB
 !ššcaldariShipEwStrengthCB
   missileEMdamageOther
@@ -804,11 +792,11 @@ $Ü
 5Ü0Ü+shieldOperationSkillBoostCapacitorNeedBonus
 Aİ<İ7covertOpsStealthBomberCruiseMissileExplosionRadiusBonus
 ŞŞarmorTankingGang
-æægangArmorHardening
+5æ0æ+moduleBonusArmoredWarfareLinkPassiveDefense
 ……squadronmultiplyer
 ††squadronCommand
-$ŠŠgangPropulsionJammingBoost
-ŒŒgangShieldHardening
+=Š8Š3moduleBonusSkirmishWarfareLinkInterdictionManeuvers
+6Œ1Œ,moduleBonusSiegeWarfareLinkShieldHarmonizing
 ewTargetPaint
 ,'"ewSkillTargetPaintingStrengthBonus
 (#minmatarShipEwTargetPainterMF2
@@ -832,19 +820,6 @@ $ŠŠgangPropulsionJammingBoost
 *Ğ%Ğ skillCapitalShipsAdvancedAgility
 !ÑÑshipCapitalAgilityBonus
 %Ò ÒdreadnoughtBoostShipBonusA1
-%Ó ÓdreadnoughtBoostShipBonusA2
-%Ô ÔdreadnoughtBoostShipBonusC1
-%Õ ÕdreadnoughtBoostShipBonusC2
-%Ö ÖdreadnoughtBoostShipBonusG1
-%× ×dreadnoughtBoostShipBonusG2
-%Ø ØdreadnoughtBoostShipBonusM1
-%Ù ÙdreadnoughtBoostShipBonusM2
-,Ú'Ú"dreadnoughtShipBonusLaserCapNeedA1
-(Û#ÛdreadnoughtShipBonusLaserRofA2
-+Ü&Ü!dreadnoughtShipBonusLauncherRofC1
-)Ş$ŞdreadnoughtShipBonusHybridDmgG1
--à(à#dreadnoughtShipBonusProjectileRofM1
-+á&á!dreadnoughtShipBonusLauncherRofM2
 7â2â-capitalShieldOperationSkillCapacitorNeedBonus
 0ã+ã&capitalRepairSystemsSkillDurationBonus
 3æ.æ)skillAdvancedWeaponUpgradesPowerNeedBonus
@@ -876,7 +851,6 @@ $ŠŠgangPropulsionJammingBoost
 %‹ ‹freighterMaxVelocityBonusM1
 *Œ%Œ testfuelBoostShipSpeedActivation
 ¸¸shieldBoostAmplifier
-1¹,¹'dreadnoughtShipBonusMissileKineticDmgC2
 +º&º!jumpDriveSkillsCapacitorNeedBonus
 5»0»+jumpDriveSkillsCapacitorNeedBonusSkillLevel
  ÁÁcynosuralGenerationTmp
@@ -884,11 +858,10 @@ $ŠŠgangPropulsionJammingBoost
 ÃÃtestDroneShieldEffect
 ÊÊ	doHacking
 (Ì#ÌdataMiningSkillMultiplierFixed
-ÑÑsiegeModeEffectOld
 'Ò"ÒgangArmorRepairSpeedAmplifier
 #ÓÓgangArmorRepairCapReducer
 ØØentityEwTestEffectJam
-ÛÛgangAbMwdFactorBoost
+7Û2Û-moduleBonusSkirmishWarfareLinkRapidDeployment
 &Ü!ÜskirmishWarfareVelocityBonus
 &ã!ãmissileSkillRapidLauncherRoF
 4ä/ä*missileSkillMissileProjectileVelocityBonus
@@ -937,11 +910,6 @@ $°°eliteBonusBargeMiningYield
 %Ì ÌshipMissileThermalDamageAF1
 %Í ÍshipMissileKineticDamageAF1
 'Î"ÎshipMissileExplosiveDamageAF1
-ÏÏentityTargetJam
-ĞĞentityCapacitorDrain
-"ÕÕentityTrackingDisruptOld
-ÖÖentitySensorDampen
-××entityTargetPaint
 $ÚÚminingYieldMultiplyPercent
 'İ"İshipCruiseLauncherROFBonus2CB
 &Ş!ŞshipSiegeLauncherROFBonus2CB
@@ -977,7 +945,6 @@ $ÚÚminingYieldMultiplyPercent
  ØØcynosuralDurationBonus
 !ÙÙreconShipCpuMultiplier1
 (Ú#ÚpropulsionDroneJammingStrength
-$ÛÛdroneMaxVelocitySkillBonus
 İİdroneMaxVelocityBonus
 ŞŞdroneMaxRangeBonus
 'ß"ßdroneDurabilityShieldCapBonus
@@ -1021,9 +988,6 @@ AÏ<Ï7passiveExplosiveShieldResonanceBonusGroupArmorHardener2
 (Ö#ÖshieldTransporterMaxRangeBonus
 +×&×!armorRepairProjectorMaxRangeBonus
 #ØØtrackingLinkMaxRangeBonus
--Ü(Ü#dreadnoughShipBonusDroneShieldCapG2
-+İ&İ!dreadnoughShipBonusDroneArmorHPG2
-/Ş*Ş%dreadnoughShipBonusDroneStructureHPG2
 (ß#ßminmatarShipEwTargetPainterMC2
 (ä#ädroneDamageBonusRequringDrones
 èèjumpPortalGeneration
@@ -1045,14 +1009,7 @@ $ŠŠshipBonusDroneHitpointsGB2
 +‹&‹!shipBonusDroneDamageMultiplierGB2
 +Œ&Œ!shipBonusDroneDamageMultiplierGC2
 +&!shipBonusDroneDamageMultiplierAC2
-50+dreadnoughtShipBonusDroneDamageMultiplierG2
  shipMissileVelocityDF1
-#entityShieldBoostingSmall
-$‘‘entityShieldBoostingMedium
-#’’entityShieldBoostingLarge
-#““entityArmorRepairingSmall
-$””entityArmorRepairingMedium
-#••entityArmorRepairingLarge
 5—0—+eliteBonusInterdictorsMissileThermalDamage1
 5˜0˜+eliteBonusInterdictorsMissileKineticDamage1
 2™-™(eliteBonusInterdictorsProjectileFalloff1
@@ -1064,7 +1021,6 @@ $””entityArmorRepairingMedium
 *·%· scanStrengthBonusPercentActivate
 (¸#¸scanStrengthBonusPercentOnline
 (Æ#ÆscanStrengthTargetPercentBonus
-8Ç3Ç.dronesMaxActiveDroneBonusModAddMaxActiveActive
 'É"ÉshipBonusDroneMiningAmountAC2
 'Ê"ÊshipBonusDroneMiningAmountGC2
 %Ë ËcommandshipMultiRelayEffect
@@ -1076,21 +1032,6 @@ EÎ@Î;passiveExplosiveArmorResonanceBonusGroupArmorHardener2FIXED
 *Ñ%Ñ eliteBonusInterdictorsBubbleRoF2
 *Ò%Ò eliteBargeMercoxiteCrystalBonus1
 .Ó)Ó$eliteBargeBonusDamageCloudReduction2
-%Õ ÕtitanMinmatarProjectileRoF1
-(×#×titanAmarrEnergyTurretCapNeed1
-$ØØtitanAmarrGangCapRecharge2
-(Ù#ÙtitanCaldariMissileKineticDmg1
-#ÚÚtitanCaldariGangShieldHp2
-$ÛÛtitanGallenteHybridDamage1
-#ÜÜtitanGallenteGangArmorHp2
-ïïtitanAmarrSkillLevel1
-ğğtitanAmarrSkillLevel2
-!ññtitanCaldariSkillLevel1
-!òòtitanCaldariSkillLevel2
-"óótitanGallenteSkillLevel1
-"ôôtitanGallenteSkillLevel2
-"õõtitanMinmatarSkillLevel2
-"öötitanMinmatarSkillLevel1
 7ø2ø-modifyArmorResonancePassivePostPercentPassive
 8ù3ù.modifyShieldResonancePassivePostPercentPassive
 )ú$úscanStrengthBonusPercentPassive
@@ -1103,65 +1044,13 @@ $ÛÛtitanGallenteHybridDamage1
 ……droneMWDBoostOnline
 ‡‡skillADDmaxJumpClones
 "ˆˆdisallowOffensiveActChar
-!‰‰carrierAmarrSkillLevel1
-!ŠŠcarrierAmarrSkillLevel2
-!‹‹carrierAmarrSkillLevel3
-#ŒŒcarrierCaldariSkillLevel1
-#carrierCaldariSkillLevel2
-#carrierCaldariSkillLevel3
-$carrierGallenteSkillLevel1
-$carrierGallenteSkillLevel2
-$‘‘carrierGallenteSkillLevel3
-$’’carrierMinmatarSkillLevel1
-$““carrierMinmatarSkillLevel2
-$””carrierMinmatarSkillLevel3
-••carrierAmarrDroneMax1
-!––carrierCaldariDroneMax1
-"——carrierGallenteDroneMax1
-"˜˜carrierMinmatarDroneMax1
-%œ œcarrierGallenteDroneOwnDmg2
 cloneJumpAcceptingTmp
-%Ÿ ŸtitanMinmatarGangSigRadius2
-  titanAmarrSkillLevel3
-¡¡titanAmarrSkillLevel4
-!¢¢titanCaldariSkillLevel3
-!££titanCaldariSkillLevel4
-"¤¤titanGallenteSkillLevel3
-"¥¥titanGallenteSkillLevel4
-"¦¦titanMinmatarSkillLevel3
-"§§titanMinmatarSkillLevel4
-!¨¨carrierAmarrSkillLevel4
-#©©carrierCaldariSkillLevel4
-$ªªcarrierGallenteSkillLevel4
-««titanAmarrLaserDmg3
-+¬&¬!titanAmarrLeadershipModuleAmount4
--­(­#titanCaldariLeadershipModuleAmount4
-.®)®$titanGallenteLeadershipModuleAmount4
-.¯)¯$titanMinmatarLeadershipModuleAmount4
-"°°titanCaldariLauncherRoF3
-%± ±titanMinmatarProjectileDmg3
 5²0²+capitalRemoteArmorRepairerCapNeedBonusSkill
 6³1³,capitalRemoteShieldTransferCapNeedBonusSkill
 6´1´,capitalRemoteEnergyTransferCapNeedBonusSkill
-6·1·,carrierMinmatarArmor&ShieldTransferDuration2
-/¸*¸%carrierAmarrLeadershipMaxGroupActive4
-1¹,¹'carrierCaldariLeadershipMaxGroupActive4
-2º-º(carrierGallenteLeadershipMaxGroupActive4
-2»-»(carrierMinmatarLeadershipMaxGroupActive4
-$¼¼carrierMinmatarSkillLevel4
-"ÃÃcarrierAmarrArmorResist2
-%Ê ÊcarrierCaldariShieldResist2
-0Í+Í&carrierAmarrArmor&EnergyTransferRange3
-3Ğ.Ğ)carrierCaldariShield&EnergyTransferRange3
-3Ó.Ó)carrierGallenteArmor&ShieldTransferRange3
-3Ö.Ö)carrierMinmatarArmor&ShieldTransferRange3
 1Ø,Ø'iceHarvesterMiningAmountBonusMultiplier
-%Ù ÙtitanJumpPortalCpuNeedBonus
-(Ú#ÚtitanAmarrJudgmentCpuNeedBonus
 )Û$ÛjumpPortalConsumptionBonusSkill
 "ââskillSuperWeaponDmgBonus
-*ã%ã dreadnoughtSiegeModeCpuNeedBonus
-)æ$æcarrierFighterControlRangeBonus
 0ç+ç&interdictorBubbleProbeLauncherCpuBonus
 6è1è,eliteBonusCommandShipMissileKineticDamageCS1
 0é+é&eliteBonusInterdictorsMissileEMDamage1
@@ -1169,21 +1058,16 @@ $¼¼carrierMinmatarSkillLevel4
 -ë(ë#cloneVatMaxJumpCloneBonusSkillLevel
 ììcloneVatCpuNeedBonus
 íísnowBallLaunching
-.ï)ï$gangShieldBoosterAndTransporterSpeed
-5ò0ò+gangShieldBoosteAndTransporterCapacitorNeed
-%ó ótitanCaldariOblivionCpuNeed
-*ô%ô titanGallenteAuroraOminaeCpuNeed
-'õ"õtitanMinmatarFirestormCpuNeed
+4ï/ï*moduleBonusSiegeWarfareLinkActiveShielding
+5ò0ò+moduleBonusSiegeWarfareLinkShieldEfficiency
 ööimplantVelocityBonus
 .÷)÷$eliteReconHeavyMissileKineticDamage1
 .ø)ø$eliteReconLightMissileKineticDamage1
 /ú*ú%skillInterdictorEliteBonus1SkillLevel
 /û*û%skillInterdictorEliteBonus2SkillLevel
-7ı2ı-advancedDroneInterfacingMaxGroupDCUSkillLevel
 şşmaxVelocityMultiplier
 :ÿ5ÿ0energyManagementSkillBoostCapacitorCapacityBonus
 b€]€XenergyManagementCapacitorBonusPostPercentCapacityLocationShipGroupCapacitorCapacityBonus
- ‚‚fightersDmgBonusSkills
 "ƒƒcpuPenaltyToSuperWeapons
 „„cpuBonusToSelf
 #……miningYieldGangBonusFixed
@@ -1207,7 +1091,6 @@ N˜I˜DminingUpgradeCPUPenaltyReductionModulesRequiringMiningUpgradePercent
 $®®shipBonusDroneHitpointsBC1
 @¯;¯6iceHarvestCycleTimeModulesRequiringIceHarvestingOnline
 *°%° decreaseTargetSpeedForStructures
-"±±warpScrambleForStructure
 µµimplantArmorHpBonus2
 ¶¶armorTankingGang2
 '·"·skirmishWarfareVelocityBonus2
@@ -1273,7 +1156,6 @@ C±>±9scanMagnetometricStrengthBonusPercentageScanStrengthBonus
 <ã7ã2scanMagnetometricStrengthBonusRequringAstrometrics
 4ä/ä*scanLadarStrengthBonusRequringAstrometrics
 4å/å*scanRadarStrengthBonusRequringAstrometrics
--æ(æ#entityEnvironmentalEffectDamageTest
 ççrigSlot
 %è èewCapNeedPercentageModifier
 'î"îsensorBoosterActivePercentage
@@ -1488,38 +1370,8 @@ BÅ=Å8gasHarvestingCycleTimeModulesRequiringGasCloudHarvesting
 *ß%ß dataminerModuleDurationReduction
 .à)à$energyDestabilizationNewForStructure
 ááremoteEcmBurst
--ã(ã#warpScrambleSelfSiegeModeWarpStatus
 (æ#æposStructureControlAmountBonus
-$ççtriageModeWarpScrambleSelf
-$ììtriageModeMaxVelocityBonus
-íítriageModeSitDown
-ğğtriageModeArmorAmount
-!ññtriageModeArmorDuration
- óótriageModeShieldAmount
-"ôôtriageModeShieldDuration
-"õõtriageModeSiegeTankArmor
-#öötriageModeSiegeTankShield
-÷÷triageModeSiegeTank
-(ø#øtriageModeLogisticsArmorAmount
-*ù%ù triageModeLogisticsArmorDuration
-"úútriageModeLogisticsArmor
-)û$ûtriageModeLogisticsShieldAmount
-+ü&ü!triageModeLogisticsShieldDuration
-#ııtriageModeLogisticsShield
-+ÿ&ÿ!triageModeSensorEWCapNeedBonusECM
-+€&€!triageModeSensorEWCapNeedBonusRSD
-*% triageModeSensorEWCapNeedBonusTD
-*‚%‚ triageModeSensorEWCapNeedBonusTP
-1ƒ,ƒ'triageModeSensorEWCapNeedBonusECMandRSD
-/„*„%triageModeSensorEWCapNeedBonusTDandTP
-(…#…triageModeSensorEWCapNeedBonus
--†(†#triageModeSensorPropJamCapNeedBonus
-&‡!‡triageModeSensorCapNeedBonus
-2‰-‰(triageModeSensorScanResolutionMultiplier
-'Œ"ŒtriageModeSiegeTankAndSitDown
-triageModeDroneBonus
 3—.—)skillTriageModuleConsumptionQuantityBonus
-˜˜triageModeCpuBonus
 ››bombLaunching
 /*%skillRemoteECMDurationBonusSkillLevel
 #  projECMCpuNeedBonusEffect
@@ -1527,17 +1379,6 @@ $ììtriageModeMaxVelocityBonus
 2£-£(skillRemoteHullRepairSystemsCapNeedBonus
 9¤4¤/skillCapitalRemoteHullRepairSystemsCapNeedBonus
 %¦ ¦skillRemoteECMDurationBonus
-'§"§triageModeLogisticsHullAmount
-)¨$¨triageModeLogisticsHullDuration
-)©$©triageModeLogisticsEnergyAmount
-+ª&ª!triageModeLogisticsEnergyDuration
-#««triageModeLogisticsEnergy
-!¬¬triageModeLogisticsHull
-*­%­ triageModeLogisticsEnergyAndHull
-+®&®!triageModeLogisticsArmorAndShield
-¯¯triageModeLogistics
-/°*°%triageModeSensorMaxLockedTargetsBonus
-#²²triageModeSensorTargeting
 ¹¹overloadRofBonus
 #ººoverloadSelfDurationBonus
 +»&»!energyDestabilizationForStructure
@@ -1561,21 +1402,11 @@ $ììtriageModeMaxVelocityBonus
 3ß.ß)missileDamageMultiplierCruiseKineticBonus
 5à0à+missileDamageMultiplierCruiseExplosiveBonus
 ááremoteHullRepair
-ââtriageModeSensor
-&ã!ãtriageModeLogisticsAndSensor
-.ä)ä$triageModeLogisticsAndSensorAndDrone
-)å$åtriageModeEffectWithoutECMBurst
 (æ#æmodifyMaxVelocityOfShipPassive
 $ççstructureHPMultiplyPassive
-+ê&ê!carrierMinmatarArmor&ShieldAmount
 #ììcpuPenaltyToBombLaunchers
 "íícpuPenaltyToProjectedECM
-8ï3ï.triageModeSensorEWCapNeedBonusECMBurstECMBurst
->ğ9ğ4triageModeSensorEWCapNeedBonusECMBurstRemoteECMBurst
-0ñ+ñ&triageModeSensorEWCapNeedBonusECMBurst
-*ô%ô siegeModeEffectMaxTargetPenality
 õõheatDamageBonus
-öösiegeModeEffect
 <÷7÷2controlTowerGenericOutsideStructureResistanceBonus
 ?ø:ø5controlTowerGenericHullEmResistanceBonusCynoGenerator
 FùAù<controlTowerGenericHullExplosiveResistanceBonusCynoGenerator
@@ -1673,11 +1504,10 @@ KÖFÖAcontrolTowerGenericHullResistanceBonusCG&CGJ&ECM&EN&H&JP&L&M&P&SC
 N×I×DcontrolTowerGenericHullResistanceBonusCG&CGJ&ECM&EN&H&JP&L&M&P&SC&SD
 0Ø+Ø&controlTowerGenericHullResistanceBonus
 -Ù(Ù#sensorBoostTargetedHostileKali2Test
-ÚÚtriageModeEffect
 ,Ü'Ü"gangArmorRepairCapReducerProjected
-3İ.İ)gangArmorRepairCapReducerSelfAndProjected
+4İ/İ*moduleBonusArmoredWarfareLinkDamageControl
 0Ş+Ş&gangArmorRepairSpeedAmplifierProjected
-7ß2ß-gangArmorRepairSpeedAmplifierSelfAndProjected
+2ß-ß(moduleBonusArmoredWarfareLinkRapidRepair
 )à$àremoteArmorPowerNeedBonusEffect
 +á&á!shieldTransportCpuNeedBonusEffect
 ,ã'ã"energyTransferPowerNeedBonusEffect
@@ -1696,10 +1526,7 @@ N×I×DcontrolTowerGenericHullResistanceBonusCG&CGJ&ECM&EN&H&JP&L&M&P&SC&SD
 !şşoverloadSelfShieldBonus
 4€/€*overloadSelfArmorDamageAmountDurationBonus
 .)$overloadSelfShieldBonusDurationBonus
-D‚?‚:dronesMaxActiveDroneBonusModAddMaxActiveLocationCharOnline
 -…(…#eliteBonusCoverOpsCruiseKineticDmg1
-(‰#‰droneDurabilityShieldCapBonus2
-&Š!ŠdroneDurabilityArmorHPBonus2
 *Œ%Œ missileSkillFoFAoeCloudSizeBonus
 )$shipHeavyAssaultMissileEmDmgAC1
 .)$shipHeavyAssaultMissileThermalDmgAC1
@@ -1762,12 +1589,12 @@ IàDà?gangMiningLaserAndIceHarvesterAndGasCloudHarvesterMaxRangeBonus
 4ã/ã*shipEnergyNeutralizerTransferAmountBonusAF
 'ä"ägangGasHarvesterDurationBonus
 5å0å+gangIceHarvesterAndMiningLaserDurationBonus
-Dæ?æ:gangGasHarvesterAndIceHarvesterAndMiningLaserDurationBonus
+7æ2æ-moduleBonusMiningForemanLinkLaserOptimization
 &ç!çgangGasHarvesterCapNeedBonus
 &è!ègangIceHarvesterCapNeedBonus
 &é!égangMiningLaserCapacitorNeed
 5ê0ê+gangGasHarvesterAndIceHarvesterCapNeedBonus
-Cë>ë9gangGasHarvesterAndIceHarvesterAndMiningLaserCapNeedBonus
+Bë=ë8moduleBonusMiningForemanLinkHarvesterCapacitorEfficiency
 +ì&ì!oreCapitalShipShieldTransferRange
 (ï#ïoreCapitalShipSkillMultiplier3
 +ñ&ñ!cloneVatMaxJumpCloneBonusSkillNew
@@ -1824,7 +1651,6 @@ Dœ?œ:eliteBonusHeavyInterdictorHeavyAssaultMissileVelocityBonus
 8®3®.eliteBonusElectronicAttackShipSignatureRadius2
 *³%³ implantHardwiringABcapacitorNeed
 ´´warpDisruptSphere
- µµdroneDamageBonusOnline
 !¶¶droneArmorHPBonusOnline
 "··droneShieldHPBonusOnline
 ¸¸droneHPBonusOnline
@@ -1989,7 +1815,6 @@ OŞJŞEtargetEnergyWeaponAndHybridWeaponMaxRangeAndTrackingSpeedBonusHostile
 D‘?‘:scriptWarpDisruptionFieldGeneratorSetDisallowInEmpireSpace
 ’’scriptDurationBonus
 V“Q“LeliteBonusHeavyInterdictorsWarpDisruptFieldGeneratorWarpScrambleRangeScript2
-+”&”!targetSetWarpScrambleStatusHidden
 =—8—3commandMultiplierInformationWarfareSpecialistHidden
 ˜˜squadronCommandHidden
 *™%™ informationWarfareMindlinkHidden
@@ -2068,9 +1893,6 @@ Dñ?ñ:turretWeaponRangeFalloffTrackingSpeedMultiplyTargetHostile
 %ù ùshipHybridTurretROFBonusGC2
 (ú#úshipBonusProjectileTrackingMC2
 9û4û/shipBonusSurveyProbeExplosionDelaySkillSurveyAF
-şşconcordTargetJam
-concordWarpScramble
-"‚‚concordModifyTargetSpeed
 &ƒ!ƒshipBonusScanProbeDurationAF
 %‡ ‡skirmishWarfareAgilityBonus
 +‹&‹!skillNaniteInterfacingRepairTime2
@@ -2618,10 +2440,6 @@ A»"<»"7subSystemBonusGallenteDefensiveInformationWarfareHidden
 È"È"missileDMGBonusTemp
 É"É"missileDMGBonusTemp2
 Ê"Ê"missileDMGBonus1
-+Ë"&Ë"!shipBonusDreadM2ShieldBoostAmount
-$Ì"Ì"dreadnoughtMD1ProjDmgBonus
-$Í"Í"dreadnoughtMD3ProjRoFBonus
-%Î" Î"dreadnoughtBoostShipBonusM3
 *Ø"%Ø" missileSkillAoeCloudSizeBonusAll
 İ"İ"imperialsetbonus
 Ş"Ş"caldarisetbonus
@@ -2662,22 +2480,6 @@ Aÿ"<ÿ"7shipBonusSurveyProbeExplosionDelaySkillSurveyCovertOps3
 ‹#‹#superWeaponGallente
 Œ#Œ#superWeaponMinmatar
 ##bombersDmgBonusSkills
-.#)#$carrierMinmatarFighterBomberArmorEm2
-.#)#$carrierMinmatarFighterBomberArmorTh2
-.#)#$carrierMinmatarFighterBomberArmorKi2
-.‘#)‘#$carrierMinmatarFighterBomberArmorEx2
-/’#*’#%carrierMinmatarFighterBomberShieldEm2
-/“#*“#%carrierMinmatarFighterBomberShieldTh2
-/”#*”#%carrierMinmatarFighterBomberShieldKi2
-/•#*•#%carrierMinmatarFighterBomberShieldEx2
-(–##–#carrierMinmatarFighterArmorEm2
-(—##—#carrierMinmatarFighterArmorTh2
-(˜##˜#carrierMinmatarFighterArmorKi2
-(™##™#carrierMinmatarFighterArmorEx2
-)š#$š#carrierMinmatarFighterShieldEm2
-)›#$›#carrierMinmatarFighterShieldTh2
-)œ#$œ#carrierMinmatarFighterShieldKi2
-)#$#carrierMinmatarFighterShieldEx2
 '#"#shipStasisWebStrengthBonusMC2
 #Ÿ#Ÿ#shipPTurretFalloffBonusMC
 # # #shipPTurretFalloffBonusGC
@@ -2693,42 +2495,21 @@ Aÿ"<ÿ"7shipBonusSurveyProbeExplosionDelaySkillSurveyCovertOps3
 ,ª#'ª#"fighterBomberExplosiveDamageBonus2
 *«#%«# fighterBomberKineticDamageBonus2
 *¬#%¬# fighterBomberThermalDamageBonus2
--­#(­##carrierGallenteFighterBomberOwnDmg2
 ®#®#gunneryFalloffBonus
 #¯#¯#gunneryFalloffBonusOnline
-*³#%³# siegeModeEffectDreadnoughtBonus5
-´#´#siegeModeEffect2
-µ#µ#titanAmarrSkillLevel5
-$¶#¶#titanAmarrXLLaserTracking5
-(·##·#titanGallenteXLHybridTracking5
-"¸#¸#titanGallenteSkillLevel5
-"¹#¹#titanMinmatarSkillLevel5
-#º#º#titanMinmatarrXLTracking5
-!»#»#titanCaldariSkillLevel5
-&¼#!¼#titanCaldariMissileVelocity5
 3Å#.Å#)capitalLauncherSkillCruiseCitadelEmDamage
 8Æ#3Æ#.capitalLauncherSkillCruiseCitadelThermalDamage
 8Ç#3Ç#.capitalLauncherSkillCruiseCitadelKineticDamage
 :È#5È#0capitalLauncherSkillCruiseCitadelExplosiveDamage
-1É#,É#'dreadnoughtShipBonusMissileKineticDmgC3
-%Ê# Ê#dreadnoughtBoostShipBonusC3
 4Ë#/Ë#*capitalLauncherSkillCruiseCitadelEmDamage1
 ;Ì#6Ì#1capitalLauncherSkillCruiseCitadelExplosiveDamage1
 9Í#4Í#/capitalLauncherSkillCruiseCitadelKineticDamage1
 9Î#4Î#/capitalLauncherSkillCruiseCitadelThermalDamage1
 2Ï#-Ï#(gunneryMaxRangeFalloffTrackingSpeedBonus
 BĞ#=Ğ#8targetGunneryMaxRangeFalloffTrackingSpeedBonusAssistance
-,Ó#'Ó#"carrierMinmatarFighterAoeCloudSize
--Ô#(Ô##carrierMinmatarFighterAoeCloudSize2
 6Õ#1Õ#,capitalLauncherSkillCruiseCitadelEmExplosive
 9Ö#4Ö#/capitalLauncherSkillCruiseCitadelKineticThermal
 .×#)×#$capitalLauncherSkillCruiseCitadelAll
-Ø#Ø#siegeModeEffect3
--Ù#(Ù##titanCaldariMissileKineticDmgCruise
-(Ú##Ú#titanCaldariMissileKineticDmg2
-+Ü#&Ü#!siegeModeActivationMassMultiplier
-İ#İ#siegeModeEffect4
-Ş#Ş#triageModeEffect2
 ß#ß#industrialCoreEffect2
 6à#1à#,eliteBonusLogisticsTrackingLinkFalloffBonus1
 6á#1á#,eliteBonusLogisticsTrackingLinkFalloffBonus2
@@ -2741,7 +2522,6 @@ BĞ#=Ğ#8targetGunneryMaxRangeFalloffTrackingSpeedBonusAssistance
 8÷#3÷#.caldariFrigateSkillLevelPreMulShipBonus3CFShip
 9ø#4ø#/gallenteFrigateSkillLevelPreMulShipBonus3GFShip
 9ù#4ù#/minmatarFrigateSkillLevelPreMulShipBonus3MFShip
-Aş#<ş#7carrierGallente1BomberDroneMissileDamageMultiplierBonus
 (‰$#‰$shipBonusWarpDisruptorRangeMF2
 !Š$Š$shipBonusDroneDamageMF2
 !‹$‹$shipBonusDroneDamageGF2
@@ -2779,8 +2559,6 @@ L¨$G¨$BeliteBonusBlackOpsECMGravAndLadarAndMagnetometricAndRadarStrength1
 !­$­$shipRocketEmAndExpDmgAF
 '®$"®$shipRocketEmAndExpAndKinDmgAF
 -¯$(¯$#shipRocketEmAndExpAndKinAndThmDmgAF
-°$°$NPCRemoteECM
-%±$ ±$skillFighterBombersDmgBonus
 C¹$>¹$9oreIndustrialSkillLevelPostMulShipBonusOreIndustrial1Ship
 Cº$>º$9oreIndustrialSkillLevelPostMulShipBonusOreIndustrial2Ship
 %»$ »$shipBonusNoctisSalvageCycle
@@ -2792,10 +2570,6 @@ Cº$>º$9oreIndustrialSkillLevelPostMulShipBonusOreIndustrial2Ship
 +Ë$&Ë$!systemExplosiveMissileDmgModifier
 )Ì$$Ì$systemThermalMissileDmgModifier
 )Í$$Í$systemKineticMissileDmgModifier
-Î$Î$NPCGroupShieldAssist
-Ï$Ï$NPCGroupSpeedAssist
-Ğ$Ğ$NPCGroupPropJamAssist
-Ñ$Ñ$NPCGroupArmorAssist
 2Ó$-Ó$(systemStandardMissileKineticDamageBroken
 "Õ$Õ$systemDamageEmSmartbombs
 'Ö$"Ö$systemDamageKineticSmartbombs
@@ -2811,20 +2585,8 @@ Cº$>º$9oreIndustrialSkillLevelPostMulShipBonusOreIndustrial2Ship
 /â$*â$%systemEffectDamageExplosiveSmartbombs
 -ã$(ã$#systemEffectDamageKineticSmartbombs
 -ä$(ä$#systemEffectDamageThermalSmartbombs
-+ğ$&ğ$!carrierGallenteBomberDroneOwnDmg2
-$ñ$ñ$carrierCaldariDroneOwnDmg2
-*ò$%ò$ carrierCaldariBomberDroneOwnDmg2
-)ó$$ó$shipJumpRangePirateSupercarrier
-)ô$$ô$shipDCUbonusPirateSupercarrier2
 %ø$ ø$OffensiveDefensiveReduction
-ù$ù$fighterMissile
 1ú$,ú$'shipBonusAoeVelocityStandardMissilesDF2
-3ÿ$.ÿ$)shipFighterBomberDamagePirateSupercarrier
--€%(€%#shipFighterDamagePirateSupercarrier
-0%+%&shipFighterHitpointsPirateSupercarrier
-6’%1’%,shipFighterBomberHitpointsPirateSupercarrier
-)“%$“%carrierAmarrFighterMaxVelocity2
-/”%*”%%carrierAmarrFighterBomberMaxVelocity2
 8˜%3˜%.subsystemBonusCaldariPropulsion2WarpCapacitor2
 0™%+™%&eliteBonusBlackOpsECMBurstGravimetric1
 *š%%š% eliteBonusBlackOpsECMBurstRadar1
@@ -2869,7 +2631,7 @@ B¿%=¿%8eliteBonusBlackOpsECMBurstGravAndLadarAndMagnetoAndRadar
 BÄ%=Ä%8dataMiningSkillBoostAccessDifficultyBonusAbsolutePercent
 %Å% Å%ewSkillEcmBurstFalloffBonus
 2Æ%-Æ%(gangInformationWarfareEcmBurstRangeBonus
-6Ç%1Ç%,gangInformationWarfareRangeBonusWithEcmBurst
+9Ç%4Ç%/moduleBonusInformationWarfareLinkReconOperation
 ,É%'É%"ecmGravimetricStrengthBonusPercent
 &Ê%!Ê%ecmLadarStrengthBonusPercent
 .Ë%)Ë%$ecmMagnetometricStrengthBonusPercent
@@ -2878,7 +2640,6 @@ BÄ%=Ä%8dataMiningSkillBoostAccessDifficultyBonusAbsolutePercent
 0Î%+Î%&jumpPortalConsumptionBonusPercentSkill
 #Ï%Ï%miningDroneMwdBoostOnline
 )Ñ%$Ñ%salvagerModuleDurationReduction
-)Ò%$Ò%dreadnoughtShipBonusHybridRoFG2
 +Ô%&Ô%!bcLargeEnergyTurretPowerNeedBonus
 +Õ%&Õ%!bcLargeHybridTurretPowerNeedBonus
 /Ö%*Ö%%bcLargeProjectileTurretPowerNeedBonus
@@ -2888,8 +2649,6 @@ BÄ%=Ä%8dataMiningSkillBoostAccessDifficultyBonusAbsolutePercent
 /Ú%*Ú%%bcLargeEnergyTurretCapacitorNeedBonus
 /Û%*Û%%bcLargeHybridTurretCapacitorNeedBonus
 (å%#å%disallowOffensiveModifiersShip
-æ%æ%siegeModeEffect5
-ç%ç%triageModeEffect3
 #è%è%shipLaserTrackingBonusBC1
  é%é%shipLaserRangeBonusBC2
 !ê%ê%shipHybridRangeBonusBC1
@@ -2922,15 +2681,6 @@ $…&…&setBonusChristmasCPUOutput
 ,†&'†&"setBonusChristmasCapacitorRecharge
 -‡&(‡&#setBonusChristmasCapacitorRecharge2
 /Œ&*Œ&%siegeCitadelCruiseAoeVelocityModifier
-&&siegeModeEffect6
-+–&&–&!triageModeEnergyTransferCapEffect
-(—&#—&triageModeRemoteArmorCapEffect
-+˜&&˜&!triageModeShieldTransferCapEffect
-'™&"™&triageModeRemoteHullCapEffect
-š&š&triageModeEffect4
-›&›&triageModeEffect5
-œ&œ&triageModeEffect6
-&&triageModeEffect7
 6&1&,maxRangeHiddenPreAssignmentWarpScrambleRange
 $ & &shipBonusDroneHitpointsGF2
 )¡&$¡&shipBonusDroneArmorHitpointsGF2
@@ -2993,9 +2743,6 @@ $Ö&Ö&shipBonusShieldBoosterMB1a
 &ñ&!ñ&unusedEntityTrackingDisrupt1
 &ò&!ò&unusedEntityTrackingDisrupt2
 &ó&!ó&unusedEntityTrackingDisrupt3
-&ô&!ô&unusedEntityTrackingDisrupt4
-&õ&!õ&unusedEntityTrackingDisrupt5
-ö&ö&entityTrackingDisrupt
 "ø&ø&skillWarAllyCostModifier
 %ù& ù&relationsAllyCostSkillBoost
 ;ı&6ı&1missileSkillAoeCloudSizeBonusAllIncludingCapitals
@@ -3273,8 +3020,6 @@ $ğ)ğ)shipProjectileRofBonusMBC1
 )ö)$ö)shipBonusRepairSystemsBonusATC2
 4÷)/÷)*shipBonusRepairSystemsArmorRepairAmountGB2
 ,ù)'ù)"shipEnergyVampireRangeBonusFixedAC
-ú)ú)entityArmorRepairing
-û)û)entityShieldBoosting
 )ü)$ü)damageCloudChanceReductionFixed
 ?ı):ı)5deepCoreMiningSkillBoostDamageCloudChanceReductionMul
 $ş)ş)shipXLProjectileDamageRole
@@ -3395,7 +3140,7 @@ $¨+¨+informationSquadronCommand
 !¬+¬+skirmishSquadronCommand
 ­+­+miningSquadronCommand
 ®+®+gangTargetRange
-¯+¯+gangSensorIntegrity
+:¯+5¯+0moduleBonusInformationWarfareLinkSensorIntegrity
 5°+0°++shipBonusHMLVelocityEliteBonusHeavyGunship1
 5±+0±++shipBonusHAMVelocityEliteBonusHeavyGunship1
 $²+²+shipBonusArmorRepAmountGC2
@@ -3493,12 +3238,9 @@ $Ù+Ù+shieldBoostAmplifierActive
 9è,4è,/eliteBonusMaraudersHeavyMissileDamageThermRole1
 1é,,é,'shipScanProbeStrengthBonusPirateFaction
 2ê,-ê,(shipBonusRemoteRepairRangePirateFaction2
-(ì,#ì,shipBonusDreadCitadelTorpRofC1
-*í,%í, shipBonusDreadCitadelCruiseRofC1
 )ú,$ú,overloadSelfTrackingModuleBonus
 'ı,"ı,overloadSelfSensorModuleBonus
 "ş,ş,overloadSelfPainterBonus
-$…-…-droneTrackingComputerBonus
 ˆ-ˆ-EssWarpScramble
 #‰-‰-repairDroneHullBonusBonus
 ’-’-shipMissileRoFMF2
@@ -3545,17 +3287,13 @@ $Ã-Ã-shipBonusTDOptimalBonusAF1
 /È-*È-%shipBonusMiningIceHarvestingRangeORE2
 %Ï- Ï-eliteBargeShieldResistance1
 -Ğ-(Ğ-#eliteBargeBonusMiningDurationBarge2
-$Ñ-Ñ-droneTrackingEnhancerBonus
-Ò-Ò-droneMWDSpeedBonus
 "Õ-Õ-gangSurveyScanRangeBonus
-KÖ-FÖ-AgangMiningLaserIceHarvesterGasHarvesterSurveyScannerMaxRangeBonus
-.Ù-)Ù-$carrierCaldariFightersAndBombersSig1
+AÖ-<Ö-7moduleBonusMiningForemanLinkMiningLaserFieldEnhancement
 AÚ-<Ú-7expeditionFrigateSkillLevelPostMulEliteBonusExpedition1
 AÛ-<Û-7expeditionFrigateSkillLevelPostMulEliteBonusExpedition2
 %Ü- Ü-eliteBonusExpeditionMining1
 (İ-#İ-eliteBonusExpeditionSigRadius2
 Ş-Ş-shipBonusNosOverride
-1å-,å-'dreadnoughtShipBonusShieldResistancesC2
 æ-æ-shipMissileEMDamageCB
  ç-ç-shipMissileKinDamageCB
 "è-è-shipMissileThermDamageCB
@@ -3603,7 +3341,6 @@ $œ.œ.systemDamageExplosiveBombs
 ¥.¥.systemLadarECMBomb
 %¦. ¦.systemMagnetrometricECMBomb
 §.§.systemRadarECMBomb
-7¨.2¨.-warpScrambleTargetMWDBlockActivationForEntity
 ©.©.systemDroneTracking
 $«.«.entitySelfVelocityMultiply
 %¬. ¬.targetSetVelocityMultiplier
@@ -3617,7 +3354,6 @@ $«.«.entitySelfVelocityMultiply
 ¹.¹.cloakingPrototype
 ¿.¿.drawbackWarpSpeed
 Â.Â.gateScramble
-8Ã.3Ã..targetSetWarpScrambleStatusHidden&gateScramble
 Ä.Ä.shipMETDamageBonusAC2
 /Å.*Å.%eliteBonusHeavyInterdictorsMETOptimal
 Æ.Æ.shipHybridTrackingGC
@@ -3668,7 +3404,6 @@ $//shipMissileBonusThermdmgMC
 $—/—/shipModeSPTTrackingPostDiv
 !˜/˜/modeMWDSigRadiusPostDiv
 $™/™/modeShieldResonancePostDiv
-š/š/entitySuperWeapon
 :›/5›/0subsystemBonusCaldariDefensiveShieldRechargeRate
 9œ/4œ//gallenteCruiserSkillLevelPreMulShipBonusGC3Ship
 ,/'/"shipBonusSentryDamageMultiplierGC3
@@ -3781,7 +3516,7 @@ $–0–0shipBonusWDFGnullPenalties
 ,³0'³0"expeditionFrigateShieldResistance1
 7´02´0-expeditionFrigateBonusIceHarvestingCycleTime2
  µ0µ0energyNosferatuFalloff
-)¸0$¸0targetSetWarpGateMWDNPCScramble
+¹0¹0doomsdaySlash
 1º0,º0'siegeWarfareShieldCapacityBonusReplacer
 %»0 »0armorWarfareArmorHpReplacer
 /½0*½0%informationWarfareMaxTargetRangeBonus
@@ -3797,7 +3532,7 @@ $–0–0shipBonusWDFGnullPenalties
 DÉ0?É0:structureTargetMaxTargetRangeAndScanResolutionBonusHostile
 "Ê0Ê0structureEwTestEffectJam
 &Ë0!Ë0structureDecreaseTargetSpeed
-NÌ0IÌ0DstructureTargetGunneryMaxRangeAndTrackingSpeedAndFalloffBonusHostile
+0Ì0+Ì0&structureTargetWeaponDisruptionHostile
  Í0Í0structureEwTargetPaint
 4Î0/Î0*structureWarpScrambleBlockMWDWithNPCEffect
 GÏ0BÏ0=structureTargetMaxTargetRangeAndScanResolutionBonusAssistance
@@ -3925,10 +3660,6 @@ KÑ0FÑ0AstructureTargetGunneryMaxRangeFalloffTrackingSpeedBonusAssistance
 $Ø1Ø1shipRocketEMThermKinDmgMF2
 Ù1Ù1shipRocketExpDmgMF3
 Ú1Ú1roleBonusStasisRange
-.Û1)Û1$carrierCaldariShieldTransferFalloff3
-5Ü10Ü1+carrierGallenteArmor&ShieldTransferFalloff3
-5İ10İ1+carrierMinmatarArmor&ShieldTransferFalloff3
-+Ş1&Ş1!carrierAmarrArmorTransferFalloff3
 -ß1(ß1#oreCapitalShipShieldTransferFalloff
 'à1"à1shieldTransporterFalloffBonus
 &á1!á1shipShieldTransferFalloffMC2
@@ -3944,13 +3675,14 @@ $æ1æ1droneHullRepairBonusEffect
 $ë1ë1eliteBonusLogiFrigArmorHP2
 %ì1 ì1eliteBonusLogiFrigShieldHP2
 &í1!í1eliteBonusLogiFrigSignature2
+!î1î1fighterSpeedBoostSigRad
 'ï1"ï1targetMissileDisruptorHostile
 0ğ1+ğ1&overloadSelfMissileGuidanceModuleBonus
 $ñ1ñ1ignoreCloakVelocityPenalty
 (ò1#ò1ewSkillGuidanceDisruptionBonus
-/ú1*ú1%gangInformationWarfareSuperiorityAll2
+@ú1;ú16moduleBonusInformationWarfareLinkElectronicSuperiority
 0û1+û1&shipBonusEwWeaponDisruptionStrengthAC1
-3ü1.ü1)skillStructureOffensiveSystemsDamageBonus
+*ü1%ü1 skillStructureMissileDamageBonus
 ;ı16ı11skillStructureOffensiveSystemsDoomsdayDamageBonus
 4ş1/ş1*skillStructureOffensiveSystemsCapNeedBonus
 4ÿ1/ÿ1*skillStructureDefensiveSystemsCapNeedBonus
@@ -3964,7 +3696,7 @@ $ñ1ñ1ignoreCloakVelocityPenalty
 %‡2 ‡2structureRigEWCapacitorNeed
  ˆ2ˆ2structureRigMaxTargets
 &‰2!‰2structureRigSensorResolution
-1Š2,Š2'structureRigAoeVelocityBonusAoEMissiles
+5Š20Š2+structureRigExplosionRadiusBonusAoEMissiles
 .‹2)‹2$structureRigVelocityBonusAoeMissiles
 !Œ2Œ2structureRigPDBmaxRange
 &2!2structureRigPDBCapacitorNeed
@@ -3972,6 +3704,10 @@ $ñ1ñ1ignoreCloakVelocityPenalty
 (2#2structureRigFighterMaxVelocity
 )2$2structureRigDoomsdayTargetRange
 (‘2#‘2structureRigDoomsdayDamageLoss
+$’2’2fighterDecreaseTargetSpeed
+“2“2fighterTargetPaint
+”2”2fighterDamageMultiply
+•2•2fighterMicroJumpDrive
 !–2–2remoteSensorDampFalloff
 &—2!—2remoteGuidanceDisruptFalloff
 &˜2!˜2remoteTrackingDisruptFalloff
@@ -3980,6 +3716,17 @@ $ñ1ñ1ignoreCloakVelocityPenalty
 "›2›2remoteSensorBoostFalloff
 %œ2 œ2remoteTrackingAssistFalloff
 %2 2remoteGuidanceAssistFalloff
+22fighterAbilityAttack
+ Ÿ2Ÿ2fighterAbilityMissiles
+)¢2$¢2fighterAbilityEnergyNeutralizer
+&£2!£2fighterAbilityStasisWebifier
+&¤2!¤2fighterAbilityWarpDisruption
+¥2¥2fighterAbilityECM
+#¦2¦2fighterAbilityDamageBoost
+(§2#§2fighterAbilityEvasiveManeuvers
+#¨2¨2fighterAbilityAfterburner
+&©2!©2fighterAbilityMicroWarpDrive
+&ª2!ª2fighterAbilityMicroJumpDrive
 «2«2pointDefense
 ­2­2tractorBeamShip
  ®2®2structureBumpingModule
@@ -3988,20 +3735,184 @@ $ñ1ñ1ignoreCloakVelocityPenalty
 )±2$±2structureBallisticControlSystem
 0²2+²2&structureMissileGuidanceComputerBonus5
 1³2,³2'structureScanResolutionActivePercentage
-´2´2AmarrFAuxSkillMul1
-µ2µ2AmarrFAuxSkillMul2
-¶2¶2AmarrFAuxSkillMul3
-·2·2CaldariFAuxSkillMul1
-¸2¸2CaldariFAuxSkillMul2
-¹2¹2CaldariFAuxSkillMul3
-º2º2GallenteFAuxSkillMul1
-»2»2GallenteFAuxSkillMul2
-¼2¼2GallenteFAuxSkillMul3
-½2½2MinmatarFAuxSkillMul1
-¾2¾2MinmatarFAuxSkillMul2
-¿2¿2MinmatarFAuxSkillMul3
+À2À2fighterAbilityTackle
+Á2Á2fighterAbilityAttackM
 Æ2Æ2remoteECMFalloff
 Ç2Ç2remoteECCMFalloff
+È2È2doomsdayBeamDOT
+É2É2doomsdayConeDOT
+Ê2Ê2doomsdayHOG
 /Ë2*Ë2%structureRigDoomsdayTargetAmountBonus
+Ì2Ì2doomsdayAOEWeb
+Í2Í2doomsdayAOENeut
+Î2Î2doomsdayAOEPaint
+Ï2Ï2doomsdayAOETrack
+Ğ2Ğ2doomsdayAOEGuide
+Ñ2Ñ2doomsdayAOEDamp
+Ò2Ò2doomsdayAOEBubble
+ Ô2Ô2emergencyHullEnergizer
+"Õ2Õ2fighterAbilityLaunchBomb
 '×2"×2modifyEnergyWarfareResistance
 5Ø20Ø2+scriptSensorBoosterSensorStrengthBonusBonus
+2Ù2-Ù2(skillMultiplierShipBonusDreadnoughtAmarr
+4Ü2/Ü2*skillMultiplierShipBonusDreadnoughtCaldari
+5ß20ß2+skillMultiplierShipBonusDreadnoughtGallente
+5â20â2+skillMultiplierShipBonusDreadnoughtMinmatar
++å2&å2!shipBonusDreadnoughtA1DamageBonus
+,æ2'æ2"shipBonusDreadnoughtA2ArmorResists
+'ç2"ç2shipBonusDreadnoughtA3CapNeed
++è2&è2!shipBonusDreadnoughtC1DamageBonus
+-é2(é2#shipBonusDreadnoughtC2ShieldResists
++ê2&ê2!shipBonusDreadnoughtG1DamageBonus
+(ë2#ë2shipBonusDreadnoughtG2ROFBonus
+*ì2%ì2 shipBonusDreadnoughtG3RepairTime
++í2&í2!shipBonusDreadnoughtM1DamageBonus
+(î2#î2shipBonusDreadnoughtM2ROFBonus
+*ï2%ï2 shipBonusDreadnoughtM3RepairTime
+.ğ2)ğ2$shipBonusDreadnoughtRole1DamageBonus
+ñ2ñ2doomsdayAOEECM
+5ò20ò2+skillMultiplierShipBonusForceAuxiliaryAmarr
+7õ22õ2-skillMultiplierShipBonusForceAuxiliaryCaldari
+8ø23ø2.skillMultiplierShipBonusForceAuxiliaryGallente
+8û23û2.skillMultiplierShipBonusForceAuxiliaryMinmatar
+;ş26ş21shipBonusForceAuxiliaryA1RemoteRepairAndCapAmount
+/ÿ2*ÿ2%shipBonusForceAuxiliaryA2ArmorResists
+.€3)€3$shipBonusForceAuxiliaryA3CapCapacity
+4…3/…3*shipBonusForceAuxiliaryA4WarfareLinksBonus
+4†3/†3*shipBonusForceAuxiliaryM4WarfareLinksBonus
+4‡3/‡3*shipBonusForceAuxiliaryG4WarfareLinksBonus
+4ˆ3/ˆ3*shipBonusForceAuxiliaryC4WarfareLinksBonus
+.‰3)‰3$shipBonusForceAuxiliaryRole1CPUBonus
+:‘35‘30shipBonusForceAuxiliaryC1RemoteBoostAndCapAmount
+0’3+’3&shipBonusForceAuxiliaryC2ShieldResists
+.“3)“3$shipBonusForceAuxiliaryC3CapCapacity
+2”3-”3(shipBonusForceAuxiliaryG1RemoteCycleTime
+4•3/•3*shipBonusForceAuxiliaryG2LocalRepairAmount
+5–30–3+shipBonusForceAuxiliaryG3CapBoosterStrength
+2—3-—3(shipBonusForceAuxiliaryM1RemoteCycleTime
+3˜3.˜3)shipBonusForceAuxiliaryM2LocalBoostAmount
+5™30™3+shipBonusForceAuxiliaryM3CapBoosterStrength
+ š3š3fighterAbilityKamikaze
+,›3'›3"moduleBonusDroneNavigationComputer
+)œ3$œ3moduleBonusDroneDamageAmplifier
+03+3&moduleBonusOmnidirectionalTrackingLink
+8333.moduleBonusOmnidirectionalTrackingLinkOverload
+4Ÿ3/Ÿ3*moduleBonusOmnidirectionalTrackingEnhancer
+ 3 3skillBonusFighters
+!¡3¡3skillBonusLightFighters
+)¢3$¢3skillBonusSupportFightersShield
+!£3£3skillBonusHeavyFighters
+¥3¥3citadelRigBonus
+'¦3"¦3moduleBonusFighterSupportUnit
+)§3$§3moduleBonusNetworkedSensorArray
+¨3¨3citadelServiceBonus
+*©3%©3 skillMultiplierFighterHangerSize
++ª3&ª3!skillBonusFighterHangerManagement
+3«3.«3)skillBonusCapitalAutocannonSpecialization
+2¬3-¬3(skillBonusCapitalArtillerySpecialization
+0­3+­3&skillBonusCapitalBlasterSpecialization
+0®3+®3&skillBonusCapitalRailgunSpecialization
+3¯3.¯3)skillBonusCapitalPulseLaserSpecialization
+2°3-°3(skillBonusCapitalBeamLaserSpecialization
+1±3,±3'skillBonusXLCruiseMissileSpecialization
++²3&²3!skillBonusXLTorpedoSpecialization
+8´33´3.shipBonusForceAuxiliaryRole2LogisticDroneBonus
+!µ3µ3moduleBonusTriageModule
+ ¶3¶3moduleBonusSiegeModule
+.·3)·3$skillMultiplierShipBonusCarrierAmarr
+0¸3+¸3&skillMultiplierShipBonusCarrierCaldari
+1¹3,¹3'skillMultiplierShipBonusCarrierGallente
+1º3,º3'skillMultiplierShipBonusCarrierMinmatar
+3»3.»3)skillMultiplierShipBonusSupercarrierAmarr
+5¼30¼3+skillMultiplierShipBonusSupercarrierCaldari
+6½31½3,skillMultiplierShipBonusSupercarrierGallente
+6¾31¾3,skillMultiplierShipBonusSupercarrierMinmatar
+-¿3(¿3#shipBonusSupercarrierA3WarpStrength
+-À3(À3#shipBonusSupercarrierC3WarpStrength
+-Á3(Á3#shipBonusSupercarrierG3WarpStrength
+-Â3(Â3#shipBonusSupercarrierM3WarpStrength
+-Ã3(Ã3#shipBonusCarrierA4WarfareLinksBonus
+-Ä3(Ä3#shipBonusCarrierC4WarfareLinksBonus
+-Å3(Å3#shipBonusCarrierG4WarfareLinksBonus
+-Æ3(Æ3#shipBonusCarrierM4WarfareLinksBonus
+(Ç3#Ç3shipBonusCarrierA1ArmorResists
+)È3$È3shipBonusCarrierC1ShieldResists
+)É3$É3shipBonusCarrierG1FighterDamage
+)Ê3$Ê3shipBonusCarrierM1FighterDamage
+.Ë3)Ë3$shipBonusSupercarrierA1FighterDamage
+.Ì3)Ì3$shipBonusSupercarrierC1FighterDamage
+.Í3)Í3$shipBonusSupercarrierG1FighterDamage
+.Î3)Î3$shipBonusSupercarrierM1FighterDamage
+2Ï3-Ï3(shipBonusSupercarrierA5WarfareLinksBonus
+2Ğ3-Ğ3(shipBonusSupercarrierC5WarfareLinksBonus
+2Ñ3-Ñ3(shipBonusSupercarrierG5WarfareLinksBonus
+2Ò3-Ò3(shipBonusSupercarrierM5WarfareLinksBonus
+1Ó3,Ó3'shipBonusSupercarrierC2AfterburnerBonus
+8Ô33Ô3.shipBonusSupercarrierA2FighterApplicationBonus
+3Õ3.Õ3)shipBonusSupercarrierRole1NumWarfareLinks
+:Ö35Ö30shipBonusSupercarrierRole2ArmorShieldModuleBonus
+4×3/×3*shipBonusSupercarrierA4BurstProjectorBonus
+4Ø3/Ø3*shipBonusSupercarrierC4BurstProjectorBonus
+4Ù3/Ù3*shipBonusSupercarrierG4BurstProjectorBonus
+4Ú3/Ú3*shipBonusSupercarrierM4BurstProjectorBonus
+.Û3)Û3$shipBonusCarrierRole1NumWarfareLinks
++Ü3&Ü3!shipBonusDreadnoughtC3ReloadBonus
+-İ3(İ3#shipBonusSupercarrierA2ArmorResists
+.Ş3)Ş3$shipBonusSupercarrierC2ShieldResists
+1ß3,ß3'shipBonusSupercarrierG2FighterHitpoints
+0à3+à3&shipBonusSupercarrierM2FighterVelocity
+/á3*á3%shipBonusCarrierA2SupportFighterBonus
+/â3*â3%shipBonusCarrierC2SupportFighterBonus
+/ã3*ã3%shipBonusCarrierG2SupportFighterBonus
+/ä3*ä3%shipBonusCarrierM2SupportFighterBonus
+$å3å3scriptResistanceBonusBonus
+,æ3'æ3"skillMultiplierShipBonusTitanAmarr
+.ç3)ç3$skillMultiplierShipBonusTitanCaldari
+/è3*è3%skillMultiplierShipBonusTitanGallente
+/é3*é3%skillMultiplierShipBonusTitanMinmatar
+%ê3 ê3shipBonusTitanA1DamageBonus
+(ë3#ë3shipBonusTitanC1KinDamageBonus
+%ì3 ì3shipBonusTitanG1DamageBonus
+%í3 í3shipBonusTitanM1DamageBonus
+"î3î3shipBonusTitanC2ROFBonus
+8ï33ï3.shipBonusSupercarrierA4FighterApplicationBonus
+,ğ3'ğ3"shipBonusTitanRole1NumWarfareLinks
+3ñ3.ñ3)shipBonusTitanRole2ArmorShieldModuleBonus
+'ò3"ò3skillBonusDoomsdayRapidFiring
+$ó3ó3shipBonusTitanA4FleetBonus
+$ô3ô3shipBonusTitanC4FleetBonus
+$õ3õ3shipBonusTitanG4FleetBonus
+$ö3ö3shipBonusTitanM4FleetBonus
+&÷3!÷3shipBonusTitanA3WarpStrength
+&ø3!ø3shipBonusTitanC3WarpStrength
+&ù3!ù3shipBonusTitanG3WarpStrength
+&ú3!ú3shipBonusTitanM3WarpStrength
+1û3,û3'moduleBonusAncillaryRemoteArmorRepairer
+1ü3,ü3'moduleBonusAncillaryRemoteShieldBooster
+!ı3ı3shipBonusTitanA2CapNeed
+"ş3ş3shipBonusTitanG2ROFBonus
+"ÿ3ÿ3shipBonusTitanM2ROFBonus
+1€4,€4'shipBonusTitanRole3TorpdeoVelocityBonus
+(4#4shipBonusTitanC5AllDamageBonus
+"‚4‚4moduleBonusBastionModule
+&„4!„4higgsWarpBubbleImmuneRemoval
++…4&…4!shipBonusCarrierM3FighterVelocity
+,†4'†4"shipBonusCarrierG3FighterHitpoints
+$‡4‡4skillBonusDroneInterfacing
+&ˆ4!ˆ4skillBonusDroneSharpshooting
+#‰4‰4skillBonusDroneDurability
+)Š4$Š4skillMultiplierMaxVelocityBonus
+#‹4‹4skillBonusDroneNavigation
+$Œ4Œ4skillMultiplierShieldBonus
+34.4)moduleBonusCapitalDroneDurabilityEnhancer
+*4%4 moduleBonusCapitalDroneScopeChip
+/4*4%moduleBonusCapitalDroneSpeedAugmentor
+04+4&structureCombatRigSecurityModification
+6‘41‘4,structureReprocessingRigSecurityModification
+#’4’4structureRigBasicOreYield
+&“4!“4structureRigAdvancedOreYield
+&”4!”4structureRigCalAmarrIceYield
+$•4•4structureRigGalMinIceYield
+%–4 –4structureRigSpecialIceYield
+-—4(—4#skillStructureDoomsdayDurationBonus
+5™40™4+shipBonusForceAuxiliaryRole3NumWarfareLinks
