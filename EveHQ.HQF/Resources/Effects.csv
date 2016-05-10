@@ -3,7 +3,7 @@
 # SKILL ATTRIBUTE MAPPING,,,,,,,,,,
 # DRONES,,,,,,,,,,
 459,1,23566,10007,3,6,0,1,1,0,Advanced Drone Avionics
-280,1,24613,763,2,407,0,1,10,0,Advanced Drone Interfacing
+2340,1,24613,2055,3,6,0,1,0,0,Fighter Hangar Management
 292,1,12484,64,5,12484,0,1,0,0,Amarr Drone Specialization
 292,1,12487,64,5,12487,0,1,0,0,Caldari Drone Specialization
 459,1,3437,10007,3,6,0,1,1,0,Drone Avionics
@@ -15,8 +15,10 @@
 591,1,12305,37,3,18,0,1,0,0,Drone Navigation
 294,1,23606,54,3,18,0,1,0,0,Drone Sharpshooting
 353,1,3436,10005,3,6,0,1,1,0,Drones
-292,1,23069,64,2,549,0,1,0,0,Fighters
-292,1,32339,64,2,1023,0,1,0,0,Fighter Bombers
+292,1,23069,64,3,87,0,1,0,0,Fighters
+306,1,40572,37,2,1652,0,1,0,0,Light Fighters
+68,1,40573,263,2,1537,0,1,0,0,Support Fighters
+292,1,32339,64,2,1653,0,1,0,0,Heavy Fighters
 292,1,12486,64,5,12486,0,1,0,0,Gallente Drone Specialization
 292,1,3441,64,4,839,0,1,0,0,Heavy Drone Operation
 292,1,24241,64,4,837,0,1,0,0,Light Drone Operation
@@ -47,7 +49,7 @@
 294,1,19759,54,2,209,0,1,0,0,Long Distance Jamming - Tracking Links
 309,1,3428,76,3,6,0,1,0,0,Long Range Targeting
 311,1,3430,10064,3,6,0,1,1,0,Multitasking
-1193,1,27911,669,2,842,0,1,0,0,Projected Electronic Counter Measures
+1193,1,27911,669,2,842,0,1,0,0,Burst Projector Operation
 317,1,3435,6,2,52,0,1,0,0,Propulsion Jamming - Warp Scrambler
 317,1,3435,6,2,65,0,1,0,0,Propulsion Jamming - Stasis Webifier
 317,1,3435,6,2,899,0,1,0,0,Propulsion Jamming - WDFG
@@ -907,6 +909,7 @@
 1030,2,1706,208,3,6,1,0,0,12,Networked Sensor Array - Radar Strength
 235,2,1706,192,3,6,1,0,1,12,Networked Sensor Array - Max Locked Targets
 565,2,1706,564,3,6,1,0,0,12,Networked Sensor Array - Scan Resolution
+1190,2,1706,6,2,52;65;80;201;291;379;1672,1,0,0,12,Networked Sensor Array - Ewar Cap Malus
 # Signal Amplifiers,,,,,,,,,,
 235,2,210,192,3,6,0,0,1,14,Signal Amplifier - Max Locked Targets
 309,2,210,76,3,6,1,0,0,14,Signal Amplifier - Max Targeting Range

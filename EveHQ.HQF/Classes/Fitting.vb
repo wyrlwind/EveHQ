@@ -1540,6 +1540,22 @@ Imports EveHQ.Common.Extensions
                 Next
             End If
         Next
+
+        For Each dbi As FighterBayItem In newShip.FighterBayItems.Values
+            aModule = dbi.FighterType
+            If aModule.ModuleState < 16 Then
+                For attNo As Integer = 0 To aModule.Attributes.Keys.Count - 1
+                    att = aModule.Attributes.Keys(attNo)
+                    If _skillEffectsTable.ContainsKey(att) = True Then
+                        For Each fEffect As FinalEffect In _skillEffectsTable(att)
+                            If ProcessFinalEffectForModule(aModule, fEffect) = True Then
+                                Call ApplyFinalEffectToModule(aModule, fEffect, att)
+                            End If
+                        Next
+                    End If
+                Next
+            End If
+        Next
     End Sub
     Private Sub ApplyChargeEffectsToModules(ByRef newShip As Ship)
         Dim att As Integer
@@ -1797,6 +1813,21 @@ Imports EveHQ.Common.Extensions
                 End If
             Next
         Next
+
+        For Each dbi As FighterBayItem In newShip.FighterBayItems.Values
+            aModule = dbi.FighterType
+            For attNo As Integer = 0 To aModule.Attributes.Keys.Count - 1
+                att = aModule.Attributes.Keys(attNo)
+                If _moduleEffectsTable.ContainsKey(att) = True Then
+                    For Each fEffect As FinalEffect In _moduleEffectsTable(att)
+                        If ProcessFinalEffectForModule(aModule, fEffect) = True Then
+                            Call ApplyFinalEffectToModule(aModule, fEffect, att)
+                        End If
+                    Next
+                End If
+            Next
+        Next
+
     End Sub
     Private Sub ApplyModuleEffectsToShip(ByRef newShip As Ship)
         Dim tempAtts As New SortedList(Of String, Double)
