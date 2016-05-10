@@ -1486,6 +1486,11 @@ Namespace Controls
                 ParentFitting.BaseShip.DroneBayItems.Clear()
                 ParentFitting.BaseShip.DroneBayUsed = 0
             End If
+            If ParentFitting.BaseShip.DroneBay = 0 Then
+                tiDroneBay.Visible = False
+            Else
+                tiDroneBay.Visible = True
+            End If
         End Sub
 
         Private Sub ClearFighterBay()
@@ -2857,7 +2862,9 @@ Namespace Controls
             For Each fbi In holdingBay.Values
                 Dim newFighterItem As New ListViewItem(fbi.FighterType.Name)
                 newFighterItem.Name = CStr(lvwFighterBay.Items.Count)
-                newFighterItem.SubItems.Add(CStr(fbi.Quantity))
+                Dim squadMax As Integer = CInt(fbi.FighterType.Attributes(2215))
+                Dim squadMaxSize As String = CStr(squadMax)
+                newFighterItem.SubItems.Add(CStr(fbi.Quantity) & "/" & CStr(squadMaxSize))
                 Dim type As String
                 If fbi.FighterType.Attributes.ContainsKey(2212) Then
                     type = "Light"
@@ -2877,10 +2884,6 @@ Namespace Controls
                     End If
                 End If
                 newFighterItem.SubItems.Add(type)
-                Dim squadMax As Integer = CInt(fbi.FighterType.Attributes(2215))
-                Dim squadMaxSize As String = CStr(squadMax)
-                squadMaxSize = squadMaxSize & " (" & CStr(fbi.Quantity - squadMax) & ")"
-                newFighterItem.SubItems.Add(squadMaxSize)
                 Dim abilities As String = ""
                 If fbi.FighterType.FighterEffectAttackM Then
                     If abilities.Length <> 0 Then
@@ -3819,7 +3822,7 @@ Namespace Controls
                 lvwFighterBay.Items.Add(newFighterItem)
             Next
             lvwFighterBay.EndUpdate()
-            Call RedrawFighterBayCapacity()
+            Call RedrawFighterBay()
             _updateFighters = False
             ' Rebuild the ship to account for any disabled fighters
             ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)

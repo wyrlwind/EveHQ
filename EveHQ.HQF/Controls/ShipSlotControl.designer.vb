@@ -68,7 +68,6 @@ Namespace Controls
             Me.colFighterBayType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.colFighterBayQty = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.colFighterSquadType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-            Me.colFighterSquadSize = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.colFighterSquadAbilities = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.pbCargoBay = New DevComponents.DotNetBar.Controls.ProgressBarX()
             Me.lblCargoBay = New System.Windows.Forms.Label()
@@ -490,7 +489,7 @@ Namespace Controls
             Me.lvwFighterBay.Border.Class = "ListViewBorder"
             Me.lvwFighterBay.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
             Me.lvwFighterBay.CheckBoxes = True
-            Me.lvwFighterBay.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colFighterBayType, Me.colFighterBayQty, Me.colFighterSquadType, Me.colFighterSquadSize, Me.colFighterSquadAbilities})
+            Me.lvwFighterBay.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colFighterBayType, Me.colFighterBayQty, Me.colFighterSquadType, Me.colFighterSquadAbilities})
             Me.lvwFighterBay.ContextMenuStrip = Me.ctxBays
             Me.lvwFighterBay.DisabledBackColor = System.Drawing.Color.Empty
             Me.lvwFighterBay.FullRowSelect = True
@@ -510,19 +509,14 @@ Namespace Controls
             '
             'colFighterBayQty
             '
-            Me.colFighterBayQty.Text = "Qty"
+            Me.colFighterBayQty.Text = "Qty / Squadron Size"
             Me.colFighterBayQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-            Me.colFighterBayQty.Width = 50
+            Me.colFighterBayQty.Width = 150
             '
             'colFighterSquadType
             '
             Me.colFighterSquadType.Text = "Squadron Type"
             Me.colFighterSquadType.Width = 200
-            '
-            'colFighterSquadSize
-            '
-            Me.colFighterSquadSize.Text = "Squadron Max Size (Surplus)"
-            Me.colFighterSquadSize.Width = 100
             '
             'colFighterSquadAbilities
             '
@@ -2272,7 +2266,6 @@ Namespace Controls
         Friend WithEvents colFighterBayType As System.Windows.Forms.ColumnHeader
         Friend WithEvents colFighterBayQty As System.Windows.Forms.ColumnHeader
         Friend WithEvents colFighterSquadType As System.Windows.Forms.ColumnHeader
-        Friend WithEvents colFighterSquadSize As System.Windows.Forms.ColumnHeader
         Friend WithEvents colFighterSquadAbilities As System.Windows.Forms.ColumnHeader
         Friend WithEvents lvwCargoBay As DevComponents.DotNetBar.Controls.ListViewEx
         Friend WithEvents colCargoBayType As System.Windows.Forms.ColumnHeader
