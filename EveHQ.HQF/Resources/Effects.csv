@@ -1799,8 +1799,33 @@
 1840,2,920,90,2,67,0,0,5,15,Cataclysmic Variable - Remote Cap Transmitter Amount
 1966,2,920,90,2,68,0,0,5,15,Pulsar - Energy Transfer Amount Bonus - Nos
 1966,2,920,97,2,71,0,0,5,15,Pulsar - Energy Transfer Amount Bonus - Neuts
-1967,2,920,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;394;395;396,0,0,5,15,Magnetar - Missile Explosion Radius Multiplier
+1967,2,920,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,5,15,Magnetar - Missile Explosion Radius Multiplier
 1968,2,920,554,2,379,0,0,5,15,Magnetar - Target Painter Effectiveness Multiplier
+1482,2,920,64,3,18,0,0,5,15,Magnetar - Drone Damage
+1482,2,920,10016,2,55,0,0,5,15,Magnetar - Projectile Turret Damage
+1482,2,920,10014,2,53,0,0,5,15,Magnetar - Energy Turret Damage
+1482,2,920,10015,2,74,0,0,5,15,Magnetar - Hybrid Turret Damage
+1482,2,920,2131,3,87,0,0,5,15,Magnetar - Fighter Attack Missile EM Damage
+1482,2,920,2132,3,87,0,0,5,15,Magnetar - Fighter Attack Missile Thermal Damage
+1482,2,920,2133,3,87,0,0,5,15,Magnetar - Fighter Attack Missile Kinetic Damage
+1482,2,920,2134,3,87,0,0,5,15,Magnetar - Fighter Attack Missile Explosive Damage
+1482,2,920,2227,3,87,0,0,5,15,Magnetar - Fighter Ability EM Damage
+1482,2,920,2228,3,87,0,0,5,15,Magnetar - Fighter Ability Thermal Damage
+1482,2,920,2229,3,87,0,0,5,15,Magnetar - Fighter Ability Kinetic Damage
+1482,2,920,2230,3,87,0,0,5,15,Magnetar - Fighter Ability Explosive Damage
+1482,2,920,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,5,15,Magnetar - EM Missile Damage
+1482,2,920,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,5,15,Magnetar - Exp Missile Damage
+1482,2,920,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,5,15,Magnetar - Kin Missile Damage
+1482,2,920,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,5,15,Magnetar - Therm Missile Damage
+1482,2,920,114,2,72,0,0,5,15,Magnetar - Smartbomb Damage Multiplier
+1482,2,920,116,2,72,0,0,5,15,Magnetar - Smartbomb Damage Multiplier
+1482,2,920,117,2,72,0,0,5,15,Magnetar - Smartbomb Damage Multiplier
+1482,2,920,118,2,72,0,0,5,15,Magnetar - Smartbomb Damage Multiplier
+1482,2,920,117,2,90,0,0,5,15,Magnetar - Kinetic Bomb Damage
+1482,2,920,118,2,90,0,0,5,15,Magnetar - Thermal Bomb Damage
+1482,2,920,114,2,90,0,0,5,15,Magnetar - EM Bomb Damage
+1482,2,920,116,2,90,0,0,5,15,Magnetar - Explosive Bomb Damage
+237,2,920,76,3,6,0,0,0,15,Magnetar - Max Targeting Range
 1969,2,920,20,2,65,0,0,5,15,Black Hole - Stasis Webifier Strength Multiplier
 # BOOSTERS,,,,,,,,,,
 548,1,10155,68,2,40;1156,0,0,0,15,Improved Blue Pill - Shield Boost Bonus

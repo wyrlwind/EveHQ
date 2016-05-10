@@ -102,6 +102,10 @@ Public Enum AttributeEnum
 
     ' module attributes
     ModuleActivationTime = 73
+    ModuleDurationECMJammerBurstProjector = 2398
+    ModuleDurationSensorDampeningBurstProjector = 2399
+    ModuleDurationTargetIlluminationBurstProjector = 2400
+    ModuleDurationWeaponDisruptionBurstProjector = 2397
     ModuleAoERadius = 99
     ModuleArmorBoostedRepairMultiplier = 1886
     ModuleArmorEMResistance = 267
