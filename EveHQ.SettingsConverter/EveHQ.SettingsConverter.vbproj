@@ -20,22 +20,22 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>$(SolutionDir)BuildOutput\$(Configuration)\</OutputPath>
     <DocumentationFile>EveHQ.SettingsConverter.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>$(SolutionDir)BuildOutput\$(Configuration)\</OutputPath>
     <DocumentationFile>EveHQ.SettingsConverter.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
@@ -63,7 +63,7 @@
       <HintPath>..\Ref\DotNetBar\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -206,10 +206,12 @@
   <Target Name="AfterBuild">
   </Target>
   <PropertyGroup>
-    <PreBuildEvent>IF NOT EXIST "$(SolutionDir)BuildOutput\$(ConfigurationName)\" mkdir "$(SolutionDir)BuildOutput\$(ConfigurationName)\"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)*.*" "$(SolutionDir)BuildOutput\$(ConfigurationName)\"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

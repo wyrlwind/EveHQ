@@ -6649,3 +6649,66 @@
 21593:
   description: ECCM Script
   iconFile: res:/UI/Texture/Icons/126_64_1.png
+21594:
+  description: Structure Rig Point Defense Battery
+  iconFile: '127_9'
+21595:
+  description: Structure Service Market Hub
+  iconFile: '127_2'
+21596:
+  description: Structure Service Cloning Center
+  iconFile: '127_1'
+21597:
+  description: Structure Service Reprocessing Plant
+  iconFile: '127_3'
+21598:
+  description: Structure Service Compression
+  iconFile: '127_4'
+21599:
+  description: Structure Rig Cloning
+  iconFile: '127_5'
+21600:
+  description: Structure Rig Market
+  iconFile: '127_6'
+21601:
+  description: Structure Rig Doomsday
+  iconFile: '127_10'
+21602:
+  description: Structure Rig Reprocessing
+  iconFile: '127_7'
+21603:
+  description: Emergency Hull Energizer
+  iconFile: res:/UI/Texture/Icons/Modules/emergencyHullEnergizer.png
+21604:
+  description: Burst Projector ECM
+  iconFile: res:/UI/Texture/Icons/Modules/burstProjectorECM.png
+21605:
+  description: Burst Projector Energy Neutralization
+  iconFile: res:/UI/Texture/Icons/Modules/burstProjectorEnergyNeutralization.png
+21606:
+  description: Burst Projector Guidance Disruption
+  iconFile: res:/UI/Texture/Icons/Modules/burstProjectorGuidanceDisruption.png
+21607:
+  description: Burst Projector Sensor Dampening
+  iconFile: res:/UI/Texture/Icons/Modules/burstProjectorSensorDampening.png
+21608:
+  description: Burst Projector Stasis Webification
+  iconFile: res:/UI/Texture/Icons/Modules/burstProjectorStasisWebification.png
+21609:
+  description: Burst Projector Target illumination
+  iconFile: res:/UI/Texture/Icons/Modules/burstProjectorTargetIllumination.png
+21610:
+  description: Burst Projector Tracking Disruption
+  iconFile: res:/UI/Texture/Icons/Modules/burstProjectorTrackingDisruption.png
+21611:
+  description: Burst Projector Warp Disruption
+  iconFile: res:/UI/Texture/Icons/Modules/burstProjectorWarpDisruption.png
+21613:
+  description: Module - FighterTackle
+  iconFile: 04_09
+21614:
+  description: 41575_female_Accessories_Glasses_Glasses_Citadel_F01_Types_GlassesCitadelF01_black
+  iconFile: res:/UI/Asset/mannequin/accessories_glasses/41575_female_Accessories_Glasses_Glasses_Citadel_F01_Types_GlassesCitadelF01_black.png
+21615:
+  description: 41576_male_Accessories_Glasses_Glasses_Citadel_M01_Types_GlassesCitadelM01_black.png
+  iconFile: res:/UI/Asset/mannequin/accessories_glasses/41576_male_Accessories_Glasses_Glasses_Citadel_M01_Types_GlassesCitadelM01_black.png

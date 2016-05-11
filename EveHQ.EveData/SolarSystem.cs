@@ -61,6 +61,7 @@ namespace EveHQ.EveData
         public SolarSystem()
         {
             Gates = new Collection<int>();
+            Planets = new Collection<int>();
         }
 
         /// <summary>
@@ -146,5 +147,12 @@ namespace EveHQ.EveData
         /// </summary>
         [ProtoMember(14)]
         public double Z { get; set; }
+
+        /// <summary>
+        ///     Gets or sets a list of planets within the system.
+        /// </summary>
+        [ProtoMember(15)]
+        public Collection<int> Planets { get; set; }
+
     }
 }

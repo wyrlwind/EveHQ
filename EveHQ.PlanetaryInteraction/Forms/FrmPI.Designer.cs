@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBoxCharacterInfo = new System.Windows.Forms.GroupBox();
             this.listViewCapabilities = new System.Windows.Forms.ListView();
             this.columnHeaderCapability = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,7 +38,6 @@
             this.columnHeaderLevel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBoxCharacterImage = new System.Windows.Forms.PictureBox();
             this.listViewCharacterSelector = new System.Windows.Forms.ListView();
-            this.groupBoxPlanetaryColonies = new System.Windows.Forms.GroupBox();
             this.objectListViewPins = new BrightIdeasSoftware.ObjectListView();
             this.olvColumnPinPlanet = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnInstallation = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -49,16 +49,45 @@
             this.olvColumnContentQuantity = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnVolume = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.objectListViewColonies = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumnPlanetIcon = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnPlanet = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnSystem = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnPlanetType = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnUpgradeLevel = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnInstallations = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnLinks = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnRoutes = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnPlanetRadius = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.tabControlColonies = new System.Windows.Forms.TabControl();
+            this.tabPageInstallations = new System.Windows.Forms.TabPage();
+            this.tabPageLinksRoutes = new System.Windows.Forms.TabPage();
+            this.splitContainerLinksRoutes = new System.Windows.Forms.SplitContainer();
+            this.objectListViewLinks = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumnLinkPlanet = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnLinkSource = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnLinkDest = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnLinkLevel = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnLinkLength = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.objectListViewRoutes = new BrightIdeasSoftware.ObjectListView();
+            this.olvColumnRoutePlanet = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnRouteSource = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnRouteDest = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnRouteCommodity = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumnRouteQuantity = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.groupBoxCharacterInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacterImage)).BeginInit();
-            this.groupBoxPlanetaryColonies.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewPins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewColonies)).BeginInit();
+            this.tabControlColonies.SuspendLayout();
+            this.tabPageInstallations.SuspendLayout();
+            this.tabPageLinksRoutes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerLinksRoutes)).BeginInit();
+            this.splitContainerLinksRoutes.Panel1.SuspendLayout();
+            this.splitContainerLinksRoutes.Panel2.SuspendLayout();
+            this.splitContainerLinksRoutes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewLinks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewRoutes)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxCharacterInfo
@@ -152,20 +181,6 @@
             this.listViewCharacterSelector.View = System.Windows.Forms.View.List;
             this.listViewCharacterSelector.SelectedIndexChanged += new System.EventHandler(this.listViewCharacterSelector_SelectedIndexChanged);
             // 
-            // groupBoxPlanetaryColonies
-            // 
-            this.groupBoxPlanetaryColonies.AutoSize = true;
-            this.groupBoxPlanetaryColonies.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxPlanetaryColonies.Controls.Add(this.objectListViewPins);
-            this.groupBoxPlanetaryColonies.Controls.Add(this.objectListViewColonies);
-            this.groupBoxPlanetaryColonies.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxPlanetaryColonies.Location = new System.Drawing.Point(0, 187);
-            this.groupBoxPlanetaryColonies.Name = "groupBoxPlanetaryColonies";
-            this.groupBoxPlanetaryColonies.Size = new System.Drawing.Size(923, 474);
-            this.groupBoxPlanetaryColonies.TabIndex = 1;
-            this.groupBoxPlanetaryColonies.TabStop = false;
-            this.groupBoxPlanetaryColonies.Text = "Planetary Colonies";
-            // 
             // objectListViewPins
             // 
             this.objectListViewPins.AllColumns.Add(this.olvColumnPinPlanet);
@@ -195,13 +210,15 @@
             this.objectListViewPins.GridLines = true;
             this.objectListViewPins.HighlightBackgroundColor = System.Drawing.Color.Empty;
             this.objectListViewPins.HighlightForegroundColor = System.Drawing.Color.Empty;
-            this.objectListViewPins.Location = new System.Drawing.Point(3, 154);
+            this.objectListViewPins.Location = new System.Drawing.Point(3, 3);
             this.objectListViewPins.MultiSelect = false;
             this.objectListViewPins.Name = "objectListViewPins";
             this.objectListViewPins.ShowGroups = false;
-            this.objectListViewPins.Size = new System.Drawing.Size(917, 317);
+            this.objectListViewPins.Size = new System.Drawing.Size(909, 305);
             this.objectListViewPins.TabIndex = 2;
             this.objectListViewPins.UseCompatibleStateImageBehavior = false;
+            this.objectListViewPins.UseFilterIndicator = true;
+            this.objectListViewPins.UseFiltering = true;
             this.objectListViewPins.View = System.Windows.Forms.View.Details;
             // 
             // olvColumnPinPlanet
@@ -267,37 +284,55 @@
             // 
             // objectListViewColonies
             // 
+            this.objectListViewColonies.AllColumns.Add(this.olvColumnPlanetIcon);
             this.objectListViewColonies.AllColumns.Add(this.olvColumnPlanet);
             this.objectListViewColonies.AllColumns.Add(this.olvColumnSystem);
             this.objectListViewColonies.AllColumns.Add(this.olvColumnPlanetType);
             this.objectListViewColonies.AllColumns.Add(this.olvColumnUpgradeLevel);
             this.objectListViewColonies.AllColumns.Add(this.olvColumnInstallations);
+            this.objectListViewColonies.AllColumns.Add(this.olvColumnLinks);
+            this.objectListViewColonies.AllColumns.Add(this.olvColumnRoutes);
+            this.objectListViewColonies.AllColumns.Add(this.olvColumnPlanetRadius);
             this.objectListViewColonies.CellEditUseWholeCell = false;
             this.objectListViewColonies.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumnPlanetIcon,
             this.olvColumnPlanet,
             this.olvColumnSystem,
             this.olvColumnPlanetType,
             this.olvColumnUpgradeLevel,
-            this.olvColumnInstallations});
+            this.olvColumnInstallations,
+            this.olvColumnLinks,
+            this.olvColumnRoutes,
+            this.olvColumnPlanetRadius});
             this.objectListViewColonies.Cursor = System.Windows.Forms.Cursors.Default;
             this.objectListViewColonies.Dock = System.Windows.Forms.DockStyle.Top;
             this.objectListViewColonies.FullRowSelect = true;
             this.objectListViewColonies.GridLines = true;
+            this.objectListViewColonies.HideSelection = false;
             this.objectListViewColonies.HighlightBackgroundColor = System.Drawing.Color.Empty;
             this.objectListViewColonies.HighlightForegroundColor = System.Drawing.Color.Empty;
-            this.objectListViewColonies.Location = new System.Drawing.Point(3, 17);
+            this.objectListViewColonies.Location = new System.Drawing.Point(0, 187);
             this.objectListViewColonies.Name = "objectListViewColonies";
+            this.objectListViewColonies.RowHeight = 32;
             this.objectListViewColonies.ShowGroups = false;
-            this.objectListViewColonies.Size = new System.Drawing.Size(917, 137);
+            this.objectListViewColonies.Size = new System.Drawing.Size(923, 220);
             this.objectListViewColonies.TabIndex = 1;
             this.objectListViewColonies.UseCompatibleStateImageBehavior = false;
             this.objectListViewColonies.View = System.Windows.Forms.View.Details;
+            this.objectListViewColonies.SelectedIndexChanged += new System.EventHandler(this.objectListViewColonies_SelectedIndexChanged);
+            // 
+            // olvColumnPlanetIcon
+            // 
+            this.olvColumnPlanetIcon.AspectName = "";
+            this.olvColumnPlanetIcon.AspectToStringFormat = "";
+            this.olvColumnPlanetIcon.ImageAspectName = "PlanetIcon";
+            this.olvColumnPlanetIcon.Text = "";
+            this.olvColumnPlanetIcon.Width = 32;
             // 
             // olvColumnPlanet
             // 
             this.olvColumnPlanet.AspectName = "Planet";
             this.olvColumnPlanet.Text = "Planet";
-            this.olvColumnPlanet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.olvColumnPlanet.Width = 72;
             // 
             // olvColumnSystem
@@ -324,13 +359,200 @@
             this.olvColumnInstallations.Text = "Installations";
             this.olvColumnInstallations.Width = 73;
             // 
+            // olvColumnLinks
+            // 
+            this.olvColumnLinks.AspectName = "LinksCount";
+            this.olvColumnLinks.Text = "Links";
+            // 
+            // olvColumnRoutes
+            // 
+            this.olvColumnRoutes.AspectName = "RoutesCount";
+            this.olvColumnRoutes.Text = "Routes";
+            // 
+            // olvColumnPlanetRadius
+            // 
+            this.olvColumnPlanetRadius.AspectName = "PlanetRadius";
+            this.olvColumnPlanetRadius.AspectToStringFormat = "{0:n}";
+            this.olvColumnPlanetRadius.Text = "Planet Radius (km)";
+            this.olvColumnPlanetRadius.Width = 104;
+            // 
+            // tabControlColonies
+            // 
+            this.tabControlColonies.Controls.Add(this.tabPageInstallations);
+            this.tabControlColonies.Controls.Add(this.tabPageLinksRoutes);
+            this.tabControlColonies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlColonies.Location = new System.Drawing.Point(0, 324);
+            this.tabControlColonies.Name = "tabControlColonies";
+            this.tabControlColonies.SelectedIndex = 0;
+            this.tabControlColonies.Size = new System.Drawing.Size(923, 337);
+            this.tabControlColonies.TabIndex = 3;
+            // 
+            // tabPageInstallations
+            // 
+            this.tabPageInstallations.Controls.Add(this.objectListViewPins);
+            this.tabPageInstallations.Location = new System.Drawing.Point(4, 22);
+            this.tabPageInstallations.Name = "tabPageInstallations";
+            this.tabPageInstallations.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageInstallations.Size = new System.Drawing.Size(915, 311);
+            this.tabPageInstallations.TabIndex = 0;
+            this.tabPageInstallations.Text = "Installations";
+            // 
+            // tabPageLinksRoutes
+            // 
+            this.tabPageLinksRoutes.Controls.Add(this.splitContainerLinksRoutes);
+            this.tabPageLinksRoutes.Location = new System.Drawing.Point(4, 22);
+            this.tabPageLinksRoutes.Name = "tabPageLinksRoutes";
+            this.tabPageLinksRoutes.Size = new System.Drawing.Size(915, 311);
+            this.tabPageLinksRoutes.TabIndex = 2;
+            this.tabPageLinksRoutes.Text = "Links & Routes";
+            this.tabPageLinksRoutes.UseVisualStyleBackColor = true;
+            // 
+            // splitContainerLinksRoutes
+            // 
+            this.splitContainerLinksRoutes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerLinksRoutes.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerLinksRoutes.Name = "splitContainerLinksRoutes";
+            // 
+            // splitContainerLinksRoutes.Panel1
+            // 
+            this.splitContainerLinksRoutes.Panel1.Controls.Add(this.objectListViewLinks);
+            // 
+            // splitContainerLinksRoutes.Panel2
+            // 
+            this.splitContainerLinksRoutes.Panel2.Controls.Add(this.objectListViewRoutes);
+            this.splitContainerLinksRoutes.Size = new System.Drawing.Size(915, 311);
+            this.splitContainerLinksRoutes.SplitterDistance = 402;
+            this.splitContainerLinksRoutes.TabIndex = 1;
+            // 
+            // objectListViewLinks
+            // 
+            this.objectListViewLinks.AllColumns.Add(this.olvColumnLinkPlanet);
+            this.objectListViewLinks.AllColumns.Add(this.olvColumnLinkSource);
+            this.objectListViewLinks.AllColumns.Add(this.olvColumnLinkDest);
+            this.objectListViewLinks.AllColumns.Add(this.olvColumnLinkLevel);
+            this.objectListViewLinks.AllColumns.Add(this.olvColumnLinkLength);
+            this.objectListViewLinks.CellEditUseWholeCell = false;
+            this.objectListViewLinks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumnLinkPlanet,
+            this.olvColumnLinkSource,
+            this.olvColumnLinkDest,
+            this.olvColumnLinkLevel,
+            this.olvColumnLinkLength});
+            this.objectListViewLinks.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListViewLinks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectListViewLinks.FullRowSelect = true;
+            this.objectListViewLinks.GridLines = true;
+            this.objectListViewLinks.HighlightBackgroundColor = System.Drawing.Color.Empty;
+            this.objectListViewLinks.HighlightForegroundColor = System.Drawing.Color.Empty;
+            this.objectListViewLinks.Location = new System.Drawing.Point(0, 0);
+            this.objectListViewLinks.Name = "objectListViewLinks";
+            this.objectListViewLinks.ShowGroups = false;
+            this.objectListViewLinks.Size = new System.Drawing.Size(402, 311);
+            this.objectListViewLinks.TabIndex = 0;
+            this.objectListViewLinks.UseCompatibleStateImageBehavior = false;
+            this.objectListViewLinks.View = System.Windows.Forms.View.Details;
+            // 
+            // olvColumnLinkPlanet
+            // 
+            this.olvColumnLinkPlanet.AspectName = "Planet";
+            this.olvColumnLinkPlanet.Text = "Planet";
+            this.olvColumnLinkPlanet.Width = 72;
+            // 
+            // olvColumnLinkSource
+            // 
+            this.olvColumnLinkSource.AspectName = "Source";
+            this.olvColumnLinkSource.Text = "Source";
+            this.olvColumnLinkSource.Width = 190;
+            // 
+            // olvColumnLinkDest
+            // 
+            this.olvColumnLinkDest.AspectName = "Destination";
+            this.olvColumnLinkDest.Text = "Destination";
+            this.olvColumnLinkDest.Width = 190;
+            // 
+            // olvColumnLinkLevel
+            // 
+            this.olvColumnLinkLevel.AspectName = "Level";
+            this.olvColumnLinkLevel.Text = "Level";
+            // 
+            // olvColumnLinkLength
+            // 
+            this.olvColumnLinkLength.AspectName = "Length";
+            this.olvColumnLinkLength.AspectToStringFormat = "{0:n}";
+            this.olvColumnLinkLength.Text = "Length (km)";
+            this.olvColumnLinkLength.Width = 75;
+            // 
+            // objectListViewRoutes
+            // 
+            this.objectListViewRoutes.AllColumns.Add(this.olvColumnRoutePlanet);
+            this.objectListViewRoutes.AllColumns.Add(this.olvColumnRouteSource);
+            this.objectListViewRoutes.AllColumns.Add(this.olvColumnRouteDest);
+            this.objectListViewRoutes.AllColumns.Add(this.olvColumnRouteCommodity);
+            this.objectListViewRoutes.AllColumns.Add(this.olvColumnRouteQuantity);
+            this.objectListViewRoutes.CellEditUseWholeCell = false;
+            this.objectListViewRoutes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumnRoutePlanet,
+            this.olvColumnRouteSource,
+            this.olvColumnRouteDest,
+            this.olvColumnRouteCommodity,
+            this.olvColumnRouteQuantity});
+            this.objectListViewRoutes.Cursor = System.Windows.Forms.Cursors.Default;
+            this.objectListViewRoutes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectListViewRoutes.FullRowSelect = true;
+            this.objectListViewRoutes.GridLines = true;
+            this.objectListViewRoutes.HighlightBackgroundColor = System.Drawing.Color.Empty;
+            this.objectListViewRoutes.HighlightForegroundColor = System.Drawing.Color.Empty;
+            this.objectListViewRoutes.Location = new System.Drawing.Point(0, 0);
+            this.objectListViewRoutes.Name = "objectListViewRoutes";
+            this.objectListViewRoutes.ShowGroups = false;
+            this.objectListViewRoutes.Size = new System.Drawing.Size(509, 311);
+            this.objectListViewRoutes.TabIndex = 0;
+            this.objectListViewRoutes.UseCompatibleStateImageBehavior = false;
+            this.objectListViewRoutes.View = System.Windows.Forms.View.Details;
+            // 
+            // olvColumnRoutePlanet
+            // 
+            this.olvColumnRoutePlanet.AspectName = "Planet";
+            this.olvColumnRoutePlanet.Text = "Planet";
+            this.olvColumnRoutePlanet.Width = 72;
+            // 
+            // olvColumnRouteSource
+            // 
+            this.olvColumnRouteSource.AspectName = "Source";
+            this.olvColumnRouteSource.Text = "Source";
+            this.olvColumnRouteSource.Width = 190;
+            // 
+            // olvColumnRouteDest
+            // 
+            this.olvColumnRouteDest.AspectName = "Destination";
+            this.olvColumnRouteDest.Text = "Destination";
+            this.olvColumnRouteDest.Width = 190;
+            // 
+            // olvColumnRouteCommodity
+            // 
+            this.olvColumnRouteCommodity.AspectName = "Commodity";
+            this.olvColumnRouteCommodity.Text = "Commodity";
+            this.olvColumnRouteCommodity.Width = 150;
+            // 
+            // olvColumnRouteQuantity
+            // 
+            this.olvColumnRouteQuantity.AspectName = "Quantity";
+            this.olvColumnRouteQuantity.Text = "Quantity";
+            // 
+            // timerUpdate
+            // 
+            this.timerUpdate.Enabled = true;
+            this.timerUpdate.Interval = 1000;
+            this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
+            // 
             // FrmPI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(923, 661);
-            this.Controls.Add(this.groupBoxPlanetaryColonies);
+            this.Controls.Add(this.tabControlColonies);
+            this.Controls.Add(this.objectListViewColonies);
             this.Controls.Add(this.groupBoxCharacterInfo);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -339,9 +561,17 @@
             this.Load += new System.EventHandler(this.FrmPI_Load);
             this.groupBoxCharacterInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCharacterImage)).EndInit();
-            this.groupBoxPlanetaryColonies.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewPins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewColonies)).EndInit();
+            this.tabControlColonies.ResumeLayout(false);
+            this.tabPageInstallations.ResumeLayout(false);
+            this.tabPageLinksRoutes.ResumeLayout(false);
+            this.splitContainerLinksRoutes.Panel1.ResumeLayout(false);
+            this.splitContainerLinksRoutes.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerLinksRoutes)).EndInit();
+            this.splitContainerLinksRoutes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewLinks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectListViewRoutes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,7 +582,6 @@
         private System.Windows.Forms.GroupBox groupBoxCharacterInfo;
         private System.Windows.Forms.PictureBox pictureBoxCharacterImage;
         private System.Windows.Forms.ListView listViewCharacterSelector;
-        private System.Windows.Forms.GroupBox groupBoxPlanetaryColonies;
         private System.Windows.Forms.ListView listViewCharacterSkills;
         private System.Windows.Forms.ColumnHeader columnHeaderSkillName;
         private System.Windows.Forms.ColumnHeader columnHeaderLevel;
@@ -375,6 +604,27 @@
         private BrightIdeasSoftware.OLVColumn olvColumnVolume;
         private BrightIdeasSoftware.OLVColumn olvColumnTimeLeft;
         private BrightIdeasSoftware.OLVColumn olvColumnPinPlanet;
+        private System.Windows.Forms.TabControl tabControlColonies;
+        private System.Windows.Forms.TabPage tabPageInstallations;
+        private System.Windows.Forms.TabPage tabPageLinksRoutes;
+        private BrightIdeasSoftware.OLVColumn olvColumnLinks;
+        private BrightIdeasSoftware.OLVColumn olvColumnRoutes;
+        private BrightIdeasSoftware.OLVColumn olvColumnPlanetIcon;
+        private System.Windows.Forms.SplitContainer splitContainerLinksRoutes;
+        private BrightIdeasSoftware.ObjectListView objectListViewLinks;
+        private BrightIdeasSoftware.OLVColumn olvColumnLinkPlanet;
+        private BrightIdeasSoftware.OLVColumn olvColumnLinkSource;
+        private BrightIdeasSoftware.OLVColumn olvColumnLinkDest;
+        private BrightIdeasSoftware.OLVColumn olvColumnLinkLevel;
+        private BrightIdeasSoftware.OLVColumn olvColumnLinkLength;
+        private BrightIdeasSoftware.OLVColumn olvColumnPlanetRadius;
+        private BrightIdeasSoftware.ObjectListView objectListViewRoutes;
+        private BrightIdeasSoftware.OLVColumn olvColumnRoutePlanet;
+        private BrightIdeasSoftware.OLVColumn olvColumnRouteSource;
+        private BrightIdeasSoftware.OLVColumn olvColumnRouteDest;
+        private BrightIdeasSoftware.OLVColumn olvColumnRouteCommodity;
+        private BrightIdeasSoftware.OLVColumn olvColumnRouteQuantity;
+        private System.Windows.Forms.Timer timerUpdate;
     }
 }
 
