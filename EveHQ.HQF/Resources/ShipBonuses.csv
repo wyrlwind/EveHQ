@@ -104,6 +104,20 @@
 # Apocalypse Navy Issue,,,,,,,,,,,
 17726,1,3339,160,4,569;573,0,1,0,7.5,15,Large Energy Turret Tracking
 17726,1,3339,54,4,569;573,0,1,0,7.5,15,Large Energy Turret Optimal Range
+# Apostle,,,,,,,,,,,
+37604,1,24311,90,2,67,0,1,0,5,15,Energy Transfer Amount
+37604,1,24311,84,2,325;1698,0,1,0,5,15,Armor Transfer Amount
+37604,1,24311,833,4,1634;1635,0,1,0,1,15,Armored & Information Warfare Link Bonus
+37604,1,24311,267,1,37604,0,1,2,-4,15,Armor EM Resistance
+37604,1,24311,268,1,37604,0,1,2,-4,15,Armor Explosive Resistance
+37604,1,24311,269,1,37604,0,1,2,-4,15,Armor Kinetic Resistance
+37604,1,24311,270,1,37604,0,1,2,-4,15,Armor Thermal Resistance
+37604,1,24311,482,1,37604,0,1,0,5,15,Capacitor Capacity
+37604,0,0,50,2,316,0,0,0,-50,15,Warfare Link CPU Reduction
+37604,0,0,68,4,842,0,0,0,200,15,Shield Maintenance Bot Transfer
+37604,0,0,84,4,842,0,0,0,200,15,Armor Maintenance Bot Transfer
+37604,0,0,10063,1,37604,0,0,1,2,15,Warfare Link Use
+37604,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Arazu,,,,,,,,,,,
 11969,1,3332,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 11969,1,3332,309,2,208,0,1,0,7.5,15,Remote Sensor Damp Effect Range
@@ -1212,6 +1226,16 @@
 3764,0,0,2135,1,3764,0,0,0,80,15,Remote Electronic Assistance impedance
 3764,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 3764,0,0,10063,1,3764,0,0,1,2,15,Warfare Link Use
+# Lif,,,,,,,,,,,
+37606,1,24314,833,4,1636;1637,0,1,0,1,15,Siege & Skirmish Warfare Link Bonus
+37606,1,24314,67,2,87,0,1,0,10,15,Cap Booster Charge Strength
+37606,1,24314,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
+37606,1,24314,73,2,41;1697;325;1698,0,1,0,-5,15,Remote Shield Booster And Armor Repair Duration
+37606,0,0,50,2,316,0,0,0,-50,15,Warfare Link CPU Reduction
+37606,0,0,68,4,842,0,0,0,200,15,Shield Maintenance Bot Transfer
+37606,0,0,84,4,842,0,0,0,200,15,Armor Maintenance Bot Transfer
+37606,0,0,10063,1,37606,0,0,1,2,15,Warfare Link Use
+37606,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Loki,,,,,,,,,,,
 29990,1,30653,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
 # Machariel,,,,,,,,,,,
@@ -1398,6 +1422,20 @@
 32209,1,3333,268,1,32209,0,1,2,-4,15,Armor Explosive Resistance
 32209,1,3333,269,1,32209,0,1,2,-4,15,Armor Kinetic Resistance
 32209,1,3333,270,1,32209,0,1,2,-4,15,Armor Thermal Resistance
+# Minokawa,,,,,,,,,,,
+37605,1,24312,482,1,37605,0,1,0,5,15,Capacitor Capacity
+37605,1,24312,833,4,1636;1635,0,1,0,1,15,Siege & Information Warfare Link Bonus
+37605,1,24312,271,1,37605,0,1,2,-4,15,Shield EM Resistance
+37605,1,24312,272,1,37605,0,1,2,-4,15,Shield Explosive Resistance
+37605,1,24312,273,1,37605,0,1,2,-4,15,Shield Kinetic Resistance
+37605,1,24312,274,1,37605,0,1,2,-4,15,Shield Thermal Resistance
+37605,1,24312,90,2,67,0,1,0,5,15,Energy Transfer Amount
+37605,1,24312,68,2,41;1697,0,1,0,5,15,Remote Shield Booster Rep Amount
+37605,0,0,50,2,316,0,0,0,-50,15,Warfare Link CPU Reduction
+37605,0,0,68,4,842,0,0,0,200,15,Shield Maintenance Bot Transfer
+37605,0,0,84,4,842,0,0,0,200,15,Armor Maintenance Bot Transfer
+37605,0,0,10063,1,37605,0,0,1,2,15,Warfare Link Use
+37605,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Moa,,,,,,,,,,,
 623,1,3334,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 623,1,3334,271,1,623,0,1,2,-4,15,Shield EM Resistance
@@ -1511,6 +1549,16 @@
 17736,0,0,10014,4,569;573,0,0,0,150,15,Large Energy Turret Damage
 17736,1,3339,160,4,569;573,0,1,0,7.5,15,Large Energy Turret Tracking
 17736,1,3338,20,4,542,0,1,0,30,15,Afterburner Velocity
+# Ninazu,,,,,,,,,,,
+37607,1,24313,833,4,1634;1637,0,1,0,1,15,Armored & Skirmish Warfare Link Bonus
+37607,1,24313,67,2,87,0,1,0,10,15,Cap Booster Charge Strength
+37607,1,24313,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
+37607,1,24313,73,2,41;1697;325;1698,0,1,0,-5,15,Remote Shield Booster And Armor Repair Duration
+37607,0,0,50,2,316,0,0,0,-50,15,Warfare Link CPU Reduction
+37607,0,0,68,4,842,0,0,0,200,15,Shield Maintenance Bot Transfer
+37607,0,0,84,4,842,0,0,0,200,15,Armor Maintenance Bot Transfer
+37607,0,0,10063,1,37607,0,0,1,2,15,Warfare Link Use
+37607,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Noctis,,,,,,,,,,,
 2998,1,3184,73,2,650,0,1,0,-5,15,Tractor Beam Cycle Time
 2998,1,3184,73,4,1715,0,1,0,-5,15,Salvager Cycle Time
