@@ -11,6 +11,7 @@ namespace EveHQ.PlanetaryInteraction
     {
         EveHQPilot _pilot = null;
         private List<Colony> _colonies;
+        private List<Colony> _coloniesSelected;
 
         public FrmPI()
         {
@@ -199,18 +200,25 @@ namespace EveHQ.PlanetaryInteraction
 
         private void objectListViewColonies_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Colony> colonies = new List<Colony>();
+            if (_coloniesSelected != null)
+            {
+                _coloniesSelected.Clear();
+            }
             foreach (var selectedObject in objectListViewColonies.SelectedObjects)
             {
-                colonies.Add((Colony)selectedObject);
+                if (_coloniesSelected == null)
+                {
+                    _coloniesSelected = new List<Colony>();
+                }
+                _coloniesSelected.Add((Colony)selectedObject);
             }
-            if (colonies.Count == 0)
+            if (_coloniesSelected.Count == 0)
             {
-                colonies = _colonies;
+                _coloniesSelected = _colonies;
             }
-            showInstallations(colonies);
-            showLinks(colonies);
-            showRoutes(colonies);
+            showInstallations(_coloniesSelected);
+            showLinks(_coloniesSelected);
+            showRoutes(_coloniesSelected);
         }
 
         private void showInstallations(List<Colony> colonies)
@@ -244,6 +252,14 @@ namespace EveHQ.PlanetaryInteraction
                 objectListViewRoutes.AddObjects(colony.Routes);
             }
             objectListViewRoutes.EndUpdate();
+        }
+
+        private void timerUpdate_Tick(object sender, EventArgs e)
+        {
+            if ((_coloniesSelected != null) && (_coloniesSelected.Count != 0) && objectListViewColonies.Visible)
+            {
+                showInstallations(_coloniesSelected);
+            }
         }
     }
 }
