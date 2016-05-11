@@ -1170,21 +1170,21 @@
 1028,1,27951;4294,209,3,6,0,0,0,4,Ladar Sensor Strength
 1029,1,27951;4294,210,3,6,0,0,0,4,Magnetrometric Sensor Strength
 1030,1,27951;4294,208,3,6,0,0,0,4,Radar Sensor Strength
-1190,1,27951;4294,6,2,52;65;80;201;291;379;1672,1,0,0,12,Ewar Cap Malus
-1255,1,27951;4294,64,3,18,0,0,0,15,Drone Damage
-1471,1,27951;4294,10002,3,6,0,0,5,15,Mass
+1190,1,27951;4294,6,2,52;65;80;201;291;379;1672,1,0,0,4,Ewar Cap Malus
+1255,1,27951;4294,64,3,18,0,0,0,4,Drone Damage
+1471,1,27951;4294,10002,3,6,0,0,5,4,Mass
 2342,1,27951;4294;20280,2116,3,6,0,0,0,4,Remote Repair impedance
-2344,1,27951;4294,73,4,600;910;1056;1063,0,0,0,15,Capital Remote Logistic Duration
-2345,1,27951;4294,84,4,600;910;1056;1063,0,0,0,15,Capital Remote Armor Amount
-2345,1,27951;4294,68,4,600;910;1056;1063,0,0,0,15,Capital Remote Shield Amount
-2345,1,27951;4294,83,4,600;910;1056;1063,0,0,0,15,Capital Remote Hull Amount
-2345,1,27951;4294,90,4,600;910;1056;1063,0,0,0,15,Capital Remote Capacitor Amount
+2344,1,27951;4294,73,4,600;910;1056;1063,0,0,0,4,Capital Remote Logistic Duration
+2345,1,27951;4294,84,4,600;910;1056;1063,0,0,0,4,Capital Remote Armor Amount
+2345,1,27951;4294,68,4,600;910;1056;1063,0,0,0,4,Capital Remote Shield Amount
+2345,1,27951;4294,83,4,600;910;1056;1063,0,0,0,4,Capital Remote Hull Amount
+2345,1,27951;4294,90,4,600;910;1056;1063,0,0,0,4,Capital Remote Capacitor Amount
 2347,1,27951;4294,84,4,1052,1,0,0,4,Armor Repair Amount
 2346,1,27951;4294,73,4,1052,0,0,0,4,Armor Repair Duration
 2347,1,27951;4294,68,4,778,1,0,0,4,Shield Boost Bonus
 2346,1,27951;4294,73,4,778,0,0,0,4,Shield Booster Duration
-2348,1,27951;4294,54,4,600;910;1056;1063,0,0,0,15,Capital Remote Logistic Optimal
-2348,1,27951;4294,2044,4,600;910;1056;1063,0,0,0,15,Capital Remote Logistic Falloff
+2348,1,27951;4294,54,4,600;910;1056;1063,0,0,0,4,Capital Remote Logistic Optimal
+2348,1,27951;4294,2044,4,600;910;1056;1063,0,0,0,4,Capital Remote Logistic Falloff
 2351,1,27951;4294,2112,3,6,0,0,0,4,Sensor Dampener resistance
 2352,1,27951;4294,2135,3,6,0,0,0,4,Remote Electronic Assistance impedance
 # Tracking Computers,,,,,,,,,,
