@@ -1209,10 +1209,10 @@
 # Legion,,,,,,,,,,,
 29986,1,30650,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
 # Leviathan,,,,,,,,,,,
-3764,1,3346,117,2,476;1019;89,0,1,0,50,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile Kinetic Damage
-3764,1,3346,114,2,476;1019;89,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile EM Damage
-3764,1,3346,116,2,476;1019;89,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise explosive Damage
-3764,1,3346,118,2,476;1019;89,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise thermal Damage
+3764,1,3346,117,2,476;1019;89;657,0,1,0,50,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile Kinetic Damage
+3764,1,3346,114,2,476;1019;89;657,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile EM Damage
+3764,1,3346,116,2,476;1019;89;657,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise explosive Damage
+3764,1,3346,118,2,476;1019;89;657,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise thermal Damage
 3764,1,3346,51,2,524;1673;1674,0,1,0,15,15,Citadel launcher and Rapid Torpedo ROF
 3764,1,3346,263,3,6,0,1,0,7.5,16,Gang Shield HP
 3764,1,3346,10063,1,3764,0,1,1,1,15,Warfare Link Bonus
@@ -1744,10 +1744,10 @@
 19726,1,20530,272,1,19726,0,1,2,-4,15,Shield Explosive Resistance
 19726,1,20530,273,1,19726,0,1,2,-4,15,Shield Kinetic Resistance
 19726,1,20530,274,1,19726,0,1,2,-4,15,Shield Thermal Resistance
-19726,1,20530,117,2,476;1019;89,0,1,0,5,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile Kinetic Damage
-19726,1,20530,114,2,476;1019;89,0,1,0,5,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile EM Damage
-19726,1,20530,116,2,476;1019;89,0,1,0,5,15,Citadel Torpedo, Torpedo & Citadel Cruise explosive Damage
-19726,1,20530,118,2,476;1019;89,0,1,0,5,15,Citadel Torpedo, Torpedo & Citadel Cruise thermal Damage
+19726,1,20530,117,2,476;1019;89;657,0,1,0,5,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile Kinetic Damage
+19726,1,20530,114,2,476;1019;89;657,0,1,0,5,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile EM Damage
+19726,1,20530,116,2,476;1019;89;657,0,1,0,5,15,Citadel Torpedo, Torpedo & Citadel Cruise explosive Damage
+19726,1,20530,118,2,476;1019;89;657,0,1,0,5,15,Citadel Torpedo, Torpedo & Citadel Cruise thermal Damage
 19726,1,20530,1795,2,511;524;506;510;771;507;508;509;1245;1673;1674,0,1,0,-10,15,Missile launcher reload time
 19726,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Phoenix Wiyrkomi Edition,,,,,,,,,,,
