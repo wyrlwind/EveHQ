@@ -2479,7 +2479,7 @@ Public Class FrmCacheCreator
                             attMod.CapUsageRate = attMod.CapUsage / attValue
                             attMod.Attributes.Add(10032, attMod.CapUsageRate)
                         End If
-                    Case 73
+                    Case 73, 2397, 2398, 2399, 2400
                         attMod.ActivationTime = attValue
                         attMod.CapUsageRate = attMod.CapUsage / attMod.ActivationTime
                         attMod.Attributes.Add(10032, attMod.CapUsageRate)
