@@ -3331,15 +3331,18 @@ Public Class FrmCacheCreator
     Private Sub CheckSqlDatabase()
 
         Using evehqData As DataSet = DatabaseFunctions.GetStaticData("SELECT attributeGroup FROM dgmAttributeTypes")
+
+            Dim conn As New SQLiteConnection(DatabaseFunctions.GetSqlLiteConnectionString)
+            conn.Open()
+
+            Call AddSqlAttributeGroupColumn(conn)
+
             If evehqData Is Nothing Then
                 ' We seem to be missing the data so lets add it in!
-                Dim conn As New SQLiteConnection(DatabaseFunctions.GetSqlLiteConnectionString)
-                conn.Open()
-                Call AddSQLAttributeGroupColumn(conn)
-                Call CorrectSQLEveUnits(conn)
-                If conn.State = ConnectionState.Open Then
-                    conn.Close()
-                End If
+                Call CorrectSqlEveUnits(conn)
+            End If
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
             End If
         End Using
 
