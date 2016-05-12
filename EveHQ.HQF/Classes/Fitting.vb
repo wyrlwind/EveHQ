@@ -2037,7 +2037,7 @@ Imports EveHQ.Common.Extensions
                 End If
                 cModule.Attributes(AttributeEnum.ModuleBaseDamage) = 0
                 cModule.Attributes(AttributeEnum.ModuleVolleyDamage) = (turretDmgMod * turretBaseDamage) + (missileDmgMod * missileBaseDamage) + (bombDmgMod * bombBaseDamage)
-                cModule.Attributes(AttributeEnum.ModuleDPS) = ((turretDmgMod * turretBaseDamage) / turretRof) + ((missileDmgMod * missileBaseDamage) / missileRof) * ((bombDmgMod * bombBaseDamage) / bombRof)
+                cModule.Attributes(AttributeEnum.ModuleDPS) = ((turretDmgMod * turretBaseDamage) / turretRof) + ((missileDmgMod * missileBaseDamage) / missileRof) + ((bombDmgMod * bombBaseDamage) / bombRof)
                 cModule.Attributes(AttributeEnum.ModuleEMDamage) = turretEMDamage + missileEMDamage + bombEMDamage
                 cModule.Attributes(AttributeEnum.ModuleExpDamage) = turretExpDamage + missileExpDamage + bombExpDamage
                 cModule.Attributes(AttributeEnum.ModuleKinDamage) = turretKinDamage + missileKinDamage + bombKinDamage
