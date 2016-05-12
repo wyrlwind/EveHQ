@@ -110,6 +110,7 @@ Namespace Forms
                     End If
                 Case BayTypes.FighterBay
                     ' For fighter bay
+                    'todo
                     Dim reqQ As Integer = NewQuantity - Fbi.Quantity
                     ' Double-check we can get them in the fighter bay
                     If FittedShip.FighterBayUsed + (reqQ * Fbi.FighterType.Volume) > FittedShip.FighterBay Then
@@ -167,6 +168,7 @@ Namespace Forms
                         Dim newFbi As New FighterBayItem
                         newFbi.FighterType = Fbi.FighterType.Clone
                         newFbi.Quantity = Fbi.Quantity - NewQuantity
+                        newFbi.IsActive = False
                         CurrentShip.FighterBayItems.Add(CurrentShip.FighterBayItems.Count, newFbi)
                         ' Modify the existing quantity
                         Fbi.Quantity = NewQuantity

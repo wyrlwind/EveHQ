@@ -62,6 +62,7 @@ Namespace Controls
         Dim _updateFighters As Boolean = False
         Dim _updateBoosters As Boolean = False
         Dim _cancelDroneActivation As Boolean = False
+        Dim _cancelFighterActivation As Boolean = False
         ReadOnly _rigGroups As New ArrayList
         ReadOnly _remoteGroups As New ArrayList
         ReadOnly _fleetGroups As New ArrayList
@@ -403,6 +404,7 @@ Namespace Controls
                 Call RedrawCargoBayCapacity()
                 Call RedrawDroneBayCapacity()
                 Call RedrawFighterBayCapacity()
+                Call RedrawFighterSquadronCounts()
                 Call RedrawShipBayCapacity()
             End If
             'eTime = Now
@@ -894,7 +896,11 @@ Namespace Controls
                             End If
                             idx += 1
                         Case "ActTime"
-                            If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleActivationTime) Then
+                            If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleActivationTime) Or
+                                shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationECMJammerBurstProjector) Or
+                                shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationSensorDampeningBurstProjector) Or
+                                shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationTargetIlluminationBurstProjector) Or
+                                shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationWeaponDisruptionBurstProjector) Then
                                 If _
                                     shipMod.ModuleState = ModuleStates.Active Or
                                     shipMod.ModuleState = ModuleStates.Overloaded Then
@@ -1484,12 +1490,23 @@ Namespace Controls
                 ParentFitting.BaseShip.DroneBayItems.Clear()
                 ParentFitting.BaseShip.DroneBayUsed = 0
             End If
+            If ParentFitting.BaseShip.DroneBay = 0 Then
+                tiDroneBay.Visible = False
+            Else
+                tiDroneBay.Visible = True
+            End If
         End Sub
 
         Private Sub ClearFighterBay()
             If ParentFitting.BaseShip IsNot Nothing Then
                 ParentFitting.BaseShip.FighterBayItems.Clear()
                 ParentFitting.BaseShip.FighterBayUsed = 0
+            End If
+            ' Remove the fighter bay tab if we don't need it (to avoid confusion)
+            If ParentFitting.BaseShip.FighterBay = 0 Then
+                tiFighterBay.Visible = False
+            Else
+                tiFighterBay.Visible = True
             End If
         End Sub
 
@@ -2840,25 +2857,127 @@ Namespace Controls
             lvwFighterBay.BeginUpdate()
             lvwFighterBay.Items.Clear()
             ParentFitting.BaseShip.FighterBayUsed = 0
-            Dim dbi As FighterBayItem
+            Dim fbi As FighterBayItem
             Dim holdingBay As New SortedList
-            For Each dbi In ParentFitting.BaseShip.FighterBayItems.Values
-                holdingBay.Add(holdingBay.Count, dbi)
+            For Each fbi In ParentFitting.BaseShip.FighterBayItems.Values
+                holdingBay.Add(holdingBay.Count, fbi)
             Next
             ParentFitting.BaseShip.FighterBayItems.Clear()
-            For Each dbi In holdingBay.Values
-                Dim newFighterItem As New ListViewItem(dbi.FighterType.Name)
+            For Each fbi In holdingBay.Values
+                Dim newFighterItem As New ListViewItem(fbi.FighterType.Name)
                 newFighterItem.Name = CStr(lvwFighterBay.Items.Count)
-                newFighterItem.SubItems.Add(CStr(dbi.Quantity))
-                If dbi.IsActive = True Then
+                Dim squadMax As Integer = CInt(fbi.FighterType.Attributes(2215))
+                Dim squadMaxSize As String = CStr(squadMax)
+                newFighterItem.SubItems.Add(CStr(fbi.Quantity) & "/" & CStr(squadMaxSize))
+                Dim type As String
+                If fbi.FighterType.Attributes.ContainsKey(2212) Then
+                    type = "Light"
+                    If fbi.FighterType.Attributes(2270) = 1 Then
+                        type = type & " - Space Superiority"
+                    ElseIf fbi.FighterType.Attributes(2270) = 2 Then
+                        type = type & " - Attack"
+                    End If
+                ElseIf fbi.FighterType.Attributes.ContainsKey(2213) Then
+                    type = "Support"
+                ElseIf fbi.FighterType.Attributes.ContainsKey(2214) Then
+                    type = "Heavy"
+                    If fbi.FighterType.Attributes(2270) = 4 Then
+                        type = type & " - Heavy Attack"
+                    ElseIf fbi.FighterType.Attributes(2270) = 5 Then
+                        type = type & " - Long Range attack"
+                    End If
+                End If
+                newFighterItem.SubItems.Add(type)
+                Dim abilities As String = ""
+                If fbi.FighterType.FighterEffectAttackM Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Turret"
+                End If
+                If fbi.FighterType.FighterEffectMissiles Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Missiles"
+                End If
+                If fbi.FighterType.FighterEffectLaunchBomb Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Launch Bomb"
+                End If
+                If fbi.FighterType.FighterEffectTackle Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Tackle"
+                End If
+                If fbi.FighterType.FighterEffectEvasiveManeuvers Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Evasive Maneuvers"
+                End If
+                If fbi.FighterType.FighterEffectAfterburner Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Afterburner"
+                End If
+                If fbi.FighterType.FighterEffectMicroWarpDrive Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Microwarpdrive"
+                End If
+                If fbi.FighterType.FighterEffectMicroJumpDrive Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Micro Jump Drive"
+                End If
+                If fbi.FighterType.FighterEffectEnergyNeutralizer Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Energy Neutralizer"
+                End If
+                If fbi.FighterType.FighterEffectStasisWebifier Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Statis Webifier"
+                End If
+                If fbi.FighterType.FighterEffectWarpDisruption Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Warp Disruption"
+                End If
+                If fbi.FighterType.FighterEffectEcm Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "ECM"
+                End If
+                If fbi.FighterType.FighterEffectKamikaze Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "True Sacrifice"
+                End If
+                newFighterItem.SubItems.Add(abilities)
+                If fbi.IsActive = True Then
                     newFighterItem.Checked = True
                 End If
-                ParentFitting.BaseShip.FighterBayItems.Add(lvwFighterBay.Items.Count, dbi)
-                ParentFitting.BaseShip.FighterBayUsed += dbi.FighterType.Volume * dbi.Quantity
+                ParentFitting.BaseShip.FighterBayItems.Add(lvwFighterBay.Items.Count, fbi)
+                ParentFitting.BaseShip.FighterBayUsed += fbi.FighterType.Volume * fbi.Quantity
                 lvwFighterBay.Items.Add(newFighterItem)
             Next
             lvwFighterBay.EndUpdate()
             Call RedrawFighterBayCapacity()
+            Call RedrawFighterSquadronCounts()
         End Sub
 
         Private Sub RedrawShipBay()
@@ -2940,6 +3059,14 @@ Namespace Controls
             End If
         End Sub
 
+        Private Sub RedrawFighterSquadronCounts()
+            Dim total As Integer = ParentFitting.FittedShip.FighterSquadronLaunchTubes
+            Dim light As Integer = ParentFitting.FittedShip.LightFighterSquadronLimit
+            Dim support As Integer = ParentFitting.FittedShip.SupportFighterSquadronLimit
+            Dim heavy As Integer = ParentFitting.FittedShip.HeavyFighterSquadronLimit
+            lblFighterSquadrons.Text = "Squadron Limits: " & total & " Total / " & light & " Light / " & support & " Support / " & heavy & " Heavy"
+        End Sub
+
         Private Sub RedrawShipBayCapacity()
             lblShipBay.Text = ParentFitting.BaseShip.ShipBayUsed.ToString("N2") & " / " &
                               ParentFitting.FittedShip.ShipBay.ToString("N2") & " m³"
@@ -3000,8 +3127,70 @@ Namespace Controls
             _cancelDroneActivation = False
         End Sub
 
+        Private Sub lvwFighterBay_ItemChecked(ByVal sender As Object, ByVal e As ItemCheckedEventArgs) _
+            Handles lvwFighterBay.ItemChecked
+            If _updateAll = False Or _cancelFighterActivation = True Then
+                Dim idx As Integer = CInt(e.Item.Name)
+                Dim fbiCur As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+                ' Check we have the bandwidth and/or control ability for this item
+                If _updateFighters = False Then
+                    Dim reqQ As Integer = fbiCur.Quantity
+                    If e.Item.Checked = True Then
+                        Dim squadronCount As Integer = 0
+                        Dim lightSquadronCount As Integer = 0
+                        Dim heavySquadronCount As Integer = 0
+                        Dim supportSquadronCount As Integer = 0
+                        For Each fbi As FighterBayItem In ParentFitting.BaseShip.FighterBayItems.Values
+                            If fbi.IsActive Then
+                                squadronCount += 1
+                                If fbi.FighterType.Attributes.ContainsKey(2212) Then
+                                    lightSquadronCount += 1
+                                ElseIf fbi.FighterType.Attributes.ContainsKey(2213) Then
+                                    supportSquadronCount += 1
+                                ElseIf fbi.FighterType.Attributes.ContainsKey(2214) Then
+                                    heavySquadronCount += 1
+                                End If
+                            End If
+                        Next
+                        If ParentFitting.FittedShip.FighterSquadronLaunchTubes <= squadronCount Then
+                            MessageBox.Show(
+                                "You do not have the ability to control this many fighter squadrons.",
+                                "Fighter Squadron Limit Exceeded", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            _cancelFighterActivation = True
+                            e.Item.Checked = False
+                            Exit Sub
+                        End If
+                        If (fbiCur.FighterType.Attributes.ContainsKey(2212) And ParentFitting.FittedShip.LightFighterSquadronLimit <= lightSquadronCount) Or
+                            (fbiCur.FighterType.Attributes.ContainsKey(2213) And ParentFitting.FittedShip.SupportFighterSquadronLimit <= supportSquadronCount) Or
+                            (fbiCur.FighterType.Attributes.ContainsKey(2214) And ParentFitting.FittedShip.HeavyFighterSquadronLimit <= heavySquadronCount) Then
+                            MessageBox.Show(
+                                "You do not have the ability to control this many fighter squadrons of this type.",
+                                "Fighter Squadron Type Limit Exceeded", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            _cancelFighterActivation = True
+                            e.Item.Checked = False
+                            Exit Sub
+                        End If
+                    End If
+                    fbiCur.IsActive = e.Item.Checked
+                    ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+                    If fbiCur.IsActive = True Then
+                        ParentFitting.BaseShip.Attributes(10006) = CDbl(ParentFitting.BaseShip.Attributes(10006)) + reqQ
+                    Else
+                        ParentFitting.BaseShip.Attributes(10006) =
+                                    Math.Max(CDbl(ParentFitting.BaseShip.Attributes(10006)) - reqQ, 0)
+                    End If
+                End If
+            End If
+            Call ParentFitting.UpdateFittingFromBaseShip()
+            '                Call _currentInfo.UpdateFighterUsage()
+            _cancelFighterActivation = False
+        End Sub
+
         Private Sub ctxBays_Opening(ByVal sender As Object, ByVal e As CancelEventArgs) Handles ctxBays.Opening
             _lvwBay = CType(ctxBays.SourceControl, ListView)
+
+
+            Me.ctxShowModuleMarketGroup.Enabled = False
             Select Case _lvwBay.Name
                 Case "lvwCargoBay"
                     If _lvwBay.SelectedItems.Count > 0 Then
@@ -3040,6 +3229,10 @@ Namespace Controls
                         Dim idx As Integer = CInt(selItem.Name)
                         Dim dbi As DroneBayItem = ParentFitting.BaseShip.DroneBayItems.Item(idx)
                         Dim currentMod As ShipModule = dbi.DroneType
+
+                        Me.ctxShowModuleMarketGroup.Enabled = True
+                        Me.ctxShowModuleMarketGroup.Name = currentMod.Name
+                        AddHandler ctxShowModuleMarketGroup.Click, AddressOf ShowModuleMarketGroup
 
                         ' Check for Relevant Skills in Modules/Charges
                         Dim relModuleSkills, relChargeSkills As New ArrayList
@@ -3182,6 +3375,10 @@ Namespace Controls
                         Dim idx As Integer = CInt(selItem.Name)
                         Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
                         Dim currentMod As ShipModule = fbi.FighterType
+
+                        Me.ctxShowModuleMarketGroup.Enabled = True
+                        Me.ctxShowModuleMarketGroup.Name = currentMod.Name
+                        AddHandler ctxShowModuleMarketGroup.Click, AddressOf ShowModuleMarketGroup
 
                         ' Check for Relevant Skills in Modules/Charges
                         Dim relModuleSkills, relChargeSkills As New ArrayList
@@ -3612,35 +3809,35 @@ Namespace Controls
             lvwFighterBay.BeginUpdate()
             lvwFighterBay.Items.Clear()
             ParentFitting.BaseShip.FighterBayUsed = 0
-            Dim dbi As FighterBayItem
+            Dim fbi As FighterBayItem
             Dim holdingBay As New SortedList
             Dim fighterQuantities As New SortedList
-            For Each dbi In ParentFitting.BaseShip.FighterBayItems.Values
-                If holdingBay.Contains(dbi.FighterType.Name) = False Then
-                    holdingBay.Add(dbi.FighterType.Name, dbi.FighterType)
+            For Each fbi In ParentFitting.BaseShip.FighterBayItems.Values
+                If holdingBay.Contains(fbi.FighterType.Name) = False Then
+                    holdingBay.Add(fbi.FighterType.Name, fbi.FighterType)
                 End If
-                If fighterQuantities.Contains(dbi.FighterType.Name) = True Then
-                    Dim cq As Integer = CInt(fighterQuantities(dbi.FighterType.Name))
-                    fighterQuantities(dbi.FighterType.Name) = cq + dbi.Quantity
+                If fighterQuantities.Contains(fbi.FighterType.Name) = True Then
+                    Dim cq As Integer = CInt(fighterQuantities(fbi.FighterType.Name))
+                    fighterQuantities(fbi.FighterType.Name) = cq + fbi.Quantity
                 Else
-                    fighterQuantities.Add(dbi.FighterType.Name, dbi.Quantity)
+                    fighterQuantities.Add(fbi.FighterType.Name, fbi.Quantity)
                 End If
             Next
             ParentFitting.BaseShip.FighterBayItems.Clear()
             For Each fighter As String In holdingBay.Keys
-                dbi = New FighterBayItem
-                dbi.FighterType = CType(holdingBay(fighter), ShipModule)
-                dbi.IsActive = False
-                dbi.Quantity = CInt(fighterQuantities(fighter))
-                Dim newFighterItem As New ListViewItem(dbi.FighterType.Name)
+                fbi = New FighterBayItem
+                fbi.FighterType = CType(holdingBay(fighter), ShipModule)
+                fbi.IsActive = False
+                fbi.Quantity = CInt(fighterQuantities(fighter))
+                Dim newFighterItem As New ListViewItem(fbi.FighterType.Name)
                 newFighterItem.Name = CStr(lvwFighterBay.Items.Count)
-                newFighterItem.SubItems.Add(CStr(dbi.Quantity))
-                ParentFitting.BaseShip.FighterBayItems.Add(lvwFighterBay.Items.Count, dbi)
-                ParentFitting.BaseShip.FighterBayUsed += dbi.FighterType.Volume * dbi.Quantity
+                newFighterItem.SubItems.Add(CStr(fbi.Quantity))
+                ParentFitting.BaseShip.FighterBayItems.Add(lvwFighterBay.Items.Count, fbi)
+                ParentFitting.BaseShip.FighterBayUsed += fbi.FighterType.Volume * fbi.Quantity
                 lvwFighterBay.Items.Add(newFighterItem)
             Next
             lvwFighterBay.EndUpdate()
-            Call RedrawFighterBayCapacity()
+            Call RedrawFighterBay()
             _updateFighters = False
             ' Rebuild the ship to account for any disabled fighters
             ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
@@ -3947,14 +4144,7 @@ Namespace Controls
                     Next
                     For Each remoteFighter As FighterBayItem In remoteShip.FighterBayItems.Values
                         If _remoteGroups.Contains(CInt(remoteFighter.FighterType.DatabaseGroup)) = True Then
-                            If remoteFighter.IsActive = True Then
-                                remoteFighter.FighterType.ModuleState = ModuleStates.Gang
-                                Dim newRemoteItem As New ListViewItem
-                                newRemoteItem.Tag = remoteFighter
-                                newRemoteItem.Name = pPilot.PilotName
-                                newRemoteItem.Text = remoteFighter.FighterType.Name & " (x" & remoteFighter.Quantity & ")"
-                                lvwRemoteEffects.Items.Add(newRemoteItem)
-                            End If
+                            'TODO
                         End If
                     Next
                 Next

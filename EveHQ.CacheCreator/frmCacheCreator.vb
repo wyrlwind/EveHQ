@@ -2016,7 +2016,7 @@ Public Class FrmCacheCreator
             Dim strSql As String = ""
             strSql &= "SELECT invCategories.categoryID, invGroups.groupID, invTypes.typeID, invTypes.description, invTypes.typeName, invTypes.mass, invTypes.volume, invTypes.capacity, invTypes.basePrice, invTypes.published, invTypes.raceID, invTypes.marketGroupID"
             strSql &= " FROM invCategories INNER JOIN (invGroups INNER JOIN invTypes ON invGroups.groupID = invTypes.groupID) ON invCategories.categoryID = invGroups.categoryID"
-            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32,87)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010"
+            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32,87)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010 OR invTypes.groupID=90"
             strSql &= " ORDER BY invTypes.typeName;"
             moduleData = DatabaseFunctions.GetStaticData(strSql)
             If moduleData IsNot Nothing Then
@@ -2040,7 +2040,7 @@ Public Class FrmCacheCreator
             Dim strSql As String = ""
             strSql &= "SELECT invCategories.categoryID, invGroups.groupID, invTypes.typeID, invTypes.description, invTypes.typeName, invTypes.mass, invTypes.volume, invTypes.capacity, invTypes.basePrice, invTypes.published, invTypes.marketGroupID, dgmTypeEffects.effectID"
             strSql &= " FROM ((invCategories INNER JOIN invGroups ON invCategories.categoryID=invGroups.categoryID) INNER JOIN invTypes ON invGroups.groupID=invTypes.groupID) INNER JOIN dgmTypeEffects ON invTypes.typeID=dgmTypeEffects.typeID"
-            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32,87)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010"
+            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32,87)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010 OR invTypes.groupID=90"
             strSql &= " ORDER BY typeName, effectID;"
             moduleEffectData = DatabaseFunctions.GetStaticData(strSql)
             If moduleEffectData IsNot Nothing Then
@@ -2064,7 +2064,7 @@ Public Class FrmCacheCreator
             Dim strSql As String = ""
             strSql &= "SELECT invCategories.categoryID, invGroups.groupID, invTypes.typeID, invTypes.description, invTypes.typeName, invTypes.mass, invTypes.volume, invTypes.capacity, invTypes.basePrice, invTypes.published, invTypes.marketGroupID, dgmTypeAttributes.attributeID, dgmTypeAttributes.valueInt, dgmTypeAttributes.valueFloat, dgmAttributeTypes.attributeName, dgmAttributeTypes.displayName, dgmAttributeTypes.unitID"
             strSql &= " FROM invCategories INNER JOIN ((invGroups INNER JOIN invTypes ON invGroups.groupID = invTypes.groupID) INNER JOIN (dgmAttributeTypes INNER JOIN dgmTypeAttributes ON dgmAttributeTypes.attributeID = dgmTypeAttributes.attributeID) ON invTypes.typeID = dgmTypeAttributes.typeID) ON invCategories.categoryID = invGroups.categoryID"
-            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32,87)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010"
+            strSql &= " WHERE (((invCategories.categoryID In (7,8,18,20,22,32,87)) or (invTypes.marketGroupID=379) or (invTypes.groupID=920)) AND (invTypes.published=1)) OR invTypes.groupID=1010 OR invTypes.groupID=90"
             strSql &= " ORDER BY invTypes.typeName, dgmTypeAttributes.attributeID;"
 
             moduleAttributeData = DatabaseFunctions.GetStaticData(strSql)
@@ -2089,7 +2089,7 @@ Public Class FrmCacheCreator
             Dim strSql As String = ""
             strSql &= "SELECT invTypes.typeID AS invTypes_typeID, invMetaTypes.parentTypeID, invMetaGroups.metaGroupID AS invMetaGroups_metaGroupID"
             strSql &= " FROM (invGroups INNER JOIN invTypes ON invGroups.groupID = invTypes.groupID) INNER JOIN (invMetaGroups INNER JOIN invMetaTypes ON invMetaGroups.metaGroupID = invMetaTypes.metaGroupID) ON invTypes.typeID = invMetaTypes.typeID"
-            strSql &= " WHERE (((invGroups.categoryID) In (7,8,18,20,22,32,87)) AND (invTypes.published=1))"
+            strSql &= " WHERE (((invGroups.categoryID) In (7,8,18,20,22,32,87,90)) AND (invTypes.published=1))"
             Dim metaTypeData As DataSet = DatabaseFunctions.GetStaticData(strSql)
             If metaTypeData IsNot Nothing Then
                 If metaTypeData.Tables(0).Rows.Count <> 0 Then
@@ -2182,7 +2182,7 @@ Public Class FrmCacheCreator
                     Case 8 ' Charge
                         newModule.IsCharge = True
 
-                        Dim missiles = {654, 656, 655, 653, 648, 657, 772, 386, 385, 384, 387, 89, 476, 1019, 88, 1158, 394, 395, 396}
+                        Dim missiles = {654, 656, 655, 653, 648, 657, 772, 386, 385, 384, 387, 89, 476, 1019, 88, 1158, 394, 395, 396, 1677, 1678}
                         Dim group = CInt(row.Item("invGroups.groupID"))
 
                         For Each missileGroup In missiles
@@ -2273,41 +2273,93 @@ Public Class FrmCacheCreator
                             End If
                         Case 10, 34, 42
                             effMod.IsTurret = True
-                    End Select
-                    ' Add custom attributes
-                    If effMod.IsDrone = True Or effMod.IsLauncher = True Or effMod.IsTurret = True Or effMod.DatabaseGroup = 72 Or effMod.DatabaseGroup = 862 Then
-                        If effMod.Attributes.ContainsKey(10017) = False Then
-                            effMod.Attributes.Add(10017, 0)
-                            effMod.Attributes.Add(10018, 0)
-                            effMod.Attributes.Add(10019, 0)
-                            effMod.Attributes.Add(10030, 0)
-                            effMod.Attributes.Add(10051, 0)
-                            effMod.Attributes.Add(10052, 0)
-                            effMod.Attributes.Add(10053, 0)
-                            effMod.Attributes.Add(10054, 0)
-                        End If
-                    End If
-                    Select Case CInt(effMod.MarketGroup)
-                        Case 1038 ' Ice Miners
-                            If effMod.Attributes.ContainsKey(10041) = False Then
-                                effMod.Attributes.Add(10041, 0)
+                        Case 6431
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectMissiles = True
                             End If
-                        Case 1039, 1040 ' Ore Miners
-                            If effMod.Attributes.ContainsKey(10039) = False Then
-                                effMod.Attributes.Add(10039, 0)
+                        Case 6434
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectEnergyNeutralizer = True
                             End If
-                        Case 158 ' Mining Drones
-                            If effMod.Attributes.ContainsKey(10040) = False Then
-                                effMod.Attributes.Add(10040, 0)
+                        Case 6435
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectStasisWebifier = True
                             End If
-                    End Select
-                    Select Case CInt(effMod.DatabaseGroup)
-                        Case 76
-                            If effMod.Attributes.ContainsKey(6) = False Then
-                                effMod.Attributes.Add(6, 0)
+                        Case 6436
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectWarpDisruption = True
+                            End If
+                        Case 6437
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectEcm = True
+                            End If
+                        Case 6439
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectEvasiveManeuvers = True
+                            End If
+                        Case 6440
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectAfterburner = True
+                            End If
+                        Case 6441
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectMicroWarpDrive = True
+                            End If
+                        Case 6442
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectMicroJumpDrive = True
+                            End If
+                        Case 6554
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectKamikaze = True
+                            End If
+                        Case 6464
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectTackle = True
+                            End If
+                        Case 6465
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectAttackM = True
+                            End If
+                        Case 6485
+                            If effMod.IsFighter = True Then
+                                effMod.FighterEffectLaunchBomb = True
                             End If
                     End Select
                 End If
+                ' Add custom attributes
+                If effMod.IsDrone = True Or effMod.IsFighter = True Or effMod.IsLauncher = True Or effMod.IsTurret = True Or effMod.DatabaseGroup = 72 Or effMod.DatabaseGroup = 862 Then
+                    If effMod.Attributes.ContainsKey(10017) = False Then
+                        effMod.Attributes.Add(10017, 0)
+                        effMod.Attributes.Add(10018, 0)
+                        effMod.Attributes.Add(10019, 0)
+                        effMod.Attributes.Add(10030, 0)
+                        effMod.Attributes.Add(10051, 0)
+                        effMod.Attributes.Add(10052, 0)
+                        effMod.Attributes.Add(10053, 0)
+                        effMod.Attributes.Add(10054, 0)
+                    End If
+                End If
+                Select Case CInt(effMod.MarketGroup)
+                    Case 1038 ' Ice Miners
+                        If effMod.Attributes.ContainsKey(10041) = False Then
+                            effMod.Attributes.Add(10041, 0)
+                        End If
+                    Case 1039, 1040 ' Ore Miners
+                        If effMod.Attributes.ContainsKey(10039) = False Then
+                            effMod.Attributes.Add(10039, 0)
+                        End If
+                    Case 158 ' Mining Drones
+                        If effMod.Attributes.ContainsKey(10040) = False Then
+                            effMod.Attributes.Add(10040, 0)
+                        End If
+                End Select
+                Select Case CInt(effMod.DatabaseGroup)
+                    Case 76
+                        If effMod.Attributes.ContainsKey(6) = False Then
+                            effMod.Attributes.Add(6, 0)
+                        End If
+                End Select
             Next
             If BuildModuleAttributeData() = True Then
                 Return
@@ -2427,7 +2479,7 @@ Public Class FrmCacheCreator
                             attMod.CapUsageRate = attMod.CapUsage / attValue
                             attMod.Attributes.Add(10032, attMod.CapUsageRate)
                         End If
-                    Case 73
+                    Case 73, 2397, 2398, 2399, 2400
                         attMod.ActivationTime = attValue
                         attMod.CapUsageRate = attMod.CapUsage / attMod.ActivationTime
                         attMod.Attributes.Add(10032, attMod.CapUsageRate)
@@ -2553,6 +2605,10 @@ Public Class FrmCacheCreator
                     Dim chg As ShipModule = ModuleLists.ModuleList(CInt(cMod.Attributes(507)))
                     cMod.LoadedCharge = chg
                 End If
+                If cMod.IsFighter = True And cMod.Attributes.ContainsKey(2324) = True Then
+                    Dim chg As ShipModule = ModuleLists.ModuleList(CInt(cMod.Attributes(2324)))
+                    cMod.LoadedCharge = chg
+                End If
             Next
             ' Build the implant data
             If BuildImplantData() = True Then
@@ -2649,9 +2705,9 @@ Public Class FrmCacheCreator
                     newEffect.CalcType = CType(effectData(8), EffectCalcType)
                     newEffect.Status = CInt(effectData(9))
 
-                    If Attributes.AttributeQuickList(newEffect.AffectedAtt) = Nothing Then
+                    If Attributes.AttributeQuickList.ContainsKey(newEffect.AffectedAtt) = False Then
                         MessageBox.Show("Error parsing data - Missing attribute for " & newEffect.AffectedAtt, "BuildModuleEffects Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        Throw New NotImplementedException()
+                        Continue For
                     End If
 
                     Select Case newEffect.AffectingType
