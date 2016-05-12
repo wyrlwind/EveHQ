@@ -112,7 +112,7 @@ SectionIn RO
   File "..\BuildOutput\Release\EveHQ.NewEveAPI.dll"
   File "..\BuildOutput\Release\EveHQ.NewEveAPI.pdb"
   File "..\BuildOutput\Release\EveHQ.Prism.dll"
-  File "..\BuildOutput\Release\EveHQ.Prism.pdb"  
+  File "..\BuildOutput\Release\EveHQ.Prism.pdb"
   File "..\BuildOutput\Release\EveHQ.EveCrest.dll"
   File "..\BuildOutput\Release\EveHQ.EveCrest.pdb"
   File "..\BuildOutput\Release\EveHQ.Void.dll"
@@ -133,6 +133,11 @@ SectionIn RO
   File "..\BuildOutput\Release\System.Runtime.dll"
   File "..\BuildOutput\Release\System.Threading.Tasks.dll"
   File "..\EveHQ\License.txt"
+
+  SetOutPath $INSTDIR\x64
+  File "..\BuildOutput\Release\x64\SQLite.Interop.dll"
+  SetOutPath $INSTDIR\x86
+  File "..\BuildOutput\Release\x86\SQLite.Interop.dll"
 
 ###################################################################
 # Data files                                                      #
