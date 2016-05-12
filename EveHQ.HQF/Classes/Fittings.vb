@@ -122,6 +122,26 @@
                         Else
                             newFit.Drones.Add(New ModuleQWithState(CStr(sMod.ID), ModuleStates.Inactive, itemQuantity))
                         End If
+                    ElseIf sMod.IsFighter = True Then
+                        Dim active As Boolean = False
+                        If modData.GetUpperBound(0) > 0 Then
+                            If modData(1).EndsWith("a") = True Then
+                                active = True
+                                itemQuantity = CInt(modData(1).Substring(0, Len(modData(1)) - 1))
+                            Else
+                                If modData(1).EndsWith("i") = True Then
+                                    itemQuantity = CInt(modData(1).Substring(0, Len(modData(1)) - 1))
+                                Else
+                                    itemQuantity = CInt(modData(1))
+                                End If
+                            End If
+                        End If
+                        If active = True Then
+                            newFit.Fighters.Add(New ModuleQWithState(CStr(sMod.ID), ModuleStates.Active, itemQuantity))
+                        Else
+                            newFit.Fighters.Add(New ModuleQWithState(CStr(sMod.ID), ModuleStates.Inactive, itemQuantity))
+                        End If
+
                     Else
                         ' Check if module is a charge
                         If sMod.IsCharge = True Or sMod.IsContainer Then
