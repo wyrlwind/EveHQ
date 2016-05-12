@@ -897,10 +897,10 @@ Namespace Controls
                             idx += 1
                         Case "ActTime"
                             If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleActivationTime) Or
-                                 shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationECMJammerBurstProjector) Or
-                                 shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationSensorDampeningBurstProjector) Or
-                                 shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationTargetIlluminationBurstProjector) Or
-                                 shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationWeaponDisruptionBurstProjector) Then
+                                shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationECMJammerBurstProjector) Or
+                                shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationSensorDampeningBurstProjector) Or
+                                shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationTargetIlluminationBurstProjector) Or
+                                shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationWeaponDisruptionBurstProjector) Then
                                 If _
                                     shipMod.ModuleState = ModuleStates.Active Or
                                     shipMod.ModuleState = ModuleStates.Overloaded Then
