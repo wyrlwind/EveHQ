@@ -2980,10 +2980,10 @@ Namespace Forms
                             If IsNumeric(quantity) = True Then
                                 If ModuleLists.ModuleListName.ContainsKey(modName) = True Then
                                     Dim testMod As ShipModule = ModuleLists.ModuleList(ModuleLists.ModuleListName(modName)).Clone
-                                    If testMod.IsDrone = True Then
-                                        newFit.Add(modName & ", " & quantity)
-                                    Else
-                                        If CInt(quantity) > 1 Then
+                                If testMod.IsDrone = True Or testMod.IsFighter = True Then
+                                    newFit.Add(modName & ", " & quantity)
+                                Else
+                                    If CInt(quantity) > 1 Then
                                             modName = modName & " x" & quantity
                                         End If
                                         newFit.Add(modName)

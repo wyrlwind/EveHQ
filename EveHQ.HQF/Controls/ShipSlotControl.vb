@@ -3188,6 +3188,9 @@ Namespace Controls
 
         Private Sub ctxBays_Opening(ByVal sender As Object, ByVal e As CancelEventArgs) Handles ctxBays.Opening
             _lvwBay = CType(ctxBays.SourceControl, ListView)
+
+
+            Me.ctxShowModuleMarketGroup.Enabled = False
             Select Case _lvwBay.Name
                 Case "lvwCargoBay"
                     If _lvwBay.SelectedItems.Count > 0 Then
@@ -3226,6 +3229,10 @@ Namespace Controls
                         Dim idx As Integer = CInt(selItem.Name)
                         Dim dbi As DroneBayItem = ParentFitting.BaseShip.DroneBayItems.Item(idx)
                         Dim currentMod As ShipModule = dbi.DroneType
+
+                        Me.ctxShowModuleMarketGroup.Enabled = True
+                        Me.ctxShowModuleMarketGroup.Name = currentMod.Name
+                        AddHandler ctxShowModuleMarketGroup.Click, AddressOf ShowModuleMarketGroup
 
                         ' Check for Relevant Skills in Modules/Charges
                         Dim relModuleSkills, relChargeSkills As New ArrayList
@@ -3368,6 +3375,10 @@ Namespace Controls
                         Dim idx As Integer = CInt(selItem.Name)
                         Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
                         Dim currentMod As ShipModule = fbi.FighterType
+
+                        Me.ctxShowModuleMarketGroup.Enabled = True
+                        Me.ctxShowModuleMarketGroup.Name = currentMod.Name
+                        AddHandler ctxShowModuleMarketGroup.Click, AddressOf ShowModuleMarketGroup
 
                         ' Check for Relevant Skills in Modules/Charges
                         Dim relModuleSkills, relChargeSkills As New ArrayList

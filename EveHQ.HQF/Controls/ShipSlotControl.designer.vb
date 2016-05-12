@@ -47,6 +47,7 @@ Namespace Controls
             Me.ctxSplitBatch = New System.Windows.Forms.ToolStripMenuItem()
             Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
             Me.ctxShowBayInfoItem = New System.Windows.Forms.ToolStripMenuItem()
+            Me.ctxShowModuleMarketGroup = New System.Windows.Forms.ToolStripMenuItem()
             Me.ctxRemoteFittings = New System.Windows.Forms.ContextMenuStrip(Me.components)
             Me.RemoveFittingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.ctxRemoteModule = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -277,7 +278,15 @@ Namespace Controls
             'ctxBays
             '
             Me.ctxBays.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.ctxBays.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ctxRemoveItem, Me.ToolStripMenuItem1, Me.ctxAlterQuantity, Me.ctxSplitBatch, Me.ToolStripMenuItem2, Me.ctxShowBayInfoItem})
+            Me.ctxBays.Items.AddRange(New System.Windows.Forms.ToolStripItem() {
+                                      Me.ctxShowBayInfoItem,
+                                      Me.ctxShowModuleMarketGroup,
+                                      Me.ToolStripMenuItem1,
+                                      Me.ctxAlterQuantity,
+                                      Me.ctxSplitBatch,
+                                      Me.ctxRemoveItem,
+                                      Me.ToolStripMenuItem2
+                                      })
             Me.ctxBays.Name = "ctx"
             Me.ctxBays.Size = New System.Drawing.Size(156, 104)
             '
@@ -314,6 +323,12 @@ Namespace Controls
             Me.ctxShowBayInfoItem.Name = "ctxShowBayInfoItem"
             Me.ctxShowBayInfoItem.Size = New System.Drawing.Size(155, 22)
             Me.ctxShowBayInfoItem.Text = "Show Drone Info"
+            '
+            'ctxShowModuleMarketGroup
+            '
+            Me.ctxShowModuleMarketGroup.Name = "ctxShowModuleMarketGroup"
+            Me.ctxShowModuleMarketGroup.Size = New System.Drawing.Size(155, 22)
+            Me.ctxShowModuleMarketGroup.Text = "Show Market Group"
             '
             'ctxRemoteFittings
             '
@@ -2278,6 +2293,7 @@ Namespace Controls
         Friend WithEvents ctxSplitBatch As System.Windows.Forms.ToolStripMenuItem
         Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
         Friend WithEvents ctxShowBayInfoItem As System.Windows.Forms.ToolStripMenuItem
+        Friend WithEvents ctxShowModuleMarketGroup As System.Windows.Forms.ToolStripMenuItem
         Friend WithEvents pbShipInfo As System.Windows.Forms.PictureBox
         Friend WithEvents lvwRemoteEffects As DevComponents.DotNetBar.Controls.ListViewEx
         Friend WithEvents lblPilot As System.Windows.Forms.Label

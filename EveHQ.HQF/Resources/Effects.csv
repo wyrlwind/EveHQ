@@ -128,7 +128,8 @@
 323,1,11207,30,2,511,0,1,0,0,Advanced Weapon Upgrades - Rapid Light
 323,1,11207,30,2,1245,0,1,0,0,Advanced Weapon Upgrades - Rapid Heavy
 323,1,11207,30,2,862,0,1,0,0,Advanced Weapon Upgrades - Bomb
-323,1,11207,30,2,524,0,1,0,0,Advanced Weapon Upgrades - Citadel
+323,1,11207,30,2,524,0,1,0,0,Advanced Weapon Upgrades - Citadel Torp
+323,1,11207,30,2,1674,0,1,0,0,Advanced Weapon Upgrades - Citadel Cruise
 323,1,11207,30,2,506,0,1,0,0,Advanced Weapon Upgrades - Cruise
 323,1,11207,30,2,510,0,1,0,0,Advanced Weapon Upgrades - Heavy
 323,1,11207,30,2,771,0,1,0,0,Advanced Weapon Upgrades - Heavy Assault
@@ -213,7 +214,8 @@
 310,1,3318,50,2,511,0,1,0,0,Weapon Upgrades - Rapid Light
 310,1,3318,50,2,1245,0,1,0,0,Weapon Upgrades - Rapid Heavy
 310,1,3318,50,2,862,0,1,0,0,Weapon Upgrades - Bomb
-310,1,3318,50,2,524,0,1,0,0,Weapon Upgrades - Citadel
+310,1,3318,50,2,524,0,1,0,0,Weapon Upgrades - Citadel Torp
+310,1,3318,50,2,1674,0,1,0,0,Weapon Upgrades - Citadel Cruise
 310,1,3318,50,2,506,0,1,0,0,Weapon Upgrades - Cruise
 310,1,3318,50,2,510,0,1,0,0,Weapon Upgrades - Heavy
 310,1,3318,50,2,771,0,1,0,0,Weapon Upgrades - Heavy Assault
@@ -358,7 +360,8 @@
 557,1,12441,281,2,394;395;396,0,1,0,0,Missile Bombardment - FoF
 293,1,3319,51,2,511,0,1,0,0,Missile Launcher Operation - Rapid Light
 293,1,3319,51,2,1245,0,1,0,0,Missile Launcher Operation - Rapid Heavy
-293,1,3319,51,2,524,0,1,0,0,Missile Launcher Operation - Citadel
+293,1,3319,51,2,524,0,1,0,0,Missile Launcher Operation - Citadel Torp
+293,1,3319,51,2,1674,0,1,0,0,Missile Launcher Operation - Citadel Cruise
 293,1,3319,51,2,506,0,1,0,0,Missile Launcher Operation - Cruise
 293,1,3319,51,2,510,0,1,0,0,Missile Launcher Operation - Heavy
 293,1,3319,51,2,771,0,1,0,0,Missile Launcher Operation - Heavy Assault
@@ -384,7 +387,8 @@
 20,1,12442,37,2,394;395;396,0,1,0,0,Missile Projection - FoF
 293,1,21071,51,2,511,0,1,0,0,Rapid Launch - Rapid Light
 293,1,21071,51,2,1245,0,1,0,0,Rapid Launch - Rapid Heavy
-293,1,21071,51,2,524,0,1,0,0,Rapid Launch - Citadel
+293,1,21071,51,2,524,0,1,0,0,Rapid Launch - Citadel Torp
+293,1,21071,51,2,1674,0,1,0,0,Rapid Launch - Citadel Cruise 
 293,1,21071,51,2,506,0,1,0,0,Rapid Launch - Cruise
 293,1,21071,51,2,510,0,1,0,0,Rapid Launch - Heavy
 293,1,21071,51,2,771,0,1,0,0,Rapid Launch - Heavy Assault
@@ -656,7 +660,7 @@
 1222,2,52,54,6,0,0,0,0,8,Warp Scrambler Range
 # WEAPONS,,,,,,,,,,
 1205,2,524,51,6,0,0,0,0,8,Citadel Launcher ROF
-1205,2,506,51,6,0,0,0,0,8,Cruise Launcher ROF
+1205,2,1674,51,6,0,0,0,0,8,Cruise Launcher ROF
 1205,2,53,10011,6,0,0,0,0,8,Energy Weapon ROF
 1210,2,53,10014,6,0,0,0,0,8,Energy Weapon Damage
 1205,2,510,51,6,0,0,0,0,8,Heavy Launcher ROF
@@ -1106,7 +1110,7 @@
 # Bomb Launchers,,,,,,,,,,
 983,2,862,552,3,6,0,0,1,15,Signature Radius
 # Ballistic Control Systems,,,,,,,,,,
-204,2,367,51,2,511;524;506;510;771;507;508;509;1245;1673,1,0,0,14,ROF Bonus
+204,2,367,51,2,511;524;506;510;771;507;508;509;1245;1673;1674,1,0,0,14,ROF Bonus
 213,2,367,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Damage Bonus - EM
 213,2,367,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Damage Bonus - Explosive
 213,2,367,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Damage Bonus - Kinetic
@@ -1611,8 +1615,8 @@
 351,2,776,54,2,74,1,0,0,15,Hybrid Locus Coordinator
 767,2,776,160,2,74,1,0,0,15,Hybrid Metastasis Adjuster
 # RIGS - LAUNCHER,,,,,,,,,,
-1138,2,779,50,2,511;524;506;510;771;507;508;509;1245,0,0,0,15,Launcher Rig Drawback - CPU Penalty
-204,2,779,51,2,511;524;506;510;771;507;508;509;1245,1,0,0,15,Bay Loading Accelerator
+1138,2,779,50,2,511;524;506;510;771;507;508;509;1245;1674,0,0,0,15,Launcher Rig Drawback - CPU Penalty
+204,2,779,51,2,511;524;506;510;771;507;508;509;1245;1674,1,0,0,15,Bay Loading Accelerator
 20,2,779,37,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;88;1158;396;395;394;385;384;387;89,2,0,0,15,Hydraulic Bay Thrusters
 557,2,779,281,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;88;1158;396;395;394;385;384;387;89,0,0,0,15,Rocket Fuel Cache Partition
 213,2,779,114,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;88;1158;396;395;394;385;384;387;89,1,0,0,15,Warhead Calefaction Catalyst
@@ -1736,6 +1740,7 @@
 1466,2,920,269,3,6,1,0,2,15,Armor Kin Resistance Bonus
 1467,2,920,270,3,6,1,0,2,15,Armor Therm Resistance Bonus
 1468,2,920,268,3,6,1,0,2,15,Armor Exp Resistance Bonus
+1469,2,920,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,5,15,Missile Velocity Multiplier
 1470,2,920,37,3,6,0,0,5,15,Maximum Velocity Multiplier
 1472,2,920,10007,3,6,0,0,5,15,Drone Control Range Multiplier
 1473,2,920,238,2,201,0,0,5,15,Grav Strength Multiplier
@@ -1748,6 +1753,7 @@
 1480,2,920,767,2,291,0,0,5,15,Tracking Penalty Multiplier
 1481,2,920,351,2,291,0,0,5,15,Optimal Range Penalty Multiplier
 1482,2,920,64,2,53;55;74,0,0,5,15,Damage Multiplier Multiplier
+1483,2,920,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;394;395;396,0,0,5,15,Missile Explosion Velocity Multiplier
 1484,2,920,37,3,18,0,0,5,15,Drone Velocity Multiplier
 1485,2,920,1211,7,1211,0,0,5,15,Heat Damage Multiplier
 1486,2,920,1205,7,1205,0,0,5,15,Overload Bonus Multiplier
