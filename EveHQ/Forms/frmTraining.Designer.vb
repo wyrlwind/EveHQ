@@ -110,9 +110,11 @@ Namespace Forms
             Me.RibbonBarMergeContainer1 = New DevComponents.DotNetBar.RibbonBarMergeContainer()
             Me.rbImportExport = New DevComponents.DotNetBar.RibbonBar()
             Me.ItemContainer1 = New DevComponents.DotNetBar.ItemContainer()
+            Me.ItemContainer2 = New DevComponents.DotNetBar.ItemContainer()
             Me.btnEveMonImport = New DevComponents.DotNetBar.ButtonItem()
             Me.btnImportEMPFile = New DevComponents.DotNetBar.ButtonItem()
             Me.btnExportEMPFile = New DevComponents.DotNetBar.ButtonItem()
+            Me.btnExportEvePlan = New DevComponents.DotNetBar.ButtonItem()
             Me.rbAttributeTools = New DevComponents.DotNetBar.RibbonBar()
             Me.btnImplants = New DevComponents.DotNetBar.ButtonItem()
             Me.btnRemap = New DevComponents.DotNetBar.ButtonItem()
@@ -783,7 +785,7 @@ Namespace Forms
             Me.rbImportExport.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
             Me.rbImportExport.ContainerControlProcessDialogKey = True
             Me.rbImportExport.DragDropSupport = True
-            Me.rbImportExport.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ItemContainer1})
+            Me.rbImportExport.Items.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.ItemContainer1, Me.ItemContainer2})
             Me.rbImportExport.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F"
             Me.rbImportExport.Location = New System.Drawing.Point(1001, 0)
             Me.rbImportExport.Name = "rbImportExport"
@@ -833,6 +835,42 @@ Namespace Forms
             Me.btnExportEMPFile.Name = "btnExportEMPFile"
             Me.SuperTooltip1.SetSuperTooltip(Me.btnExportEMPFile, New DevComponents.DotNetBar.SuperTooltipInfo("", "Export Plan File", "Allows you to export either EveMon plan files (.emp) or XML plan files (.xml).", Nothing, Global.EveHQ.My.Resources.Resources.Help32, DevComponents.DotNetBar.eTooltipColor.Yellow))
             Me.btnExportEMPFile.Text = "Export Plan File"
+            '
+            'ItemContainer2
+            '
+            '
+            '
+            '
+            Me.ItemContainer2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+            Me.ItemContainer2.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical
+            Me.ItemContainer2.Name = "ItemContainer2"
+            Me.ItemContainer2.SubItems.AddRange(New DevComponents.DotNetBar.BaseItem() {Me.btnExportEvePlan})
+            '
+            '
+            '
+            Me.ItemContainer2.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+            Me.ItemContainer2.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle
+            '
+            'btnExportEvePlan
+            '
+            Me.btnExportEvePlan.Enabled = False
+            Me.btnExportEvePlan.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText
+            Me.btnExportEvePlan.Image = CType(resources.GetObject("btnImport.Image"), System.Drawing.Image)
+            Me.btnExportEvePlan.ImageFixedSize = New System.Drawing.Size(36, 36)
+            Me.btnExportEvePlan.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
+            Me.btnExportEvePlan.Name = "btnExportEvePlan"
+            Me.SuperTooltip1.SetSuperTooltip(
+                    Me.btnExportEvePlan,
+                    New DevComponents.DotNetBar.SuperTooltipInfo(
+                        "",
+                        "Export to clipboard",
+                        "Allows you to copy your plan to clipboard in order to paste it directly into your eve skill queue.",
+                        Nothing,
+                        Global.EveHQ.My.Resources.Resources.Help32,
+                        DevComponents.DotNetBar.eTooltipColor.Yellow
+                    )
+                )
+            Me.btnExportEvePlan.Text = "Clipboard Export"
             '
             'rbAttributeTools
             '
@@ -1046,7 +1084,7 @@ Namespace Forms
             Me.btnAddRequisition.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top
             Me.btnAddRequisition.Name = "btnAddRequisition"
             Me.btnAddRequisition.SubItemsExpandWidth = 14
-            Me.SuperTooltip1.SetSuperTooltip(Me.btnAddRequisition, New DevComponents.DotNetBar.SuperTooltipInfo("", "View EveHQ Requisitions", "Allows the creation, editing and viewing of requisitions (also known as Shopping " & _
+            Me.SuperTooltip1.SetSuperTooltip(Me.btnAddRequisition, New DevComponents.DotNetBar.SuperTooltipInfo("", "View EveHQ Requisitions", "Allows the creation, editing and viewing of requisitions (also known as Shopping " &
                 "Lists)." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Requisitions created in other parts of EveHQ will be visible here.", Global.EveHQ.My.Resources.Resources.Info32, Global.EveHQ.My.Resources.Resources.Orders32, DevComponents.DotNetBar.eTooltipColor.Yellow))
             Me.btnAddRequisition.Text = "Add To Requisitions"
             '
@@ -1978,9 +2016,11 @@ Namespace Forms
         Private WithEvents RibbonBarMergeContainer1 As DevComponents.DotNetBar.RibbonBarMergeContainer
         Private WithEvents rbImportExport As DevComponents.DotNetBar.RibbonBar
         Private WithEvents ItemContainer1 As DevComponents.DotNetBar.ItemContainer
+        Private WithEvents ItemContainer2 As DevComponents.DotNetBar.ItemContainer
         Private WithEvents btnEveMonImport As DevComponents.DotNetBar.ButtonItem
         Private WithEvents btnImportEMPFile As DevComponents.DotNetBar.ButtonItem
         Private WithEvents btnExportEMPFile As DevComponents.DotNetBar.ButtonItem
+        Private WithEvents btnExportEvePlan As DevComponents.DotNetBar.ButtonItem
         Private WithEvents rbAttributeTools As DevComponents.DotNetBar.RibbonBar
         Private WithEvents btnImplants As DevComponents.DotNetBar.ButtonItem
         Private WithEvents btnRemap As DevComponents.DotNetBar.ButtonItem
