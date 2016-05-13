@@ -171,7 +171,11 @@ Public Class ShipModule
                     newModule.PG = attValue
                 Case AttributeEnum.ModuleCpuUsage
                     newModule.CPU = attValue
-                Case AttributeEnum.ModuleActivationTime
+                Case AttributeEnum.ModuleActivationTime,
+                     AttributeEnum.ModuleDurationECMJammerBurstProjector,
+                     AttributeEnum.ModuleDurationSensorDampeningBurstProjector,
+                     AttributeEnum.ModuleDurationTargetIlluminationBurstProjector,
+                     AttributeEnum.ModuleDurationWeaponDisruptionBurstProjector
                     newModule.ActivationTime = attValue
                 Case AttributeEnum.ModuleReactivationDelay
                     newModule.ReactivationDelay = attValue

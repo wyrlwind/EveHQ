@@ -2204,7 +2204,7 @@ Public Class FrmCacheCreator
                     Case 8 ' Charge
                         newModule.IsCharge = True
 
-                        Dim missiles = {654, 656, 655, 653, 648, 657, 772, 386, 385, 384, 387, 89, 476, 1019, 88, 1158, 394, 395, 396}
+                        Dim missiles = {654, 656, 655, 653, 648, 657, 772, 386, 385, 384, 387, 89, 476, 1019, 88, 1158, 394, 395, 396, 1677, 1678}
                         Dim group = CInt(row.Item("invGroups.groupID"))
 
                         For Each missileGroup In missiles
@@ -2501,7 +2501,7 @@ Public Class FrmCacheCreator
                             attMod.CapUsageRate = attMod.CapUsage / attValue
                             attMod.Attributes.Add(10032, attMod.CapUsageRate)
                         End If
-                    Case 73
+                    Case 73, 2397, 2398, 2399, 2400
                         attMod.ActivationTime = attValue
                         attMod.CapUsageRate = attMod.CapUsage / attMod.ActivationTime
                         attMod.Attributes.Add(10032, attMod.CapUsageRate)
@@ -3353,15 +3353,18 @@ Public Class FrmCacheCreator
     Private Sub CheckSqlDatabase()
 
         Using evehqData As DataSet = DatabaseFunctions.GetStaticData("SELECT attributeGroup FROM dgmAttributeTypes")
+
+            Dim conn As New SQLiteConnection(DatabaseFunctions.GetSqlLiteConnectionString)
+            conn.Open()
+
+            Call AddSqlAttributeGroupColumn(conn)
+
             If evehqData Is Nothing Then
                 ' We seem to be missing the data so lets add it in!
-                Dim conn As New SQLiteConnection(DatabaseFunctions.GetSqlLiteConnectionString)
-                conn.Open()
-                Call AddSQLAttributeGroupColumn(conn)
-                Call CorrectSQLEveUnits(conn)
-                If conn.State = ConnectionState.Open Then
-                    conn.Close()
-                End If
+                Call CorrectSqlEveUnits(conn)
+            End If
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
             End If
         End Using
 

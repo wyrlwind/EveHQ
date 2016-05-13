@@ -128,12 +128,14 @@
 323,1,11207,30,2,511,0,1,0,0,Advanced Weapon Upgrades - Rapid Light
 323,1,11207,30,2,1245,0,1,0,0,Advanced Weapon Upgrades - Rapid Heavy
 323,1,11207,30,2,862,0,1,0,0,Advanced Weapon Upgrades - Bomb
-323,1,11207,30,2,524,0,1,0,0,Advanced Weapon Upgrades - Citadel
+323,1,11207,30,2,524,0,1,0,0,Advanced Weapon Upgrades - Citadel Torp
+323,1,11207,30,2,1674,0,1,0,0,Advanced Weapon Upgrades - Citadel Cruise
 323,1,11207,30,2,506,0,1,0,0,Advanced Weapon Upgrades - Cruise
 323,1,11207,30,2,510,0,1,0,0,Advanced Weapon Upgrades - Heavy
 323,1,11207,30,2,771,0,1,0,0,Advanced Weapon Upgrades - Heavy Assault
 323,1,11207,30,2,507,0,1,0,0,Advanced Weapon Upgrades - Rocket
 323,1,11207,30,2,508,0,1,0,0,Advanced Weapon Upgrades - Torpedo
+323,1,11207,30,2,1673,0,1,0,0,Advanced Weapon Upgrades - Rapid Torpedo
 323,1,11207,30,2,509,0,1,0,0,Advanced Weapon Upgrades - Light
 292,1,20327,10014,4,773,0,1,0,0,Capital Energy Turret - Beam
 292,1,20327,10014,4,774,0,1,0,0,Capital Energy Turret - Pulse
@@ -148,9 +150,13 @@
 441,1,3300,10012,2,74,0,1,0,0,Gunnery - Hybrid
 441,1,3300,10013,2,55,0,1,0,0,Gunnery - Projectile
 292,1,12203,10016,5,12203,0,1,0,0,Large Artillery Specialization
+292,1,41404,10016,5,41404,0,1,0,0,Capital Artillery Specialization
 292,1,12209,10016,5,12209,0,1,0,0,Large Autocannon Specialization
+292,1,41403,10016,5,41403,0,1,0,0,Capital Autocannon Specialization
 292,1,12205,10014,5,12205,0,1,0,0,Large Beam Laser Specialization
+292,1,41408,10014,5,41408,0,1,0,0,Capital Beam Laser Specialization
 292,1,12212,10015,5,12212,0,1,0,0,Large Blaster Specialization
+292,1,41405,10015,5,41405,0,1,0,0,Capital Blaster Specialization
 292,1,3309,10014,4,569,0,1,0,0,Large Energy Turret - Beam
 292,1,3309,10014,4,573,0,1,0,0,Large Energy Turret - Pulse
 292,1,3307,10015,4,563,0,1,0,0,Large Hybrid Turret - Blaster
@@ -158,7 +164,9 @@
 292,1,3308,10016,4,576,0,1,0,0,Large Projectile Turret - Artillery
 292,1,3308,10016,4,579,0,1,0,0,Large Projectile Turret - Autocannon
 292,1,12215,10014,5,12215,0,1,0,0,Large Pulse Laser Specialization
+292,1,41407,10014,5,41407,0,1,0,0,Capital Pulse Laser Specialization
 292,1,12207,10015,5,12207,0,1,0,0,Large Railgun Specialization
+292,1,41406,10015,5,41406,0,1,0,0,Capital Railgun Specialization
 292,1,12202,10016,5,12202,0,1,0,0,Medium Artillery Specialization
 292,1,12208,10016,5,12208,0,1,0,0,Medium Autocannon Specialization
 292,1,12204,10014,5,12204,0,1,0,0,Medium Beam Laser Specialization
@@ -206,12 +214,14 @@
 310,1,3318,50,2,511,0,1,0,0,Weapon Upgrades - Rapid Light
 310,1,3318,50,2,1245,0,1,0,0,Weapon Upgrades - Rapid Heavy
 310,1,3318,50,2,862,0,1,0,0,Weapon Upgrades - Bomb
-310,1,3318,50,2,524,0,1,0,0,Weapon Upgrades - Citadel
+310,1,3318,50,2,524,0,1,0,0,Weapon Upgrades - Citadel Torp
+310,1,3318,50,2,1674,0,1,0,0,Weapon Upgrades - Citadel Cruise
 310,1,3318,50,2,506,0,1,0,0,Weapon Upgrades - Cruise
 310,1,3318,50,2,510,0,1,0,0,Weapon Upgrades - Heavy
 310,1,3318,50,2,771,0,1,0,0,Weapon Upgrades - Heavy Assault
 310,1,3318,50,2,507,0,1,0,0,Weapon Upgrades - Rocket
 310,1,3318,50,2,508,0,1,0,0,Weapon Upgrades - Torpedo
+310,1,3318,50,2,1673,0,1,0,0,Weapon Upgrades - Rapid Torpedo
 310,1,3318,50,2,509,0,1,0,0,Weapon Upgrades - Light
 # INDUSTRY,,,,,,,,,,
 280,1,25544,763,2,737,0,1,10,0,Gas Cloud Harvesting
@@ -286,15 +296,16 @@
 958,1,22809,987,2,98;326,0,1,0,0,Thermic Armor Compensation
 # MISSILE LAUNCHER OPERATION,,,,,,,,,,
 293,1,28073,669,2,862,0,1,0,0,Bomb Deployment
-292,1,32435,114,2,1019,0,1,0,0,Citadel Cruise Missiles - EM
-292,1,32435,116,2,1019,0,1,0,0,Citadel Cruise Missiles - Explosive
-292,1,32435,117,2,1019,0,1,0,0,Citadel Cruise Missiles - Kinetic
-292,1,32435,118,2,1019,0,1,0,0,Citadel Cruise Missiles - Thermal
-292,1,21668,114,2,476,0,1,0,0,Citadel Torpedoes - EM
-292,1,21668,116,2,476,0,1,0,0,Citadel Torpedoes - Explosive
-292,1,21668,117,2,476,0,1,0,0,Citadel Torpedoes - Kinetic
-292,1,21668,118,2,476,0,1,0,0,Citadel Torpedoes - Thermal
+292,1,32435,114,2,1019;1678,0,1,0,0,Citadel Cruise Missiles - EM
+292,1,32435,116,2,1019;1678,0,1,0,0,Citadel Cruise Missiles - Explosive
+292,1,32435,117,2,1019;1678,0,1,0,0,Citadel Cruise Missiles - Kinetic
+292,1,32435,118,2,1019;1678,0,1,0,0,Citadel Cruise Missiles - Thermal
+292,1,21668,114,2,476;1677,0,1,0,0,Citadel Torpedoes - EM
+292,1,21668,116,2,476;1677,0,1,0,0,Citadel Torpedoes - Explosive
+292,1,21668,117,2,476;1677,0,1,0,0,Citadel Torpedoes - Kinetic
+292,1,21668,118,2,476;1677,0,1,0,0,Citadel Torpedoes - Thermal
 293,1,20212,51,5,20212,0,1,0,0,Cruise Missile Specialization
+293,1,41410,51,5,41410,0,1,0,0,XL Cruise Missile Specialization
 292,1,3326,114,2,386;656;396,0,1,0,0,Cruise Missiles - EM
 292,1,3326,116,2,386;656;396,0,1,0,0,Cruise Missiles - Explosive
 292,1,3326,117,2,386;656;396,0,1,0,0,Cruise Missiles - Kinetic
@@ -310,8 +321,8 @@
 848,1,20312,654,2,387,0,1,0,0,Guided Missile Precision - Rocket
 848,1,20312,654,2,772,0,1,0,0,Guided Missile Precision - Heavy Assault
 848,1,20312,654,2,89,0,1,0,0,Guided Missile Precision - Torpedo
-848,1,20312,654,2,476,0,1,0,0,Guided Missile Precision - Citadel Torpedo
-848,1,20312,654,2,1019,0,1,0,0,Guided Missile Precision - Citadel Cruise
+848,1,20312,654,2,476;1677,0,1,0,0,Guided Missile Precision - Citadel Torpedo
+848,1,20312,654,2,1019;1678,0,1,0,0,Guided Missile Precision - Citadel Cruise
 848,1,20312,654,2,648,0,1,0,0,Guided Missile Precision - T2 Rocket
 848,1,20312,654,2,654,0,1,0,0,Guided Missile Precision - T2 Heavy Assault
 848,1,20312,654,2,657,0,1,0,0,Guided Missile Precision - T2 Torpedo
@@ -343,18 +354,20 @@
 557,1,12441,281,2,384,0,1,0,0,Missile Bombardment - Light
 557,1,12441,281,2,387,0,1,0,0,Missile Bombardment - Rocket
 557,1,12441,281,2,89,0,1,0,0,Missile Bombardment - Torpedo
-557,1,12441,281,2,476,0,1,0,0,Missile Bombardment - Citadel Torpedo
-557,1,12441,281,2,1019,0,1,0,0,Missile Bombardment - Citadel Cruise
+557,1,12441,281,2,476;1677,0,1,0,0,Missile Bombardment - Citadel Torpedo
+557,1,12441,281,2,1019;1678,0,1,0,0,Missile Bombardment - Citadel Cruise
 557,1,12441,281,2,88;1158,0,1,0,0,Missile Bombardment - Defender
 557,1,12441,281,2,394;395;396,0,1,0,0,Missile Bombardment - FoF
 293,1,3319,51,2,511,0,1,0,0,Missile Launcher Operation - Rapid Light
 293,1,3319,51,2,1245,0,1,0,0,Missile Launcher Operation - Rapid Heavy
-293,1,3319,51,2,524,0,1,0,0,Missile Launcher Operation - Citadel
+293,1,3319,51,2,524,0,1,0,0,Missile Launcher Operation - Citadel Torp
+293,1,3319,51,2,1674,0,1,0,0,Missile Launcher Operation - Citadel Cruise
 293,1,3319,51,2,506,0,1,0,0,Missile Launcher Operation - Cruise
 293,1,3319,51,2,510,0,1,0,0,Missile Launcher Operation - Heavy
 293,1,3319,51,2,771,0,1,0,0,Missile Launcher Operation - Heavy Assault
 293,1,3319,51,2,507,0,1,0,0,Missile Launcher Operation - Rocket
 293,1,3319,51,2,508,0,1,0,0,Missile Launcher Operation - Torpedo
+293,1,3319,51,2,1673,0,1,0,0,Missile Launcher Operation - Rapid Torpedo
 293,1,3319,51,2,509,0,1,0,0,Missile Launcher Operation - Light
 20,1,12442,37,2,654,0,1,0,0,Missile Projection - T2 Heavy Assault
 20,1,12442,37,2,656,0,1,0,0,Missile Projection - T2 Cruise
@@ -368,18 +381,20 @@
 20,1,12442,37,2,384,0,1,0,0,Missile Projection - Light
 20,1,12442,37,2,387,0,1,0,0,Missile Projection - Rocket
 20,1,12442,37,2,89,0,1,0,0,Missile Projection - Torpedo
-20,1,12442,37,2,476,0,1,0,0,Missile Projection - Citadel Torpedo
-20,1,12442,37,2,1019,0,1,0,0,Missile Projection - Citadel Cruise
+20,1,12442,37,2,476;1677,0,1,0,0,Missile Projection - Citadel Torpedo
+20,1,12442,37,2,1019;1678,0,1,0,0,Missile Projection - Citadel Cruise
 20,1,12442,37,2,88;1158,0,1,0,0,Missile Projection - Defender
 20,1,12442,37,2,394;395;396,0,1,0,0,Missile Projection - FoF
 293,1,21071,51,2,511,0,1,0,0,Rapid Launch - Rapid Light
 293,1,21071,51,2,1245,0,1,0,0,Rapid Launch - Rapid Heavy
-293,1,21071,51,2,524,0,1,0,0,Rapid Launch - Citadel
+293,1,21071,51,2,524,0,1,0,0,Rapid Launch - Citadel Torp
+293,1,21071,51,2,1674,0,1,0,0,Rapid Launch - Citadel Cruise 
 293,1,21071,51,2,506,0,1,0,0,Rapid Launch - Cruise
 293,1,21071,51,2,510,0,1,0,0,Rapid Launch - Heavy
 293,1,21071,51,2,771,0,1,0,0,Rapid Launch - Heavy Assault
 293,1,21071,51,2,507,0,1,0,0,Rapid Launch - Rocket
 293,1,21071,51,2,508,0,1,0,0,Rapid Launch - Torpedo
+293,1,21071,51,2,1673,0,1,0,0,Rapid Launch - Rapid Torpedo
 293,1,21071,51,2,509,0,1,0,0,Rapid Launch - Light
 293,1,20209,51,5,20209,0,1,0,0,Rocket Specialization
 292,1,3320,114,2,387;648,0,1,0,0,Rockets - EM
@@ -403,10 +418,11 @@
 847,1,20314,653,2,384,0,1,0,0,Target Navigation Prediction - Light
 847,1,20314,653,2,387,0,1,0,0,Target Navigation Prediction - Rocket
 847,1,20314,653,2,89,0,1,0,0,Target Navigation Prediction - Torpedo
-847,1,20314,653,2,476,0,1,0,0,Target Navigation Prediction - Citadel Torpedo
-847,1,20314,653,2,1019,0,1,0,0,Target Navigation Prediction - Citadel Cruise
+847,1,20314,653,2,476;1677,0,1,0,0,Target Navigation Prediction - Citadel Torpedo
+847,1,20314,653,2,1019;1678,0,1,0,0,Target Navigation Prediction - Citadel Cruise
 847,1,20314,653,2,394;395;396,0,1,0,0,Target Navigation Prediction - FoF
 293,1,20213,51,5,20213,0,1,0,0,Torpedo Specialization
+293,1,41409,51,5,41409,0,1,0,0,XL Torpedo Specialization
 292,1,3325,114,2,89;657,0,1,0,0,Torpedoes - EM
 292,1,3325,116,2,89;657,0,1,0,0,Torpedoes - Explosive
 292,1,3325,117,2,89;657,0,1,0,0,Torpedoes - Kinetic
@@ -459,14 +475,14 @@
 292,1,20315,116,2,89,0,1,0,0,Warhead Upgrades - Torpedo - Explosive
 292,1,20315,117,2,89,0,1,0,0,Warhead Upgrades - Torpedo - Kinetic
 292,1,20315,118,2,89,0,1,0,0,Warhead Upgrades - Torpedo - Thermal
-292,1,20315,114,2,476,0,1,0,0,Warhead Upgrades - Citadel Torpedo - EM
-292,1,20315,116,2,476,0,1,0,0,Warhead Upgrades - Citadel Torpedo - Explosive
-292,1,20315,117,2,476,0,1,0,0,Warhead Upgrades - Citadel Torpedo - Kinetic
-292,1,20315,118,2,476,0,1,0,0,Warhead Upgrades - Citadel Torpedo - Thermal
-292,1,20315,114,2,1019,0,1,0,0,Warhead Upgrades - Citadel Cruise - EM
-292,1,20315,116,2,1019,0,1,0,0,Warhead Upgrades - Citadel Cruise - Explosive
-292,1,20315,117,2,1019,0,1,0,0,Warhead Upgrades - Citadel Cruise - Kinetic
-292,1,20315,118,2,1019,0,1,0,0,Warhead Upgrades - Citadel Cruise - Thermal
+292,1,20315,114,2,476;1677,0,1,0,0,Warhead Upgrades - Citadel Torpedo - EM
+292,1,20315,116,2,476;1677,0,1,0,0,Warhead Upgrades - Citadel Torpedo - Explosive
+292,1,20315,117,2,476;1677,0,1,0,0,Warhead Upgrades - Citadel Torpedo - Kinetic
+292,1,20315,118,2,476;1677,0,1,0,0,Warhead Upgrades - Citadel Torpedo - Thermal
+292,1,20315,114,2,1019;1678,0,1,0,0,Warhead Upgrades - Citadel Cruise - EM
+292,1,20315,116,2,1019;1678,0,1,0,0,Warhead Upgrades - Citadel Cruise - Explosive
+292,1,20315,117,2,1019;1678,0,1,0,0,Warhead Upgrades - Citadel Cruise - Kinetic
+292,1,20315,118,2,1019;1678,0,1,0,0,Warhead Upgrades - Citadel Cruise - Thermal
 292,1,20315,114,2,88;1158,0,1,0,0,Warhead Upgrades - Defender - EM
 292,1,20315,116,2,88;1158,0,1,0,0,Warhead Upgrades - Defender - Explosive
 292,1,20315,117,2,88;1158,0,1,0,0,Warhead Upgrades - Defender - Kinetic
@@ -644,7 +660,7 @@
 1222,2,52,54,6,0,0,0,0,8,Warp Scrambler Range
 # WEAPONS,,,,,,,,,,
 1205,2,524,51,6,0,0,0,0,8,Citadel Launcher ROF
-1205,2,506,51,6,0,0,0,0,8,Cruise Launcher ROF
+1205,2,1674,51,6,0,0,0,0,8,Cruise Launcher ROF
 1205,2,53,10011,6,0,0,0,0,8,Energy Weapon ROF
 1210,2,53,10014,6,0,0,0,0,8,Energy Weapon Damage
 1205,2,510,51,6,0,0,0,0,8,Heavy Launcher ROF
@@ -659,6 +675,7 @@
 1205,2,507,51,6,0,0,0,0,8,Rocket Launcher ROF
 1206,2,72,73,6,0,0,0,0,8,Smartbomb ROF
 1205,2,508,51,6,0,0,0,0,8,Torpedo Launcher ROF
+1205,2,1673,51,6,0,0,0,0,8,Rapid Torpedo Launcher ROF
 # Polarized weapons
 1978,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;34272;34294,271,3,6,0,0,15,14,shieldEmDamageResonance 
 1978,1,34284;34286;34288;34292;34280;34274;34278;34276;34282;34290;34272;34294,272,3,6,0,0,15,14,shieldExplosiveDamageResonance 
@@ -898,10 +915,10 @@
 349,2,291,158,2,55;53;74,1,0,0,16,Falloff
 351,2,291,54,2,55;53;74,1,0,0,16,Optimal Range
 767,2,291,160,2,55;53;74,1,0,0,16,Tracking Speed
-547,2,291,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,16,Missile velocity
-596,2,291,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,16,Max flight time
-847,2,291,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,16,Explosion velocity
-848,2,291,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,16,Explosion radius
+547,2,291,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,16,Missile velocity
+596,2,291,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,16,Max flight time
+847,2,291,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,16,Explosion velocity
+848,2,291,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,16,Explosion radius
 # Warp Disruption Field Generators,,,,,,,,,,
 554,2,899,552,3,6,1,0,0,12,Signature Radius Penalty
 1131,2,899,10002,3,6,1,0,0,12,Mass Reduction
@@ -1093,21 +1110,21 @@
 # Bomb Launchers,,,,,,,,,,
 983,2,862,552,3,6,0,0,1,15,Signature Radius
 # Ballistic Control Systems,,,,,,,,,,
-204,2,367,51,2,511;524;506;510;771;507;508;509;1245;1673,1,0,0,14,ROF Bonus
-213,2,367,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Damage Bonus - EM
-213,2,367,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Damage Bonus - Explosive
-213,2,367,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Damage Bonus - Kinetic
-213,2,367,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Damage Bonus - Thermal
+204,2,367,51,2,511;524;506;510;771;507;508;509;1245;1673;1674,1,0,0,14,ROF Bonus
+213,2,367,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Damage Bonus - EM
+213,2,367,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Damage Bonus - Explosive
+213,2,367,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Damage Bonus - Kinetic
+213,2,367,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Damage Bonus - Thermal
 # Missile guidance enhancers,,,,,,,,,,
-547,2,1395,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Missile Velocity Multiplier			
-847,2,1395,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Missile Explosion Velocity Multiplier		
-848,2,1395,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Missile Explosion Radius Multiplier		
-596,2,1395,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,1,0,0,14,Missile Flight Time
+547,2,1395,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Missile Velocity Multiplier			
+847,2,1395,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Missile Explosion Velocity Multiplier		
+848,2,1395,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Missile Explosion Radius Multiplier		
+596,2,1395,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Missile Flight Time
 # Missile guidance computers,,,,,,,,,,
-547,2,1396,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,2,0,0,12,Missile Velocity Multiplier			
-847,2,1396,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,2,0,0,12,Missile Explosion Velocity Multiplier		
-848,2,1396,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,2,0,0,12,Missile Explosion Radius Multiplier		
-596,2,1396,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,2,0,0,12,Missile Flight Time
+547,2,1396,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,2,0,0,12,Missile Velocity Multiplier			
+847,2,1396,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,2,0,0,12,Missile Explosion Velocity Multiplier		
+848,2,1396,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,2,0,0,12,Missile Explosion Radius Multiplier		
+596,2,1396,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,2,0,0,12,Missile Flight Time
 # Gyrostabilizers,,,,,,,,,,
 204,2,59,10013,2,55,1,0,0,14,ROF
 64,2,59,10016,2,55,1,0,5,14,Damage Bonus
@@ -1146,12 +1163,12 @@
 1029,1,4292;20280,210,3,6,0,0,0,4,Magnetrometric Sensor Strength
 1030,1,4292;20280,208,3,6,0,0,0,4,Radar Sensor Strength
 1471,1,4292;20280,10002,3,6,0,0,0,4,Mass Multiplier
-2304,1,4292;20280,37,2,89,0,0,0,4,Torpedo Velocity
-2305,1,4292;20280,51,2,524;1673;1674,0,0,0,4,Citadel launcher and Rapid Torpedo ROF
-2306,1,4292;20280,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,4,Damage Bonus - EM
-2306,1,4292;20280,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,4,Damage Bonus - Explosive
-2306,1,4292;20280,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,4,Damage Bonus - Kinetic
-2306,1,4292;20280,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,4,Damage Bonus - Thermal
+2304,1,4292;20280,37,2,89;657,0,0,0,4,Torpedo Velocity
+2305,1,4292;20280,51,2,524;1673;1674,1,0,0,4,Citadel launcher and Rapid Torpedo ROF
+2306,1,4292;20280,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,4,Damage Bonus - EM
+2306,1,4292;20280,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,4,Damage Bonus - Explosive
+2306,1,4292;20280,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,4,Damage Bonus - Kinetic
+2306,1,4292;20280,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,4,Damage Bonus - Thermal
 2307,1,4292;20280,10016,4,775;776,0,0,0,4,Capital Projectile Turret Damage
 2307,1,4292;20280,10014,4,773;774,0,0,0,4,Capital Energy Turret Damage
 2307,1,4292;20280,10015,4,771;772,0,0,0,4,Capital Hybrid Turret Damage
@@ -1163,44 +1180,30 @@
 2352,1,4292;20280,2135,3,6,0,0,0,4,Remote Electronic Assistance impedance
 2353,1,4292;20280,2113,3,6,0,0,0,4,Weapon Disruption resistance
 # Triage Modules,,,,,,,,,,
-20,1,27951,37,3,6,0,0,0,4,Max Velocity Bonus
-235,1,27951,192,3,6,0,0,1,4,Max Locked Targets Bonus
-548,1,27951,68,4,778,1,0,0,4,Shield Boost Bonus
-565,1,27951,564,3,6,0,0,0,4,Scan Resolution Bonus
-895,1,27951,84,4,1052,1,0,0,4,Armor Repair Amount
-896,1,27951,73,4,1052,0,0,0,4,Armor Repair Duration
-897,1,27951,73,4,778,0,0,0,4,Shield Booster Duration
-1186,1,27951,84,4,1056,0,0,0,4,Remote Armor Repair Bonus
-1187,1,27951,73,4,1056,0,0,0,4,Remote Armor Repair Duration Bonus
-1188,1,27951,73,4,600,0,0,0,4,Shield Transporter Duration Bonus
-1189,1,27951,68,4,600,0,0,0,4,Shield Transporter Amount Bonus
-1190,1,27951,6,2,201;80;208;65;379;291;52,0,0,0,4,EW Capacitor Need Bonus
-1191,1,27951,10005,3,6,0,0,0,4,Drone Control Bonus
-1201,1,27951,83,4,1063,0,0,0,4,Remote Hull Repair Bonus
-1202,1,27951,73,4,1063,0,0,0,4,Remote Hull Repair Duration Bonus
-1203,1,27951,90,4,910,0,0,0,4,Energy Transfer Bonus
-1204,1,27951,73,4,910,0,0,0,4,Energy Transfer Duration Bonus
-20,1,4294,37,3,6,0,0,0,4,Max Velocity Bonus
-235,1,4294,192,3,6,0,0,1,4,Max Locked Targets Bonus
-548,1,4294,68,4,778,1,0,0,4,Shield Boost Bonus
-565,1,4294,564,3,6,0,0,0,4,Scan Resolution Bonus
-895,1,4294,84,4,1052,1,0,0,4,Armor Repair Amount
-896,1,4294,73,4,1052,0,0,0,4,Armor Repair Duration
-897,1,4294,73,4,778,0,0,0,4,Shield Booster Duration
-1186,1,4294,84,4,1056,0,0,0,4,Remote Armor Repair Bonus
-1187,1,4294,73,4,1056,0,0,0,4,Remote Armor Repair Duration Bonus
-1188,1,4294,73,4,600,0,0,0,4,Shield Transporter Duration Bonus
-1189,1,4294,68,4,600,0,0,0,4,Shield Transporter Amount Bonus
-1190,1,4294,6,2,201;80;208;65;379;291;52,0,0,0,4,EW Capacitor Need Bonus
-1191,1,4294,10005,3,6,0,0,0,4,Drone Control Bonus
-1201,1,4294,83,4,1063,0,0,0,4,Remote Hull Repair Bonus
-1202,1,4294,73,4,1063,0,0,0,4,Remote Hull Repair Duration Bonus
-1203,1,4294,90,4,910,0,0,0,4,Energy Transfer Bonus
-1204,1,4294,73,4,910,0,0,0,4,Energy Transfer Duration Bonus
-1802,1,4294,6,4,600,0,0,0,4,Shield Transporter Cap Use
-1802,1,4294,6,4,1056,0,0,0,4,Remote Armor Repair Cap Use
-1802,1,4294,6,4,1063,0,0,0,4,Remote Hull Repair Cap Use
-1802,1,4294,6,4,910,0,0,0,4,Energy Transfer Cap Use
+20,1,27951;4294,37,3,6,0,0,0,4,Max Velocity Bonus
+235,1,27951;4294,192,3,6,0,0,1,4,Max Locked Targets Bonus
+565,1,27951;4294,564,3,6,0,0,0,4,Scan Resolution Bonus
+1027,1,27951;4294,211,3,6,0,0,0,4,Gravimetric Sensor Strength
+1028,1,27951;4294,209,3,6,0,0,0,4,Ladar Sensor Strength
+1029,1,27951;4294,210,3,6,0,0,0,4,Magnetrometric Sensor Strength
+1030,1,27951;4294,208,3,6,0,0,0,4,Radar Sensor Strength
+1190,1,27951;4294,6,2,52;65;80;201;291;379;1672,1,0,0,4,Ewar Cap Malus
+1255,1,27951;4294,64,3,18,0,0,0,4,Drone Damage
+1471,1,27951;4294,10002,3,6,0,0,5,4,Mass
+2342,1,27951;4294;20280,2116,3,6,0,0,0,4,Remote Repair impedance
+2344,1,27951;4294,73,4,600;910;1056;1063,0,0,0,4,Capital Remote Logistic Duration
+2345,1,27951;4294,84,4,600;910;1056;1063,0,0,0,4,Capital Remote Armor Amount
+2345,1,27951;4294,68,4,600;910;1056;1063,0,0,0,4,Capital Remote Shield Amount
+2345,1,27951;4294,83,4,600;910;1056;1063,0,0,0,4,Capital Remote Hull Amount
+2345,1,27951;4294,90,4,600;910;1056;1063,0,0,0,4,Capital Remote Capacitor Amount
+2347,1,27951;4294,84,4,1052,1,0,0,4,Armor Repair Amount
+2346,1,27951;4294,73,4,1052,0,0,0,4,Armor Repair Duration
+2347,1,27951;4294,68,4,778,1,0,0,4,Shield Boost Bonus
+2346,1,27951;4294,73,4,778,0,0,0,4,Shield Booster Duration
+2348,1,27951;4294,54,4,600;910;1056;1063,0,0,0,4,Capital Remote Logistic Optimal
+2348,1,27951;4294,2044,4,600;910;1056;1063,0,0,0,4,Capital Remote Logistic Falloff
+2351,1,27951;4294,2112,3,6,0,0,0,4,Sensor Dampener resistance
+2352,1,27951;4294,2135,3,6,0,0,0,4,Remote Electronic Assistance impedance
 # Tracking Computers,,,,,,,,,,
 349,2,213,158,2,55;53;74,1,0,0,12,Falloff
 351,2,213,54,2,55;53;74,1,0,0,12,Optimal Range
@@ -1612,16 +1615,16 @@
 351,2,776,54,2,74,1,0,0,15,Hybrid Locus Coordinator
 767,2,776,160,2,74,1,0,0,15,Hybrid Metastasis Adjuster
 # RIGS - LAUNCHER,,,,,,,,,,
-1138,2,779,50,2,511;524;506;510;771;507;508;509;1245,0,0,0,15,Launcher Rig Drawback - CPU Penalty
-204,2,779,51,2,511;524;506;510;771;507;508;509;1245,1,0,0,15,Bay Loading Accelerator
-20,2,779,37,2,654;656;655;653;648;657;772;476;1019;386;88;1158;396;395;394;385;384;387;89,2,0,0,15,Hydraulic Bay Thrusters
-557,2,779,281,2,654;656;655;653;648;657;772;476;1019;386;88;1158;396;395;394;385;384;387;89,0,0,0,15,Rocket Fuel Cache Partition
-213,2,779,114,2,654;656;655;653;648;657;772;476;1019;386;88;1158;396;395;394;385;384;387;89,1,0,0,15,Warhead Calefaction Catalyst
-213,2,779,116,2,654;656;655;653;648;657;772;476;1019;386;88;1158;396;395;394;385;384;387;89,1,0,0,15,Warhead Calefaction Catalyst
-213,2,779,117,2,654;656;655;653;648;657;772;476;1019;386;88;1158;396;395;394;385;384;387;89,1,0,0,15,Warhead Calefaction Catalyst
-213,2,779,118,2,654;656;655;653;648;657;772;476;1019;386;88;1158;396;395;394;385;384;387;89,1,0,0,15,Warhead Calefaction Catalyst
-847,2,779,653,2,654;656;655;653;648;657;772;476;1019;386;396;395;394;385;384;387;89,0,0,0,15,Warhead Flare Catalyst
-848,2,779,654,2,654;656;655;653;648;657;772;476;1019;386;396;395;394;385;384;387;89,0,0,0,15,Warhead Rigor Catalyst
+1138,2,779,50,2,511;524;506;510;771;507;508;509;1245;1674,0,0,0,15,Launcher Rig Drawback - CPU Penalty
+204,2,779,51,2,511;524;506;510;771;507;508;509;1245;1674,1,0,0,15,Bay Loading Accelerator
+20,2,779,37,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;88;1158;396;395;394;385;384;387;89,2,0,0,15,Hydraulic Bay Thrusters
+557,2,779,281,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;88;1158;396;395;394;385;384;387;89,0,0,0,15,Rocket Fuel Cache Partition
+213,2,779,114,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;88;1158;396;395;394;385;384;387;89,1,0,0,15,Warhead Calefaction Catalyst
+213,2,779,116,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;88;1158;396;395;394;385;384;387;89,1,0,0,15,Warhead Calefaction Catalyst
+213,2,779,117,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;88;1158;396;395;394;385;384;387;89,1,0,0,15,Warhead Calefaction Catalyst
+213,2,779,118,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;88;1158;396;395;394;385;384;387;89,1,0,0,15,Warhead Calefaction Catalyst
+847,2,779,653,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;396;395;394;385;384;387;89,0,0,0,15,Warhead Flare Catalyst
+848,2,779,654,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;396;395;394;385;384;387;89,0,0,0,15,Warhead Rigor Catalyst
 # RIGS - PROJECTILE WEAPON,,,,,,,,,,
 1138,2,777,30,2,55,0,0,0,15,Projectile Weapon Rig Drawback - PG Penalty
 349,2,777,158,2,55,1,0,0,15,Projectile Ambit Extension
@@ -1737,7 +1740,7 @@
 1466,2,920,269,3,6,1,0,2,15,Armor Kin Resistance Bonus
 1467,2,920,270,3,6,1,0,2,15,Armor Therm Resistance Bonus
 1468,2,920,268,3,6,1,0,2,15,Armor Exp Resistance Bonus
-1469,2,920,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,5,15,Missile Velocity Multiplier
+1469,2,920,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,5,15,Missile Velocity Multiplier
 1470,2,920,37,3,6,0,0,5,15,Maximum Velocity Multiplier
 1472,2,920,10007,3,6,0,0,5,15,Drone Control Range Multiplier
 1473,2,920,238,2,201,0,0,5,15,Grav Strength Multiplier
@@ -1750,7 +1753,7 @@
 1480,2,920,767,2,291,0,0,5,15,Tracking Penalty Multiplier
 1481,2,920,351,2,291,0,0,5,15,Optimal Range Penalty Multiplier
 1482,2,920,64,2,53;55;74,0,0,5,15,Damage Multiplier Multiplier
-1483,2,920,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;394;395;396,0,0,5,15,Missile Explosion Velocity Multiplier
+1483,2,920,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;394;395;396,0,0,5,15,Missile Explosion Velocity Multiplier
 1484,2,920,37,3,18,0,0,5,15,Drone Velocity Multiplier
 1485,2,920,1211,7,1211,0,0,5,15,Heat Damage Multiplier
 1486,2,920,1205,7,1205,0,0,5,15,Overload Bonus Multiplier
@@ -1784,10 +1787,10 @@
 1686,2,920,10014,2,53,0,0,0,15,Incursion Damage Reduction - Lasers
 1686,2,920,10015,2,74,0,0,0,15,Incursion Damage Reduction - Hybrids
 1686,2,920,10016,2,55,0,0,0,15,Incursion Damage Reduction - Projectiles
-1686,2,920,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,15,Incursion Damage Reduction - EM Missiles
-1686,2,920,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,15,Incursion Damage Reduction - Explosive Missiles
-1686,2,920,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,15,Incursion Damage Reduction - Kinetic Missiles
-1686,2,920,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,15,Incursion Damage Reduction - Thermal Missiles
+1686,2,920,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,15,Incursion Damage Reduction - EM Missiles
+1686,2,920,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,15,Incursion Damage Reduction - Explosive Missiles
+1686,2,920,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,15,Incursion Damage Reduction - Kinetic Missiles
+1686,2,920,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,15,Incursion Damage Reduction - Thermal Missiles
 1686,2,920,114,2,72,0,0,0,15,Incursion Damage Reduction - EM Smartbomb
 1686,2,920,116,2,72,0,0,0,15,Incursion Damage Reduction - Explosive Smartbomb
 1686,2,920,117,2,72,0,0,0,15,Incursion Damage Reduction - Kinetic Smartbomb
@@ -1799,7 +1802,7 @@
 1840,2,920,90,2,67,0,0,5,15,Cataclysmic Variable - Remote Cap Transmitter Amount
 1966,2,920,90,2,68,0,0,5,15,Pulsar - Energy Transfer Amount Bonus - Nos
 1966,2,920,97,2,71,0,0,5,15,Pulsar - Energy Transfer Amount Bonus - Neuts
-1967,2,920,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,5,15,Magnetar - Missile Explosion Radius Multiplier
+1967,2,920,654,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,5,15,Magnetar - Missile Explosion Radius Multiplier
 1968,2,920,554,2,379,0,0,5,15,Magnetar - Target Painter Effectiveness Multiplier
 1482,2,920,64,3,18,0,0,5,15,Magnetar - Drone Damage
 1482,2,920,10016,2,55,0,0,5,15,Magnetar - Projectile Turret Damage
@@ -1813,10 +1816,10 @@
 1482,2,920,2228,3,87,0,0,5,15,Magnetar - Fighter Ability Thermal Damage
 1482,2,920,2229,3,87,0,0,5,15,Magnetar - Fighter Ability Kinetic Damage
 1482,2,920,2230,3,87,0,0,5,15,Magnetar - Fighter Ability Explosive Damage
-1482,2,920,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,5,15,Magnetar - EM Missile Damage
-1482,2,920,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,5,15,Magnetar - Exp Missile Damage
-1482,2,920,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,5,15,Magnetar - Kin Missile Damage
-1482,2,920,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,5,15,Magnetar - Therm Missile Damage
+1482,2,920,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,5,15,Magnetar - EM Missile Damage
+1482,2,920,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,5,15,Magnetar - Exp Missile Damage
+1482,2,920,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,5,15,Magnetar - Kin Missile Damage
+1482,2,920,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,5,15,Magnetar - Therm Missile Damage
 1482,2,920,114,2,72,0,0,5,15,Magnetar - Smartbomb Damage Multiplier
 1482,2,920,116,2,72,0,0,5,15,Magnetar - Smartbomb Damage Multiplier
 1482,2,920,117,2,72,0,0,5,15,Magnetar - Smartbomb Damage Multiplier
@@ -1829,7 +1832,7 @@
 1969,2,920,20,2,65,0,0,5,15,Black Hole - Stasis Webifier Strength Multiplier
 # BOOSTERS,,,,,,,,,,
 548,1,10155,68,2,40;1156,0,0,0,15,Improved Blue Pill - Shield Boost Bonus
-848,1,10151,654,2,654;656;655;653;648;657;772;476;1019;386;396;395;394;385;384;387;89,0,0,0,15,Improved Crash - Explosion Radius Bonus
+848,1,10151,654,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;396;395;394;385;384;387;89,0,0,0,15,Improved Crash - Explosion Radius Bonus
 767,1,15477,160,2,55;53;74,0,0,0,15,Improved Drop - Tracking Speed Bonus
 895,1,15480,84,2,62;1199,0,0,0,15,Improved Exile - Armor Repair Bonus
 294,1,15461,54,2,55;53;74,0,0,0,15,Improved Frentix - Turret Optimal Range Bonus
@@ -1838,7 +1841,7 @@
 554,1,15458,552,3,6,0,0,0,15,Improved Xinstinct - Sig Radius Bonus
 548,1,32248,68,2,40;1156,0,0,0,15,Nugoehuvi Synth Blue Pill - Shield Boost Bonus
 548,1,9950,68,2,40;1156,0,0,0,15,Standard Blue Pill - Shield Boost Bonus
-848,1,9947,654,2,654;656;655;653;648;657;772;476;1019;386;396;395;394;385;384;387;89,0,0,0,15,Standard Crash - Explosion Radius Bonus
+848,1,9947,654,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;396;395;394;385;384;387;89,0,0,0,15,Standard Crash - Explosion Radius Bonus
 767,1,15466,160,2,55;53;74,0,0,0,15,Standard Drop - Tracking Speed Bonus
 895,1,15479,84,2,62;1199,0,0,0,15,Standard Exile - Armor Repair Bonus
 294,1,15460,54,2,55;53;74,0,0,0,15,Standard Frentix - Turret Optimal Range Bonus
@@ -1846,7 +1849,7 @@
 349,1,10164,158,2,55;53;74,0,0,0,15,Standard Soothsayer - Turret Falloff Bonus
 554,1,15457,552,3,6,0,0,0,15,Standard Xinstinct - Sig Radius Bonus
 548,1,10156,68,2,40;1156,0,0,0,15,Strong Blue Pill - Shield Boost Bonus
-848,1,10152,654,2,654;656;655;653;648;657;772;476;1019;386;396;395;394;385;384;387;89,0,0,0,15,Strong Crash - Explosion Radius Bonus
+848,1,10152,654,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;396;395;394;385;384;387;89,0,0,0,15,Strong Crash - Explosion Radius Bonus
 767,1,15478,160,2,55;53;74,0,0,0,15,Strong Drop - Tracking Speed Bonus
 895,1,25349,84,2,62;1199,0,0,0,15,Strong Exile - Armor Repair Bonus
 294,1,15462,54,2,55;53;74,0,0,0,15,Strong Frentix - Turret Optimal Range Bonus
@@ -1854,7 +1857,7 @@
 349,1,10166,158,2,55;53;74,0,0,0,15,Strong Soothsayer - Turret Falloff Bonus
 554,1,15459,552,3,6,0,0,0,15,Strong Xinstinct - Sig Radius Bonus
 548,1,28670,68,2,40;1156,0,0,0,15,Synth Blue Pill - Shield Boost Bonus
-848,1,28672,654,2,654;656;655;653;648;657;772;476;1019;386;396;395;394;385;384;387;89,0,0,0,15,Synth Crash - Explosion Radius Bonus
+848,1,28672,654,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;396;395;394;385;384;387;89,0,0,0,15,Synth Crash - Explosion Radius Bonus
 767,1,28674,160,2,55;53;74,0,0,0,15,Synth Drop - Tracking Speed Bonus
 895,1,28676,84,2,62;1199,0,0,0,15,Synth Exile - Armor Repair Bonus
 294,1,28678,54,2,55;53;74,0,0,0,15,Synth Frentix - Turret Optimal Range Bonus
@@ -1866,5 +1869,5 @@
 548,1,36908,68,2,40;1156,0,0,0,15,Antipharmakon Thureo - Shield Boost Bonus
 895,1,36909,84,2,62;1199,0,0,0,15,Antipharmakon Kosybo - Armor Repair Bonus
 767,1,36910,160,2,55;53;74,0,0,0,15,Antipharmakon Iokira - Tracking Speed Bonus
-557,1,36911,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,0,0,15,Antipharmakon Toxot - Missile Flight Time Bonus
+557,1,36911,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,15,Antipharmakon Toxot - Missile Flight Time Bonus
 1079,1,36912,482,3,6,0,0,0,15,Antipharmakon Aeolis - Capacitor Bonus
