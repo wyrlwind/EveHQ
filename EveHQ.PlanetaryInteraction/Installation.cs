@@ -47,7 +47,31 @@ namespace EveHQ.PlanetaryInteraction
 
         public string Commodity
         {
-            get { return _pin.ContentTypeName; }
+            get
+            {
+                HashSet<String> commodities = new HashSet<String>();
+                foreach (Route route in _colony.Routes)
+                {
+                    if (route.SourceID == _pin.PinID)
+                    {
+                        commodities.Add(route.Commodity);
+                    }
+                }
+                String commodityList = "";
+                foreach (String commodity in commodities)
+                {
+                    if (commodityList.Length != 0)
+                    {
+                        commodityList += ",";
+                    }
+                    commodityList += commodity;
+                }
+                if (commodityList.Length == 0)
+                {
+                    commodityList = _pin.ContentTypeName;
+                }
+                return commodityList;
+            }
         }
 
         public int Quantity

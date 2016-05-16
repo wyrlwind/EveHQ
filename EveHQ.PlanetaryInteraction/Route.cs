@@ -17,6 +17,16 @@ namespace EveHQ.PlanetaryInteraction
             _colony = colony;
         }
 
+        public long RouteID
+        {
+            get { return _route.RouteID; }
+        }
+
+        public long SourceID
+        {
+            get { return _route.SourcePinID; }
+        }
+
         public string Planet
         {
             get { return _colony.Planet; }

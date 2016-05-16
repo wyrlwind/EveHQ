@@ -9,9 +9,9 @@ namespace EveHQ.PlanetaryInteraction
     class Colony
     {
         private PlanetaryColony _colony;
-        private List<Installation> _installations;
+        private Dictionary<long, Installation> _installations;
         private List<Link> _links;
-        private List<Route> _routes;
+        private Dictionary<long, Route> _routes;
 
         public Colony(PlanetaryColony colony)
         {
@@ -22,9 +22,9 @@ namespace EveHQ.PlanetaryInteraction
         {
             if (_installations == null)
             {
-                _installations = new List<Installation>();
+                _installations = new Dictionary<long, Installation>();
             }
-            _installations.Add(new Installation(pin, this));
+            _installations[pin.PinID] = new Installation(pin, this);
         }
 
         public void addLink(PlanetaryLink link)
@@ -40,15 +40,37 @@ namespace EveHQ.PlanetaryInteraction
         {
             if (_routes == null)
             {
-                _routes = new List<Route>();
+                _routes = new Dictionary<long, Route>();
             }
-            _routes.Add(new Route(route, this));
+            _routes[route.RouteID] = new Route(route, this);
         }
 
         public List<Route> Routes
         {
-            get { return _routes; }
-            set { _routes = value; }
+            get
+            {
+                List<Route> routes = null;
+                if (_routes.Count != 0)
+                {
+                    routes = new List<Route>();
+                    foreach (KeyValuePair<long, Route> route in _routes)
+                    {
+                        routes.Add(route.Value);
+                    }
+                }
+                return routes;
+            }
+            set
+            {
+                foreach (Route route in value)
+                {
+                    if (_routes == null)
+                    {
+                        _routes = new Dictionary<long, Route>();
+                    }
+                    _routes[route.RouteID] = route;
+                }
+            }
         }
 
         public List<Link> Links
@@ -59,8 +81,30 @@ namespace EveHQ.PlanetaryInteraction
 
         public List<Installation> Installations
         {
-            get { return _installations; }
-            set { _installations = value; }
+            get
+            {
+                List<Installation> installations = null;
+                if (_installations.Count != 0)
+                {
+                    installations = new List<Installation>();
+                    foreach (KeyValuePair<long, Installation> installation in _installations)
+                    {
+                        installations.Add(installation.Value);
+                    }
+                }
+                return installations;
+            }
+            set
+            {
+                foreach (Installation installation in value)
+                {
+                    if (_installations == null)
+                    {
+                        _installations = new Dictionary<long, Installation>();
+                    }
+                    _installations[installation.Id] = installation;
+                }
+            }
         }
 
         public int PlanetID

@@ -10,7 +10,7 @@ namespace EveHQ.PlanetaryInteraction
     public partial class FrmPI : Form
     {
         EveHQPilot _pilot = null;
-        private List<Colony> _colonies;
+        private Dictionary<long, Colony> _colonies;
         private List<Colony> _coloniesSelected;
 
         public FrmPI()
@@ -131,6 +131,14 @@ namespace EveHQ.PlanetaryInteraction
 
         private void InitCharacterColonies()
         {
+            if (_colonies != null)
+            {
+                _colonies.Clear();
+            }
+            if (_coloniesSelected != null)
+            {
+                _coloniesSelected.Clear();
+            }
             objectListViewColonies.BeginUpdate();
             objectListViewColonies.Items.Clear();
             objectListViewPins.Items.Clear();
@@ -147,53 +155,61 @@ namespace EveHQ.PlanetaryInteraction
 
                 if (coloniesResponse.IsSuccess)
                 {
-                    List<Colony> colonies = new List<Colony>();
+                    Dictionary<long, Colony> colonies = new Dictionary<long, Colony>();
                     foreach (PlanetaryColony colony in coloniesResponse.ResultData)
                     {
                         Colony newPlanet = new Colony(colony);
-                        colonies.Add(newPlanet);
+                        colonies[newPlanet.PlanetID] = newPlanet;
                     }
                     _colonies = colonies;
-                    foreach (Colony colony in colonies)
+                    foreach (KeyValuePair<long, Colony> colony in colonies)
                     {
                         EveServiceResponse<IEnumerable<PlanetaryPin>> pinsResponse =
-                                HQ.ApiProvider.Character.PlanetaryPins(pilotAccount.UserID, pilotAccount.APIKey, Convert.ToInt32(_pilot.ID), colony.PlanetID);
+                                HQ.ApiProvider.Character.PlanetaryPins(pilotAccount.UserID, pilotAccount.APIKey, Convert.ToInt32(_pilot.ID), colony.Value.PlanetID);
 
                         if (pinsResponse.IsSuccess)
                         {
                             foreach (PlanetaryPin pin in pinsResponse.ResultData)
                             {
-                                colony.addInstallation(pin);
+                                colony.Value.addInstallation(pin);
                             }
                         }
 
                         EveServiceResponse<IEnumerable<PlanetaryLink>> linksResponse =
-                                HQ.ApiProvider.Character.PlanetaryLinks(pilotAccount.UserID, pilotAccount.APIKey, Convert.ToInt32(_pilot.ID), colony.PlanetID);
+                                HQ.ApiProvider.Character.PlanetaryLinks(pilotAccount.UserID, pilotAccount.APIKey, Convert.ToInt32(_pilot.ID), colony.Value.PlanetID);
 
                         if (linksResponse.IsSuccess)
                         {
                             foreach (PlanetaryLink link in linksResponse.ResultData)
                             {
-                                colony.addLink(link);
+                                colony.Value.addLink(link);
                             }
                         }
 
                         EveServiceResponse<IEnumerable<PlanetaryRoute>> routesResponse =
-                                HQ.ApiProvider.Character.PlanetaryRoutes(pilotAccount.UserID, pilotAccount.APIKey, Convert.ToInt32(_pilot.ID), colony.PlanetID);
+                                HQ.ApiProvider.Character.PlanetaryRoutes(pilotAccount.UserID, pilotAccount.APIKey, Convert.ToInt32(_pilot.ID), colony.Value.PlanetID);
 
                         if (routesResponse.IsSuccess)
                         {
                             foreach (PlanetaryRoute route in routesResponse.ResultData)
                             {
-                                colony.addRoute(route);
+                                colony.Value.addRoute(route);
                             }
                         }
                     }
-                    objectListViewColonies.AddObjects(colonies);
+                    if (_coloniesSelected == null)
+                    {
+                        _coloniesSelected = new List<Colony>();
+                    }
+                    foreach (KeyValuePair<long, Colony> colony in _colonies)
+                    {
+                        _coloniesSelected.Add(colony.Value);
+                    }
+                    objectListViewColonies.AddObjects(_coloniesSelected);
                     objectListViewColonies.EndUpdate();
-                    showInstallations(colonies);
-                    showLinks(colonies);
-                    showRoutes(colonies);
+                    showInstallations(_coloniesSelected);
+                    showLinks(_coloniesSelected);
+                    showRoutes(_coloniesSelected);
                 }
             }
         }
@@ -214,7 +230,10 @@ namespace EveHQ.PlanetaryInteraction
             }
             if (_coloniesSelected.Count == 0)
             {
-                _coloniesSelected = _colonies;
+                foreach (KeyValuePair<long, Colony> colony in _colonies)
+                {
+                    _coloniesSelected.Add(colony.Value);
+                }
             }
             showInstallations(_coloniesSelected);
             showLinks(_coloniesSelected);
