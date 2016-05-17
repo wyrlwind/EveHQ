@@ -13,7 +13,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyCompany("EveHQ team")> 
 <Assembly: AssemblyProduct("EveHQ")> 
 <Assembly: AssemblyCopyright("")>
-<Assembly: AssemblyTrademark("2015-05-12")>
+<Assembly: AssemblyTrademark("2015-05-17")>
 
 <Assembly: ComVisible(False)> 
 
@@ -30,5 +30,5 @@ Imports System.Runtime.InteropServices
 ' You can specify all the values or you can default the Build and Revision Numbers 
 ' by using the '*' as shown below:
 
-<Assembly: AssemblyVersion("2.27.0.2")>
-<Assembly: AssemblyFileVersion("2.27.0.2")>
+<Assembly: AssemblyVersion("2.27.1.0")>
+<Assembly: AssemblyFileVersion("2.27.1.0")>
