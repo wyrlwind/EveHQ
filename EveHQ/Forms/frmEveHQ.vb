@@ -3452,8 +3452,6 @@ Namespace Forms
                     msg &=
                         "This is usually caused by insufficient permissions on the host machine or an incompatible (older) operating system." &
                         ControlChars.CrLf & ControlChars.CrLf
-                    msg &=
-                        "More information and resolutions can be found at http://forum.battleclinic.com/index.php/topic,42896.0/IGB-not-working.html"
                     Dim sti As New SuperTooltipInfo("IGB Server Access Error", "IGB Server Disabled", msg, Nothing,
                                                  My.Resources.Info32, eTooltipColor.Yellow)
                     SuperTooltip1.SetSuperTooltip(btnIGB, sti)

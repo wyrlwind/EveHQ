@@ -119,6 +119,11 @@ Imports System.Runtime.Serialization
     Private _cDroneBandwidth As Double
     Private _cUsedDrones As Integer
     Private _cMaxDrones As Integer
+    Private _cFighterBay As Double
+    Private _cFighterSquadronLaunchTubes As Integer
+    Private _cLightFighterSquadronLimit As Integer
+    Private _cSupportFighterSquadronLimit As Integer
+    Private _cHeavyFighterSquadronLimit As Integer
     Private _cShipBay As Double
     Private _cMaxLockedTargets As Double
     Private _cMaxTargetRange As Double
@@ -158,10 +163,12 @@ Imports System.Runtime.Serialization
     Private _cCargoBayUsed As Double
     Private _cCargoBayAdditional As Double
     Private _cDroneBayUsed As Double
+    Private _cFighterBayUsed As Double
     Private _cShipBayUsed As Double
     Private _cDroneBandwidthUsed As Double
     Private _cCargoBayItems As New SortedList(Of Integer, CargoBayItem)
     Private _cDroneBayItems As New SortedList(Of Integer, DroneBayItem)
+    Private _cFighterBayItems As New SortedList(Of Integer, FighterBayItem)
     Private _cShipBayItems As New SortedList(Of Integer, ShipBayItem)
     Private _cEffectiveShieldHp As Double
     Private _cEffectiveArmorHp As Double
@@ -939,6 +946,75 @@ Imports System.Runtime.Serialization
 
 #End Region
 
+#Region "Fighter Properties"
+
+    <ProtoMember(99)> <Description("The fighter bay capacity of the ship")> <Category("Fighters")> Public Property FighterBay() As Double
+        Get
+            Return _cFighterBay
+        End Get
+        Set(ByVal value As Double)
+            If value < 0 Then
+                MessageBox.Show("Fighter Bay capacity must be a zero or positive value.", "Ship Properties Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                _cFighterBay = value
+            End If
+        End Set
+    End Property
+
+    <ProtoMember(100)> <Description("The number of fighter launch tubes of the ship")> <Category("Fighters")> Public Property FighterSquadronLaunchTubes() As Integer
+        Get
+            Return _cFighterSquadronLaunchTubes
+        End Get
+        Set(ByVal value As Integer)
+            If value < 0 Then
+                MessageBox.Show("Fighter launch tubes count must be a zero or positive value.", "Ship Properties Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                _cFighterSquadronLaunchTubes = value
+            End If
+        End Set
+    End Property
+
+    <ProtoMember(101)> <Description("The max number of light fighter squadrons of the ship")> <Category("Fighters")> Public Property LightFighterSquadronLimit() As Integer
+        Get
+            Return _cLightFighterSquadronLimit
+        End Get
+        Set(ByVal value As Integer)
+            If value < 0 Then
+                MessageBox.Show("Light fighter squadron limit must be a zero or positive value.", "Ship Properties Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                _cLightFighterSquadronLimit = value
+            End If
+        End Set
+    End Property
+
+    <ProtoMember(110)> <Description("The max number of support fighter squadrons of the ship")> <Category("Fighters")> Public Property SupportFighterSquadronLimit() As Integer
+        Get
+            Return _cSupportFighterSquadronLimit
+        End Get
+        Set(ByVal value As Integer)
+            If value < 0 Then
+                MessageBox.Show("Support fighter squadron limit must be a zero or positive value.", "Ship Properties Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                _cSupportFighterSquadronLimit = value
+            End If
+        End Set
+    End Property
+
+    <ProtoMember(111)> <Description("The max number of heavy fighter squadrons of the ship")> <Category("Fighters")> Public Property HeavyFighterSquadronLimit() As Integer
+        Get
+            Return _cHeavyFighterSquadronLimit
+        End Get
+        Set(ByVal value As Integer)
+            If value < 0 Then
+                MessageBox.Show("Heavy fighter squadron limit must be a zero or positive value.", "Ship Properties Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                _cHeavyFighterSquadronLimit = value
+            End If
+        End Set
+    End Property
+
+#End Region
+
 #Region "Targeting Properties"
 
     <ProtoMember(54)> <Description("The maximum number of locked targets allowed by the ship")> <Category("Targeting")> Public Property MaxLockedTargets() As Double
@@ -1480,7 +1556,17 @@ Imports System.Runtime.Serialization
         End Set
     End Property
 
-    <ProtoMember(89)> <Browsable(False)> _
+    <ProtoMember(98)> <Browsable(False)>
+    <Description("The amount of fighter bay capacity used on the ship")> <Category("Fitting Used")> Public Property FighterBayUsed() As Double
+        Get
+            Return _cFighterBayUsed
+        End Get
+        Set(ByVal value As Double)
+            _cFighterBayUsed = value
+        End Set
+    End Property
+
+    <ProtoMember(89)> <Browsable(False)>
     <Description("The amount of ship maintenance bay capacity used on the ship")> <Category("Fitting Used")> Public Property ShipBayUsed() As Double
         Get
             Return _cShipBayUsed
@@ -1567,6 +1653,16 @@ Imports System.Runtime.Serialization
         End Get
         Set(ByVal value As SortedList(Of Integer, ShipBayItem))
             _cShipBayItems = value
+        End Set
+    End Property
+
+    <ProtoMember(97)> <Browsable(False)>
+    <Description("The collection of items stored in the fighter bay of the ship")> <Category("Storage Bay Items")> Public Property FighterBayItems() As SortedList(Of Integer, FighterBayItem)
+        Get
+            Return _cFighterBayItems
+        End Get
+        Set(ByVal value As SortedList(Of Integer, FighterBayItem))
+            _cFighterBayItems = value
         End Set
     End Property
 
@@ -2253,6 +2349,16 @@ Imports System.Runtime.Serialization
                     newShip.ShipBay = attValue
                 Case 1271
                     newShip.DroneBandwidth = attValue
+                Case 2055
+                    newShip.FighterBay = attValue
+                Case 2216
+                    newShip.FighterSquadronLaunchTubes = CInt(attValue)
+                Case 2217
+                    newShip.LightFighterSquadronLimit = CInt(attValue)
+                Case 2218
+                    newShip.SupportFighterSquadronLimit = CInt(attValue)
+                Case 2219
+                    newShip.HeavyFighterSquadronLimit = CInt(attValue)
                 Case 10002
                     newShip.Mass = attValue
                 Case 10004
@@ -2437,6 +2543,12 @@ End Class
 
 <ProtoContract()> <Serializable()> Public Class DroneBayItem
     <ProtoMember(1)> Public DroneType As ShipModule
+    <ProtoMember(2)> Public Quantity As Integer
+    <ProtoMember(3)> Public IsActive As Boolean
+End Class
+
+<ProtoContract()> <Serializable()> Public Class FighterBayItem
+    <ProtoMember(1)> Public FighterType As ShipModule
     <ProtoMember(2)> Public Quantity As Integer
     <ProtoMember(3)> Public IsActive As Boolean
 End Class

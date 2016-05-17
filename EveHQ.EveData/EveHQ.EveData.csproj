@@ -17,22 +17,25 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>$(SolutionDir)BuildOutput\$(Configuration)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
-    <PlatformTarget>x86</PlatformTarget>
-    <DocumentationFile>bin\Debug\EveHQ.EveData.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>$(SolutionDir)BuildOutput\$(Configuration)\EveHQ.EveData.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>$(SolutionDir)BuildOutput\$(Configuration)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="protobuf-net">
@@ -244,6 +247,9 @@
       <Name>EveHQ.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
   <Import Project="$(SolutionDir)\Version.Csharp.Targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -254,27 +260,10 @@
   <Target Name="BeforeBuild">
     <CallTarget Targets="SetAssemblyVersion" />
   </Target>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PreBuildEvent>IF NOT EXIST "$(SolutionDir)BuildOutput\Debug\" mkdir "$(SolutionDir)BuildOutput\Debug\"
-IF NOT EXIST "$(SolutionDir)BuildOutput\Debug\StaticData" mkdir "$(SolutionDir)BuildOutput\Debug\StaticData"</PreBuildEvent>
+  <PropertyGroup>
+    <PreBuildEvent />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PreBuildEvent>
-      IF NOT EXIST "$(SolutionDir)BuildOutput\Release\" mkdir "$(SolutionDir)BuildOutput\Release\"
-      IF NOT EXIST "$(SolutionDir)BuildOutput\Release\StaticData" mkdir "$(SolutionDir)BuildOutput\Release\StaticData"
-    </PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PostBuildEvent>
-      copy /Y "$(TargetDir)*.*" "$(SolutionDir)BuildOutput\Debug\"
-      copy /Y "$(TargetDir)StaticData\*.*" "$(SolutionDir)BuildOutput\Debug\StaticData"
-    </PostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PostBuildEvent>
-      copy /Y "$(TargetDir)*.*" "$(SolutionDir)BuildOutput\Release\"
-      copy /Y "$(TargetDir)StaticData\*.*" "$(SolutionDir)BuildOutput\Release\StaticData"
-    </PostBuildEvent>
-    <PlatformTarget>x86</PlatformTarget>
+  <PropertyGroup>
+    <PostBuildEvent />
   </PropertyGroup>
 </Project>

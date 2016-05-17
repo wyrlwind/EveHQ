@@ -297,6 +297,7 @@ Namespace Controls
             '-ln(0.25) * Inertia Modifier * Mass / 1.000.000
             lblAlignTime.Text = (-Math.Log(0.25) * ParentFitting.FittedShip.Inertia * ParentFitting.FittedShip.Mass / 1000000).ToString("N2") & " s"
             epPropulsion.TitleText = "Propulsion (Speed: " & ParentFitting.FittedShip.MaxVelocity.ToString("N2") & " m/s)"
+            lblMass.Text = (ParentFitting.FittedShip.Mass / 1000).ToString("N2") & " t"
 
             ' Targeting
             lblTargetRange.Text = ParentFitting.FittedShip.MaxTargetRange.ToString("N0") & " m"

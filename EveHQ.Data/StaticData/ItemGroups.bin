@@ -3,10 +3,12 @@
 139,Ammunition & Charges\Cap Booster Charges
 0,Ammunition & Charges\Frequency Crystals
 0,Ammunition & Charges\Frequency Crystals\Advanced Beam Laser Crystals
+2257,Ammunition & Charges\Frequency Crystals\Advanced Beam Laser Crystals\Extra Large
 866,Ammunition & Charges\Frequency Crystals\Advanced Beam Laser Crystals\Large
 867,Ammunition & Charges\Frequency Crystals\Advanced Beam Laser Crystals\Medium
 868,Ammunition & Charges\Frequency Crystals\Advanced Beam Laser Crystals\Small
 0,Ammunition & Charges\Frequency Crystals\Advanced Pulse Laser Crystals
+2256,Ammunition & Charges\Frequency Crystals\Advanced Pulse Laser Crystals\Extra Large
 869,Ammunition & Charges\Frequency Crystals\Advanced Pulse Laser Crystals\Large
 870,Ammunition & Charges\Frequency Crystals\Advanced Pulse Laser Crystals\Medium
 871,Ammunition & Charges\Frequency Crystals\Advanced Pulse Laser Crystals\Small
@@ -23,10 +25,12 @@
 102,Ammunition & Charges\Frequency Crystals\Standard Crystals\Small
 0,Ammunition & Charges\Hybrid Charges
 0,Ammunition & Charges\Hybrid Charges\Advanced Blaster Charges
+2254,Ammunition & Charges\Hybrid Charges\Advanced Blaster Charges\Extra Large
 860,Ammunition & Charges\Hybrid Charges\Advanced Blaster Charges\Large
 861,Ammunition & Charges\Hybrid Charges\Advanced Blaster Charges\Medium
 862,Ammunition & Charges\Hybrid Charges\Advanced Blaster Charges\Small
 0,Ammunition & Charges\Hybrid Charges\Advanced Railgun Charges
+2255,Ammunition & Charges\Hybrid Charges\Advanced Railgun Charges\Extra Large
 863,Ammunition & Charges\Hybrid Charges\Advanced Railgun Charges\Large
 864,Ammunition & Charges\Hybrid Charges\Advanced Railgun Charges\Medium
 865,Ammunition & Charges\Hybrid Charges\Advanced Railgun Charges\Small
@@ -46,12 +50,6 @@
 0,Ammunition & Charges\Missiles\Auto-Targeting
 1192,Ammunition & Charges\Missiles\Auto-Targeting\Faction Auto-Targeting
 914,Ammunition & Charges\Missiles\Auto-Targeting\Standard Auto-Targeting
-0,Ammunition & Charges\Missiles\Citadel Cruise Missiles
-1317,Ammunition & Charges\Missiles\Citadel Cruise Missiles\Faction Citadel Cruise Missiles
-1287,Ammunition & Charges\Missiles\Citadel Cruise Missiles\Standard Citadel Cruise Missiles
-0,Ammunition & Charges\Missiles\Citadel Torpedoes
-1194,Ammunition & Charges\Missiles\Citadel Torpedoes\Faction Citadel Torpedoes
-1193,Ammunition & Charges\Missiles\Citadel Torpedoes\Standard Citadel Torpedoes
 0,Ammunition & Charges\Missiles\Cruise Missiles
 925,Ammunition & Charges\Missiles\Cruise Missiles\Advanced High Damage Cruise Missiles
 918,Ammunition & Charges\Missiles\Cruise Missiles\Advanced High Precision Cruise Missiles
@@ -78,11 +76,23 @@
 928,Ammunition & Charges\Missiles\Rockets\Advanced Long Range Rockets
 999,Ammunition & Charges\Missiles\Rockets\Faction Rockets
 922,Ammunition & Charges\Missiles\Rockets\Standard Rockets
+2197,Ammunition & Charges\Missiles\Structure Anticapital Missiles
+2196,Ammunition & Charges\Missiles\Structure Antisubcapital Missiles
 0,Ammunition & Charges\Missiles\Torpedoes
 931,Ammunition & Charges\Missiles\Torpedoes\Advanced Anti-Ship Torpedoes
 929,Ammunition & Charges\Missiles\Torpedoes\Advanced Long Range Torpedoes
 1000,Ammunition & Charges\Missiles\Torpedoes\Faction Torpedoes
 923,Ammunition & Charges\Missiles\Torpedoes\Standard Torpedoes
+0,Ammunition & Charges\Missiles\XL Cruise Missiles
+2261,Ammunition & Charges\Missiles\XL Cruise Missiles\Advanced High Damage XL Cruise Missiles
+2260,Ammunition & Charges\Missiles\XL Cruise Missiles\Advanced High Precision XL Cruise Missiles
+1317,Ammunition & Charges\Missiles\XL Cruise Missiles\Faction XL Cruise Missiles
+1287,Ammunition & Charges\Missiles\XL Cruise Missiles\Standard XL Cruise Missiles
+0,Ammunition & Charges\Missiles\XL Torpedoes
+2258,Ammunition & Charges\Missiles\XL Torpedoes\Advanced Anti-Ship XL Torpedoes
+2259,Ammunition & Charges\Missiles\XL Torpedoes\Advanced Long Range XL Torpedoes
+1194,Ammunition & Charges\Missiles\XL Torpedoes\Faction XL Torpedoes
+1193,Ammunition & Charges\Missiles\XL Torpedoes\Standard XL Torpedoes
 1103,Ammunition & Charges\Nanite Repair Paste
 0,Ammunition & Charges\Probes
 1201,Ammunition & Charges\Probes\Interdiction Probes
@@ -90,10 +100,12 @@
 1200,Ammunition & Charges\Probes\Survey Probes
 0,Ammunition & Charges\Projectile Ammo
 0,Ammunition & Charges\Projectile Ammo\Advanced Artillery Ammo
+2252,Ammunition & Charges\Projectile Ammo\Advanced Artillery Ammo\Extra Large
 854,Ammunition & Charges\Projectile Ammo\Advanced Artillery Ammo\Large
 855,Ammunition & Charges\Projectile Ammo\Advanced Artillery Ammo\Medium
 856,Ammunition & Charges\Projectile Ammo\Advanced Artillery Ammo\Small
 0,Ammunition & Charges\Projectile Ammo\Advanced Autocannon Ammo
+2253,Ammunition & Charges\Projectile Ammo\Advanced Autocannon Ammo\Extra Large
 857,Ammunition & Charges\Projectile Ammo\Advanced Autocannon Ammo\Large
 858,Ammunition & Charges\Projectile Ammo\Advanced Autocannon Ammo\Medium
 859,Ammunition & Charges\Projectile Ammo\Advanced Autocannon Ammo\Small
@@ -109,16 +121,19 @@
 112,Ammunition & Charges\Projectile Ammo\Standard Ammo\Medium
 113,Ammunition & Charges\Projectile Ammo\Standard Ammo\Small
 1094,Ammunition & Charges\Scripts
+2198,Ammunition & Charges\Structure Guided Bombs
 0,Drones
 0,Drones\Combat Drones
-1310,Drones\Combat Drones\Fighter Bombers
-840,Drones\Combat Drones\Fighters
 839,Drones\Combat Drones\Heavy Attack Drones
 837,Drones\Combat Drones\Light Scout Drones
 838,Drones\Combat Drones\Medium Scout Drones
 911,Drones\Combat Drones\Sentry Drones
 843,Drones\Combat Utility Drones
 841,Drones\Electronic Warfare Drones
+0,Drones\Fighters
+1310,Drones\Fighters\Heavy Fighters
+840,Drones\Fighters\Light Fighters
+2239,Drones\Fighters\Support Fighters
 842,Drones\Logistic Drones
 158,Drones\Mining Drones
 1646,Drones\Salvage Drones
@@ -197,6 +212,7 @@
 0,Ship Equipment
 938,Ship Equipment\Drone Upgrades
 0,Ship Equipment\Electronic Warfare
+2249,Ship Equipment\Electronic Warfare\Burst Projectors
 0,Ship Equipment\Electronic Warfare\ECCM
 725,Ship Equipment\Electronic Warfare\ECCM\Gravimetric Sensors
 726,Ship Equipment\Electronic Warfare\ECCM\Ladar Sensors
@@ -240,11 +256,13 @@
 0,Ship Equipment\Engineering Equipment
 660,Ship Equipment\Engineering Equipment\Auxiliary Power Controls
 0,Ship Equipment\Engineering Equipment\Capacitor Batteries
+2242,Ship Equipment\Engineering Equipment\Capacitor Batteries\Capital
 705,Ship Equipment\Engineering Equipment\Capacitor Batteries\Large
 704,Ship Equipment\Engineering Equipment\Capacitor Batteries\Medium
 702,Ship Equipment\Engineering Equipment\Capacitor Batteries\Micro
 703,Ship Equipment\Engineering Equipment\Capacitor Batteries\Small
 0,Ship Equipment\Engineering Equipment\Capacitor Boosters
+2243,Ship Equipment\Engineering Equipment\Capacitor Boosters\Capital
 701,Ship Equipment\Engineering Equipment\Capacitor Boosters\Heavy
 700,Ship Equipment\Engineering Equipment\Capacitor Boosters\Medium
 698,Ship Equipment\Engineering Equipment\Capacitor Boosters\Micro
@@ -253,10 +271,12 @@
 667,Ship Equipment\Engineering Equipment\Capacitor Power Relays
 665,Ship Equipment\Engineering Equipment\Capacitor Rechargers
 0,Ship Equipment\Engineering Equipment\Energy Neutralizers
+2250,Ship Equipment\Engineering Equipment\Energy Neutralizers\Capital
 691,Ship Equipment\Engineering Equipment\Energy Neutralizers\Heavy
 690,Ship Equipment\Engineering Equipment\Energy Neutralizers\Medium
 689,Ship Equipment\Engineering Equipment\Energy Neutralizers\Small
 0,Ship Equipment\Engineering Equipment\Energy Nosferatu
+2251,Ship Equipment\Engineering Equipment\Energy Nosferatu\Capital
 694,Ship Equipment\Engineering Equipment\Energy Nosferatu\Heavy
 693,Ship Equipment\Engineering Equipment\Energy Nosferatu\Medium
 692,Ship Equipment\Engineering Equipment\Energy Nosferatu\Small
@@ -291,11 +311,14 @@
 1681,Ship Equipment\Hull & Armor \Armor Hardeners\EM Armor Hardeners
 1680,Ship Equipment\Hull & Armor \Armor Hardeners\Explosive Armor Hardeners
 1679,Ship Equipment\Hull & Armor \Armor Hardeners\Kinetic Armor Hardeners
+1416,Ship Equipment\Hull & Armor \Armor Hardeners\Reactive Armor Hardeners
+2245,Ship Equipment\Hull & Armor \Armor Hardeners\Scriptable Armor Hardeners
 1678,Ship Equipment\Hull & Armor \Armor Hardeners\Thermal Armor Hardeners
 0,Ship Equipment\Hull & Armor \Armor Plates
 1672,Ship Equipment\Hull & Armor \Armor Plates\100mm Armor Plate
 1676,Ship Equipment\Hull & Armor \Armor Plates\1600mm Armor Plate
 1673,Ship Equipment\Hull & Armor \Armor Plates\200mm Armor Plate
+2240,Ship Equipment\Hull & Armor \Armor Plates\25000mm Armor Plate
 1674,Ship Equipment\Hull & Armor \Armor Plates\400mm Armor Plate
 1675,Ship Equipment\Hull & Armor \Armor Plates\800mm Armor Plate
 0,Ship Equipment\Hull & Armor \Armor Repairers
@@ -312,6 +335,7 @@
 1685,Ship Equipment\Hull & Armor \Energized Plating\Energized Kinetic Plating
 1683,Ship Equipment\Hull & Armor \Energized Plating\Energized Thermal Plating
 0,Ship Equipment\Hull & Armor \Hull Repairers
+2244,Ship Equipment\Hull & Armor \Hull Repairers\Capital
 1055,Ship Equipment\Hull & Armor \Hull Repairers\Large
 1054,Ship Equipment\Hull & Armor \Hull Repairers\Medium
 1053,Ship Equipment\Hull & Armor \Hull Repairers\Small
@@ -320,7 +344,6 @@
 1196,Ship Equipment\Hull & Armor \Hull Upgrades\Nanofiber Internal Structures
 1195,Ship Equipment\Hull & Armor \Hull Upgrades\Reinforced Bulkheads
 1669,Ship Equipment\Hull & Armor \Layered Plating
-1416,Ship Equipment\Hull & Armor \Reactive Armor Hardener
 0,Ship Equipment\Hull & Armor \Remote Armor Repairers
 1056,Ship Equipment\Hull & Armor \Remote Armor Repairers\Capital
 1057,Ship Equipment\Hull & Armor \Remote Armor Repairers\Large
@@ -372,6 +395,7 @@
 610,Ship Equipment\Shield\Shield Boosters\Medium
 609,Ship Equipment\Shield\Shield Boosters\Small
 0,Ship Equipment\Shield\Shield Extenders
+2241,Ship Equipment\Shield\Shield Extenders\Capital
 608,Ship Equipment\Shield\Shield Extenders\Large
 606,Ship Equipment\Shield\Shield Extenders\Medium
 605,Ship Equipment\Shield\Shield Extenders\Small
@@ -381,6 +405,7 @@
 1695,Ship Equipment\Shield\Shield Hardeners\EM Shield Hardeners
 1694,Ship Equipment\Shield\Shield Hardeners\Explosive Shield Hardeners
 1693,Ship Equipment\Shield\Shield Hardeners\Kinetic Shield Hardeners
+2246,Ship Equipment\Shield\Shield Hardeners\Scriptable Shield Hardeners
 1692,Ship Equipment\Shield\Shield Hardeners\Thermal Shield Hardeners
 688,Ship Equipment\Shield\Shield Power Relays
 126,Ship Equipment\Shield\Shield Rechargers
@@ -396,7 +421,12 @@
 382,Ship Equipment\Smartbombs\Small
 0,Ship Equipment\Turrets & Bays
 1014,Ship Equipment\Turrets & Bays\Bomb Launchers
-912,Ship Equipment\Turrets & Bays\Doomsday Devices
+0,Ship Equipment\Turrets & Bays\Doomsday Devices
+2267,Ship Equipment\Turrets & Bays\Doomsday Devices\Amarr
+2268,Ship Equipment\Turrets & Bays\Doomsday Devices\Caldari
+2269,Ship Equipment\Turrets & Bays\Doomsday Devices\Gallente
+2270,Ship Equipment\Turrets & Bays\Doomsday Devices\Minmatar
+2276,Ship Equipment\Turrets & Bays\Doomsday Devices\Non-Racial
 0,Ship Equipment\Turrets & Bays\Energy Turrets
 0,Ship Equipment\Turrets & Bays\Energy Turrets\Beam Lasers
 773,Ship Equipment\Turrets & Bays\Energy Turrets\Beam Lasers\Extra Large
@@ -420,15 +450,16 @@
 565,Ship Equipment\Turrets & Bays\Hybrid Turrets\Railguns\Medium
 564,Ship Equipment\Turrets & Bays\Hybrid Turrets\Railguns\Small
 0,Ship Equipment\Turrets & Bays\Missile Launchers
-777,Ship Equipment\Turrets & Bays\Missile Launchers\Citadel Launchers
 643,Ship Equipment\Turrets & Bays\Missile Launchers\Cruise Launchers
 974,Ship Equipment\Turrets & Bays\Missile Launchers\Heavy Assault Launchers
 642,Ship Equipment\Turrets & Bays\Missile Launchers\Heavy Launchers
 640,Ship Equipment\Turrets & Bays\Missile Launchers\Light Missile Launchers
 1827,Ship Equipment\Turrets & Bays\Missile Launchers\Rapid Heavy Missile Launchers
 641,Ship Equipment\Turrets & Bays\Missile Launchers\Rapid Light Missile Launchers
+2247,Ship Equipment\Turrets & Bays\Missile Launchers\Rapid Torpedo Launchers
 639,Ship Equipment\Turrets & Bays\Missile Launchers\Rocket Launchers
 644,Ship Equipment\Turrets & Bays\Missile Launchers\Torpedo Launchers
+777,Ship Equipment\Turrets & Bays\Missile Launchers\XL Launchers
 0,Ship Equipment\Turrets & Bays\Projectile Turrets
 0,Ship Equipment\Turrets & Bays\Projectile Turrets\Artillery Cannons
 775,Ship Equipment\Turrets & Bays\Projectile Turrets\Artillery Cannons\Extra Large

@@ -289,6 +289,13 @@ Namespace Forms
                 Next
             End If
 
+            If currentShip.FighterBayItems.Count > 0 Then
+                fitting.AppendLine("")
+                For Each fighter As FighterBayItem In currentShip.FighterBayItems.Values
+                    fitting.AppendLine(fighter.Quantity & "x " & fighter.FighterType.Name)
+                Next
+            End If
+
             If currentShip.CargoBayItems.Count > 0 Then
                 fitting.AppendLine("")
                 For Each cargo As CargoBayItem In currentShip.CargoBayItems.Values

@@ -102,6 +102,10 @@ Public Enum AttributeEnum
 
     ' module attributes
     ModuleActivationTime = 73
+    ModuleDurationECMJammerBurstProjector = 2398
+    ModuleDurationSensorDampeningBurstProjector = 2399
+    ModuleDurationTargetIlluminationBurstProjector = 2400
+    ModuleDurationWeaponDisruptionBurstProjector = 2397
     ModuleAoERadius = 99
     ModuleArmorBoostedRepairMultiplier = 1886
     ModuleArmorEMResistance = 267
@@ -124,11 +128,13 @@ Public Enum AttributeEnum
     ModuleCanFitShipGroup7 = 1880
     ModuleCanFitShipGroup8 = 1881
     ModuleCanFitShipGroup9 = 2065
+    ModuleCanFitShipGroup10 = 2396
     ModuleCanFitShipType1 = 1302
     ModuleCanFitShipType2 = 1303
     ModuleCanFitShipType3 = 1304
     ModuleCanFitShipType4 = 1305
     ModuleCanFitShipType5 = 1944
+    ModuleCanFitShipType6 = 2103
     ModuleCapacitorNeed = 6
     ModuleChargeGroup1 = 604
     ModuleChargeGroup2 = 605
