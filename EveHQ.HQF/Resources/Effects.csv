@@ -839,7 +839,7 @@
 2335,2,407,263,3,87,1,0,0,14,Fighter Support Unit - Shield HP
 2336,2,407,37,3,87,1,0,0,14,Fighter Support Unit - Velocity
 2337,2,407,2233,3,87,1,0,0,14,Fighter Support Unit - ROF
-1255,2,645,64,3,87,1,0,0,14,Drone Damage Amplifier
+1255,2,645,64,3,18,1,0,0,14,Drone Damage Amplifier
 1255,2,645,2131,3,87,1,0,0,14,Drone Damage Amplifier - Fighter Attack Missile EM Damage
 1255,2,645,2132,3,87,1,0,0,14,Drone Damage Amplifier - Fighter Attack Missile Thermal Damage
 1255,2,645,2133,3,87,1,0,0,14,Drone Damage Amplifier - Fighter Attack Missile Kinetic Damage
