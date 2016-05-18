@@ -116,7 +116,7 @@
 851,1,21059,6,4,609;610;611;612,0,1,0,0,Shield Compensation
 317,1,3422,6,2,41,0,1,0,0,Shield Emission Systems
 337,1,3419,263,3,6,0,1,0,0,Shield Management - Shields
-337,1,3419,72,2,38,0,1,0,0,Shield Management - Shield Extenders
+#337,1,3419,72,2,38,0,1,0,0,Shield Management - Shield Extenders
 338,1,3416,479,3,6,0,1,0,0,Shield Operation
 323,1,3425,30,5,3425,0,1,0,0,Shield Upgrades
 336,1,3420,484,3,6,0,1,0,0,Tactical Shield Manipulation
@@ -274,7 +274,7 @@
 1139,1,26258,1138,2,775,0,1,0,0,Energy Weapon Rigging
 958,1,22807,985,2,98;326,0,1,0,0,Explosive Armor Compensation
 335,1,3394,265,3,6,0,1,0,0,Hull Upgrades - Armor HP
-335,1,3394,1159,2,329,0,1,0,0,Hull Upgrades - Armor Plate HP
+#335,1,3394,1159,2,329,0,1,0,0,Hull Upgrades - Armor Plate HP
 1139,1,26259,1138,2,776,0,1,0,0,Hybrid Weapon Rigging
 #,1,26252,,,,0,1,0,0,Jury Rigging
 958,1,22808,986,2,98;326,0,1,0,0,Kinetic Armor Compensation
