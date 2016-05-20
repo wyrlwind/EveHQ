@@ -3335,7 +3335,7 @@ Public Class FrmCacheCreator
             Dim conn As New SQLiteConnection(DatabaseFunctions.GetSqlLiteConnectionString)
             conn.Open()
 
-            Call AddSqlAttributeGroupColumn(conn)
+            Call AddSqlAttributeGroupColumn(conn, evehqData)
 
             If evehqData Is Nothing Then
                 ' We seem to be missing the data so lets add it in!
@@ -3348,11 +3348,14 @@ Public Class FrmCacheCreator
 
     End Sub
 
-    Private Sub AddSqlAttributeGroupColumn(ByVal connection As SQLiteConnection)
-
-        Dim strSql As String = "ALTER TABLE dgmAttributeTypes ADD attributeGroup INTEGER DEFAULT 0;"
-        Dim keyCommand As New SQLiteCommand(strSql, connection)
-        keyCommand.ExecuteNonQuery()
+    Private Sub AddSqlAttributeGroupColumn(ByVal connection As SQLiteConnection, ByVal evehqData As DataSet)
+        Dim keyCommand As SQLiteCommand
+        Dim strSql As String
+        If evehqData Is Nothing Then
+            strSql = "ALTER TABLE dgmAttributeTypes ADD attributeGroup INTEGER DEFAULT 0;"
+            keyCommand = New SQLiteCommand(strSql, connection)
+            keyCommand.ExecuteNonQuery()
+        End If
         strSql = "UPDATE dgmAttributeTypes SET attributeGroup=0;"
         keyCommand = New SQLiteCommand(strSql, connection)
         keyCommand.ExecuteNonQuery()
