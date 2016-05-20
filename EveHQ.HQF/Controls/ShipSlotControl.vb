@@ -1490,11 +1490,6 @@ Namespace Controls
                 ParentFitting.BaseShip.DroneBayItems.Clear()
                 ParentFitting.BaseShip.DroneBayUsed = 0
             End If
-            If ParentFitting.BaseShip.DroneBay = 0 Then
-                tiDroneBay.Visible = False
-            Else
-                tiDroneBay.Visible = True
-            End If
         End Sub
 
         Private Sub ClearFighterBay()
@@ -3040,6 +3035,12 @@ Namespace Controls
                 pbDroneBay.Value = CInt(ParentFitting.FittedShip.DroneBay)
             Else
                 pbDroneBay.Value = CInt(ParentFitting.BaseShip.DroneBayUsed)
+            End If
+
+            If ParentFitting.FittedShip.DroneBay = 0 Then
+                tiDroneBay.Visible = False
+            Else
+                tiDroneBay.Visible = True
             End If
         End Sub
 
