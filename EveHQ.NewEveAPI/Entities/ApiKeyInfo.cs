@@ -56,7 +56,7 @@ namespace EveHQ.NewEveApi.Entities
         /// <summary>
         ///     Gets the access mask associated with this api key.
         /// </summary>
-        public int AccessMask { get; set; }
+        public long AccessMask { get; set; }
 
         /// <summary>
         ///     Gets the characters associated with this api key

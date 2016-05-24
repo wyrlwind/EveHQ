@@ -319,7 +319,7 @@
             this.objectListViewColonies.TabIndex = 1;
             this.objectListViewColonies.UseCompatibleStateImageBehavior = false;
             this.objectListViewColonies.View = System.Windows.Forms.View.Details;
-            this.objectListViewColonies.SelectedIndexChanged += new System.EventHandler(this.objectListViewColonies_SelectedIndexChanged);
+            this.objectListViewColonies.SelectionChanged += new System.EventHandler(this.objectListViewColonies_SelectionChanged);
             // 
             // olvColumnPlanetIcon
             // 

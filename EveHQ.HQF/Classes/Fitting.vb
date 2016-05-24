@@ -576,23 +576,23 @@ Imports EveHQ.Common.Extensions
         pStages(3) = "Building Ship Bonuses: "
         pStages(4) = "Building External Influences: "
         pStages(5) = "Collecting Modules: "
-        pStages(6) = "Applying Skill Effects to Ship: "
-        pStages(7) = "Applying Skill Effects to Modules: "
-        pStages(8) = "Applying Skill Effects to Drones: "
-        pStages(9) = "Building Module Effects: "
-        pStages(10) = "Applying Stacking Penalties: "
-        pStages(11) = "Applying Module Effects to Charges: "
-        pStages(12) = "Build Charge Effects: "
-        pStages(13) = "Applying Charge Effects to Modules: "
-        pStages(14) = "Applying Charge Effects to Ship: "
-        pStages(15) = "Rebuilding Module Effects: "
-        pStages(16) = "Recalculating Stacking Penalties: "
-        pStages(17) = "Applying Module Effects to Modules: "
-        pStages(18) = "Rebuilding Module Effects: "
-        pStages(19) = "Recalculating Stacking Penalties: "
-        pStages(20) = "Applying Module Effects to Missiles: "
-        pStages(21) = "Applying Module Effects to Drones: "
-        pStages(22) = "Applying Module Effects to Ship: "
+        pStages(6) = "Applying Skill Effects to Modules: "
+        pStages(7) = "Applying Skill Effects to Drones: "
+        pStages(8) = "Building Module Effects: "
+        pStages(9) = "Applying Stacking Penalties: "
+        pStages(10) = "Applying Module Effects to Charges: "
+        pStages(11) = "Build Charge Effects: "
+        pStages(12) = "Applying Charge Effects to Modules: "
+        pStages(13) = "Applying Charge Effects to Ship: "
+        pStages(14) = "Rebuilding Module Effects: "
+        pStages(15) = "Recalculating Stacking Penalties: "
+        pStages(16) = "Applying Module Effects to Modules: "
+        pStages(17) = "Rebuilding Module Effects: "
+        pStages(18) = "Recalculating Stacking Penalties: "
+        pStages(19) = "Applying Module Effects to Missiles: "
+        pStages(20) = "Applying Module Effects to Drones: "
+        pStages(21) = "Applying Module Effects to Ship: "
+        pStages(22) = "Applying Skill Effects to Ship: "
         pStages(23) = "Calculating Damage Statistics: "
         pStages(24) = "Calculating Defence Statistics: "
         ' Apply the pilot skills to the ship
@@ -610,39 +610,40 @@ Imports EveHQ.Common.Extensions
                 pStageTime(4) = Now
                 newShip = CollectModules(newBaseShip.Clone)
                 pStageTime(5) = Now
-                ApplySkillEffectsToShip(newShip)
-                pStageTime(6) = Now
+                'ApplySkillEffectsToShip(newShip)
                 ApplySkillEffectsToModules(newShip)
-                pStageTime(7) = Now
+                pStageTime(6) = Now
                 ApplySkillEffectsToDrones(newShip)
+                pStageTime(7) = Now
+                BuildModuleEffects(newShip)
                 pStageTime(8) = Now
-                BuildModuleEffects(newShip)
+                ApplyStackingPenalties()
                 pStageTime(9) = Now
-                ApplyStackingPenalties()
-                pStageTime(10) = Now
                 ApplyModuleEffectsToCharges(newShip)
-                pStageTime(11) = Now
+                pStageTime(10) = Now
                 BuildChargeEffects(newShip)
-                pStageTime(12) = Now
+                pStageTime(11) = Now
                 ApplyChargeEffectsToModules(newShip)
-                pStageTime(13) = Now
+                pStageTime(12) = Now
                 ApplyChargeEffectsToShip(newShip)
+                pStageTime(13) = Now
+                BuildModuleEffects(newShip)
                 pStageTime(14) = Now
-                BuildModuleEffects(newShip)
+                ApplyStackingPenalties()
                 pStageTime(15) = Now
-                ApplyStackingPenalties()
-                pStageTime(16) = Now
                 ApplyModuleEffectsToModules(newShip)
-                pStageTime(17) = Now
+                pStageTime(16) = Now
                 BuildModuleEffects(newShip)
-                pStageTime(18) = Now
+                pStageTime(17) = Now
                 ApplyStackingPenalties()
-                pStageTime(19) = Now
+                pStageTime(18) = Now
                 ApplyModuleEffectsToMissiles(newShip)
-                pStageTime(20) = Now
+                pStageTime(19) = Now
                 ApplyModuleEffectsToDrones(newShip)
-                pStageTime(21) = Now
+                pStageTime(20) = Now
                 ApplyModuleEffectsToShip(newShip)
+                pStageTime(21) = Now
+                ApplySkillEffectsToShip(newShip)
                 pStageTime(22) = Now
                 CalculateDamageStatistics(newShip)
                 pStageTime(23) = Now
@@ -661,37 +662,37 @@ Imports EveHQ.Common.Extensions
                 pStageTime(4) = Now
                 'newShip = CollectModules(CType(baseShip.Clone, Ship))
                 pStageTime(5) = Now
-                'Me.ApplySkillEffectsToShip(newShip)
-                pStageTime(6) = Now
                 'Me.ApplySkillEffectsToModules(newShip)
-                pStageTime(7) = Now
+                pStageTime(6) = Now
                 'Me.ApplySkillEffectsToDrones(newShip)
+                pStageTime(7) = Now
+                'Me.BuildModuleEffects(newShip)
                 pStageTime(8) = Now
-                'Me.BuildModuleEffects(newShip)
+                'Me.ApplyStackingPenalties()
                 pStageTime(9) = Now
-                'Me.ApplyStackingPenalties()
-                pStageTime(10) = Now
                 'Me.ApplyModuleEffectsToCharges(newShip)
-                pStageTime(11) = Now
+                pStageTime(10) = Now
                 'Me.BuildChargeEffects(newShip)
-                pStageTime(12) = Now
+                pStageTime(11) = Now
                 'Me.ApplyChargeEffectsToModules(newShip)
-                pStageTime(13) = Now
+                pStageTime(12) = Now
                 'Me.ApplyChargeEffectsToShip(newShip)
+                pStageTime(13) = Now
+                'Me.BuildModuleEffects(newShip)
                 pStageTime(14) = Now
-                'Me.BuildModuleEffects(newShip)
+                'Me.ApplyStackingPenalties()
                 pStageTime(15) = Now
-                'Me.ApplyStackingPenalties()
-                pStageTime(16) = Now
                 'Me.ApplyModuleEffectsToModules(newShip)
-                pStageTime(18) = Now
+                pStageTime(16) = Now
                 'Me.BuildModuleEffects(newShip)
-                pStageTime(19) = Now
+                pStageTime(18) = Now
                 'Me.ApplyStackingPenalties()
-                pStageTime(20) = Now
+                pStageTime(19) = Now
                 'Me.ApplyModuleEffectsToDrones(newShip)
+                pStageTime(20) = Now
+                'Me.ApplyModuleEffectsToShip(newShip)                
                 pStageTime(21) = Now
-                'Me.ApplyModuleEffectsToShip(newShip)
+                'Me.ApplySkillEffectsToShip(newShip)
                 pStageTime(22) = Now
                 'Me.CalculateDamageStatistics(newShip)
                 pStageTime(23) = Now
@@ -710,39 +711,39 @@ Imports EveHQ.Common.Extensions
                 pStageTime(4) = Now
                 newShip = CollectModules(newBaseShip.Clone)
                 pStageTime(5) = Now
-                ApplySkillEffectsToShip(newShip)
-                pStageTime(6) = Now
                 ApplySkillEffectsToModules(newShip)
-                pStageTime(7) = Now
+                pStageTime(6) = Now
                 ApplySkillEffectsToDrones(newShip)
+                pStageTime(7) = Now
+                BuildModuleEffects(newShip)
                 pStageTime(8) = Now
-                BuildModuleEffects(newShip)
+                ApplyStackingPenalties()
                 pStageTime(9) = Now
-                ApplyStackingPenalties()
-                pStageTime(10) = Now
                 ApplyModuleEffectsToCharges(newShip)
-                pStageTime(11) = Now
+                pStageTime(10) = Now
                 BuildChargeEffects(newShip)
-                pStageTime(12) = Now
+                pStageTime(11) = Now
                 ApplyChargeEffectsToModules(newShip)
-                pStageTime(13) = Now
+                pStageTime(12) = Now
                 ApplyChargeEffectsToShip(newShip)
+                pStageTime(13) = Now
+                BuildModuleEffects(newShip)
                 pStageTime(14) = Now
-                BuildModuleEffects(newShip)
+                ApplyStackingPenalties()
                 pStageTime(15) = Now
-                ApplyStackingPenalties()
-                pStageTime(16) = Now
                 ApplyModuleEffectsToModules(newShip)
-                pStageTime(17) = Now
+                pStageTime(16) = Now
                 BuildModuleEffects(newShip)
-                pStageTime(18) = Now
+                pStageTime(17) = Now
                 ApplyStackingPenalties()
-                pStageTime(19) = Now
+                pStageTime(18) = Now
                 ApplyModuleEffectsToMissiles(newShip)
-                pStageTime(20) = Now
+                pStageTime(19) = Now
                 ApplyModuleEffectsToDrones(newShip)
-                pStageTime(21) = Now
+                pStageTime(20) = Now
                 ApplyModuleEffectsToShip(newShip)
+                pStageTime(21) = Now
+                ApplySkillEffectsToShip(newShip)
                 pStageTime(22) = Now
                 CalculateDamageStatistics(newShip)
                 pStageTime(23) = Now

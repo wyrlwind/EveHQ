@@ -241,6 +241,10 @@
       <Link>StaticData\Units.dat</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\EveHQ.Data\StaticData\Planets.dat">
+      <Link>StaticData\Planets.dat</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EveHQ.Common\EveHQ.Common.csproj">
@@ -250,9 +254,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <Content Include="StaticData\Planets.dat">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(SolutionDir)\Version.Csharp.Targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,8 +10,9 @@ namespace EveHQ.PlanetaryInteraction
     public partial class FrmPI : Form
     {
         EveHQPilot _pilot = null;
+        int _pilotUpdateTicks = 0;
         private Dictionary<long, Colony> _colonies;
-        private List<Colony> _coloniesSelected;
+        private List<long> _coloniesSelected;
 
         public FrmPI()
         {
@@ -44,6 +45,15 @@ namespace EveHQ.PlanetaryInteraction
         private void listViewCharacterSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
             _pilot = null;
+            _pilotUpdateTicks = 0;
+            if (_colonies != null)
+            {
+                _colonies.Clear();
+            }
+            if (_coloniesSelected != null)
+            {
+                _coloniesSelected.Clear();
+            }
             listViewCharacterSkills.Items.Clear();
             listViewCapabilities.Items.Clear();
             objectListViewColonies.Items.Clear();
@@ -72,7 +82,8 @@ namespace EveHQ.PlanetaryInteraction
             {
                 InitCharacterPicture();
                 InitCharacterSkills();
-                InitCharacterColonies();
+                InitCharacterColonies(false);
+                _pilotUpdateTicks = 60;
             }
         }
 
@@ -129,21 +140,12 @@ namespace EveHQ.PlanetaryInteraction
             listViewCapabilities.EndUpdate();
         }
 
-        private void InitCharacterColonies()
+        private void InitCharacterColonies(bool update)
         {
             if (_colonies != null)
             {
                 _colonies.Clear();
             }
-            if (_coloniesSelected != null)
-            {
-                _coloniesSelected.Clear();
-            }
-            objectListViewColonies.BeginUpdate();
-            objectListViewColonies.Items.Clear();
-            objectListViewPins.Items.Clear();
-            objectListViewLinks.Items.Clear();
-            objectListViewRoutes.Items.Clear();
             string accountName = _pilot.Account;
             if (HQ.Settings.Accounts.ContainsKey(accountName))
             {
@@ -199,14 +201,19 @@ namespace EveHQ.PlanetaryInteraction
                     }
                     if (_coloniesSelected == null)
                     {
-                        _coloniesSelected = new List<Colony>();
+                        _coloniesSelected = new List<long>();
                     }
-                    foreach (KeyValuePair<long, Colony> colony in _colonies)
+                    if (update)
                     {
-                        _coloniesSelected.Add(colony.Value);
+                        foreach (long colonyId in _coloniesSelected)
+                        {
+                            if (!_colonies.ContainsKey(colonyId))
+                            {
+                                _coloniesSelected.Remove(colonyId);
+                            }
+                        }
                     }
-                    objectListViewColonies.AddObjects(_coloniesSelected);
-                    objectListViewColonies.EndUpdate();
+                    showColonies();
                     showInstallations(_coloniesSelected);
                     showLinks(_coloniesSelected);
                     showRoutes(_coloniesSelected);
@@ -214,7 +221,7 @@ namespace EveHQ.PlanetaryInteraction
             }
         }
 
-        private void objectListViewColonies_SelectedIndexChanged(object sender, EventArgs e)
+        private void objectListViewColonies_SelectionChanged(object sender, EventArgs e)
         {
             if (_coloniesSelected != null)
             {
@@ -224,51 +231,91 @@ namespace EveHQ.PlanetaryInteraction
             {
                 if (_coloniesSelected == null)
                 {
-                    _coloniesSelected = new List<Colony>();
+                    _coloniesSelected = new List<long>();
                 }
-                _coloniesSelected.Add((Colony)selectedObject);
-            }
-            if (_coloniesSelected.Count == 0)
-            {
-                foreach (KeyValuePair<long, Colony> colony in _colonies)
-                {
-                    _coloniesSelected.Add(colony.Value);
-                }
+                _coloniesSelected.Add(((Colony)selectedObject).PlanetID);
             }
             showInstallations(_coloniesSelected);
             showLinks(_coloniesSelected);
             showRoutes(_coloniesSelected);
         }
 
-        private void showInstallations(List<Colony> colonies)
+        private void showColonies()
+        {
+            objectListViewColonies.BeginUpdate();
+
+            objectListViewColonies.SetObjects(_colonies.Values);
+            List<Colony> selected = new List<Colony>();
+            foreach (long colonyId in _coloniesSelected)
+            {
+                selected.Add(_colonies[colonyId]);
+            }
+            if (selected.Count != 0)
+            {
+                objectListViewColonies.SelectObjects(selected);
+            }
+            objectListViewColonies.EndUpdate();
+        }
+
+        private void showInstallations(List<long> colonyIds)
         {
             objectListViewPins.Items.Clear();
             objectListViewPins.BeginUpdate();
-            foreach (Colony colony in colonies)
+            if (colonyIds.Count != 0)
             {
-                objectListViewPins.AddObjects(colony.Installations);
+                foreach (long colonyId in colonyIds)
+                {
+                    objectListViewPins.AddObjects(_colonies[colonyId].Installations);
+                }
+            }
+            else
+            {
+                foreach (Colony colony in _colonies.Values)
+                {
+                    objectListViewPins.AddObjects(colony.Installations);
+                }
             }
             objectListViewPins.EndUpdate();
         }
 
-        private void showLinks(List<Colony> colonies)
+        private void showLinks(List<long> colonyIds)
         {
             objectListViewLinks.Items.Clear();
             objectListViewLinks.BeginUpdate();
-            foreach (Colony colony in colonies)
+            if (colonyIds.Count != 0)
             {
-                objectListViewLinks.AddObjects(colony.Links);
+                foreach (long colonyId in colonyIds)
+                {
+                    objectListViewLinks.AddObjects(_colonies[colonyId].Links);
+                }
+            }
+            else
+            {
+                foreach (Colony colony in _colonies.Values)
+                {
+                    objectListViewLinks.AddObjects(colony.Links);
+                }
             }
             objectListViewLinks.EndUpdate();
         }
 
-        private void showRoutes(List<Colony> colonies)
+        private void showRoutes(List<long> colonyIds)
         {
             objectListViewRoutes.Items.Clear();
             objectListViewRoutes.BeginUpdate();
-            foreach (Colony colony in colonies)
+            if (colonyIds.Count != 0)
             {
-                objectListViewRoutes.AddObjects(colony.Routes);
+                foreach (long colonyId in colonyIds)
+                {
+                    objectListViewRoutes.AddObjects(_colonies[colonyId].Routes);
+                }
+            }
+            else
+            {
+                foreach (Colony colony in _colonies.Values)
+                {
+                    objectListViewRoutes.AddObjects(colony.Routes);
+                }
             }
             objectListViewRoutes.EndUpdate();
         }
@@ -278,6 +325,13 @@ namespace EveHQ.PlanetaryInteraction
             if ((_coloniesSelected != null) && (_coloniesSelected.Count != 0) && objectListViewColonies.Visible)
             {
                 showInstallations(_coloniesSelected);
+            }
+            if ((_pilot != null) && (--_pilotUpdateTicks <= 0))
+            {
+                InitCharacterPicture();
+                InitCharacterSkills();
+                InitCharacterColonies(true);
+                _pilotUpdateTicks = 60;
             }
         }
     }
