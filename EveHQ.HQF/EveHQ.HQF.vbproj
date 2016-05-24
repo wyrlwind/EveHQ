@@ -36,6 +36,8 @@
     <AssemblyInfoTitle>EveHQ.HQF</AssemblyInfoTitle>
     <AssemblyInfoDescription>Eve Online game tool</AssemblyInfoDescription>
     <AssemblyInfoGUID>b7c44f01-f50a-4c18-9c54-f9f8293f21c5</AssemblyInfoGUID>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
