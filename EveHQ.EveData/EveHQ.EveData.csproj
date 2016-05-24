@@ -67,6 +67,7 @@
     <Compile Include="MarketGroup.cs" />
     <Compile Include="Mastery.cs" />
     <Compile Include="MetaType.cs" />
+    <Compile Include="Planet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolarSystem.cs" />
     <Compile Include="StaticData.cs" />
@@ -238,6 +239,10 @@
     </Content>
     <Content Include="..\EveHQ.Data\StaticData\Units.dat">
       <Link>StaticData\Units.dat</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\EveHQ.Data\StaticData\Planets.dat">
+      <Link>StaticData\Planets.dat</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

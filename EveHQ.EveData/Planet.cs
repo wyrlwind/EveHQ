@@ -50,18 +50,16 @@ using ProtoBuf;
 namespace EveHQ.EveData
 {
     /// <summary>
-    ///     Defines an Eve solar system.
+    ///     Defines an Eve planet.
     /// </summary>
     [ProtoContract, Serializable]
-    public class SolarSystem
+    public class Planet
     {
         /// <summary>
-        ///     Initializes a new instance of the <see cref="SolarSystem" /> class.
+        ///     Initializes a new instance of the <see cref="Planet" /> class.
         /// </summary>
-        public SolarSystem()
+        public Planet()
         {
-            Gates = new Collection<int>();
-            Planets = new Collection<int>();
         }
 
         /// <summary>
@@ -77,82 +75,10 @@ namespace EveHQ.EveData
         public string Name { get; set; }
 
         /// <summary>
-        ///     Gets or sets the security.
+        ///     Gets or sets the radius.
         /// </summary>
         [ProtoMember(3)]
-        public double Security { get; set; }
-
-        /// <summary>
-        ///     Gets or sets the constellation ID.
-        /// </summary>
-        [ProtoMember(4)]
-        public int ConstellationId { get; set; }
-
-        /// <summary>
-        ///     Gets or sets the region ID.
-        /// </summary>
-        [ProtoMember(5)]
-        public int RegionId { get; set; }
-
-        /// <summary>
-        ///     Gets or sets the planet count.
-        /// </summary>
-        [ProtoMember(6)]
-        public int PlanetCount { get; set; }
-
-        /// <summary>
-        ///     Gets or sets the moon count.
-        /// </summary>
-        [ProtoMember(7)]
-        public int MoonCount { get; set; }
-
-        /// <summary>
-        ///     Gets or sets the station count.
-        /// </summary>
-        [ProtoMember(8)]
-        public int StationCount { get; set; }
-
-        /// <summary>
-        ///     Gets or sets the ore belt count.
-        /// </summary>
-        [ProtoMember(9)]
-        public int OreBeltCount { get; set; }
-
-        /// <summary>
-        ///     Gets or sets the ice belt count.
-        /// </summary>
-        [ProtoMember(10)]
-        public int IceBeltCount { get; set; }
-
-        /// <summary>
-        ///     Gets or sets a list of gates within the system.
-        /// </summary>
-        [ProtoMember(11)]
-        public Collection<int> Gates { get; set; }
-
-        /// <summary>
-        ///     Gets or sets the x co-ordinate.
-        /// </summary>
-        [ProtoMember(12)]
-        public double X { get; set; }
-
-        /// <summary>
-        ///     Gets or sets the y co-ordinate.
-        /// </summary>
-        [ProtoMember(13)]
-        public double Y { get; set; }
-
-        /// <summary>
-        ///     Gets or sets the z co-ordinate.
-        /// </summary>
-        [ProtoMember(14)]
-        public double Z { get; set; }
-
-        /// <summary>
-        ///     Gets or sets a list of planets within the system.
-        /// </summary>
-        [ProtoMember(15)]
-        public Collection<int> Planets { get; set; }
+        public double Radius { get; set; }
 
     }
 }

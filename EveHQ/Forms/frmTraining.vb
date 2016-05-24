@@ -386,6 +386,7 @@ Namespace Forms
                     btnImplants.Enabled = False
                     btnRemap.Enabled = False
                     btnExportEMPFile.Enabled = False
+                    btnExportEvePlan.Enabled = False
                 End If
             End If
         End Sub
@@ -650,6 +651,15 @@ Namespace Forms
                 btnImplants.Enabled = True
                 btnRemap.Enabled = True
                 btnIncTraining.Enabled = True
+                btnExportEvePlan.Enabled = False
+
+                For Each node As Node In _activeQueueTree.Nodes
+                    If node.Visible = True Then
+                        btnExportEvePlan.Enabled = True
+                        Exit For
+                    End If
+                Next
+
                 If _activeQueueTree.SelectedNodes.Count <> 0 Then
                     Select Case _activeQueueTree.SelectedNodes.Count
                         Case 1
@@ -714,6 +724,7 @@ Namespace Forms
                                     End If
                                 End If
                             End If
+                            btnExportEMPFile.Enabled = True
                         Case Is > 1
                             btnRBIncreaseLevel.Enabled = False
                             btnRBDecreaseLevel.Enabled = False
@@ -722,6 +733,7 @@ Namespace Forms
                             btnRBMoveDownQueue.Enabled = False
                             btnRBAddSkill.Enabled = False : btnRBSplitQueue.Enabled = True
                             btnExportEMPFile.Enabled = True
+
                     End Select
                 Else
                     btnRBIncreaseLevel.Enabled = False
@@ -747,6 +759,7 @@ Namespace Forms
                 btnImplants.Enabled = False
                 btnRemap.Enabled = False
                 btnExportEMPFile.Enabled = False
+                btnExportEvePlan.Enabled = False
             End If
             btnAddRequisition.Enabled = False
             If _activeQueueControl IsNot Nothing Then
@@ -1002,9 +1015,11 @@ Namespace Forms
             End Select
         End Sub
         Private Sub activeLVW_DoubleClick(ByVal sender As Object, ByVal e As EventArgs)
-            Dim skillID As Integer = SkillFunctions.SkillNameToID(_activeQueueTree.SelectedNodes(0).Text)
-            FrmSkillDetails.DisplayPilotName = _displayPilot.Name
-            Call FrmSkillDetails.ShowSkillDetails(skillID)
+            If _activeQueueTree.SelectedNodes.Count > 0 Then
+                Dim skillID As Integer = SkillFunctions.SkillNameToID(_activeQueueTree.SelectedNodes(0).Text)
+                FrmSkillDetails.DisplayPilotName = _displayPilot.Name
+                Call FrmSkillDetails.ShowSkillDetails(skillID)
+            End If
         End Sub
         Private Sub activeLVW_DragEnter(ByVal sender As Object, ByVal e As DragEventArgs)
             ' Make sure that the format is a treenode
@@ -2215,6 +2230,53 @@ Namespace Forms
             End With
         End Sub
 
+        Private Sub ClipboardExport()
+            If _activeQueueControl.Queue IsNot Nothing Then
+
+                Dim eveQueue As New StringBuilder
+
+                For Each node As Node In _activeQueueTree.Nodes
+                    If node.Visible = True Then
+                        Dim fromLevel As Integer
+                        Dim toLevel As Integer
+                        Dim skillName As String
+
+                        skillName = node.Name.Substring(0, node.Name.Length - 2)
+                        fromLevel = CInt(node.Name.Substring(node.Name.Length - 2, 1))
+                        toLevel = CInt(node.Name.Substring(node.Name.Length - 1, 1))
+
+                        For i = fromLevel + 1 To toLevel
+                            eveQueue.AppendLine(skillName + " " + numberToLiteral(i))
+                        Next
+                    End If
+                Next
+
+                Clipboard.SetText(eveQueue.ToString)
+            Else
+                MessageBox.Show("Please select a skill queue tab before exporting the data.", "Skill Queue Required", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End Sub
+
+        Private Function numberToLiteral(number As Integer) As String
+
+            Dim literal As String = "I"
+
+            Select Case number
+                Case 1
+                    literal = "I"
+                Case 2
+                    literal = "II"
+                Case 3
+                    literal = "III"
+                Case 4
+                    literal = "IV"
+                Case 5
+                    literal = "V"
+            End Select
+
+            Return literal
+        End Function
+
         Private Sub ExportEveMonPlan()
             If _activeQueueControl.Queue IsNot Nothing Then
                 Dim arrQueue As ArrayList = SkillQueueFunctions.BuildQueue(_displayPilot, _activeQueueControl.Queue, False, True)
@@ -2349,6 +2411,10 @@ Namespace Forms
 
         Private Sub btnExportEMPFile_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnExportEMPFile.Click
             Call ExportEveMonPlan()
+        End Sub
+
+        Private Sub btnExportEvePlan_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnExportEvePlan.Click
+            Call ClipboardExport()
         End Sub
 
         Private Sub btnImplants_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnImplants.Click

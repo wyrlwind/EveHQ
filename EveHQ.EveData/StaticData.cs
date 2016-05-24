@@ -193,6 +193,11 @@ namespace EveHQ.EveData
         private static Dictionary<int, SolarSystem> solarSystems = new Dictionary<int, SolarSystem>();
 
         /// <summary>
+        ///     The planets.
+        /// </summary>
+        private static Dictionary<int, Planet> planets = new Dictionary<int, Planet>();
+
+        /// <summary>
         ///     The stations.
         /// </summary>
         private static Dictionary<int, Station> stations = new Dictionary<int, Station>();
@@ -458,6 +463,14 @@ namespace EveHQ.EveData
         public static Dictionary<int, SolarSystem> SolarSystems
         {
             get { return solarSystems; }
+        }
+
+        /// <summary>
+        ///     Gets the planets.
+        /// </summary>
+        public static Dictionary<int, Planet> Planets
+        {
+            get { return planets; }
         }
 
         /// <summary>
@@ -1020,6 +1033,16 @@ namespace EveHQ.EveData
                 }
 
                 Trace.TraceInformation(" *** Solar Systems Finished Loading");
+
+                // Planets
+                using (
+                    var s = new FileStream(Path.Combine(coreCacheFolder, "Planets.dat"), FileMode.Open, FileAccess.Read)
+                    )
+                {
+                    planets = Serializer.Deserialize<Dictionary<int, Planet>>(s);
+                }
+
+                Trace.TraceInformation(" *** Planets Finished Loading");
 
                 // Stations
                 using (

@@ -325,6 +325,7 @@ Public Enum ModuleEnum
     GroupFreighters = 513
     GroupFueledArmorRepairers = 1199
     GroupFueledShieldBoosters = 1156
+    GroupFueledRemoteShieldBoosters = 1697
     GroupGangLinks = 316
     GroupHullRepairers = 63
     GroupHybridTurrets = 74

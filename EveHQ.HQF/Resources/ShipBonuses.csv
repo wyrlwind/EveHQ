@@ -1049,6 +1049,13 @@
 615,0,0,160,4,567;570,0,0,0,22.5,15,Small Energy Turret Tracking
 615,0,0,54,4,567;570,0,0,0,30,15,Small Energy Turret Optimal Range
 615,0,0,68,2,40;1156,0,0,0,22.5,15,Shield Booster Boost
+# Imp,,,,,,,,,,,35779
+35779,1,3330,20,4,542,0,1,0,20,15,Afterburner Velocity
+35779,1,3331,160,4,567;570,0,1,0,7.5,15,Small Energy Turret Tracking
+35779,1,12092,554,2,46,0,1,0,-15,15,MWD Signature Radius Penalty
+35779,1,12092,54,2,52,0,1,0,5,15,Warp Disruptor Range
+35779,0,0,10014,4,567;570,0,0,0,250,15,Small Energy Turret Damage
+35779,0,0,6,2,52;65,0,0,0,-80,15,Propulsion Jamming Cap Use
 # Impairor,,,,,,,,,,,
 596,0,0,6,4,567;570,0,0,0,-20,15,Small Energy Turret Cap Use
 596,0,0,10014,4,567;570,0,0,0,10,15,Small Energy Turret Damage

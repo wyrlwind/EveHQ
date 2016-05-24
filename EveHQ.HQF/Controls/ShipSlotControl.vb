@@ -1490,11 +1490,6 @@ Namespace Controls
                 ParentFitting.BaseShip.DroneBayItems.Clear()
                 ParentFitting.BaseShip.DroneBayUsed = 0
             End If
-            If ParentFitting.BaseShip.DroneBay = 0 Then
-                tiDroneBay.Visible = False
-            Else
-                tiDroneBay.Visible = True
-            End If
         End Sub
 
         Private Sub ClearFighterBay()
@@ -2063,7 +2058,8 @@ Namespace Controls
                                     End If
                                     If _
                                         currentMod.IsTurret Or
-                                        currentMod.DatabaseGroup = ModuleEnum.GroupFueledShieldBoosters Then
+                                        currentMod.DatabaseGroup = ModuleEnum.GroupFueledShieldBoosters Or
+                                        currentMod.DatabaseGroup = ModuleEnum.GroupFueledRemoteShieldBoosters Then
                                         If _
                                             currentMod.ChargeSize = CInt(chargeGroupData(3)) And
                                             chargeItems.ContainsKey(chargeGroupData(2)) = False Then
@@ -3040,6 +3036,12 @@ Namespace Controls
                 pbDroneBay.Value = CInt(ParentFitting.FittedShip.DroneBay)
             Else
                 pbDroneBay.Value = CInt(ParentFitting.BaseShip.DroneBayUsed)
+            End If
+
+            If ParentFitting.FittedShip.DroneBay = 0 Then
+                tiDroneBay.Visible = False
+            Else
+                tiDroneBay.Visible = True
             End If
         End Sub
 

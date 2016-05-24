@@ -53,7 +53,6 @@ using EveHQ.Caching;
 using EveHQ.Common;
 using EveHQ.Common.Extensions;
 using EveHQ.NewEveApi.Entities;
-
 namespace EveHQ.NewEveApi
 {
     /// <summary>The information client.</summary>
@@ -1530,5 +1529,300 @@ namespace EveHQ.NewEveApi
                    select new Entities.Blueprint { ItemID = itemId, LocationID = locationId, TypeID = typeId, TypeName = typeName, Quantity = quantity,
                        FlagID = flagId, TimeEfficiency = timeEfficiency, MaterialEfficiency = materialEfficiency, Runs = runs };
         }
+
+        /// <summary>The planetary colonies.</summary>
+        /// <param name="keyId">The key id.</param>
+        /// <param name="vCode">The v code.</param>
+        /// <param name="characterId">The character id.</param>
+        /// <param name="responseMode">The response mode.</param>
+        /// <returns></returns>
+        public EveServiceResponse<IEnumerable<PlanetaryColony>> PlanetaryColonies(string keyId, string vCode, int characterId,
+            ResponseMode responseMode = ResponseMode.Normal)
+        {
+            return RunAsyncMethod(PlanetaryColoniesAsync, keyId, vCode, characterId, responseMode);
+        }
+
+        /// <summary>Retrieves the given character's planetary colonies.</summary>
+        /// <param name="keyId">API Key ID to query</param>
+        /// <param name="vCode">The Verification Code for this ID</param>
+        /// <param name="characterId">Character to query.</param>
+        /// <param name="responseMode">The response Mode.</param>
+        /// <returns>An enumerable collection of all the characters planetary colonies.</returns>
+        public Task<EveServiceResponse<IEnumerable<PlanetaryColony>>> PlanetaryColoniesAsync(string keyId, string vCode,
+            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+        {
+            Guard.Against(keyId.IsNullOrWhiteSpace());
+            Guard.Against(vCode.IsNullOrWhiteSpace());
+            Guard.Against(characterId == 0);
+
+            const string MethodPath = "{0}/PlanetaryColonies.xml.aspx";
+            const string CacheKeyFormat = "Character_PlanetaryColonies_{0}_{1}";
+
+            string cacheKey = CacheKeyFormat.FormatInvariant(keyId, characterId);
+
+            return GetServiceResponseAsync(keyId, vCode, characterId, MethodPath.FormatInvariant(PathPrefix), null,
+                cacheKey, ApiConstants.SixtyMinuteCache, responseMode, ParsePlanetaryColoniesResponse);
+        }
+
+        private static IEnumerable<Entities.PlanetaryColony> ParsePlanetaryColoniesResponse(XElement result)
+        {
+            if (result == null)
+            {
+                return new Entities.PlanetaryColony[0]; // empty collection
+            }
+
+            return from rowset in result.Elements(ApiConstants.Rowset)
+                   from row in rowset.Elements(ApiConstants.Row)
+                   let solarSystemID = row.Attribute("solarSystemID").Value.ToInt32()
+                   let solarSystemName = row.Attribute("solarSystemName").Value
+                   let planetID = row.Attribute("planetID").Value.ToInt32()
+                   let planetName = row.Attribute("planetName").Value
+                   let planetTypeID = row.Attribute("planetTypeID").Value.ToInt32()
+                   let planetTypeName = row.Attribute("planetTypeName").Value
+                   let ownerID = row.Attribute("ownerID").Value.ToInt64()
+                   let ownerName = row.Attribute("ownerName").Value
+                   let lastUpdate = row.TryAttribute("lastUpdate").Value.ToDateTimeOffset(0)
+                   let upgradeLevel = row.Attribute("upgradeLevel").Value.ToInt32()
+                   let numberOfPins = row.Attribute("numberOfPins").Value.ToInt32()
+                   select new Entities.PlanetaryColony
+                   {
+                       SolarSystemID = solarSystemID,
+                       SolarSystemName = solarSystemName,
+                       PlanetID = planetID,
+                       PlanetName = planetName,
+                       PlanetTypeID = planetTypeID,
+                       PlanetTypeName = planetTypeName,
+                       OwnerID = ownerID,
+                       OwnerName = ownerName,
+                       LastUpdate = lastUpdate,
+                       UpgradeLevel = upgradeLevel,
+                       NumberOfPins = numberOfPins
+                   };
+        }
+
+        /// <summary>The planetary pins.</summary>
+        /// <param name="keyId">The key id.</param>
+        /// <param name="vCode">The v code.</param>
+        /// <param name="characterId">The character id.</param>
+        /// <param name="planetId">The character id.</param>
+        /// <param name="responseMode">The response mode.</param>
+        /// <returns></returns>
+        public EveServiceResponse<IEnumerable<PlanetaryPin>> PlanetaryPins(string keyId, string vCode, int characterId, int planetId,
+            ResponseMode responseMode = ResponseMode.Normal)
+        {
+            return RunAsyncMethod(PlanetaryPinsAsync, keyId, vCode, characterId, planetId, responseMode);
+        }
+
+        /// <summary>Retrieves the given character's planetary pins.</summary>
+        /// <param name="keyId">API Key ID to query</param>
+        /// <param name="vCode">The Verification Code for this ID</param>
+        /// <param name="characterId">Character to query.</param>
+        /// <param name="planetId">The character id.</param>
+        /// <param name="responseMode">The response Mode.</param>
+        /// <returns>An enumerable collection of all the characters planetary pins.</returns>
+        public Task<EveServiceResponse<IEnumerable<PlanetaryPin>>> PlanetaryPinsAsync(string keyId, string vCode,
+            int characterId, int planetId, ResponseMode responseMode = ResponseMode.Normal)
+        {
+            Guard.Against(keyId.IsNullOrWhiteSpace());
+            Guard.Against(vCode.IsNullOrWhiteSpace());
+            Guard.Against(characterId == 0);
+            Guard.Against(planetId == 0);
+
+            const string MethodPath = "{0}/PlanetaryPins.xml.aspx";
+            const string CacheKeyFormat = "Character_PlanetaryPins_{0}_{1}_{2}";
+
+            string cacheKey = CacheKeyFormat.FormatInvariant(keyId, characterId, planetId);
+
+            IDictionary<string, string> apiParams = new Dictionary<string, string>();
+
+            const string PlanetId = "planetId";
+            apiParams[PlanetId] = planetId.ToInvariantString();
+
+            return GetServiceResponseAsync(keyId, vCode, characterId, MethodPath.FormatInvariant(PathPrefix), apiParams,
+                cacheKey, ApiConstants.SixtyMinuteCache, responseMode, ParsePlanetaryPinsResponse);
+        }
+
+        private static IEnumerable<Entities.PlanetaryPin> ParsePlanetaryPinsResponse(XElement result)
+        {
+            if (result == null)
+            {
+                return new Entities.PlanetaryPin[0]; // empty collection
+            }
+
+            return from rowset in result.Elements(ApiConstants.Rowset)
+                   from row in rowset.Elements(ApiConstants.Row)
+                   let pinID = row.Attribute("pinID").Value.ToInt64()
+                   let typeID = row.Attribute("typeID").Value.ToInt32()
+                   let typeName = row.Attribute("typeName").Value
+                   let schematicID = row.Attribute("schematicID").Value.ToInt32()
+                   let lastLaunchTime = row.TryAttribute("lastLaunchTime").Value.ToDateTimeOffset(0)
+                   let cycleTime = row.Attribute("cycleTime").Value.ToInt32()
+                   let quantityPerCycle = row.Attribute("quantityPerCycle").Value.ToInt32()
+                   let installTime = row.TryAttribute("installTime").Value.ToDateTimeOffset(0)
+                   let expiryTime = row.TryAttribute("expiryTime").Value.ToDateTimeOffset(0)
+                   let contentTypeID = row.Attribute("contentTypeID").Value.ToInt32()
+                   let contentTypeName = row.Attribute("contentTypeName").Value
+                   let contentQuantity = row.Attribute("contentQuantity").Value.ToInt32()
+                   let longitude = row.Attribute("longitude").Value.ToDouble()
+                   let latitude = row.Attribute("latitude").Value.ToDouble()
+                   select new Entities.PlanetaryPin
+                   {
+                       PinID = pinID,
+                       TypeID = typeID,
+                       TypeName = typeName,
+                       SchematicID = schematicID,
+                       LastLaunchTime = lastLaunchTime,
+                       CycleTime = cycleTime,
+                       QuantityPerCycle = quantityPerCycle,
+                       InstallTime = installTime,
+                       ExpiryTime = expiryTime,
+                       ContentTypeID = contentTypeID,
+                       ContentTypeName = contentTypeName,
+                       ContentQuantity = contentQuantity,
+                       Longitude = longitude,
+                       Latitude = latitude
+                   };
+        }
+
+        /// <summary>The planetary links.</summary>
+        /// <param name="keyId">The key id.</param>
+        /// <param name="vCode">The v code.</param>
+        /// <param name="characterId">The character id.</param>
+        /// <param name="planetId">The character id.</param>
+        /// <param name="responseMode">The response mode.</param>
+        /// <returns></returns>
+        public EveServiceResponse<IEnumerable<PlanetaryLink>> PlanetaryLinks(string keyId, string vCode, int characterId, int planetId,
+            ResponseMode responseMode = ResponseMode.Normal)
+        {
+            return RunAsyncMethod(PlanetaryLinksAsync, keyId, vCode, characterId, planetId, responseMode);
+        }
+
+        /// <summary>Retrieves the given character's planetary links.</summary>
+        /// <param name="keyId">API Key ID to query</param>
+        /// <param name="vCode">The Verification Code for this ID</param>
+        /// <param name="characterId">Character to query.</param>
+        /// <param name="planetId">The character id.</param>
+        /// <param name="responseMode">The response Mode.</param>
+        /// <returns>An enumerable collection of all the characters planetary pins.</returns>
+        public Task<EveServiceResponse<IEnumerable<PlanetaryLink>>> PlanetaryLinksAsync(string keyId, string vCode,
+            int characterId, int planetId, ResponseMode responseMode = ResponseMode.Normal)
+        {
+            Guard.Against(keyId.IsNullOrWhiteSpace());
+            Guard.Against(vCode.IsNullOrWhiteSpace());
+            Guard.Against(characterId == 0);
+            Guard.Against(planetId == 0);
+
+            const string MethodPath = "{0}/PlanetaryLinks.xml.aspx";
+            const string CacheKeyFormat = "Character_PlanetaryLinks_{0}_{1}_{2}";
+
+            string cacheKey = CacheKeyFormat.FormatInvariant(keyId, characterId, planetId);
+
+            IDictionary<string, string> apiParams = new Dictionary<string, string>();
+
+            const string PlanetId = "planetID";
+            apiParams[PlanetId] = planetId.ToInvariantString();
+
+            return GetServiceResponseAsync(keyId, vCode, characterId, MethodPath.FormatInvariant(PathPrefix), apiParams,
+                cacheKey, ApiConstants.SixtyMinuteCache, responseMode, ParsePlanetaryLinksResponse);
+        }
+
+        private static IEnumerable<Entities.PlanetaryLink> ParsePlanetaryLinksResponse(XElement result)
+        {
+            if (result == null)
+            {
+                return new Entities.PlanetaryLink[0]; // empty collection
+            }
+
+            return from rowset in result.Elements(ApiConstants.Rowset)
+                   from row in rowset.Elements(ApiConstants.Row)
+                   let sourcePinID = row.Attribute("sourcePinID").Value.ToInt64()
+                   let destinationPinID = row.Attribute("destinationPinID").Value.ToInt64()
+                   let linkLevel = row.Attribute("linkLevel").Value.ToInt32()
+                   select new Entities.PlanetaryLink
+                   {
+                       SourcePinID = sourcePinID,
+                       DestinationPinID = destinationPinID,
+                       LinkLevel = linkLevel
+                   };
+        }
+
+        /// <summary>The planetary routes.</summary>
+        /// <param name="keyId">The key id.</param>
+        /// <param name="vCode">The v code.</param>
+        /// <param name="characterId">The character id.</param>
+        /// <param name="planetId">The character id.</param>
+        /// <param name="responseMode">The response mode.</param>
+        /// <returns></returns>
+        public EveServiceResponse<IEnumerable<PlanetaryRoute>> PlanetaryRoutes(string keyId, string vCode, int characterId, int planetId,
+            ResponseMode responseMode = ResponseMode.Normal)
+        {
+            return RunAsyncMethod(PlanetaryRoutesAsync, keyId, vCode, characterId, planetId, responseMode);
+        }
+
+        /// <summary>Retrieves the given character's planetary routes.</summary>
+        /// <param name="keyId">API Key ID to query</param>
+        /// <param name="vCode">The Verification Code for this ID</param>
+        /// <param name="characterId">Character to query.</param>
+        /// <param name="planetId">The character id.</param>
+        /// <param name="responseMode">The response Mode.</param>
+        /// <returns>An enumerable collection of all the characters planetary pins.</returns>
+        public Task<EveServiceResponse<IEnumerable<PlanetaryRoute>>> PlanetaryRoutesAsync(string keyId, string vCode,
+            int characterId, int planetId, ResponseMode responseMode = ResponseMode.Normal)
+        {
+            Guard.Against(keyId.IsNullOrWhiteSpace());
+            Guard.Against(vCode.IsNullOrWhiteSpace());
+            Guard.Against(characterId == 0);
+            Guard.Against(planetId == 0);
+
+            const string MethodPath = "{0}/PlanetaryRoutes.xml.aspx";
+            const string CacheKeyFormat = "Character_PlanetaryRoutes_{0}_{1}_{2}";
+
+            string cacheKey = CacheKeyFormat.FormatInvariant(keyId, characterId, planetId);
+
+            IDictionary<string, string> apiParams = new Dictionary<string, string>();
+
+            const string PlanetId = "planetID";
+            apiParams[PlanetId] = planetId.ToInvariantString();
+
+            return GetServiceResponseAsync(keyId, vCode, characterId, MethodPath.FormatInvariant(PathPrefix), apiParams,
+                cacheKey, ApiConstants.SixtyMinuteCache, responseMode, ParsePlanetaryRoutesResponse);
+        }
+
+        private static IEnumerable<Entities.PlanetaryRoute> ParsePlanetaryRoutesResponse(XElement result)
+        {
+            if (result == null)
+            {
+                return new Entities.PlanetaryRoute[0]; // empty collection
+            }
+
+            return from rowset in result.Elements(ApiConstants.Rowset)
+                   from row in rowset.Elements(ApiConstants.Row)
+                   let routeID = row.Attribute("routeID").Value.ToInt64()
+                   let sourcePinID = row.Attribute("sourcePinID").Value.ToInt64()
+                   let destinationPinID = row.Attribute("destinationPinID").Value.ToInt64()
+                   let contentTypeID = row.Attribute("contentTypeID").Value.ToInt32()
+                   let contentTypeName = row.Attribute("contentTypeName").Value
+                   let quantity = row.Attribute("quantity").Value.ToInt32()
+                   let waypoint1 = row.Attribute("waypoint1").Value.ToInt64()
+                   let waypoint2 = row.Attribute("waypoint2").Value.ToInt64()
+                   let waypoint3 = row.Attribute("waypoint3").Value.ToInt64()
+                   let waypoint4 = row.Attribute("waypoint4").Value.ToInt64()
+                   let waypoint5 = row.Attribute("waypoint5").Value.ToInt64()
+                   select new Entities.PlanetaryRoute
+                   {
+                       RouteID = routeID,
+                       SourcePinID = sourcePinID,
+                       DestinationPinID = destinationPinID,
+                       ContentTypeID = contentTypeID,
+                       ContentTypeName = contentTypeName,
+                       Quantity = quantity,
+                       Waypoint1 = waypoint1,
+                       Waypoint2 = waypoint2,
+                       Waypoint3 = waypoint3,
+                       Waypoint4 = waypoint4,
+                       Waypoint5 = waypoint5
+                   };
+        }
+
     }
 }
