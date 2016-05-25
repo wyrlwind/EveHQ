@@ -225,6 +225,7 @@ Public Class FrmCacheCreator
                         Dim typeId As Integer = CInt(CType(entry.Key, YamlScalarNode).Value)
                         Dim yamlItem As New YAMLType
                         yamlItem.TypeID = typeId
+                        yamlItem.IconID = -1
                         ' Parse anything underneath
                         Dim dataItem = TryCast(entry.Value, YamlMappingNode)
                         If dataItem IsNot Nothing Then
@@ -290,8 +291,10 @@ Public Class FrmCacheCreator
                             Next
                         End If
                         ' Get the iconFile if relevant
-                        If yamlIcons.ContainsKey(yamlItem.IconID) Then
+                        If yamlIcons.ContainsKey(yamlItem.IconID) And yamlItem.IconID <> -1 Then
                             yamlItem.IconName = yamlIcons(yamlItem.IconID)
+                        Else
+                            yamlItem.IconName = CStr(yamlItem.TypeID)
                         End If
                         ' Add the item
                         yamlTypes.Add(yamlItem.TypeID, yamlItem)
