@@ -1241,7 +1241,7 @@ Namespace Forms
                         newModule.Style = New ElementStyle
                         newModule.Style.Font = Font
                         ' Create drone icons individually because drones have no iconID
-                        If shipmod.IsDrone = True Then
+                        If shipmod.IsDrone = True Or shipmod.IsFighter = True Then
                             newModule.Image = ImageHandler.CreateIcon(CStr(shipmod.ID), shipmod.MetaType.ToString, 24, True)
                         Else
                             newModule.Image = ImageHandler.IconImage24(shipmod.Icon, shipmod.MetaType)
@@ -1259,7 +1259,7 @@ Namespace Forms
                         stt.Color = eTooltipColor.Yellow
                         'stt.FooterImage = CType(My.Resources.imgInfo1, Image)
                         ' Create drone icons individually because drones have no iconID
-                        If shipmod.IsDrone = True Then
+                        If shipmod.IsDrone = True Or shipmod.IsFighter = True Then
                             stt.BodyImage = ImageHandler.CreateIcon(CStr(shipmod.ID), shipmod.MetaType.ToString, 48, True)
                         Else
                             stt.BodyImage = ImageHandler.IconImage48(shipmod.Icon, shipmod.MetaType)

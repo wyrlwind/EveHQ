@@ -16,6 +16,8 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -170,10 +172,6 @@
     <Compile Include="Entities\NotificationText.cs" />
     <Compile Include="Entities\NotificationType.cs" />
     <Compile Include="Entities\NpcStanding.cs" />
-    <Compile Include="Entities\PlanetaryColony.cs" />
-    <Compile Include="Entities\PlanetaryLink.cs" />
-    <Compile Include="Entities\PlanetaryPin.cs" />
-    <Compile Include="Entities\PlanetaryRoute.cs" />
     <Compile Include="Entities\QueuedSkill.cs" />
     <Compile Include="Entities\Research.cs" />
     <Compile Include="Entities\ServerStatus.cs" />
@@ -203,6 +201,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
