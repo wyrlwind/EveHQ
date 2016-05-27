@@ -1153,6 +1153,10 @@
 975,1,33400,111,3,6,0,0,2,4,Hull Exp Resistance Bonus
 976,1,33400,109,3,6,0,0,2,4,Hull Kin Resistance Bonus
 977,1,33400,110,3,6,0,0,2,4,Hull Therm Resistance Bonus
+1027,1,33400,211,3,6,0,0,0,4,Gravimetric Sensor Strength
+1028,1,33400,209,3,6,0,0,0,4,Ladar Sensor Strength
+1029,1,33400,210,3,6,0,0,0,4,Magnetrometric Sensor Strength
+1030,1,33400,208,3,6,0,0,0,4,Radar Sensor Strength
 # Industrial Core,,,,,,,,,,
 20,1,28583,37,3,6,0,0,0,4,Max Velocity Bonus
 1238,1,28583,833,4,1638,0,0,5,4,Mining Foreman Ganglink Bonus
