@@ -3785,6 +3785,7 @@ End Class
 
     Dim cModules As New List(Of ModuleWithState)
     Dim cDrones As New List(Of ModuleQWithState)
+    Dim cFighters As New List(Of ModuleQWithState)
     Dim cItems As New List(Of ModuleQWithState)
     Dim cShips As New List(Of ModuleQWithState)
 
@@ -3899,6 +3900,21 @@ End Class
         End Get
         Set(ByVal value As List(Of ModuleWithState))
             cModules = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the collection of fighters used in the fitting
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A collection of fighters used in the fitting</returns>
+    ''' <remarks></remarks>
+    Public Property Fighters() As List(Of ModuleQWithState)
+        Get
+            Return cFighters
+        End Get
+        Set(ByVal value As List(Of ModuleQWithState))
+            cFighters = value
         End Set
     End Property
 
