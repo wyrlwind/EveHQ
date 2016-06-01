@@ -2551,6 +2551,9 @@ End Class
     <ProtoMember(1)> Public FighterType As ShipModule
     <ProtoMember(2)> Public Quantity As Integer
     <ProtoMember(3)> Public IsActive As Boolean
+    <ProtoMember(4)> Public IsTurretActive As Boolean
+    <ProtoMember(5)> Public IsMissileActive As Boolean
+    <ProtoMember(6)> Public IsBombActive As Boolean
 End Class
 
 <ProtoContract()> <Serializable()> Public Class CargoBayItem
