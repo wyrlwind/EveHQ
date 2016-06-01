@@ -109,8 +109,7 @@
 #1079,1,3418,67,2,61,0,1,0,0,Energy Management - Capacitor Batteries
 66,1,3421,73,2,72,0,1,0,0,Energy Pulse Weapons
 314,1,3417,55,3,6,0,1,0,0,Energy Systems Operation
-313,1,3413,11,3,6,0,1,0,0,Engineering - Ship
-313,1,3413,549,2,339,0,1,0,0,Engineering - MAPC
+313,1,3413,11,3,6,0,1,0,0,Power grid management - Ship
 958,1,12367,985,2,295,0,1,0,0,Explosive Shield Compensation
 958,1,12366,986,2,295,0,1,0,0,Kinetic Shield Compensation
 851,1,21059,6,4,609;610;611;612,0,1,0,0,Shield Compensation
@@ -225,10 +224,10 @@
 310,1,3318,50,2,509,0,1,0,0,Weapon Upgrades - Light
 # INDUSTRY,,,,,,,,,,
 280,1,25544,763,2,737,0,1,10,0,Gas Cloud Harvesting
-780,1,16281,73,4,1038,0,1,0,0,Ice Harvesting
+780,1,16281,73,4,1038;2151,0,1,0,0,Ice Harvesting
 885,1,28585,714,1,28583,0,1,8,0,Industrial Reconfiguration
 434,1,3386,77,4,1039,0,1,0,0,Mining - Mining Laser
-434,1,3386,77,4,2151,0,1,0,0,Mining - Ice Mining Laser
+#434,1,3386,77,4,2151,0,1,0,0,Mining - Ice Mining Laser
 434,1,3386,77,4,1040,0,1,0,0,Mining - Strip Miner
 927,1,22578,1082,2,546,0,1,0,0,Mining Upgrades
 # LEADERSHIP,,,,,,,,,,
