@@ -27,27 +27,31 @@ Namespace Controls
         <System.Diagnostics.DebuggerStepThrough()>
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
-            Dim SuperTooltipInfo34 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
-            Dim SuperTooltipInfo35 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
-            Dim SuperTooltipInfo36 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
-            Dim SuperTooltipInfo37 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
+            Dim SuperTooltipInfo18 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
+            Dim SuperTooltipInfo19 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
+            Dim SuperTooltipInfo20 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
+            Dim SuperTooltipInfo21 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
             Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ShipSlotControl))
-            Dim SuperTooltipInfo38 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
-            Dim SuperTooltipInfo39 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
-            Dim SuperTooltipInfo40 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
-            Dim SuperTooltipInfo33 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
+            Dim SuperTooltipInfo22 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
+            Dim SuperTooltipInfo23 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
+            Dim SuperTooltipInfo24 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
+            Dim SuperTooltipInfo17 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
             Me.lblFittingMarketPrice = New System.Windows.Forms.Label()
             Me.lblShipMarketPrice = New System.Windows.Forms.Label()
             Me.ctxSlots = New System.Windows.Forms.ContextMenuStrip(Me.components)
             Me.ShowInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.ctxBays = New System.Windows.Forms.ContextMenuStrip(Me.components)
-            Me.ctxRemoveItem = New System.Windows.Forms.ToolStripMenuItem()
+            Me.ctxShowBayInfoItem = New System.Windows.Forms.ToolStripMenuItem()
+            Me.ctxShowModuleMarketGroup = New System.Windows.Forms.ToolStripMenuItem()
             Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
             Me.ctxAlterQuantity = New System.Windows.Forms.ToolStripMenuItem()
             Me.ctxSplitBatch = New System.Windows.Forms.ToolStripMenuItem()
+            Me.ctxRemoveItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
-            Me.ctxShowBayInfoItem = New System.Windows.Forms.ToolStripMenuItem()
-            Me.ctxShowModuleMarketGroup = New System.Windows.Forms.ToolStripMenuItem()
+            Me.FighterAbilitiesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+            Me.FighterTurretToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+            Me.FighterMissileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+            Me.FighterBombToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.ctxRemoteFittings = New System.Windows.Forms.ContextMenuStrip(Me.components)
             Me.RemoveFittingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
             Me.ctxRemoteModule = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -278,57 +282,74 @@ Namespace Controls
             'ctxBays
             '
             Me.ctxBays.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.ctxBays.Items.AddRange(New System.Windows.Forms.ToolStripItem() {
-                                      Me.ctxShowBayInfoItem,
-                                      Me.ctxShowModuleMarketGroup,
-                                      Me.ToolStripMenuItem1,
-                                      Me.ctxAlterQuantity,
-                                      Me.ctxSplitBatch,
-                                      Me.ctxRemoveItem,
-                                      Me.ToolStripMenuItem2
-                                      })
+            Me.ctxBays.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ctxShowBayInfoItem, Me.ctxShowModuleMarketGroup, Me.ToolStripMenuItem1, Me.ctxAlterQuantity, Me.ctxSplitBatch, Me.ctxRemoveItem, Me.ToolStripMenuItem2, Me.FighterAbilitiesToolStripMenuItem})
             Me.ctxBays.Name = "ctx"
-            Me.ctxBays.Size = New System.Drawing.Size(156, 104)
-            '
-            'ctxRemoveItem
-            '
-            Me.ctxRemoveItem.Name = "ctxRemoveItem"
-            Me.ctxRemoveItem.Size = New System.Drawing.Size(155, 22)
-            Me.ctxRemoveItem.Text = "Remove Item"
-            '
-            'ToolStripMenuItem1
-            '
-            Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-            Me.ToolStripMenuItem1.Size = New System.Drawing.Size(152, 6)
-            '
-            'ctxAlterQuantity
-            '
-            Me.ctxAlterQuantity.Name = "ctxAlterQuantity"
-            Me.ctxAlterQuantity.Size = New System.Drawing.Size(155, 22)
-            Me.ctxAlterQuantity.Text = "Alter Quantity"
-            '
-            'ctxSplitBatch
-            '
-            Me.ctxSplitBatch.Name = "ctxSplitBatch"
-            Me.ctxSplitBatch.Size = New System.Drawing.Size(155, 22)
-            Me.ctxSplitBatch.Text = "Split Batch"
-            '
-            'ToolStripMenuItem2
-            '
-            Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-            Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 6)
+            Me.ctxBays.Size = New System.Drawing.Size(169, 148)
             '
             'ctxShowBayInfoItem
             '
             Me.ctxShowBayInfoItem.Name = "ctxShowBayInfoItem"
-            Me.ctxShowBayInfoItem.Size = New System.Drawing.Size(155, 22)
+            Me.ctxShowBayInfoItem.Size = New System.Drawing.Size(168, 22)
             Me.ctxShowBayInfoItem.Text = "Show Drone Info"
             '
             'ctxShowModuleMarketGroup
             '
             Me.ctxShowModuleMarketGroup.Name = "ctxShowModuleMarketGroup"
-            Me.ctxShowModuleMarketGroup.Size = New System.Drawing.Size(155, 22)
+            Me.ctxShowModuleMarketGroup.Size = New System.Drawing.Size(168, 22)
             Me.ctxShowModuleMarketGroup.Text = "Show Market Group"
+            '
+            'ToolStripMenuItem1
+            '
+            Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+            Me.ToolStripMenuItem1.Size = New System.Drawing.Size(165, 6)
+            '
+            'ctxAlterQuantity
+            '
+            Me.ctxAlterQuantity.Name = "ctxAlterQuantity"
+            Me.ctxAlterQuantity.Size = New System.Drawing.Size(168, 22)
+            Me.ctxAlterQuantity.Text = "Alter Quantity"
+            '
+            'ctxSplitBatch
+            '
+            Me.ctxSplitBatch.Name = "ctxSplitBatch"
+            Me.ctxSplitBatch.Size = New System.Drawing.Size(168, 22)
+            Me.ctxSplitBatch.Text = "Split Batch"
+            '
+            'ctxRemoveItem
+            '
+            Me.ctxRemoveItem.Name = "ctxRemoveItem"
+            Me.ctxRemoveItem.Size = New System.Drawing.Size(168, 22)
+            Me.ctxRemoveItem.Text = "Remove Item"
+            '
+            'ToolStripMenuItem2
+            '
+            Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+            Me.ToolStripMenuItem2.Size = New System.Drawing.Size(165, 6)
+            '
+            'FighterAbilitiesToolStripMenuItem
+            '
+            Me.FighterAbilitiesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FighterTurretToolStripMenuItem, Me.FighterMissileToolStripMenuItem, Me.FighterBombToolStripMenuItem})
+            Me.FighterAbilitiesToolStripMenuItem.Name = "FighterAbilitiesToolStripMenuItem"
+            Me.FighterAbilitiesToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+            Me.FighterAbilitiesToolStripMenuItem.Text = "Fighter Abilities"
+            '
+            'FighterTurretToolStripMenuItem
+            '
+            Me.FighterTurretToolStripMenuItem.Name = "FighterTurretToolStripMenuItem"
+            Me.FighterTurretToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+            Me.FighterTurretToolStripMenuItem.Text = "Fighter Turret"
+            '
+            'FighterMissileToolStripMenuItem
+            '
+            Me.FighterMissileToolStripMenuItem.Name = "FighterMissileToolStripMenuItem"
+            Me.FighterMissileToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+            Me.FighterMissileToolStripMenuItem.Text = "Fighter Missile"
+            '
+            'FighterBombToolStripMenuItem
+            '
+            Me.FighterBombToolStripMenuItem.Name = "FighterBombToolStripMenuItem"
+            Me.FighterBombToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+            Me.FighterBombToolStripMenuItem.Text = "Fighter Bomb"
             '
             'ctxRemoteFittings
             '
@@ -491,7 +512,7 @@ Namespace Controls
             Me.lblFighterSquadrons.BackColor = System.Drawing.Color.Transparent
             Me.lblFighterSquadrons.Location = New System.Drawing.Point(200, 1)
             Me.lblFighterSquadrons.Name = "lblFighterSquadrons"
-            Me.lblFighterSquadrons.Size = New System.Drawing.Size(200, 13)
+            Me.lblFighterSquadrons.Size = New System.Drawing.Size(271, 13)
             Me.lblFighterSquadrons.TabIndex = 0
             Me.lblFighterSquadrons.Text = "Squadron Limits: 0 Total / 0 Light / 0 Support / 0 Heavy"
             '
@@ -1872,11 +1893,11 @@ Namespace Controls
             Me.btnShipMode3.Size = New System.Drawing.Size(32, 32)
             Me.btnShipMode3.SplitButton = True
             Me.btnShipMode3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-            SuperTooltipInfo34.BodyText = "This toggle button will activate the ship's propulsion mode." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-            SuperTooltipInfo34.Color = DevComponents.DotNetBar.eTooltipColor.Purple
-            SuperTooltipInfo34.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.speed
-            SuperTooltipInfo34.FooterText = "Activate Ship Propulsion Mode"
-            Me.SlotTip.SetSuperTooltip(Me.btnShipMode3, SuperTooltipInfo34)
+            SuperTooltipInfo18.BodyText = "This toggle button will activate the ship's propulsion mode." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+            SuperTooltipInfo18.Color = DevComponents.DotNetBar.eTooltipColor.Purple
+            SuperTooltipInfo18.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.speed
+            SuperTooltipInfo18.FooterText = "Activate Ship Propulsion Mode"
+            Me.SlotTip.SetSuperTooltip(Me.btnShipMode3, SuperTooltipInfo18)
             Me.btnShipMode3.TabIndex = 21
             Me.btnShipMode3.Visible = False
             '
@@ -1893,11 +1914,11 @@ Namespace Controls
             Me.btnShipMode2.Size = New System.Drawing.Size(32, 32)
             Me.btnShipMode2.SplitButton = True
             Me.btnShipMode2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-            SuperTooltipInfo35.BodyText = "This toggle button will activate the ship's sharpshooter mode." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-            SuperTooltipInfo35.Color = DevComponents.DotNetBar.eTooltipColor.Purple
-            SuperTooltipInfo35.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.target
-            SuperTooltipInfo35.FooterText = "Activate Ship Sharpshooter Mode"
-            Me.SlotTip.SetSuperTooltip(Me.btnShipMode2, SuperTooltipInfo35)
+            SuperTooltipInfo19.BodyText = "This toggle button will activate the ship's sharpshooter mode." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+            SuperTooltipInfo19.Color = DevComponents.DotNetBar.eTooltipColor.Purple
+            SuperTooltipInfo19.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.target
+            SuperTooltipInfo19.FooterText = "Activate Ship Sharpshooter Mode"
+            Me.SlotTip.SetSuperTooltip(Me.btnShipMode2, SuperTooltipInfo19)
             Me.btnShipMode2.TabIndex = 20
             Me.btnShipMode2.Visible = False
             '
@@ -1914,11 +1935,11 @@ Namespace Controls
             Me.btnShipMode1.Size = New System.Drawing.Size(32, 32)
             Me.btnShipMode1.SplitButton = True
             Me.btnShipMode1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-            SuperTooltipInfo36.BodyText = "This toggle button will activate the ship's defence mode." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-            SuperTooltipInfo36.Color = DevComponents.DotNetBar.eTooltipColor.Purple
-            SuperTooltipInfo36.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.defence
-            SuperTooltipInfo36.FooterText = "Activate Ship Defence Mode"
-            Me.SlotTip.SetSuperTooltip(Me.btnShipMode1, SuperTooltipInfo36)
+            SuperTooltipInfo20.BodyText = "This toggle button will activate the ship's defence mode." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+            SuperTooltipInfo20.Color = DevComponents.DotNetBar.eTooltipColor.Purple
+            SuperTooltipInfo20.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.defence
+            SuperTooltipInfo20.FooterText = "Activate Ship Defence Mode"
+            Me.SlotTip.SetSuperTooltip(Me.btnShipMode1, SuperTooltipInfo20)
             Me.btnShipMode1.TabIndex = 19
             Me.btnShipMode1.Visible = False
             '
@@ -1935,12 +1956,12 @@ Namespace Controls
             Me.btnShipMode0.Size = New System.Drawing.Size(32, 32)
             Me.btnShipMode0.SplitButton = True
             Me.btnShipMode0.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-            SuperTooltipInfo37.BodyText = "This button will put the the ship into a state where no mode is active (note: thi" &
+            SuperTooltipInfo21.BodyText = "This button will put the the ship into a state where no mode is active (note: thi" &
     "s can not be done in-game)." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-            SuperTooltipInfo37.Color = DevComponents.DotNetBar.eTooltipColor.Purple
-            SuperTooltipInfo37.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.nomode
-            SuperTooltipInfo37.FooterText = "Cancel Ship Mode"
-            Me.SlotTip.SetSuperTooltip(Me.btnShipMode0, SuperTooltipInfo37)
+            SuperTooltipInfo21.Color = DevComponents.DotNetBar.eTooltipColor.Purple
+            SuperTooltipInfo21.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.nomode
+            SuperTooltipInfo21.FooterText = "Cancel Ship Mode"
+            Me.SlotTip.SetSuperTooltip(Me.btnShipMode0, SuperTooltipInfo21)
             Me.btnShipMode0.TabIndex = 18
             Me.btnShipMode0.Visible = False
             '
@@ -1968,11 +1989,11 @@ Namespace Controls
             Me.btnAutoSize.Size = New System.Drawing.Size(48, 32)
             Me.btnAutoSize.SplitButton = True
             Me.btnAutoSize.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-            SuperTooltipInfo38.BodyText = "Automatically resizes all columns to match the size of the contents that they con" &
+            SuperTooltipInfo22.BodyText = "Automatically resizes all columns to match the size of the contents that they con" &
     "tain." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Does not affect the user-selected size."
-            SuperTooltipInfo38.Color = DevComponents.DotNetBar.eTooltipColor.Yellow
-            SuperTooltipInfo38.FooterText = "Autosize Slot Columns"
-            Me.SlotTip.SetSuperTooltip(Me.btnAutoSize, SuperTooltipInfo38)
+            SuperTooltipInfo22.Color = DevComponents.DotNetBar.eTooltipColor.Yellow
+            SuperTooltipInfo22.FooterText = "Autosize Slot Columns"
+            Me.SlotTip.SetSuperTooltip(Me.btnAutoSize, SuperTooltipInfo22)
             Me.btnAutoSize.TabIndex = 16
             '
             'btnRedo
@@ -1988,12 +2009,12 @@ Namespace Controls
             Me.btnRedo.Size = New System.Drawing.Size(48, 32)
             Me.btnRedo.SplitButton = True
             Me.btnRedo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-            SuperTooltipInfo39.BodyText = "This button will redo the most recent changes undone." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Use the split button to " &
+            SuperTooltipInfo23.BodyText = "This button will redo the most recent changes undone." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Use the split button to " &
     "undo multiple operations at once."
-            SuperTooltipInfo39.Color = DevComponents.DotNetBar.eTooltipColor.Yellow
-            SuperTooltipInfo39.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.redo
-            SuperTooltipInfo39.FooterText = "Redo Operation"
-            Me.SlotTip.SetSuperTooltip(Me.btnRedo, SuperTooltipInfo39)
+            SuperTooltipInfo23.Color = DevComponents.DotNetBar.eTooltipColor.Yellow
+            SuperTooltipInfo23.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.redo
+            SuperTooltipInfo23.FooterText = "Redo Operation"
+            Me.SlotTip.SetSuperTooltip(Me.btnRedo, SuperTooltipInfo23)
             Me.btnRedo.TabIndex = 15
             '
             'btnUndo
@@ -2009,12 +2030,12 @@ Namespace Controls
             Me.btnUndo.Size = New System.Drawing.Size(48, 32)
             Me.btnUndo.SplitButton = True
             Me.btnUndo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-            SuperTooltipInfo40.BodyText = "This button will undo the most recent loading or unloading of a module or charge." &
+            SuperTooltipInfo24.BodyText = "This button will undo the most recent loading or unloading of a module or charge." &
     "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Use the split button to undo multiple operations at once." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-            SuperTooltipInfo40.Color = DevComponents.DotNetBar.eTooltipColor.Yellow
-            SuperTooltipInfo40.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.undo
-            SuperTooltipInfo40.FooterText = "Undo Operation"
-            Me.SlotTip.SetSuperTooltip(Me.btnUndo, SuperTooltipInfo40)
+            SuperTooltipInfo24.Color = DevComponents.DotNetBar.eTooltipColor.Yellow
+            SuperTooltipInfo24.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.undo
+            SuperTooltipInfo24.FooterText = "Undo Operation"
+            Me.SlotTip.SetSuperTooltip(Me.btnUndo, SuperTooltipInfo24)
             Me.btnUndo.TabIndex = 14
             '
             'adtSlots
@@ -2219,7 +2240,7 @@ Namespace Controls
             'SlotTip
             '
             Me.SlotTip.DefaultFont = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.SlotTip.DefaultTooltipSettings = SuperTooltipInfo33
+            Me.SlotTip.DefaultTooltipSettings = SuperTooltipInfo17
             Me.SlotTip.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F"
             Me.SlotTip.PositionBelowControl = False
             '
@@ -2448,5 +2469,9 @@ Namespace Controls
         Private WithEvents btnShipMode3 As DevComponents.DotNetBar.ButtonX
         Private WithEvents btnShipMode2 As DevComponents.DotNetBar.ButtonX
         Private WithEvents btnShipMode1 As DevComponents.DotNetBar.ButtonX
+        Friend WithEvents FighterAbilitiesToolStripMenuItem As ToolStripMenuItem
+        Friend WithEvents FighterTurretToolStripMenuItem As ToolStripMenuItem
+        Friend WithEvents FighterMissileToolStripMenuItem As ToolStripMenuItem
+        Friend WithEvents FighterBombToolStripMenuItem As ToolStripMenuItem
     End Class
 End NameSpace
