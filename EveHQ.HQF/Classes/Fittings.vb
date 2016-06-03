@@ -139,7 +139,7 @@
                         If active = True Then
                             newFit.Fighters.Add(New ModuleFighterWithState(CStr(sMod.ID), ModuleStates.Active, itemQuantity, True, True, True))
                         Else
-                            newFit.Fighters.Add(New ModuleFighterWithState(CStr(sMod.ID), ModuleStates.Inactive, itemQuantity, False, False, False))
+                            newFit.Fighters.Add(New ModuleFighterWithState(CStr(sMod.ID), ModuleStates.Inactive, itemQuantity, True, False, False))
                         End If
 
                     Else
