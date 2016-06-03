@@ -3864,7 +3864,7 @@ Namespace Controls
                 fbi = New FighterBayItem
                 fbi.FighterType = CType(holdingBay(fighter), ShipModule)
                 fbi.IsActive = False
-                fbi.IsTurretActive = False
+                fbi.IsTurretActive = True
                 fbi.IsMissileActive = False
                 fbi.IsBombActive = False
                 fbi.Quantity = CInt(fighterQuantities(fighter))
