@@ -105,7 +105,7 @@ Imports EveHQ.Common.Extensions
 
     Dim cModules As New List(Of ModuleWithState)
     Dim cDrones As New List(Of ModuleQWithState)
-    Dim cFighters As New List(Of ModuleQWithState)
+    Dim cFighters As New List(Of ModuleFighterWithState)
     Dim cItems As New List(Of ModuleQWithState)
     Dim cShips As New List(Of ModuleQWithState)
 
@@ -288,11 +288,11 @@ Imports EveHQ.Common.Extensions
     ''' <value></value>
     ''' <returns>A collection of fighters used in the fitting</returns>
     ''' <remarks></remarks>
-    Public Property Fighters() As List(Of ModuleQWithState)
+    Public Property Fighters() As List(Of ModuleFighterWithState)
         Get
             Return cFighters
         End Get
-        Set(ByVal value As List(Of ModuleQWithState))
+        Set(ByVal value As List(Of ModuleFighterWithState))
             cFighters = value
         End Set
     End Property
@@ -1956,7 +1956,7 @@ Imports EveHQ.Common.Extensions
                 Dim turretExpDamage As Double = 0
                 Dim turretKinDamage As Double = 0
                 Dim turretThermDamage As Double = 0
-                If cModule.Attributes.ContainsKey(2233) = True Then
+                If fbi.IsTurretActive And cModule.Attributes.ContainsKey(2233) = True Then
                     turretRof = cModule.Attributes(2233)
                     turretDmgMod = cModule.Attributes(2226)
                     If cModule.Attributes.ContainsKey(2227) Then
@@ -1992,7 +1992,7 @@ Imports EveHQ.Common.Extensions
                 Dim missileExpDamage As Double = 0
                 Dim missileKinDamage As Double = 0
                 Dim missileThermDamage As Double = 0
-                If cModule.Attributes.ContainsKey(2182) = True Then
+                If fbi.IsMissileActive And cModule.Attributes.ContainsKey(2182) = True Then
                     missileRof = cModule.Attributes(2182)
                     missileDmgMod = cModule.Attributes(2130)
                     If cModule.Attributes.ContainsKey(2131) Then
@@ -2027,7 +2027,7 @@ Imports EveHQ.Common.Extensions
                 Dim bombExpDamage As Double = 0
                 Dim bombKinDamage As Double = 0
                 Dim bombThermDamage As Double = 0
-                If cModule.LoadedCharge IsNot Nothing Then
+                If fbi.IsBombActive And cModule.LoadedCharge IsNot Nothing Then
                     bombRof = cModule.Attributes(2349)
                     bombDmgMod = 1
                     bombBaseDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseEMDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseExpDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseKinDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseThermDamage)
@@ -2612,15 +2612,15 @@ Imports EveHQ.Common.Extensions
         Next
 
         ' Add the fighters
-        For Each mws As ModuleQWithState In Fighters
+        For Each mws As ModuleFighterWithState In Fighters
             Dim temp As New ShipModule
             If ModuleLists.ModuleList.TryGetValue(CInt(mws.ID), temp) Then
                 Dim newMod As ShipModule = temp.Clone
                 newMod.ModuleState = mws.State
                 If mws.State = ModuleStates.Active Then
-                    Call AddFighter(newMod, mws.Quantity, True, True)
+                    Call AddFighter(newMod, mws.Quantity, True, True, mws.TurretState, mws.MissileState, mws.BombState)
                 Else
-                    Call AddFighter(newMod, mws.Quantity, False, True)
+                    Call AddFighter(newMod, mws.Quantity, False, True, mws.TurretState, mws.MissileState, mws.BombState)
                 End If
             Else
                 Trace.TraceWarning(String.Format(UnknownModuleFitted, mws.ID))
@@ -2754,9 +2754,9 @@ Imports EveHQ.Common.Extensions
         Fighters.Clear()
         For Each fbi As FighterBayItem In BaseShip.FighterBayItems.Values
             If fbi.IsActive = True Then
-                Fighters.Add(New ModuleQWithState(CStr(fbi.FighterType.ID), ModuleStates.Active, fbi.Quantity))
+                Fighters.Add(New ModuleFighterWithState(CStr(fbi.FighterType.ID), ModuleStates.Active, fbi.Quantity, fbi.IsTurretActive, fbi.IsMissileActive, fbi.IsBombActive))
             Else
-                Fighters.Add(New ModuleQWithState(CStr(fbi.FighterType.ID), ModuleStates.Inactive, fbi.Quantity))
+                Fighters.Add(New ModuleFighterWithState(CStr(fbi.FighterType.ID), ModuleStates.Inactive, fbi.Quantity, fbi.IsTurretActive, fbi.IsMissileActive, fbi.IsBombActive))
             End If
         Next
 
@@ -2951,7 +2951,7 @@ Imports EveHQ.Common.Extensions
         End If
     End Sub
 
-    Public Sub AddFighter(ByVal fighter As ShipModule, ByVal qty As Integer, ByVal active As Boolean, ByVal updateAll As Boolean)
+    Public Sub AddFighter(ByVal fighter As ShipModule, ByVal qty As Integer, ByVal active As Boolean, ByVal updateAll As Boolean, ByVal isTurretActive As Boolean, ByVal isMissileActive As Boolean, ByVal isBombActive As Boolean)
 
         ' See if there is sufficient space
         Dim vol As Double = fighter.Volume
@@ -2968,6 +2968,14 @@ Imports EveHQ.Common.Extensions
             Dim fbi As New FighterBayItem
             fbi.FighterType = fighter
             fbi.Quantity = qty
+            fbi.IsTurretActive = isTurretActive
+            fbi.IsMissileActive = isMissileActive
+            fbi.IsBombActive = isBombActive
+            If active = True Then
+                fbi.IsActive = True
+            Else
+                fbi.IsActive = False
+            End If
 
             If updateAll = False Then
                 Dim squadMax As Integer = CInt(fbi.FighterType.Attributes(2215))
@@ -2979,25 +2987,19 @@ Imports EveHQ.Common.Extensions
                 End If
             End If
 
-            'todo
-            If active = True Then
-                    fbi.IsActive = True
-                Else
-                    fbi.IsActive = False
-                End If
-                BaseShip.FighterBayItems.Add(BaseShip.FighterBayItems.Count, fbi)
+            BaseShip.FighterBayItems.Add(BaseShip.FighterBayItems.Count, fbi)
 
-                ' Update stuff
-                If updateAll = False Then
-                    ApplyFitting(BuildType.BuildFromEffectsMaps)
-                    If ShipSlotCtrl IsNot Nothing Then
-                        Call ShipSlotCtrl.UpdateFighterBay()
-                    End If
-                Else
-                    BaseShip.FighterBayUsed += vol * qty
+            ' Update stuff
+            If updateAll = False Then
+                ApplyFitting(BuildType.BuildFromEffectsMaps)
+                If ShipSlotCtrl IsNot Nothing Then
+                    Call ShipSlotCtrl.UpdateFighterBay()
                 End If
             Else
-                MessageBox.Show("There is not enough space in the Fighter Bay to hold " & qty & " unit(s) of " & fighter.Name & " on '" & FittingName & "' (" & ShipName & ").", "Insufficient Space", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                BaseShip.FighterBayUsed += vol * qty
+            End If
+        Else
+            MessageBox.Show("There is not enough space in the Fighter Bay to hold " & qty & " unit(s) of " & fighter.Name & " on '" & FittingName & "' (" & ShipName & ").", "Insufficient Space", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -3785,6 +3787,7 @@ End Class
 
     Dim cModules As New List(Of ModuleWithState)
     Dim cDrones As New List(Of ModuleQWithState)
+    Dim cFighters As New List(Of ModuleFighterWithState)
     Dim cItems As New List(Of ModuleQWithState)
     Dim cShips As New List(Of ModuleQWithState)
 
@@ -3899,6 +3902,21 @@ End Class
         End Get
         Set(ByVal value As List(Of ModuleWithState))
             cModules = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the collection of fighters used in the fitting
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A collection of fighters used in the fitting</returns>
+    ''' <remarks></remarks>
+    Public Property Fighters() As List(Of ModuleFighterWithState)
+        Get
+            Return cFighters
+        End Get
+        Set(ByVal value As List(Of ModuleFighterWithState))
+            cFighters = value
         End Set
     End Property
 

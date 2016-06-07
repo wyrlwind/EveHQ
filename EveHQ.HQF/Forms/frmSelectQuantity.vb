@@ -169,6 +169,9 @@ Namespace Forms
                         newFbi.FighterType = Fbi.FighterType.Clone
                         newFbi.Quantity = Fbi.Quantity - NewQuantity
                         newFbi.IsActive = False
+                        newFbi.IsTurretActive = Fbi.IsTurretActive
+                        newFbi.IsMissileActive = Fbi.IsMissileActive
+                        newFbi.IsBombActive = Fbi.IsBombActive
                         CurrentShip.FighterBayItems.Add(CurrentShip.FighterBayItems.Count, newFbi)
                         ' Modify the existing quantity
                         Fbi.Quantity = NewQuantity
