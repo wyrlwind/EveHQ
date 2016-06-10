@@ -199,6 +199,140 @@ End Class
 End Class
 
 ''' <summary>
+''' Class to store an itemID together with a state and quantity and fighter settings
+''' </summary>
+''' <remarks></remarks>
+<Serializable()> Public Class ModuleFighterWithState
+    ' ReSharper disable InconsistentNaming - For MS serialization compatability
+    Dim cID As String
+    Dim cState As ModuleStates
+    Dim cQuantity As Integer
+    Dim cTurretActve As Boolean
+    Dim cMissileActive As Boolean
+    Dim cBombActive As Boolean
+    ' ReSharper restore InconsistentNaming
+
+    ''' <summary>
+    ''' Gets or sets the ID of the module
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A string containing the typeID of the module</returns>
+    ''' <remarks></remarks>
+    Public Property ID() As String
+        Get
+            Return cID
+        End Get
+        Set(ByVal value As String)
+            cID = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the state of the module
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A value containing the state of the module</returns>
+    ''' <remarks></remarks>
+    Public Property State() As ModuleStates
+        Get
+            Return cState
+        End Get
+        Set(ByVal value As ModuleStates)
+            cState = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the quantity of modules
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>An integer containing the number of modules in the collection</returns>
+    ''' <remarks></remarks>
+    Public Property Quantity() As Integer
+        Get
+            Return cQuantity
+        End Get
+        Set(ByVal value As Integer)
+            cQuantity = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the state of the turret ability
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A value containing the state of the turret ability</returns>
+    ''' <remarks></remarks>
+    Public Property TurretState() As Boolean
+        Get
+            Return cTurretActve
+        End Get
+        Set(ByVal value As Boolean)
+            cTurretActve = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the state of the missile ability
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A value containing the state of the missile ability</returns>
+    ''' <remarks></remarks>
+    Public Property MissileState() As Boolean
+        Get
+            Return cMissileActive
+        End Get
+        Set(ByVal value As Boolean)
+            cMissileActive = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the state of the bomb ability
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A value containing the state of the bomb ability</returns>
+    ''' <remarks></remarks>
+    Public Property BombState() As Boolean
+        Get
+            Return cBombActive
+        End Get
+        Set(ByVal value As Boolean)
+            cBombActive = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Creates a new ModuleFighterWithState
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub New()
+        ' Default constructor
+    End Sub
+
+    ''' <summary>
+    ''' Creates a new ModuleFighterWithState with the complete data
+    ''' </summary>
+    ''' <param name="moduleID">The ID of the module</param>
+    ''' <param name="moduleState">The state of the module</param>
+    ''' <param name="moduleQuantity">The quantity of the modules in the group</param>
+    ''' <param name="moduleTurretActive">The state of the turret ability</param>
+    ''' <param name="moduleMissileActive">The state of the missile ability</param>
+    ''' <param name="moduleBombActive">The state of the bomb ability</param>
+    ''' <remarks></remarks>
+    Public Sub New(ByVal moduleID As String, ByVal moduleState As ModuleStates, ByVal moduleQuantity As Integer, ByVal moduleTurretActive As Boolean, ByVal moduleMissileActive As Boolean, ByVal moduleBombActive As Boolean)
+        ' Parse the data
+        cID = moduleID
+        cState = moduleState
+        cQuantity = moduleQuantity
+        cTurretActve = moduleTurretActive
+        cMissileActive = moduleMissileActive
+        cBombActive = moduleBombActive
+    End Sub
+
+End Class
+
+''' <summary>
 ''' Enumeration containing the various states a ShipModule can exist in
 ''' </summary>
 ''' <remarks></remarks>
