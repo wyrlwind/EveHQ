@@ -138,6 +138,29 @@ Public Class PilotParseFunctions
             ' Add the update info first to indicate it has been updated
             If HQ.Settings.Corporations.ContainsKey(newCorp.Name) = False Then
                 HQ.Settings.Corporations.Add(newCorp.Name, newCorp)
+                If HQ.Settings.Accounts.ContainsKey(newCorp.Accounts(0)) Then
+                    Dim cAccount As EveHQAccount = HQ.Settings.Accounts(newCorp.Accounts(0))
+                    If cAccount.CanUseCorporateAPI(NewEveApi.CorporateAccessMasks.CorporationSheet) = True Then
+                        Dim corpResponse As NewEveApi.EveServiceResponse(Of NewEveApi.Entities.CorporateData) = HQ.ApiProvider.Corporation.CorporationSheet(cAccount.UserID, cAccount.APIKey)
+                        If corpResponse IsNot Nothing Then
+                            If corpResponse.IsSuccess Then
+                                newCorp.ApiData = corpResponse.ResultData
+                                If corpResponse.ResultData.WalletDivisions IsNot Nothing Then
+                                    If cAccount.CanUseCorporateAPI(NewEveApi.CorporateAccessMasks.AccountBalances) = True Then
+                                        For Each wallet As CorporateDivision In corpResponse.ResultData.WalletDivisions
+                                            Dim walletBalances As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.AccountBalance)) = HQ.ApiProvider.Corporation.AccountBalance(cAccount.UserID, cAccount.APIKey, newCorp.ID.ToInt32())
+                                            If walletBalances IsNot Nothing Then
+                                                If walletBalances.IsSuccess Then
+                                                    newCorp.WalletBalances = walletBalances.ResultData
+                                                End If
+                                            End If
+                                        Next
+                                    End If
+                                End If
+                            End If
+                        End If
+                    End If
+                End If
             End If
         Next
     End Sub

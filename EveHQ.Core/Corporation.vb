@@ -46,6 +46,8 @@
 <Serializable()> Public Class Corporation
     Public Name As String
     Public ID As String
+    Public ApiData As NewEveApi.Entities.CorporateData
+    Public WalletBalances As IEnumerable(Of NewEveApi.Entities.AccountBalance)
     Public CharacterIDs As New List(Of String) ' List of all chars supporting this corp (can be multiple)
     Public CharacterNames As New List(Of String) ' List of all char names supporting this corp (can be multiple)
     Public Accounts As New List(Of String) ' IDs of all corp accounts which support this corporation (can be multiple)
