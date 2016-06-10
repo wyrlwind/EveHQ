@@ -70,8 +70,8 @@ H\D\kineticDampeningFieldStrengthkineticDampeningFieldStrength z(
 B]>]kineticDampeningFieldBonuskineticDampeningFieldBonus z(	
 >_:_energyReflectionStrengthenergyReflectionStrength z(	
 8`4`energyReflectionBonusenergyReflectionBonus z(	
-Ba>aenergyDestabilizationAmountEnergy Amount Neutralized r(
-@b<benergyDestabilizationRangeMax Neutralization Range (
+:a6aenergyNeutralizerAmountNeutralization Amount r(
+GbCbenergyNeutralizerRangeOptimalNeutralization Optimal Range (
 0c,cempFieldRangeArea of effect radius (
 3e/elauncherSlotsLeftLauncher Hardpoints (
 /f+fturretSlotsLeftTurret Hardpoints (
@@ -853,7 +853,7 @@ LŸGŸminingUpgradeCPUReductionBonusminingUpgradeCPUReductionBonus z(
 . ) entityTargetJamentityTargetJam z(
 >¡9¡entityTargetJamDurationentityTargetJamDuration z(
 J¢E¢entityTargetJamDurationChanceentityTargetJamDurationChance z(
-T£O£"entityCapacitorDrainDurationChance"entityCapacitorDrainDurationChance z(
+J£E£energyNeutralizerEntityChanceenergyNeutralizerEntityChance z(
 P¤K¤ entitySensorDampenDurationChance entitySensorDampenDurationChance z(
 V¥Q¥#entityTrackingDisruptDurationChance#entityTrackingDisruptDurationChance z(
 N§I§entityTargetPaintDurationChanceentityTargetPaintDurationChance z(
@@ -862,7 +862,7 @@ H©C©entityCapacitorDrainMaxRangeentityCapacitorDrainMaxRange z(
 Dª?ªentitySensorDampenMaxRangeentitySensorDampenMaxRange z(
 J¬E¬entityTrackingDisruptMaxRangeentityTrackingDisruptMaxRange z(
 B­=­entityTargetPaintMaxRangeentityTargetPaintMaxRange z(
-H®C®entityCapacitorDrainDurationentityCapacitorDrainDuration z(
+@®;®energyNeutralizerDurationNeutralization Duration e(
 D¯?¯entitySensorDampenDurationentitySensorDampenDuration z(
 J°E°entityTrackingDisruptDurationentityTrackingDisruptDuration z(
 B±=±entityTargetPaintDurationentityTargetPaintDuration z(
@@ -2133,8 +2133,8 @@ F®A®fighterMicroWarpDriveDurationMicro Warp Drive Duration e("
 @¶;¶velocityPenaltyReductionvelocityPenaltyReduction z(
 /·*·canFitShipType6Can be fitted to t(
 F¸A¸lightningWeaponTargetAmountNumber of Doomsday Targets Š(
-D¹?¹lightningWeaponTargetRangelightningWeaponTargetRange (
-NºIºlightningWeaponDamageLossTargetlightningWeaponDamageLossTarget h(
+C¹>¹lightningWeaponTargetRangeMaximum Target Jump Range (
+OºJºlightningWeaponDamageLossTarget Damage Reduction per Target Jump o(
 F»A»fighterMicroJumpDriveDurationMicro Jump Drive Duration e("
 I¼D¼!serviceModuleFuelConsumptionGroupService Module Fuel Need t(
 F½A½serviceModuleFuelAmountService Module Cycle Fuel Need Š(
@@ -2337,8 +2337,8 @@ G¦B¦remoteRepairImpedanceBonusRemote Repair Impedance Bonus |(%
 4§/§disallowTetheringDisallow Tethering ‰(
 y¨t¨!siegeRemoteLogisticsDurationBonusHCapital Remote Logistics Duration Bonus (Shield / Armor / Hull / Energy) i(%
 u©p©siegeRemoteLogisticsAmountBonusFCapital Remote Logistics Amount Bonus (Shield / Armor / Hull / Energy) i(%
-^ªYª siegeLocalLogisticsDurationBonus.Armor Reparier / Shield Booster Duration Bonus i(%
-Z«U«siegeLocalLogisticsAmountBonus,Armor Reparier / Shield Booster Amount Bonus i(%
+^ªYª siegeLocalLogisticsDurationBonus.Armor Repairer / Shield Booster Duration Bonus i(%
+Z«U«siegeLocalLogisticsAmountBonus,Armor Repairer / Shield Booster Amount Bonus i(%
 s¬n¬siegeRemoteLogisticsRangeBonusECapital Remote Logistics Range Bonus (Shield / Armor / Hull / Energy) i(%
 8­3­ fighterAbilityLaunchBombDurationDuration e("
 M¯H¯sensorDampenerResistanceBonus Sensor Dampener Resistance Bonus |(%
@@ -2421,7 +2421,7 @@ VûQûdoomsdayNoJumpOrCloakDuration)Jumping and Cloaking restriction durat
 =ü8üdoomsdayImmobilityDurationImmobility Duration e('
 ;ı6ıdoomsdayAOEShapeShape of Superweapon Effect z('
 8ş3şdoomsdayRangeIsFixeddoomsdayRangeIsFixed z('
-*ÿ%ÿmaxTypeFittedmaxTypeFitted z(
+=ÿ8ÿmaxTypeFitted Max Modules Of This Type Allowed z(
 T€O€"fighterAbilityKamikazeResistanceID"fighterAbilityKamikazeResistanceID w("
 PK fighterAbilityKamikazeResistance fighterAbilityKamikazeResistance l(&
 G‚B‚structureRigMaxTargetBonusMaximum Locked Targets Bonus ‹(
@@ -2439,3 +2439,6 @@ WRrefiningYieldCalAmarrIce/Refining yield for Clear Icicle and White G
 RMrefiningYieldGalMinIce,Refining yield for Blue Ice and Glacial Mass (
 lgrefiningYieldSpecialIceERefining yield for Glare Crust, Dark Glitter, Gelidus, and Krystallos (
 Y‘T‘'structureRigMissileExplosionRadiusBonus"Guided Bomb Explosion Radius Bonus i(
+0’+’skillIsObsoleteSkill is obsolete z(
+W“R“$energyNeutralizerSignatureResolution#Neutralization Signature Resolution (
+I”D”energyNeutralizerRangeFalloffNeutralization Falloff Range (

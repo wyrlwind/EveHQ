@@ -387,7 +387,6 @@ $ôôescortHullUpgradeCpu Bonus
 "¬¬ammoInfluenceCapRecharge
 -√(√#freightSkillBoostCargoCapacityBonus
 ƒƒskillFreightBonus
-$≈≈sensorBoostTargetedHostile
 #∆∆ammoInfluenceShipVelocity
 j–e–`cloakingTargetingDelayBonusPostPercentCloakingTargetingDelayBonusForShipModulesRequiringCloaking
 7“2“-cloakingSkillBoostCloakingTargetingDelayBonus
@@ -1090,7 +1089,6 @@ NòIòDminingUpgradeCPUPenaltyReductionModulesRequiringMiningUpgradePercent
 +©&©!shipBonusDroneDamageMultiplierBC1
 $ÆÆshipBonusDroneHitpointsBC1
 @Ø;Ø6iceHarvestCycleTimeModulesRequiringIceHarvestingOnline
-*∞%∞ decreaseTargetSpeedForStructures
 µµimplantArmorHpBonus2
 ∂∂armorTankingGang2
 '∑"∑skirmishWarfareVelocityBonus2
@@ -1381,7 +1379,6 @@ B≈=≈8gasHarvestingCycleTimeModulesRequiringGasCloudHarvesting
 %¶ ¶skillRemoteECMDurationBonus
 ππoverloadRofBonus
 #∫∫overloadSelfDurationBonus
-+ª&ª!energyDestabilizationForStructure
 ººsetGlobalPool
 '∆"∆skillBombDeploymentSpeedBonus
 1«,«'eliteBonusStealhBomberBombDeploymentCpu
@@ -1503,7 +1500,6 @@ H’C’>controlTowerGenericHullResistanceBonusCG&CGJ&ECM&EN&H&JP&L&M&P
 K÷F÷AcontrolTowerGenericHullResistanceBonusCG&CGJ&ECM&EN&H&JP&L&M&P&SC
 N◊I◊DcontrolTowerGenericHullResistanceBonusCG&CGJ&ECM&EN&H&JP&L&M&P&SC&SD
 0ÿ+ÿ&controlTowerGenericHullResistanceBonus
--Ÿ(Ÿ#sensorBoostTargetedHostileKali2Test
 ,‹'‹"gangArmorRepairCapReducerProjected
 4›/›*moduleBonusArmoredWarfareLinkDamageControl
 0ﬁ+ﬁ&gangArmorRepairSpeedAmplifierProjected
@@ -3530,10 +3526,7 @@ $ñ0ñ0shipBonusWDFGnullPenalties
 %∆0 ∆0roleBonusCDLinksPGReduction
 +»0&»0!structureEnergyNeutralizerFalloff
 D…0?…0:structureTargetMaxTargetRangeAndScanResolutionBonusHostile
-" 0 0structureEwTestEffectJam
-&À0!À0structureDecreaseTargetSpeed
 0Ã0+Ã0&structureTargetWeaponDisruptionHostile
- Õ0Õ0structureEwTargetPaint
 4Œ0/Œ0*structureWarpScrambleBlockMWDWithNPCEffect
 Gœ0Bœ0=structureTargetMaxTargetRangeAndScanResolutionBonusAssistance
 0–0+–0&structureSensorBoosterActivePercentage
@@ -3916,3 +3909,17 @@ $ï4ï4structureRigGalMinIceYield
 %ñ4 ñ4structureRigSpecialIceYield
 -ó4(ó4#skillStructureDoomsdayDurationBonus
 5ô40ô4+shipBonusForceAuxiliaryRole3NumWarfareLinks
+-ö4(ö4#structureModuleEffectStasisWebifier
+,õ4'õ4"structureModuleEffectTargetPainter
+3ú4.ú4)structureModuleEffectRemoteSensorDampener
+"ù4ù4structureModuleEffectECM
+/û4*û4%structureModuleEffectWeaponDisruption
+!ü4ü4remoteArmorRepairEntity
+$†4†4remoteShieldTransferEntity
+ °4°4remoteHullRepairEntity
+¢4¢4remoteWebifierEntity
+!§4§4remoteTargetPaintEntity
+ •4•4remoteSensorDampEntity
+#¶4¶4remoteWeaponDisruptEntity
+ß4ß4remoteECMEntity
+*®4%®4 starbaseEnergyNeutralizerFalloff
