@@ -3351,6 +3351,9 @@ Public Class FrmCacheCreator
 
     End Sub
 
+    ' attributeGroup data is used to determine placement of attributes in groups on the HQF 
+    ' Show Info dialog - Attributes tab for an object
+    ' Groups defined in frmShowInfo.vb ShowAttributes()
     Private Sub AddSqlAttributeGroupColumn(ByVal connection As SQLiteConnection, ByVal evehqData As DataSet)
         Dim keyCommand As SQLiteCommand
         Dim strSql As String

@@ -436,7 +436,6 @@
     <None Include="Resources\SkillBook32.png" />
     <None Include="Resources\SQLQueries.txt" />
     <None Include="Resources\Strings.txt" />
-    <None Include="Resources\attributeGroups.csv" />
     <None Include="Resources\EveHQ_IGBLogo.jpg" />
   </ItemGroup>
   <ItemGroup>
