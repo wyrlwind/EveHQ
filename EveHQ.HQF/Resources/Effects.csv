@@ -11,6 +11,14 @@
 335,1,23618,265,3,18,0,1,0,0,Drone Durability - Armor
 337,1,23618,263,3,18,0,1,0,0,Drone Durability - Shield
 292,1,3442,64,2,100;101;1159;549;1023,0,1,0,0,Drone Interfacing - Damage
+292,1,3442,2131,3,87,0,1,0,0,Drone Interfacing - Fighters -  Attack Missile EM Damage
+292,1,3442,2132,3,87,0,1,0,0,Drone Interfacing - Fighters -  Attack Missile Thermal Damage
+292,1,3442,2133,3,87,0,1,0,0,Drone Interfacing - Fighters -  Attack Missile Kinetic Damage
+292,1,3442,2134,3,87,0,1,0,0,Drone Interfacing - Fighters -  Attack Missile Explosive Damage
+292,1,3442,2227,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability EM Damage
+292,1,3442,2228,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability Thermal Damage
+292,1,3442,2229,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability Kinetic Damage
+292,1,3442,2230,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability Explosive Damage
 434,1,3442,77,2,101,0,1,0,0,Drone Interfacing - Mining
 591,1,12305,37,3,18,0,1,0,0,Drone Navigation
 294,1,23606,54,3,18,0,1,0,0,Drone Sharpshooting
