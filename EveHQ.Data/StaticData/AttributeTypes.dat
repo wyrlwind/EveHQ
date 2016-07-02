@@ -751,7 +751,7 @@ Bù=ùmaximumRangeCap#Theoretical Maximum Targeting Range (
 K†F†contrabandDetectionChanceBonusContraband Detection Modifier (
 .°)°deadspaceUnsafedeadspaceUnsafe z(	
 2¢-¢implantSetSerpentisSnake Set Bonus h(
-8£3£implantSetSerpentis2implantSetSerpentis2 z(	
+7£2£implantSetSerpentis2Asklepian Set Bonus h(
 <§7§eliteBonusInterceptor2eliteBonusInterceptor2 z(	
  ••quantityQuantity z(
 '¶"¶repairBonusRepair Bonus i(
@@ -851,13 +851,13 @@ HòCòrepublicFleetBonusMultiplierrepublicFleetBonusMultiplier z(
 *û%ûshipBonusORE3shipBonusORE3 z(	
 LüGüminingUpgradeCPUReductionBonusminingUpgradeCPUReductionBonus z(	
 .†)†entityTargetJamentityTargetJam z(
->°9°entityTargetJamDurationentityTargetJamDuration z(
-J¢E¢entityTargetJamDurationChanceentityTargetJamDurationChance z(
+9°4°ECMDurationECM Activation time / duration e(
+.¢)¢ECMEntityChanceECMEntityChance z(
 J£E£energyNeutralizerEntityChanceenergyNeutralizerEntityChance z(
 P§K§ entitySensorDampenDurationChance entitySensorDampenDurationChance z(
 V•Q•#entityTrackingDisruptDurationChance#entityTrackingDisruptDurationChance z(
 NßIßentityTargetPaintDurationChanceentityTargetPaintDurationChance z(
->®9®entityTargetJamMaxRangeentityTargetJamMaxRange z(
+0®+®ECMRangeOptimalECM Optimal Range (
 H©C©entityCapacitorDrainMaxRangeentityCapacitorDrainMaxRange z(
 D™?™entitySensorDampenMaxRangeentitySensorDampenMaxRange z(
 J¨E¨entityTrackingDisruptMaxRangeentityTrackingDisruptMaxRange z(
@@ -873,7 +873,7 @@ FµAµentityTargetPaintMultiplierentityTargetPaintMultiplier z(
 B∂=∂entitySensorDampenFallOffentitySensorDampenFallOff z(
 H∑C∑entityTrackingDisruptFallOffentityTrackingDisruptFallOff z(
 <∏7∏entityCapacitorFallOffentityCapacitorFallOff z(	
-<π7πentityTargetJamFallOffentityTargetJamFallOff z(
+0π+πECMRangeFalloffECM Falloff Range (
 @∫;∫entityTargetPaintFallOffentityTargetPaintFallOff z(
 *ª%ªisCaldariNavyisCaldariNavy z(	
 JºEºdamageModifierMultiplierBonusdamageModifierMultiplierBonus z(	
@@ -1667,10 +1667,10 @@ Dô?ôspecialSmallShipHoldCapacitySmall Ship Hold Capacity 	(
 FöAöspecialMediumShipHoldCapacityMedium Ship Hold Capacity 	(
 Dõ?õspecialLargeShipHoldCapacityLarge Ship Hold Capacity 	(
 NúIú!specialIndustrialShipHoldCapacityIndustrial Ship Hold Capacity 	(
-=ù8ùscanRadarStrengthModifierRADAR strength bonus z(
-=û8ûscanLadarStrengthModifierLadar strength bonus z(
-IüDüscanGravimetricStrengthModifierGravimetric strength bonus z(
-M†H†!scanMagnetometricStrengthModifierMagnetometric strength bonus z(
+>ù9ùscanRadarStrengthModifierRADAR strength bonus ã(
+>û9ûscanLadarStrengthModifierLadar strength bonus ã(
+JüEüscanGravimetricStrengthModifierGravimetric strength bonus ã(
+N†I†!scanMagnetometricStrengthModifierMagnetometric strength bonus ã(
 >°9°implantSetLGImperialNavyimplantSetLGImperialNavy z
 B¢=¢implantSetLGFederationNavyimplantSetLGFederationNavy z
 <£7£implantSetLGCaldariNavyimplantSetLGCaldariNavy z
@@ -2008,7 +2008,7 @@ FÆAÆenergyWarfareStrengthMultiplierEnergy warfare modifier h(
 ?Ø:ØaoeCloudSizeMultiplierExplosion radius multiplier h
 V∞Q∞targetPainterStrengthMultiplier'Target painter effectiveness multiplier h(
 L±G±stasisWebStrengthMultiplier#Stasis Webifier strength multiplier h
-5≤0≤disallowInHighSecDisallow In High Sec z(
+:≤5≤disallowInHighSecBanned in High Sec Space â(
 <≥7≥jumpFatigueMultiplierJump Fatigue Multiplier h(
 H¥C¥jumpThroughFatigueMultiplierjumpThroughFatigueMultiplier h(
 6µ1µgateScrambleStatusGate Scramble Status z(
@@ -2223,9 +2223,9 @@ A™<™fighterSupportSlotsSupport Fighter Squadron Limit z(&
 1¨,¨fighterAbilityECMDurationDuration e("
 :≠5≠fighterAbilityECMRangeOptimalOptimal Range ("
 BÆ=ÆfighterAbilityECMRangeFalloffEffectiveness Falloff ("
-BØ=ØfighterSquadronOrbitRangefighterSquadronOrbitRange (&
+4Ø/ØfighterSquadronOrbitRangeOrbit Range (&
 N∞I∞(fighterAbilityEvasiveManeuversSpeedBonusMaximum Velocity Bonus |("
-t±o±2fighterAbilityEvasiveManeuversSignatureRadiusBonus2fighterAbilityEvasiveManeuversSignatureRadiusBonus m("
+\±W±2fighterAbilityEvasiveManeuversSignatureRadiusBonusSignature Radius Reduction i("
 L≤G≤+fighterAbilityAttackMissileDamageMultiplierDamage Multiplier h("
 J≥E≥#fighterAbilityAttackMissileDamageEMEM Damage (Per Fighter) q("
 R¥M¥&fighterAbilityAttackMissileDamageThermThermal Damage (Per Fighter) q("
@@ -2442,3 +2442,8 @@ YëTë'structureRigMissileExplosionRadiusBonus"Guided Bomb Explosion Radius
 0í+ískillIsObsoleteSkill is obsolete z(
 WìRì$energyNeutralizerSignatureResolution#Neutralization Signature Resolution (
 IîDîenergyNeutralizerRangeFalloffNeutralization Falloff Range (
+9ï4ïdisallowDriveJumpingdisallowDriveJumping â(
+1ñ,ñdisallowCloakingdisallowCloaking â(
+Bó=ócynosuralFieldSpawnRadiuscynosuralFieldSpawnRadius (
+9ò4òshieldCapacityBonus2Shield Capacity Bonus i(
+2ô-ôarmorRepairBonusArmor Repair Bonus i(

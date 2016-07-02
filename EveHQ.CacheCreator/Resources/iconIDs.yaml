@@ -6553,3 +6553,12 @@
 21618:
   description: Multi Use Analyzer Icon
   iconFile: res:/UI/Texture/Icons/Modules/multiUseAnalyzer_64.png
+21620:
+  description: Icon for Copper Ouroboros
+  iconFile: res:/UI/Texture/Icons/Inventory/serpentisContainerBronze_64.png
+21621:
+  description: Icon for Silver Ouroboros
+  iconFile: res:/UI/Texture/Icons/Inventory/serpentisContainerSilver_64.png
+21622:
+  description: Icon for Gold Ouroboros
+  iconFile: res:/UI/Texture/Icons/Inventory/serpentisContainerGold_64.png

@@ -106,6 +106,7 @@ Capital Ships\Carriers\Caldari\Chimera
 Capital Ships\Carriers\Caldari\Wyvern
 Capital Ships\Carriers\Faction Carrier
 Capital Ships\Carriers\Faction Carrier\Revenant
+Capital Ships\Carriers\Faction Carrier\Vendetta
 Capital Ships\Carriers\Gallente
 Capital Ships\Carriers\Gallente\Nyx
 Capital Ships\Carriers\Gallente\Thanatos
@@ -117,6 +118,8 @@ Capital Ships\Dreadnoughts\Amarr
 Capital Ships\Dreadnoughts\Amarr\Revelation
 Capital Ships\Dreadnoughts\Caldari
 Capital Ships\Dreadnoughts\Caldari\Phoenix
+Capital Ships\Dreadnoughts\Faction Dreadnoughts
+Capital Ships\Dreadnoughts\Faction Dreadnoughts\Vehement
 Capital Ships\Dreadnoughts\Gallente
 Capital Ships\Dreadnoughts\Gallente\Moros
 Capital Ships\Dreadnoughts\Minmatar
@@ -155,6 +158,8 @@ Capital Ships\Titans\Amarr
 Capital Ships\Titans\Amarr\Avatar
 Capital Ships\Titans\Caldari
 Capital Ships\Titans\Caldari\Leviathan
+Capital Ships\Titans\Faction Titans
+Capital Ships\Titans\Faction Titans\Vanquisher
 Capital Ships\Titans\Gallente
 Capital Ships\Titans\Gallente\Erebus
 Capital Ships\Titans\Minmatar
