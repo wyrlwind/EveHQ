@@ -1486,7 +1486,6 @@
 19722,1,20532,10013,4,775;776,0,1,0,-5,15,Capital Projectile Turret ROF
 19722,1,20532,10016,4,775;776,0,1,0,5,15,Capital Projectile Turret Damage
 19722,1,20532,73,2,40;1156,0,1,0,-5,15,Shield Booster Duration
-19722,0,0,10016,4,775;776,0,0,0,50,15,Capital Projectile Turret Damage
 19722,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Naglfar Justice Edition,,,,,,,,,,,
 #34341,1,20532,10013,4,775;776,0,1,0,-5,15,Capital Projectile Turret ROF
