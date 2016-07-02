@@ -2442,6 +2442,19 @@
 3518,1,3335,2044,2,71,0,1,0,10,15,Neut Drain Falloff
 3518,0,0,84,2,62;1199,0,0,0,50,15,Armor Repair Amount
 3518,0,0,51,2,511;524;506;510;771;507;508;509;1245,0,0,0,-50,15,Missile Launcher ROF
+# Vanquisher,,,,,,,,,,,
+42126,1,3344,10012,4,771;772,0,1,0,-5,15,Capital Hybrid Turret ROF
+42126,1,3344,10009,1,42126,0,1,1,6,15,Warp Core Strength
+42126,1,3345,20,2,65,0,1,0,10,15,Stasis Web Strength
+42126,1,3345,10009,1,42126,0,1,1,6,15,Warp Core Strength
+42126,0,0,10063,1,42126,0,0,1,2,15,Warfare Link Use
+42126,0,0,10015,4,771;772,0,0,0,1000,15,Capital Hybrid Turret Damage
+42126,0,0,72,2,38,0,0,0,500,15,Shield Extender HP
+42126,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
+42126,0,0,2112,1,42126,0,0,0,80,15,Sensor Dampener resistance
+42126,0,0,2115,1,42126,0,0,0,80,15,Stasis effect resistance
+42126,0,0,2135,1,42126,0,0,0,80,15,Remote Electronic Assistance impedance
+42126,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Vargur,,,,,,,,,,,
 28665,1,3337,10013,4,576;579,0,1,0,-5,15,Large Projectile Turret ROF
 28665,1,3337,158,4,576;579,0,1,0,10,15,Large Projectile Turret Falloff
