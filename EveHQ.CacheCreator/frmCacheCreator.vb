@@ -256,22 +256,25 @@ Public Class FrmCacheCreator
                                             Dim bonusTypeName As String = CType(bonusTypes.Key, YamlScalarNode).Value
 
                                             Select Case bonusTypeName
-
                                                 Case "roleBonuses"
                                                     Dim bonuses = CType(bonusTypes.Value, YamlSequenceNode)
+                                                    Dim bonusStrings = parseBonuses(bonuses)
 
-                                                    ' -1 was the previous way to detect role bonuses
-                                                    yamlItem.Traits.Add(-1, parseBonuses(bonuses))
+                                                    ' -1 as id was the previous way to detect role bonuses
+                                                    If bonusStrings.Count > 0 Then
+                                                        yamlItem.Traits.Add(-1, bonusStrings)
+                                                    End If
 
                                                 Case "types"
-                                                    'Dim bonusType = CType(bonusTypes.Value, YamlSequenceNode)
                                                     For Each skill In CType(bonusTypes.Value, YamlMappingNode).Children
 
                                                         Dim skillId = CType(CType(skill.Key, YamlScalarNode).Value, Int32)
                                                         Dim bonuses = CType(skill.Value, YamlSequenceNode)
+                                                        Dim bonusStrings = parseBonuses(bonuses)
 
-                                                        ' -1 was the previous way to detect role bonuses
-                                                        yamlItem.Traits.Add(skillId, parseBonuses(bonuses))
+                                                        If bonusStrings.Count > 0 Then
+                                                            yamlItem.Traits.Add(skillId, bonusStrings)
+                                                        End If
                                                     Next
                                             End Select
 
@@ -279,12 +282,14 @@ Public Class FrmCacheCreator
                                 End Select
                             Next
                         End If
+
                         ' Get the iconFile if relevant
                         If yamlIcons.ContainsKey(yamlItem.IconID) And yamlItem.IconID <> -1 Then
                             yamlItem.IconName = yamlIcons(yamlItem.IconID)
                         Else
                             yamlItem.IconName = CStr(yamlItem.TypeID)
                         End If
+
                         ' Add the item
                         yamlTypes.Add(yamlItem.TypeID, yamlItem)
                     Next
@@ -328,7 +333,6 @@ Public Class FrmCacheCreator
                 End Select
 
             Next
-
 
             If partBonus & partUnitId = "" Then
                 partUnitId = "·"
