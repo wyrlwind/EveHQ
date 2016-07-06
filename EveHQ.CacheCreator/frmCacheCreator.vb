@@ -262,7 +262,7 @@ Public Class FrmCacheCreator
                                                     Dim bonuses = CType(bonusTypes.Value, YamlSequenceNode)
 
                                                     ' -1 was the previous way to detect role bonuses
-                                                    yamlItem.Traits.Add(-1, tempmetode(bonuses))
+                                                    yamlItem.Traits.Add(-1, parseBonuses(bonuses))
 
                                                 Case "types"
                                                     Console.WriteLine("skill")
@@ -274,7 +274,7 @@ Public Class FrmCacheCreator
                                                         Dim bonuses = CType(skill.Value, YamlSequenceNode)
 
                                                         ' -1 was the previous way to detect role bonuses
-                                                        yamlItem.Traits.Add(skillId, tempmetode(bonuses))
+                                                        yamlItem.Traits.Add(skillId, parseBonuses(bonuses))
                                                     Next
                                             End Select
 
@@ -296,7 +296,7 @@ Public Class FrmCacheCreator
         End Using
     End Sub
 
-    Private Function tempmetode(bonuses As YamlSequenceNode) As List(Of String)
+    Private Function parseBonuses(bonuses As YamlSequenceNode) As List(Of String)
 
         Dim bonusStrings As List(Of String) = New List(Of String)
 
