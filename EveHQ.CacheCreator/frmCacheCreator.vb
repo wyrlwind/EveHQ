@@ -258,15 +258,12 @@ Public Class FrmCacheCreator
                                             Select Case bonusTypeName
 
                                                 Case "roleBonuses"
-                                                    Console.WriteLine("role")
                                                     Dim bonuses = CType(bonusTypes.Value, YamlSequenceNode)
 
                                                     ' -1 was the previous way to detect role bonuses
                                                     yamlItem.Traits.Add(-1, parseBonuses(bonuses))
 
                                                 Case "types"
-                                                    Console.WriteLine("skill")
-
                                                     'Dim bonusType = CType(bonusTypes.Value, YamlSequenceNode)
                                                     For Each skill In CType(bonusTypes.Value, YamlMappingNode).Children
 
@@ -308,7 +305,6 @@ Public Class FrmCacheCreator
 
             For Each bonusPart In bonus.Children
 
-                Console.WriteLine(bonusPart.Key)
                 Select Case CType(bonusPart.Key, YamlScalarNode).Value
                     Case "bonus"
                         partBonus = Double.Parse(CType(bonusPart.Value, YamlScalarNode).Value, System.Globalization.CultureInfo.InvariantCulture).ToString("0.##")
