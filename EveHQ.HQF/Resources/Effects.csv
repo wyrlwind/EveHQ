@@ -11,6 +11,14 @@
 335,1,23618,265,3,18,0,1,0,0,Drone Durability - Armor
 337,1,23618,263,3,18,0,1,0,0,Drone Durability - Shield
 292,1,3442,64,2,100;101;1159;549;1023,0,1,0,0,Drone Interfacing - Damage
+292,1,3442,2131,3,87,0,1,0,0,Drone Interfacing - Fighters -  Attack Missile EM Damage
+292,1,3442,2132,3,87,0,1,0,0,Drone Interfacing - Fighters -  Attack Missile Thermal Damage
+292,1,3442,2133,3,87,0,1,0,0,Drone Interfacing - Fighters -  Attack Missile Kinetic Damage
+292,1,3442,2134,3,87,0,1,0,0,Drone Interfacing - Fighters -  Attack Missile Explosive Damage
+292,1,3442,2227,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability EM Damage
+292,1,3442,2228,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability Thermal Damage
+292,1,3442,2229,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability Kinetic Damage
+292,1,3442,2230,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability Explosive Damage
 434,1,3442,77,2,101,0,1,0,0,Drone Interfacing - Mining
 591,1,12305,37,3,18,0,1,0,0,Drone Navigation
 294,1,23606,54,3,18,0,1,0,0,Drone Sharpshooting
@@ -948,13 +956,16 @@
 1029,2,212,210,3,6,1,0,0,12,Remote Sensor Booster - Mag Strength
 1030,2,212,208,3,6,1,0,0,12,Remote Sensor Booster - Radar Strength
 # Networked Sensor Array
-1027,2,1706,211,3,6,1,0,0,12,Networked Sensor Array - Grav Strength
-1028,2,1706,209,3,6,1,0,0,12,Networked Sensor Array - Ladar Strength
-1029,2,1706,210,3,6,1,0,0,12,Networked Sensor Array - Mag Strength
-1030,2,1706,208,3,6,1,0,0,12,Networked Sensor Array - Radar Strength
-235,2,1706,192,3,6,1,0,1,12,Networked Sensor Array - Max Locked Targets
-565,2,1706,564,3,6,1,0,0,12,Networked Sensor Array - Scan Resolution
-1190,2,1706,6,2,52;65;80;201;291;379;1672,1,0,0,12,Networked Sensor Array - Ewar Cap Malus
+1027,2,1706,211,3,87,0,0,0,12,Networked Sensor Array - Fighter Grav Strength
+1028,2,1706,209,3,87,0,0,0,12,Networked Sensor Array - Fighter Ladar Strength
+1029,2,1706,210,3,87,0,0,0,12,Networked Sensor Array - Fighter Mag Strength
+1030,2,1706,208,3,87,0,0,0,12,Networked Sensor Array - Fighter Radar Strength
+1027,2,1706,211,3,6,0,0,0,12,Networked Sensor Array - Grav Strength
+1028,2,1706,209,3,6,0,0,0,12,Networked Sensor Array - Ladar Strength
+1029,2,1706,210,3,6,0,0,0,12,Networked Sensor Array - Mag Strength
+1030,2,1706,208,3,6,0,0,0,12,Networked Sensor Array - Radar Strength
+566,2,1706,564,3,6,1,0,0,12,Networked Sensor Array - Scan Resolution
+1190,2,1706,6,2,52;65;80;201;291;379;1672,0,0,0,12,Networked Sensor Array - Ewar Cap Malus
 # Signal Amplifiers,,,,,,,,,,
 235,2,210,192,3,6,0,0,1,14,Signal Amplifier - Max Locked Targets
 309,2,210,76,3,6,1,0,0,14,Signal Amplifier - Max Targeting Range

@@ -696,9 +696,6 @@ Gƒ
 Ë
 Ë
 ewTestEffectWs
-Î
-Î
-ewTestEffectJam
 *Ð
 %Ð
  ewSkillRsdCapNeedBonusSkillLevel
@@ -1918,7 +1915,6 @@ Dñ?ñ:turretWeaponRangeFalloffTrackingSpeedMultiplyTargetHostile
 Aµ<µ7covertOpsStealthBomberSiegeMissileLauncerPowerNeedBonus
 ,¶'¶"interceptorMWDSignatureRadiusBonus
 @·;·6eliteBonusCommandShipsHeavyMissileExplosionVelocityCS2
-=¸8¸3shipBonusStandardMissileAoeDamageReductionFactorDF2
 ¹¹zColinShieldHPPerLvl
 ººzColinArmorHPPerLvl
  »»armorHPBonusAddPassive
@@ -3762,7 +3758,6 @@ $’2’2fighterDecreaseTargetSpeed
 +í2&í2!shipBonusDreadnoughtM1DamageBonus
 (î2#î2shipBonusDreadnoughtM2ROFBonus
 *ï2%ï2 shipBonusDreadnoughtM3RepairTime
-.ð2)ð2$shipBonusDreadnoughtRole1DamageBonus
 ñ2ñ2doomsdayAOEECM
 5ò20ò2+skillMultiplierShipBonusForceAuxiliaryAmarr
 7õ22õ2-skillMultiplierShipBonusForceAuxiliaryCaldari
@@ -3921,5 +3916,21 @@ $ 4 4remoteShieldTransferEntity
 !¤4¤4remoteTargetPaintEntity
  ¥4¥4remoteSensorDampEntity
 #¦4¦4remoteWeaponDisruptEntity
-§4§4remoteECMEntity
 *¨4%¨4 starbaseEnergyNeutralizerFalloff
+#©4©4rigDrawbackReductionArmor
+*ª4%ª4 rigDrawbackReductionAstronautics
+$«4«4rigDrawbackReductionDrones
+(¬4#¬4rigDrawbackReductionElectronic
+(­4#­4rigDrawbackReductionProjectile
+*®4%®4 rigDrawbackReductionEnergyWeapon
+$¯4¯4rigDrawbackReductionHybrid
+&°4!°4rigDrawbackReductionLauncher
+$±4±4rigDrawbackReductionShield
+²4²4setBonusAsklepian
+%³4 ³4implantShieldCapacityBonus2
+&´4!´4armorRepairAmountBonusSubcap
+.µ4)µ4$shipBonusDreadnoughtRole1DamageBonus
+(¶4#¶4shipBonusDreadnoughtM1WebBonus
+(·4#·4shipBonusTitanRole3DamageBonus
+"¸4¸4shipBonusTitanM1WebBonus
+7¹42¹4-shipBonusSupercarrierM1BurstProjectorWebBonus
