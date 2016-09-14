@@ -424,7 +424,7 @@ BÊ=ÊdroneControlDistanceMaximum Drone Control Distance (
 
 8Ë3ËdroneRangeBonusDrone Control Range Bonus (
 
-0Ì+ÌshipBonusMFSpecial Ability Bonus i(
+0Ì+ÌshipBonusMFSpecial Ability Bonus i(	
 6Í1ÍspecialAbilityBonusspecialAbilityBonus z(	
 &Î!ÎshipBonusGFshipBonusGF z(	
 &Ï!ÏshipBonusCFshipBonusCF z(	
@@ -769,7 +769,7 @@ K F contrabandDetectionChanceBonusContraband Detection Modifier (
 <¼7¼scanSkillEwStrengthBonusEW Strength Modifier i(
 \½W½&propulsionSkillPropulsionStrengthBonus&propulsionSkillPropulsionStrengthBonus z(	
 6¾1¾bonusComplexAngel10bonusComplexAngel10 z(	
-&¿!¿ewTargetJamewTargetJam z(	
+&¿!¿ewTargetJamewTargetJam z(
 FÀAÀ!scanSkillTargetPaintStrengthBonusTarget Painting Bonus i(
 )Á$ÁcommandBonusCommand Bonus y(
 0Â+ÂwingCommandBonuswingCommandBonus z(	
@@ -2085,7 +2085,7 @@ Bþ=þentitySuperWeaponMaxRangeentitySuperWeaponMaxRange z(!
 @ÿ;ÿentitySuperWeaponFallOffentitySuperWeaponFallOff z(!
 L€G€entitySuperWeaponTrackingSpeedentitySuperWeaponTrackingSpeed z(!
 ^Y'entitySuperWeaponOptimalSignatureRadius'entitySuperWeaponOptimalSignatureRadius z(!
-6‡1‡fighterCapacityFighter Hanger Capacity 	(&
+6‡1‡fighterCapacityFighter Hangar Capacity 	(&
 )ˆ$ˆserviceSlotsService Slots z(
 DŠ?ŠclothingAlsoCoversCategory2clothingAlsoCoversCategory2 z
 D‹?‹eliteBonusCommandDestroyer1eliteBonusCommandDestroyer1 z
@@ -2447,3 +2447,11 @@ I”D”energyNeutralizerRangeFalloffNeutralization Falloff Range (
 B—=—cynosuralFieldSpawnRadiuscynosuralFieldSpawnRadius (
 9˜4˜shieldCapacityBonus2Shield Capacity Bonus i(
 2™-™armorRepairBonusArmor Repair Bonus i(
+Aš<šminingDurationRoleBonusMining Cycle Time Modifier i(
+F›A›maxCharacterSkillPointLimitCharacter Skill Point Limit z(
+8œ3œeliteBonusLogistics3eliteBonusLogistics3 z(	
+0+containedSkillPointsSkill Points z(
+8ž3žroleBonusRepairRangeroleBonusRepairRange z(
+/Ÿ*ŸcanFitShipType7Can be fitted to t(
+P K  effectedByIndustrialInvulnModule effectedByIndustrialInvulnModule z(%
+D¡?¡nosferatuCpuNeedBonusEnergy Nosferatu CPU Need Bonus i(

@@ -29,7 +29,6 @@ speedBoost
 00powerBooster
  22modifyShieldRechargeRate
 33modifyPowerRechargeRate
-55ecmBurst
 66targetPassively
 77targetHostiles
 88powerOutputMultiply
@@ -1364,7 +1363,6 @@ B≈=≈8gasHarvestingCycleTimeModulesRequiringGasCloudHarvesting
 'ﬁ"ﬁmissileThermalDmgBonusTorpedo
 *ﬂ%ﬂ dataminerModuleDurationReduction
 .‡)‡$energyDestabilizationNewForStructure
-··remoteEcmBurst
 (Ê#ÊposStructureControlAmountBonus
 3ó.ó)skillTriageModuleConsumptionQuantityBonus
 õõbombLaunching
@@ -3588,7 +3586,7 @@ K—0F—0AstructureTargetGunneryMaxRangeFalloffTrackingSpeedBonusAssistance
 'ö1"ö1shipBonusEnergyNeutFalloffAC2
 'õ1"õ1shipBonusEnergyNeutFalloffAC3
 &ú1!ú1shipBonusEnergyNosOptimalAC1
-&ù1!ù1shipBonusEnergyNosOptimalAC2
+'ù1"ù1shipBonusNosOptimalFalloffAC2
 &û1!û1shipBonusEnergyNosOptimalAC3
 &ü1!ü1shipBonusEnergyNosFalloffAC1
 &†1!†1shipBonusEnergyNosFalloffAC2
@@ -3794,8 +3792,8 @@ $í2í2fighterDecreaseTargetSpeed
 '¶3"¶3moduleBonusFighterSupportUnit
 )ß3$ß3moduleBonusNetworkedSensorArray
 ®3®3citadelServiceBonus
-*©3%©3 skillMultiplierFighterHangerSize
-+™3&™3!skillBonusFighterHangerManagement
+*©3%©3 skillMultiplierFighterHangarSize
++™3&™3!skillBonusFighterHangarManagement
 3´3.´3)skillBonusCapitalAutocannonSpecialization
 2¨3-¨3(skillBonusCapitalArtillerySpecialization
 0≠3+≠3&skillBonusCapitalBlasterSpecialization
@@ -3934,3 +3932,25 @@ $±4±4rigDrawbackReductionShield
 (∑4#∑4shipBonusTitanRole3DamageBonus
 "∏4∏4shipBonusTitanM1WebBonus
 7π42π4-shipBonusSupercarrierM1BurstProjectorWebBonus
+∫4∫4ECMBurstJammer
+ª4ª4ECMBurstJammerQA
+º4º4pacifierDebuffQA
+*Ω4%Ω4 roleBonusIceOreMiningDurationCap
+"æ4æ4logisticSkillMultiplier3
+.ø4)ø4$moduleBonusIndustrialInvulnerability
+!¿4¿4shipBonusDroneRepairMC1
+<¡47¡42eliteBonusLogisticRemoteArmorRepairOptimalFalloff1
+2¬4-¬4(roleBonusRemoteArmorRepairOptimalFalloff
+√4√4shipBonusCloakCpuMC2
+6ƒ41ƒ4,eliteBonusLogisticRemoteArmorRepairDuration3
+ ≈4≈4shipBonusSETFalloffAF2
+∆4∆4shipBonusCloakCpuMF1
++«4&«4!eliteBonusCoverOpsNOSNeutFalloff1
+»4»4nosCpuNeedBonusEffect
+# 4 4moduleBonusMicrowarpdrive
+ À4À4moduleBonusAfterburner
+%Ã4 Ã4moduleBonusWarfareLinkArmor
+&Õ4!Õ4moduleBonusWarfareLinkShield
+(Œ4#Œ4moduleBonusWarfareLinkSkirmish
+$œ4œ4moduleBonusWarfareLinkInfo
+&–4!–4moduleBonusWarfareLinkMining
