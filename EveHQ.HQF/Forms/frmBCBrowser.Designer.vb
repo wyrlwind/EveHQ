@@ -764,33 +764,6 @@
             Me.btnImport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
             Me.btnImport.TabIndex = 22
             Me.btnImport.Text = "Import"
-            '
-            'frmBCBrowser
-            '
-            Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-            Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-            Me.ClientSize = New System.Drawing.Size(899, 635)
-            Me.Controls.Add(Me.PanelEx1)
-            Me.Controls.Add(Me.StatusStrip1)
-            Me.DoubleBuffered = True
-            Me.EnableGlass = False
-            Me.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-            Me.Name = "frmBCBrowser"
-            Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-            Me.Text = "BattleClinic Browser"
-            CType(Me.pbShip, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.ctxLoadout.ResumeLayout(False)
-            Me.StatusStrip1.ResumeLayout(False)
-            Me.StatusStrip1.PerformLayout()
-            Me.ctxSlots.ResumeLayout(False)
-            Me.gpStatistics.ResumeLayout(False)
-            Me.gpStatistics.PerformLayout()
-            Me.PanelEx1.ResumeLayout(False)
-            Me.PanelEx1.PerformLayout()
-            CType(Me.adtLoadouts, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.ResumeLayout(False)
-            Me.PerformLayout()
 
         End Sub
         Friend WithEvents lblShipType As System.Windows.Forms.Label

@@ -610,18 +610,7 @@ Namespace Forms
             End If
             showInfo.ShowItemDetails(selShip, hPilot)
         End Sub
-        Private Sub mnuBattleClinicBrowser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuBattleClinicBrowser.Click
-            Dim shipName As String = mnuShipBrowserShipName.Text
-            Dim bShip As Ship = ShipLists.ShipList(shipName).Clone
-            If _myBcBrowser.IsHandleCreated = True Then
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.BringToFront()
-            Else
-                _myBcBrowser = New FrmBcBrowser
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.Show()
-            End If
-        End Sub
+
         Private Sub CreateNewFitting(ByVal shipName As String)
             ' Check we have some valid characters
             ' Bug 83: Adding a check of the core pilots collection as well, since it may end up in an unstable state due to other actors, and needs to contain pilots before loading the new fitting.

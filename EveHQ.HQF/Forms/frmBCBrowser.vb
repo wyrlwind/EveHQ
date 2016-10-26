@@ -114,211 +114,8 @@ Namespace Forms
             Set(ByVal value As Ship)
                 _currentShip = value
                 pbShip.ImageLocation = Core.ImageHandler.GetImageLocation(CInt(_currentShip.ID))
-                Call GetBCShipLoadouts()
             End Set
         End Property
-
-#Region "BC Routines"
-
-        Private Sub GetBcShipLoadouts()
-
-            ' Check if the loadout list is in the cache
-            lblBCStatus.Text = "Checking Loadout Cache..." : StatusStrip1.Refresh()
-            Dim loadoutXML As New XmlDocument
-            Dim useCacheFile As Boolean = False
-            If My.Computer.FileSystem.DirectoryExists(_bcLoadoutCache) Then
-                If My.Computer.FileSystem.FileExists(Path.Combine(_bcLoadoutCache, _currentShip.ID & ".xml")) Then
-                    ' Open the file and check the cache time
-                    loadoutXML.Load(Path.Combine(_bcLoadoutCache, _currentShip.ID & ".xml"))
-                    Dim cacheNode As XmlNode = loadoutXML.SelectSingleNode("/loadouts/cacheExpires")
-                    Dim cacheTime As DateTime = DateTime.Parse(cacheNode.InnerText)
-                    If Now > cacheTime Then
-                        ' cache expired, get a new one
-                        useCacheFile = False
-                    Else
-                        useCacheFile = True
-                    End If
-                End If
-            End If
-
-            If useCacheFile = False Then
-                lblBCStatus.Text = "Retrieving " & _currentShip.Name & " loadouts from BattleClinic..."
-                Dim remoteURL As String = "http://eve.battleclinic.com/ship_loadout_feed.php?typeID=" & _currentShip.ID
-                Try
-                    ' Create the requester
-                    ServicePointManager.DefaultConnectionLimit = 20
-                    ServicePointManager.Expect100Continue = False
-                    ServicePointManager.FindServicePoint(New Uri(remoteURL))
-                    Dim request As HttpWebRequest = CType(WebRequest.Create(remoteURL), HttpWebRequest)
-                    ' Setup proxy server (if required)
-                    Call ProxyServerFunctions.SetupWebProxy(request)
-                    ' Setup request parameters
-                    request.Method = "GET"
-                    request.ContentType = "application/x-www-form-urlencoded"
-                    request.Headers.Set(HttpRequestHeader.AcceptEncoding, "identity")
-                    ' Prepare for a response from the server
-                    Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
-                    ' Get the stream associated with the response.
-                    Dim receiveStream As Stream = response.GetResponseStream()
-                    ' Pipes the stream to a higher level stream reader with the required encoding format. 
-                    Dim readStream As New StreamReader(receiveStream, Encoding.UTF8)
-                    loadoutXML.LoadXml(readStream.ReadToEnd())
-                Catch e As Exception
-                    lblBCStatus.Text = "Unable to retrieve loadout information from BattleClinic!"
-                End Try
-            End If
-
-            Dim loadoutList As XmlNodeList = loadoutXML.SelectNodes("/loadouts/race/ship/loadout")
-            If loadoutList.Count > 0 Then
-                adtLoadouts.BeginUpdate()
-                adtLoadouts.Nodes.Clear()
-                For Each loadout As XmlNode In loadoutList
-                    Dim nLoadout As New Node
-                    nLoadout.Text = loadout.Attributes("name").Value
-                    nLoadout.Tag = loadout.Attributes("loadoutID").Value
-                    adtLoadouts.Nodes.Add(nLoadout)
-                    nLoadout.Cells.Add(New Cell(loadout.Attributes("Author").Value))
-                    nLoadout.Cells(1).Tag = loadout.Attributes("topic").Value
-                    nLoadout.Cells.Add(New Cell(loadout.Attributes("rating").Value))
-                    nLoadout.Cells.Add(New Cell(DateTime.Parse(loadout.Attributes("date").Value).ToShortDateString))
-                Next
-                AdvTreeSorter.Sort(adtLoadouts, 1, True, True)
-                adtLoadouts.EndUpdate()
-                lblShipType.Text = _currentShip.Name
-                lblBCStatus.Text = "Update of loadouts completed!"
-                pbShip.ImageLocation = Core.ImageHandler.GetImageLocation(CInt(_currentShip.ID))
-                ' Save the XML into the cache
-                If useCacheFile = False Then
-                    loadoutXML.Save(Path.Combine(_bcLoadoutCache, _currentShip.ID & ".xml"))
-                End If
-            Else
-                lblBCStatus.Text = "There are no fittings available for this ship!"
-            End If
-
-        End Sub
-
-        Private Sub GetBcShipLoadout(ByVal cLoadout As Node)
-            Dim loadoutName As String = cLoadout.Text
-            Dim loadoutID As String = cLoadout.Tag.ToString
-            Dim loadoutAuthor As String = cLoadout.Cells(1).Text
-            Dim loadoutTopic As String = cLoadout.Cells(1).Tag.ToString
-            Dim loadoutScore As String = cLoadout.Cells(2).Text
-            Dim loadoutDate As String = cLoadout.Cells(3).Text
-
-            ' Check if the fitting is in the cache
-            lblBCStatus.Text = "Checking Loadout Cache..." : StatusStrip1.Refresh()
-            Dim loadoutXML As New XmlDocument
-            Dim useCacheFile As Boolean = False
-            If My.Computer.FileSystem.DirectoryExists(_bcLoadoutCache) Then
-                If My.Computer.FileSystem.FileExists(Path.Combine(_bcLoadoutCache, _currentShip.ID.ToString & "-" & loadoutID & ".xml")) Then
-                    ' Open the file and check the cache time
-                    loadoutXML.Load(Path.Combine(_bcLoadoutCache, _currentShip.ID.ToString & "-" & loadoutID & ".xml"))
-                    Dim cacheNode As XmlNode = loadoutXML.SelectSingleNode("/loadouts/cacheExpires")
-                    Dim cacheTime As DateTime = DateTime.Parse(cacheNode.InnerText)
-                    If Now > cacheTime Then
-                        ' cache expired, get a new one
-                        useCacheFile = False
-                    Else
-                        useCacheFile = True
-                    End If
-                End If
-            End If
-
-            If useCacheFile = False Then
-                lblBCStatus.Text = "Retrieving " & loadoutName & "(" & _currentShip.Name & ") from BattleClinic..." : StatusStrip1.Refresh()
-                Dim remoteURL As String = "http://eve.battleclinic.com/ship_loadout_feed.php?typeID=" & _currentShip.ID.ToString & "&id=" & loadoutID
-                Try
-                    ' Create the requester
-                    ServicePointManager.DefaultConnectionLimit = 20
-                    ServicePointManager.Expect100Continue = False
-                    ServicePointManager.FindServicePoint(New Uri(remoteURL))
-                    Dim request As HttpWebRequest = CType(WebRequest.Create(remoteURL), HttpWebRequest)
-                    ' Setup proxy server (if required)
-                    Call ProxyServerFunctions.SetupWebProxy(request)
-                    ' Setup request parameters
-                    request.Method = "GET"
-                    request.ContentType = "application/x-www-form-urlencoded"
-                    request.Headers.Set(HttpRequestHeader.AcceptEncoding, "identity")
-                    ' Prepare for a response from the server
-                    Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
-                    ' Get the stream associated with the response.
-                    Dim receiveStream As Stream = response.GetResponseStream()
-                    ' Pipes the stream to a higher level stream reader with the required encoding format. 
-                    Dim readStream As New StreamReader(receiveStream, Encoding.UTF8)
-                    loadoutXML.LoadXml(readStream.ReadToEnd())
-                Catch e As Exception
-                    lblBCStatus.Text = "Unable to retrieve loadout information from BattleClinic!" : StatusStrip1.Refresh()
-                End Try
-            End If
-
-            Dim loadoutList As XmlNodeList = loadoutXML.SelectNodes("/loadouts/race/ship/loadout/slot")
-            If loadoutList.Count > 0 Then
-                Call ClearShipSlots()
-                Dim moduleList, ammoList As New List(Of Integer)
-                For Each loadout As XmlNode In loadoutList
-                    If loadout.InnerText <> "0" Then
-                        Select Case loadout.Attributes("type").Value
-                            Case "high", "med", "lo", "rig", "subSystem", "drone"
-                                moduleList.Add(CInt(loadout.InnerText))
-                            Case "ammo"
-                                ammoList.Add(CInt(loadout.InnerText))
-                        End Select
-                    End If
-                Next
-                ' Try and match the ammo to the modules
-                Dim baseFit As String
-                Dim revisedFit As String
-                _currentFit = New ArrayList
-                For Each fittedMod As Integer In moduleList
-                    Dim fModule As ShipModule = ModuleLists.ModuleList(fittedMod)
-                    If fModule IsNot Nothing Then
-                        baseFit = fModule.Name : revisedFit = baseFit
-                        If fModule.Charges.Count <> 0 Then
-                            For Each ammo As Integer In ammoList
-                                If ModuleLists.ModuleList.ContainsKey(ammo) = True Then
-                                    If fModule.Charges.Contains(ModuleLists.ModuleList(ammo).DatabaseGroup) Then
-                                        revisedFit = baseFit & "," & ModuleLists.ModuleList(ammo).Name
-                                    End If
-                                End If
-                            Next
-                            _currentFit.Add(revisedFit)
-                        Else
-                            _currentFit.Add(fModule.Name)
-                        End If
-                    End If
-                Next
-                lblLoadoutName.Text = loadoutName : lblLoadoutName.Visible = True : lblLoadoutNameLbl.Visible = True
-                lblLoadoutAuthor.Text = loadoutAuthor : lblLoadoutAuthor.Visible = True : lblLoadoutAuthorLbl.Visible = True
-                lblLoadoutScore.Text = loadoutScore : lblLoadoutScore.Visible = True : lblLoadoutScoreLbl.Visible = True
-                lblLoadoutDate.Text = loadoutDate : lblLoadoutDate.Visible = True : lblLoadoutDateLbl.Visible = True
-                lblLoadoutTopic.Text = "BattleClinic Topic" : lblLoadoutTopic.Visible = True : LblLoadoutTopicLbl.Visible = True
-                lblLoadoutTopic.Tag = loadoutTopic
-                lblBCStatus.Text = "Download of loadout (ID: " & loadoutID & ") completed!" : StatusStrip1.Refresh()
-                _sourceURL = "http://forum.battleclinic.com/index.php/topic," & lblLoadoutTopic.Tag.ToString & ".0.html"
-                btnImport.Enabled = True
-                ' Save the XML into the cache
-                If useCacheFile = False Then
-                    loadoutXML.Save(Path.Combine(_bcLoadoutCache, _currentShip.ID.ToString & "-" & loadoutID & ".xml"))
-                End If
-                Dim shipName As String = lblShipType.Text
-                Dim fittingName As String = lblLoadoutName.Text
-                _currentFitting = Fittings.ConvertOldFitToNewFit(shipName & ", " & fittingName, _currentFit)
-                _currentFitting.PilotName = cboPilots.SelectedItem.ToString
-                _currentFitting.UpdateBaseShipFromFitting()
-                _currentShip = _currentFitting.BaseShip
-                ' Generate fitting data
-                Call GenerateFittingData()
-                gpStatistics.Visible = True
-            Else
-                lblBCStatus.Text = "There seems to be no fittings for this loadout!" : StatusStrip1.Refresh()
-            End If
-
-            Call UpdateSlotColumns()
-            Call UpdateSlotLayout()
-
-        End Sub
-
-#End Region
 
 #Region "Ship Fitting routines"
 
@@ -530,7 +327,6 @@ Namespace Forms
 
         Private Sub mnuViewLoadout_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuViewLoadout.Click
             Dim cLoadout As Node = adtLoadouts.SelectedNodes(0)
-            Call GetBCShipLoadout(cLoadout)
         End Sub
         Private Sub lblLoadoutTopic_LinkClicked(ByVal sender As Object, ByVal e As LinkLabelLinkClickedEventArgs) Handles lblLoadoutTopic.LinkClicked
             Try
@@ -564,7 +360,6 @@ Namespace Forms
         Private Sub adtLoadouts_NodeDoubleClick(ByVal sender As Object, ByVal e As TreeNodeMouseEventArgs) Handles adtLoadouts.NodeDoubleClick
             If adtLoadouts.SelectedNodes.Count > 0 Then
                 Dim cLoadout As Node = adtLoadouts.SelectedNodes(0)
-                Call GetBCShipLoadout(cLoadout)
             End If
         End Sub
 
