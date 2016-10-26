@@ -350,8 +350,6 @@ KªFªAsignatureAnalysisScanResolutionBonusPostPercentScanResolutionShip
  √√bomberRocketRangeBonus
  ƒƒbomberLightsRangeBonus
 )≈$≈interceptorSignatoreRadiusBonus
-$∆∆speedBoostFactorCalculator
-%» »speedBoostFactorCalculator2
 ……stealthActive
 ÃÃsensorBoostTargeted
 ––sensorBoosterActive
@@ -547,8 +545,6 @@ systemScan
 5â	0â	+controlTowerTrackingArrayLaserTrackingBonus
 !ç	ç	shipIceHarvesterCPUNeed
 é	é	shipMinerCPUNeed
-ì	ì	
-massFactor
 %ï	 ï	ammoInfluenceEntityFlyRange
 0ò	+ò	&accerationControlSkillAb&MwdSpeedBoost
 'õ	"õ	eliteBonusGunshipLaserDamage2
@@ -598,8 +594,6 @@ $—	—	shipHybridDmgPirateCruiser
 '€	"€	shipMissileExplosiveDamageMF1
 ‹	‹	smugglingModifier
 !‰	‰	shipProjectileDamageDF1
- Â	Â	speedBoostMassAddition
-Ê	Ê	speedBoostMassSigRad
 Á	Á	setBonusBloodraider
 &Ë	!Ë	setBonusBloodraiderNosferatu
 DÈ	?È	:blackMarketTradingSkillBoostContrabandDetectionChanceBonus
@@ -3954,3 +3948,4 @@ $±4±4rigDrawbackReductionShield
 (Œ4#Œ4moduleBonusWarfareLinkSkirmish
 $œ4œ4moduleBonusWarfareLinkInfo
 &–4!–4moduleBonusWarfareLinkMining
+"—4—4chargeBonusWarfareCharge
