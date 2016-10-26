@@ -104,7 +104,6 @@
     <Compile Include="Classes\Capacitor.vb" />
     <Compile Include="Classes\Charges.vb" />
     <Compile Include="Classes\DNAFitting.vb" />
-    <Compile Include="Classes\IGBData.vb" />
     <Compile Include="Classes\ShipModes.vb" />
     <Compile Include="Forms\frmShipSelection.Designer.vb">
       <DependentUpon>frmShipSelection.vb</DependentUpon>

@@ -286,10 +286,6 @@ Public Class PlugInData
         Return eveHQPlugIn
     End Function
 
-    Public Function IGBService(ByVal igbContext As HttpListenerContext) As String Implements IEveHQPlugIn.IGBService
-        Return IGBData.Response(igbContext)
-    End Function
-
     Public Function RunEveHQPlugIn() As Form Implements IEveHQPlugIn.RunEveHQPlugIn
         _activeForm = New FrmHQF()
         Return _activeForm

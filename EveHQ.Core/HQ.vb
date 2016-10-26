@@ -59,7 +59,6 @@ Public Class HQ
     Public Shared MainForm As Form
     Private Shared tempPilots1 As New SortedList(Of String, EveHQPilot)
     Public Shared TempCorps As New SortedList(Of String, Corporation)
-    Public Shared MyIGB As New IGB
     Public Shared MyTqServer As EveServer = New EveServer
     Public Shared SkillListName As New Dictionary(Of String, EveSkill) ' SkillName, EveSkill
     Public Shared SkillListID As New SortedList(Of Integer, EveSkill) ' SkillID, EveSkill

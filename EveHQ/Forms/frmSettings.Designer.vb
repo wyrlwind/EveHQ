@@ -109,14 +109,7 @@ Namespace Forms
             Me.colPilot = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.colID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.colAccount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-            Me.gbIGB = New System.Windows.Forms.GroupBox()
             Me.Label4 = New System.Windows.Forms.Label()
-            Me.clb_IGBAllowedDisplay = New System.Windows.Forms.CheckedListBox()
-            Me.rb_IGBCfgAccessMode = New System.Windows.Forms.RadioButton()
-            Me.rb_IGBFullAccessMode = New System.Windows.Forms.RadioButton()
-            Me.chkStartIGBonLoad = New System.Windows.Forms.CheckBox()
-            Me.nudIGBPort = New System.Windows.Forms.NumericUpDown()
-            Me.lblIGBPort = New System.Windows.Forms.Label()
             Me.gbEveFolders = New System.Windows.Forms.GroupBox()
             Me.gbLocation4 = New System.Windows.Forms.GroupBox()
             Me.lblFriendlyName4 = New System.Windows.Forms.Label()
@@ -346,8 +339,6 @@ Namespace Forms
             Me.gbEveAccounts.SuspendLayout()
             CType(Me.adtAccounts, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.gbPilots.SuspendLayout()
-            Me.gbIGB.SuspendLayout()
-            CType(Me.nudIGBPort, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.gbEveFolders.SuspendLayout()
             Me.gbLocation4.SuspendLayout()
             Me.gbLocation3.SuspendLayout()
@@ -1116,23 +1107,6 @@ Namespace Forms
             Me.colAccount.Text = "Linked to Account"
             Me.colAccount.Width = 130
             '
-            'gbIGB
-            '
-            Me.gbIGB.Controls.Add(Me.Label4)
-            Me.gbIGB.Controls.Add(Me.clb_IGBAllowedDisplay)
-            Me.gbIGB.Controls.Add(Me.rb_IGBCfgAccessMode)
-            Me.gbIGB.Controls.Add(Me.rb_IGBFullAccessMode)
-            Me.gbIGB.Controls.Add(Me.chkStartIGBonLoad)
-            Me.gbIGB.Controls.Add(Me.nudIGBPort)
-            Me.gbIGB.Controls.Add(Me.lblIGBPort)
-            Me.gbIGB.Location = New System.Drawing.Point(735, 77)
-            Me.gbIGB.Name = "gbIGB"
-            Me.gbIGB.Size = New System.Drawing.Size(124, 32)
-            Me.gbIGB.TabIndex = 19
-            Me.gbIGB.TabStop = False
-            Me.gbIGB.Text = "IGB Settings"
-            Me.gbIGB.Visible = False
-            '
             'Label4
             '
             Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -1140,71 +1114,9 @@ Namespace Forms
             Me.Label4.Name = "Label4"
             Me.Label4.Size = New System.Drawing.Size(395, 41)
             Me.Label4.TabIndex = 7
-            Me.Label4.Text = "The settings below are used while in Public Mode. If an item is checked, the data" & _
-        " will be available on the In-Game Browser. If it is not checked, then the item w" & _
+            Me.Label4.Text = "The settings below are used while in Public Mode. If an item is checked, the data" &
+        " will be available on the In-Game Browser. If it is not checked, then the item w" &
         "ill not be displayed."
-            '
-            'clb_IGBAllowedDisplay
-            '
-            Me.clb_IGBAllowedDisplay.CheckOnClick = True
-            Me.clb_IGBAllowedDisplay.FormattingEnabled = True
-            Me.clb_IGBAllowedDisplay.Location = New System.Drawing.Point(26, 129)
-            Me.clb_IGBAllowedDisplay.Name = "clb_IGBAllowedDisplay"
-            Me.clb_IGBAllowedDisplay.Size = New System.Drawing.Size(395, 340)
-            Me.clb_IGBAllowedDisplay.TabIndex = 5
-            '
-            'rb_IGBCfgAccessMode
-            '
-            Me.rb_IGBCfgAccessMode.AutoSize = True
-            Me.rb_IGBCfgAccessMode.Location = New System.Drawing.Point(185, 65)
-            Me.rb_IGBCfgAccessMode.Name = "rb_IGBCfgAccessMode"
-            Me.rb_IGBCfgAccessMode.Size = New System.Drawing.Size(234, 17)
-            Me.rb_IGBCfgAccessMode.TabIndex = 4
-            Me.rb_IGBCfgAccessMode.Text = "Run IGB in Public Configurable Access Mode"
-            Me.ToolTip1.SetToolTip(Me.rb_IGBCfgAccessMode, "Configurable Access Mode: Only The checked IGB items will be Available!")
-            Me.rb_IGBCfgAccessMode.UseVisualStyleBackColor = True
-            '
-            'rb_IGBFullAccessMode
-            '
-            Me.rb_IGBFullAccessMode.AutoSize = True
-            Me.rb_IGBFullAccessMode.Checked = True
-            Me.rb_IGBFullAccessMode.Location = New System.Drawing.Point(26, 65)
-            Me.rb_IGBFullAccessMode.Name = "rb_IGBFullAccessMode"
-            Me.rb_IGBFullAccessMode.Size = New System.Drawing.Size(161, 17)
-            Me.rb_IGBFullAccessMode.TabIndex = 3
-            Me.rb_IGBFullAccessMode.TabStop = True
-            Me.rb_IGBFullAccessMode.Text = "Run IGB In Full Access Mode"
-            Me.ToolTip1.SetToolTip(Me.rb_IGBFullAccessMode, "Full Access Mode - All Features Available in the IGB.")
-            Me.rb_IGBFullAccessMode.UseVisualStyleBackColor = True
-            '
-            'chkStartIGBonLoad
-            '
-            Me.chkStartIGBonLoad.AutoSize = True
-            Me.chkStartIGBonLoad.Location = New System.Drawing.Point(229, 28)
-            Me.chkStartIGBonLoad.Name = "chkStartIGBonLoad"
-            Me.chkStartIGBonLoad.Size = New System.Drawing.Size(155, 17)
-            Me.chkStartIGBonLoad.TabIndex = 2
-            Me.chkStartIGBonLoad.Text = "Run IGB on EveHQ Startup"
-            Me.chkStartIGBonLoad.UseVisualStyleBackColor = True
-            '
-            'nudIGBPort
-            '
-            Me.nudIGBPort.Location = New System.Drawing.Point(98, 27)
-            Me.nudIGBPort.Maximum = New Decimal(New Integer() {65535, 0, 0, 0})
-            Me.nudIGBPort.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-            Me.nudIGBPort.Name = "nudIGBPort"
-            Me.nudIGBPort.Size = New System.Drawing.Size(120, 21)
-            Me.nudIGBPort.TabIndex = 1
-            Me.nudIGBPort.Value = New Decimal(New Integer() {26001, 0, 0, 0})
-            '
-            'lblIGBPort
-            '
-            Me.lblIGBPort.AutoSize = True
-            Me.lblIGBPort.Location = New System.Drawing.Point(26, 29)
-            Me.lblIGBPort.Name = "lblIGBPort"
-            Me.lblIGBPort.Size = New System.Drawing.Size(51, 13)
-            Me.lblIGBPort.TabIndex = 0
-            Me.lblIGBPort.Text = "IGB Port:"
             '
             'gbEveFolders
             '
@@ -2941,7 +2853,6 @@ Namespace Forms
             Me.panelSettings.Controls.Add(Me.gbNotifications)
             Me.panelSettings.Controls.Add(Me.gbDashboard)
             Me.panelSettings.Controls.Add(Me.gbEveFolders)
-            Me.panelSettings.Controls.Add(Me.gbIGB)
             Me.panelSettings.Controls.Add(Me.gbProxyServer)
             Me.panelSettings.Controls.Add(Me.gbEmail)
             Me.panelSettings.Controls.Add(Me.gbTaskbarIcon)
@@ -3528,9 +3439,6 @@ Namespace Forms
             Me.gbEveAccounts.ResumeLayout(False)
             CType(Me.adtAccounts, System.ComponentModel.ISupportInitialize).EndInit()
             Me.gbPilots.ResumeLayout(False)
-            Me.gbIGB.ResumeLayout(False)
-            Me.gbIGB.PerformLayout()
-            CType(Me.nudIGBPort, System.ComponentModel.ISupportInitialize).EndInit()
             Me.gbEveFolders.ResumeLayout(False)
             Me.gbLocation4.ResumeLayout(False)
             Me.gbLocation4.PerformLayout()
@@ -3650,10 +3558,6 @@ Namespace Forms
         Friend WithEvents lvwPlugins As DevComponents.DotNetBar.Controls.ListViewEx
         Friend WithEvents colPlugInName As System.Windows.Forms.ColumnHeader
         Friend WithEvents colStatus As System.Windows.Forms.ColumnHeader
-        Friend WithEvents gbIGB As System.Windows.Forms.GroupBox
-        Friend WithEvents lblIGBPort As System.Windows.Forms.Label
-        Friend WithEvents nudIGBPort As System.Windows.Forms.NumericUpDown
-        Friend WithEvents chkStartIGBonLoad As System.Windows.Forms.CheckBox
         Friend WithEvents lblPlugInInfo As System.Windows.Forms.Label
         Friend WithEvents gbTrainingQueue As System.Windows.Forms.GroupBox
         Friend WithEvents gbNotifications As System.Windows.Forms.GroupBox
@@ -3811,9 +3715,6 @@ Namespace Forms
         Friend WithEvents chkEnableAutomaticSave As System.Windows.Forms.CheckBox
         Friend WithEvents nudAutomaticSaveTime As System.Windows.Forms.NumericUpDown
         Friend WithEvents lblAutomaticSaveTime As System.Windows.Forms.Label
-        Friend WithEvents rb_IGBCfgAccessMode As System.Windows.Forms.RadioButton
-        Friend WithEvents rb_IGBFullAccessMode As System.Windows.Forms.RadioButton
-        Friend WithEvents clb_IGBAllowedDisplay As System.Windows.Forms.CheckedListBox
         Friend WithEvents Label4 As System.Windows.Forms.Label
         Friend WithEvents chkIgnoreLastMessage As System.Windows.Forms.CheckBox
         Friend WithEvents trackServerOffset As DevComponents.DotNetBar.Controls.Slider
