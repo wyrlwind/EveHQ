@@ -66,7 +66,6 @@ Namespace Forms
         Dim _lastSlotFitting As New ArrayList
         Dim _lastModuleResults As New SortedList(Of Integer, ShipModule)
         Dim _myPilotManager As New FrmPilotManager
-        Dim _myBcBrowser As New FrmBcBrowser
         Dim _myEveImport As New FrmEveImport
         Dim _shutdownComplete As Boolean = False
 
@@ -135,7 +134,6 @@ Namespace Forms
             If _shutdownComplete = False Then
                 ' Close any open windows
                 If _myPilotManager.IsHandleCreated Then _myPilotManager.Close()
-                If _myBcBrowser.IsHandleCreated Then _myBcBrowser.Close()
 
                 ' Save data and settings
                 Call SaveAll()
@@ -1974,18 +1972,6 @@ Namespace Forms
         End Sub
         Private Sub RemoteShowFitting(ByVal fitKey As String)
             ShowFitting(fitKey)
-        End Sub
-        Private Sub mnuFittingsBCBrowser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuFittingsBCBrowser.Click
-            Dim shipName As String = mnuFittingsFittingName.Tag.ToString
-            Dim bShip As Ship = ShipLists.ShipList(shipName).Clone
-            If _myBcBrowser.IsHandleCreated = True Then
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.BringToFront()
-            Else
-                _myBcBrowser = New FrmBcBrowser
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.Show()
-            End If
         End Sub
         Private Sub mnuExportToEve_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuExportToEve.Click
             Call ExportFittingsToEve()

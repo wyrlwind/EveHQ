@@ -62,16 +62,7 @@ Public Class PlugInData
 #Region "Plug-in Interface Properties and Functions"
 
     Public Function GetPlugInData(ByVal data As Object, ByVal dataType As Integer) As Object Implements IEveHQPlugIn.GetPlugInData
-        Select Case dataType
-            Case 0 ' Fitting Protocol
-                ' Check for fitting protocol
-                Dim fb As New FrmFittingBrowser
-                fb.TopMost = True
-                fb.Show()
-                Return Nothing
-            Case Else
-                Return Nothing
-        End Select
+        Return Nothing
     End Function
 
     Public Function EveHQStartUp() As Boolean Implements IEveHQPlugIn.EveHQStartUp

@@ -1501,7 +1501,6 @@ Namespace Forms
         Friend WithEvents chkOnlyShowFittable As System.Windows.Forms.CheckBox
         Friend WithEvents pbSearchShips As System.Windows.Forms.PictureBox
         Friend WithEvents mnuCompareFittings As System.Windows.Forms.ToolStripMenuItem
-        Friend WithEvents mnuBattleClinicBrowser As System.Windows.Forms.ToolStripMenuItem
         Friend WithEvents mnuFittingsBCBrowser As System.Windows.Forms.ToolStripMenuItem
         Friend WithEvents ToolStripMenuItem6 As System.Windows.Forms.ToolStripSeparator
         Friend WithEvents mnuExportToEve As System.Windows.Forms.ToolStripMenuItem
