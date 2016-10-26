@@ -89,7 +89,6 @@ Public Class HQ
     Public Shared CustomPriceList As New SortedList(Of Integer, Double) ' TypeID, Price
     Public Shared APIUpdateAvailable As Boolean = False
     Public Shared AppUpdateAvailable As Boolean = False
-    Public Shared FittingProtocol As String = "fitting"
     Public Shared NextAutoMailAPITime As DateTime = Now
     Public Shared Widgets As New SortedList(Of String, String)
     Public Shared Event ShutDownEveHQ()
