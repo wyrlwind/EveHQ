@@ -74,7 +74,6 @@ Namespace Forms
     Public Class FrmEveHQ
 
         Dim WithEvents _eveTqWorker As BackgroundWorker = New BackgroundWorker
-        Dim WithEvents _igbWorker As BackgroundWorker = New BackgroundWorker
         Dim WithEvents _skillWorker As BackgroundWorker = New BackgroundWorker
         Dim WithEvents _backupWorker As BackgroundWorker = New BackgroundWorker
         Dim WithEvents _eveHQBackupWorker As BackgroundWorker = New BackgroundWorker
@@ -394,21 +393,6 @@ Namespace Forms
             ' Update the QAT config if applicable
             If HQ.Settings.QatLayout <> "" Then
                 RibbonControl1.QatLayout = HQ.Settings.QatLayout
-            End If
-
-            ' Check if the IGB should be started here
-            If IGBCanBeInitialised() = True Then
-                If HQ.Settings.IgbAutoStart = True Then
-                    If Not HttpListener.IsSupported Then
-                        btnIGB.Enabled = False
-                        btnIGB.Checked = False
-                    Else
-                        _igbWorker.WorkerSupportsCancellation = True
-                        _igbWorker.RunWorkerAsync()
-                        btnIGB.Checked = True
-                        HQ.IGBActive = True
-                    End If
-                End If
             End If
 
             ' Set the tab position
@@ -1513,11 +1497,6 @@ Namespace Forms
 
 #End Region
 
-        Private Sub IGBWorker_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles _igbWorker.DoWork
-            HQ.MyIGB = New IGB
-            HQ.MyIGB.RunIGB(_igbWorker, e)
-        End Sub
-
 #Region "Background Module Loading"
 
         Private Sub tmrModules_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles tmrModules.Tick
@@ -2371,40 +2350,6 @@ Namespace Forms
 
         Private Sub btnViewReqs_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnViewReqs.Click
             Call OpenRequisitions()
-        End Sub
-
-        Private Sub btnIGB_CheckedChanged(sender As Object, e As EventArgs) Handles btnIGB.CheckedChanged
-            If btnIGB.Checked = True Then
-                lblIGB.Text = "Port: " & HQ.Settings.IgbPort.ToString & ControlChars.CrLf & "Status: On"
-            Else
-                lblIGB.Text = "Port: " & HQ.Settings.IgbPort.ToString & ControlChars.CrLf & "Status: Off"
-            End If
-        End Sub
-
-        Private Sub btnIGB_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnIGB.Click
-            If HQ.IGBActive = False Then
-                If _igbWorker.CancellationPending = True Then
-                    'MessageBox.Show("The IGB Server is still shutting down. Please wait a few moments", "IGB Server Busy", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    _igbWorker.Dispose()
-                    _igbWorker = New BackgroundWorker
-                    If HQ.MyIGB.Listener.IsListening Then
-                        HQ.MyIGB.Listener.Stop()
-                        HQ.MyIGB.Listener.Close()
-                    End If
-                    HQ.IGBActive = False
-                    btnIGB.Checked = False
-                End If
-                If IGBCanBeInitialised() = True Then
-                    _igbWorker.WorkerSupportsCancellation = True
-                    _igbWorker.RunWorkerAsync()
-                    HQ.IGBActive = True
-                    btnIGB.Checked = True
-                End If
-            Else
-                HQ.IGBActive = False
-                btnIGB.Checked = False
-                _igbWorker.CancelAsync()
-            End If
         End Sub
 
         Private Sub btnBackupEveHQ_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnBackupEveHQ.Click
@@ -3420,49 +3365,6 @@ Namespace Forms
             childForm.WindowState = FormWindowState.Maximized
             childForm.Show()
         End Sub
-
-        Private Function IGBCanBeInitialised() As Boolean
-            Dim prefixes(0) As String
-            prefixes(0) = "http://localhost:" & HQ.Settings.IgbPort & "/"
-
-            ' URI prefixes are required
-            If prefixes Is Nothing OrElse prefixes.Length = 0 Then
-                Throw New ArgumentException("prefixes")
-            End If
-
-            ' Create a listener and add the prefixes.
-            Using listener As New HttpListener()
-                For Each s As String In prefixes
-                    listener.Prefixes.Add(s)
-                Next
-
-                Try
-                    ' Attempt to open the listener
-                    listener.Start()
-                    listener.Stop()
-                    listener.Close()
-                    IGBCanBeInitialised = True
-                Catch e As Exception
-                    ' We have an initialisation error - disable it
-                    IGBCanBeInitialised = False
-                    btnIGB.Checked = False
-                    btnIGB.Enabled = False
-                    Dim msg As String = "The IGB Server has been disabled due to a failure to initialise correctly." &
-                                        ControlChars.CrLf & ControlChars.CrLf
-                    msg &=
-                        "This is usually caused by insufficient permissions on the host machine or an incompatible (older) operating system." &
-                        ControlChars.CrLf & ControlChars.CrLf
-                    Dim sti As New SuperTooltipInfo("IGB Server Access Error", "IGB Server Disabled", msg, Nothing,
-                                                 My.Resources.Info32, eTooltipColor.Yellow)
-                    SuperTooltip1.SetSuperTooltip(btnIGB, sti)
-                Finally
-
-                End Try
-            End Using
-
-            Return IGBCanBeInitialised
-
-        End Function
 
         Private Sub btnIB_Click(sender As Object, e As EventArgs) Handles btnIB.Click
             Using newIB As New FrmIB
