@@ -1891,6 +1891,21 @@
 12038,0,0,30,2,508,0,0,0,-99.65,15,Torpedo Launcher PG Need
 12038,0,0,50,2,330,0,0,0,-50,15,Cloaking Device CPU
 12038,0,0,560,2,330,0,0,0,-100,15,Sensor Recalibration Time Bonus
+# Rabisu
+42245,1,3335,90,2,68,0,1,0,20,15,Nos Drain Amount
+42245,1,3335,54,2,68,0,1,0,35,15,Nos Drain Optimal Range
+42245,1,3335,2044,2,68,0,1,0,35,15,Nos Drain Falloff
+42245,1,3333,68,4,842,0,1,0,20,15,Shield Maintenance Bot Transfer
+42245,1,3333,84,4,842,0,1,0,20,15,Armor Maintenance Bot Transfer
+42245,1,3333,50,2,330,0,1,0,-20,15,Cloaking Device CPU
+42245,1,12096,54,2,325;1698,0,1,0,20,15,Remote Armor Repair Optimal Range Bonus
+42245,1,12096,2044,2,325;1698,0,1,0,20,15,Remote Armor Repair falloff Bonus
+42245,1,12096,6,2,325;1698,0,1,0,-15,15,Remote Armor Repairer Cap Use
+42245,1,12096,73,2,325;1698,0,1,0,-2,15,Remote Armor Repairer Cycle Time
+42245,0,0,30,2,325;1698,0,0,0,-85,15,Remote Armor Repairer Power Need
+42245,0,0,50,2,68,0,0,0,-85,15,Nos CPU Need
+42245,0,0,54,2,325;1698,0,0,0,100,15,Remote Armor Repair Optimal Range Bonus
+42245,0,0,2044,2,325;1698,0,0,0,100,15,Remote Armor Repair falloff Bonus
 # Ragnarok,,,,,,,,,,,
 23773,1,3345,10016,4,775;776,0,1,0,180,15,Capital Projectile Turret Damage
 23773,1,3345,10013,4,775;776,0,1,0,-5,15,Capital Projectile Turret ROF

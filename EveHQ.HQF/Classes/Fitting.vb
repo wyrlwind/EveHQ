@@ -3263,7 +3263,8 @@ Imports EveHQ.Common.Extensions
             AttributeEnum.ModuleCanFitShipType3,
             AttributeEnum.ModuleCanFitShipType4,
             AttributeEnum.ModuleCanFitShipType5,
-            AttributeEnum.ModuleCanFitShipType6
+            AttributeEnum.ModuleCanFitShipType6,
+            AttributeEnum.ModuleCanFitShipType7
         }
 
         For Each att As Integer In shipTypeAttributes
