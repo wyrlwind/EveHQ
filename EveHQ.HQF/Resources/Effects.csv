@@ -1502,12 +1502,17 @@
 327,2,778,263,2,100;101;544;639;640;641;1159,0,0,0,15,Drone Durability Enhancer - Shield
 327,2,778,265,2,100;101;544;639;640;641;1159,0,0,0,15,Drone Durability Enhancer - Armor
 327,2,778,9,2,100;101;544;639;640;641;1159,0,0,0,15,Drone Durability Enhancer - Hull
+327,2,778,263,3,87,0,0,0,15,Drone Durability Enhancer - Fighter Shield HP
+327,2,778,9,3,87,0,0,0,15,Drone Durability Enhancer - Fighter Hull HP
 434,2,778,77,2,101,0,0,0,15,Drone Mining Augmentor
 39,2,778,68,2,640,0,0,0,15,Drone Repair Augmentor - Shield
 39,2,778,84,2,640,0,0,0,15,Drone Repair Augmentor - Armor
 39,2,778,83,2,640,0,0,0,15,Drone Repair Augmentor - Hull
 294,2,778,54,2,100;101;544;639;640;641;1159,0,0,0,15,Drone Scope Chip
+294,2,778,2149,3,87,0,0,0,15,Drone Scope Chip - Fighters
+294,2,778,2236,3,87,0,0,0,15,Drone Scope Chip - Fighters
 591,2,778,37,2,100;101;544;639;640;641;1159,3,0,0,15,Drone Speed Augmentor
+591,2,778,37,3,87,3,0,0,15,Drone Speed Augmentor - Fighters
 292,2,778,64,4,911,1,0,0,15,Sentry Damage Augmentor
 1619,2,778,20,2,641,1,0,0,15,Stasis Drone Augmentor
 # RIGS - ELECTRONICS SUPERIORITY,,,,,,,,,,
