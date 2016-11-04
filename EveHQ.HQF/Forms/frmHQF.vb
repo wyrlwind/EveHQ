@@ -66,7 +66,6 @@ Namespace Forms
         Dim _lastSlotFitting As New ArrayList
         Dim _lastModuleResults As New SortedList(Of Integer, ShipModule)
         Dim _myPilotManager As New FrmPilotManager
-        Dim _myBcBrowser As New FrmBcBrowser
         Dim _myEveImport As New FrmEveImport
         Dim _shutdownComplete As Boolean = False
 
@@ -135,7 +134,6 @@ Namespace Forms
             If _shutdownComplete = False Then
                 ' Close any open windows
                 If _myPilotManager.IsHandleCreated Then _myPilotManager.Close()
-                If _myBcBrowser.IsHandleCreated Then _myBcBrowser.Close()
 
                 ' Save data and settings
                 Call SaveAll()
@@ -610,18 +608,7 @@ Namespace Forms
             End If
             showInfo.ShowItemDetails(selShip, hPilot)
         End Sub
-        Private Sub mnuBattleClinicBrowser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuBattleClinicBrowser.Click
-            Dim shipName As String = mnuShipBrowserShipName.Text
-            Dim bShip As Ship = ShipLists.ShipList(shipName).Clone
-            If _myBcBrowser.IsHandleCreated = True Then
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.BringToFront()
-            Else
-                _myBcBrowser = New FrmBcBrowser
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.Show()
-            End If
-        End Sub
+
         Private Sub CreateNewFitting(ByVal shipName As String)
             ' Check we have some valid characters
             ' Bug 83: Adding a check of the core pilots collection as well, since it may end up in an unstable state due to other actors, and needs to contain pilots before loading the new fitting.
@@ -1241,7 +1228,7 @@ Namespace Forms
                         newModule.Style = New ElementStyle
                         newModule.Style.Font = Font
                         ' Create drone icons individually because drones have no iconID
-                        If shipmod.IsDrone = True Then
+                        If shipmod.IsDrone = True Or shipmod.IsFighter = True Then
                             newModule.Image = ImageHandler.CreateIcon(CStr(shipmod.ID), shipmod.MetaType.ToString, 24, True)
                         Else
                             newModule.Image = ImageHandler.IconImage24(shipmod.Icon, shipmod.MetaType)
@@ -1259,7 +1246,7 @@ Namespace Forms
                         stt.Color = eTooltipColor.Yellow
                         'stt.FooterImage = CType(My.Resources.imgInfo1, Image)
                         ' Create drone icons individually because drones have no iconID
-                        If shipmod.IsDrone = True Then
+                        If shipmod.IsDrone = True Or shipmod.IsFighter = True Then
                             stt.BodyImage = ImageHandler.CreateIcon(CStr(shipmod.ID), shipmod.MetaType.ToString, 48, True)
                         Else
                             stt.BodyImage = ImageHandler.IconImage48(shipmod.Icon, shipmod.MetaType)
@@ -1354,7 +1341,7 @@ Namespace Forms
                         If shipMod.IsDrone = True Then
                             Call ActiveFitting.AddDrone(shipMod, 1, False, False)
                         ElseIf shipMod.IsFighter = True Then
-                            Call ActiveFitting.AddFighter(shipMod, 1, False, False)
+                            Call ActiveFitting.AddFighter(shipMod, 1, False, False, True, False, False)
                         Else
                             ' Check if module is a charge
                             If shipMod.IsCharge = True Or shipMod.IsContainer Or shipMod.DatabaseCategory = 22 Then
@@ -1985,18 +1972,6 @@ Namespace Forms
         End Sub
         Private Sub RemoteShowFitting(ByVal fitKey As String)
             ShowFitting(fitKey)
-        End Sub
-        Private Sub mnuFittingsBCBrowser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuFittingsBCBrowser.Click
-            Dim shipName As String = mnuFittingsFittingName.Tag.ToString
-            Dim bShip As Ship = ShipLists.ShipList(shipName).Clone
-            If _myBcBrowser.IsHandleCreated = True Then
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.BringToFront()
-            Else
-                _myBcBrowser = New FrmBcBrowser
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.Show()
-            End If
         End Sub
         Private Sub mnuExportToEve_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuExportToEve.Click
             Call ExportFittingsToEve()

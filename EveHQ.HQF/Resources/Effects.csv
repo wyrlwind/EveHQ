@@ -11,6 +11,14 @@
 335,1,23618,265,3,18,0,1,0,0,Drone Durability - Armor
 337,1,23618,263,3,18,0,1,0,0,Drone Durability - Shield
 292,1,3442,64,2,100;101;1159;549;1023,0,1,0,0,Drone Interfacing - Damage
+292,1,3442,2131,3,87,0,1,0,0,Drone Interfacing - Fighters -  Attack Missile EM Damage
+292,1,3442,2132,3,87,0,1,0,0,Drone Interfacing - Fighters -  Attack Missile Thermal Damage
+292,1,3442,2133,3,87,0,1,0,0,Drone Interfacing - Fighters -  Attack Missile Kinetic Damage
+292,1,3442,2134,3,87,0,1,0,0,Drone Interfacing - Fighters -  Attack Missile Explosive Damage
+292,1,3442,2227,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability EM Damage
+292,1,3442,2228,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability Thermal Damage
+292,1,3442,2229,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability Kinetic Damage
+292,1,3442,2230,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability Explosive Damage
 434,1,3442,77,2,101,0,1,0,0,Drone Interfacing - Mining
 591,1,12305,37,3,18,0,1,0,0,Drone Navigation
 294,1,23606,54,3,18,0,1,0,0,Drone Sharpshooting
@@ -106,17 +114,16 @@
 317,1,3423,6,2,67,0,1,0,0,Energy Emission Systems - Energy Transfer Array
 310,1,3424,50,5,3424,0,1,0,0,Energy Grid Upgrades
 1079,1,3418,482,3,6,0,1,0,0,Energy Management - Capacitor Capacity
-1079,1,3418,67,2,61,0,1,0,0,Energy Management - Capacitor Batteries
+#1079,1,3418,67,2,61,0,1,0,0,Energy Management - Capacitor Batteries
 66,1,3421,73,2,72,0,1,0,0,Energy Pulse Weapons
 314,1,3417,55,3,6,0,1,0,0,Energy Systems Operation
-313,1,3413,11,3,6,0,1,0,0,Engineering - Ship
-313,1,3413,549,2,339,0,1,0,0,Engineering - MAPC
+313,1,3413,11,3,6,0,1,0,0,Power grid management - Ship
 958,1,12367,985,2,295,0,1,0,0,Explosive Shield Compensation
 958,1,12366,986,2,295,0,1,0,0,Kinetic Shield Compensation
 851,1,21059,6,4,609;610;611;612,0,1,0,0,Shield Compensation
 317,1,3422,6,2,41,0,1,0,0,Shield Emission Systems
 337,1,3419,263,3,6,0,1,0,0,Shield Management - Shields
-337,1,3419,72,2,38,0,1,0,0,Shield Management - Shield Extenders
+#337,1,3419,72,2,38,0,1,0,0,Shield Management - Shield Extenders
 338,1,3416,479,3,6,0,1,0,0,Shield Operation
 323,1,3425,30,5,3425,0,1,0,0,Shield Upgrades
 336,1,3420,484,3,6,0,1,0,0,Tactical Shield Manipulation
@@ -225,10 +232,10 @@
 310,1,3318,50,2,509,0,1,0,0,Weapon Upgrades - Light
 # INDUSTRY,,,,,,,,,,
 280,1,25544,763,2,737,0,1,10,0,Gas Cloud Harvesting
-780,1,16281,73,4,1038,0,1,0,0,Ice Harvesting
+780,1,16281,73,4,1038;2151,0,1,0,0,Ice Harvesting
 885,1,28585,714,1,28583,0,1,8,0,Industrial Reconfiguration
 434,1,3386,77,4,1039,0,1,0,0,Mining - Mining Laser
-434,1,3386,77,4,2151,0,1,0,0,Mining - Ice Mining Laser
+#434,1,3386,77,4,2151,0,1,0,0,Mining - Ice Mining Laser
 434,1,3386,77,4,1040,0,1,0,0,Mining - Strip Miner
 927,1,22578,1082,2,546,0,1,0,0,Mining Upgrades
 # LEADERSHIP,,,,,,,,,,
@@ -265,6 +272,7 @@
 66,1,32797,73,2,1150,0,1,0,0,Armor Resistance Phasing - Duration
 1139,1,26253,1138,2,773;1232,0,1,0,0,Armor Rigging
 1139,1,26254,1138,2,782,0,1,0,0,Astronautics Rigging
+1139,1,26254,1138,2,1308,0,1,0,0,Astronautic Rigging
 317,1,24568,6,4,1056,0,1,0,0,Capital Remote Armor Repair Systems
 317,1,27936,6,4,1063,0,1,0,0,Capital Remote Hull Repair Systems
 312,1,21803,73,4,1052,0,1,0,0,Capital Repair Systems
@@ -274,7 +282,7 @@
 1139,1,26258,1138,2,775,0,1,0,0,Energy Weapon Rigging
 958,1,22807,985,2,98;326,0,1,0,0,Explosive Armor Compensation
 335,1,3394,265,3,6,0,1,0,0,Hull Upgrades - Armor HP
-335,1,3394,1159,2,329,0,1,0,0,Hull Upgrades - Armor Plate HP
+#335,1,3394,1159,2,329,0,1,0,0,Hull Upgrades - Armor Plate HP
 1139,1,26259,1138,2,776,0,1,0,0,Hybrid Weapon Rigging
 #,1,26252,,,,0,1,0,0,Jury Rigging
 958,1,22808,986,2,98;326,0,1,0,0,Kinetic Armor Compensation
@@ -949,13 +957,16 @@
 1029,2,212,210,3,6,1,0,0,12,Remote Sensor Booster - Mag Strength
 1030,2,212,208,3,6,1,0,0,12,Remote Sensor Booster - Radar Strength
 # Networked Sensor Array
-1027,2,1706,211,3,6,1,0,0,12,Networked Sensor Array - Grav Strength
-1028,2,1706,209,3,6,1,0,0,12,Networked Sensor Array - Ladar Strength
-1029,2,1706,210,3,6,1,0,0,12,Networked Sensor Array - Mag Strength
-1030,2,1706,208,3,6,1,0,0,12,Networked Sensor Array - Radar Strength
-235,2,1706,192,3,6,1,0,1,12,Networked Sensor Array - Max Locked Targets
-565,2,1706,564,3,6,1,0,0,12,Networked Sensor Array - Scan Resolution
-1190,2,1706,6,2,52;65;80;201;291;379;1672,1,0,0,12,Networked Sensor Array - Ewar Cap Malus
+1027,2,1706,211,3,87,0,0,0,12,Networked Sensor Array - Fighter Grav Strength
+1028,2,1706,209,3,87,0,0,0,12,Networked Sensor Array - Fighter Ladar Strength
+1029,2,1706,210,3,87,0,0,0,12,Networked Sensor Array - Fighter Mag Strength
+1030,2,1706,208,3,87,0,0,0,12,Networked Sensor Array - Fighter Radar Strength
+1027,2,1706,211,3,6,0,0,0,12,Networked Sensor Array - Grav Strength
+1028,2,1706,209,3,6,0,0,0,12,Networked Sensor Array - Ladar Strength
+1029,2,1706,210,3,6,0,0,0,12,Networked Sensor Array - Mag Strength
+1030,2,1706,208,3,6,0,0,0,12,Networked Sensor Array - Radar Strength
+566,2,1706,564,3,6,1,0,0,12,Networked Sensor Array - Scan Resolution
+1190,2,1706,6,2,52;65;80;201;291;379;1672,0,0,0,12,Networked Sensor Array - Ewar Cap Malus
 # Signal Amplifiers,,,,,,,,,,
 235,2,210,192,3,6,0,0,1,14,Signal Amplifier - Max Locked Targets
 309,2,210,76,3,6,1,0,0,14,Signal Amplifier - Max Targeting Range
@@ -1153,6 +1164,10 @@
 975,1,33400,111,3,6,0,0,2,4,Hull Exp Resistance Bonus
 976,1,33400,109,3,6,0,0,2,4,Hull Kin Resistance Bonus
 977,1,33400,110,3,6,0,0,2,4,Hull Therm Resistance Bonus
+1027,1,33400,211,3,6,0,0,0,4,Gravimetric Sensor Strength
+1028,1,33400,209,3,6,0,0,0,4,Ladar Sensor Strength
+1029,1,33400,210,3,6,0,0,0,4,Magnetrometric Sensor Strength
+1030,1,33400,208,3,6,0,0,0,4,Radar Sensor Strength
 # Industrial Core,,,,,,,,,,
 20,1,28583,37,3,6,0,0,0,4,Max Velocity Bonus
 1238,1,28583,833,4,1638,0,0,5,4,Mining Foreman Ganglink Bonus
@@ -1488,12 +1503,17 @@
 327,2,778,263,2,100;101;544;639;640;641;1159,0,0,0,15,Drone Durability Enhancer - Shield
 327,2,778,265,2,100;101;544;639;640;641;1159,0,0,0,15,Drone Durability Enhancer - Armor
 327,2,778,9,2,100;101;544;639;640;641;1159,0,0,0,15,Drone Durability Enhancer - Hull
+327,2,778,263,3,87,0,0,0,15,Drone Durability Enhancer - Fighter Shield HP
+327,2,778,9,3,87,0,0,0,15,Drone Durability Enhancer - Fighter Hull HP
 434,2,778,77,2,101,0,0,0,15,Drone Mining Augmentor
 39,2,778,68,2,640,0,0,0,15,Drone Repair Augmentor - Shield
 39,2,778,84,2,640,0,0,0,15,Drone Repair Augmentor - Armor
 39,2,778,83,2,640,0,0,0,15,Drone Repair Augmentor - Hull
 294,2,778,54,2,100;101;544;639;640;641;1159,0,0,0,15,Drone Scope Chip
+294,2,778,2149,3,87,0,0,0,15,Drone Scope Chip - Fighters
+294,2,778,2236,3,87,0,0,0,15,Drone Scope Chip - Fighters
 591,2,778,37,2,100;101;544;639;640;641;1159,3,0,0,15,Drone Speed Augmentor
+591,2,778,37,3,87,3,0,0,15,Drone Speed Augmentor - Fighters
 292,2,778,64,4,911,1,0,0,15,Sentry Damage Augmentor
 1619,2,778,20,2,641,1,0,0,15,Stasis Drone Augmentor
 # RIGS - ELECTRONICS SUPERIORITY,,,,,,,,,,
@@ -1680,6 +1700,7 @@
 986,2,774,273,3,6,1,0,2,15,Anti-Kinetic Screen Reinforcer
 987,2,774,274,3,6,1,0,2,15,Anti-Thermal Screen Reinforcer
 851,2,774,6,5,3416,0,0,0,15,Core Defense Capacitor Safeguard
+851,2,774,6,5,21802,0,0,0,15,Core Defense Capacitor Safeguard
 323,2,774,30,5,3425,0,0,0,15,Core Defense Charge Economizer
 337,2,774,263,3,6,0,0,0,15,Core Defense Field Extender
 338,2,774,479,3,6,0,0,0,15,Core Defense Field Purger

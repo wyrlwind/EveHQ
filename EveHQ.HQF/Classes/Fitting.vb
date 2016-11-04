@@ -105,7 +105,7 @@ Imports EveHQ.Common.Extensions
 
     Dim cModules As New List(Of ModuleWithState)
     Dim cDrones As New List(Of ModuleQWithState)
-    Dim cFighters As New List(Of ModuleQWithState)
+    Dim cFighters As New List(Of ModuleFighterWithState)
     Dim cItems As New List(Of ModuleQWithState)
     Dim cShips As New List(Of ModuleQWithState)
 
@@ -288,11 +288,11 @@ Imports EveHQ.Common.Extensions
     ''' <value></value>
     ''' <returns>A collection of fighters used in the fitting</returns>
     ''' <remarks></remarks>
-    Public Property Fighters() As List(Of ModuleQWithState)
+    Public Property Fighters() As List(Of ModuleFighterWithState)
         Get
             Return cFighters
         End Get
-        Set(ByVal value As List(Of ModuleQWithState))
+        Set(ByVal value As List(Of ModuleFighterWithState))
             cFighters = value
         End Set
     End Property
@@ -576,23 +576,23 @@ Imports EveHQ.Common.Extensions
         pStages(3) = "Building Ship Bonuses: "
         pStages(4) = "Building External Influences: "
         pStages(5) = "Collecting Modules: "
-        pStages(6) = "Applying Skill Effects to Ship: "
-        pStages(7) = "Applying Skill Effects to Modules: "
-        pStages(8) = "Applying Skill Effects to Drones: "
-        pStages(9) = "Building Module Effects: "
-        pStages(10) = "Applying Stacking Penalties: "
-        pStages(11) = "Applying Module Effects to Charges: "
-        pStages(12) = "Build Charge Effects: "
-        pStages(13) = "Applying Charge Effects to Modules: "
-        pStages(14) = "Applying Charge Effects to Ship: "
-        pStages(15) = "Rebuilding Module Effects: "
-        pStages(16) = "Recalculating Stacking Penalties: "
-        pStages(17) = "Applying Module Effects to Modules: "
-        pStages(18) = "Rebuilding Module Effects: "
-        pStages(19) = "Recalculating Stacking Penalties: "
-        pStages(20) = "Applying Module Effects to Missiles: "
-        pStages(21) = "Applying Module Effects to Drones: "
-        pStages(22) = "Applying Module Effects to Ship: "
+        pStages(6) = "Applying Skill Effects to Modules: "
+        pStages(7) = "Applying Skill Effects to Drones: "
+        pStages(8) = "Building Module Effects: "
+        pStages(9) = "Applying Stacking Penalties: "
+        pStages(10) = "Applying Module Effects to Charges: "
+        pStages(11) = "Build Charge Effects: "
+        pStages(12) = "Applying Charge Effects to Modules: "
+        pStages(13) = "Applying Charge Effects to Ship: "
+        pStages(14) = "Rebuilding Module Effects: "
+        pStages(15) = "Recalculating Stacking Penalties: "
+        pStages(16) = "Applying Module Effects to Modules: "
+        pStages(17) = "Rebuilding Module Effects: "
+        pStages(18) = "Recalculating Stacking Penalties: "
+        pStages(19) = "Applying Module Effects to Missiles: "
+        pStages(20) = "Applying Module Effects to Drones: "
+        pStages(21) = "Applying Module Effects to Ship: "
+        pStages(22) = "Applying Skill Effects to Ship: "
         pStages(23) = "Calculating Damage Statistics: "
         pStages(24) = "Calculating Defence Statistics: "
         ' Apply the pilot skills to the ship
@@ -610,39 +610,40 @@ Imports EveHQ.Common.Extensions
                 pStageTime(4) = Now
                 newShip = CollectModules(newBaseShip.Clone)
                 pStageTime(5) = Now
-                ApplySkillEffectsToShip(newShip)
-                pStageTime(6) = Now
+                'ApplySkillEffectsToShip(newShip)
                 ApplySkillEffectsToModules(newShip)
-                pStageTime(7) = Now
+                pStageTime(6) = Now
                 ApplySkillEffectsToDrones(newShip)
+                pStageTime(7) = Now
+                BuildModuleEffects(newShip)
                 pStageTime(8) = Now
-                BuildModuleEffects(newShip)
+                ApplyStackingPenalties()
                 pStageTime(9) = Now
-                ApplyStackingPenalties()
-                pStageTime(10) = Now
                 ApplyModuleEffectsToCharges(newShip)
-                pStageTime(11) = Now
+                pStageTime(10) = Now
                 BuildChargeEffects(newShip)
-                pStageTime(12) = Now
+                pStageTime(11) = Now
                 ApplyChargeEffectsToModules(newShip)
-                pStageTime(13) = Now
+                pStageTime(12) = Now
                 ApplyChargeEffectsToShip(newShip)
+                pStageTime(13) = Now
+                BuildModuleEffects(newShip)
                 pStageTime(14) = Now
-                BuildModuleEffects(newShip)
+                ApplyStackingPenalties()
                 pStageTime(15) = Now
-                ApplyStackingPenalties()
-                pStageTime(16) = Now
                 ApplyModuleEffectsToModules(newShip)
-                pStageTime(17) = Now
+                pStageTime(16) = Now
                 BuildModuleEffects(newShip)
-                pStageTime(18) = Now
+                pStageTime(17) = Now
                 ApplyStackingPenalties()
-                pStageTime(19) = Now
+                pStageTime(18) = Now
                 ApplyModuleEffectsToMissiles(newShip)
-                pStageTime(20) = Now
+                pStageTime(19) = Now
                 ApplyModuleEffectsToDrones(newShip)
-                pStageTime(21) = Now
+                pStageTime(20) = Now
                 ApplyModuleEffectsToShip(newShip)
+                pStageTime(21) = Now
+                ApplySkillEffectsToShip(newShip)
                 pStageTime(22) = Now
                 CalculateDamageStatistics(newShip)
                 pStageTime(23) = Now
@@ -661,37 +662,37 @@ Imports EveHQ.Common.Extensions
                 pStageTime(4) = Now
                 'newShip = CollectModules(CType(baseShip.Clone, Ship))
                 pStageTime(5) = Now
-                'Me.ApplySkillEffectsToShip(newShip)
-                pStageTime(6) = Now
                 'Me.ApplySkillEffectsToModules(newShip)
-                pStageTime(7) = Now
+                pStageTime(6) = Now
                 'Me.ApplySkillEffectsToDrones(newShip)
+                pStageTime(7) = Now
+                'Me.BuildModuleEffects(newShip)
                 pStageTime(8) = Now
-                'Me.BuildModuleEffects(newShip)
+                'Me.ApplyStackingPenalties()
                 pStageTime(9) = Now
-                'Me.ApplyStackingPenalties()
-                pStageTime(10) = Now
                 'Me.ApplyModuleEffectsToCharges(newShip)
-                pStageTime(11) = Now
+                pStageTime(10) = Now
                 'Me.BuildChargeEffects(newShip)
-                pStageTime(12) = Now
+                pStageTime(11) = Now
                 'Me.ApplyChargeEffectsToModules(newShip)
-                pStageTime(13) = Now
+                pStageTime(12) = Now
                 'Me.ApplyChargeEffectsToShip(newShip)
+                pStageTime(13) = Now
+                'Me.BuildModuleEffects(newShip)
                 pStageTime(14) = Now
-                'Me.BuildModuleEffects(newShip)
+                'Me.ApplyStackingPenalties()
                 pStageTime(15) = Now
-                'Me.ApplyStackingPenalties()
-                pStageTime(16) = Now
                 'Me.ApplyModuleEffectsToModules(newShip)
-                pStageTime(18) = Now
+                pStageTime(16) = Now
                 'Me.BuildModuleEffects(newShip)
-                pStageTime(19) = Now
+                pStageTime(18) = Now
                 'Me.ApplyStackingPenalties()
-                pStageTime(20) = Now
+                pStageTime(19) = Now
                 'Me.ApplyModuleEffectsToDrones(newShip)
+                pStageTime(20) = Now
+                'Me.ApplyModuleEffectsToShip(newShip)                
                 pStageTime(21) = Now
-                'Me.ApplyModuleEffectsToShip(newShip)
+                'Me.ApplySkillEffectsToShip(newShip)
                 pStageTime(22) = Now
                 'Me.CalculateDamageStatistics(newShip)
                 pStageTime(23) = Now
@@ -710,39 +711,39 @@ Imports EveHQ.Common.Extensions
                 pStageTime(4) = Now
                 newShip = CollectModules(newBaseShip.Clone)
                 pStageTime(5) = Now
-                ApplySkillEffectsToShip(newShip)
-                pStageTime(6) = Now
                 ApplySkillEffectsToModules(newShip)
-                pStageTime(7) = Now
+                pStageTime(6) = Now
                 ApplySkillEffectsToDrones(newShip)
+                pStageTime(7) = Now
+                BuildModuleEffects(newShip)
                 pStageTime(8) = Now
-                BuildModuleEffects(newShip)
+                ApplyStackingPenalties()
                 pStageTime(9) = Now
-                ApplyStackingPenalties()
-                pStageTime(10) = Now
                 ApplyModuleEffectsToCharges(newShip)
-                pStageTime(11) = Now
+                pStageTime(10) = Now
                 BuildChargeEffects(newShip)
-                pStageTime(12) = Now
+                pStageTime(11) = Now
                 ApplyChargeEffectsToModules(newShip)
-                pStageTime(13) = Now
+                pStageTime(12) = Now
                 ApplyChargeEffectsToShip(newShip)
+                pStageTime(13) = Now
+                BuildModuleEffects(newShip)
                 pStageTime(14) = Now
-                BuildModuleEffects(newShip)
+                ApplyStackingPenalties()
                 pStageTime(15) = Now
-                ApplyStackingPenalties()
-                pStageTime(16) = Now
                 ApplyModuleEffectsToModules(newShip)
-                pStageTime(17) = Now
+                pStageTime(16) = Now
                 BuildModuleEffects(newShip)
-                pStageTime(18) = Now
+                pStageTime(17) = Now
                 ApplyStackingPenalties()
-                pStageTime(19) = Now
+                pStageTime(18) = Now
                 ApplyModuleEffectsToMissiles(newShip)
-                pStageTime(20) = Now
+                pStageTime(19) = Now
                 ApplyModuleEffectsToDrones(newShip)
-                pStageTime(21) = Now
+                pStageTime(20) = Now
                 ApplyModuleEffectsToShip(newShip)
+                pStageTime(21) = Now
+                ApplySkillEffectsToShip(newShip)
                 pStageTime(22) = Now
                 CalculateDamageStatistics(newShip)
                 pStageTime(23) = Now
@@ -1955,7 +1956,7 @@ Imports EveHQ.Common.Extensions
                 Dim turretExpDamage As Double = 0
                 Dim turretKinDamage As Double = 0
                 Dim turretThermDamage As Double = 0
-                If cModule.Attributes.ContainsKey(2233) = True Then
+                If fbi.IsTurretActive And cModule.Attributes.ContainsKey(2233) = True Then
                     turretRof = cModule.Attributes(2233)
                     turretDmgMod = cModule.Attributes(2226)
                     If cModule.Attributes.ContainsKey(2227) Then
@@ -1991,7 +1992,7 @@ Imports EveHQ.Common.Extensions
                 Dim missileExpDamage As Double = 0
                 Dim missileKinDamage As Double = 0
                 Dim missileThermDamage As Double = 0
-                If cModule.Attributes.ContainsKey(2182) = True Then
+                If fbi.IsMissileActive And cModule.Attributes.ContainsKey(2182) = True Then
                     missileRof = cModule.Attributes(2182)
                     missileDmgMod = cModule.Attributes(2130)
                     If cModule.Attributes.ContainsKey(2131) Then
@@ -2026,7 +2027,7 @@ Imports EveHQ.Common.Extensions
                 Dim bombExpDamage As Double = 0
                 Dim bombKinDamage As Double = 0
                 Dim bombThermDamage As Double = 0
-                If cModule.LoadedCharge IsNot Nothing Then
+                If fbi.IsBombActive And cModule.LoadedCharge IsNot Nothing Then
                     bombRof = cModule.Attributes(2349)
                     bombDmgMod = 1
                     bombBaseDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseEMDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseExpDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseKinDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseThermDamage)
@@ -2611,15 +2612,15 @@ Imports EveHQ.Common.Extensions
         Next
 
         ' Add the fighters
-        For Each mws As ModuleQWithState In Fighters
+        For Each mws As ModuleFighterWithState In Fighters
             Dim temp As New ShipModule
             If ModuleLists.ModuleList.TryGetValue(CInt(mws.ID), temp) Then
                 Dim newMod As ShipModule = temp.Clone
                 newMod.ModuleState = mws.State
                 If mws.State = ModuleStates.Active Then
-                    Call AddFighter(newMod, mws.Quantity, True, True)
+                    Call AddFighter(newMod, mws.Quantity, True, True, mws.TurretState, mws.MissileState, mws.BombState)
                 Else
-                    Call AddFighter(newMod, mws.Quantity, False, True)
+                    Call AddFighter(newMod, mws.Quantity, False, True, mws.TurretState, mws.MissileState, mws.BombState)
                 End If
             Else
                 Trace.TraceWarning(String.Format(UnknownModuleFitted, mws.ID))
@@ -2753,9 +2754,9 @@ Imports EveHQ.Common.Extensions
         Fighters.Clear()
         For Each fbi As FighterBayItem In BaseShip.FighterBayItems.Values
             If fbi.IsActive = True Then
-                Fighters.Add(New ModuleQWithState(CStr(fbi.FighterType.ID), ModuleStates.Active, fbi.Quantity))
+                Fighters.Add(New ModuleFighterWithState(CStr(fbi.FighterType.ID), ModuleStates.Active, fbi.Quantity, fbi.IsTurretActive, fbi.IsMissileActive, fbi.IsBombActive))
             Else
-                Fighters.Add(New ModuleQWithState(CStr(fbi.FighterType.ID), ModuleStates.Inactive, fbi.Quantity))
+                Fighters.Add(New ModuleFighterWithState(CStr(fbi.FighterType.ID), ModuleStates.Inactive, fbi.Quantity, fbi.IsTurretActive, fbi.IsMissileActive, fbi.IsBombActive))
             End If
         Next
 
@@ -2950,7 +2951,7 @@ Imports EveHQ.Common.Extensions
         End If
     End Sub
 
-    Public Sub AddFighter(ByVal fighter As ShipModule, ByVal qty As Integer, ByVal active As Boolean, ByVal updateAll As Boolean)
+    Public Sub AddFighter(ByVal fighter As ShipModule, ByVal qty As Integer, ByVal active As Boolean, ByVal updateAll As Boolean, ByVal isTurretActive As Boolean, ByVal isMissileActive As Boolean, ByVal isBombActive As Boolean)
 
         ' See if there is sufficient space
         Dim vol As Double = fighter.Volume
@@ -2967,6 +2968,14 @@ Imports EveHQ.Common.Extensions
             Dim fbi As New FighterBayItem
             fbi.FighterType = fighter
             fbi.Quantity = qty
+            fbi.IsTurretActive = isTurretActive
+            fbi.IsMissileActive = isMissileActive
+            fbi.IsBombActive = isBombActive
+            If active = True Then
+                fbi.IsActive = True
+            Else
+                fbi.IsActive = False
+            End If
 
             If updateAll = False Then
                 Dim squadMax As Integer = CInt(fbi.FighterType.Attributes(2215))
@@ -2978,25 +2987,19 @@ Imports EveHQ.Common.Extensions
                 End If
             End If
 
-            'todo
-            If active = True Then
-                    fbi.IsActive = True
-                Else
-                    fbi.IsActive = False
-                End If
-                BaseShip.FighterBayItems.Add(BaseShip.FighterBayItems.Count, fbi)
+            BaseShip.FighterBayItems.Add(BaseShip.FighterBayItems.Count, fbi)
 
-                ' Update stuff
-                If updateAll = False Then
-                    ApplyFitting(BuildType.BuildFromEffectsMaps)
-                    If ShipSlotCtrl IsNot Nothing Then
-                        Call ShipSlotCtrl.UpdateFighterBay()
-                    End If
-                Else
-                    BaseShip.FighterBayUsed += vol * qty
+            ' Update stuff
+            If updateAll = False Then
+                ApplyFitting(BuildType.BuildFromEffectsMaps)
+                If ShipSlotCtrl IsNot Nothing Then
+                    Call ShipSlotCtrl.UpdateFighterBay()
                 End If
             Else
-                MessageBox.Show("There is not enough space in the Fighter Bay to hold " & qty & " unit(s) of " & fighter.Name & " on '" & FittingName & "' (" & ShipName & ").", "Insufficient Space", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                BaseShip.FighterBayUsed += vol * qty
+            End If
+        Else
+            MessageBox.Show("There is not enough space in the Fighter Bay to hold " & qty & " unit(s) of " & fighter.Name & " on '" & FittingName & "' (" & ShipName & ").", "Insufficient Space", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -3260,7 +3263,8 @@ Imports EveHQ.Common.Extensions
             AttributeEnum.ModuleCanFitShipType3,
             AttributeEnum.ModuleCanFitShipType4,
             AttributeEnum.ModuleCanFitShipType5,
-            AttributeEnum.ModuleCanFitShipType6
+            AttributeEnum.ModuleCanFitShipType6,
+            AttributeEnum.ModuleCanFitShipType7
         }
 
         For Each att As Integer In shipTypeAttributes
@@ -3784,6 +3788,7 @@ End Class
 
     Dim cModules As New List(Of ModuleWithState)
     Dim cDrones As New List(Of ModuleQWithState)
+    Dim cFighters As New List(Of ModuleFighterWithState)
     Dim cItems As New List(Of ModuleQWithState)
     Dim cShips As New List(Of ModuleQWithState)
 
@@ -3898,6 +3903,21 @@ End Class
         End Get
         Set(ByVal value As List(Of ModuleWithState))
             cModules = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the collection of fighters used in the fitting
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A collection of fighters used in the fitting</returns>
+    ''' <remarks></remarks>
+    Public Property Fighters() As List(Of ModuleFighterWithState)
+        Get
+            Return cFighters
+        End Get
+        Set(ByVal value As List(Of ModuleFighterWithState))
+            cFighters = value
         End Set
     End Property
 

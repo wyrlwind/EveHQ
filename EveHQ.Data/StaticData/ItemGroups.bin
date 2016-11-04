@@ -1,6 +1,12 @@
 0,Ammunition & Charges
 1015,Ammunition & Charges\Bombs
 139,Ammunition & Charges\Cap Booster Charges
+0,Ammunition & Charges\Command Burst Charges
+2298,Ammunition & Charges\Command Burst Charges\Armor Command Burst Charges
+2299,Ammunition & Charges\Command Burst Charges\Information Command Burst Charges
+2300,Ammunition & Charges\Command Burst Charges\Mining Foreman Burst Charges
+2301,Ammunition & Charges\Command Burst Charges\Shield Command Burst Charges
+2302,Ammunition & Charges\Command Burst Charges\Skirmish Command Burst Charges
 0,Ammunition & Charges\Frequency Crystals
 0,Ammunition & Charges\Frequency Crystals\Advanced Beam Laser Crystals
 2257,Ammunition & Charges\Frequency Crystals\Advanced Beam Laser Crystals\Extra Large

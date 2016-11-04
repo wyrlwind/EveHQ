@@ -46,7 +46,7 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>$(SolutionDir)BuildOutput\$(Configuration)\</OutputPath>
+    <OutputPath>$(SolutionDir)BuildOutput\EveHQ\$(Configuration)\</OutputPath>
     <DocumentationFile>EveHQ.Core.xml</DocumentationFile>
     <NoWarn>42353,42354,42355,40010</NoWarn>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
@@ -59,7 +59,7 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>$(SolutionDir)BuildOutput\$(Configuration)\</OutputPath>
+    <OutputPath>$(SolutionDir)BuildOutput\EveHQ\$(Configuration)\</OutputPath>
     <DocumentationFile>EveHQ.Core.xml</DocumentationFile>
     <NoWarn>42353,42354,42355,40010</NoWarn>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
@@ -231,7 +231,6 @@
     <Compile Include="G15LCDv2.vb" />
     <Compile Include="HQ.vb" />
     <Compile Include="IEveHQPlugIn.vb" />
-    <Compile Include="IGB.vb" />
     <Compile Include="ImageHandler.vb" />
     <Compile Include="ItemMarketOverride.vb" />
     <Compile Include="Market.vb" />
@@ -287,7 +286,6 @@
     </Compile>
     <Compile Include="Requisitions\Requisition.vb" />
     <Compile Include="Requisitions\RequisitionAsset.vb" />
-    <Compile Include="Requisitions\RequisitionIGB.vb" />
     <Compile Include="Requisitions\RequisitionOrder.vb" />
     <Compile Include="RSSFeed.vb" />
     <Compile Include="EveHQSkillQueue.vb" />
@@ -436,7 +434,6 @@
     <None Include="Resources\SkillBook32.png" />
     <None Include="Resources\SQLQueries.txt" />
     <None Include="Resources\Strings.txt" />
-    <None Include="Resources\attributeGroups.csv" />
     <None Include="Resources\EveHQ_IGBLogo.jpg" />
   </ItemGroup>
   <ItemGroup>

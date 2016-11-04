@@ -225,6 +225,7 @@ Public Class FrmCacheCreator
                         Dim typeId As Integer = CInt(CType(entry.Key, YamlScalarNode).Value)
                         Dim yamlItem As New YAMLType
                         yamlItem.TypeID = typeId
+                        yamlItem.IconID = -1
                         ' Parse anything underneath
                         Dim dataItem = TryCast(entry.Value, YamlMappingNode)
                         If dataItem IsNot Nothing Then
@@ -249,50 +250,46 @@ Public Class FrmCacheCreator
                                         ' Set ship traits texts for each ship skill
                                         yamlItem.Traits = New Dictionary(Of Integer, List(Of String))()
                                         Dim traits = CType(subEntry.Value, YamlMappingNode)
-                                        For Each skill In traits.Children
-                                            Dim skillId = CInt(CType(skill.Key, YamlScalarNode).Value)
-                                            Dim bonusStrings As List(Of String) = New List(Of String)
-                                            For Each index In CType(skill.Value, YamlMappingNode).Children
-                                                Dim partBonus As String = ""
-                                                Dim partBonusText As String = ""
-                                                Dim partUnitId As String = ""
-                                                For Each bonusPart In CType(index.Value, YamlMappingNode).Children
-                                                    Select Case CType(bonusPart.Key, YamlScalarNode).Value
-                                                        Case "bonus"
-                                                            partBonus = Double.Parse(CType(bonusPart.Value, YamlScalarNode).Value, System.Globalization.CultureInfo.InvariantCulture).ToString("0.##")
-                                                        Case "bonusText"
-                                                            For Each language In CType(bonusPart.Value, YamlMappingNode).Children
-                                                                If String.Compare(language.Key.ToString(), "en") = 0 Then
-                                                                    partBonusText = CType(language.Value, YamlScalarNode).Value
-                                                                End If
-                                                            Next
-                                                        Case "unitID"
-                                                            Select Case CType(bonusPart.Value, YamlScalarNode).Value
-                                                                Case "105"
-                                                                    partUnitId = "%"
-                                                                Case "139"
-                                                                    partUnitId = "+"
-                                                                Case "9"
-                                                                    partUnitId = "m³"
-                                                                Case "1"
-                                                                    partUnitId = "m"
-                                                            End Select
-                                                    End Select
-                                                Next
-                                                If partBonus & partUnitId = "" Then
-                                                    partUnitId = "·"
-                                                End If
-                                                bonusStrings.Add(partBonus & partUnitId & " " & partBonusText)
-                                            Next
-                                            yamlItem.Traits.Add(skillId, bonusStrings)
+
+                                        For Each bonusTypes In traits.Children
+
+                                            Dim bonusTypeName As String = CType(bonusTypes.Key, YamlScalarNode).Value
+
+                                            Select Case bonusTypeName
+                                                Case "roleBonuses"
+                                                    Dim bonuses = CType(bonusTypes.Value, YamlSequenceNode)
+                                                    Dim bonusStrings = parseBonuses(bonuses)
+
+                                                    ' -1 as id was the previous way to detect role bonuses
+                                                    If bonusStrings.Count > 0 Then
+                                                        yamlItem.Traits.Add(-1, bonusStrings)
+                                                    End If
+
+                                                Case "types"
+                                                    For Each skill In CType(bonusTypes.Value, YamlMappingNode).Children
+
+                                                        Dim skillId = CType(CType(skill.Key, YamlScalarNode).Value, Int32)
+                                                        Dim bonuses = CType(skill.Value, YamlSequenceNode)
+                                                        Dim bonusStrings = parseBonuses(bonuses)
+
+                                                        If bonusStrings.Count > 0 Then
+                                                            yamlItem.Traits.Add(skillId, bonusStrings)
+                                                        End If
+                                                    Next
+                                            End Select
+
                                         Next
                                 End Select
                             Next
                         End If
+
                         ' Get the iconFile if relevant
-                        If yamlIcons.ContainsKey(yamlItem.IconID) Then
+                        If yamlIcons.ContainsKey(yamlItem.IconID) And yamlItem.IconID <> -1 Then
                             yamlItem.IconName = yamlIcons(yamlItem.IconID)
+                        Else
+                            yamlItem.IconName = CStr(yamlItem.TypeID)
                         End If
+
                         ' Add the item
                         yamlTypes.Add(yamlItem.TypeID, yamlItem)
                     Next
@@ -300,6 +297,53 @@ Public Class FrmCacheCreator
             End Using
         End Using
     End Sub
+
+    Private Function parseBonuses(bonuses As YamlSequenceNode) As List(Of String)
+
+        Dim bonusStrings As List(Of String) = New List(Of String)
+
+        For Each bonus As YamlMappingNode In bonuses.Children
+
+            Dim partBonus As String = ""
+            Dim partBonusText As String = ""
+            Dim partUnitId As String = ""
+
+            For Each bonusPart In bonus.Children
+
+                Select Case CType(bonusPart.Key, YamlScalarNode).Value
+                    Case "bonus"
+                        partBonus = Double.Parse(CType(bonusPart.Value, YamlScalarNode).Value, System.Globalization.CultureInfo.InvariantCulture).ToString("0.##")
+                    Case "bonusText"
+                        For Each language In CType(bonusPart.Value, YamlMappingNode).Children
+                            If String.Compare(language.Key.ToString(), "en") = 0 Then
+                                partBonusText = CType(language.Value, YamlScalarNode).Value
+                            End If
+                        Next
+                    Case "unitID"
+                        Select Case CType(bonusPart.Value, YamlScalarNode).Value
+                            Case "105"
+                                partUnitId = "%"
+                            Case "139"
+                                partUnitId = "+"
+                            Case "9"
+                                partUnitId = "m³"
+                            Case "1"
+                                partUnitId = "m"
+                        End Select
+                End Select
+
+            Next
+
+            If partBonus & partUnitId = "" Then
+                partUnitId = "·"
+            End If
+
+            bonusStrings.Add(partBonus & partUnitId & " " & partBonusText)
+        Next
+
+        Return bonusStrings
+
+    End Function
 
 #End Region
 
@@ -3335,7 +3379,7 @@ Public Class FrmCacheCreator
             Dim conn As New SQLiteConnection(DatabaseFunctions.GetSqlLiteConnectionString)
             conn.Open()
 
-            Call AddSqlAttributeGroupColumn(conn)
+            Call AddSqlAttributeGroupColumn(conn, evehqData)
 
             If evehqData Is Nothing Then
                 ' We seem to be missing the data so lets add it in!
@@ -3348,11 +3392,17 @@ Public Class FrmCacheCreator
 
     End Sub
 
-    Private Sub AddSqlAttributeGroupColumn(ByVal connection As SQLiteConnection)
-
-        Dim strSql As String = "ALTER TABLE dgmAttributeTypes ADD attributeGroup INTEGER DEFAULT 0;"
-        Dim keyCommand As New SQLiteCommand(strSql, connection)
-        keyCommand.ExecuteNonQuery()
+    ' attributeGroup data is used to determine placement of attributes in groups on the HQF 
+    ' Show Info dialog - Attributes tab for an object
+    ' Groups defined in frmShowInfo.vb ShowAttributes()
+    Private Sub AddSqlAttributeGroupColumn(ByVal connection As SQLiteConnection, ByVal evehqData As DataSet)
+        Dim keyCommand As SQLiteCommand
+        Dim strSql As String
+        If evehqData Is Nothing Then
+            strSql = "ALTER TABLE dgmAttributeTypes ADD attributeGroup INTEGER DEFAULT 0;"
+            keyCommand = New SQLiteCommand(strSql, connection)
+            keyCommand.ExecuteNonQuery()
+        End If
         strSql = "UPDATE dgmAttributeTypes SET attributeGroup=0;"
         keyCommand = New SQLiteCommand(strSql, connection)
         keyCommand.ExecuteNonQuery()
