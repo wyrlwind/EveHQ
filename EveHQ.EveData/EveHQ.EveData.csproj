@@ -17,19 +17,19 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>$(SolutionDir)BuildOutput\$(Configuration)\</OutputPath>
+    <OutputPath>$(SolutionDir)BuildOutput\EveHQ\$(Configuration)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>$(SolutionDir)BuildOutput\$(Configuration)\EveHQ.EveData.XML</DocumentationFile>
+    <DocumentationFile>$(SolutionDir)BuildOutput\EveHQ\$(Configuration)\EveHQ.EveData.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>$(SolutionDir)BuildOutput\$(Configuration)\</OutputPath>
+    <OutputPath>$(SolutionDir)BuildOutput\EveHQ\$(Configuration)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

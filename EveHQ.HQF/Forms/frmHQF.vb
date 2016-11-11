@@ -1354,7 +1354,7 @@ Namespace Forms
                         If shipMod.IsDrone = True Then
                             Call ActiveFitting.AddDrone(shipMod, 1, False, False)
                         ElseIf shipMod.IsFighter = True Then
-                            Call ActiveFitting.AddFighter(shipMod, 1, False, False)
+                            Call ActiveFitting.AddFighter(shipMod, 1, False, False, True, False, False)
                         Else
                             ' Check if module is a charge
                             If shipMod.IsCharge = True Or shipMod.IsContainer Or shipMod.DatabaseCategory = 22 Then

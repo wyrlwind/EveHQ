@@ -387,7 +387,6 @@ $™™escortHullUpgradeCpu Bonus
 "ÂÂammoInfluenceCapRecharge
 -Ã(Ã#freightSkillBoostCargoCapacityBonus
 ÄÄskillFreightBonus
-$ÅÅsensorBoostTargetedHostile
 #ÆÆammoInfluenceShipVelocity
 jÐeÐ`cloakingTargetingDelayBonusPostPercentCloakingTargetingDelayBonusForShipModulesRequiringCloaking
 7Ò2Ò-cloakingSkillBoostCloakingTargetingDelayBonus
@@ -697,9 +696,6 @@ Gƒ
 Ë
 Ë
 ewTestEffectWs
-Î
-Î
-ewTestEffectJam
 *Ð
 %Ð
  ewSkillRsdCapNeedBonusSkillLevel
@@ -1090,7 +1086,6 @@ N˜I˜DminingUpgradeCPUPenaltyReductionModulesRequiringMiningUpgradePercent
 +©&©!shipBonusDroneDamageMultiplierBC1
 $®®shipBonusDroneHitpointsBC1
 @¯;¯6iceHarvestCycleTimeModulesRequiringIceHarvestingOnline
-*°%° decreaseTargetSpeedForStructures
 µµimplantArmorHpBonus2
 ¶¶armorTankingGang2
 '·"·skirmishWarfareVelocityBonus2
@@ -1381,7 +1376,6 @@ BÅ=Å8gasHarvestingCycleTimeModulesRequiringGasCloudHarvesting
 %¦ ¦skillRemoteECMDurationBonus
 ¹¹overloadRofBonus
 #ººoverloadSelfDurationBonus
-+»&»!energyDestabilizationForStructure
 ¼¼setGlobalPool
 'Æ"ÆskillBombDeploymentSpeedBonus
 1Ç,Ç'eliteBonusStealhBomberBombDeploymentCpu
@@ -1503,7 +1497,6 @@ HÕCÕ>controlTowerGenericHullResistanceBonusCG&CGJ&ECM&EN&H&JP&L&M&P
 KÖFÖAcontrolTowerGenericHullResistanceBonusCG&CGJ&ECM&EN&H&JP&L&M&P&SC
 N×I×DcontrolTowerGenericHullResistanceBonusCG&CGJ&ECM&EN&H&JP&L&M&P&SC&SD
 0Ø+Ø&controlTowerGenericHullResistanceBonus
--Ù(Ù#sensorBoostTargetedHostileKali2Test
 ,Ü'Ü"gangArmorRepairCapReducerProjected
 4Ý/Ý*moduleBonusArmoredWarfareLinkDamageControl
 0Þ+Þ&gangArmorRepairSpeedAmplifierProjected
@@ -1922,7 +1915,6 @@ Dñ?ñ:turretWeaponRangeFalloffTrackingSpeedMultiplyTargetHostile
 Aµ<µ7covertOpsStealthBomberSiegeMissileLauncerPowerNeedBonus
 ,¶'¶"interceptorMWDSignatureRadiusBonus
 @·;·6eliteBonusCommandShipsHeavyMissileExplosionVelocityCS2
-=¸8¸3shipBonusStandardMissileAoeDamageReductionFactorDF2
 ¹¹zColinShieldHPPerLvl
 ººzColinArmorHPPerLvl
  »»armorHPBonusAddPassive
@@ -3530,10 +3522,7 @@ $–0–0shipBonusWDFGnullPenalties
 %Æ0 Æ0roleBonusCDLinksPGReduction
 +È0&È0!structureEnergyNeutralizerFalloff
 DÉ0?É0:structureTargetMaxTargetRangeAndScanResolutionBonusHostile
-"Ê0Ê0structureEwTestEffectJam
-&Ë0!Ë0structureDecreaseTargetSpeed
 0Ì0+Ì0&structureTargetWeaponDisruptionHostile
- Í0Í0structureEwTargetPaint
 4Î0/Î0*structureWarpScrambleBlockMWDWithNPCEffect
 GÏ0BÏ0=structureTargetMaxTargetRangeAndScanResolutionBonusAssistance
 0Ð0+Ð0&structureSensorBoosterActivePercentage
@@ -3769,7 +3758,6 @@ $’2’2fighterDecreaseTargetSpeed
 +í2&í2!shipBonusDreadnoughtM1DamageBonus
 (î2#î2shipBonusDreadnoughtM2ROFBonus
 *ï2%ï2 shipBonusDreadnoughtM3RepairTime
-.ð2)ð2$shipBonusDreadnoughtRole1DamageBonus
 ñ2ñ2doomsdayAOEECM
 5ò20ò2+skillMultiplierShipBonusForceAuxiliaryAmarr
 7õ22õ2-skillMultiplierShipBonusForceAuxiliaryCaldari
@@ -3916,3 +3904,33 @@ $•4•4structureRigGalMinIceYield
 %–4 –4structureRigSpecialIceYield
 -—4(—4#skillStructureDoomsdayDurationBonus
 5™40™4+shipBonusForceAuxiliaryRole3NumWarfareLinks
+-š4(š4#structureModuleEffectStasisWebifier
+,›4'›4"structureModuleEffectTargetPainter
+3œ4.œ4)structureModuleEffectRemoteSensorDampener
+"44structureModuleEffectECM
+/ž4*ž4%structureModuleEffectWeaponDisruption
+!Ÿ4Ÿ4remoteArmorRepairEntity
+$ 4 4remoteShieldTransferEntity
+ ¡4¡4remoteHullRepairEntity
+¢4¢4remoteWebifierEntity
+!¤4¤4remoteTargetPaintEntity
+ ¥4¥4remoteSensorDampEntity
+#¦4¦4remoteWeaponDisruptEntity
+*¨4%¨4 starbaseEnergyNeutralizerFalloff
+#©4©4rigDrawbackReductionArmor
+*ª4%ª4 rigDrawbackReductionAstronautics
+$«4«4rigDrawbackReductionDrones
+(¬4#¬4rigDrawbackReductionElectronic
+(­4#­4rigDrawbackReductionProjectile
+*®4%®4 rigDrawbackReductionEnergyWeapon
+$¯4¯4rigDrawbackReductionHybrid
+&°4!°4rigDrawbackReductionLauncher
+$±4±4rigDrawbackReductionShield
+²4²4setBonusAsklepian
+%³4 ³4implantShieldCapacityBonus2
+&´4!´4armorRepairAmountBonusSubcap
+.µ4)µ4$shipBonusDreadnoughtRole1DamageBonus
+(¶4#¶4shipBonusDreadnoughtM1WebBonus
+(·4#·4shipBonusTitanRole3DamageBonus
+"¸4¸4shipBonusTitanM1WebBonus
+7¹42¹4-shipBonusSupercarrierM1BurstProjectorWebBonus

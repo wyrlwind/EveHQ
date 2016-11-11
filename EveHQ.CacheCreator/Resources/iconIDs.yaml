@@ -1,1498 +1,1495 @@
 0:
   description: Unknown
-  iconFile: '07_15'
+  iconFile: res:/ui/texture/icons/7_64_15.png
 15:
   description: Asteroid
-  iconFile: '05_11'
+  iconFile: res:/ui/texture/icons/5_64_11.png
 16:
   description: CargoContainer
-  iconFile: '26_11'
+  iconFile: res:/ui/texture/icons/26_64_11.png
 21:
   description: Money - Money
-  iconFile: '06_03'
+  iconFile: res:/ui/texture/icons/6_64_3.png
 22:
   description: Mineral - Tritium
-  iconFile: '06_14'
+  iconFile: res:/ui/texture/icons/6_64_14.png
 26:
   description: Commodity - ConstructionBlocks
-  iconFile: '06_05'
+  iconFile: res:/ui/texture/icons/6_64_5.png
 27:
   description: Commodity - SpicedWine
-  iconFile: '06_11'
+  iconFile: res:/ui/texture/icons/6_64_11.png
 28:
   description: Commodity - Antibiotics
-  iconFile: 06_09
+  iconFile: res:/ui/texture/icons/6_64_9.png
 29:
   description: Commodity - DepletedUranium
-  iconFile: '06_06'
+  iconFile: res:/ui/texture/icons/6_64_6.png
 30:
   description: Commodity - FrozenPlantSeeds
-  iconFile: '11_08'
+  iconFile: res:/ui/texture/icons/11_64_8.png
 31:
   description: Commodity - NuclearMethadone
-  iconFile: '06_10'
+  iconFile: res:/ui/texture/icons/6_64_10.png
 33:
   description: Skill
-  iconFile: '50_11'
+  iconFile: res:/ui/texture/icons/50_64_11.png
 34:
   description: CloneBasic
-  iconFile: 08_16
+  iconFile: res:/ui/texture/icons/8_64_16.png
 67:
   description: Module - Structure
-  iconFile: 02_09
+  iconFile: res:/ui/texture/icons/2_64_9.png
 68:
   description: Module - Armor
-  iconFile: 01_09
+  iconFile: res:/ui/texture/icons/1_64_9.png
 69:
   description: Module - Shield
-  iconFile: '01_13'
+  iconFile: res:/ui/texture/icons/1_64_13.png
 70:
   description: Module - PowerCore
-  iconFile: '02_07'
+  iconFile: res:/ui/texture/icons/2_64_7.png
 71:
   description: Module - CargoHold
-  iconFile: '03_13'
+  iconFile: res:/ui/texture/icons/3_64_13.png
 72:
   description: Module - Propulsion
-  iconFile: '03_01'
+  iconFile: res:/ui/texture/icons/3_64_1.png
 73:
   description: Module - Capsule
-  iconFile: '02_14'
+  iconFile: res:/ui/texture/icons/2_64_14.png
 74:
   description: Module - Sensors
-  iconFile: 03_09
+  iconFile: res:/ui/texture/icons/3_64_9.png
 75:
   description: Module - StructureEnhancer
-  iconFile: '02_13'
+  iconFile: res:/ui/texture/icons/2_64_13.png
 76:
   description: Module - StructurePlating
-  iconFile: '02_10'
+  iconFile: res:/ui/texture/icons/2_64_10.png
 77:
   description: Module - DamageControl
-  iconFile: '02_11'
+  iconFile: res:/ui/texture/icons/2_64_11.png
 78:
   description: Module - ArmorEnhancer
-  iconFile: '01_12'
+  iconFile: res:/ui/texture/icons/1_64_12.png
 79:
   description: Module - ArmoredPlates
-  iconFile: '01_10'
+  iconFile: res:/ui/texture/icons/1_64_10.png
 80:
   description: Module - Armor Repair
-  iconFile: '01_11'
+  iconFile: res:/ui/texture/icons/1_64_11.png
 81:
   description: Module - ShieldEnhancer
-  iconFile: '02_02'
+  iconFile: res:/ui/texture/icons/2_64_2.png
 82:
   description: Module - ShieldExtender
-  iconFile: '02_04'
+  iconFile: res:/ui/texture/icons/2_64_4.png
 83:
   description: Module - ShieldRecharger
-  iconFile: '01_15'
+  iconFile: res:/ui/texture/icons/1_64_15.png
 84:
   description: Module - ShieldBooster
-  iconFile: '02_03'
+  iconFile: res:/ui/texture/icons/2_64_3.png
 85:
   description: Module - ShieldDischarger
-  iconFile: '02_01'
+  iconFile: res:/ui/texture/icons/2_64_1.png
 86:
   description: Module - ShieldTransporter
-  iconFile: '01_16'
+  iconFile: res:/ui/texture/icons/1_64_16.png
 87:
   description: Module - GeneratorSteelplates
-  iconFile: '01_14'
+  iconFile: res:/ui/texture/icons/1_64_14.png
 88:
   description: Module - ShieldExchanger
-  iconFile: 04_08
+  iconFile: res:/ui/texture/icons/4_64_8.png
 89:
   description: Capacitor Battery
-  iconFile: '01_04'
+  iconFile: res:/ui/texture/icons/1_64_4.png
 90:
   description: Module - PowerRecharger
-  iconFile: '01_01'
+  iconFile: res:/ui/texture/icons/1_64_1.png
 91:
   description: Module - ProtectiveShell
-  iconFile: 02_08
+  iconFile: res:/ui/texture/icons/2_64_8.png
 92:
   description: Module - StorageEnhancer
-  iconFile: '04_13'
+  iconFile: res:/ui/texture/icons/4_64_13.png
 93:
   description: Module - FrostCompartment
-  iconFile: '03_15'
+  iconFile: res:/ui/texture/icons/3_64_15.png
 94:
   description: Module - RadioactiveCompartment
-  iconFile: '04_14'
+  iconFile: res:/ui/texture/icons/4_64_14.png
 95:
   description: Module - ArmoredBulkheads
-  iconFile: '03_14'
+  iconFile: res:/ui/texture/icons/3_64_14.png
 96:
   description: Module - Afterburner
-  iconFile: '03_02'
+  iconFile: res:/ui/texture/icons/3_64_2.png
 97:
   description: Module - JumpEnhancer
-  iconFile: 03_08
+  iconFile: res:/ui/texture/icons/3_64_8.png
 98:
   description: Module - ThrusterEnhancer
-  iconFile: '03_05'
+  iconFile: res:/ui/texture/icons/3_64_5.png
 104:
   description: Module - EnhancedSensors
-  iconFile: '04_10'
+  iconFile: res:/ui/texture/icons/4_64_10.png
 105:
   description: Module - ReinforcedSensors
-  iconFile: '04_11'
+  iconFile: res:/ui/texture/icons/4_64_11.png
 106:
   description: Module - CargoScanner
-  iconFile: '03_11'
+  iconFile: res:/ui/texture/icons/3_64_11.png
 107:
   description: Module - ShipScanner
-  iconFile: '03_10'
+  iconFile: res:/ui/texture/icons/3_64_10.png
 109:
   description: Module - Jammer
-  iconFile: '04_12'
+  iconFile: res:/ui/texture/icons/4_64_12.png
 110:
   description: Module - AntiJammer
-  iconFile: '05_01'
+  iconFile: res:/ui/texture/icons/5_64_1.png
 111:
   description: Module - JumpScrambler
-  iconFile: 04_09
+  iconFile: res:/ui/texture/icons/4_64_9.png
 112:
   description: Module - ECMShutdownWave
-  iconFile: '03_04'
+  iconFile: res:/ui/texture/icons/3_64_4.png
 138:
   description: Turret - Mining - MinerBasic
-  iconFile: '04_01'
+  iconFile: res:/ui/texture/icons/4_64_1.png
 168:
   description: MissileLauncherBasic
-  iconFile: '12_12'
+  iconFile: res:/ui/texture/icons/12_64_12.png
 169:
   description: MissileLauncherAdvanced
-  iconFile: '21_12'
+  iconFile: res:/ui/texture/icons/21_64_12.png
 170:
   description: MissileLauncherDeluxe
-  iconFile: '21_16'
+  iconFile: res:/ui/texture/icons/21_64_16.png
 182:
   description: Basic missile - Paradise Missile
-  iconFile: '20_16'
+  iconFile: res:/ui/texture/icons/20_64_16.png
 183:
   description: Rapid missile - Wrath Missile
-  iconFile: '20_04'
+  iconFile: res:/ui/texture/icons/20_64_4.png
 184:
   description: Trek missile - Cataclysm missile
-  iconFile: '20_08'
+  iconFile: res:/ui/texture/icons/20_64_8.png
 185:
   description: Discharge missile - Devastatormissile
-  iconFile: '20_12'
+  iconFile: res:/ui/texture/icons/20_64_12.png
 186:
   description: Standard missile - HavocMissile
-  iconFile: '20_10'
+  iconFile: res:/ui/texture/icons/20_64_10.png
 187:
   description: Tiger missile - ThunderboltMissile
-  iconFile: '20_14'
+  iconFile: res:/ui/texture/icons/20_64_14.png
 188:
   description: Widowmaker missile - WidowmakerMissile
-  iconFile: '20_06'
+  iconFile: res:/ui/texture/icons/20_64_6.png
 189:
   description: Blast missile - Deathbringer
-  iconFile: '20_02'
+  iconFile: res:/ui/texture/icons/20_64_2.png
 190:
   description: Regular missile - Bloodclaw
-  iconFile: '13_04'
+  iconFile: res:/ui/texture/icons/13_64_4.png
 191:
   description: Flameburst missile - FlameburstMissile
-  iconFile: '13_08'
+  iconFile: res:/ui/texture/icons/13_64_8.png
 192:
   description: Sabretooth missile - SabretoothMissile
-  iconFile: '13_16'
+  iconFile: res:/ui/texture/icons/13_64_16.png
 193:
   description: Pirahna missile - PirahnaMissile
-  iconFile: '13_12'
+  iconFile: res:/ui/texture/icons/13_64_12.png
 230:
   description: Asteroid1
-  iconFile: '24_02'
+  iconFile: res:/ui/texture/icons/24_64_2.png
 231:
   description: Asteroid2
-  iconFile: '23_16'
+  iconFile: res:/ui/texture/icons/23_64_16.png
 232:
   description: Asteroid3
-  iconFile: '24_01'
+  iconFile: res:/ui/texture/icons/24_64_1.png
 293:
   description: Ship slot - HiSlot
-  iconFile: 08_11
+  iconFile: res:/ui/texture/icons/8_64_11.png
 294:
   description: Ship slot - MedSlot
-  iconFile: 08_10
+  iconFile: res:/ui/texture/icons/8_64_10.png
 295:
   description: Ship slot - LoSlot
-  iconFile: 08_09
+  iconFile: res:/ui/texture/icons/8_64_9.png
 349:
   description: 75mmGatlingRail
-  iconFile: '13_05'
+  iconFile: res:/ui/texture/icons/13_64_5.png
 350:
   description: GatlingPulseLaser
-  iconFile: '13_13'
+  iconFile: res:/ui/texture/icons/13_64_13.png
 352:
   description: DualLightBeamLaser
-  iconFile: '13_09'
+  iconFile: res:/ui/texture/icons/13_64_9.png
 355:
   description: QuadLightBeamLaser
-  iconFile: '13_10'
+  iconFile: res:/ui/texture/icons/13_64_10.png
 356:
   description: FocusedMediumPulseLaser
-  iconFile: '13_14'
+  iconFile: res:/ui/texture/icons/13_64_14.png
 360:
   description: DualHeavyPulseLaser
-  iconFile: '13_15'
+  iconFile: res:/ui/texture/icons/13_64_15.png
 361:
   description: DualHeavyBeamLaser
-  iconFile: '13_11'
+  iconFile: res:/ui/texture/icons/13_64_11.png
 365:
   description: Caldari - IonBlasterCannon
-  iconFile: '13_03'
+  iconFile: res:/ui/texture/icons/13_64_3.png
 366:
   description: Caldari - 425mmRailgun
-  iconFile: '13_07'
+  iconFile: res:/ui/texture/icons/13_64_7.png
 370:
   description: 250mmRailgun
-  iconFile: '13_06'
+  iconFile: res:/ui/texture/icons/13_64_6.png
 371:
   description: HeavyIonBlaster
-  iconFile: '13_02'
+  iconFile: res:/ui/texture/icons/13_64_2.png
 376:
   description: Caldari - LightNeutronBlaster
-  iconFile: '13_01'
+  iconFile: res:/ui/texture/icons/13_64_1.png
 379:
   description: LargeArtilleryRocket
-  iconFile: '12_15'
+  iconFile: res:/ui/texture/icons/12_64_15.png
 381:
   description: 800mmArtilleryCannon
-  iconFile: '12_11'
+  iconFile: res:/ui/texture/icons/12_64_11.png
 384:
   description: MediumArtilleryRocket
-  iconFile: '12_14'
+  iconFile: res:/ui/texture/icons/12_64_14.png
 386:
   description: 425mmAutoCannon
-  iconFile: '12_10'
+  iconFile: res:/ui/texture/icons/12_64_10.png
 387:
   description: 220mmVulcanAutoCannon
-  iconFile: '12_09'
+  iconFile: res:/ui/texture/icons/12_64_9.png
 389:
   description: SmallArtilleryRocket
-  iconFile: '12_13'
+  iconFile: res:/ui/texture/icons/12_64_13.png
 398:
   description: Corpse floating in space (male?). - Corpse
-  iconFile: '11_05'
+  iconFile: res:/ui/texture/icons/11_64_5.png
 400:
   description: Mineral - Pyerite
-  iconFile: '06_15'
+  iconFile: res:/ui/texture/icons/6_64_15.png
 401:
   description: Mineral - Mexallon
-  iconFile: '06_12'
+  iconFile: res:/ui/texture/icons/6_64_12.png
 402:
   description: Mineral - Isogen
-  iconFile: '06_16'
+  iconFile: res:/ui/texture/icons/6_64_16.png
 404:
   description: Mineral - Zydrine
-  iconFile: '11_11'
+  iconFile: res:/ui/texture/icons/11_64_11.png
 405:
   description: Mineral - Megacyte
-  iconFile: '11_10'
+  iconFile: res:/ui/texture/icons/11_64_10.png
 413:
   description: Passengers
-  iconFile: 08_12
+  iconFile: res:/ui/texture/icons/8_64_12.png
 998:
   description: Info Message Box Icon - Unknown
-  iconFile: 09_09
+  iconFile: res:/ui/texture/icons/9_64_9.png
 999:
   description: Warning Message Box Icon - Unknown
-  iconFile: 09_11
+  iconFile: res:/ui/texture/icons/9_64_11.png
 1001:
   description: Question Message Box Icon - Unknown
-  iconFile: 09_10
+  iconFile: res:/ui/texture/icons/9_64_10.png
 1002:
   description: Error Message box Icon - Unknown
-  iconFile: 09_08
+  iconFile: res:/ui/texture/icons/9_64_8.png
 1004:
   description: Unknown
-  iconFile: '14_01'
+  iconFile: res:/ui/texture/icons/14_64_1.png
 1007:
   description: Hex Mine - HexMine
-  iconFile: '21_08'
+  iconFile: res:/ui/texture/icons/21_64_8.png
 1029:
   description: Capacitor vampire
-  iconFile: '01_03'
+  iconFile: res:/ui/texture/icons/1_64_3.png
 1030:
   description: ArmorCoating
-  iconFile: 01_08
+  iconFile: res:/ui/texture/icons/1_64_8.png
 1031:
   description: Capacitor Booster
-  iconFile: '01_06'
+  iconFile: res:/ui/texture/icons/1_64_6.png
 1033:
   description: Capacitor Booster Charge
-  iconFile: '01_07'
+  iconFile: res:/ui/texture/icons/1_64_7.png
 1035:
   description: Energy transfer array - Unknown
-  iconFile: '01_02'
+  iconFile: res:/ui/texture/icons/1_64_2.png
 1036:
   description: Power Manager - Unknown
-  iconFile: '02_06'
+  iconFile: res:/ui/texture/icons/2_64_6.png
 1041:
   description: Agility Enhancement
-  iconFile: '03_06'
+  iconFile: res:/ui/texture/icons/3_64_6.png
 1042:
   description: Internal structure mods
-  iconFile: '02_12'
+  iconFile: res:/ui/texture/icons/2_64_12.png
 1044:
   description: Shield Extender
-  iconFile: '02_05'
+  iconFile: res:/ui/texture/icons/2_64_5.png
 1046:
   description: Gyrostabilizer - Unknown
-  iconFile: '05_12'
+  iconFile: res:/ui/texture/icons/5_64_12.png
 1047:
   description: hybrid ammo  - Antimatter Charge S
-  iconFile: '15_09'
+  iconFile: res:/ui/texture/icons/15_64_9.png
 1061:
   description: Mining Laser - Mining Laser
-  iconFile: '12_08'
+  iconFile: res:/ui/texture/icons/12_64_8.png
 1063:
   description: ammo capacity bonus - Unknown
-  iconFile: '05_16'
+  iconFile: res:/ui/texture/icons/5_64_16.png
 1084:
   description: Unknown
-  iconFile: '11_16'
+  iconFile: res:/ui/texture/icons/11_64_16.png
 1131:
   description: MultiFrequencyCrystalSmall - Unknown
-  iconFile: 08_01
+  iconFile: res:/ui/texture/icons/8_64_1.png
 1139:
   description: FreqCrystal Gamma small - Unknown
-  iconFile: 08_02
+  iconFile: res:/ui/texture/icons/8_64_2.png
 1140:
   description: FreqCrystal Roentgen small - Unknown
-  iconFile: 08_03
+  iconFile: res:/ui/texture/icons/8_64_3.png
 1141:
   description: FreqCrystal UV small - Unknown
-  iconFile: 08_04
+  iconFile: res:/ui/texture/icons/8_64_4.png
 1142:
   description: FreqCrystal Standard small - Unknown
-  iconFile: 08_05
+  iconFile: res:/ui/texture/icons/8_64_5.png
 1143:
   description: FreqCrystal Microwave - Unknown
-  iconFile: 08_06
+  iconFile: res:/ui/texture/icons/8_64_6.png
 1144:
   description: FreqCrystal Infrared small - Unknown
-  iconFile: 08_07
+  iconFile: res:/ui/texture/icons/8_64_7.png
 1145:
   description: FreqCrystal Radio small - Unknown
-  iconFile: 08_08
+  iconFile: res:/ui/texture/icons/8_64_8.png
 1156:
   description: cargo_Hangar
-  iconFile: '26_14'
+  iconFile: res:/ui/texture/icons/26_64_14.png
 1157:
   description: CryoL_Cargo
-  iconFile: '27_08'
+  iconFile: res:/ui/texture/icons/27_64_8.png
 1158:
   description: CryoM_Cargo
-  iconFile: '27_07'
+  iconFile: res:/ui/texture/icons/27_64_7.png
 1159:
   description: CryoS_Cargo
-  iconFile: '27_06'
+  iconFile: res:/ui/texture/icons/27_64_6.png
 1162:
   description: Life Large Container
-  iconFile: '27_12'
+  iconFile: res:/ui/texture/icons/27_64_12.png
 1163:
   description: LifeM_Cargo
-  iconFile: '27_11'
+  iconFile: res:/ui/texture/icons/27_64_11.png
 1164:
   description: LifeS_Cargo
-  iconFile: '27_10'
+  iconFile: res:/ui/texture/icons/27_64_10.png
 1168:
   description: Radiation Large Container
-  iconFile: '27_16'
+  iconFile: res:/ui/texture/icons/27_64_16.png
 1169:
   description: RadiationM_Cargo
-  iconFile: '27_15'
+  iconFile: res:/ui/texture/icons/27_64_15.png
 1170:
   description: RadiationS_Cargo
-  iconFile: '27_14'
+  iconFile: res:/ui/texture/icons/27_64_14.png
 1171:
   description: SecureL_Cargo
-  iconFile: '27_05'
+  iconFile: res:/ui/texture/icons/27_64_5.png
 1172:
   description: SecureM_Cargo
-  iconFile: '26_16'
+  iconFile: res:/ui/texture/icons/26_64_16.png
 1173:
   description: SecureS_Cargo
-  iconFile: '26_15'
+  iconFile: res:/ui/texture/icons/26_64_15.png
 1174:
   description: StandardL_Cargo
-  iconFile: '26_13'
+  iconFile: res:/ui/texture/icons/26_64_13.png
 1175:
   description: StandardM_Cargo
-  iconFile: '26_12'
+  iconFile: res:/ui/texture/icons/26_64_12.png
 1177:
   description: Holoreels
-  iconFile: '10_05'
+  iconFile: res:/ui/texture/icons/10_64_5.png
 1178:
   description: Water
-  iconFile: '10_04'
+  iconFile: res:/ui/texture/icons/10_64_4.png
 1179:
   description: Garbage
-  iconFile: '10_03'
+  iconFile: res:/ui/texture/icons/10_64_3.png
 1180:
   description: Slaver
-  iconFile: '10_01'
+  iconFile: res:/ui/texture/icons/10_64_1.png
 1181:
   description: Soil
-  iconFile: '10_02'
+  iconFile: res:/ui/texture/icons/10_64_2.png
 1182:
   description: Wheat
-  iconFile: '10_06'
+  iconFile: res:/ui/texture/icons/10_64_6.png
 1183:
   description: Oxygen
-  iconFile: '10_07'
+  iconFile: res:/ui/texture/icons/10_64_7.png
 1184:
   description: Hydrogen batteries
-  iconFile: '10_08'
+  iconFile: res:/ui/texture/icons/10_64_8.png
 1185:
   description: Electronic parts
-  iconFile: '10_09'
+  iconFile: res:/ui/texture/icons/10_64_9.png
 1186:
   description: Mechanical parts
-  iconFile: '10_10'
+  iconFile: res:/ui/texture/icons/10_64_10.png
 1187:
   description: Synthetic oil
-  iconFile: '10_11'
+  iconFile: res:/ui/texture/icons/10_64_11.png
 1188:
   description: Fertilizer
-  iconFile: '10_12'
+  iconFile: res:/ui/texture/icons/10_64_12.png
 1189:
   description: Polytextiles
-  iconFile: '10_13'
+  iconFile: res:/ui/texture/icons/10_64_13.png
 1190:
   description: Silicate glass
-  iconFile: '10_14'
+  iconFile: res:/ui/texture/icons/10_64_14.png
 1191:
   description: Quafe
-  iconFile: '10_15'
+  iconFile: res:/ui/texture/icons/10_64_15.png
 1192:
   description: Certification results
-  iconFile: '10_16'
+  iconFile: res:/ui/texture/icons/10_64_16.png
 1193:
   description: Nerve Sticks
-  iconFile: '11_01'
+  iconFile: res:/ui/texture/icons/11_64_1.png
 1194:
   description: Crash
-  iconFile: '11_02'
+  iconFile: res:/ui/texture/icons/11_64_2.png
 1195:
   description: Blue Pill
-  iconFile: '11_03'
+  iconFile: res:/ui/texture/icons/11_64_3.png
 1196:
   description: Drop
-  iconFile: '11_04'
+  iconFile: res:/ui/texture/icons/11_64_4.png
 1198:
   description: Dairy Products
-  iconFile: '11_06'
+  iconFile: res:/ui/texture/icons/11_64_6.png
 1199:
   description: Biohazard
-  iconFile: '11_07'
+  iconFile: res:/ui/texture/icons/11_64_7.png
 1200:
   description: Frozen Plantseeds
-  iconFile: '06_13'
+  iconFile: res:/ui/texture/icons/6_64_13.png
 1201:
   description: Nocxium
-  iconFile: '11_09'
+  iconFile: res:/ui/texture/icons/11_64_9.png
 1204:
   description: Slaves
-  iconFile: '11_12'
+  iconFile: res:/ui/texture/icons/11_64_12.png
 1205:
   description: Livestock
-  iconFile: '11_13'
+  iconFile: res:/ui/texture/icons/11_64_13.png
 1206:
   description: X-Instinct
-  iconFile: '11_14'
+  iconFile: res:/ui/texture/icons/11_64_14.png
 1207:
   description: Vitoc
-  iconFile: '11_15'
+  iconFile: res:/ui/texture/icons/11_64_15.png
 1209:
   description: Plastic Wrap Icon
-  iconFile: '07_16'
+  iconFile: res:/ui/texture/icons/7_64_16.png
 1269:
   description: cyan_ruby
-  iconFile: '23_09'
+  iconFile: res:/ui/texture/icons/23_64_9.png
 1270:
   description: glimmer_asteroid
-  iconFile: '23_12'
+  iconFile: res:/ui/texture/icons/23_64_12.png
 1271:
   description: gold_asteroid
-  iconFile: '23_13'
+  iconFile: res:/ui/texture/icons/23_64_13.png
 1272:
   description: gold_studlaberg
-  iconFile: '23_07'
+  iconFile: res:/ui/texture/icons/23_64_7.png
 1273:
   description: green_ruby
-  iconFile: '23_06'
+  iconFile: res:/ui/texture/icons/23_64_6.png
 1274:
   description: green_studlaberg
-  iconFile: '23_14'
+  iconFile: res:/ui/texture/icons/23_64_14.png
 1275:
   description: hrafntinna_studlaberg
-  iconFile: '23_08'
+  iconFile: res:/ui/texture/icons/23_64_8.png
 1277:
   description: ruby_asteroid
-  iconFile: '23_05'
+  iconFile: res:/ui/texture/icons/23_64_5.png
 1279:
   description: silver_studlaberg
-  iconFile: '23_11'
+  iconFile: res:/ui/texture/icons/23_64_11.png
 1282:
   description: Blue Studlaberg Asteroid
-  iconFile: '23_10'
+  iconFile: res:/ui/texture/icons/23_64_10.png
 1283:
   description: Unknown
-  iconFile: '12_04'
+  iconFile: res:/ui/texture/icons/12_64_4.png
 1284:
   description: Unknown
-  iconFile: '12_06'
+  iconFile: res:/ui/texture/icons/12_64_6.png
 1285:
   description: Depleted Uranium S
-  iconFile: '14_02'
+  iconFile: res:/ui/texture/icons/14_64_2.png
 1286:
   description: EMP S
-  iconFile: '14_03'
+  iconFile: res:/ui/texture/icons/14_64_3.png
 1287:
   description: Fusion S
-  iconFile: '14_04'
+  iconFile: res:/ui/texture/icons/14_64_4.png
 1288:
   description: Nuclear S
-  iconFile: '14_05'
+  iconFile: res:/ui/texture/icons/14_64_5.png
 1289:
   description: Phased plasma S
-  iconFile: '14_06'
+  iconFile: res:/ui/texture/icons/14_64_6.png
 1290:
   description: Photon S
-  iconFile: '14_07'
+  iconFile: res:/ui/texture/icons/14_64_7.png
 1291:
   description: Titanium Sabot S
-  iconFile: '14_08'
+  iconFile: res:/ui/texture/icons/14_64_8.png
 1292:
   description: Carbonized Lead M
-  iconFile: '14_09'
+  iconFile: res:/ui/texture/icons/14_64_9.png
 1293:
   description: Depleted Uranium M
-  iconFile: '14_10'
+  iconFile: res:/ui/texture/icons/14_64_10.png
 1294:
   description: EMP M
-  iconFile: '14_11'
+  iconFile: res:/ui/texture/icons/14_64_11.png
 1295:
   description: Fusion M
-  iconFile: '14_12'
+  iconFile: res:/ui/texture/icons/14_64_12.png
 1296:
   description: Nuclear M
-  iconFile: '14_13'
+  iconFile: res:/ui/texture/icons/14_64_13.png
 1297:
   description: Phased plasma M
-  iconFile: '14_14'
+  iconFile: res:/ui/texture/icons/14_64_14.png
 1298:
   description: Photon M
-  iconFile: '14_15'
+  iconFile: res:/ui/texture/icons/14_64_15.png
 1299:
   description: Titanium Sabot M
-  iconFile: '14_16'
+  iconFile: res:/ui/texture/icons/14_64_16.png
 1300:
   description: Carbonized Lead L
-  iconFile: '15_01'
+  iconFile: res:/ui/texture/icons/15_64_1.png
 1301:
   description: Depleted Uranium L
-  iconFile: '15_02'
+  iconFile: res:/ui/texture/icons/15_64_2.png
 1302:
   description: EMP L
-  iconFile: '15_03'
+  iconFile: res:/ui/texture/icons/15_64_3.png
 1303:
   description: Fusion L
-  iconFile: '15_04'
+  iconFile: res:/ui/texture/icons/15_64_4.png
 1304:
   description: Nuclear L
-  iconFile: '15_05'
+  iconFile: res:/ui/texture/icons/15_64_5.png
 1305:
   description: Phased Plasma L
-  iconFile: '15_06'
+  iconFile: res:/ui/texture/icons/15_64_6.png
 1306:
   description: Photon L
-  iconFile: '15_07'
+  iconFile: res:/ui/texture/icons/15_64_7.png
 1307:
   description: Titanium Sabot L
-  iconFile: '15_08'
+  iconFile: res:/ui/texture/icons/15_64_8.png
 1310:
   description: Iridium Charge S
-  iconFile: '15_10'
+  iconFile: res:/ui/texture/icons/15_64_10.png
 1311:
   description: Iron Charge S
-  iconFile: '15_11'
+  iconFile: res:/ui/texture/icons/15_64_11.png
 1312:
   description: Lead Charge S
-  iconFile: '15_12'
+  iconFile: res:/ui/texture/icons/15_64_12.png
 1313:
   description: Plutonium Charge S
-  iconFile: '15_13'
+  iconFile: res:/ui/texture/icons/15_64_13.png
 1314:
   description: Thorium Charge S
-  iconFile: '15_14'
+  iconFile: res:/ui/texture/icons/15_64_14.png
 1315:
   description: Tungsten Charge S
-  iconFile: '15_15'
+  iconFile: res:/ui/texture/icons/15_64_15.png
 1316:
   description: Uranium Charge S
-  iconFile: '15_16'
+  iconFile: res:/ui/texture/icons/15_64_16.png
 1317:
   description: Antimatter Charge M
-  iconFile: '16_01'
+  iconFile: res:/ui/texture/icons/16_64_1.png
 1318:
   description: Iridium Charge M
-  iconFile: '16_02'
+  iconFile: res:/ui/texture/icons/16_64_2.png
 1319:
   description: Iron Charge M
-  iconFile: '16_03'
+  iconFile: res:/ui/texture/icons/16_64_3.png
 1320:
   description: Lead Charge M
-  iconFile: '16_04'
+  iconFile: res:/ui/texture/icons/16_64_4.png
 1321:
   description: Plutonium Charge M
-  iconFile: '16_05'
+  iconFile: res:/ui/texture/icons/16_64_5.png
 1322:
   description: Thorium Charge M
-  iconFile: '16_06'
+  iconFile: res:/ui/texture/icons/16_64_6.png
 1323:
   description: Tungsten Charge M
-  iconFile: '16_07'
+  iconFile: res:/ui/texture/icons/16_64_7.png
 1324:
   description: Uranium Charge M
-  iconFile: '16_08'
+  iconFile: res:/ui/texture/icons/16_64_8.png
 1325:
   description: Antimatter Charge L
-  iconFile: '16_09'
+  iconFile: res:/ui/texture/icons/16_64_9.png
 1326:
   description: Iridium Charge L
-  iconFile: '16_10'
+  iconFile: res:/ui/texture/icons/16_64_10.png
 1327:
   description: Iron Charge L
-  iconFile: '16_11'
+  iconFile: res:/ui/texture/icons/16_64_11.png
 1328:
   description: Lead Charge L
-  iconFile: '16_12'
+  iconFile: res:/ui/texture/icons/16_64_12.png
 1329:
   description: Plutonium Charge L
-  iconFile: '16_13'
+  iconFile: res:/ui/texture/icons/16_64_13.png
 1330:
   description: Thorium Charge L
-  iconFile: '16_14'
+  iconFile: res:/ui/texture/icons/16_64_14.png
 1331:
   description: Tungsten Charge L
-  iconFile: '16_15'
+  iconFile: res:/ui/texture/icons/16_64_15.png
 1332:
   description: Uranium Charge L
-  iconFile: '16_16'
+  iconFile: res:/ui/texture/icons/16_64_16.png
 1333:
   description: Small FOF kinetic - Unknown
-  iconFile: '20_01'
+  iconFile: res:/ui/texture/icons/20_64_1.png
 1334:
   description: small thermal FOF - Unknown
-  iconFile: '20_05'
+  iconFile: res:/ui/texture/icons/20_64_5.png
 1335:
   description: small explosive FOF - Unknown
-  iconFile: '20_09'
+  iconFile: res:/ui/texture/icons/20_64_9.png
 1336:
   description: small EM FOF - Unknown
-  iconFile: '20_13'
+  iconFile: res:/ui/texture/icons/20_64_13.png
 1337:
   description: medium thermal FOF - Unknown
-  iconFile: '20_07'
+  iconFile: res:/ui/texture/icons/20_64_7.png
 1338:
   description: medium explosive FOF - Unknown
-  iconFile: '20_11'
+  iconFile: res:/ui/texture/icons/20_64_11.png
 1339:
   description: medium EM FOF - Unknown
-  iconFile: '20_15'
+  iconFile: res:/ui/texture/icons/20_64_15.png
 1340:
   description: medium kinetic FOF - Unknown
-  iconFile: '20_03'
+  iconFile: res:/ui/texture/icons/20_64_3.png
 1341:
   description: large kinetic FOF - Unknown
-  iconFile: '21_01'
+  iconFile: res:/ui/texture/icons/21_64_1.png
 1342:
   description: large thermal FOF - Unknown
-  iconFile: '21_05'
+  iconFile: res:/ui/texture/icons/21_64_5.png
 1343:
   description: large explosive FOF - Unknown
-  iconFile: '21_09'
+  iconFile: res:/ui/texture/icons/21_64_9.png
 1344:
   description: large EM FOF - Unknown
-  iconFile: '21_13'
+  iconFile: res:/ui/texture/icons/21_64_13.png
 1345:
   description: Assault missile launcher - Unknown
-  iconFile: '12_16'
+  iconFile: res:/ui/texture/icons/12_64_16.png
 1346:
   description: Kinetic Torpedo - Unknown
-  iconFile: '21_02'
+  iconFile: res:/ui/texture/icons/21_64_2.png
 1347:
   description: Thermal Torpedo - Unknown
-  iconFile: '21_06'
+  iconFile: res:/ui/texture/icons/21_64_6.png
 1348:
   description: Explosive Torpedo - Unknown
-  iconFile: '21_10'
+  iconFile: res:/ui/texture/icons/21_64_10.png
 1349:
   description: EM Torpedo - Unknown
-  iconFile: '21_14'
+  iconFile: res:/ui/texture/icons/21_64_14.png
 1350:
   description: kinetic rocket - Unknown
-  iconFile: '21_03'
+  iconFile: res:/ui/texture/icons/21_64_3.png
 1351:
   description: Thermal rocket - Unknown
-  iconFile: '21_07'
+  iconFile: res:/ui/texture/icons/21_64_7.png
 1352:
   description: em rocket - Unknown
-  iconFile: '21_15'
+  iconFile: res:/ui/texture/icons/21_64_15.png
 1353:
   description: explosive rocket - Unknown
-  iconFile: '21_11'
+  iconFile: res:/ui/texture/icons/21_64_11.png
 1356:
   description: Scordite ore - Unknown
-  iconFile: '23_15'
+  iconFile: res:/ui/texture/icons/23_64_15.png
 1357:
   description: Carbon - Unknown
-  iconFile: '24_03'
+  iconFile: res:/ui/texture/icons/24_64_3.png
 1358:
   description: Silicone - Unknown
-  iconFile: '24_04'
+  iconFile: res:/ui/texture/icons/24_64_4.png
 1359:
   description: Rocket fuel - Unknown
-  iconFile: '24_05'
+  iconFile: res:/ui/texture/icons/24_64_5.png
 1360:
   description: Coolant - Unknown
-  iconFile: '24_06'
+  iconFile: res:/ui/texture/icons/24_64_6.png
 1361:
   description: Guidance System - Unknown
-  iconFile: '24_07'
+  iconFile: res:/ui/texture/icons/24_64_7.png
 1362:
   description: Consumer Electronics - Unknown
-  iconFile: '24_08'
+  iconFile: res:/ui/texture/icons/24_64_8.png
 1363:
   description: Super Conductors - Unknown
-  iconFile: '24_09'
+  iconFile: res:/ui/texture/icons/24_64_9.png
 1364:
   description: Transmitter - Unknown
-  iconFile: '24_10'
+  iconFile: res:/ui/texture/icons/24_64_10.png
 1365:
   description: Miniature Electronics - Unknown
-  iconFile: '24_11'
+  iconFile: res:/ui/texture/icons/24_64_11.png
 1366:
   description: Small arms - Unknown
-  iconFile: '24_12'
+  iconFile: res:/ui/texture/icons/24_64_12.png
 1367:
   description: Planetary Vehicles - Unknown
-  iconFile: '24_13'
+  iconFile: res:/ui/texture/icons/24_64_13.png
 1368:
   description: Robotics - Unknown
-  iconFile: '24_14'
+  iconFile: res:/ui/texture/icons/24_64_14.png
 1369:
   description: Spirits - Unknown
-  iconFile: '24_15'
+  iconFile: res:/ui/texture/icons/24_64_15.png
 1370:
   description: Tobacco - Unknown
-  iconFile: '24_16'
+  iconFile: res:/ui/texture/icons/24_64_16.png
 1377:
   description: Gneiss - Green Ruby 2 ( Gneiss )
-  iconFile: '25_01'
+  iconFile: res:/ui/texture/icons/25_64_1.png
 1378:
   description: Charisma - Unknown
-  iconFile: '22_01'
+  iconFile: res:/ui/texture/icons/22_32_1.png
 1379:
   description: Willpower - Unknown
-  iconFile: '22_02'
+  iconFile: res:/ui/texture/icons/22_32_2.png
 1380:
   description: Intelligence - Unknown
-  iconFile: '22_03'
+  iconFile: res:/ui/texture/icons/22_32_3.png
 1381:
   description: Memory - Unknown
-  iconFile: '22_04'
+  iconFile: res:/ui/texture/icons/22_32_4.png
 1382:
   description: Perception - Unknown
-  iconFile: '22_05'
+  iconFile: res:/ui/texture/icons/22_32_5.png
 1383:
   description: Armor Attribute - Unknown
-  iconFile: '22_06'
+  iconFile: res:/ui/texture/icons/22_32_6.png
 1384:
   description: Shield attribute - Unknown
-  iconFile: '22_07'
+  iconFile: res:/ui/texture/icons/22_32_7.png
 1385:
   description: Kinetic Damage - Offense
-  iconFile: '22_09'
+  iconFile: res:/ui/texture/icons/22_32_9.png
 1386:
   description: Thermal Damage - Offense
-  iconFile: '22_10'
+  iconFile: res:/ui/texture/icons/22_32_10.png
 1387:
   description: Explosive Damage - Offense
-  iconFile: '22_11'
+  iconFile: res:/ui/texture/icons/22_32_11.png
 1388:
   description: EM Damage - Offense
-  iconFile: '22_12'
+  iconFile: res:/ui/texture/icons/22_32_12.png
 1389:
   description: speed - Unknown
-  iconFile: '22_13'
+  iconFile: res:/ui/texture/icons/22_32_13.png
 1390:
   description: radius - Unknown
-  iconFile: '22_14'
+  iconFile: res:/ui/texture/icons/22_32_14.png
 1391:
   description: range - Unknown
-  iconFile: '22_15'
+  iconFile: res:/ui/texture/icons/22_32_15.png
 1392:
   description: duration - Unknown
-  iconFile: '22_16'
+  iconFile: res:/ui/texture/icons/22_32_16.png
 1393:
   description: Kinetic Damage - Resistance
-  iconFile: '22_17'
+  iconFile: res:/ui/texture/icons/22_32_17.png
 1394:
   description: Thermal Damage - Resistance
-  iconFile: '22_18'
+  iconFile: res:/ui/texture/icons/22_32_18.png
 1395:
   description: Explosive Damage - Resistance
-  iconFile: '22_19'
+  iconFile: res:/ui/texture/icons/22_32_19.png
 1396:
   description: EM Damage - Resistance
-  iconFile: '22_20'
+  iconFile: res:/ui/texture/icons/22_32_20.png
 1397:
   description: ROF - Unknown
-  iconFile: '22_21'
+  iconFile: res:/ui/texture/icons/22_32_21.png
 1398:
   description: tracking speed - Unknown
-  iconFile: '22_22'
+  iconFile: res:/ui/texture/icons/22_32_22.png
 1399:
   description: accuracy - Unknown
-  iconFile: '22_23'
+  iconFile: res:/ui/texture/icons/22_32_23.png
 1400:
   description: power attribute - Unknown
-  iconFile: '02_07'
+  iconFile: res:/ui/texture/icons/2_64_7.png
 1401:
   description: agility - Unknown
-  iconFile: '22_24'
+  iconFile: res:/ui/texture/icons/22_32_24.png
 1405:
   description: cpu - Unknown
-  iconFile: '12_07'
+  iconFile: res:/ui/texture/icons/12_64_7.png
 1406:
   description: frozen longlimb roes - Unknown
-  iconFile: '25_02'
+  iconFile: res:/ui/texture/icons/25_64_2.png
 1432:
   description: Gunnery - Unknown
-  iconFile: '26_01'
+  iconFile: res:/ui/texture/icons/26_64_1.png
 1433:
   description: Operations - Unknown
-  iconFile: '26_02'
+  iconFile: res:/ui/texture/icons/26_64_2.png
 1434:
   description: Science - Unknown
-  iconFile: '26_03'
+  iconFile: res:/ui/texture/icons/26_64_3.png
 1435:
   description: Business - Unknown
-  iconFile: '26_04'
+  iconFile: res:/ui/texture/icons/26_64_4.png
 1436:
   description: Engineering - Unknown
-  iconFile: '27_01'
+  iconFile: res:/ui/texture/icons/27_64_1.png
 1437:
   description: Industry - Unknown
-  iconFile: '27_02'
+  iconFile: res:/ui/texture/icons/27_64_2.png
 1438:
   description: Bloodlines - Unknown
-  iconFile: '27_03'
+  iconFile: res:/ui/texture/icons/27_64_3.png
 1439:
   description: Caldari race logo - Unknown
-  iconFile: '19_01'
+  iconFile: res:/ui/texture/icons/19_128_1.png
 1440:
   description: Minmatar race logo - Unknown
-  iconFile: '19_02'
+  iconFile: res:/ui/texture/icons/19_128_2.png
 1441:
   description: Gallente race logo - Unknown
-  iconFile: '19_03'
+  iconFile: res:/ui/texture/icons/19_128_3.png
 1442:
   description: Amarr race logo - Unknown
-  iconFile: '19_04'
+  iconFile: res:/ui/texture/icons/19_128_4.png
 1443:
   description: ship icon - Unknown
-  iconFile: 09_05
+  iconFile: res:/ui/texture/icons/9_64_5.png
 1444:
   description: command - Unknown
-  iconFile: '25_04'
+  iconFile: res:/ui/texture/icons/25_64_4.png
 1445:
   description: Jumpdrive - Unknown
-  iconFile: '03_07'
+  iconFile: res:/ui/texture/icons/3_64_7.png
 1446:
   description: gear - Unknown
-  iconFile: 09_16
+  iconFile: res:/ui/texture/icons/9_64_16.png
 1447:
   description: Imperial Academy - Unknown
-  iconFile: c_42_3
+  iconFile: res:/ui/texture/corps/42_128_3.png
 1448:
   description: Hedion University - Unknown
-  iconFile: c_43_1
+  iconFile: res:/ui/texture/corps/43_128_1.png
 1449:
   description: Royal Amarr Institute - Unknown
-  iconFile: c_39_4
+  iconFile: res:/ui/texture/corps/39_128_4.png
 1450:
   description: Republic Military School - Unknown
-  iconFile: c_43_2
+  iconFile: res:/ui/texture/corps/43_128_2.png
 1451:
   description: Republic University - Unknown
-  iconFile: c_43_3
+  iconFile: res:/ui/texture/corps/43_128_3.png
 1452:
   description: State War Academy - Unknown
-  iconFile: c_42_1
+  iconFile: res:/ui/texture/corps/42_128_1.png
 1453:
   description: Science & Trade Institute - Unknown
-  iconFile: c_10_2
+  iconFile: res:/ui/texture/corps/10_128_2.png
 1454:
   description: Federal Navy Academy - Unknown
-  iconFile: c_42_4
+  iconFile: res:/ui/texture/corps/42_128_4.png
 1455:
   description: School of Applied Knowledge - Unknown
-  iconFile: c_10_1
+  iconFile: res:/ui/texture/corps/10_128_1.png
 1456:
   description: University of Caille - Unknown
-  iconFile: c_39_1
+  iconFile: res:/ui/texture/corps/39_128_1.png
 1457:
   description: Center for Advanced Studies - Unknown
-  iconFile: c_41_4
+  iconFile: res:/ui/texture/corps/41_128_4.png
 1458:
   description: Pator Tech School - Unknown
-  iconFile: c_43_4
+  iconFile: res:/ui/texture/corps/43_128_4.png
 1459:
   description: physics - Unknown
-  iconFile: '25_05'
+  iconFile: res:/ui/texture/icons/25_64_5.png
 1460:
   description: applied science - Unknown
-  iconFile: '25_06'
+  iconFile: res:/ui/texture/icons/25_64_6.png
 1461:
   description: Biology - Unknown
-  iconFile: '25_07'
+  iconFile: res:/ui/texture/icons/25_64_7.png
 1462:
   description: Marketing - Unknown
-  iconFile: '25_08'
+  iconFile: res:/ui/texture/icons/25_64_8.png
 1463:
   description: Management - Unknown
-  iconFile: '25_09'
+  iconFile: res:/ui/texture/icons/25_64_9.png
 1464:
   description: Public Relations - Unknown
-  iconFile: '25_10'
+  iconFile: res:/ui/texture/icons/25_64_10.png
 1465:
-  iconFile: c_7_4
+  iconFile: res:/ui/texture/corps/7_128_4.png
 1466:
-  iconFile: c_41_3
+  iconFile: res:/ui/texture/corps/41_128_3.png
 1467:
-  iconFile: c_22_2
+  iconFile: res:/ui/texture/corps/22_128_2.png
 1468:
-  iconFile: c_22_1
+  iconFile: res:/ui/texture/corps/22_128_1.png
 1469:
-  iconFile: c_23_1
+  iconFile: res:/ui/texture/corps/23_128_1.png
 1470:
-  iconFile: c_22_4
+  iconFile: res:/ui/texture/corps/22_128_4.png
 1471:
-  iconFile: c_21_2
+  iconFile: res:/ui/texture/corps/21_128_2.png
 1472:
-  iconFile: c_23_2
+  iconFile: res:/ui/texture/corps/23_128_2.png
 1473:
-  iconFile: c_21_3
+  iconFile: res:/ui/texture/corps/21_128_3.png
 1474:
-  iconFile: c_23_3
+  iconFile: res:/ui/texture/corps/23_128_3.png
 1475:
-  iconFile: c_21_4
+  iconFile: res:/ui/texture/corps/21_128_4.png
 1476:
-  iconFile: c_22_3
+  iconFile: res:/ui/texture/corps/22_128_3.png
 1477:
-  iconFile: c_23_4
+  iconFile: res:/ui/texture/corps/23_128_4.png
 1478:
-  iconFile: c_21_1
+  iconFile: res:/ui/texture/corps/21_128_1.png
 1479:
-  iconFile: c_14_3
+  iconFile: res:/ui/texture/corps/14_128_3.png
 1480:
-  iconFile: c_15_2
+  iconFile: res:/ui/texture/corps/15_128_2.png
 1481:
-  iconFile: c_14_2
+  iconFile: res:/ui/texture/corps/14_128_2.png
 1482:
-  iconFile: c_19_4
+  iconFile: res:/ui/texture/corps/19_128_4.png
 1483:
-  iconFile: c_16_1
+  iconFile: res:/ui/texture/corps/16_128_1.png
 1484:
-  iconFile: c_18_3
+  iconFile: res:/ui/texture/corps/18_128_3.png
 1485:
-  iconFile: c_17_2
+  iconFile: res:/ui/texture/corps/17_128_2.png
 1486:
-  iconFile: c_19_1
+  iconFile: res:/ui/texture/corps/19_128_1.png
 1487:
-  iconFile: c_17_4
+  iconFile: res:/ui/texture/corps/17_128_4.png
 1488:
-  iconFile: c_16_2
+  iconFile: res:/ui/texture/corps/16_128_2.png
 1489:
-  iconFile: c_13_2
+  iconFile: res:/ui/texture/corps/13_128_2.png
 1490:
-  iconFile: c_15_4
+  iconFile: res:/ui/texture/corps/15_128_4.png
 1491:
-  iconFile: c_17_3
+  iconFile: res:/ui/texture/corps/17_128_3.png
 1492:
-  iconFile: c_13_3
+  iconFile: res:/ui/texture/corps/13_128_3.png
 1494:
-  iconFile: c_18_4
+  iconFile: res:/ui/texture/corps/18_128_4.png
 1495:
-  iconFile: c_14_4
+  iconFile: res:/ui/texture/corps/14_128_4.png
 1496:
-  iconFile: c_17_1
+  iconFile: res:/ui/texture/corps/17_128_1.png
 1497:
-  iconFile: c_18_2
+  iconFile: res:/ui/texture/corps/18_128_2.png
 1498:
-  iconFile: c_16_3
+  iconFile: res:/ui/texture/corps/16_128_3.png
 1499:
-  iconFile: c_15_1
+  iconFile: res:/ui/texture/corps/15_128_1.png
 1500:
-  iconFile: c_16_4
+  iconFile: res:/ui/texture/corps/16_128_4.png
 1501:
-  iconFile: c_18_1
+  iconFile: res:/ui/texture/corps/18_128_1.png
 1502:
-  iconFile: c_12_1
+  iconFile: res:/ui/texture/corps/12_128_1.png
 1503:
-  iconFile: c_13_1
+  iconFile: res:/ui/texture/corps/13_128_1.png
 1504:
-  iconFile: c_12_3
+  iconFile: res:/ui/texture/corps/12_128_3.png
 1505:
-  iconFile: c_12_2
+  iconFile: res:/ui/texture/corps/12_128_2.png
 1506:
-  iconFile: c_12_4
+  iconFile: res:/ui/texture/corps/12_128_4.png
 1507:
-  iconFile: c_15_3
+  iconFile: res:/ui/texture/corps/15_128_3.png
 1508:
-  iconFile: c_13_4
+  iconFile: res:/ui/texture/corps/13_128_4.png
 1509:
-  iconFile: c_19_2
+  iconFile: res:/ui/texture/corps/19_128_2.png
 1510:
-  iconFile: c_33_1
+  iconFile: res:/ui/texture/corps/33_128_1.png
 1511:
-  iconFile: c_33_3
+  iconFile: res:/ui/texture/corps/33_128_3.png
 1512:
-  iconFile: c_26_1
+  iconFile: res:/ui/texture/corps/26_128_1.png
 1513:
-  iconFile: c_31_3
+  iconFile: res:/ui/texture/corps/31_128_3.png
 1514:
-  iconFile: c_28_2
+  iconFile: res:/ui/texture/corps/28_128_2.png
 1515:
-  iconFile: c_27_3
+  iconFile: res:/ui/texture/corps/27_128_3.png
 1516:
-  iconFile: c_34_3
+  iconFile: res:/ui/texture/corps/34_128_3.png
 1517:
-  iconFile: c_32_3
+  iconFile: res:/ui/texture/corps/32_128_3.png
 1518:
-  iconFile: c_29_4
+  iconFile: res:/ui/texture/corps/29_128_4.png
 1519:
-  iconFile: c_25_4
+  iconFile: res:/ui/texture/corps/25_128_4.png
 1520:
-  iconFile: c_25_2
+  iconFile: res:/ui/texture/corps/25_128_2.png
 1521:
-  iconFile: c_38_2
+  iconFile: res:/ui/texture/corps/38_128_2.png
 1522:
-  iconFile: c_25_3
+  iconFile: res:/ui/texture/corps/25_128_3.png
 1523:
-  iconFile: c_31_2
+  iconFile: res:/ui/texture/corps/31_128_2.png
 1524:
-  iconFile: c_32_1
+  iconFile: res:/ui/texture/corps/32_128_1.png
 1525:
-  iconFile: c_32_4
+  iconFile: res:/ui/texture/corps/32_128_4.png
 1526:
-  iconFile: c_33_2
+  iconFile: res:/ui/texture/corps/33_128_2.png
 1527:
-  iconFile: c_30_1
+  iconFile: res:/ui/texture/corps/30_128_1.png
 1528:
-  iconFile: c_31_4
+  iconFile: res:/ui/texture/corps/31_128_4.png
 1529:
-  iconFile: c_32_2
+  iconFile: res:/ui/texture/corps/32_128_2.png
 1530:
-  iconFile: c_25_1
+  iconFile: res:/ui/texture/corps/25_128_1.png
 1532:
-  iconFile: c_30_2
+  iconFile: res:/ui/texture/corps/30_128_2.png
 1533:
-  iconFile: c_30_4
+  iconFile: res:/ui/texture/corps/30_128_4.png
 1534:
-  iconFile: c_29_1
+  iconFile: res:/ui/texture/corps/29_128_1.png
 1535:
-  iconFile: c_29_2
+  iconFile: res:/ui/texture/corps/29_128_2.png
 1536:
-  iconFile: c_29_3
+  iconFile: res:/ui/texture/corps/29_128_3.png
 1537:
-  iconFile: c_10_3
+  iconFile: res:/ui/texture/corps/10_128_3.png
 1538:
-  iconFile: c_31_1
+  iconFile: res:/ui/texture/corps/31_128_1.png
 1539:
-  iconFile: c_35_2
+  iconFile: res:/ui/texture/corps/35_128_2.png
 1540:
-  iconFile: c_24_3
+  iconFile: res:/ui/texture/corps/24_128_3.png
 1541:
-  iconFile: c_26_3
+  iconFile: res:/ui/texture/corps/26_128_3.png
 1542:
-  iconFile: c_35_3
+  iconFile: res:/ui/texture/corps/35_128_3.png
 1543:
-  iconFile: c_28_3
+  iconFile: res:/ui/texture/corps/28_128_3.png
 1544:
-  iconFile: c_34_2
+  iconFile: res:/ui/texture/corps/34_128_2.png
 1545:
-  iconFile: c_27_4
+  iconFile: res:/ui/texture/corps/27_128_4.png
 1546:
-  iconFile: c_14_1
+  iconFile: res:/ui/texture/corps/14_128_1.png
 1547:
-  iconFile: c_36_2
+  iconFile: res:/ui/texture/corps/36_128_2.png
 1548:
-  iconFile: c_3_4
+  iconFile: res:/ui/texture/corps/3_128_4.png
 1549:
-  iconFile: c_24_1
+  iconFile: res:/ui/texture/corps/24_128_1.png
 1550:
-  iconFile: c_19_3
+  iconFile: res:/ui/texture/corps/19_128_3.png
 1551:
-  iconFile: c_38_1
+  iconFile: res:/ui/texture/corps/38_128_1.png
 1552:
-  iconFile: c_24_2
+  iconFile: res:/ui/texture/corps/24_128_2.png
 1553:
-  iconFile: c_4_1
+  iconFile: res:/ui/texture/corps/4_128_1.png
 1554:
-  iconFile: c_24_4
+  iconFile: res:/ui/texture/corps/24_128_4.png
 1555:
-  iconFile: c_35_4
+  iconFile: res:/ui/texture/corps/35_128_4.png
 1556:
-  iconFile: c_40_2
+  iconFile: res:/ui/texture/corps/40_128_2.png
 1557:
-  iconFile: c_28_4
+  iconFile: res:/ui/texture/corps/28_128_4.png
 1558:
-  iconFile: c_40_4
+  iconFile: res:/ui/texture/corps/40_128_4.png
 1559:
-  iconFile: c_26_4
+  iconFile: res:/ui/texture/corps/26_128_4.png
 1560:
-  iconFile: c_26_2
+  iconFile: res:/ui/texture/corps/26_128_2.png
 1561:
-  iconFile: c_27_1
+  iconFile: res:/ui/texture/corps/27_128_1.png
 1562:
-  iconFile: c_28_1
+  iconFile: res:/ui/texture/corps/28_128_1.png
 1563:
-  iconFile: c_27_2
+  iconFile: res:/ui/texture/corps/27_128_2.png
 1564:
-  iconFile: c_3_2
+  iconFile: res:/ui/texture/corps/3_128_2.png
 1565:
-  iconFile: c_40_3
+  iconFile: res:/ui/texture/corps/40_128_3.png
 1566:
-  iconFile: c_39_3
+  iconFile: res:/ui/texture/corps/39_128_3.png
 1567:
-  iconFile: c_11_4
+  iconFile: res:/ui/texture/corps/11_128_4.png
 1568:
-  iconFile: c_11_2
+  iconFile: res:/ui/texture/corps/11_128_2.png
 1569:
-  iconFile: c_11_3
+  iconFile: res:/ui/texture/corps/11_128_3.png
 1570:
-  iconFile: c_35_1
+  iconFile: res:/ui/texture/corps/35_128_1.png
 1571:
-  iconFile: c_41_1
+  iconFile: res:/ui/texture/corps/41_128_1.png
 1572:
-  iconFile: c_11_1
+  iconFile: res:/ui/texture/corps/11_128_1.png
 1573:
-  iconFile: c_33_4
+  iconFile: res:/ui/texture/corps/33_128_4.png
 1574:
-  iconFile: c_40_1
+  iconFile: res:/ui/texture/corps/40_128_1.png
 1575:
-  iconFile: c_36_3
+  iconFile: res:/ui/texture/corps/36_128_3.png
 1576:
-  iconFile: c_36_1
+  iconFile: res:/ui/texture/corps/36_128_1.png
 1577:
-  iconFile: c_34_4
+  iconFile: res:/ui/texture/corps/34_128_4.png
 1578:
-  iconFile: c_34_1
+  iconFile: res:/ui/texture/corps/34_128_1.png
 1579:
-  iconFile: c_36_4
+  iconFile: res:/ui/texture/corps/36_128_4.png
 1580:
-  iconFile: c_41_2
+  iconFile: res:/ui/texture/corps/41_128_2.png
 1581:
-  iconFile: c_1_3
+  iconFile: res:/ui/texture/corps/1_128_3.png
 1582:
-  iconFile: c_8_1
+  iconFile: res:/ui/texture/corps/8_128_1.png
 1583:
-  iconFile: c_1_4
+  iconFile: res:/ui/texture/corps/1_128_4.png
 1584:
-  iconFile: c_4_4
+  iconFile: res:/ui/texture/corps/4_128_4.png
 1585:
-  iconFile: c_38_3
+  iconFile: res:/ui/texture/corps/38_128_3.png
 1586:
-  iconFile: c_39_2
+  iconFile: res:/ui/texture/corps/39_128_2.png
 1587:
-  iconFile: c_3_3
+  iconFile: res:/ui/texture/corps/3_128_3.png
 1588:
-  iconFile: c_3_1
+  iconFile: res:/ui/texture/corps/3_128_1.png
 1589:
-  iconFile: c_6_2
+  iconFile: res:/ui/texture/corps/6_128_2.png
 1590:
-  iconFile: c_10_4
+  iconFile: res:/ui/texture/corps/10_128_4.png
 1591:
-  iconFile: c_9_4
+  iconFile: res:/ui/texture/corps/9_128_4.png
 1592:
-  iconFile: c_7_2
+  iconFile: res:/ui/texture/corps/7_128_2.png
 1593:
-  iconFile: c_1_1
+  iconFile: res:/ui/texture/corps/1_128_1.png
 1594:
-  iconFile: c_5_4
+  iconFile: res:/ui/texture/corps/5_128_4.png
 1595:
-  iconFile: c_2_4
+  iconFile: res:/ui/texture/corps/2_128_4.png
 1596:
-  iconFile: c_5_3
+  iconFile: res:/ui/texture/corps/5_128_3.png
 1597:
-  iconFile: c_6_1
+  iconFile: res:/ui/texture/corps/6_128_1.png
 1598:
-  iconFile: c_2_1
+  iconFile: res:/ui/texture/corps/2_128_1.png
 1599:
-  iconFile: c_2_3
+  iconFile: res:/ui/texture/corps/2_128_3.png
 1600:
-  iconFile: c_5_2
+  iconFile: res:/ui/texture/corps/5_128_2.png
 1601:
-  iconFile: c_9_1
+  iconFile: res:/ui/texture/corps/9_128_1.png
 1602:
-  iconFile: c_7_3
+  iconFile: res:/ui/texture/corps/7_128_3.png
 1604:
-  iconFile: c_8_4
+  iconFile: res:/ui/texture/corps/8_128_4.png
 1605:
-  iconFile: c_9_2
+  iconFile: res:/ui/texture/corps/9_128_2.png
 1606:
-  iconFile: c_9_3
+  iconFile: res:/ui/texture/corps/9_128_3.png
 1607:
-  iconFile: c_4_2
+  iconFile: res:/ui/texture/corps/4_128_2.png
 1608:
-  iconFile: c_5_1
+  iconFile: res:/ui/texture/corps/5_128_1.png
 1609:
-  iconFile: c_8_2
+  iconFile: res:/ui/texture/corps/8_128_2.png
 1610:
-  iconFile: c_7_1
+  iconFile: res:/ui/texture/corps/7_128_1.png
 1611:
-  iconFile: c_8_3
+  iconFile: res:/ui/texture/corps/8_128_3.png
 1612:
-  iconFile: c_4_3
+  iconFile: res:/ui/texture/corps/4_128_3.png
 1613:
-  iconFile: c_37_3
+  iconFile: res:/ui/texture/corps/37_128_3.png
 1614:
-  iconFile: c_1_2
+  iconFile: res:/ui/texture/corps/1_128_2.png
 1615:
-  iconFile: c_2_2
+  iconFile: res:/ui/texture/corps/2_128_2.png
 1616:
-  iconFile: c_6_3
+  iconFile: res:/ui/texture/corps/6_128_3.png
 1617:
-  iconFile: c_37_2
+  iconFile: res:/ui/texture/corps/37_128_2.png
 1618:
-  iconFile: c_37_1
+  iconFile: res:/ui/texture/corps/37_128_1.png
 1619:
-  iconFile: c_38_4
+  iconFile: res:/ui/texture/corps/38_128_4.png
 1620:
-  iconFile: c_6_4
+  iconFile: res:/ui/texture/corps/6_128_4.png
 1621:
-  iconFile: c_37_4
+  iconFile: res:/ui/texture/corps/37_128_4.png
 1624:
-  iconFile: c_20_3
+  iconFile: res:/ui/texture/corps/20_128_3.png
 1625:
-  iconFile: c_20_1
+  iconFile: res:/ui/texture/corps/20_128_1.png
 1626:
-  iconFile: c_20_4
+  iconFile: res:/ui/texture/corps/20_128_4.png
 1627:
-  iconFile: c_20_2
+  iconFile: res:/ui/texture/corps/20_128_2.png
 1628:
   description: Amarr Bloodline
-  iconFile: '28_01'
+  iconFile: res:/ui/texture/icons/28_128_1.png
 1629:
   description: Gallente Bloodline
-  iconFile: '28_02'
+  iconFile: res:/ui/texture/icons/28_128_2.png
 1630:
   description: Intaki Bloodline - Unknown
-  iconFile: '28_03'
+  iconFile: res:/ui/texture/icons/28_128_3.png
 1631:
   description: Civire Bloodline
-  iconFile: '28_04'
+  iconFile: res:/ui/texture/icons/28_128_4.png
 1632:
   description: Ni-Kunni Bloodline
-  iconFile: '29_01'
+  iconFile: res:/ui/texture/icons/29_128_1.png
 1633:
   description: Deiteis Bloodline
-  iconFile: '29_02'
+  iconFile: res:/ui/texture/icons/29_128_2.png
 1634:
   description: Sebiestor Bloodline
-  iconFile: '29_03'
+  iconFile: res:/ui/texture/icons/29_128_3.png
 1635:
   description: Brutor Bloodline
-  iconFile: '29_04'
+  iconFile: res:/ui/texture/icons/29_128_4.png
 1639:
   description: Tracking Disrupter - Unknown
-  iconFile: '05_07'
+  iconFile: res:/ui/texture/icons/5_64_7.png
 1640:
   description: Tracking enhancer - Unknown
-  iconFile: '05_14'
+  iconFile: res:/ui/texture/icons/5_64_14.png
 1641:
   description: Liberal Holders
-  iconFile: '30_01'
+  iconFile: res:/ui/texture/icons/30_64_1.png
 1642:
   description: Wealthy Commoners - Unknown
-  iconFile: '30_02'
+  iconFile: res:/ui/texture/icons/30_64_2.png
 1643:
   description: Religious Reclaimers
-  iconFile: '30_03'
+  iconFile: res:/ui/texture/icons/30_64_3.png
 1644:
   description: Free Merchants
-  iconFile: '30_04'
+  iconFile: res:/ui/texture/icons/30_64_4.png
 1645:
   description: Border Runners
-  iconFile: '31_03'
-1646:
-  description: Navy Veterans
-  iconFile: ' res:/UI/Icon/Mapped/icon30_06.blue '
+  iconFile: res:/ui/texture/icons/31_64_3.png
 1647:
   description: Entrepreneurs
-  iconFile: '30_05 '
+  iconFile: res:/ui/texture/icons/30_64_5.png
 1648:
   description: Mercs
-  iconFile: '30_08 '
+  iconFile: res:/ui/texture/icons/30_64_8.png
 1649:
   description: Dissenters
-  iconFile: '30_07'
+  iconFile: res:/ui/texture/icons/30_64_7.png
 1650:
   description: Merchandisers
-  iconFile: '30_13 '
+  iconFile: res:/ui/texture/icons/30_64_13.png
 1651:
   description: Scientists
-  iconFile: '30_12 '
+  iconFile: res:/ui/texture/icons/30_64_12.png
 1652:
   description: Tube Child
-  iconFile: '31_05 '
+  iconFile: res:/ui/texture/icons/31_64_5.png
 1653:
   description: Activists
-  iconFile: '31_07 '
+  iconFile: res:/ui/texture/icons/31_64_7.png
 1654:
   description: Miners
-  iconFile: '30_14'
+  iconFile: res:/ui/texture/icons/30_64_14.png
 1655:
   description: Immigrants
-  iconFile: '30_09'
+  iconFile: res:/ui/texture/icons/30_64_9.png
 1656:
   description: Artists
-  iconFile: '31_06'
+  iconFile: res:/ui/texture/icons/31_64_6.png
 1657:
   description: Diplomats
-  iconFile: '31_08'
+  iconFile: res:/ui/texture/icons/31_64_8.png
 1658:
   description: Reborn
-  iconFile: '30_11'
+  iconFile: res:/ui/texture/icons/30_64_11.png
 1659:
   description: Tinkerers
-  iconFile: '30_10'
+  iconFile: res:/ui/texture/icons/30_64_10.png
 1660:
   description: Traders
-  iconFile: '31_02'
+  iconFile: res:/ui/texture/icons/31_64_2.png
 1661:
   description: Rebels
-  iconFile: '31_04'
+  iconFile: res:/ui/texture/icons/31_64_4.png
 1662:
   description: Workers
-  iconFile: '31_01'
+  iconFile: res:/ui/texture/icons/31_64_1.png
 1663:
   description: Tribal Traditionalists
-  iconFile: '30_15'
+  iconFile: res:/ui/texture/icons/30_64_15.png
 1664:
   description: Slave Child
-  iconFile: '30_16'
+  iconFile: res:/ui/texture/icons/30_64_16.png
 1665:
   description: Unknown
-  iconFile: '05_06 '
+  iconFile: res:/ui/texture/icons/5_64_6.png
 1666:
   description: General ammunition icon (ChargeSize etc.) - Unknown
-  iconFile: '05_02'
+  iconFile: res:/ui/texture/icons/5_64_2.png
 1667:
   description: enclosed Turret - Unknown
-  iconFile: '04_05'
+  iconFile: res:/ui/texture/icons/4_64_5.png
 1668:
   description: Capacitor - Unknown
-  iconFile: '01_05'
+  iconFile: res:/ui/texture/icons/1_64_5.png
 1700:
   description: Bookmark
-  iconFile: 09_01
+  iconFile: res:/ui/texture/icons/9_64_1.png
 1720:
   description: Missile_Bladestorm
-  iconFile: '27_04'
+  iconFile: res:/ui/texture/icons/27_64_4.png
 1721:
   description: Missile_Firestorm
-  iconFile: '34_01'
+  iconFile: res:/ui/texture/icons/34_64_1.png
 1722:
   description: Missile_Thunderstorm
-  iconFile: '34_02'
+  iconFile: res:/ui/texture/icons/34_64_2.png
 1723:
   description: Missile_Hellstorm
-  iconFile: '27_09'
+  iconFile: res:/ui/texture/icons/27_64_9.png
 1724:
   description: Research Facility Icon - Unknown
-  iconFile: '33_02'
+  iconFile: res:/ui/texture/icons/33_128_2.png
 2028:
   description: Caldari sensors - Unknown
-  iconFile: '22_25'
+  iconFile: res:/ui/texture/icons/22_32_25.png
 2029:
   description: Gallente sensors - Unknown
-  iconFile: '22_26'
+  iconFile: res:/ui/texture/icons/22_32_26.png
 2030:
   description: Minmatar sensors - Unknown
-  iconFile: '22_27'
+  iconFile: res:/ui/texture/icons/22_32_27.png
 2031:
   description: Amarr sensors - Unknown
-  iconFile: '22_28'
+  iconFile: res:/ui/texture/icons/22_32_28.png
 2036:
   description: Insurance station service - Unknown
-  iconFile: '33_04'
+  iconFile: res:/ui/texture/icons/33_128_4.png
 2037:
   description: Jovian trinary data - Unknown
-  iconFile: '34_05'
+  iconFile: res:/ui/texture/icons/34_64_5.png
 2038:
   description: Data chip - Unknown
-  iconFile: '34_06'
+  iconFile: res:/ui/texture/icons/34_64_6.png
 2039:
   description: Security box - Unknown
-  iconFile: '34_07'
+  iconFile: res:/ui/texture/icons/34_64_7.png
 2040:
   description: Dogtags - Unknown
-  iconFile: '34_08'
+  iconFile: res:/ui/texture/icons/34_64_8.png
 2041:
   description: Religious artifact - Unknown
-  iconFile: '34_09'
+  iconFile: res:/ui/texture/icons/34_64_9.png
 2042:
   description: Battery cartridge - Unknown
-  iconFile: '34_10'
+  iconFile: res:/ui/texture/icons/34_64_10.png
 2052:
   description: Ship upgrade - Unknown
-  iconFile: '34_11'
+  iconFile: res:/ui/texture/icons/34_64_11.png
 2053:
   description: Perception implant (ocular filter) - Unknown
-  iconFile: '34_12'
+  iconFile: res:/ui/texture/icons/34_64_12.png
 2054:
   description: Willpower implant (neural boost) - Unknown
-  iconFile: '34_15'
+  iconFile: res:/ui/texture/icons/34_64_15.png
 2055:
   description: Charisma booster - Unknown
-  iconFile: '31_09'
+  iconFile: res:/ui/texture/icons/31_64_9.png
 2056:
   description: Willpower booster - Unknown
-  iconFile: '31_10'
+  iconFile: res:/ui/texture/icons/31_64_10.png
 2057:
   description: Intelligence booster - Unknown
-  iconFile: '31_11'
+  iconFile: res:/ui/texture/icons/31_64_11.png
 2058:
   description: Memory booster - Unknown
-  iconFile: '31_12'
+  iconFile: res:/ui/texture/icons/31_64_12.png
 2059:
   description: Perception booster - Unknown
-  iconFile: '31_13'
+  iconFile: res:/ui/texture/icons/31_64_13.png
 2060:
   description: Charisma implant (social adaptation chip) - Unknown
-  iconFile: '31_14'
+  iconFile: res:/ui/texture/icons/31_64_14.png
 2061:
   description: Memory implant (Memory augmentation) - Unknown
-  iconFile: '31_15'
+  iconFile: res:/ui/texture/icons/31_64_15.png
 2062:
   description: Intelligence implant (Cybernetic subprocessor) - Unknown
-  iconFile: '31_16'
+  iconFile: res:/ui/texture/icons/31_64_16.png
 2066:
   description: Energized Plating
-  iconFile: '34_16'
+  iconFile: res:/ui/texture/icons/34_64_16.png
 2070:
   description: A33colonialruin
   iconFile: res:/Texture/Landmark/A33colonialruins.jpg
@@ -1554,1692 +1551,1689 @@
   description: vena
   iconFile: res:/Texture/Landmark/venal.jpg
 2093:
-  description: 'Cross of the Sacred Throne Order '
-  iconFile: '35_05'
+  description: Cross of the Sacred Throne Order
+  iconFile: res:/ui/texture/icons/35_64_5.png
 2094:
-  description: 'Enlightened Soul Silver Shield '
-  iconFile: '35_06'
+  description: Enlightened Soul Silver Shield
+  iconFile: res:/ui/texture/icons/35_64_6.png
 2095:
   description: Onyx Heart of Valor
-  iconFile: '35_07'
+  iconFile: res:/ui/texture/icons/35_64_7.png
 2096:
   description: Aidonis Honorary Fellow Medallion
-  iconFile: '35_09'
+  iconFile: res:/ui/texture/icons/35_64_9.png
 2100:
   description: Liberty tattoo of the Minmatar nation
-  iconFile: '35_08'
+  iconFile: res:/ui/texture/icons/35_64_8.png
 2101:
   description: Deep Core Miner
-  iconFile: '35_01'
+  iconFile: res:/ui/texture/icons/35_64_1.png
 2102:
   description: Mercoxit
-  iconFile: '35_11'
+  iconFile: res:/ui/texture/icons/35_64_11.png
 2103:
   description: Morphite
-  iconFile: '35_02'
+  iconFile: res:/ui/texture/icons/35_64_2.png
 2104:
   description: Shield Booster Amplifier
-  iconFile: '35_15'
+  iconFile: res:/ui/texture/icons/35_64_15.png
 2105:
   description: Secondary Power Core
-  iconFile: '35_14'
+  iconFile: res:/ui/texture/icons/35_64_14.png
 2106:
   description: Cloaking device
-  iconFile: '35_12'
+  iconFile: res:/ui/texture/icons/35_64_12.png
 2176:
   description: Pax Amarria book icon - Unknown
-  iconFile: '35_04'
+  iconFile: res:/ui/texture/icons/35_64_4.png
 2177:
   description: Magpulse Thruster - Unknown
-  iconFile: '37_01'
+  iconFile: res:/ui/texture/icons/37_64_1.png
 2178:
   description: Ion Thruster - Unknown
-  iconFile: '37_02'
+  iconFile: res:/ui/texture/icons/37_64_2.png
 2179:
   description: Plasma Thruster - Unknown
-  iconFile: '37_03'
+  iconFile: res:/ui/texture/icons/37_64_3.png
 2180:
   description: Fusion Thruster - Unknown
-  iconFile: '37_04'
+  iconFile: res:/ui/texture/icons/37_64_4.png
 2181:
   description: Gravimetric Sensor Cluster - Unknown
-  iconFile: '37_05'
+  iconFile: res:/ui/texture/icons/37_64_5.png
 2182:
   description: Magnetometric Sensor Cluster - Unknown
-  iconFile: '37_06'
+  iconFile: res:/ui/texture/icons/37_64_6.png
 2183:
   description: Ladar Sensor Cluster - Unknown
-  iconFile: '37_07'
+  iconFile: res:/ui/texture/icons/37_64_7.png
 2184:
   description: Radar Sensor Cluster - Unknown
-  iconFile: '37_08'
+  iconFile: res:/ui/texture/icons/37_64_8.png
 2185:
   description: Quantum Microprocessor - Unknown
-  iconFile: '37_09'
+  iconFile: res:/ui/texture/icons/37_64_9.png
 2186:
   description: Photon Microprocessor - Unknown
-  iconFile: '37_10'
+  iconFile: res:/ui/texture/icons/37_64_10.png
 2187:
   description: Nanomechanical Microprocessor - Unknown
-  iconFile: '37_11'
+  iconFile: res:/ui/texture/icons/37_64_11.png
 2188:
   description: Nanoelectrical Microprocessor - Unknown
-  iconFile: '37_12'
+  iconFile: res:/ui/texture/icons/37_64_12.png
 2189:
   description: Trimorphite Armor Plate - Unknown
-  iconFile: '37_13'
+  iconFile: res:/ui/texture/icons/37_64_13.png
 2190:
   description: Carbonite Armor Plate - Unknown
-  iconFile: '37_14'
+  iconFile: res:/ui/texture/icons/37_64_14.png
 2191:
   description: Ceramite Composite Armor Plate - Unknown
-  iconFile: '37_15'
+  iconFile: res:/ui/texture/icons/37_64_15.png
 2192:
   description: Rolled Mexalite Armor Plate - Unknown
-  iconFile: '37_16'
+  iconFile: res:/ui/texture/icons/37_64_16.png
 2193:
   description: Graviton Reactor Unit - Unknown
-  iconFile: '39_01'
+  iconFile: res:/ui/texture/icons/39_64_1.png
 2194:
   description: Fusion Reactor Unit - Unknown
-  iconFile: '39_02'
+  iconFile: res:/ui/texture/icons/39_64_2.png
 2195:
   description: Nuclear Reactor Unit - Unknown
-  iconFile: '39_03'
+  iconFile: res:/ui/texture/icons/39_64_3.png
 2196:
   description: Antimatter Reactor Unit - Unknown
-  iconFile: '39_04'
+  iconFile: res:/ui/texture/icons/39_64_4.png
 2197:
   description: Scalar Capacitor Unit - Unknown
-  iconFile: '39_05'
+  iconFile: res:/ui/texture/icons/39_64_5.png
 2198:
   description: Oscillator Capacitor Unit - Unknown
-  iconFile: '39_06'
+  iconFile: res:/ui/texture/icons/39_64_6.png
 2199:
   description: Electrolytic Capacitor Unit - Unknown
-  iconFile: '39_07'
+  iconFile: res:/ui/texture/icons/39_64_7.png
 2200:
   description: Tesseract Capacitor Unit - Unknown
-  iconFile: '39_08'
+  iconFile: res:/ui/texture/icons/39_64_8.png
 2201:
   description: Sustained Shield Emitter - Unknown
-  iconFile: '39_09'
+  iconFile: res:/ui/texture/icons/39_64_9.png
 2202:
   description: Pulse Shield Emitter - Unknown
-  iconFile: '39_10'
+  iconFile: res:/ui/texture/icons/39_64_10.png
 2203:
   description: Deflection Shield Emitter - Unknown
-  iconFile: '39_11'
+  iconFile: res:/ui/texture/icons/39_64_11.png
 2204:
   description: Linear Shield Emitter - Unknown
-  iconFile: '39_12'
+  iconFile: res:/ui/texture/icons/39_64_12.png
 2205:
   description: Sarum Badge of Acknowledgement - Unknown
-  iconFile: '39_13'
+  iconFile: res:/ui/texture/icons/39_64_13.png
 2206:
   description: Ardishapur Trophy of Divine Grace - Unknown
-  iconFile: '39_14'
+  iconFile: res:/ui/texture/icons/39_64_14.png
 2207:
   description: Kador Banner of Royality - Unknown
-  iconFile: '39_15'
+  iconFile: res:/ui/texture/icons/39_64_15.png
 2208:
   description: Kor-Azor Scroll of Acknowledgement - Unknown
-  iconFile: '39_16'
+  iconFile: res:/ui/texture/icons/39_64_16.png
 2209:
   description: Tash-Murkon Amulet of Success - Unknown
-  iconFile: '40_01'
+  iconFile: res:/ui/texture/icons/40_64_1.png
 2210:
   description: Glossy Mineral Compound - Unknown
-  iconFile: '40_02'
+  iconFile: res:/ui/texture/icons/40_64_2.png
 2211:
   description: Plush Mineral Compound - Unknown
-  iconFile: '40_03'
+  iconFile: res:/ui/texture/icons/40_64_3.png
 2212:
   description: Sheen Mineral Composite - Unknown
-  iconFile: '40_04'
+  iconFile: res:/ui/texture/icons/40_64_4.png
 2213:
   description: Motley Mineral Composite - Unknown
-  iconFile: '40_05'
+  iconFile: res:/ui/texture/icons/40_64_5.png
 2214:
   description: Opulent Mineral Composite - Unknown
-  iconFile: '40_06'
+  iconFile: res:/ui/texture/icons/40_64_6.png
 2215:
   description: Dark Mineral Compound - Unknown
-  iconFile: '40_07'
+  iconFile: res:/ui/texture/icons/40_64_7.png
 2216:
   description: Lustering Alloy - Unknown
-  iconFile: '40_08'
+  iconFile: res:/ui/texture/icons/40_64_8.png
 2217:
   description: Precious Alloy - Unknown
-  iconFile: '40_09'
+  iconFile: res:/ui/texture/icons/40_64_9.png
 2218:
   description: Lucent Mineral Compound - Unknown
-  iconFile: '40_10'
+  iconFile: res:/ui/texture/icons/40_64_10.png
 2219:
   description: Condensed Alloy - Unknown
-  iconFile: '40_11'
+  iconFile: res:/ui/texture/icons/40_64_11.png
 2220:
   description: Gleaming Alloy - Unknown
-  iconFile: '40_12'
+  iconFile: res:/ui/texture/icons/40_64_12.png
 2221:
   description: Crystal Mineral Compound - Unknown
-  iconFile: '40_13'
+  iconFile: res:/ui/texture/icons/40_64_13.png
 2222:
   description: HyperNet Uplink (research tool) - Unknown
-  iconFile: '40_14'
+  iconFile: res:/ui/texture/icons/40_64_14.png
 2223:
   description: Molecular Sequencer (Duplication Tool) - Unknown
-  iconFile: '40_15'
+  iconFile: res:/ui/texture/icons/40_64_15.png
 2224:
   description: Data Extractor (Reverse Engineered BP research tool) - Unknown
-  iconFile: '40_16'
+  iconFile: res:/ui/texture/icons/40_64_16.png
 2225:
   description: Database Uplink (BP research tool) - Unknown
-  iconFile: '41_01'
+  iconFile: res:/ui/texture/icons/41_64_1.png
 2226:
   description: Microassembler Array (manufacturing tool) - Unknown
-  iconFile: '41_02'
+  iconFile: res:/ui/texture/icons/41_64_2.png
 2227:
   description: Superconductor Rails - Unknown
-  iconFile: '41_05'
+  iconFile: res:/ui/texture/icons/41_64_5.png
 2228:
   description: Electrothermal Combustion Chamber - Unknown
-  iconFile: '41_07'
+  iconFile: res:/ui/texture/icons/41_64_7.png
 2229:
   description: Graviton Pulse Generator - Unknown
-  iconFile: '41_09'
+  iconFile: res:/ui/texture/icons/41_64_9.png
 2230:
   description: Plasma Pulse Generator - Unknown
-  iconFile: '41_10'
+  iconFile: res:/ui/texture/icons/41_64_10.png
 2231:
   description: Nuclear Pulse Generator - Unknown
-  iconFile: '41_11'
+  iconFile: res:/ui/texture/icons/41_64_11.png
 2232:
   description: EMP Pulse Generator - Unknown
-  iconFile: '41_12'
+  iconFile: res:/ui/texture/icons/41_64_12.png
 2233:
   description: Particle Accelerator Chamber - Unknown
-  iconFile: '41_06'
+  iconFile: res:/ui/texture/icons/41_64_6.png
 2234:
   description: Laser Focusing Crystal - Unknown
-  iconFile: '41_08'
+  iconFile: res:/ui/texture/icons/41_64_8.png
 2243:
   description: Company Shares - Unknown
-  iconFile: '27_13'
+  iconFile: res:/ui/texture/icons/27_64_13.png
 2244:
   description: Coffee commodity - Unknown
-  iconFile: '41_03'
+  iconFile: res:/ui/texture/icons/41_64_3.png
 2302:
   description: DNA - Unknown
-  iconFile: '25_15'
+  iconFile: res:/ui/texture/icons/25_64_15.png
 2304:
   description: Crash-test dummies, commodity - Unknown
-  iconFile: '41_04'
+  iconFile: res:/ui/texture/icons/41_64_4.png
 2309:
   description: Warp Disruptor
-  iconFile: '36_15'
+  iconFile: res:/ui/texture/icons/36_64_15.png
 2310:
   description: Angel Bronze Dog Tags - Unknown
-  iconFile: '41_15'
+  iconFile: res:/ui/texture/icons/41_64_15.png
 2311:
   description: Angel Silver Dog Tags - Unknown
-  iconFile: '41_16'
+  iconFile: res:/ui/texture/icons/41_64_16.png
 2312:
   description: Angel Gold Dog Tags - Unknown
-  iconFile: '42_01'
+  iconFile: res:/ui/texture/icons/42_64_1.png
 2313:
   description: Angel Platinum Dog Tags - Unknown
-  iconFile: '42_02'
+  iconFile: res:/ui/texture/icons/42_64_2.png
 2314:
   description: Angel Crystal Dog Tags - Unknown
-  iconFile: '42_03'
+  iconFile: res:/ui/texture/icons/42_64_3.png
 2315:
   description: Blood Raider Bronze Dog Tags - Unknown
-  iconFile: '42_04'
+  iconFile: res:/ui/texture/icons/42_64_4.png
 2316:
   description: Blood Raider Silver Dog Tags - Unknown
-  iconFile: '42_05'
+  iconFile: res:/ui/texture/icons/42_64_5.png
 2317:
   description: Blood Raider Gold Dog Tags - Unknown
-  iconFile: '42_06'
+  iconFile: res:/ui/texture/icons/42_64_6.png
 2318:
   description: Blood Raider Platinum Dog Tags - Unknown
-  iconFile: '42_07'
+  iconFile: res:/ui/texture/icons/42_64_7.png
 2319:
   description: Blood Raider Crystal Dog Tags - Unknown
-  iconFile: '42_08'
+  iconFile: res:/ui/texture/icons/42_64_8.png
 2320:
   description: Serpentis Bronze Dog Tags - Unknown
-  iconFile: '42_09'
+  iconFile: res:/ui/texture/icons/42_64_9.png
 2321:
   description: Serpentis Silver Dog Tags - Unknown
-  iconFile: '42_10'
+  iconFile: res:/ui/texture/icons/42_64_10.png
 2322:
   description: Serpentis Gold Dog Tags - Unknown
-  iconFile: '42_11'
+  iconFile: res:/ui/texture/icons/42_64_11.png
 2323:
   description: Serpentis Platinum Dog Tags - Unknown
-  iconFile: '42_12'
+  iconFile: res:/ui/texture/icons/42_64_12.png
 2324:
   description: Serpentis Crystal Dog Tags - Unknown
-  iconFile: '42_13'
+  iconFile: res:/ui/texture/icons/42_64_13.png
 2325:
   description: Guristas Bronze Dog Tags - Unknown
-  iconFile: '42_14'
+  iconFile: res:/ui/texture/icons/42_64_14.png
 2326:
   description: Guristas Silver Dog Tags - Unknown
-  iconFile: '42_15'
+  iconFile: res:/ui/texture/icons/42_64_15.png
 2327:
   description: Guristas Gold Dog Tags - Unknown
-  iconFile: '42_16'
+  iconFile: res:/ui/texture/icons/42_64_16.png
 2328:
   description: Guristas Platinum Dog Tags - Unknown
-  iconFile: '43_01'
+  iconFile: res:/ui/texture/icons/43_64_1.png
 2329:
   description: Guristas Crystal Dog Tags - Unknown
-  iconFile: '43_02'
+  iconFile: res:/ui/texture/icons/43_64_2.png
 2330:
   description: Sansha Bronze Dog Tags - Unknown
-  iconFile: '43_03'
+  iconFile: res:/ui/texture/icons/43_64_3.png
 2331:
   description: Sansha Silver Dog Tags - Unknown
-  iconFile: '43_04'
+  iconFile: res:/ui/texture/icons/43_64_4.png
 2332:
   description: Sansha Gold Dog Tags - Unknown
-  iconFile: '43_05'
+  iconFile: res:/ui/texture/icons/43_64_5.png
 2333:
   description: Sansha Platinum Dog Tags - Unknown
-  iconFile: '43_06'
+  iconFile: res:/ui/texture/icons/43_64_6.png
 2334:
   description: Sansha Crystal Dog Tags - Unknown
-  iconFile: '43_07'
+  iconFile: res:/ui/texture/icons/43_64_7.png
 2335:
   description: Angel Ship Log - Unknown
-  iconFile: '43_08'
+  iconFile: res:/ui/texture/icons/43_64_8.png
 2336:
   description: Blood Raider Ship Log - Unknown
-  iconFile: '43_09'
+  iconFile: res:/ui/texture/icons/43_64_9.png
 2337:
   description: Serpentis Ship Log - Unknown
-  iconFile: '43_10'
+  iconFile: res:/ui/texture/icons/43_64_10.png
 2338:
   description: Guristas Ship Log - Unknown
-  iconFile: '43_11'
+  iconFile: res:/ui/texture/icons/43_64_11.png
 2339:
   description: Sansha Ship Log - Unknown
-  iconFile: '43_12'
+  iconFile: res:/ui/texture/icons/43_64_12.png
 2340:
   description: Munitions Commodity - Unknown
-  iconFile: '43_13'
+  iconFile: res:/ui/texture/icons/43_64_13.png
 2355:
   description: Starmap icon - Unknown
-  iconFile: '07_04'
+  iconFile: res:/ui/texture/icons/7_64_4.png
 2512:
   description: ISK (InterStellar Kredits) - Unknown
-  iconFile: '07_12'
+  iconFile: res:/ui/texture/icons/7_64_12.png
 2526:
   description: IceHarvester
-  iconFile: '49_06'
+  iconFile: res:/ui/texture/icons/49_64_6.png
 2527:
   description: Megaminer
-  iconFile: '49_05'
+  iconFile: res:/ui/texture/icons/49_64_5.png
 2528:
   description: Luxury vehicles - Unknown
-  iconFile: '45_09'
+  iconFile: res:/ui/texture/icons/45_64_9.png
 2529:
   description: Scrapmetal commodity - Unknown
-  iconFile: '45_10'
+  iconFile: res:/ui/texture/icons/45_64_10.png
 2530:
   description: Cruise launcher - Unknown
-  iconFile: '45_11'
+  iconFile: res:/ui/texture/icons/45_64_11.png
 2531:
   description: Ballistic Control System (for missile launchers) - Unknown
-  iconFile: '45_12'
+  iconFile: res:/ui/texture/icons/45_64_12.png
 2532:
   description: Red star medal - Unknown
-  iconFile: '45_13'
+  iconFile: res:/ui/texture/icons/45_64_13.png
 2533:
   description: Bronze moon medal - Unknown
-  iconFile: '45_14'
+  iconFile: res:/ui/texture/icons/45_64_14.png
 2534:
   description: Silver world medal - Unknown
-  iconFile: '45_15'
+  iconFile: res:/ui/texture/icons/45_64_15.png
 2535:
   description: Gold sun medal - Unknown
-  iconFile: '45_16'
+  iconFile: res:/ui/texture/icons/45_64_16.png
 2536:
   description: Civilian (male) - Unknown
-  iconFile: '46_01'
+  iconFile: res:/ui/texture/icons/46_64_1.png
 2537:
   description: Civilian (female) - Unknown
-  iconFile: '46_02'
+  iconFile: res:/ui/texture/icons/46_64_2.png
 2538:
   description: VIP - Unknown
-  iconFile: '46_03'
+  iconFile: res:/ui/texture/icons/46_64_3.png
 2539:
   description: Tourist - Unknown
-  iconFile: '46_04'
+  iconFile: res:/ui/texture/icons/46_64_4.png
 2540:
   description: Marine - Unknown
-  iconFile: '46_05'
+  iconFile: res:/ui/texture/icons/46_64_5.png
 2541:
   description: Slave - Unknown
-  iconFile: '46_06'
+  iconFile: res:/ui/texture/icons/46_64_6.png
 2542:
   description: Refugee / Homeless person - Unknown
-  iconFile: '46_07'
+  iconFile: res:/ui/texture/icons/46_64_7.png
 2543:
   description: Exotic Dancer, Female
-  iconFile: '46_08'
+  iconFile: res:/ui/texture/icons/46_64_8.png
 2544:
   description: Mercenary - Unknown
-  iconFile: '46_09'
+  iconFile: res:/ui/texture/icons/46_64_9.png
 2545:
   description: Convict / Prisoner - Unknown
-  iconFile: '46_10'
+  iconFile: res:/ui/texture/icons/46_64_10.png
 2546:
   description: Slaver (man with shackles) - Unknown
-  iconFile: '46_11'
+  iconFile: res:/ui/texture/icons/46_64_11.png
 2547:
   description: Minmatar Light Marine - Unknown
-  iconFile: '46_13'
+  iconFile: res:/ui/texture/icons/46_64_13.png
 2548:
   description: Caldari Light Marine - Unknown
-  iconFile: '46_14'
+  iconFile: res:/ui/texture/icons/46_64_14.png
 2549:
   description: Amarr Light Marine - Unknown
-  iconFile: '46_15'
+  iconFile: res:/ui/texture/icons/46_64_15.png
 2550:
   description: Gallente Light Marine - Unknown
-  iconFile: '46_16'
+  iconFile: res:/ui/texture/icons/46_64_16.png
 2551:
   description: Genetically engineered livestock - Unknown
-  iconFile: '43_14'
+  iconFile: res:/ui/texture/icons/43_64_14.png
 2552:
   description: Concord badge - Unknown
-  iconFile: '43_15'
+  iconFile: res:/ui/texture/icons/43_64_15.png
 2553:
   description: Severed head (soaked in formaldehyde) - Unknown
-  iconFile: '43_16'
+  iconFile: res:/ui/texture/icons/43_64_16.png
 2554:
   description: Blueice
-  iconFile: '51_05'
+  iconFile: res:/ui/texture/icons/51_64_5.png
 2555:
   description: ClacialMass
-  iconFile: '51_04'
+  iconFile: res:/ui/texture/icons/51_64_4.png
 2556:
   description: ClearIcicle
-  iconFile: '51_02'
+  iconFile: res:/ui/texture/icons/51_64_2.png
 2557:
   description: Darkglitter
-  iconFile: '51_03'
+  iconFile: res:/ui/texture/icons/51_64_3.png
 2558:
   description: Gelidus
-  iconFile: '51_06'
+  iconFile: res:/ui/texture/icons/51_64_6.png
 2559:
   description: Glarecrust
-  iconFile: '51_01'
+  iconFile: res:/ui/texture/icons/51_64_1.png
 2560:
   description: Krystallos
-  iconFile: '51_09'
+  iconFile: res:/ui/texture/icons/51_64_9.png
 2561:
   description: WhiteGlaze
-  iconFile: '51_08'
+  iconFile: res:/ui/texture/icons/51_64_8.png
 2562:
   description: Ship Equipment - Unknown
-  iconFile: '12_03 '
+  iconFile: res:/ui/texture/icons/12_64_3.png
 2563:
   description: CharacterIcon
-  iconFile: '02_16'
+  iconFile: res:/ui/texture/icons/2_64_16.png
 2567:
   description: Cadmium - Unknown
-  iconFile: '47_01'
+  iconFile: res:/ui/texture/icons/47_64_1.png
 2568:
   description: Caesium - Unknown
-  iconFile: '47_02'
+  iconFile: res:/ui/texture/icons/47_64_2.png
 2569:
   description: Chromium. - Unknown
-  iconFile: '47_03'
+  iconFile: res:/ui/texture/icons/47_64_3.png
 2570:
   description: Cobalt - Unknown
-  iconFile: '47_04'
+  iconFile: res:/ui/texture/icons/47_64_4.png
 2571:
   description: Dysprosium - Unknown
-  iconFile: '47_05'
+  iconFile: res:/ui/texture/icons/47_64_5.png
 2572:
   description: Hafnium - Unknown
-  iconFile: '47_06'
+  iconFile: res:/ui/texture/icons/47_64_6.png
 2573:
   description: Mercury - Unknown
-  iconFile: '47_07'
+  iconFile: res:/ui/texture/icons/47_64_7.png
 2574:
   description: Neodymium - Unknown
-  iconFile: '47_08'
+  iconFile: res:/ui/texture/icons/47_64_8.png
 2575:
   description: Platinium - Unknown
-  iconFile: '47_09'
+  iconFile: res:/ui/texture/icons/47_64_9.png
 2576:
   description: Unknown
-  iconFile: '47_10'
+  iconFile: res:/ui/texture/icons/47_64_10.png
 2577:
   description: Scandium - Unknown
-  iconFile: '47_11'
+  iconFile: res:/ui/texture/icons/47_64_11.png
 2578:
   description: Technetium - Unknown
-  iconFile: '47_12'
+  iconFile: res:/ui/texture/icons/47_64_12.png
 2579:
   description: Thulium - Unknown
-  iconFile: '47_13'
+  iconFile: res:/ui/texture/icons/47_64_13.png
 2580:
   description: Tungsten - Unknown
-  iconFile: '47_14'
+  iconFile: res:/ui/texture/icons/47_64_14.png
 2581:
   description: Vanadium - Unknown
-  iconFile: '47_15'
+  iconFile: res:/ui/texture/icons/47_64_15.png
 2582:
   description: Titanium - Unknown
-  iconFile: '47_16'
+  iconFile: res:/ui/texture/icons/47_64_16.png
 2645:
   description: Arkonor Mining Cr
-  iconFile: '48_14'
+  iconFile: res:/ui/texture/icons/48_64_14.png
 2646:
   description: Bistot Mining Cr
-  iconFile: '48_13'
+  iconFile: res:/ui/texture/icons/48_64_13.png
 2647:
   description: Crokite Mining Cr
-  iconFile: '48_12'
+  iconFile: res:/ui/texture/icons/48_64_12.png
 2648:
   description: Dark Ochre Mining Cr
-  iconFile: '48_11'
+  iconFile: res:/ui/texture/icons/48_64_11.png
 2649:
   description: Gneiss Mining Cr
-  iconFile: '48_10'
+  iconFile: res:/ui/texture/icons/48_64_10.png
 2650:
   description: Hedbergite Mining Cr
-  iconFile: '48_09'
+  iconFile: res:/ui/texture/icons/48_64_9.png
 2651:
   description: Hemorphite Mining Cr
-  iconFile: '48_08'
+  iconFile: res:/ui/texture/icons/48_64_8.png
 2652:
   description: Jaspet Mining Cr
-  iconFile: '48_07'
+  iconFile: res:/ui/texture/icons/48_64_7.png
 2653:
   description: Kernite Mining Cr
-  iconFile: '48_06'
+  iconFile: res:/ui/texture/icons/48_64_6.png
 2654:
   description: Mercoxit Mining Cr
-  iconFile: '48_16'
+  iconFile: res:/ui/texture/icons/48_64_16.png
 2655:
   description: Omber Mining Cr
-  iconFile: '48_05'
+  iconFile: res:/ui/texture/icons/48_64_5.png
 2656:
   description: Plagioclase Mining Cr
-  iconFile: '48_04'
+  iconFile: res:/ui/texture/icons/48_64_4.png
 2657:
   description: Pyroxeres Mining Cr
-  iconFile: '48_03'
+  iconFile: res:/ui/texture/icons/48_64_3.png
 2658:
   description: Scordite Mining Cr
-  iconFile: '48_02'
+  iconFile: res:/ui/texture/icons/48_64_2.png
 2659:
   description: Spodumain Mining Cr
-  iconFile: '48_15'
+  iconFile: res:/ui/texture/icons/48_64_15.png
 2660:
   description: Veldspar Mining Cr
-  iconFile: '48_01'
+  iconFile: res:/ui/texture/icons/48_64_1.png
 2661:
   description: Phe
-  iconFile: '50_01'
+  iconFile: res:/ui/texture/icons/50_64_1.png
 2662:
   description: Syl
-  iconFile: '50_02'
+  iconFile: res:/ui/texture/icons/50_64_2.png
 2663:
   description: 'Survey '
-  iconFile: '50_03'
+  iconFile: res:/ui/texture/icons/50_64_3.png
 2664:
   description: Com
-  iconFile: '50_04'
+  iconFile: res:/ui/texture/icons/50_64_4.png
 2665:
   description: Srea
-  iconFile: '50_05'
+  iconFile: res:/ui/texture/icons/50_64_5.png
 2666:
   description: Crea
-  iconFile: '50_06'
+  iconFile: res:/ui/texture/icons/50_64_6.png
 2667:
   description: Evap
-  iconFile: '50_07'
+  iconFile: res:/ui/texture/icons/50_64_7.png
 2668:
   description: Athmos
-  iconFile: '50_08'
+  iconFile: res:/ui/texture/icons/50_64_8.png
 2669:
   description: Hydroc
-  iconFile: '50_09'
+  iconFile: res:/ui/texture/icons/50_64_9.png
 2670:
   description: Sili
-  iconFile: '50_10'
+  iconFile: res:/ui/texture/icons/50_64_10.png
 2671:
   description: calcu
-  iconFile: '49_01'
+  iconFile: res:/ui/texture/icons/49_64_1.png
 2672:
   description: notepad
-  iconFile: '49_02'
+  iconFile: res:/ui/texture/icons/49_64_2.png
 2673:
   description: Note
-  iconFile: '49_03'
+  iconFile: res:/ui/texture/icons/49_64_3.png
 2674:
   description: Notes
-  iconFile: '49_04'
+  iconFile: res:/ui/texture/icons/49_64_4.png
 2677:
   description: probelauncher
-  iconFile: '49_07'
+  iconFile: res:/ui/texture/icons/49_64_7.png
 2678:
   description: ferrogel
-  iconFile: '49_08'
+  iconFile: res:/ui/texture/icons/49_64_8.png
 2679:
   description: gmetal
-  iconFile: '49_09'
+  iconFile: res:/ui/texture/icons/49_64_9.png
 2680:
   description: mmetal
-  iconFile: '49_10'
+  iconFile: res:/ui/texture/icons/49_64_10.png
 2681:
   description: cmetal
-  iconFile: '49_11'
+  iconFile: res:/ui/texture/icons/49_64_11.png
 2682:
   description: ametal
-  iconFile: '49_12'
+  iconFile: res:/ui/texture/icons/49_64_12.png
 2683:
   description: ferm
-  iconFile: '49_13'
+  iconFile: res:/ui/texture/icons/49_64_13.png
 2684:
   description: Fulleride
-  iconFile: '49_14'
+  iconFile: res:/ui/texture/icons/49_64_14.png
 2685:
   description: synaptic
-  iconFile: '49_15'
+  iconFile: res:/ui/texture/icons/49_64_15.png
 2686:
   description: nanotrnasistors
-  iconFile: '49_16'
+  iconFile: res:/ui/texture/icons/49_64_16.png
 2693:
   description: ice7
-  iconFile: '51_07'
+  iconFile: res:/ui/texture/icons/51_64_7.png
 2696:
   description: Strontium
-  iconFile: '51_10'
+  iconFile: res:/ui/texture/icons/51_64_10.png
 2697:
   description: ozone
-  iconFile: '51_11'
+  iconFile: res:/ui/texture/icons/51_64_11.png
 2698:
   description: Heavy water
-  iconFile: '51_12'
+  iconFile: res:/ui/texture/icons/51_64_12.png
 2699:
   description: helium iso
-  iconFile: '51_13'
+  iconFile: res:/ui/texture/icons/51_64_13.png
 2700:
   description: hydrogen iso
-  iconFile: '51_14'
+  iconFile: res:/ui/texture/icons/51_64_14.png
 2701:
   description: Oxigen ISo
-  iconFile: '51_15'
+  iconFile: res:/ui/texture/icons/51_64_15.png
 2702:
   description: nitrogen iso
-  iconFile: '51_16'
+  iconFile: res:/ui/texture/icons/51_64_16.png
 2703:
   description: BluePrintBackdrop - Unknown
-  iconFile: 09_15
+  iconFile: res:/ui/texture/icons/9_64_15.png
 2705:
   description: Red Cross Medal - Unknown
-  iconFile: '50_16'
+  iconFile: res:/ui/texture/icons/50_64_16.png
 2732:
   description: Bioscanner/Asteroid Scanner - Unknown
-  iconFile: '03_12'
+  iconFile: res:/ui/texture/icons/3_64_12.png
 2733:
   description: Caldari propulsion jamming strength - Unknown
-  iconFile: '22_49'
+  iconFile: res:/ui/texture/icons/22_32_49.png
 2734:
   description: Gallente propulsion jamming strength - Unknown
-  iconFile: '22_50'
+  iconFile: res:/ui/texture/icons/22_32_50.png
 2735:
   description: Minmatar Propulsion Jamming Strength - Unknown
-  iconFile: '22_51'
+  iconFile: res:/ui/texture/icons/22_32_51.png
 2736:
   description: Amarr propulsion jamming strength - Unknown
-  iconFile: '22_52'
+  iconFile: res:/ui/texture/icons/22_32_52.png
 2754:
   description: Safe deposit box - Unknown
-  iconFile: '07_13'
+  iconFile: res:/ui/texture/icons/7_64_13.png
 2827:
   description: XL Carbonized Lead Ammo - Unknown
-  iconFile: '52_01'
+  iconFile: res:/ui/texture/icons/52_64_1.png
 2828:
   description: XL Depleted Uranium Ammo - Unknown
-  iconFile: '52_02'
+  iconFile: res:/ui/texture/icons/52_64_2.png
 2829:
   description: XL EMP Ammo - Unknown
-  iconFile: '52_03'
+  iconFile: res:/ui/texture/icons/52_64_3.png
 2830:
   description: XL Fusion Ammo - Unknown
-  iconFile: '52_04'
+  iconFile: res:/ui/texture/icons/52_64_4.png
 2831:
   description: XL Nuclear (explosive) Ammo - Unknown
-  iconFile: '52_05'
+  iconFile: res:/ui/texture/icons/52_64_5.png
 2832:
   description: XL Phased Plasma Ammo - Unknown
-  iconFile: '52_06'
+  iconFile: res:/ui/texture/icons/52_64_6.png
 2833:
   description: XL Proton (Photon) Ammo - Unknown
-  iconFile: '52_07'
+  iconFile: res:/ui/texture/icons/52_64_7.png
 2834:
   description: XL Titanium Sabot Ammo - Unknown
-  iconFile: '52_08'
+  iconFile: res:/ui/texture/icons/52_64_8.png
 2835:
   description: Aura's (Ship computer) Face - Unknown
-  iconFile: '52_09'
+  iconFile: res:/ui/texture/icons/52_64_9.png
 2836:
   description: Siege Blaster Cannon - Unknown
-  iconFile: '52_10'
+  iconFile: res:/ui/texture/icons/52_64_10.png
 2837:
   description: Siege Beam Laser - Unknown
-  iconFile: '52_11'
+  iconFile: res:/ui/texture/icons/52_64_11.png
 2838:
   description: Siege Autocannon - Unknown
-  iconFile: '52_12'
+  iconFile: res:/ui/texture/icons/52_64_12.png
 2839:
   description: Siege (XL) Missile Launcher - Unknown
-  iconFile: '52_13'
+  iconFile: res:/ui/texture/icons/52_64_13.png
 2840:
   description: Siege Railgun - Unknown
-  iconFile: '52_14'
+  iconFile: res:/ui/texture/icons/52_64_14.png
 2841:
   description: Siege Pulse Laser - Unknown
-  iconFile: '52_15'
+  iconFile: res:/ui/texture/icons/52_64_15.png
 2842:
   description: Siege Artillery (XL) - Unknown
-  iconFile: '52_16'
+  iconFile: res:/ui/texture/icons/52_64_16.png
 2843:
   description: XL Antimatter Charge - Unknown
-  iconFile: '53_01'
+  iconFile: res:/ui/texture/icons/53_64_1.png
 2844:
   description: XL Iridium Charge - Unknown
-  iconFile: '53_02'
+  iconFile: res:/ui/texture/icons/53_64_2.png
 2845:
   description: XL Iron Charge - Unknown
-  iconFile: '53_03'
+  iconFile: res:/ui/texture/icons/53_64_3.png
 2846:
   description: XL Lead Charge - Unknown
-  iconFile: '53_04'
+  iconFile: res:/ui/texture/icons/53_64_4.png
 2847:
   description: XL Plutonium Charge - Unknown
-  iconFile: '53_05'
+  iconFile: res:/ui/texture/icons/53_64_5.png
 2848:
   description: XL Thorium Charge - Unknown
-  iconFile: '53_06'
+  iconFile: res:/ui/texture/icons/53_64_6.png
 2849:
   description: XL Tungsten Charge - Unknown
-  iconFile: '53_07'
+  iconFile: res:/ui/texture/icons/53_64_7.png
 2850:
   description: XL Uranium Charge - Unknown
-  iconFile: '53_08'
+  iconFile: res:/ui/texture/icons/53_64_8.png
 2851:
   description: Siege Mode Module - Unknown
-  iconFile: '53_09'
+  iconFile: res:/ui/texture/icons/53_64_9.png
 2852:
   description: Drill (mission item) - Unknown
-  iconFile: '53_10'
+  iconFile: res:/ui/texture/icons/53_64_10.png
 2853:
   description: Treasure Map (Electronic) - Unknown
-  iconFile: '53_11'
+  iconFile: res:/ui/texture/icons/53_64_11.png
 2854:
   description: Cattle (moo!) - Unknown
-  iconFile: '53_12'
+  iconFile: res:/ui/texture/icons/53_64_12.png
 2855:
   description: Corpse icon - Unknown
-  iconFile: '53_13'
+  iconFile: res:/ui/texture/icons/53_64_13.png
 2856:
   description: Codebreaker Module - Unknown
-  iconFile: '53_14'
+  iconFile: res:/ui/texture/icons/53_64_14.png
 2857:
   description: Analyzer Module (ancient artifact scanner) - Unknown
-  iconFile: '53_15'
+  iconFile: res:/ui/texture/icons/53_64_15.png
 2858:
   description: Leadership Module - Unknown
-  iconFile: '53_16'
+  iconFile: res:/ui/texture/icons/53_64_16.png
 2859:
   description: Capital Propulsion Engine - Unknown
-  iconFile: '54_01'
+  iconFile: res:/ui/texture/icons/54_64_1.png
 2860:
   description: Capital Turret Hardpoint - Unknown
-  iconFile: '54_02'
+  iconFile: res:/ui/texture/icons/54_64_2.png
 2861:
   description: Capital Sensor Array - Unknown
-  iconFile: '54_03'
+  iconFile: res:/ui/texture/icons/54_64_3.png
 2862:
   description: Capital Armor Plates - Unknown
-  iconFile: '54_04'
+  iconFile: res:/ui/texture/icons/54_64_4.png
 2863:
   description: Capital Capacitor Battery - Unknown
-  iconFile: '54_05'
+  iconFile: res:/ui/texture/icons/54_64_5.png
 2864:
   description: Capital Power Generator - Unknown
-  iconFile: '54_06'
+  iconFile: res:/ui/texture/icons/54_64_6.png
 2865:
   description: Capital Shield Generator - Unknown
-  iconFile: '54_07'
+  iconFile: res:/ui/texture/icons/54_64_7.png
 2866:
   description: Capital Jump Drive - Unknown
-  iconFile: '54_08'
+  iconFile: res:/ui/texture/icons/54_64_8.png
 2867:
   description: Capital Cargo Bay - Unknown
-  iconFile: '54_09'
+  iconFile: res:/ui/texture/icons/54_64_9.png
 2868:
   description: Capital Drone Bay - Unknown
-  iconFile: '54_10'
+  iconFile: res:/ui/texture/icons/54_64_10.png
 2869:
   description: Capital Computer System - Unknown
-  iconFile: '54_11'
+  iconFile: res:/ui/texture/icons/54_64_11.png
 2870:
   description: Capital Construction Parts - Unknown
-  iconFile: '54_12'
+  iconFile: res:/ui/texture/icons/54_64_12.png
 2871:
   description: Capital Siege Array - Unknown
-  iconFile: '54_13'
+  iconFile: res:/ui/texture/icons/54_64_13.png
 2872:
   description: Capital Launcher Hardpoint - Unknown
-  iconFile: '54_14'
+  iconFile: res:/ui/texture/icons/54_64_14.png
 2873:
   description: Station Mission Network - Unknown
-  iconFile: '54_15'
+  iconFile: res:/ui/texture/icons/54_64_15.png
 2874:
   description: Station Office Center - Unknown
-  iconFile: '54_16'
+  iconFile: res:/ui/texture/icons/54_64_16.png
 2875:
   description: Station Construction Parts - Unknown
-  iconFile: '55_01'
+  iconFile: res:/ui/texture/icons/55_64_1.png
 2876:
   description: Station Hangar Array - Unknown
-  iconFile: '55_02'
+  iconFile: res:/ui/texture/icons/55_64_2.png
 2877:
   description: Station Storage Bay - Unknown
-  iconFile: '55_03'
+  iconFile: res:/ui/texture/icons/55_64_3.png
 2878:
   description: Station Laboratory - Unknown
-  iconFile: '55_04'
+  iconFile: res:/ui/texture/icons/55_64_4.png
 2879:
   description: Station Factory - Unknown
-  iconFile: '55_05'
+  iconFile: res:/ui/texture/icons/55_64_5.png
 2880:
   description: Station Repair Facility - Unknown
-  iconFile: '55_06'
+  iconFile: res:/ui/texture/icons/55_64_6.png
 2881:
   description: Station Reprocessing Plant - Unknown
-  iconFile: '55_07'
+  iconFile: res:/ui/texture/icons/55_64_7.png
 2882:
   description: Station Docking Array - Unknown
-  iconFile: '55_08'
+  iconFile: res:/ui/texture/icons/55_64_8.png
 2883:
   description: Station Market Network - Unknown
-  iconFile: '55_09'
+  iconFile: res:/ui/texture/icons/55_64_9.png
 2884:
   description: Station Medical Center - Unknown
-  iconFile: '55_10'
+  iconFile: res:/ui/texture/icons/55_64_10.png
 2885:
   description: Modern Data - Unknown
-  iconFile: '55_11'
+  iconFile: res:/ui/texture/icons/55_64_11.png
 2886:
   description: Ancient Data - Unknown
-  iconFile: '55_12'
+  iconFile: res:/ui/texture/icons/55_64_12.png
 2887:
   description: Modern Devices - Unknown
-  iconFile: '55_13'
+  iconFile: res:/ui/texture/icons/55_64_13.png
 2888:
   description: Modern Spare Parts - Unknown
-  iconFile: '55_14'
+  iconFile: res:/ui/texture/icons/55_64_14.png
 2889:
   description: Ancient Relics - Unknown
-  iconFile: '55_15'
+  iconFile: res:/ui/texture/icons/55_64_15.png
 2890:
   description: Ancient Mechanical Parts - Unknown
-  iconFile: '55_16'
+  iconFile: res:/ui/texture/icons/55_64_16.png
 2891:
   description: Scientist - Unknown
-  iconFile: '46_12'
+  iconFile: res:/ui/texture/icons/46_64_12.png
 2893:
   description: Skull and crossbones icon - Unknown
-  iconFile: '04_16'
+  iconFile: res:/ui/texture/icons/4_64_16.png
 2908:
   description: Official Document - Unknown
-  iconFile: '07_03'
+  iconFile: res:/ui/texture/icons/7_64_3.png
 2934:
   description: Ion
-  iconFile: '56_02'
+  iconFile: res:/ui/texture/icons/56_64_2.png
 2943:
   description: Snowball missile - Snowball
-  iconFile: '57_04'
+  iconFile: res:/ui/texture/icons/57_64_4.png
 2971:
   description: Stealth module icon - Unknown
-  iconFile: '36_13'
+  iconFile: res:/ui/texture/icons/36_64_13.png
 2974:
   description: Ballistic Control System (heat thingamajig) - Unknown
-  iconFile: '36_16'
+  iconFile: res:/ui/texture/icons/36_64_16.png
 2983:
   description: Target Painter - Unknown
-  iconFile: '56_01'
+  iconFile: res:/ui/texture/icons/56_64_1.png
 2985:
   description: Jump Portal Module - Unknown
-  iconFile: '56_03'
+  iconFile: res:/ui/texture/icons/56_64_3.png
 2986:
   description: Tractor Beam - Unknown
-  iconFile: '56_04'
+  iconFile: res:/ui/texture/icons/56_64_4.png
 2987:
   description: Drone Command Module - Unknown
-  iconFile: '56_05'
+  iconFile: res:/ui/texture/icons/56_64_5.png
 2988:
   description: Drone Navigation Module - Unknown
-  iconFile: '56_06'
+  iconFile: res:/ui/texture/icons/56_64_6.png
 2989:
   description: Drone Range Link Module - Unknown
-  iconFile: '56_07'
+  iconFile: res:/ui/texture/icons/56_64_7.png
 2990:
   description: Probe Launcher - Unknown
-  iconFile: '56_08'
+  iconFile: res:/ui/texture/icons/56_64_8.png
 2991:
   description: Personal Armor - Unknown
-  iconFile: '56_09'
+  iconFile: res:/ui/texture/icons/56_64_9.png
 2992:
   description: Doll - Unknown
-  iconFile: '56_10'
+  iconFile: res:/ui/texture/icons/56_64_10.png
 2993:
   description: F.O.N. Protest Banner - Unknown
-  iconFile: '56_11'
+  iconFile: res:/ui/texture/icons/56_64_11.png
 2994:
   description: White Chip (1) - Unknown
-  iconFile: '56_12'
+  iconFile: res:/ui/texture/icons/56_64_12.png
 2995:
   description: Red Chip (5) - Unknown
-  iconFile: '56_13'
+  iconFile: res:/ui/texture/icons/56_64_13.png
 2996:
   description: Blue Chip (10) - Unknown
-  iconFile: '56_14'
+  iconFile: res:/ui/texture/icons/56_64_14.png
 2997:
   description: Green Chip (25) - Unknown
-  iconFile: '56_15'
+  iconFile: res:/ui/texture/icons/56_64_15.png
 2998:
   description: Black Chip (100)
-  iconFile: '56_16'
+  iconFile: res:/ui/texture/icons/56_64_16.png
 2999:
   description: Purple Chip (500) - Unknown
-  iconFile: '57_01'
+  iconFile: res:/ui/texture/icons/57_64_1.png
 3000:
   description: Gold Chip (1000) - Unknown
-  iconFile: '57_02'
+  iconFile: res:/ui/texture/icons/57_64_2.png
 3001:
   description: CONCORD Pilot's License (intended for 28 days) - Unknown
-  iconFile: '57_03'
+  iconFile: res:/ui/texture/icons/57_64_3.png
 3003:
   description: Starbase Charter (Minmatar) - Unknown
-  iconFile: '57_06'
+  iconFile: res:/ui/texture/icons/57_64_6.png
 3004:
   description: Starbase Charter (Caldari) - Unknown
-  iconFile: '57_07'
+  iconFile: res:/ui/texture/icons/57_64_7.png
 3005:
   description: Starbase Charter (Gallente) - Unknown
-  iconFile: '57_08'
+  iconFile: res:/ui/texture/icons/57_64_8.png
 3006:
   description: Manufacturing & Research (All activities) - Unknown
-  iconFile: '57_09'
+  iconFile: res:/ui/texture/icons/57_64_9.png
 3007:
   description: Manufacturing - Unknown
-  iconFile: '57_10'
+  iconFile: res:/ui/texture/icons/57_64_10.png
 3008:
   description: Material Research - Unknown
-  iconFile: '57_11'
+  iconFile: res:/ui/texture/icons/57_64_11.png
 3009:
   description: Time Efficiency Research - Unknown
-  iconFile: '57_12'
+  iconFile: res:/ui/texture/icons/57_64_12.png
 3010:
   description: Blueprint Copying - Unknown
-  iconFile: '57_13'
+  iconFile: res:/ui/texture/icons/57_64_13.png
 3011:
   description: Item Duplicating - Unknown
-  iconFile: '57_14'
+  iconFile: res:/ui/texture/icons/57_64_14.png
 3012:
   description: Reverse Engineering - Unknown
-  iconFile: '57_15'
+  iconFile: res:/ui/texture/icons/57_64_15.png
 3013:
   description: Technology Research - Unknown
-  iconFile: '57_16'
+  iconFile: res:/ui/texture/icons/57_64_16.png
 3019:
   description: Capital Clone Bay - Unknown
-  iconFile: '58_01'
+  iconFile: res:/ui/texture/icons/58_64_1.png
 3021:
   description: Vherokior Logo icon - Unknown
-  iconFile: '59_01'
+  iconFile: res:/ui/texture/icons/59_128_1.png
 3022:
   description: Achura Logo icon - Unknown
-  iconFile: '59_02'
+  iconFile: res:/ui/texture/icons/59_128_2.png
 3023:
   description: Khanid Logo icon - Unknown
-  iconFile: '59_03'
+  iconFile: res:/ui/texture/icons/59_128_3.png
 3024:
   description: Jin-Mei Logo icon - Unknown
-  iconFile: '59_04'
+  iconFile: res:/ui/texture/icons/59_128_4.png
 3025:
   description: 'Ancestry icon for Achura: Inventors - Unknown'
-  iconFile: '58_02'
+  iconFile: res:/ui/texture/icons/58_64_2.png
 3026:
   description: 'Ancestry icon for Achura: Stargazers - Unknown'
-  iconFile: '58_03'
+  iconFile: res:/ui/texture/icons/58_64_3.png
 3027:
   description: 'Ancestry icon for Achura: Monks - Unknown'
-  iconFile: '58_04'
+  iconFile: res:/ui/texture/icons/58_64_4.png
 3028:
   description: 'Ancestry icon for Jin-Mei: Sang Do Caste - Unknown'
-  iconFile: '58_05'
+  iconFile: res:/ui/texture/icons/58_64_5.png
 3029:
   description: 'Ancestry icon for Jin-Mei: Saan Go Caste - Unknown'
-  iconFile: '58_06'
+  iconFile: res:/ui/texture/icons/58_64_6.png
 3030:
   description: 'Ancestry icon for Jin-Mei: Jing Ko Caste - Unknown'
-  iconFile: '58_07'
+  iconFile: res:/ui/texture/icons/58_64_7.png
 3031:
   description: 'Ancestry icon for Khanid: Cyber Knights - Unknown'
-  iconFile: '58_09'
+  iconFile: res:/ui/texture/icons/58_64_9.png
 3032:
   description: 'Ancestry icon for Khanid: Unionists - Unknown'
-  iconFile: '58_10'
+  iconFile: res:/ui/texture/icons/58_64_10.png
 3033:
   description: 'Ancestry icon for Khanid: Zealots - Unknown'
-  iconFile: '58_11'
+  iconFile: res:/ui/texture/icons/58_64_11.png
 3034:
   description: 'Ancestry icon for Vherokior: Mystics - Unknown'
-  iconFile: '58_14'
+  iconFile: res:/ui/texture/icons/58_64_14.png
 3035:
   description: 'Ancestry icon for Vherokior: Retailers - Unknown'
-  iconFile: '58_15'
+  iconFile: res:/ui/texture/icons/58_64_15.png
 3036:
   description: 'Ancestry icon for Vherokior: Drifters - Unknown'
-  iconFile: '58_13'
+  iconFile: res:/ui/texture/icons/58_64_13.png
 3038:
   description: News Service Icon - Unknown
-  iconFile: '17_03'
+  iconFile: res:/ui/texture/icons/17_128_3.png
 3074:
   description: Gasminer
-  iconFile: '35_03'
+  iconFile: res:/ui/texture/icons/35_64_3.png
 3127:
   description: Willpower attribute icon, large - Unknown
-  iconFile: '60_01'
+  iconFile: res:/ui/texture/icons/60_128_1.png
 3128:
   description: Perception attribute icon, large - Unknown
-  iconFile: '60_02'
+  iconFile: res:/ui/texture/icons/60_128_2.png
 3129:
   description: Intelligence attribute icon, large - Unknown
-  iconFile: '60_03'
+  iconFile: res:/ui/texture/icons/60_128_3.png
 3130:
   description: Memory attribute icon, large - Unknown
-  iconFile: '60_04'
+  iconFile: res:/ui/texture/icons/60_128_4.png
 3131:
   description: Charisma attribute icon, large - Unknown
-  iconFile: '61_01'
+  iconFile: res:/ui/texture/icons/61_128_1.png
 3172:
   description: 'Character creation: Industry - Unknown'
-  iconFile: '67_01'
+  iconFile: res:/ui/texture/icons/67_128_1.png
 3173:
   description: 'Character creation: Prospector - Unknown'
-  iconFile: '67_02'
+  iconFile: res:/ui/texture/icons/67_128_2.png
 3174:
   description: 'Character creation: Engineer - Unknown'
-  iconFile: '67_04'
+  iconFile: res:/ui/texture/icons/67_128_4.png
 3175:
   description: 'Character creation: Business - Unknown'
-  iconFile: '65_01'
+  iconFile: res:/ui/texture/icons/65_128_1.png
 3176:
   description: 'Character creation: Executive Commander - Unknown'
-  iconFile: '65_02'
+  iconFile: res:/ui/texture/icons/65_128_2.png
 3177:
   description: 'Character creation: Entrepreneur - Unknown'
-  iconFile: '65_04'
+  iconFile: res:/ui/texture/icons/65_128_4.png
 3178:
   description: 'Character creation: Military - Unknown'
-  iconFile: '66_01'
+  iconFile: res:/ui/texture/icons/66_128_1.png
 3179:
   description: 'Character creation: Soldier - Unknown'
-  iconFile: '66_02'
+  iconFile: res:/ui/texture/icons/66_128_2.png
 3180:
   description: 'Character creation: Special Operations - Unknown'
-  iconFile: '66_04'
+  iconFile: res:/ui/texture/icons/66_128_4.png
 3181:
   description: Caldari Module Data Interface - Unknown
-  iconFile: '63_01'
+  iconFile: res:/ui/texture/icons/63_64_1.png
 3182:
   description: Gallente Module Data Interface - Unknown
-  iconFile: '63_02'
+  iconFile: res:/ui/texture/icons/63_64_2.png
 3183:
   description: Minmatar Module Data Interface - Unknown
-  iconFile: '63_03'
+  iconFile: res:/ui/texture/icons/63_64_3.png
 3184:
   description: Amarr Module Data Interface - Unknown
-  iconFile: '63_04'
+  iconFile: res:/ui/texture/icons/63_64_4.png
 3185:
   description: Caldari Ship Data Interface - Unknown
-  iconFile: '63_05'
+  iconFile: res:/ui/texture/icons/63_64_5.png
 3186:
   description: Gallenete Ship Data Interface - Unknown
-  iconFile: '63_06'
+  iconFile: res:/ui/texture/icons/63_64_6.png
 3187:
   description: Minmatar Ship Data Interface - Unknown
-  iconFile: '63_07'
+  iconFile: res:/ui/texture/icons/63_64_7.png
 3188:
   description: Amarr Ship Data Interface - Unknown
-  iconFile: '63_08'
+  iconFile: res:/ui/texture/icons/63_64_8.png
 3189:
   description: Caldari Rig Data Interface - Unknown
-  iconFile: '63_09'
+  iconFile: res:/ui/texture/icons/63_64_9.png
 3190:
   description: Gallente Rig Data Interface - Unknown
-  iconFile: '63_10'
+  iconFile: res:/ui/texture/icons/63_64_10.png
 3191:
   description: Minmatar Rig Data Interface - Unknown
-  iconFile: '63_11'
+  iconFile: res:/ui/texture/icons/63_64_11.png
 3192:
   description: Amarr Rig Data Interface - Unknown
-  iconFile: '63_12'
+  iconFile: res:/ui/texture/icons/63_64_12.png
 3193:
   description: Rig Shields - Unknown
-  iconFile: '68_09'
+  iconFile: res:/ui/texture/icons/68_64_9.png
 3194:
   description: Rig Armor - Unknown
-  iconFile: '68_10'
+  iconFile: res:/ui/texture/icons/68_64_10.png
 3195:
   description: Rig Capacitor - Unknown
-  iconFile: '68_11'
+  iconFile: res:/ui/texture/icons/68_64_11.png
 3196:
   description: Rig Astronautic - Unknown
-  iconFile: '68_12'
+  iconFile: res:/ui/texture/icons/68_64_12.png
 3197:
   description: Rig Launchers - Unknown
-  iconFile: '68_13'
+  iconFile: res:/ui/texture/icons/68_64_13.png
 3198:
   description: Rig EW - Unknown
-  iconFile: '68_14'
+  iconFile: res:/ui/texture/icons/68_64_14.png
 3199:
   description: Rig CPU - Unknown
-  iconFile: '68_15'
+  iconFile: res:/ui/texture/icons/68_64_15.png
 3200:
   description: Rig Drones - Unknown
-  iconFile: '68_16'
+  iconFile: res:/ui/texture/icons/68_64_16.png
 3201:
   description: Rig Projectiles - Unknown
-  iconFile: '68_02'
+  iconFile: res:/ui/texture/icons/68_64_2.png
 3202:
   description: Rig Hybrid - Unknown
-  iconFile: '68_03'
+  iconFile: res:/ui/texture/icons/68_64_3.png
 3203:
   description: Rig Laser - Unknown
-  iconFile: '68_04'
+  iconFile: res:/ui/texture/icons/68_64_4.png
 3208:
   description: Bounty Office service icon for stations - Unknown
-  iconFile: '61_02'
+  iconFile: res:/ui/texture/icons/61_128_2.png
 3210:
   description: Crash Booster - Unknown
-  iconFile: '62_01'
+  iconFile: res:/ui/texture/icons/62_64_1.png
 3211:
   description: Exile Booster - Unknown
-  iconFile: '62_02'
+  iconFile: res:/ui/texture/icons/62_64_2.png
 3212:
   description: Drop Booster - Unknown
-  iconFile: '62_03'
+  iconFile: res:/ui/texture/icons/62_64_3.png
 3213:
   description: Frentix Booster - Unknown
-  iconFile: '62_04'
+  iconFile: res:/ui/texture/icons/62_64_4.png
 3214:
   description: Mindflood Booster - Unknown
-  iconFile: '62_05'
+  iconFile: res:/ui/texture/icons/62_64_5.png
 3215:
   description: Blue Pill Booster - Unknown
-  iconFile: '62_06'
+  iconFile: res:/ui/texture/icons/62_64_6.png
 3216:
   description: Sooth Sayer Booster - Unknown
-  iconFile: '62_07'
+  iconFile: res:/ui/texture/icons/62_64_7.png
 3217:
   description: X-Instinct Booster - Unknown
-  iconFile: '62_08'
+  iconFile: res:/ui/texture/icons/62_64_8.png
 3218:
   description: Red Harvestable Cloud - Unknown
-  iconFile: '62_09'
+  iconFile: res:/ui/texture/icons/62_64_9.png
 3219:
   description: Purple Harvestable Cloud - Unknown
-  iconFile: '62_10'
+  iconFile: res:/ui/texture/icons/62_64_10.png
 3220:
   description: Blue Harvestable Cloud - Unknown
-  iconFile: '62_11'
+  iconFile: res:/ui/texture/icons/62_64_11.png
 3221:
   description: Aqua Harvestable Cloud - Unknown
-  iconFile: '62_12'
+  iconFile: res:/ui/texture/icons/62_64_12.png
 3222:
   description: Lime Harvestable Cloud - Unknown
-  iconFile: '62_13'
+  iconFile: res:/ui/texture/icons/62_64_13.png
 3223:
   description: Green Harvestable Cloud - Unknown
-  iconFile: '62_14'
+  iconFile: res:/ui/texture/icons/62_64_14.png
 3224:
   description: Yellow Harvestable Cloud - Unknown
-  iconFile: '62_15'
+  iconFile: res:/ui/texture/icons/62_64_15.png
 3225:
   description: Orange Harvestable Cloud - Unknown
-  iconFile: '62_16'
+  iconFile: res:/ui/texture/icons/62_64_16.png
 3226:
   description: Caldari (blue) target scrambler - Unknown
-  iconFile: '63_13'
+  iconFile: res:/ui/texture/icons/63_64_13.png
 3227:
   description: Gallente (green) target scrambler - Unknown
-  iconFile: '63_14'
+  iconFile: res:/ui/texture/icons/63_64_14.png
 3228:
   description: Minmatar (red) target scrambler - Unknown
-  iconFile: '63_15'
+  iconFile: res:/ui/texture/icons/63_64_15.png
 3229:
   description: Amarr (gold) target scrambler - Unknown
-  iconFile: '63_16'
+  iconFile: res:/ui/texture/icons/63_64_16.png
 3230:
   description: Datacore (physics) - Unknown
-  iconFile: '64_01'
+  iconFile: res:/ui/texture/icons/64_64_1.png
 3231:
   description: Datacore (Astronautics) - Unknown
-  iconFile: '64_02'
+  iconFile: res:/ui/texture/icons/64_64_2.png
 3232:
   description: Datacore (Engineering) - Unknown
-  iconFile: '64_03'
+  iconFile: res:/ui/texture/icons/64_64_3.png
 3233:
   description: Datacore (Science) - Unknown
-  iconFile: '64_04'
+  iconFile: res:/ui/texture/icons/64_64_4.png
 3234:
   description: Assault Missile (Kinetic) - Unknown
-  iconFile: '64_05'
+  iconFile: res:/ui/texture/icons/64_64_5.png
 3235:
   description: Assault Missile (Heat) - Unknown
-  iconFile: '64_06'
+  iconFile: res:/ui/texture/icons/64_64_6.png
 3236:
   description: Assault Missile (Explosive) - Unknown
-  iconFile: '64_07'
+  iconFile: res:/ui/texture/icons/64_64_7.png
 3237:
   description: Assault Missile (EMP) - Unknown
-  iconFile: '64_08'
+  iconFile: res:/ui/texture/icons/64_64_8.png
 3238:
   description: Contract (Freeform) - Unknown
-  iconFile: '64_09'
+  iconFile: res:/ui/texture/icons/64_64_9.png
 3239:
   description: Contract (MASTER) - Unknown
-  iconFile: '64_10'
+  iconFile: res:/ui/texture/icons/64_64_10.png
 3240:
   description: Salvaging Module - Unknown
-  iconFile: '64_11'
+  iconFile: res:/ui/texture/icons/64_64_11.png
 3241:
   description: Large Assault Launcher - Unknown
-  iconFile: '64_12'
+  iconFile: res:/ui/texture/icons/64_64_12.png
 3242:
   description: Contract (Courier) - Unknown
-  iconFile: '64_13'
+  iconFile: res:/ui/texture/icons/64_64_13.png
 3243:
   description: Contract (Item Exchange) - Unknown
-  iconFile: '64_14'
+  iconFile: res:/ui/texture/icons/64_64_14.png
 3244:
   description: Contract (Loan) - Unknown
-  iconFile: '64_15'
+  iconFile: res:/ui/texture/icons/64_64_15.png
 3245:
   description: Contract (Auction) - Unknown
-  iconFile: '64_16'
+  iconFile: res:/ui/texture/icons/64_64_16.png
 3246:
   description: 'Salvaged Material: Fabric (damaged) - Unknown'
-  iconFile: '68_05'
+  iconFile: res:/ui/texture/icons/68_64_5.png
 3247:
   description: 'Salvaged Material: Fabric - Unknown'
-  iconFile: '68_06'
+  iconFile: res:/ui/texture/icons/68_64_6.png
 3248:
   description: 'Salvaged Material: Conduits (damaged) - Unknown'
-  iconFile: '68_07'
+  iconFile: res:/ui/texture/icons/68_64_7.png
 3249:
   description: 'Salvaged Material: Conduits - Unknown'
-  iconFile: '68_08'
+  iconFile: res:/ui/texture/icons/68_64_8.png
 3250:
   description: 'Salvaged Material: Liquid (damaged) - Unknown'
-  iconFile: '69_01'
+  iconFile: res:/ui/texture/icons/69_64_1.png
 3251:
   description: 'Salvaged Material: Liquid - Unknown'
-  iconFile: '69_02'
+  iconFile: res:/ui/texture/icons/69_64_2.png
 3252:
   description: 'Salvaged Material: Emitter Disc (damaged) - Unknown'
-  iconFile: '69_03'
+  iconFile: res:/ui/texture/icons/69_64_3.png
 3253:
   description: 'Salvaged Material: Emitter Disc - Unknown'
-  iconFile: '69_04'
+  iconFile: res:/ui/texture/icons/69_64_4.png
 3254:
   description: 'Salvaged Material: Pump (damaged) - Unknown'
-  iconFile: '69_05'
+  iconFile: res:/ui/texture/icons/69_64_5.png
 3255:
   description: 'Salvaged Material: Pump - Unknown'
-  iconFile: '69_06'
+  iconFile: res:/ui/texture/icons/69_64_6.png
 3256:
   description: 'Salvaged Material: Computer Hardware (damaged) - Unknown'
-  iconFile: '69_07'
+  iconFile: res:/ui/texture/icons/69_64_7.png
 3257:
   description: 'Salvaged Material: Computer Hardware - Unknown'
-  iconFile: '69_08'
+  iconFile: res:/ui/texture/icons/69_64_8.png
 3258:
   description: 'Salvaged Material: Armor Plate (damaged) - Unknown'
-  iconFile: '69_09'
+  iconFile: res:/ui/texture/icons/69_64_9.png
 3259:
   description: 'Salvaged Material: Armor Plate - Unknown'
-  iconFile: '69_10'
+  iconFile: res:/ui/texture/icons/69_64_10.png
 3260:
   description: 'Salvaged Material: Bar/I-Beam (damaged) - Unknown'
-  iconFile: '69_11'
+  iconFile: res:/ui/texture/icons/69_64_11.png
 3261:
   description: 'Salvaged Material: Bar/I-Beam - Unknown'
-  iconFile: '69_12'
+  iconFile: res:/ui/texture/icons/69_64_12.png
 3262:
   description: 'Salvaged Material: Trigger Unit (damaged) - Unknown'
-  iconFile: '69_13'
+  iconFile: res:/ui/texture/icons/69_64_13.png
 3263:
   description: 'Salvaged Material: Trigger Unit - Unknown'
-  iconFile: '69_14'
+  iconFile: res:/ui/texture/icons/69_64_14.png
 3264:
   description: 'Salvaged Material: Electronics (damaged) - Unknown'
-  iconFile: '69_15'
+  iconFile: res:/ui/texture/icons/69_64_15.png
 3265:
   description: 'Salvaged Material: Electronics - Unknown'
-  iconFile: '69_16'
+  iconFile: res:/ui/texture/icons/69_64_16.png
 3266:
   description: Icon for rig slots
-  iconFile: '68_01'
+  iconFile: res:/ui/texture/icons/68_64_1.png
 3267:
   description: Female icon
-  iconFile: '70_01'
+  iconFile: res:/ui/texture/icons/70_64_1.png
 3268:
   description: Male icon
-  iconFile: '70_02'
+  iconFile: res:/ui/texture/icons/70_64_2.png
 3278:
   description: BombEM
-  iconFile: '70_05'
+  iconFile: res:/ui/texture/icons/70_64_5.png
 3279:
   description: BombExplosives
-  iconFile: '70_08'
+  iconFile: res:/ui/texture/icons/70_64_8.png
 3280:
   description: BombKinetic
-  iconFile: '70_06'
+  iconFile: res:/ui/texture/icons/70_64_6.png
 3281:
   description: BombThermic
-  iconFile: '70_07'
+  iconFile: res:/ui/texture/icons/70_64_7.png
 3282:
   description: BombEnergy
-  iconFile: '70_03'
+  iconFile: res:/ui/texture/icons/70_64_3.png
 3283:
   description: BombECM
-  iconFile: '70_04'
+  iconFile: res:/ui/texture/icons/70_64_4.png
 3299:
   description: RemoteECMBurst
-  iconFile: '70_09'
+  iconFile: res:/ui/texture/icons/70_64_9.png
 3300:
   description: TriageModule
-  iconFile: '70_10'
+  iconFile: res:/ui/texture/icons/70_64_10.png
 3301:
   description: Lpstore
-  iconFile: '70_11'
+  iconFile: res:/ui/texture/icons/70_64_11.png
 3302:
   description: Nanite Repair - Nanite Repair
-  iconFile: '70_12'
+  iconFile: res:/ui/texture/icons/70_64_12.png
 3303:
   description: Outpost upgrade labs
-  iconFile: '70_13'
+  iconFile: res:/ui/texture/icons/70_64_13.png
 3304:
   description: Outpost upgrade manufacturing
-  iconFile: '70_14'
+  iconFile: res:/ui/texture/icons/70_64_14.png
 3305:
   description: outpost upgrades refinery
-  iconFile: '70_15'
+  iconFile: res:/ui/texture/icons/70_64_15.png
 3306:
   description: Outpost upgrade offices
-  iconFile: '70_16'
+  iconFile: res:/ui/texture/icons/70_64_16.png
 3307:
   description: Compressed Arkonor - Compressed Arkonor
-  iconFile: '71_01'
+  iconFile: res:/ui/texture/icons/71_64_1.png
 3308:
   description: Compressed Bistot - Compressed Bistot
-  iconFile: '71_02'
+  iconFile: res:/ui/texture/icons/71_64_2.png
 3309:
   description: Compressed Crokite - Compressed Crokite
-  iconFile: '71_03'
+  iconFile: res:/ui/texture/icons/71_64_3.png
 3310:
   description: Compressed Dark Ochre - Compressed Dark Ochre
-  iconFile: '71_04'
+  iconFile: res:/ui/texture/icons/71_64_4.png
 3311:
   description: Compressed Hedbergite - Compressed Hedbergite
-  iconFile: '71_05'
+  iconFile: res:/ui/texture/icons/71_64_5.png
 3312:
   description: Compressed Hemorphite - Compressed Hemorphite
-  iconFile: '71_06'
+  iconFile: res:/ui/texture/icons/71_64_6.png
 3313:
   description: Compressed Jaspet - Compressed Jaspet
-  iconFile: '71_07'
+  iconFile: res:/ui/texture/icons/71_64_7.png
 3314:
   description: Compressed Kernite - Compressed Kernite
-  iconFile: '71_08'
+  iconFile: res:/ui/texture/icons/71_64_8.png
 3315:
   description: Compressed Omber - Compressed Omber
-  iconFile: '71_09'
+  iconFile: res:/ui/texture/icons/71_64_9.png
 3316:
   description: Compressed Spodumain - Compressed Spodumain
-  iconFile: '71_10'
+  iconFile: res:/ui/texture/icons/71_64_10.png
 3317:
   description: Compressed Scordite - Compressed Scordite
-  iconFile: '71_11'
+  iconFile: res:/ui/texture/icons/71_64_11.png
 3318:
   description: Compressed Pyroxeres - Compressed Pyroxeres
-  iconFile: '71_12'
+  iconFile: res:/ui/texture/icons/71_64_12.png
 3319:
   description: Compressed Veldspar - Compressed Veldspar
-  iconFile: '71_13'
+  iconFile: res:/ui/texture/icons/71_64_13.png
 3320:
   description: Compressed Plagioclase - Compressed Plagioclase
-  iconFile: '71_14'
+  iconFile: res:/ui/texture/icons/71_64_14.png
 3321:
   description: Compressed Gneiss - Compressed Gneiss
-  iconFile: '71_15'
+  iconFile: res:/ui/texture/icons/71_64_15.png
 3322:
   description: Compressed Mercoxit - Compressed Mercoxit
-  iconFile: '71_16'
+  iconFile: res:/ui/texture/icons/71_64_16.png
 3323:
   description: Compressed Glare Crust - Compressed Glare Crust
-  iconFile: '72_01'
+  iconFile: res:/ui/texture/icons/72_64_1.png
 3324:
   description: Compressed Enriched Clear Icicle - Compressed Enriched Clear Icicle
-  iconFile: '72_02'
+  iconFile: res:/ui/texture/icons/72_64_2.png
 3325:
   description: Compressed Dark Glitter - Compressed Dark Glitter
-  iconFile: '72_03'
+  iconFile: res:/ui/texture/icons/72_64_3.png
 3326:
   description: Compressed Glacial Mass - Compressed Glacial Mass
-  iconFile: '72_04'
+  iconFile: res:/ui/texture/icons/72_64_4.png
 3327:
   description: Compressed Think Blue Ice - Compressed Think Blue Ice
-  iconFile: '72_05'
+  iconFile: res:/ui/texture/icons/72_64_5.png
 3328:
   description: Compressed Gelidus - Compressed Gelidus
-  iconFile: '72_06'
+  iconFile: res:/ui/texture/icons/72_64_6.png
 3329:
   description: Compressed White Glaze - Compressed White Glaze
-  iconFile: '72_08'
+  iconFile: res:/ui/texture/icons/72_64_8.png
 3330:
   description: Compressed Krystallos - Compressed Krystallos
-  iconFile: '72_09'
+  iconFile: res:/ui/texture/icons/72_64_9.png
 3333:
   description: Rogue Drone Component 1 - Rogue Drone Component 1
-  iconFile: '72_10'
+  iconFile: res:/ui/texture/icons/72_64_10.png
 3334:
   description: Rogue Drone Component 2 - Rogue Drone Component 2
-  iconFile: '72_11'
+  iconFile: res:/ui/texture/icons/72_64_11.png
 3335:
   description: Rogue Drone Component 3 - Rogue Drone Component 3
-  iconFile: '72_12'
+  iconFile: res:/ui/texture/icons/72_64_12.png
 3336:
   description: Rogue Drone Component 4 - Rogue Drone Component 4
-  iconFile: '72_13'
+  iconFile: res:/ui/texture/icons/72_64_13.png
 3337:
   description: Rogue Drone Component 5 - Rogue Drone Component 5
-  iconFile: '72_14'
+  iconFile: res:/ui/texture/icons/72_64_14.png
 3338:
   description: Rogue Drone Component 6 - Rogue Drone Component 6
-  iconFile: '72_15'
+  iconFile: res:/ui/texture/icons/72_64_15.png
 3339:
   description: sensor booster - scan resolution - sensor booster - scan resolution
-  iconFile: '74_01'
+  iconFile: res:/ui/texture/icons/74_64_1.png
 3340:
   description: sensor booster - range - sensor booster - range
-  iconFile: '74_02'
+  iconFile: res:/ui/texture/icons/74_64_2.png
 3341:
   description: Remote Sensor Dampener - scan resolution - Remote Sensor Dampener -
     scan resolution
-  iconFile: '74_03'
+  iconFile: res:/ui/texture/icons/74_64_3.png
 3342:
   description: Remote Sensor Dampener - range - Remote Sensor Dampener - range
-  iconFile: '74_04'
+  iconFile: res:/ui/texture/icons/74_64_4.png
 3343:
   description: Tracking Disruptor - tracking - Tracking Disruptor - tracking
-  iconFile: '74_05'
+  iconFile: res:/ui/texture/icons/74_64_5.png
 3344:
   description: Tracking Disruptor - range - Tracking Disruptor - range
-  iconFile: '74_06'
+  iconFile: res:/ui/texture/icons/74_64_6.png
 3345:
   description: Warp Scrambler - focusing - Warp Scrambler - focusing
-  iconFile: '74_07'
+  iconFile: res:/ui/texture/icons/74_64_7.png
 3346:
   description: Tracking Computer - Tracking Computer
-  iconFile: '74_08'
+  iconFile: res:/ui/texture/icons/74_64_8.png
 3347:
   description: Tracking Computer / link - tracking - Tracking Computer / link - tracking
-  iconFile: '74_09'
+  iconFile: res:/ui/texture/icons/74_64_9.png
 3348:
   description: Tracking Computer / link - range - Tracking Computer / link - range
-  iconFile: '74_10'
+  iconFile: res:/ui/texture/icons/74_64_10.png
 3369:
   description: 24th Imperial Crusade - Unknown
-  iconFile: c_47_1
+  iconFile: res:/ui/texture/corps/47_128_1.png
 3370:
   description: State Protectorate - Unknown
-  iconFile: c_47_2
+  iconFile: res:/ui/texture/corps/47_128_2.png
 3371:
   description: Federal Defence Force - Unknown
-  iconFile: c_47_3
+  iconFile: res:/ui/texture/corps/47_128_3.png
 3372:
   description: Tribal Liberation Force - Unknown
-  iconFile: c_47_4
-3373:
-  description: Omen Navy Issue - res:/Model/Ship/AmarrNavy/ac4.blue
-  iconFile: '2026'
+  iconFile: res:/ui/texture/corps/47_128_4.png
 3433:
   description: Warp Scrambler Icon - Unknown
-  iconFile: '76_01'
+  iconFile: res:/ui/texture/icons/76_64_1.png
 3435:
   description: Commodity - starCake
-  iconFile: '78_01'
+  iconFile: res:/ui/texture/icons/78_64_1.png
 3436:
   description: Commodity - ancientPainblade
-  iconFile: '78_02'
+  iconFile: res:/ui/texture/icons/78_64_2.png
 3437:
   description: Commodity - ceremonialBrush
-  iconFile: '78_03'
+  iconFile: res:/ui/texture/icons/78_64_3.png
 3438:
   description: Commodity - medicinalHerbs
-  iconFile: '78_04'
+  iconFile: res:/ui/texture/icons/78_64_4.png
 3439:
   description: Commodity - Singing Staff
-  iconFile: '78_05'
+  iconFile: res:/ui/texture/icons/78_64_5.png
 3440:
   description: Commodity - clackers
-  iconFile: '78_06'
+  iconFile: res:/ui/texture/icons/78_64_6.png
 3441:
   description: Commodity - folkloricPainting
-  iconFile: '78_07'
+  iconFile: res:/ui/texture/icons/78_64_7.png
 3442:
   description: Commodity - numberBox
-  iconFile: '78_08'
+  iconFile: res:/ui/texture/icons/78_64_8.png
 3443:
   description: Commodity - boardGame
-  iconFile: '78_09'
+  iconFile: res:/ui/texture/icons/78_64_9.png
 3444:
   description: Commodity - fireCrackers
-  iconFile: '78_10'
+  iconFile: res:/ui/texture/icons/78_64_10.png
 3445:
   description: Commodity - mythologicalStatue
-  iconFile: '78_11'
+  iconFile: res:/ui/texture/icons/78_64_11.png
 3446:
   description: Commodity - ghalenDumplings
-  iconFile: '78_12'
+  iconFile: res:/ui/texture/icons/78_64_12.png
 3447:
   description: Commodity - zydrineWine
-  iconFile: '78_13'
+  iconFile: res:/ui/texture/icons/78_64_13.png
 3448:
   description: Commodity - zydrineBurn
-  iconFile: '78_14'
+  iconFile: res:/ui/texture/icons/78_64_14.png
 3449:
   description: Commodity - ghalenPastries
-  iconFile: '78_15'
+  iconFile: res:/ui/texture/icons/78_64_15.png
 3450:
   description: Commodity - kuashi
-  iconFile: '78_16'
+  iconFile: res:/ui/texture/icons/78_64_16.png
 3626:
   description: Amarr Cruiser 5 - Subsystem 1 Variation 1
-  iconFile: '76_09'
+  iconFile: res:/ui/texture/icons/76_64_9.png
 3631:
   description: Amarr Cruiser 5 - Subsystem 2 Variation 1
-  iconFile: '76_06'
+  iconFile: res:/ui/texture/icons/76_64_6.png
 3636:
   description: Amarr Cruiser 5 - Subsystem 3 Variation 1
-  iconFile: '76_07'
+  iconFile: res:/ui/texture/icons/76_64_7.png
 3641:
   description: Amarr Cruiser 5 - Subsystem 4 Variation 1
-  iconFile: '76_05'
+  iconFile: res:/ui/texture/icons/76_64_5.png
 3646:
   description: Amarr Cruiser 5 - Subsystem 5 Variation 1
-  iconFile: '76_08'
+  iconFile: res:/ui/texture/icons/76_64_8.png
 3716:
   description: electronic hybrid component  - HybridComponentElectronic
-  iconFile: '76_14'
+  iconFile: res:/ui/texture/icons/76_64_14.png
 3717:
   description: propulsion component  - HybridComponentPropulsion
-  iconFile: '76_12'
+  iconFile: res:/ui/texture/icons/76_64_12.png
 3718:
   description: generic component - HybridComponentGeneric
-  iconFile: '76_15'
+  iconFile: res:/ui/texture/icons/76_64_15.png
 3719:
   description: offensive component - HybridComponentOffensive
-  iconFile: '76_10'
+  iconFile: res:/ui/texture/icons/76_64_10.png
 3720:
   description: engineering hybrid component - HybridComponentEngineering
-  iconFile: '76_13'
+  iconFile: res:/ui/texture/icons/76_64_13.png
 3721:
   description: defensive hybrid component - HybridComponentDefensive
-  iconFile: '76_11'
+  iconFile: res:/ui/texture/icons/76_64_11.png
 3722:
   description: intact ancient electronic salvage - AncientIntactElectronicSalvage
-  iconFile: '82_10'
+  iconFile: res:/ui/texture/icons/82_64_10.png
 3723:
   description: broken ancient electronic salvage - AncientBrokenElectronicSalvage
-  iconFile: '82_09'
+  iconFile: res:/ui/texture/icons/82_64_9.png
 3724:
   description: ancient broken defensive salvage - AncientBrokenDefensiveSalvage
-  iconFile: '82_07'
+  iconFile: res:/ui/texture/icons/82_64_7.png
 3725:
   description: AncientIntactDefensiveSalvage
-  iconFile: '82_08'
+  iconFile: res:/ui/texture/icons/82_64_8.png
 3726:
   description: AncientIntactEngineeringSalvage
-  iconFile: '82_04'
+  iconFile: res:/ui/texture/icons/82_64_4.png
 3727:
   description: AncientBrokenEngineeringSalvage
-  iconFile: '82_03'
+  iconFile: res:/ui/texture/icons/82_64_3.png
 3728:
   description: AncientBrokenOffensiveSalvage
-  iconFile: '82_01'
+  iconFile: res:/ui/texture/icons/82_64_1.png
 3729:
   description: AncientIntactOffensiveSalvage
-  iconFile: '82_02'
+  iconFile: res:/ui/texture/icons/82_64_2.png
 3730:
   description: AncientBrokenGenericSalvage
-  iconFile: '82_11'
+  iconFile: res:/ui/texture/icons/82_64_11.png
 3731:
   description: AncientIntactGenericSalvage
-  iconFile: '82_12'
+  iconFile: res:/ui/texture/icons/82_64_12.png
 3732:
   description: AncientBrokenPropulsionSalvage
-  iconFile: '82_05'
+  iconFile: res:/ui/texture/icons/82_64_5.png
 3733:
   description: AncientIntactPropulsionSalvage
-  iconFile: '82_06'
+  iconFile: res:/ui/texture/icons/82_64_6.png
 3734:
   description: defensive ancient relic - AncientRelicDefensive
-  iconFile: '84_06'
+  iconFile: res:/ui/texture/icons/84_64_6.png
 3735:
   description: electronic ancient relic - AncientRelicElectronic
-  iconFile: '84_04'
+  iconFile: res:/ui/texture/icons/84_64_4.png
 3736:
   description: engineering ancient relic - AncientRelicEngineering
-  iconFile: '84_02'
+  iconFile: res:/ui/texture/icons/84_64_2.png
 3737:
   description: offensive ancient relic - AncientRelicOffensive
-  iconFile: '84_03'
+  iconFile: res:/ui/texture/icons/84_64_3.png
 3738:
   description: propulsion ancient relic - AncientRelicPropulsion
-  iconFile: '84_07'
+  iconFile: res:/ui/texture/icons/84_64_7.png
 3739:
   description: common red polymer 1 - PolymerCommon1
-  iconFile: '83_01'
+  iconFile: res:/ui/texture/icons/83_64_1.png
 3740:
   description: common polymer blue - PolymerCommon2
-  iconFile: '83_02'
+  iconFile: res:/ui/texture/icons/83_64_2.png
 3741:
   description: common polymer brownish - PolymerCommon3
-  iconFile: '83_03'
+  iconFile: res:/ui/texture/icons/83_64_3.png
 3742:
   description: common polymer bleh - PolymerCommon4
-  iconFile: '83_04'
+  iconFile: res:/ui/texture/icons/83_64_4.png
 3743:
   description: green common polymer - PolymerCommon5
-  iconFile: '84_01'
+  iconFile: res:/ui/texture/icons/84_64_1.png
 3744:
   description: less common polymer 1 - polymerLessCommon1
-  iconFile: '83_05'
+  iconFile: res:/ui/texture/icons/83_64_5.png
 3745:
   description: less common polymer 2 - polymerLessCommon2
-  iconFile: '83_06'
+  iconFile: res:/ui/texture/icons/83_64_6.png
 3746:
   description: less common polymer 3 - polymerLessCommon3
-  iconFile: '83_07'
+  iconFile: res:/ui/texture/icons/83_64_7.png
 3747:
   description: less common polymer 4 - polymerLessCommon4
-  iconFile: '83_08'
+  iconFile: res:/ui/texture/icons/83_64_8.png
 3748:
   description: less common polymer 5 - polymerLessCommon5
-  iconFile: '84_05'
+  iconFile: res:/ui/texture/icons/84_64_5.png
 3749:
   description: rare polymer 1 - polymerRare1
-  iconFile: '83_09'
+  iconFile: res:/ui/texture/icons/83_64_9.png
 3750:
   description: rare polymer 2 - polymerRare2
-  iconFile: '83_10'
+  iconFile: res:/ui/texture/icons/83_64_10.png
 3751:
   description: polymer rare 3 - polymerRare3
-  iconFile: '83_11'
+  iconFile: res:/ui/texture/icons/83_64_11.png
 3752:
   description: rare polymer 4 - polymerRare4
-  iconFile: '83_12'
+  iconFile: res:/ui/texture/icons/83_64_12.png
 3753:
   description: rare polymer 5 - polymerRare5
-  iconFile: '84_09'
+  iconFile: res:/ui/texture/icons/84_64_9.png
 3754:
   description: uber polymer 1 - polymerUber1
-  iconFile: '83_13'
+  iconFile: res:/ui/texture/icons/83_64_13.png
 3755:
   description: sleeper component for loot - sleeperOverseerComponent
-  iconFile: '84_08'
+  iconFile: res:/ui/texture/icons/84_64_8.png
 3756:
   description: subsystem slot - subsystemSlot
-  iconFile: '76_04'
+  iconFile: res:/ui/texture/icons/76_64_4.png
 3759:
   description: Warp Icon - Warp
-  iconFile: '76_16'
+  iconFile: res:/ui/texture/icons/76_64_16.png
 3762:
   description: Tengu
-  iconFile: '89_1'
+  iconFile: res:/ui/texture/icons/89_128_1.png
 3763:
   description: Legion
-  iconFile: '89_2'
+  iconFile: res:/ui/texture/icons/89_128_2.png
 3764:
   description: Loki
-  iconFile: '89_3'
+  iconFile: res:/ui/texture/icons/89_128_3.png
 3765:
   description: Proteus
-  iconFile: '89_4'
+  iconFile: res:/ui/texture/icons/89_128_4.png
 3766:
   description: ancient hull relic - AncientRelicHull
-  iconFile: '84_16'
+  iconFile: res:/ui/texture/icons/84_64_16.png
 3801:
   description: agent_interaction
   iconFile: res:/UI/netres/mission_content/agent_interaction.png
@@ -3269,545 +3263,545 @@
   iconFile: res:/UI/netres/mission_content/smash_and_grab.png
 3943:
   description: inv_upgrade_wormhole
-  iconFile: '95_11'
+  iconFile: res:/ui/texture/icons/95_64_11.png
 3945:
   description: inv_upgrade_cynosupression
-  iconFile: '95_02'
+  iconFile: res:/ui/texture/icons/95_64_2.png
 3946:
   description: inv_upgrade_cynonavigation
-  iconFile: '95_03'
+  iconFile: res:/ui/texture/icons/95_64_3.png
 3947:
   description: inv_upgrade_entrapment
-  iconFile: '95_04'
+  iconFile: res:/ui/texture/icons/95_64_4.png
 3948:
   description: inv_upgrade_oreprospect
-  iconFile: '95_06'
+  iconFile: res:/ui/texture/icons/95_64_6.png
 3949:
   description: inv_upgrade_supercarrierDock
-  iconFile: '95_07'
+  iconFile: res:/ui/texture/icons/95_64_7.png
 3950:
   description: inv_upgrade_supercarrierConstruct
-  iconFile: '95_08'
+  iconFile: res:/ui/texture/icons/95_64_8.png
 3951:
   description: inv_upgrade_pirateMagnet
-  iconFile: '95_10'
+  iconFile: res:/ui/texture/icons/95_64_10.png
 3952:
   description: inv_upgrade_AdvLogiNetwork
-  iconFile: '95_12'
+  iconFile: res:/ui/texture/icons/95_64_12.png
 3953:
   description: inv_upgrade_surveyNetwork
-  iconFile: '95_14'
+  iconFile: res:/ui/texture/icons/95_64_14.png
 3954:
   description: inv_upgrade_constructionMatrix
-  iconFile: '95_15'
+  iconFile: res:/ui/texture/icons/95_64_15.png
 3955:
   description: citadel_cruise_launcher
-  iconFile: '95_05'
+  iconFile: res:/ui/texture/icons/95_64_5.png
 5003:
-  iconFile: 'res:/Texture/Landmark/amarr.jpg                                                                     '
+  iconFile: res:/Texture/Landmark/amarr.jpg
 5005:
-  iconFile: 'res:/Texture/Landmark/minmatar.jpg                                                                  '
+  iconFile: res:/Texture/Landmark/minmatar.jpg
 5006:
-  iconFile: 'res:/Texture/Landmark/caldari.jpg                                                                   '
+  iconFile: res:/Texture/Landmark/caldari.jpg
 5007:
-  iconFile: 'res:/Texture/Landmark/galente.jpg                                                                   '
+  iconFile: res:/Texture/Landmark/galente.jpg
 5008:
-  iconFile: 'res:/Texture/Landmark/jove.jpg                                                                      '
+  iconFile: res:/Texture/Landmark/jove.jpg
 5010:
-  iconFile: 'res:/Texture/Landmark/khanidkingdom.jpg                                                             '
+  iconFile: res:/Texture/Landmark/khanidkingdom.jpg
 5012:
-  iconFile: 'res:/Texture/Landmark/Curse.jpg                                                                     '
+  iconFile: res:/Texture/Landmark/Curse.jpg
 5015:
-  iconFile: 'res:/Texture/Landmark/outerring.jpg                                                                 '
+  iconFile: res:/Texture/Landmark/outerring.jpg
 5016:
-  iconFile: 'res:/Texture/Landmark/stain.jpg                                                                     '
+  iconFile: res:/Texture/Landmark/stain.jpg
 5017:
-  iconFile: 'res:/Texture/Landmark/venal.jpg                                                                     '
+  iconFile: res:/Texture/Landmark/venal.jpg
 5020:
-  iconFile: 'res:/Texture/Landmark/pointofnoreturn.jpg                                                           '
+  iconFile: res:/Texture/Landmark/pointofnoreturn.jpg
 5026:
-  iconFile: 'res:/Texture/Landmark/ginnungagap.jpg                                                               '
+  iconFile: res:/Texture/Landmark/ginnungagap.jpg
 5027:
-  iconFile: 'res:/Texture/Landmark/golgothanfields.jpg                                                           '
+  iconFile: res:/Texture/Landmark/golgothanfields.jpg
 5029:
-  iconFile: 'res:/Texture/Landmark/myridianstrip.jpg                                                             '
+  iconFile: res:/Texture/Landmark/myridianstrip.jpg
 5030:
-  iconFile: 'res:/Texture/Landmark/A33colonialruins.jpg                                                          '
+  iconFile: res:/Texture/Landmark/A33colonialruins.jpg
 5031:
-  iconFile: 'res:/Texture/Landmark/serpentscoil.jpg                                                              '
+  iconFile: res:/Texture/Landmark/serpentscoil.jpg
 5032:
-  iconFile: 'res:/Texture/Landmark/traumark.jpg                                                                  '
+  iconFile: res:/Texture/Landmark/traumark.jpg
 5033:
-  iconFile: 'res:/Texture/Landmark/cityofgod.jpg                                                                 '
+  iconFile: res:/Texture/Landmark/cityofgod.jpg
 10012:
   description: Aquoeous Liquid
-  iconFile: '96_02'
+  iconFile: res:/ui/texture/icons/96_64_2.png
 10013:
   description: Suspended Plasma
-  iconFile: '96_03'
+  iconFile: res:/ui/texture/icons/96_64_3.png
 10014:
   description: Ionic Solutions
-  iconFile: '96_04'
+  iconFile: res:/ui/texture/icons/96_64_4.png
 10015:
   description: Noble Gas
-  iconFile: '96_05'
+  iconFile: res:/ui/texture/icons/96_64_5.png
 10016:
   description: Reactive Gas
-  iconFile: '96_06'
+  iconFile: res:/ui/texture/icons/96_64_6.png
 10017:
   description: Plasmoids
-  iconFile: '96_07'
+  iconFile: res:/ui/texture/icons/96_64_7.png
 10018:
   description: Oxidizing Compound
-  iconFile: '96_08'
+  iconFile: res:/ui/texture/icons/96_64_8.png
 10019:
   description: Electrolytes
-  iconFile: '96_09'
+  iconFile: res:/ui/texture/icons/96_64_9.png
 10020:
   description: Reactive Metals
-  iconFile: '96_10'
+  iconFile: res:/ui/texture/icons/96_64_10.png
 10021:
   description: Precious Metals
-  iconFile: '96_11'
+  iconFile: res:/ui/texture/icons/96_64_11.png
 10022:
   description: Toxic Metals
-  iconFile: '96_12'
+  iconFile: res:/ui/texture/icons/96_64_12.png
 10023:
   description: Chiral Structures
-  iconFile: '96_13'
+  iconFile: res:/ui/texture/icons/96_64_13.png
 10024:
   description: Base Metals
-  iconFile: '96_14'
+  iconFile: res:/ui/texture/icons/96_64_14.png
 10025:
   description: Noble Metals
-  iconFile: '96_15'
+  iconFile: res:/ui/texture/icons/96_64_15.png
 10026:
   description: Heavy Metals
-  iconFile: '96_16'
+  iconFile: res:/ui/texture/icons/96_64_16.png
 10027:
   description: Non-CS Crystals
-  iconFile: '97_01'
+  iconFile: res:/ui/texture/icons/97_64_1.png
 10028:
   description: Felsic Magma
-  iconFile: '97_02'
+  iconFile: res:/ui/texture/icons/97_64_2.png
 10029:
   description: Bacteria
-  iconFile: '97_03'
+  iconFile: res:/ui/texture/icons/97_64_3.png
 10030:
   description: Biomass
-  iconFile: '97_04'
+  iconFile: res:/ui/texture/icons/97_64_4.png
 10031:
   description: Proteins
-  iconFile: '97_05'
+  iconFile: res:/ui/texture/icons/97_64_5.png
 10032:
   description: Biofuels
-  iconFile: '97_06'
+  iconFile: res:/ui/texture/icons/97_64_6.png
 10033:
   description: Industrial Fibers
-  iconFile: '97_07'
+  iconFile: res:/ui/texture/icons/97_64_7.png
 10034:
   description: Micro Organisms
-  iconFile: '97_08'
+  iconFile: res:/ui/texture/icons/97_64_8.png
 10035:
   description: Planktic Colonies
-  iconFile: '97_09'
+  iconFile: res:/ui/texture/icons/97_64_9.png
 10036:
   description: Complex Organisms
-  iconFile: '97_10'
+  iconFile: res:/ui/texture/icons/97_64_10.png
 10037:
   description: Carbon Compounds
-  iconFile: '97_11'
+  iconFile: res:/ui/texture/icons/97_64_11.png
 10038:
   description: Autotrophs
-  iconFile: '97_12'
+  iconFile: res:/ui/texture/icons/97_64_12.png
 10039:
   description: Condensates
-  iconFile: '97_13'
+  iconFile: res:/ui/texture/icons/97_64_13.png
 10040:
   description: Camera Drones
-  iconFile: '97_14'
+  iconFile: res:/ui/texture/icons/97_64_14.png
 10041:
   description: Synthetic Synapses
-  iconFile: '97_15'
+  iconFile: res:/ui/texture/icons/97_64_15.png
 10042:
   description: Gel-Matrix Biomass
-  iconFile: '97_16'
+  iconFile: res:/ui/texture/icons/97_64_16.png
 10043:
   description: Supercomputers
-  iconFile: '98_01'
+  iconFile: res:/ui/texture/icons/98_64_1.png
 10044:
   description: Smartfab Units
-  iconFile: '98_02'
+  iconFile: res:/ui/texture/icons/98_64_2.png
 10045:
   description: Nuclear Reactors
-  iconFile: '98_03'
+  iconFile: res:/ui/texture/icons/98_64_3.png
 10046:
   description: Neocom
-  iconFile: '98_04'
+  iconFile: res:/ui/texture/icons/98_64_4.png
 10047:
   description: Industrial Explosive
-  iconFile: '98_05'
+  iconFile: res:/ui/texture/icons/98_64_5.png
 10048:
   description: Hermetic Membranes
-  iconFile: '98_06'
+  iconFile: res:/ui/texture/icons/98_64_6.png
 10049:
   description: Hazmat Detection Systems
-  iconFile: '98_07'
+  iconFile: res:/ui/texture/icons/98_64_7.png
 10050:
   description: Cryoprotectant Solution
-  iconFile: '98_08'
+  iconFile: res:/ui/texture/icons/98_64_8.png
 10051:
   description: Oxides
-  iconFile: '98_09'
+  iconFile: res:/ui/texture/icons/98_64_9.png
 10052:
   description: Water-Cooled CPU
-  iconFile: '98_10'
+  iconFile: res:/ui/texture/icons/98_64_10.png
 10053:
   description: Nanites
-  iconFile: '98_11'
+  iconFile: res:/ui/texture/icons/98_64_11.png
 10054:
   description: Biocells
-  iconFile: '98_12'
+  iconFile: res:/ui/texture/icons/98_64_12.png
 10055:
   description: Microfiber Shielding
-  iconFile: '98_13'
+  iconFile: res:/ui/texture/icons/98_64_13.png
 10056:
   description: Test Cultures
-  iconFile: '98_14'
+  iconFile: res:/ui/texture/icons/98_64_14.png
 10057:
   description: Supertensile Plastics
-  iconFile: '98_15'
+  iconFile: res:/ui/texture/icons/98_64_15.png
 10058:
   description: Polyaramids
-  iconFile: '98_16'
+  iconFile: res:/ui/texture/icons/98_64_16.png
 10059:
   description: Mechanical Powercores
-  iconFile: '99_01'
+  iconFile: res:/ui/texture/icons/99_64_1.png
 10060:
   description: Structural Maintainance Drones
-  iconFile: '99_02'
+  iconFile: res:/ui/texture/icons/99_64_2.png
 10061:
   description: Organic Mortar
-  iconFile: '99_03'
+  iconFile: res:/ui/texture/icons/99_64_3.png
 10062:
   description: Recursion Cylinder
-  iconFile: '99_04'
+  iconFile: res:/ui/texture/icons/99_64_4.png
 10063:
   description: Self-Replicating Nano Hive
-  iconFile: '99_05'
+  iconFile: res:/ui/texture/icons/99_64_5.png
 10064:
   description: Communication Module
-  iconFile: '99_06'
+  iconFile: res:/ui/texture/icons/99_64_6.png
 10065:
   description: Hardware Mainframe
-  iconFile: '99_07'
+  iconFile: res:/ui/texture/icons/99_64_7.png
 10066:
   description: Wetware Mainframe
-  iconFile: '99_08'
+  iconFile: res:/ui/texture/icons/99_64_8.png
 10071:
   description: Wetware Mainframe
-  iconFile: '99_07'
+  iconFile: res:/ui/texture/icons/99_64_7.png
 10073:
   description: Broadcast Node
-  iconFile: '99_06'
+  iconFile: res:/ui/texture/icons/99_64_6.png
 10074:
   description: Integrity Response Drones
-  iconFile: '99_02'
+  iconFile: res:/ui/texture/icons/99_64_2.png
 10075:
   description: Nano-Factory
-  iconFile: '99_05'
+  iconFile: res:/ui/texture/icons/99_64_5.png
 10076:
   description: Organic Mortar Applicators
-  iconFile: '99_03'
+  iconFile: res:/ui/texture/icons/99_64_3.png
 10077:
   description: Recursive Computing Module
-  iconFile: '99_08'
+  iconFile: res:/ui/texture/icons/99_64_8.png
 10078:
   description: Self-Harmonizing Power Core
-  iconFile: '99_01'
+  iconFile: res:/ui/texture/icons/99_64_1.png
 10079:
   description: Sterile Conduits
-  iconFile: '99_04'
+  iconFile: res:/ui/texture/icons/99_64_4.png
 10081:
   description: Aqueous Liquid
-  iconFile: '96_02'
+  iconFile: res:/ui/texture/icons/96_64_2.png
 10082:
   description: Suspended Plasma
-  iconFile: '96_03'
+  iconFile: res:/ui/texture/icons/96_64_3.png
 10083:
   description: Ionic Solutions
-  iconFile: '96_04'
+  iconFile: res:/ui/texture/icons/96_64_4.png
 10084:
   description: Reactive Gas
-  iconFile: '96_06'
+  iconFile: res:/ui/texture/icons/96_64_6.png
 10085:
   description: Noble Gas
-  iconFile: '96_05'
+  iconFile: res:/ui/texture/icons/96_64_5.png
 10086:
   description: Plasmoids
-  iconFile: '96_07'
+  iconFile: res:/ui/texture/icons/96_64_7.png
 10087:
   description: Oxidizing Compound
-  iconFile: '96_08'
+  iconFile: res:/ui/texture/icons/96_64_8.png
 10088:
   description: Electrolytes
-  iconFile: '96_09'
+  iconFile: res:/ui/texture/icons/96_64_9.png
 10089:
   description: Reactive Metals
-  iconFile: '96_10'
+  iconFile: res:/ui/texture/icons/96_64_10.png
 10090:
   description: Precious Metals
-  iconFile: '96_11'
+  iconFile: res:/ui/texture/icons/96_64_11.png
 10091:
   description: Toxic Metals
-  iconFile: '96_12'
+  iconFile: res:/ui/texture/icons/96_64_12.png
 10092:
   description: Chiral Structures
-  iconFile: '96_13'
+  iconFile: res:/ui/texture/icons/96_64_13.png
 10093:
   description: Base Metals
-  iconFile: '96_14'
+  iconFile: res:/ui/texture/icons/96_64_14.png
 10094:
   description: Noble Metals
-  iconFile: '96_15'
+  iconFile: res:/ui/texture/icons/96_64_15.png
 10095:
   description: Heavy Metals
-  iconFile: '96_16'
+  iconFile: res:/ui/texture/icons/96_64_16.png
 10096:
   description: Non-CS Crystals
-  iconFile: '97_01'
+  iconFile: res:/ui/texture/icons/97_64_1.png
 10097:
   description: Felsic Magma
-  iconFile: '97_02'
+  iconFile: res:/ui/texture/icons/97_64_2.png
 10098:
   description: Bacteria
-  iconFile: '97_03'
+  iconFile: res:/ui/texture/icons/97_64_3.png
 10099:
   description: Biomass
-  iconFile: '97_04'
+  iconFile: res:/ui/texture/icons/97_64_4.png
 10100:
   description: Proteins
-  iconFile: '97_05'
+  iconFile: res:/ui/texture/icons/97_64_5.png
 10101:
   description: Biofuels
-  iconFile: '97_06'
+  iconFile: res:/ui/texture/icons/97_64_6.png
 10102:
   description: Industrial Fibers
-  iconFile: '97_07'
+  iconFile: res:/ui/texture/icons/97_64_7.png
 10103:
   description: Micro Organisms
-  iconFile: '97_08'
+  iconFile: res:/ui/texture/icons/97_64_8.png
 10104:
   description: Planktic Colonies
-  iconFile: '97_09'
+  iconFile: res:/ui/texture/icons/97_64_9.png
 10105:
   description: Complex Organisms
-  iconFile: '97_10'
+  iconFile: res:/ui/texture/icons/97_64_10.png
 10106:
   description: Carbon Compounds
-  iconFile: '97_11'
+  iconFile: res:/ui/texture/icons/97_64_11.png
 10107:
   description: Autotrophs
-  iconFile: '97_12'
+  iconFile: res:/ui/texture/icons/97_64_12.png
 10108:
   description: Condensates
-  iconFile: '97_13'
+  iconFile: res:/ui/texture/icons/97_64_13.png
 10109:
   description: Camera Drones
-  iconFile: '97_14'
+  iconFile: res:/ui/texture/icons/97_64_14.png
 10110:
   description: Synthetic Synapses
-  iconFile: '97_15'
+  iconFile: res:/ui/texture/icons/97_64_15.png
 10111:
   description: Gel-Matrix Biomass
-  iconFile: '97_16'
+  iconFile: res:/ui/texture/icons/97_64_16.png
 10113:
   description: Smartfab Units
-  iconFile: '98_02'
+  iconFile: res:/ui/texture/icons/98_64_2.png
 10115:
   description: Neocom
-  iconFile: '98_04'
+  iconFile: res:/ui/texture/icons/98_64_4.png
 10116:
   description: Industrial Explosives
-  iconFile: '98_05'
+  iconFile: res:/ui/texture/icons/98_64_5.png
 10117:
   description: Hermetic Membranes
-  iconFile: '98_06'
+  iconFile: res:/ui/texture/icons/98_64_6.png
 10118:
   description: Hazmat Detection Systems
-  iconFile: '98_07'
+  iconFile: res:/ui/texture/icons/98_64_7.png
 10119:
   description: Cryoprotectant Solution
-  iconFile: '98_08'
+  iconFile: res:/ui/texture/icons/98_64_8.png
 10120:
   description: Oxides
-  iconFile: '98_09'
+  iconFile: res:/ui/texture/icons/98_64_9.png
 10121:
   description: Water-Cooled CPU
-  iconFile: '98_10'
+  iconFile: res:/ui/texture/icons/98_64_10.png
 10122:
   description: Nanites
-  iconFile: '98_11'
+  iconFile: res:/ui/texture/icons/98_64_11.png
 10123:
   description: Biocells
-  iconFile: '98_12'
+  iconFile: res:/ui/texture/icons/98_64_12.png
 10124:
   description: Microfiber Shielding
-  iconFile: '98_13'
+  iconFile: res:/ui/texture/icons/98_64_13.png
 10125:
   description: Test Cultures
-  iconFile: '98_14'
+  iconFile: res:/ui/texture/icons/98_64_14.png
 10126:
   description: Supertensile Plastics
-  iconFile: '98_15'
+  iconFile: res:/ui/texture/icons/98_64_15.png
 10127:
   description: Polyaramids
-  iconFile: '98_16'
+  iconFile: res:/ui/texture/icons/98_64_16.png
 10132:
   description: Biotech Research Reports
-  iconFile: '96_01'
+  iconFile: res:/ui/texture/icons/96_64_1.png
 10133:
   description: lava planet
-  iconFile: '102_1'
+  iconFile: res:/ui/texture/icons/102_128_1.png
 10134:
   description: thunder planet
-  iconFile: '102_2'
+  iconFile: res:/ui/texture/icons/102_128_2.png
 10135:
   description: barren planet
-  iconFile: '102_3'
+  iconFile: res:/ui/texture/icons/102_128_3.png
 10136:
   description: temperate planet
-  iconFile: '102_4'
+  iconFile: res:/ui/texture/icons/102_128_4.png
 10137:
   description: ice planet
-  iconFile: '103_1'
+  iconFile: res:/ui/texture/icons/103_128_1.png
 10138:
   description: plasma planet
-  iconFile: '103_2'
+  iconFile: res:/ui/texture/icons/103_128_2.png
 10139:
   description: gas planet
-  iconFile: '103_3'
+  iconFile: res:/ui/texture/icons/103_128_3.png
 10140:
   description: shattered planet
-  iconFile: '103_4'
+  iconFile: res:/ui/texture/icons/103_128_4.png
 10141:
   description: moon
-  iconFile: '104_1'
+  iconFile: res:/ui/texture/icons/104_128_1.png
 10142:
   description: oceanic planet
-  iconFile: '104_2'
+  iconFile: res:/ui/texture/icons/104_128_2.png
 10144:
   description: This is the icon for the implant that is going in the 2010 EVE Box
-  iconFile: '99_09'
+  iconFile: res:/ui/texture/icons/99_64_9.png
 10149:
   description: mwd icon
-  iconFile: '79_09'
+  iconFile: res:/ui/texture/icons/79_64_9.png
 10150:
   description: Female Marine
-  iconFile: '100_05'
+  iconFile: res:/ui/texture/icons/100_64_5.png
 10151:
   description: MTAC (Mechanized Torso-Actuated Chassis)
-  iconFile: '101_10'
+  iconFile: res:/ui/texture/icons/101_64_10.png
 10152:
   description: Female Refugee
-  iconFile: '100_07'
+  iconFile: res:/ui/texture/icons/100_64_7.png
 10153:
   description: Exotic Dancer, Male
-  iconFile: '100_08'
+  iconFile: res:/ui/texture/icons/100_64_8.png
 10154:
   description: Female Scientist
-  iconFile: '100_12'
+  iconFile: res:/ui/texture/icons/100_64_12.png
 10155:
   description: Generic Fishlike Animal
-  iconFile: '101_01'
+  iconFile: res:/ui/texture/icons/101_64_1.png
 10156:
   description: Generic Arthropod (Insect)
-  iconFile: '101_02'
+  iconFile: res:/ui/texture/icons/101_64_2.png
 10157:
   description: Generic Alien Looking Creature
-  iconFile: '101_03'
+  iconFile: res:/ui/texture/icons/101_64_3.png
 10158:
   description: Generic High-Tech Object
-  iconFile: '101_04'
+  iconFile: res:/ui/texture/icons/101_64_4.png
 10159:
   description: Generic Book
-  iconFile: '101_05'
+  iconFile: res:/ui/texture/icons/101_64_5.png
 10160:
   description: Generic Animal
-  iconFile: '101_06'
+  iconFile: res:/ui/texture/icons/101_64_6.png
 10161:
   description: Generic Plant
-  iconFile: '101_07'
+  iconFile: res:/ui/texture/icons/101_64_7.png
 10162:
   description: Generic Ring
-  iconFile: '101_08'
+  iconFile: res:/ui/texture/icons/101_64_8.png
 10163:
   description: Generic Necklace
-  iconFile: '101_09'
+  iconFile: res:/ui/texture/icons/101_64_9.png
 10164:
   description: Military Ground Vehicle
-  iconFile: '101_11'
+  iconFile: res:/ui/texture/icons/101_64_11.png
 10165:
   description: Generic Child
-  iconFile: '101_12'
+  iconFile: res:/ui/texture/icons/101_64_12.png
 10166:
   description: Generic Reptilian
-  iconFile: '101_13'
+  iconFile: res:/ui/texture/icons/101_64_13.png
 10172:
   description: Icon record for Ammatar Mandate (factionID 500007)
-  iconFile: '44_04'
+  iconFile: res:/ui/texture/icons/44_32_4.png
 10173:
   description: Icon record for Khanid Kingdom (factionID 500008)
-  iconFile: '45_03'
+  iconFile: res:/ui/texture/icons/45_64_3.png
 10174:
   description: Icon record for Angel Cartel factionID 500011)
-  iconFile: '45_02'
+  iconFile: res:/ui/texture/icons/45_64_2.png
 10175:
   description: Icon record for Thukker Tribe factionID 500015)
-  iconFile: '44_03'
+  iconFile: res:/ui/texture/icons/44_32_3.png
 10176:
   description: Icon record for The Society (factionID 500017)
-  iconFile: '36_02'
+  iconFile: res:/ui/texture/icons/36_64_2.png
 10177:
   description: Icon record for Sansha's Nation (factionID 500019)
-  iconFile: '44_02'
+  iconFile: res:/ui/texture/icons/44_32_2.png
 10178:
   description: Icon record for Serpentis (factionID 500020)
-  iconFile: '45_01'
+  iconFile: res:/ui/texture/icons/45_64_1.png
 10180:
   description: Icon reference for Hedion University (CorporationID 1000165)
-  iconFile: c_43_1
+  iconFile: res:/ui/texture/corps/43_128_1.png
 10181:
   description: Icon reference for Imperial Academy (CorporationID 1000166)
-  iconFile: c_42_3
+  iconFile: res:/ui/texture/corps/42_128_3.png
 10182:
   description: Icon reference for State War Academy (CorporationID 1000167)
-  iconFile: c_42_1
+  iconFile: res:/ui/texture/corps/42_128_1.png
 10183:
   description: Icon reference for Federal Navy Academy (CorporationID 1000168)
-  iconFile: c_42_4
+  iconFile: res:/ui/texture/corps/42_128_4.png
 10184:
   description: Icon reference for Center for Advanced Studies (CorporationID 1000169)
-  iconFile: c_41_4
+  iconFile: res:/ui/texture/corps/41_128_4.png
 10185:
   description: Icon reference for Republic Military School (CorporationID 1000170)
-  iconFile: c_43_2
+  iconFile: res:/ui/texture/corps/43_128_2.png
 10186:
   description: Icon reference for Republic University (CorporationID 1000171)
-  iconFile: c_43_3
+  iconFile: res:/ui/texture/corps/43_128_3.png
 10187:
   description: Icon reference for Pator Tech School (CorporationID 1000172)
-  iconFile: c_43_4
+  iconFile: res:/ui/texture/corps/43_128_4.png
 10190:
   description: This is an extremely ugly wide-rimmed hat that once adorned the head
     of one Uchi Pakkori. The burn marks and blood smears don't improve the looks.
-  iconFile: '79_13'
+  iconFile: res:/ui/texture/icons/79_64_13.png
 10191:
   description: Icon record for Academy of Aggressive Behaviour (CorporationID 1000178)
-  iconFile: 'c_46_2 '
+  iconFile: res:/ui/texture/corps/46_128_2.png
 10192:
   description: Icon record for Material Institute (CorporationID 1000177)
-  iconFile: c_45_4
+  iconFile: res:/ui/texture/corps/45_128_4.png
 10204:
   description: 3992_male_bottomOuter_PantsMilM01_Types_PantsMilM01_blackwaxed
   iconFile: res:/UI/Asset/mannequin/bottomouter/3992_male_bottomOuter_PantsMilM01_Types_PantsMilM01_blackwaxed.png
@@ -3829,15 +3823,6 @@
 10210:
   description: 3958_female_Accessories_Glasses_Goggles_01_Types_goggles_01
   iconFile: res:/UI/Asset/mannequin/accessories_glasses/3958_female_Accessories_Glasses_Goggles_01_Types_goggles_01.png
-10211:
-  description: glasses_3965_1039
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_3965_1039.png
-10212:
-  description: glasses_3969_1045
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_3969_1045.png
-10213:
-  description: glasses_4000_993
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4000_993.png
 10214:
   description: 4037_female_Accessories_Glasses_EyeImp01_Types_EyeImpF01_RightDark
   iconFile: res:/UI/Asset/mannequin/accessories_glasses/4037_female_Accessories_Glasses_EyeImp01_Types_EyeImpF01_RightDark.png
@@ -3847,12 +3832,6 @@
 10216:
   description: 4039_female_Accessories_Glasses_EyeImp01_Types_EyeImpF01_RightGold
   iconFile: res:/UI/Asset/mannequin/accessories_glasses/4039_female_Accessories_Glasses_EyeImp01_Types_EyeImpF01_RightGold.png
-10217:
-  description: glasses_4040_971
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4040_971.png
-10218:
-  description: glasses_4041_965
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4041_965.png
 10219:
   description: 4042_female_Accessories_Glasses_Monocle_01_Types_MonocleF01_RightGray
   iconFile: res:/UI/Asset/mannequin/accessories_glasses/4042_female_Accessories_Glasses_Monocle_01_Types_MonocleF01_RightGray.png
@@ -3871,24 +3850,6 @@
 10224:
   description: 4052_female_Accessories_Glasses_Monocle_01_Types_MonocleF01_LeftGray
   iconFile: res:/UI/Asset/mannequin/accessories_glasses/4052_female_Accessories_Glasses_Monocle_01_Types_MonocleF01_LeftGray.png
-10225:
-  description: glasses_4053_1059
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4053_1059.png
-10226:
-  description: glasses_4056_1024
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4056_1024.png
-10227:
-  description: glasses_4081_967
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4081_967.png
-10228:
-  description: glasses_4092_973
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4092_973.png
-10229:
-  description: glasses_4094_1052
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4094_1052.png
-10230:
-  description: glasses_4095_1022
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4095_1022.png
 10231:
   description: hair_4086_947
   iconFile: res:/UI/Asset/mannequin/hair_4086_947.png
@@ -3966,7 +3927,7 @@
   iconFile: res:/UI/Asset/mannequin/feet/4001_male_Feet_BootsMilM03_Types_BootsMilM03_black.png
 10256:
   description: 'The store icon. It looks like a rack of clothes. '
-  iconFile: '65_03'
+  iconFile: res:/ui/texture/icons/65_128_3.png
 10257:
   description: NPE arc, all factions
   iconFile: res:/UI/netres/mission_content/arc_npe.png
@@ -4168,9 +4129,6 @@
 10610:
   description: 4115_female_bottomOuter_SkirtMilF02_Types_SkirtMilF02_whitestripes
   iconFile: res:/UI/Asset/mannequin/bottomouter/4115_female_bottomOuter_SkirtMilF02_Types_SkirtMilF02_whitestripes.png
-10611:
-  description: Female_Feet_BootsMilF01_Types_BootsMilF01_black
-  iconFile: res:/UI/Asset/mannequin/feet/Female_feet_BootsMilF01_Types_BootsMilF01_black.png
 10612:
   description: 4116_female_Feet_BootsMilF01_Types_BootsMilF01_blackgold
   iconFile: res:/UI/Asset/mannequin/feet/4116_female_Feet_BootsMilF01_Types_BootsMilF01_blackgold.png
@@ -4204,9 +4162,6 @@
 10622:
   description: 4126_female_Feet_BootsMilF01_Types_BootsMilF01_turquoise
   iconFile: res:/UI/Asset/mannequin/feet/4126_female_Feet_BootsMilF01_Types_BootsMilF01_turquoise.png
-10623:
-  description: Female_Feet_BootsMilF02_Types_BootsMilF02_black
-  iconFile: res:/UI/Asset/mannequin/feet/Female_feet_BootsMilF02_Types_BootsMilF02_black.png
 10624:
   description: 4127_female_Feet_BootsMilF02_Types_BootsMilF02_blackgold
   iconFile: res:/UI/Asset/mannequin/feet/4127_female_Feet_BootsMilF02_Types_BootsMilF02_blackgold.png
@@ -4222,9 +4177,6 @@
 10628:
   description: 4131_female_Feet_BootsMilF02_Types_BootsMilF02_red
   iconFile: res:/UI/Asset/mannequin/feet/4131_female_Feet_BootsMilF02_Types_BootsMilF02_red.png
-10629:
-  description: Female_Feet_BootsMilF03_Types_BootsMilF03_black
-  iconFile: res:/UI/Asset/mannequin/feet/Female_feet_BootsMilF03_Types_BootsMilF03_black.png
 10630:
   description: 4132_female_Feet_BootsMilF03_Types_BootsMilF03_blackwhite
   iconFile: res:/UI/Asset/mannequin/feet/4132_female_Feet_BootsMilF03_Types_BootsMilF03_blackwhite.png
@@ -4246,9 +4198,6 @@
 10636:
   description: 4136_female_Outer_JacketMilF01_Types_JacketMilF01_black
   iconFile: res:/UI/Asset/mannequin/outer/4136_female_Outer_JacketMilF01_Types_JacketMilF01_black.png
-10637:
-  description: Female_Outer_JacketMilF01_Types_JacketMilF01_blackgray
-  iconFile: res:/UI/Asset/mannequin/outer/Female_Outer_JacketMilF01_Types_JacketMilF01_blackgray.png
 10638:
   description: 4137_female_Outer_JacketMilF01_Types_JacketMilF01_graphite
   iconFile: res:/UI/Asset/mannequin/outer/4137_female_Outer_JacketMilF01_Types_JacketMilF01_graphite.png
@@ -4273,9 +4222,6 @@
 10645:
   description: 4144_female_Outer_JacketMilF02_Types_JacketMilF02_blackwhite
   iconFile: res:/UI/Asset/mannequin/outer/4144_female_Outer_JacketMilF02_Types_JacketMilF02_blackwhite.png
-10646:
-  description: Female_Outer_JacketMilF02_Types_JacketMilF02_blue
-  iconFile: res:/UI/Asset/mannequin/outer/Female_Outer_JacketMilF02_Types_JacketMilF02_blue.png
 10647:
   description: 4145_female_Outer_JacketMilF02_Types_JacketMilF02_brown
   iconFile: res:/UI/Asset/mannequin/outer/4145_female_Outer_JacketMilF02_Types_JacketMilF02_brown.png
@@ -4345,9 +4291,6 @@
 10669:
   description: 4215_female_TopMiddle_ShirtGF01_Types_ShirtGF01_white
   iconFile: res:/UI/Asset/mannequin/topmiddle/4215_female_TopMiddle_ShirtGF01_Types_ShirtGF01_white.png
-10670:
-  description: Female_TopMiddle_ShirtQF01_Types_shirtqf01
-  iconFile: res:/UI/Asset/mannequin/topmiddle/Female_TopMiddle_ShirtQF01_Types_shirtqf01.png
 10671:
   description: 4216_female_TopMiddle_TanktopF01_Types_TanktopF01_black
   iconFile: res:/UI/Asset/mannequin/topmiddle/4216_female_TopMiddle_TanktopF01_Types_TanktopF01_black.png
@@ -4450,99 +4393,6 @@
 10704:
   description: 3958_female_Accessories_Glasses_Goggles_01_Types_goggles_01
   iconFile: res:/UI/Asset/mannequin/accessories_glasses/3958_female_Accessories_Glasses_Goggles_01_Types_goggles_01.png
-10705:
-  description: glasses_3965_1039
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_3965_1039.png
-10706:
-  description: glasses_3969_1045
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_3969_1045.png
-10707:
-  description: glasses_4000_993
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4000_993.png
-10708:
-  description: glasses_4009_965
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4009_965.png
-10709:
-  description: glasses_4009_967
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4009_967.png
-10710:
-  description: glasses_4037_1039
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4037_1039.png
-10711:
-  description: glasses_4037_999
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4037_999.png
-10712:
-  description: glasses_4038_1045
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4038_1045.png
-10713:
-  description: glasses_4038_960
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4038_960.png
-10714:
-  description: glasses_4039_1010
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4039_1010.png
-10715:
-  description: glasses_4039_993
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4039_993.png
-10716:
-  description: glasses_4040_971
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4040_971.png
-10717:
-  description: glasses_4041_965
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4041_965.png
-10718:
-  description: glasses_4042_971
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4042_971.png
-10719:
-  description: glasses_4042_975
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4042_975.png
-10720:
-  description: glasses_4043_1021
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4043_1021.png
-10721:
-  description: glasses_4043_1059
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4043_1059.png
-10722:
-  description: glasses_4046_1024
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4046_1024.png
-10723:
-  description: glasses_4046_979
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4046_979.png
-10724:
-  description: glasses_4048_973
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4048_973.png
-10725:
-  description: glasses_4048_988
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4048_988.png
-10726:
-  description: glasses_4050_1015
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4050_1015.png
-10727:
-  description: glasses_4050_1052
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4050_1052.png
-10728:
-  description: glasses_4052_1004
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4052_1004.png
-10729:
-  description: glasses_4052_1022
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4052_1022.png
-10730:
-  description: glasses_4053_1059
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4053_1059.png
-10731:
-  description: glasses_4056_1024
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4056_1024.png
-10732:
-  description: glasses_4081_967
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4081_967.png
-10733:
-  description: glasses_4092_973
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4092_973.png
-10734:
-  description: glasses_4094_1052
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4094_1052.png
-10735:
-  description: glasses_4095_1022
-  iconFile: res:/UI/Asset/mannequin/accessories_glasses/glasses_4095_1022.png
 10736:
   description: hair_4086_947
   iconFile: res:/UI/Asset/mannequin/hair_4086_947.png
@@ -4618,9 +4468,6 @@
 10760:
   description: 4173_male_Feet_BootsMilM01_Types_BootsMilM01_wornbrown
   iconFile: res:/UI/Asset/mannequin/feet/4173_male_Feet_BootsMilM01_Types_BootsMilM01_wornbrown.png
-10761:
-  description: Male_Feet_BootsMilM02_Types_BootsMilM02_black
-  iconFile: res:/UI/Asset/mannequin/feet/Male_Feet_BootsMilM02_Types_BootsMilM02_black.png
 10762:
   description: 4174_male_Feet_BootsMilM02_Types_BootsMilM02_brown
   iconFile: res:/UI/Asset/mannequin/feet/4174_male_Feet_BootsMilM02_Types_BootsMilM02_brown.png
@@ -4645,9 +4492,6 @@
 10769:
   description: Male_hair_Hair_Stubble_01_Types_Hair_Stubble_01
   iconFile: res:/UI/Asset/mannequin/Male_hair_Hair_Stubble_01_Types_Hair_Stubble_01.png
-10770:
-  description: Male_Outer_JacketMilM01_Types_JacketMilM01_blackyellow
-  iconFile: res:/UI/Asset/mannequin/outer/Male_Outer_JacketMilM01_Types_JacketMilM01_blackyellow.png
 10771:
   description: 4244_male_outer_JacketMilM01_Types_JacketMilM01_green
   iconFile: res:/UI/Asset/mannequin/outer/4244_male_outer_JacketMilM01_Types_JacketMilM01_green.png
@@ -4657,9 +4501,6 @@
 10773:
   description: 4233_male_outer_JacketMilM02_Types_JacketMilM02_black
   iconFile: res:/UI/Asset/mannequin/outer/4233_male_outer_JacketMilM02_Types_JacketMilM02_black.png
-10774:
-  description: Male_Outer_JacketMilM02_Types_JacketMilM02_blackgray
-  iconFile: res:/UI/Asset/mannequin/outer/Male_Outer_JacketMilM02_Types_JacketMilM02_blackgray.png
 10775:
   description: 4234_male_outer_JacketMilM02_Types_JacketMilM02_greengold
   iconFile: res:/UI/Asset/mannequin/outer/4234_male_outer_JacketMilM02_Types_JacketMilM02_greengold.png
@@ -4711,9 +4552,6 @@
 10791:
   description: 4190_male_TopMiddle_ShirtGM01_Types_ShirtGM01_white
   iconFile: res:/UI/Asset/mannequin/topmiddle/4190_male_TopMiddle_ShirtGM01_Types_ShirtGM01_white.png
-10792:
-  description: Male_topMiddle_ShirtQM01_Types_shirtqm01
-  iconFile: res:/UI/Asset/mannequin/topmiddle/Male_topMiddle_ShirtQM01_Types_shirtqm01.png
 10793:
   description: 4191_male_TopMiddle_TanktopM01_Types_TanktopM01_black
   iconFile: res:/UI/Asset/mannequin/topmiddle/4191_male_TopMiddle_TanktopM01_Types_TanktopM01_black.png
@@ -4821,15 +4659,15 @@
   iconFile: res:/UI/Asset/mannequin/topouter/4068_male_TopOuter_ShirtMilM01_Types_ShirtMilM01_ishukone.png
 10828:
   description: apparel_accessories_glasses_3958_1065
-  iconFile: 'res:/UI/Texture/market/apparel_accessories_glasses_3958_1065.png '
+  iconFile: res:/UI/Texture/market/apparel_accessories_glasses_3958_1065.png
 10829:
   description: apparel_mens_topouter_4058_1000
-  iconFile: 'res:/UI/Texture/market/apparel_mens_topouter_4058_1000.png '
+  iconFile: res:/UI/Texture/market/apparel_mens_topouter_4058_1000.png
 10830:
   description: apparel_womens_outer_4054_1011
-  iconFile: 'res:/UI/Texture/market/apparel_womens_outer_4054_1011.png '
+  iconFile: res:/UI/Texture/market/apparel_womens_outer_4054_1011.png
 10831:
-  description: 'This is t he icon used for the Aurum token. '
+  description: This is t he icon used for the Aurum token.
   iconFile: res:/UI/Texture/Icons/aurcoin.png
 10833:
   description: Gallente Fuel Block
@@ -4912,9 +4750,6 @@
 10864:
   description: icon_skill
   iconFile: res:/UI/Texture/Icons/dust_icon_skill.png
-10865:
-  description: icon_veh_fighter
-  iconFile: res:/UI/Texture/Icons/dust_icon_veh_fighter.png
 10866:
   description: icon_mod_unit_scanner
   iconFile: res:/UI/Texture/Icons/dust_icon_mod_unit_scanner.png
@@ -5088,16 +4923,16 @@
   iconFile: res:/UI/Texture/Icons/dust_icon_mod_shield_booster.png
 10932:
   description: Module - Target Breaker
-  iconFile: '105_46'
+  iconFile: res:/ui/texture/icons/105_32_46.png
 10933:
   description: Module - Shifting Armor Hardener
-  iconFile: '105_47'
+  iconFile: res:/ui/texture/icons/105_32_47.png
 10934:
   description: Module - Drone Damage Mod
-  iconFile: '105_48'
+  iconFile: res:/ui/texture/icons/105_32_48.png
 10935:
   description: Module - Fueled Shield Booster
-  iconFile: '105_49'
+  iconFile: res:/ui/texture/icons/105_32_49.png
 10936:
   description: icon_eq_remoteexplosive
   iconFile: res:/UI/Texture/Icons/dust_icon_eq_remoteexplosive.png
@@ -5109,13 +4944,13 @@
   iconFile: res:/UI/Texture/Icons/dust_icon_tur_missile.png
 10940:
   description: Tactical Laser S
-  iconFile: '107_1'
+  iconFile: res:/ui/texture/icons/107_64_1.png
 10941:
   description: Tactical Hybrid S
-  iconFile: '107_2'
+  iconFile: res:/ui/texture/icons/107_64_2.png
 10942:
   description: Tactical Projectile S
-  iconFile: '107_3'
+  iconFile: res:/ui/texture/icons/107_64_3.png
 10946:
   description: icon_mod_codebreaker
   iconFile: res:/UI/Texture/Icons/dust_icon_mod_codebreaker.png
@@ -5127,64 +4962,64 @@
   iconFile: res:/UI/Texture/Icons/dust_icon_aug_voicetransmitter.png
 20939:
   description: Passive Shield Hardener - Kinetic
-  iconFile: '108_5'
+  iconFile: res:/ui/texture/icons/108_64_5.png
 20940:
   description: Passive Shield Hardener - Thermal
-  iconFile: '108_6'
+  iconFile: res:/ui/texture/icons/108_64_6.png
 20941:
   description: Passive Shield Hardener - Explosive
-  iconFile: '108_7'
+  iconFile: res:/ui/texture/icons/108_64_7.png
 20942:
   description: Passive Shield Hardener - EM
-  iconFile: '108_8'
+  iconFile: res:/ui/texture/icons/108_64_8.png
 20943:
   description: Active Armor Hardener - Explosive
-  iconFile: '108_12'
+  iconFile: res:/ui/texture/icons/108_64_12.png
 20944:
   description: Active Armor Hardener - EM
-  iconFile: '108_13'
+  iconFile: res:/ui/texture/icons/108_64_13.png
 20945:
   description: Active Armor Hardener - Kinetic
-  iconFile: '108_10'
+  iconFile: res:/ui/texture/icons/108_64_10.png
 20946:
   description: Active Armor Hardener - Thermal
-  iconFile: '108_11'
+  iconFile: res:/ui/texture/icons/108_64_11.png
 20947:
   description: Active Shield Hardener - Explosive
-  iconFile: '108_3'
+  iconFile: res:/ui/texture/icons/108_64_3.png
 20948:
   description: Active Shield Hardener - EM
-  iconFile: '108_4'
+  iconFile: res:/ui/texture/icons/108_64_4.png
 20949:
   description: Active Shield Hardener - Kinetic
-  iconFile: '108_1'
+  iconFile: res:/ui/texture/icons/108_64_1.png
 20950:
   description: Active Shield Hardener - Thermal
-  iconFile: '108_2'
+  iconFile: res:/ui/texture/icons/108_64_2.png
 20951:
   description: Energized Armor Hardener - Explosive
-  iconFile: '108_20'
+  iconFile: res:/ui/texture/icons/108_64_20.png
 20952:
   description: Energized Armor Hardener - EM
-  iconFile: '108_21'
+  iconFile: res:/ui/texture/icons/108_64_21.png
 20953:
   description: Energized Armor Hardener - Kinetic
-  iconFile: '108_18'
+  iconFile: res:/ui/texture/icons/108_64_18.png
 20954:
   description: Energized Armor Hardener - Thermal
-  iconFile: '108_19'
+  iconFile: res:/ui/texture/icons/108_64_19.png
 20955:
   description: Passive Armor Hardener - Explosive
-  iconFile: '108_16'
+  iconFile: res:/ui/texture/icons/108_64_16.png
 20956:
   description: Passive Armor Hardener - EM
-  iconFile: '108_17'
+  iconFile: res:/ui/texture/icons/108_64_17.png
 20957:
   description: Passive Armor Hardener - Kinetic
-  iconFile: '108_14'
+  iconFile: res:/ui/texture/icons/108_64_14.png
 20958:
   description: Passive Armor Hardener - Thermal
-  iconFile: '108_15'
+  iconFile: res:/ui/texture/icons/108_64_15.png
 20959:
   description: Amarr Empire Market Icon
   iconFile: res:/UI/Texture/Icons/MarketIcon_16px_Amarr.png
@@ -5305,13 +5140,13 @@
   iconFile: res:/UI/Texture/Icons/110_128_03.png
 21025:
   description: Scan Acquisition Module Icon
-  iconFile: '107_10'
+  iconFile: res:/ui/texture/icons/107_64_10.png
 21026:
   description: Scan Pinpointing Module Icon
-  iconFile: '107_11'
+  iconFile: res:/ui/texture/icons/107_64_11.png
 21027:
   description: Scan Rangefinding Module Icon
-  iconFile: '107_12'
+  iconFile: res:/ui/texture/icons/107_64_12.png
 21028:
   description: Pirate Tag Bronze
   iconFile: res:/UI/Texture/Icons/icons111_02.png
@@ -5362,25 +5197,25 @@
   iconFile: res:/UI/Texture/Icons/113_64_3.png
 21060:
   description: Lost reminder to pay sov bill
-  iconFile: '115_1'
+  iconFile: res:/ui/texture/icons/115_64_1.png
 21061:
   description: Press pass to Prometheus Station opening
-  iconFile: '115_2'
+  iconFile: res:/ui/texture/icons/115_64_2.png
 21062:
   description: A piece of Steve
-  iconFile: '115_3'
+  iconFile: res:/ui/texture/icons/115_64_3.png
 21063:
   description: Band of Brothers Director Access Key
-  iconFile: '115_4'
+  iconFile: res:/ui/texture/icons/115_64_4.png
 21064:
   description: Premier ticket
-  iconFile: '115_5'
+  iconFile: res:/ui/texture/icons/115_64_5.png
 21065:
   description: Alliance Tournament All Stars
-  iconFile: '114_1'
+  iconFile: res:/ui/texture/icons/114_64_1.png
 21066:
   description: Assassination Contract
-  iconFile: '114_2'
+  iconFile: res:/ui/texture/icons/114_64_2.png
 21070:
   description: 33487_female_TopMiddle_ShirtQF01_Types_lvf01
   iconFile: res:/UI/Asset/mannequin/topmiddle/33487_female_TopMiddle_ShirtQF01_Types_lvf01.png
@@ -5430,13 +5265,13 @@
   description: Corp Logo - Republic Command
   iconFile: res:/UI/Texture/Corps/republic_command.png
 21095:
-  iconFile: '107_14'
+  iconFile: res:/ui/texture/icons/107_64_14.png
 21096:
-  iconFile: '107_13'
+  iconFile: res:/ui/texture/icons/107_64_13.png
 21097:
-  iconFile: '107_16'
+  iconFile: res:/ui/texture/icons/107_64_16.png
 21098:
-  iconFile: '107_15'
+  iconFile: res:/ui/texture/icons/107_64_15.png
 21100:
   description: 33744_female_bottomOuter_PantsALF_01_Types_PantsALF_01_blackleather
   iconFile: res:/UI/Asset/mannequin/bottomouter/33744_female_bottomOuter_PantsALF_01_Types_PantsALF_01_blackleather.png
@@ -6150,10 +5985,10 @@
   iconFile: res:/UI/Asset/mannequin/topmiddle/34211_female_TopMiddle_ShirtQF01_Types_lvf02.png
 21378:
   description: Module - Hull Repair
-  iconFile: '1337_22'
+  iconFile: res:/ui/texture/icons/1337_64_22.png
 21379:
   description: Cynosural field generators
-  iconFile: '1337_21'
+  iconFile: res:/ui/texture/icons/1337_64_21.png
 21380:
   description: Honorary Fabricator-General Baton
   iconFile: res:/UI/Texture/Icons/commendationAmarr.png
@@ -6228,13 +6063,13 @@
   iconFile: res:/UI/Asset/mannequin/outer/34351_female_Outer_JacketPrtF01_Types_JacketPrtF01_guristas.png
 21404:
   description: Drifter Faction Icon
-  iconFile: '117_2'
+  iconFile: res:/ui/texture/icons/117_64_2.png
 21408:
   description: Antikthera Element Icon
-  iconFile: '118_1'
+  iconFile: res:/ui/texture/icons/118_64_1.png
 21409:
   description: Lux Kontos Icon
-  iconFile: '119_1'
+  iconFile: res:/ui/texture/icons/119_64_1.png
 21412:
   description: 34824_male_topMiddle_ShirtQM01_Types_ff2015m01.png
   iconFile: res:/UI/Asset/mannequin/topmiddle/34824_male_topMiddle_ShirtQM01_Types_ff2015m01.png
@@ -6249,13 +6084,13 @@
   iconFile: res:/UI/Asset/mannequin/topmiddle/34825_female_TopMiddle_ShirtQF01_Types_ff2015f01.png
 21417:
   description: Sequence Icon
-  iconFile: '99_10'
+  iconFile: res:/ui/texture/icons/99_64_10.png
 21418:
   description: Index Icon
-  iconFile: '99_11'
+  iconFile: res:/ui/texture/icons/99_64_11.png
 21419:
   description: Element Icon
-  iconFile: '99_12'
+  iconFile: res:/ui/texture/icons/99_64_12.png
 21420:
   description: SKIN market icon
   iconFile: res:/UI/Texture/Icons/skin-icon-16.png
@@ -6420,25 +6255,25 @@
   iconFile: res:/UI/Texture/Icons/plex.png
 21482:
   description: Icon for the Coalesced Element
-  iconFile: '118_5'
+  iconFile: res:/ui/texture/icons/118_64_5.png
 21483:
   description: Icon for Antipharmakon Toxot
-  iconFile: '118_9'
+  iconFile: res:/ui/texture/icons/118_64_9.png
 21484:
   description: Icon for Antipharmakon Kosybo
-  iconFile: '118_10'
+  iconFile: res:/ui/texture/icons/118_64_10.png
 21485:
   description: Icon for Antipharmakon Aeolis
-  iconFile: '118_11'
+  iconFile: res:/ui/texture/icons/118_64_11.png
 21486:
   description: Icon for Antipharmakon Thureo
-  iconFile: '118_13'
+  iconFile: res:/ui/texture/icons/118_64_13.png
 21487:
   description: Icon for Antipharmakon Iokira
-  iconFile: '118_14'
+  iconFile: res:/ui/texture/icons/118_64_14.png
 21489:
   description: Module - WarpDisruptionFieldGenerator
-  iconFile: '118_2'
+  iconFile: res:/ui/texture/icons/118_64_2.png
 21493:
   description: 37600_female_Outer_ArmorSuitCF01_Types_ArmorSuitCF01_Black.png
   iconFile: res:/UI/Asset/mannequin/outer/37600_female_Outer_ArmorSuitCF01_Types_ArmorSuitCF01_Black.png
@@ -6498,7 +6333,7 @@
   iconFile: res:/UI/Texture/classes/Fitting/stationServiceSlot.png
 21513:
   description: Focused Warp Disruption Script
-  iconFile: '118_12'
+  iconFile: res:/ui/texture/icons/118_64_12.png
 21514:
   description: Upwell Male Jacket
   iconFile: res:/UI/Asset/mannequin/outer/40522_male_outer_JacketMilM02_Types_JacketMilM02_upwell.png
@@ -6549,64 +6384,64 @@
   iconFile: res:/UI/Texture/Icons/skillInjector_64.png
 21532:
   description: Structure Electromagnetic Sensor
-  iconFile: '118_3'
+  iconFile: res:/ui/texture/icons/118_64_3.png
 21533:
   description: Structure Acceleration Coils
-  iconFile: '118_4'
+  iconFile: res:/ui/texture/icons/118_64_4.png
 21534:
   description: Structure Advertisement Nexus
-  iconFile: '118_8'
+  iconFile: res:/ui/texture/icons/118_64_8.png
 21560:
   description: Structure Repulsor Field
-  iconFile: '123_5'
+  iconFile: res:/ui/texture/icons/123_64_5.png
 21561:
   description: Structure Point Defense Battery
-  iconFile: '123_6'
+  iconFile: res:/ui/texture/icons/123_64_6.png
 21562:
   description: Structure Resistance Switcher
-  iconFile: '123_7'
+  iconFile: res:/ui/texture/icons/123_64_7.png
 21563:
   description: Structure Ship Tractor Beam
-  iconFile: '123_8'
+  iconFile: res:/ui/texture/icons/123_64_8.png
 21564:
   description: Structure Guided Bomb Launcher
-  iconFile: '123_9'
+  iconFile: res:/ui/texture/icons/123_64_9.png
 21565:
   description: Structure Anticapital Launcher
-  iconFile: '123_10'
+  iconFile: res:/ui/texture/icons/123_64_10.png
 21566:
   description: Structure Antisubcapital Launcher
-  iconFile: '123_11'
+  iconFile: res:/ui/texture/icons/123_64_11.png
 21567:
   description: Structure Long Range Anticapital Missile
-  iconFile: '124_5'
+  iconFile: res:/ui/texture/icons/124_64_5.png
 21568:
   description: Structure Long Range Antisubcapital Missile
-  iconFile: '124_6'
+  iconFile: res:/ui/texture/icons/124_64_6.png
 21569:
   description: Structure Antibattleship Guided Bomb
-  iconFile: '124_7'
+  iconFile: res:/ui/texture/icons/124_64_7.png
 21570:
   description: Structure Medium Range Anticapital Missile
-  iconFile: '124_9'
+  iconFile: res:/ui/texture/icons/124_64_9.png
 21571:
   description: Structure Medium Range Antisubcapital Missile
-  iconFile: '124_10'
+  iconFile: res:/ui/texture/icons/124_64_10.png
 21572:
   description: Structure Capacitor Draining Guided Bomb
-  iconFile: '124_11'
+  iconFile: res:/ui/texture/icons/124_64_11.png
 21573:
   description: Structure Short Range Anticapital Missile
-  iconFile: '124_13'
+  iconFile: res:/ui/texture/icons/124_64_13.png
 21574:
   description: Structure Short Range Antisubcapital Missile
-  iconFile: '124_14'
+  iconFile: res:/ui/texture/icons/124_64_14.png
 21575:
   description: Structure Antifrigate Guided Bomb
-  iconFile: '124_15'
+  iconFile: res:/ui/texture/icons/124_64_15.png
 21578:
   description: Serenity icon for Clevo token
-  iconFile: '1337_23'
+  iconFile: res:/ui/texture/icons/1337_64_23.png
 21579:
   description: 41049_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V0
   iconFile: res:/UI/Asset/mannequin/makeup_augmentations/41049_female_Makeup_Augmentations_Face_01_Types_Face_01_F_V0_.png
@@ -6651,31 +6486,31 @@
   iconFile: res:/UI/Texture/Icons/126_64_1.png
 21594:
   description: Structure Rig Point Defense Battery
-  iconFile: '127_9'
+  iconFile: res:/ui/texture/icons/127_64_9.png
 21595:
   description: Structure Service Market Hub
-  iconFile: '127_2'
+  iconFile: res:/ui/texture/icons/127_64_2.png
 21596:
   description: Structure Service Cloning Center
-  iconFile: '127_1'
+  iconFile: res:/ui/texture/icons/127_64_1.png
 21597:
   description: Structure Service Reprocessing Plant
-  iconFile: '127_3'
+  iconFile: res:/ui/texture/icons/127_64_3.png
 21598:
   description: Structure Service Compression
-  iconFile: '127_4'
+  iconFile: res:/ui/texture/icons/127_64_4.png
 21599:
   description: Structure Rig Cloning
-  iconFile: '127_5'
+  iconFile: res:/ui/texture/icons/127_64_5.png
 21600:
   description: Structure Rig Market
-  iconFile: '127_6'
+  iconFile: res:/ui/texture/icons/127_64_6.png
 21601:
   description: Structure Rig Doomsday
-  iconFile: '127_10'
+  iconFile: res:/ui/texture/icons/127_64_10.png
 21602:
   description: Structure Rig Reprocessing
-  iconFile: '127_7'
+  iconFile: res:/ui/texture/icons/127_64_7.png
 21603:
   description: Emergency Hull Energizer
   iconFile: res:/UI/Texture/Icons/Modules/emergencyHullEnergizer.png
@@ -6705,10 +6540,25 @@
   iconFile: res:/UI/Texture/Icons/Modules/burstProjectorWarpDisruption.png
 21613:
   description: Module - FighterTackle
-  iconFile: 04_09
+  iconFile: res:/ui/texture/icons/4_64_9.png
 21614:
   description: 41575_female_Accessories_Glasses_Glasses_Citadel_F01_Types_GlassesCitadelF01_black
   iconFile: res:/UI/Asset/mannequin/accessories_glasses/41575_female_Accessories_Glasses_Glasses_Citadel_F01_Types_GlassesCitadelF01_black.png
 21615:
   description: 41576_male_Accessories_Glasses_Glasses_Citadel_M01_Types_GlassesCitadelM01_black.png
   iconFile: res:/UI/Asset/mannequin/accessories_glasses/41576_male_Accessories_Glasses_Glasses_Citadel_M01_Types_GlassesCitadelM01_black.png
+21617:
+  description: Multi Use Analyzer Icon
+  iconFile: res:/UI/Texture/Icons/Modules/emergencyHullEnergizer.png
+21618:
+  description: Multi Use Analyzer Icon
+  iconFile: res:/UI/Texture/Icons/Modules/multiUseAnalyzer_64.png
+21620:
+  description: Icon for Copper Ouroboros
+  iconFile: res:/UI/Texture/Icons/Inventory/serpentisContainerBronze_64.png
+21621:
+  description: Icon for Silver Ouroboros
+  iconFile: res:/UI/Texture/Icons/Inventory/serpentisContainerSilver_64.png
+21622:
+  description: Icon for Gold Ouroboros
+  iconFile: res:/UI/Texture/Icons/Inventory/serpentisContainerGold_64.png

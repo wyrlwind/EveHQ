@@ -2889,17 +2889,26 @@ Namespace Controls
                     If abilities.Length <> 0 Then
                         abilities += ", "
                     End If
+                    If fbi.IsTurretActive Then
+                        abilities += "+"
+                    End If
                     abilities += "Turret"
                 End If
                 If fbi.FighterType.FighterEffectMissiles Then
                     If abilities.Length <> 0 Then
                         abilities += ", "
                     End If
+                    If fbi.IsMissileActive Then
+                        abilities += "+"
+                    End If
                     abilities += "Missiles"
                 End If
                 If fbi.FighterType.FighterEffectLaunchBomb Then
                     If abilities.Length <> 0 Then
                         abilities += ", "
+                    End If
+                    If fbi.IsBombActive Then
+                        abilities += "+"
                     End If
                     abilities += "Launch Bomb"
                 End If
@@ -3205,6 +3214,7 @@ Namespace Controls
                         End If
                         ctxSplitBatch.Enabled = False
                         ctxShowBayInfoItem.Enabled = True
+                        FighterAbilitiesToolStripMenuItem.Enabled = False
                     Else
                         e.Cancel = True
                     End If
@@ -3219,6 +3229,7 @@ Namespace Controls
                         End If
                         ctxSplitBatch.Enabled = False
                         ctxShowBayInfoItem.Enabled = False
+                        FighterAbilitiesToolStripMenuItem.Enabled = False
                     Else
                         e.Cancel = True
                     End If
@@ -3365,6 +3376,7 @@ Namespace Controls
                             ctxAlterQuantity.Enabled = True
                             ctxSplitBatch.Enabled = True
                         End If
+                        FighterAbilitiesToolStripMenuItem.Enabled = False
                     Else
                         e.Cancel = True
                     End If
@@ -3373,10 +3385,32 @@ Namespace Controls
                         ctxShowBayInfoItem.Text = "Show Fighter Info"
                         ctxShowBayInfoItem.Enabled = True
                         ctxSplitBatch.Enabled = True
+                        FighterAbilitiesToolStripMenuItem.Enabled = True
                         Dim selItem As ListViewItem = _lvwBay.SelectedItems(0)
                         Dim idx As Integer = CInt(selItem.Name)
                         Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
                         Dim currentMod As ShipModule = fbi.FighterType
+                        If fbi.FighterType.FighterEffectAttackM Then
+                            FighterTurretToolStripMenuItem.Enabled = True
+                            FighterTurretToolStripMenuItem.Checked = fbi.IsTurretActive
+                        Else
+                            FighterTurretToolStripMenuItem.Enabled = False
+                            FighterTurretToolStripMenuItem.Checked = False
+                        End If
+                        If fbi.FighterType.FighterEffectMissiles Then
+                            FighterMissileToolStripMenuItem.Enabled = True
+                            FighterMissileToolStripMenuItem.Checked = fbi.IsMissileActive
+                        Else
+                            FighterMissileToolStripMenuItem.Enabled = False
+                            FighterMissileToolStripMenuItem.Checked = False
+                        End If
+                        If fbi.FighterType.FighterEffectLaunchBomb Then
+                            FighterBombToolStripMenuItem.Enabled = True
+                            FighterBombToolStripMenuItem.Checked = fbi.IsBombActive
+                        Else
+                            FighterBombToolStripMenuItem.Enabled = False
+                            FighterBombToolStripMenuItem.Checked = False
+                        End If
 
                         Me.ctxShowModuleMarketGroup.Enabled = True
                         Me.ctxShowModuleMarketGroup.Name = currentMod.Name
@@ -3575,8 +3609,8 @@ Namespace Controls
                     sModule = dbi.DroneType
                 Case "lvwFighterBay"
                     Dim idx As Integer = CInt(selItem.Name)
-                    Dim dbi As FighterBayItem = ParentFitting.FittedShip.FighterBayItems.Item(idx)
-                    sModule = dbi.FighterType
+                    Dim fbi As FighterBayItem = ParentFitting.FittedShip.FighterBayItems.Item(idx)
+                    sModule = fbi.FighterType
             End Select
             Dim showInfo As New FrmShowInfo
             Dim hPilot As EveHQPilot
@@ -3830,6 +3864,9 @@ Namespace Controls
                 fbi = New FighterBayItem
                 fbi.FighterType = CType(holdingBay(fighter), ShipModule)
                 fbi.IsActive = False
+                fbi.IsTurretActive = True
+                fbi.IsMissileActive = False
+                fbi.IsBombActive = False
                 fbi.Quantity = CInt(fighterQuantities(fighter))
                 Dim newFighterItem As New ListViewItem(fbi.FighterType.Name)
                 newFighterItem.Name = CStr(lvwFighterBay.Items.Count)
@@ -3881,6 +3918,57 @@ Namespace Controls
             Next
             lvwCargoBay.EndUpdate()
             Call RedrawCargoBayCapacity()
+        End Sub
+
+        Private Sub FighterTurretToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FighterTurretToolStripMenuItem.Click
+            Dim selItem As ListViewItem = lvwFighterBay.SelectedItems(0)
+            Dim idx As Integer = CInt(selItem.Name)
+            Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+            If fbi.IsTurretActive Then
+                fbi.IsTurretActive = False
+            Else
+                fbi.IsTurretActive = True
+            End If
+            FighterTurretToolStripMenuItem.Checked = fbi.IsTurretActive
+            Call ParentFitting.UpdateFittingFromBaseShip()
+            _updateFighters = True
+            Call RedrawFighterBay()
+            _updateFighters = False
+            ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+        End Sub
+
+        Private Sub FighterMissileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FighterMissileToolStripMenuItem.Click
+            Dim selItem As ListViewItem = lvwFighterBay.SelectedItems(0)
+            Dim idx As Integer = CInt(selItem.Name)
+            Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+            If fbi.IsMissileActive Then
+                fbi.IsMissileActive = False
+            Else
+                fbi.IsMissileActive = True
+            End If
+            FighterMissileToolStripMenuItem.Checked = fbi.IsMissileActive
+            Call ParentFitting.UpdateFittingFromBaseShip()
+            _updateFighters = True
+            Call RedrawFighterBay()
+            _updateFighters = False
+            ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+        End Sub
+
+        Private Sub FighterBombToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FighterBombToolStripMenuItem.Click
+            Dim selItem As ListViewItem = lvwFighterBay.SelectedItems(0)
+            Dim idx As Integer = CInt(selItem.Name)
+            Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+            If fbi.IsBombActive Then
+                fbi.IsBombActive = False
+            Else
+                fbi.IsBombActive = True
+            End If
+            FighterBombToolStripMenuItem.Checked = fbi.IsTurretActive
+            Call ParentFitting.UpdateFittingFromBaseShip()
+            _updateFighters = True
+            Call RedrawFighterBay()
+            _updateFighters = False
+            ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
         End Sub
 
 #End Region

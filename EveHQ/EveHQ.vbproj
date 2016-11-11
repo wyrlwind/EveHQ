@@ -59,7 +59,7 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>..\BuildOutput\Debug\</OutputPath>
+    <OutputPath>..\BuildOutput\EveHQ\$(Configuration)\</OutputPath>
     <DocumentationFile>EveHQ.xml</DocumentationFile>
     <NoWarn>42353,42354,42355,40010</NoWarn>
     <Optimize>false</Optimize>
@@ -72,7 +72,7 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>..\BuildOutput\Release\</OutputPath>
+    <OutputPath>..\BuildOutput\EveHQ\$(Configuration)\</OutputPath>
     <DocumentationFile>EveHQ.xml</DocumentationFile>
     <NoWarn>42353,42354,42355,40010</NoWarn>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
@@ -198,6 +198,12 @@
     <Compile Include="Classes\ListViewNoFlicker.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\DBConfigs\DBCCorpInfoConfig.Designer.vb">
+      <DependentUpon>DBCCorpInfoConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DBConfigs\DBCCorpInfoConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Controls\DBConfigs\DBCRSSFeedConfig.Designer.vb">
       <DependentUpon>DBCRSSFeedConfig.vb</DependentUpon>
     </Compile>
@@ -239,6 +245,12 @@
     </Compile>
     <Compile Include="Controls\DBConfigs\DBCSkillQueueInfoConfig.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\DBControls\DBCCorpInfo.Designer.vb">
+      <DependentUpon>DBCCorpInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DBControls\DBCCorpInfo.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\DBControls\DBCLastJournals.Designer.vb">
       <DependentUpon>DBCLastJournals.vb</DependentUpon>
@@ -552,6 +564,10 @@
     <EmbeddedResource Include="Controls\CharacterTrainingBlock.resx">
       <DependentUpon>CharacterTrainingBlock.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DBConfigs\DBCCorpInfoConfig.resx">
+      <DependentUpon>DBCCorpInfoConfig.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\DBConfigs\DBCRSSFeedConfig.resx">
       <DependentUpon>DBCRSSFeedConfig.vb</DependentUpon>
     </EmbeddedResource>
@@ -560,6 +576,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DBConfigs\DBCEveSkillQueueInfoConfig.resx">
       <DependentUpon>DBCEveSkillQueueInfoConfig.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DBConfigs\DBCLasttransactionConfig.resx">
       <DependentUpon>DBCLasttransactionConfig.vb</DependentUpon>
@@ -569,9 +586,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DBConfigs\DBCPilotInfoConfig.resx">
       <DependentUpon>DBCPilotInfoConfig.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DBConfigs\DBCSkillQueueInfoConfig.resx">
       <DependentUpon>DBCSkillQueueInfoConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DBControls\DBCCorpInfo.resx">
+      <DependentUpon>DBCCorpInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DBControls\DBCLastJournals.resx">
       <DependentUpon>DBCLastJournals.vb</DependentUpon>
@@ -907,6 +928,7 @@
     <None Include="Resources\79_64_5.png" />
     <None Include="Resources\79_64_6.png" />
     <Content Include="Resources\AssetsSafe32.png" />
+    <None Include="Resources\corporation.png" />
     <Content Include="_evehqupdate.xml">
       <SubType>Designer</SubType>
     </Content>

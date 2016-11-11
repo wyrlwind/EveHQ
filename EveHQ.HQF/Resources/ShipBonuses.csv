@@ -55,7 +55,7 @@
 23919,1,24311,10009,1,23919,0,1,1,5,15,Warp Core Strength
 23919,1,24311,2397,1,40699,0,1,0,-5,15,Weapon Disruption Burst Projector Duration
 23919,1,24311,833,4,1634;1635,0,1,0,2,15,Armored & Information Warfare Link Bonus
-23919,0,0,72,2,38,0,0,0,400,15,Shield Extender HP
+23919,0,0,72,2,38,0,0,0,400,15,Shield HP - Extenders
 23919,0,0,1159,2,329,0,0,0,400,15,Armor HP - Plates
 23919,0,0,2112,1,11567,0,0,0,50,15,Sensor Dampener resistance
 23919,0,0,2115,1,11567,0,0,0,50,15,Stasis effect resistance
@@ -213,14 +213,13 @@
 # Augoror Navy Issue,,,,,,,,,,,
 29337,1,3335,10014,4,568;572,0,1,0,25,15,Medium Energy Turret Damage
 29337,1,3335,265,1,29337,0,1,0,10,15,Armor HP
-29337,1,3335,1159,2,329,0,1,0,10,15,Armor HP - Plates
 # Avatar,,,,,,,,,,,
 11567,1,3347,10014,4,773;774,0,1,0,180,15,Capital Energy Turret Damage
 11567,1,3347,6,4,773;774,0,1,0,-10,15,Small Energy Turret Cap Use
 11567,1,3347,55,3,6,0,1,0,-7.5,16,Gang Capacitor Recharge
 11567,1,3347,10063,1,11567,0,1,1,1,15,Warfare Link Bonus
 11567,1,3347,10009,1,11567,0,1,1,10,15,Warp Core Strength
-11567,0,0,72,2,38,0,0,0,500,15,Shield Extender HP
+11567,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
 11567,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
 11567,0,0,2112,1,11567,0,0,0,80,15,Sensor Dampener resistance
 11567,0,0,2113,1,11567,0,0,0,80,15,Weapon Disruption resistance
@@ -570,7 +569,6 @@
 22474,1,33095,269,1,22474,0,1,2,-4,15,Armor Kinetic Resistance
 22474,1,33095,270,1,22474,0,1,2,-4,15,Armor Thermal Resistance
 22474,1,23950,265,1,22474,0,1,0,10,15,Armor HP
-22474,1,23950,1159,2,329,0,1,0,10,15,Armor HP - Plates
 22474,1,23950,114,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM EM Damage
 22474,1,23950,116,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Explosive Damage
 22474,1,23950,117,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Kinetic Damage
@@ -594,7 +592,6 @@
 37457,1,40328,6,2,325;1698,0,1,0,-5,15,Remote Armor Repairer Cap Use
 37457,1,40328,73,2,325;1698,0,1,0,-5,15,Remote Armor Repairer Duration
 37457,1,40328,265,1,37457,0,1,0,7.5,15,Armor HP
-37457,1,40328,1159,2,329,0,1,0,7.5,15,Armor HP - Plates
 # Deimos,,,,,,,,,,,
 12023,1,3332,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 12023,1,3332,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
@@ -702,7 +699,7 @@
 671,1,3344,265,3,6,0,1,0,7.5,16,Gang Armor Amount
 671,1,3344,10063,1,671,0,1,1,1,15,Warfare Link Bonus
 671,1,3344,10009,1,671,0,1,1,10,15,Warp Core Strength
-671,0,0,72,2,38,0,0,0,500,15,Shield Extender HP
+671,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
 671,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
 671,0,0,2112,1,671,0,0,0,80,15,Sensor Dampener resistance
 671,0,0,2113,1,671,0,0,0,80,15,Weapon Disruption resistance
@@ -1159,7 +1156,7 @@
 37458,1,40328,6,2,41;1697,0,1,0,-5,15,Remote Shield Booster Cap Use
 37458,1,40328,73,2,41;1697,0,1,0,-5,15,Remote Shield Booster Duration
 37458,1,40328,263,1,37458,0,1,0,7.5,15,Shield HP
-37458,1,40328,72,2,38,0,1,0,7.5,15,Shield Extender HP
+37458,1,40328,72,2,38,0,1,0,7.5,15,Shield HP - Extenders
 # Kitsune,,,,,,,,,,,
 11194,1,3330,238,2,201,0,1,0,20,15,ECM Jam Strength Grav
 11194,1,3330,239,2,201,0,1,0,20,15,ECM Jam Strength Ladar
@@ -1225,7 +1222,7 @@
 3764,1,3346,10063,1,3764,0,1,1,1,15,Warfare Link Bonus
 3764,1,3346,10009,1,3764,0,1,1,10,15,Warp Core Strength
 3764,0,0,37,2,89,0,0,0,100,15,Torpedo Velocity
-3764,0,0,72,2,38,0,0,0,500,15,Shield Extender HP
+3764,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
 3764,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
 3764,0,0,2112,1,3764,0,0,0,80,15,Sensor Dampener resistance
 3764,0,0,2113,1,3764,0,0,0,80,15,Weapon Disruption resistance
@@ -1486,7 +1483,6 @@
 19722,1,20532,10013,4,775;776,0,1,0,-5,15,Capital Projectile Turret ROF
 19722,1,20532,10016,4,775;776,0,1,0,5,15,Capital Projectile Turret Damage
 19722,1,20532,73,2,40;1156,0,1,0,-5,15,Shield Booster Duration
-19722,0,0,10016,4,775;776,0,0,0,50,15,Capital Projectile Turret Damage
 19722,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Naglfar Justice Edition,,,,,,,,,,,
 #34341,1,20532,10013,4,775;776,0,1,0,-5,15,Capital Projectile Turret ROF
@@ -1807,7 +1803,6 @@
 #32989,0,0,1910,4,1718,0,0,1,5,15,Data & Relic Analyzer Virus Strength
 # Procurer,,,,,,,,,,,
 17480,1,17940,263,1,17480,0,1,0,5,15,Shield HP
-17480,1,17940,72,2,38,0,1,0,5,15,Shield HP (Extenders)
 17480,1,17940,73,4,1040;1038,0,1,0,-2,15,Strip Miner & Ice Harvester Duration
 17480,0,0,77,4,1040,0,0,0,150,15,Strip Miner Mining Yield
 17480,0,0,73,4,1038,0,0,0,-60,15,Ice Harvester Duration
@@ -1892,7 +1887,7 @@
 23773,1,3345,552,3,6,0,1,0,-7.5,16,Gang Sig Radius
 23773,1,3345,10063,1,23773,0,1,1,1,15,Warfare Link Bonus
 23773,1,3345,10009,1,23773,0,1,1,10,15,Warp Core Strength
-23773,0,0,72,2,38,0,0,0,500,15,Shield Extender HP
+23773,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
 23773,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
 23773,0,0,2112,1,23773,0,0,0,80,15,Sensor Dampener resistance
 23773,0,0,2113,1,23773,0,0,0,80,15,Weapon Disruption resistance
@@ -2209,7 +2204,6 @@
 22430,0,0,560,2,330,0,0,0,-100,15,Sensor Recalibration Time Bonus
 # Skiff,,,,,,,,,,,
 22546,1,17940,263,1,22546,0,1,0,5,15,Shield HP
-22546,1,17940,72,2,38,0,1,0,5,15,Shield HP (Extenders)
 22546,1,17940,73,4,1040;1038,0,1,0,-2,15,Strip Miner & Ice Harvester Duration
 22546,1,22551,271,1,22546,0,1,2,-4,15,Shield EM Resistance
 22546,1,22551,272,1,22546,0,1,2,-4,15,Shield Explosive Resistance
@@ -2443,6 +2437,19 @@
 3518,1,3335,2044,2,71,0,1,0,10,15,Neut Drain Falloff
 3518,0,0,84,2,62;1199,0,0,0,50,15,Armor Repair Amount
 3518,0,0,51,2,511;524;506;510;771;507;508;509;1245,0,0,0,-50,15,Missile Launcher ROF
+# Vanquisher,,,,,,,,,,,
+42126,1,3344,10012,4,771;772,0,1,0,-5,15,Capital Hybrid Turret ROF
+42126,1,3344,10009,1,42126,0,1,1,6,15,Warp Core Strength
+42126,1,3345,20,2,65,0,1,0,10,15,Stasis Web Strength
+42126,1,3345,10009,1,42126,0,1,1,6,15,Warp Core Strength
+42126,0,0,10063,1,42126,0,0,1,2,15,Warfare Link Use
+42126,0,0,10015,4,771;772,0,0,0,1000,15,Capital Hybrid Turret Damage
+42126,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
+42126,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
+42126,0,0,2112,1,42126,0,0,0,80,15,Sensor Dampener resistance
+42126,0,0,2115,1,42126,0,0,0,80,15,Stasis effect resistance
+42126,0,0,2135,1,42126,0,0,0,80,15,Remote Electronic Assistance impedance
+42126,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Vargur,,,,,,,,,,,
 28665,1,3337,10013,4,576;579,0,1,0,-5,15,Large Projectile Turret ROF
 28665,1,3337,158,4,576;579,0,1,0,10,15,Large Projectile Turret Falloff
@@ -2479,6 +2486,11 @@
 #24257,0,0,1045,2,650,0,0,0,100,15,Tractor Beam Velocity
 #24257,0,0,54,2,650,0,0,0,100,15,Tractor Beam Range
 #24257,0,0,669,2,1189,0,0,0,-70,15,MJD Reactivation Delay
+# Vehement,,,,,,,,,,,
+42124,1,20531,10012,4,771;772,0,1,0,-5,15,Capital Hybrid Turret ROF
+42124,1,20532,20,2,65,0,1,0,10,15,Stasis Web Strength
+42124,0,0,10015,4,771;772,0,0,0,37.5,15,Capital Hybrid Turret Damage
+42124,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Velator,,,,,,,,,,,
 606,0,0,10015,4,564;561,0,0,0,10,15,Small Hybrid Turret Damage
 606,0,0,263,3,18,0,0,0,20,15,Drone Shield HP
@@ -2489,6 +2501,28 @@
 606,0,0,309,2,208,0,0,0,15,15,Remote Sensor Damp Effect Range
 606,0,0,566,2,208,0,0,0,15,15,Remote Sensor Damp Effect Scan Res
 606,0,0,84,2,62;1199,0,0,0,15,15,Armor Repair Amount
+# Vendetta,,,,,,,,,,,
+42125,1,24313,2131,3,87,0,1,0,10,15,Fighter Attack Missile EM Damage
+42125,1,24313,2132,3,87,0,1,0,10,15,Fighter Attack Missile Thermal Damage
+42125,1,24313,2133,3,87,0,1,0,10,15,Fighter Attack Missile Kinetic Damage
+42125,1,24313,2134,3,87,0,1,0,10,15,Fighter Attack Missile Explosive Damage
+42125,1,24313,2227,3,87,0,1,0,10,15,Fighter Ability EM Damage
+42125,1,24313,2228,3,87,0,1,0,10,15,Fighter Ability Thermal Damage
+42125,1,24313,2229,3,87,0,1,0,10,15,Fighter Ability Kinetic Damage
+42125,1,24313,2230,3,87,0,1,0,10,15,Fighter Ability Explosive Damage
+42125,1,24313,263,3,87,0,1,0,5,15,Fighter Shield HP
+42125,1,24313,9,3,87,0,1,0,5,15,Fighter Hull HP
+42125,1,24313,10009,1,42125,0,1,1,3,15,Warp Core Strength
+42125,1,24314,37,3,87,0,1,0,5,15,Fighter Velocity
+42125,1,24314,10009,1,42125,0,1,1,3,15,Warp Core Strength
+42125,1,24314,20,1,40635,0,1,0,10,15,Statis Webification Burst Projector Effectiveness
+42125,0,0,72,2,38,0,0,0,400,15,Shield HP - Extenders
+42125,0,0,1159,2,329,0,0,0,400,15,Armor HP - Plates
+42125,0,0,2112,1,42125,0,0,0,50,15,Sensor Dampener resistance
+42125,0,0,2115,1,42125,0,0,0,50,15,Stasis effect resistance
+42125,0,0,2135,1,42125,0,0,0,50,15,Remote Electronic Assistance impedance
+42125,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
+42125,0,0,10063,1,42125,0,0,1,2,15,Warfare Link Use
 # Vengeance,,,,,,,,,,,
 11365,1,3331,114,2,387;648,0,1,0,5,15,Rocket Damage - EM
 11365,1,3331,116,2,387;648,0,1,0,5,15,Rocket Damage - Exp
