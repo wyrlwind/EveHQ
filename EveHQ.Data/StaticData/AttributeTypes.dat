@@ -424,7 +424,7 @@ BÊ=ÊdroneControlDistanceMaximum Drone Control Distance (
 
 8Ë3ËdroneRangeBonusDrone Control Range Bonus (
 
-0Ì+ÌshipBonusMFSpecial Ability Bonus i(
+0Ì+ÌshipBonusMFSpecial Ability Bonus i(	
 6Í1ÍspecialAbilityBonusspecialAbilityBonus z(	
 &Î!ÎshipBonusGFshipBonusGF z(	
 &Ï!ÏshipBonusCFshipBonusCF z(	
@@ -529,8 +529,6 @@ DŸ?ŸdamageCloudChanceReductiondamageCloudChanceReduction z(
 4»/»eliteBonusGunshipseliteBonusGunships z(	
 8½3½eliteBonusdestroyerseliteBonusdestroyers z(	
 >¿9¿eliteBonusBattlecruisereliteBonusBattlecruiser z(	
-8À3ÀspeedBoostFactorCalcspeedBoostFactorCalc z(	
-:Â5ÂspeedBoostFactorCalc2speedBoostFactorCalc2 z(	
 *Ã%ÃtestForEggerttestForEggert z(	
 6Ä1ÄentityChaseMaxDelayentityChaseMaxDelay z(
 BÅ=ÅentityChaseMaxDelayChanceentityChaseMaxDelayChance z(
@@ -769,7 +767,7 @@ K F contrabandDetectionChanceBonusContraband Detection Modifier (
 <¼7¼scanSkillEwStrengthBonusEW Strength Modifier i(
 \½W½&propulsionSkillPropulsionStrengthBonus&propulsionSkillPropulsionStrengthBonus z(	
 6¾1¾bonusComplexAngel10bonusComplexAngel10 z(	
-&¿!¿ewTargetJamewTargetJam z(	
+&¿!¿ewTargetJamewTargetJam z(
 FÀAÀ!scanSkillTargetPaintStrengthBonusTarget Painting Bonus i(
 )Á$ÁcommandBonusCommand Bonus y(
 0Â+ÂwingCommandBonuswingCommandBonus z(	
@@ -1525,7 +1523,7 @@ F†A†AI_ShouldUseEvasiveManeuverAI_ShouldUseEvasiveManeuver z(
 8ˆ3ˆAI_TargetSwitchTimerAI_TargetSwitchTimer e(
 ‰‰colorcolor z
 GŠBŠpassiveArmorEmDamageResonanceArmor Em Damage Resistance l(
-Q‹L‹"passiveArmorThermalDamageResonanceArmor Thermic Damage Resistance l(
+Q‹L‹"passiveArmorThermalDamageResonanceArmor Thermal Damage Resistance l(
 QŒLŒ"passiveArmorKineticDamageResonanceArmor Kinetic Damage Resistance l(
 UP$passiveArmorExplosiveDamageResonance!Armor Explosive Damage Resistance l(
 WŽRŽ%passiveShieldExplosiveDamageResonance"Shield Explosive Damage Resistance l(
@@ -2085,7 +2083,7 @@ Bþ=þentitySuperWeaponMaxRangeentitySuperWeaponMaxRange z(!
 @ÿ;ÿentitySuperWeaponFallOffentitySuperWeaponFallOff z(!
 L€G€entitySuperWeaponTrackingSpeedentitySuperWeaponTrackingSpeed z(!
 ^Y'entitySuperWeaponOptimalSignatureRadius'entitySuperWeaponOptimalSignatureRadius z(!
-6‡1‡fighterCapacityFighter Hanger Capacity 	(&
+6‡1‡fighterCapacityFighter Hangar Capacity 	(&
 )ˆ$ˆserviceSlotsService Slots z(
 DŠ?ŠclothingAlsoCoversCategory2clothingAlsoCoversCategory2 z
 D‹?‹eliteBonusCommandDestroyer1eliteBonusCommandDestroyer1 z
@@ -2447,3 +2445,31 @@ I”D”energyNeutralizerRangeFalloffNeutralization Falloff Range (
 B—=—cynosuralFieldSpawnRadiuscynosuralFieldSpawnRadius (
 9˜4˜shieldCapacityBonus2Shield Capacity Bonus i(
 2™-™armorRepairBonusArmor Repair Bonus i(
+Aš<šminingDurationRoleBonusMining Cycle Time Modifier i(
+F›A›maxCharacterSkillPointLimitCharacter Skill Point Limit z(
+8œ3œeliteBonusLogistics3eliteBonusLogistics3 z(	
+0+containedSkillPointsSkill Points z(
+8ž3žroleBonusRepairRangeroleBonusRepairRange z(
+/Ÿ*ŸcanFitShipType7Can be fitted to t(
+P K  effectedByIndustrialInvulnModule effectedByIndustrialInvulnModule z(%
+D¡?¡nosferatuCpuNeedBonusEnergy Nosferatu CPU Need Bonus i(
+=£8£specialCorpseHoldCapacityCorpse Hold Capacity 	(
+,¤'¤warfareBuff1IDwarfareBuff1ID z(%
+2¥-¥warfareBuff1ValuewarfareBuff1Value z(%
+,¦'¦warfareBuff2IDwarfareBuff2ID z(%
+2§-§warfareBuff2ValuewarfareBuff2Value z(%
+,¨'¨warfareBuff3IDwarfareBuff3ID z(%
+2©-©warfareBuff3ValuewarfareBuff3Value z(%
+1¬,¬canFitShipGroup11Can be fitted to s(
+1­,­canFitShipGroup12Can be fitted to s(
+1®,®canFitShipGroup13Can be fitted to s(
+1¯,¯canFitShipGroup14Can be fitted to s(
+1°,°canFitShipGroup15Can be fitted to s(
+1±,±canFitShipGroup16Can be fitted to s(
+1²,²canFitShipGroup17Can be fitted to s(
+1³,³canFitShipGroup18Can be fitted to s(
+1´,´canFitShipGroup19Can be fitted to s(
+1µ,µcanFitShipGroup20Can be fitted to s(
+/¶*¶canFitShipType8Can be fitted to t(
+/·*·canFitShipType9Can be fitted to t(
+0¸+¸canFitShipType10Can be fitted to t(
