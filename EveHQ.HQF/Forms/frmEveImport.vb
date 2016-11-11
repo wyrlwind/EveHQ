@@ -329,7 +329,7 @@ Namespace Forms
         Private Sub GetEveFittings()
 
             ' Check for the fittings directory and create it
-            If _eveFolder IsNot Nothing Or My.Computer.FileSystem.DirectoryExists(_eveFolder) = False Then
+            If _eveFolder Is Nothing Or My.Computer.FileSystem.DirectoryExists(_eveFolder) = False Then
                 MessageBox.Show("The Eve fittings folder is not present on your system and is required for this feature to work. You will need some fittings present in this folder either exported from Eve or EveHQ before proceeding.", "Fittings Folder Required", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Close()
                 Exit Sub
