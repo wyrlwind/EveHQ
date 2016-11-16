@@ -138,7 +138,7 @@ $ùù
 orbitRange
 orbitRange z(
 'û"ûfalloffAccuracy falloff (
-2†-†trackingSpeedWeapon Accuracy Score z(
+,†'†trackingSpeedTurret Tracking z(
 °°volumeVolume 	(
 ¢¢radiusradius z(	
 *£%£dummyDurationdummyDuration z(	
@@ -280,7 +280,7 @@ Bù=ùexcludeCorporationMembersexcludeCorporationMembers z(
 $±±
 gbCpuBonus
 gbCpuBonus z(	
-9≤4≤maxVelocityBonusMaximum Velocity Modifier m(
+<≤7≤maxVelocityModifierMaximum Velocity Modifier m(
 8≥3≥scannerDurationBonusscannerDurationBonus z(	
 .¥)¥scanspeedBonusScan Speed Bonus i(
 @µ;µmaxTargetRangeBonusMaximum Targeting Range Bonus i(%
@@ -502,7 +502,7 @@ Dü?üdamageCloudChanceReductiondamageCloudChanceReduction z(
 0†+†cloudEffectDelaycloudEffectDelay e(	
 *°%°cloudDurationcloudDuration e(	
 .¢)¢damageCloudTypedamageCloudType t(	
-:£5£missileVelocityBonusMissile Velocity Bonus i(
+:£5£missileVelocityBonusMissile Velocity Bonus i(%
 7§2§shieldBoostMultiplierShield Boost Bonus y(
 (•#•powerIncreasePower Bonus k(
 /¶*¶resistanceBonusResistance Bonus y(
@@ -546,7 +546,7 @@ H«C«entityChaseMaxDurationChanceentityChaseMaxDurationChance z(
 6–1–cloakCapacitorBonuscloakCapacitorBonus z(	
 ““DieDie z(	
 2”-”capBoostMultiplercapBoostMultipler z(	
-4‘/‘explosionDelayBonusFlight Time Bonus y(
+4‘/‘explosionDelayBonusFlight Time Bonus y(%
 2’-’eliteBonusEscortseliteBonusEscorts z(	
 (÷#÷shipBonusCB3shipBonusCB3 z(	
 8ÿ3ÿwarpSpeedMultiplierWarp Speed Multiplier h(
@@ -625,7 +625,7 @@ Dó?óminMissileVelDmgMultiplierminMissileVelDmgMultiplier z(
 4õ/õmoduleShipGroup3Restricted Ship Type s(
 4ú/úmoduleShipGroup1Restricted Ship Type s(
 9ù4ùmoduleReactivationDelayReactivation Delay e(
-5û0ûareaOfEffectBonusArea Of Effect Bonus (
+5û0ûareaOfEffectBonusArea Of Effect Bonus i(%
 ?†:†entityCruiseSpeedMultiplierOrbit Velocity Bonus m(
 4°/°eliteBonusGunship1eliteBonusGunship1 z(	
 4£/£eliteBonusGunship2eliteBonusGunship2 z(	
@@ -1116,7 +1116,7 @@ NÃ	IÃ	#signatureRadiusMultiplierMultiplierSignature Radius Multiplier i(
 :‘	5‘	commandBonusEffectivecommandBonusEffective i(
 .’	)’	commandBonusAddcommandBonusAdd z(
 @÷	;÷	commandBonusEffectiveAddcommandBonusEffectiveAdd z(	
-8◊	3◊	shipBonusORECapital1shipBonusORECapital1 z(	
+8◊	3◊	shipBonusORECapital1shipBonusORECapital1 z(
 8ÿ	3ÿ	shipBonusORECapital2shipBonusORECapital2 z(
 8€	3€	shipBonusORECapital3shipBonusORECapital3 z(
 8‹	3‹	shipBonusORECapital4shipBonusORECapital4 z(
@@ -1365,21 +1365,21 @@ B∆
 J 
 E 
 aoeDamageReductionSensitivityaoeDamageReductionSensitivity z(
-FÀ
-AÀ
-shipOrcaTractorBeamRangeBonus1Tractor Beam Range Bonus i(
->Ã
-9Ã
-shipOrcaCargoBonusOrca1shipOrcaCargoBonusOrca1 i(	
-RÕ
-MÕ
-!shipOrcaTractorBeamVelocityBonus2!shipOrcaTractorBeamVelocityBonus2 i(	
-8Œ
-3Œ
-shipOrcaForemanBonusshipOrcaForemanBonus i(	
-Dœ
-?œ
-shipOrcaSurveyScannerBonusshipOrcaSurveyScannerBonus i(	
+AÀ
+<À
+roleBonusTractorBeamRangeTractor Beam Range Bonus i(
+*Ã
+%Ã
+shipBonusICS1shipBonusICS1 i(	
+HÕ
+CÕ
+roleBonusTractorBeamVelocityroleBonusTractorBeamVelocity i(	
+*Œ
+%Œ
+shipBonusICS2shipBonusICS2 i(	
+Fœ
+Aœ
+roleBonusSurveyScannerRangeroleBonusSurveyScannerRange i(	
 8–
 3–
 shipBonusHPExtender1shipBonusHPExtender1 i(	
@@ -1647,7 +1647,7 @@ P˛K˛ subsystemBonusMinmatarOffensive3 subsystemBonusMinmatarOffensive3 z(
 @É;ÉwarpBubbleImmuneModifierwarpBubbleImmuneModifier z(
 DÑ?ÑstealthBomberLauncherPower2stealthBomberLauncherPower2 z
 :Ö5ÖjumpHarmonicsModifierjumpHarmonicsModifier z(
-?à:àmaxGroupFitted!Max Modules Of This Group Allowed z(
+?à:àmaxGroupFitted!Max Modules Of This Group Allowed z(	
 ããrigSizeRig Size u(
 7ç2çspecialFuelBayCapacityFuel Bay Capacity 	((
 :é5éimplantSetImperialNavyimplantSetImperialNavy z
@@ -1689,7 +1689,7 @@ C±>±devIndexEconomic%Required Development Index (economic) z
 \≤W≤devIndexResearchDevelopment3Required Development Index (Research & Development) z
 2∂-∂anchorDistanceMinanchorDistanceMin (
 2∑-∑anchorDistanceMaxanchorDistanceMax (
-UªPªanchoringRequiresSovUpgrade1)Anchoring Requires Infrastructure Upgrade t(
+Bª=ªrequiresSovUpgrade1Requires Infrastructure Upgrade t(
 ZΩUΩsovUpgradeSovereigntyHeldFor-Minimum Sovereignty Period to Install Upgrade Å(
 FæAæsovUpgradeBlockingUpgradeIDsovUpgradeBlockingUpgradeID t(
 IøDøsovUpgradeRequiredUpgradeIDPrerequisite Installed Upgrade t(
@@ -1842,7 +1842,7 @@ B⁄=⁄distributionIDSerpentis10distributionIDSerpentis10 z(
 0‚+‚distributionID08distributionID08 z(
 0„+„distributionID09distributionID09 z(
 0‰+‰distributionID10distributionID10 z(
-BÊ=ÊentityOverviewShipGroupIdentityOverviewShipGroupId s( 
+BÊ=ÊentityOverviewShipGroupIdentityOverviewShipGroupId s(
 .Ë)ËtypeColorSchemetypeColorScheme z(
 GÍBÍspecialMaterialBayCapacitySpecial material bay capacity 	(
 0Î+ÎconstructionTypeconstructionType z(
@@ -2451,7 +2451,7 @@ FõAõmaxCharacterSkillPointLimitCharacter Skill Point Limit z(
 0ù+ùcontainedSkillPointsSkill Points z(
 8û3ûroleBonusRepairRangeroleBonusRepairRange z(
 /ü*ücanFitShipType7Can be fitted to t(
-P†K† effectedByIndustrialInvulnModule effectedByIndustrialInvulnModule z(%
+P†K† affectedByIndustrialInvulnModule affectedByIndustrialInvulnModule z(%
 D°?°nosferatuCpuNeedBonusEnergy Nosferatu CPU Need Bonus i(
 =£8£specialCorpseHoldCapacityCorpse Hold Capacity 	(
 ,§'§warfareBuff1IDwarfareBuff1ID z(%
@@ -2460,6 +2460,8 @@ D°?°nosferatuCpuNeedBonusEnergy Nosferatu CPU Need Bonus i(
 2ß-ßwarfareBuff2ValuewarfareBuff2Value z(%
 ,®'®warfareBuff3IDwarfareBuff3ID z(%
 2©-©warfareBuff3ValuewarfareBuff3Value z(%
+*™%™shipBonusICS3shipBonusICS3 i(	
+*´%´shipBonusICS4shipBonusICS4 i(	
 1¨,¨canFitShipGroup11Can be fitted to s(
 1≠,≠canFitShipGroup12Can be fitted to s(
 1Æ,ÆcanFitShipGroup13Can be fitted to s(
@@ -2473,3 +2475,121 @@ D°?°nosferatuCpuNeedBonusEnergy Nosferatu CPU Need Bonus i(
 /∂*∂canFitShipType8Can be fitted to t(
 /∑*∑canFitShipType9Can be fitted to t(
 0∏+∏canFitShipType10Can be fitted to t(
+8π3πbehaviorMiningAmountbehaviorMiningAmount 	(*
+>∫9∫behaviorMiningCycleTimebehaviorMiningCycleTime e(*
+RªMª!behaviorRemoteArmorRepairDuration!behaviorRemoteArmorRepairDuration e(*
+LºGºbehaviorRemoteArmorRepairRangebehaviorRemoteArmorRepairRange (*
+PΩKΩ behaviorRemoteArmorRepairFalloff behaviorRemoteArmorRepairFalloff (*
+TæOæ"behaviorRemoteArmorRepairDischarge"behaviorRemoteArmorRepairDischarge z(*
+RøMø!behaviorRemoteShieldBoostDuration!behaviorRemoteShieldBoostDuration e(*
+L¿G¿behaviorRemoteShieldBoostRangebehaviorRemoteShieldBoostRange (*
+P¡K¡ behaviorRemoteShieldBoostFalloff behaviorRemoteShieldBoostFalloff (*
+T¬O¬"behaviorRemoteShieldBoostDischarge"behaviorRemoteShieldBoostDischarge r(*
+@√;√behaviorWebifierDurationbehaviorWebifierDuration e(*
+:ƒ5ƒbehaviorWebifierRangebehaviorWebifierRange (*
+>≈9≈behaviorWebifierFalloffbehaviorWebifierFalloff (*
+B∆=∆behaviorWebifierDischargebehaviorWebifierDischarge r(*
+F«A«behaviorWarpDisruptDurationbehaviorWarpDisruptDuration e(*
+@»;»behaviorWarpDisruptRangebehaviorWarpDisruptRange (*
+H…C…behaviorWarpDisruptDischargebehaviorWarpDisruptDischarge r(*
+H C behaviorWarpScrambleDurationbehaviorWarpScrambleDuration e(*
+BÀ=ÀbehaviorWarpScrambleRangebehaviorWarpScrambleRange (*
+JÃEÃbehaviorWarpScrambleDischargebehaviorWarpScrambleDischarge r(*
+HÕCÕbehaviorWarpScrambleStrengthbehaviorWarpScrambleStrength z(*
+FŒAŒbehaviorWarpDisruptStrengthbehaviorWarpDisruptStrength z(*
+RœMœ!behaviorGuidanceDisruptorDuration!behaviorGuidanceDisruptorDuration e(*
+L–G–behaviorGuidanceDisruptorRangebehaviorGuidanceDisruptorRange (*
+P—K— behaviorGuidanceDisruptorFalloff behaviorGuidanceDisruptorFalloff (*
+T“O“"behaviorGuidanceDisruptorDischarge"behaviorGuidanceDisruptorDischarge r(*
+R”M”!behaviorTrackingDisruptorDuration!behaviorTrackingDisruptorDuration e(*
+L‘G‘behaviorTrackingDisruptorRangebehaviorTrackingDisruptorRange (*
+P’K’ behaviorTrackingDisruptorFalloff behaviorTrackingDisruptorFalloff (*
+T÷O÷"behaviorTrackingDisruptorDischarge"behaviorTrackingDisruptorDischarge r(*
+R◊M◊!behaviorEnergyNeutralizerDuration!behaviorEnergyNeutralizerDuration e(*
+LÿGÿbehaviorEnergyNeutralizerRangebehaviorEnergyNeutralizerRange (*
+PŸKŸ behaviorEnergyNeutralizerFalloff behaviorEnergyNeutralizerFalloff (*
+T⁄O⁄"behaviorEnergyNeutralizerDischarge"behaviorEnergyNeutralizerDischarge r(*
+J€E€behaviorTargetPainterDurationbehaviorTargetPainterDuration e(*
+D‹?‹behaviorTargetPainterRangebehaviorTargetPainterRange (*
+H›C›behaviorTargetPainterFalloffbehaviorTargetPainterFalloff (*
+LﬁGﬁbehaviorTargetPainterDischargebehaviorTargetPainterDischarge r(*
+LﬂGﬂbehaviorSensorDampenerDurationbehaviorSensorDampenerDuration e(*
+F‡A‡behaviorSensorDampenerRangebehaviorSensorDampenerRange (*
+J·E·behaviorSensorDampenerFalloffbehaviorSensorDampenerFalloff (*
+N‚I‚behaviorSensorDampenerDischargebehaviorSensorDampenerDischarge r(*
+6„1„behaviorECMDurationbehaviorECMDuration e(*
+0‰+‰behaviorECMRangebehaviorECMRange (*
+4Â/ÂbehaviorECMFalloffbehaviorECMFalloff (*
+8Ê3ÊbehaviorECMDischargebehaviorECMDischarge (*
+-Á(ÁbuffDurationModifier duration e(%
+,Ë'ËwarfareBuff4IDwarfareBuff4ID z(%
+2È-ÈwarfareBuff4ValuewarfareBuff4Value z(%
+nÍiÍ/attributeEquipmentManufactureMaterialMultiplier/attributeEquipmentManufactureMaterialMultiplier z(
+fÎaÎ+attributeEquipmentManufactureTimeMultiplier+attributeEquipmentManufactureTimeMultiplier z(
+dÏ_Ï*attributeAmmoManufactureMaterialMultiplier*attributeAmmoManufactureMaterialMultiplier z(
+\ÌWÌ&attributeAmmoManufactureTimeMultiplier&attributeAmmoManufactureTimeMultiplier z(
+fÓaÓ+attributeDroneManufactureMaterialMultiplier+attributeDroneManufactureMaterialMultiplier z(
+^ÔYÔ'attributeDroneManufactureTimeMultiplier'attributeDroneManufactureTimeMultiplier z(
+to2attributeBasSmallShipManufactureMaterialMultiplier2attributeBasSmallShipManufactureMaterialMultiplier z(
+lÒgÒ.attributeBasSmallShipManufactureTimeMultiplier.attributeBasSmallShipManufactureTimeMultiplier z(
+vÚqÚ3attributeBasMediumShipManufactureMaterialMultiplier3attributeBasMediumShipManufactureMaterialMultiplier z(
+nÛiÛ/attributeBasMediumShipManufactureTimeMultiplier/attributeBasMediumShipManufactureTimeMultiplier z(
+tÙoÙ2attributeBasLargeShipManufactureMaterialMultiplier2attributeBasLargeShipManufactureMaterialMultiplier z(
+lıgı.attributeBasLargeShipManufactureTimeMultiplier.attributeBasLargeShipManufactureTimeMultiplier z(
+tˆoˆ2attributeAdvSmallShipManufactureMaterialMultiplier2attributeAdvSmallShipManufactureMaterialMultiplier z(
+l˜g˜.attributeAdvSmallShipManufactureTimeMultiplier.attributeAdvSmallShipManufactureTimeMultiplier z(
+v¯q¯3attributeAdvMediumShipManufactureMaterialMultiplier3attributeAdvMediumShipManufactureMaterialMultiplier z(
+n˘i˘/attributeAdvMediumShipManufactureTimeMultiplier/attributeAdvMediumShipManufactureTimeMultiplier z(
+t˚o˚2attributeAdvLargeShipManufactureMaterialMultiplier2attributeAdvLargeShipManufactureMaterialMultiplier z(
+l¸g¸.attributeAdvLargeShipManufactureTimeMultiplier.attributeAdvLargeShipManufactureTimeMultiplier z(
+j˝e˝-attributeAdvCompManufactureMaterialMultiplier-attributeAdvCompManufactureMaterialMultiplier z(
+b˛]˛)attributeAdvCompManufactureTimeMultiplier)attributeAdvCompManufactureTimeMultiplier z(
+pˇkˇ0attributeBasCapCompManufactureMaterialMultiplier0attributeBasCapCompManufactureMaterialMultiplier z(
+hÄcÄ,attributeBasCapCompManufactureTimeMultiplier,attributeBasCapCompManufactureTimeMultiplier z(
+nÅiÅ/attributeStructureManufactureMaterialMultiplier/attributeStructureManufactureMaterialMultiplier z(
+fÇaÇ+attributeStructureManufactureTimeMultiplier+attributeStructureManufactureTimeMultiplier z(
+PÉKÉ attributeInventionCostMultiplier attributeInventionCostMultiplier z(
+PÑKÑ attributeInventionTimeMultiplier attributeInventionTimeMultiplier z(
+RÖMÖ!attributeMEResearchCostMultiplier!attributeMEResearchCostMultiplier z(
+RÜMÜ!attributeMEResearchTimeMultiplier!attributeMEResearchTimeMultiplier z(
+RáMá!attributeTEResearchCostMultiplier!attributeTEResearchCostMultiplier z(
+RàMà!attributeTEResearchTimeMultiplier!attributeTEResearchTimeMultiplier z(
+JâEâattributeBPCopyCostMultiplierattributeBPCopyCostMultiplier z(
+JäEäattributeBPCopyTimeMultiplierattributeBPCopyTimeMultiplier z(
+Eã@ãcommandBurstStrengthBonusCommand Burst Strength Bonus i(%
+@å;åcommandStrengthBonusCommand Burst Strength Bonus i(%
+1ç,çreloadTimeBonusReload Speed Bonus i(%
+MéHéroleBonusCommandBurstAoERange Command Burst Effect Range Bonus i(%
+jèeè-attributeCapShipManufactureMaterialMultiplier-attributeCapShipManufactureMaterialMultiplier z(
+bê]ê)attributeCapShipManufactureTimeMultiplier)attributeCapShipManufactureTimeMultiplier z(
+*ë%ëshipBonusICS5shipBonusICS5 i(	
+Bí=íroleBonusDroneMiningYieldroleBonusDroneMiningYield i(	
+PìKì roleBonusDroneIceHarvestingSpeed roleBonusDroneIceHarvestingSpeed i(	
+Dî?îindustrialBonusDroneDamageindustrialBonusDroneDamage i(	
+<ï7ïonlineMaxSecurityClassonlineMaxSecurityClass z(
+8ñ3ñshipBonusORECapital5shipBonusORECapital5 z(
+PóKó industrialCoreBonusDroneDamageHP Drone Damage and Hitpoints Bonus i(%
+LòGò industrialCoreBonusDroneVelocityDrone Maximum Velocity Bonus i(%
+JôEôindustrialCoreBonusDroneMiningDrone Ore Mining Yield Bonus i(%
+UöPö%industrialCoreBonusDroneIceHarvesting Drone Ice Harvesting Speed Bonus i(%
+YõTõ&industrialCoreBonusMiningBurstStrength#Mining Foreman Burst Strength Bonus i(%
+`ú[ú$industrialCoreBonusCommandBurstRange,Command and Mining Foreman Burst Range Bonus i(%
+<ù7ùmodeDamageBonusPostDivmodeDamageBonusPostDiv z(
+Bû=ûmodeEwarResistancePostDivmodeEwarResistancePostDiv z(
+dü_ü*attributeAllShipsManufactureTimeMultiplier*attributeAllShipsManufactureTimeMultiplier z(
+l†g†.attributeAllShipsManufactureMaterialMultiplier.attributeAllShipsManufactureMaterialMultiplier z(
+<°7°attributeEngRigTimeBonusTime Reduction Bonus i(%
+?¢:¢attributeEngRigMatBonusMaterial Reduction Bonus i(%
+<£7£attributeEngRigCostBonusCost Reduction Bonus i(%
+<§7§warfareBuff1MultiplierwarfareBuff1Multiplier z(%
+<•7•warfareBuff2MultiplierwarfareBuff2Multiplier z(%
+<¶7¶warfareBuff3MultiplierwarfareBuff3Multiplier z(%
+<ß7ßwarfareBuff4MultiplierwarfareBuff4Multiplier z(%
+,®'®strEngMatBonusstrEngMatBonus z(
+.©)©strEngCostBonusstrEngCostBonus z(
+.™)™strEngTimeBonusstrEngTimeBonus z(
+6´1´maxVelocityBonusMaximum Velocity Bonus i(
+`¨[¨'industrialCoreRemoteLogisticsRangeBonus)Capital Remote Shield Booster Range Bonus i(%
+x≠s≠*industrialCoreRemoteLogisticsDurationBonus>Capital Remote Shield Booster Duration and Capacitor Use Bonus i(%
+VÆQÆ)industrialCoreLocalLogisticsDurationBonusShield Booster Duration Bonus i(%
+RØMØ'industrialCoreLocalLogisticsAmountBonusShield Booster Amount Bonus i(%

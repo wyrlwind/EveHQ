@@ -295,15 +295,10 @@
 695,Ship Equipment\Engineering Equipment\Remote Capacitor Transmitters\Small
 0,Ship Equipment\Fleet Assistance Modules
 1642,Ship Equipment\Fleet Assistance Modules\Clone Vat Bays
+1633,Ship Equipment\Fleet Assistance Modules\Command Bursts
 1639,Ship Equipment\Fleet Assistance Modules\Command Processors
 1641,Ship Equipment\Fleet Assistance Modules\Cynosural Field Generators
 1640,Ship Equipment\Fleet Assistance Modules\Jump Portal Generators
-1638,Ship Equipment\Fleet Assistance Modules\Mining Foreman Links
-0,Ship Equipment\Fleet Assistance Modules\Warfare Links
-1634,Ship Equipment\Fleet Assistance Modules\Warfare Links\Armored Warfare Links
-1635,Ship Equipment\Fleet Assistance Modules\Warfare Links\Information Warfare Links
-1636,Ship Equipment\Fleet Assistance Modules\Warfare Links\Siege Warfare Links
-1637,Ship Equipment\Fleet Assistance Modules\Warfare Links\Skirmish Warfare Links
 0,Ship Equipment\Harvest Equipment
 1037,Ship Equipment\Harvest Equipment\Gas Cloud Harvesters
 1038,Ship Equipment\Harvest Equipment\Ice Harvesters
@@ -427,12 +422,6 @@
 382,Ship Equipment\Smartbombs\Small
 0,Ship Equipment\Turrets & Bays
 1014,Ship Equipment\Turrets & Bays\Bomb Launchers
-0,Ship Equipment\Turrets & Bays\Doomsday Devices
-2267,Ship Equipment\Turrets & Bays\Doomsday Devices\Amarr
-2268,Ship Equipment\Turrets & Bays\Doomsday Devices\Caldari
-2269,Ship Equipment\Turrets & Bays\Doomsday Devices\Gallente
-2270,Ship Equipment\Turrets & Bays\Doomsday Devices\Minmatar
-2276,Ship Equipment\Turrets & Bays\Doomsday Devices\Non-Racial
 0,Ship Equipment\Turrets & Bays\Energy Turrets
 0,Ship Equipment\Turrets & Bays\Energy Turrets\Beam Lasers
 773,Ship Equipment\Turrets & Bays\Energy Turrets\Beam Lasers\Extra Large
@@ -477,6 +466,13 @@
 576,Ship Equipment\Turrets & Bays\Projectile Turrets\Autocannons\Large
 575,Ship Equipment\Turrets & Bays\Projectile Turrets\Autocannons\Medium
 574,Ship Equipment\Turrets & Bays\Projectile Turrets\Autocannons\Small
+0,Ship Equipment\Turrets & Bays\Superweapons
+2267,Ship Equipment\Turrets & Bays\Superweapons\Amarr
+2268,Ship Equipment\Turrets & Bays\Superweapons\Caldari
+2269,Ship Equipment\Turrets & Bays\Superweapons\Gallente
+2270,Ship Equipment\Turrets & Bays\Superweapons\Minmatar
+2276,Ship Equipment\Turrets & Bays\Superweapons\Non-Racial
+2325,Ship Equipment\Turrets & Bays\Superweapons\ORE
 0,Ship Equipment\Turrets & Bays\Weapon Upgrades
 645,Ship Equipment\Turrets & Bays\Weapon Upgrades\Ballistic Control Systems
 646,Ship Equipment\Turrets & Bays\Weapon Upgrades\Gyrostabilizers

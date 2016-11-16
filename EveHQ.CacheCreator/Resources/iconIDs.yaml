@@ -6727,3 +6727,141 @@
 21681:
   description: 42906_male_Accessories_Glasses_Goggles_01_Types_goggles_01_orange
   iconFile: res:/UI/Asset/mannequin/accessories_glasses/42906_male_Accessories_Glasses_Goggles_01_Types_goggles_01_orange.png
+21683:
+  description: Avatar Titan Effect Generator
+  iconFile: res:/UI/Texture/Icons/Modules/titanGeneratorAmarr.png
+21684:
+  description: Leviathan Titan Effect Generator
+  iconFile: res:/UI/Texture/Icons/Modules/titanGeneratorCaldari.png
+21685:
+  description: Erebus Titan Effect Generator
+  iconFile: res:/UI/Texture/Icons/Modules/titanGeneratorGallente.png
+21686:
+  description: Ragnarok Titan Effect Generator
+  iconFile: res:/UI/Texture/Icons/Modules/titanGeneratorMinmatar.png
+21687:
+  description: Armored Command Burst - Base
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ArmorBase.png
+21688:
+  description: Armored Command Burst - Armor Reinforcement
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ArmorBuffer.png
+21689:
+  description: Armored Command Burst - Rapid Repair
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ArmorRepair.png
+21690:
+  description: Armored Command Burst - Armor Energizing
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ArmorResists.png
+21691:
+  description: Information Command Burst - Base
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_InfoBase.png
+21692:
+  description: Information Command Burst - Electronic Superiority
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_InfoEwar.png
+21693:
+  description: Information Command Burst - Sensor Optimization
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_InfoSensors.png
+21694:
+  description: Information Command Burst - Electronic Hardening
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_InfoTargeting.png
+21695:
+  description: Mining Foreman Burst - Base
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_MiningBase.png
+21696:
+  description: Mining Foreman Burst - Mining Equipment Preservation
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_MiningCrystal.png
+21698:
+  description: Mining Foreman Burst - Mining Laser Optimization
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_MiningCycle.png
+21699:
+  description: Mining Foreman Burst - Mining Laser Field Enhancement
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_MiningRange.png
+21700:
+  description: Shield Command Burst - Base
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ShieldBase.png
+21701:
+  description: Shield Command Burst - Shield Extension
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ShieldBuffer.png
+21702:
+  description: Shield Command Burst - Active Shielding
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ShieldRepair.png
+21703:
+  description: Shield Command Burst - Shield Harmonizing
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ShieldResists.png
+21704:
+  description: Skirmish Command Burst - Base
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_SkirmishBase.png
+21705:
+  description: Skirmish Command Burst - Evasive Maneuvers
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_SkirmishSignature.png
+21706:
+  description: Skirmish Command Burst - Rapid Deployment
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_SkirmishSpeed.png
+21707:
+  description: Skirmish Command Burst - Interdiction Maneuvers
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_SkirmishWeb.png
+21708:
+  description: Fleet Boost Effect Icon - Armor Reinforcement
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_ArmorBuffer.png
+21709:
+  description: Fleet Boost Effect Icon - Rapid Repair
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_ArmorRepair.png
+21710:
+  description: Fleet Boost Effect Icon - Armor Energizing
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_ArmorResists.png
+21711:
+  description: Fleet Boost Effect Icon - Base
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_Base.png
+21712:
+  description: Fleet Boost Effect Icon - Electronic Superiority
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_InfoEwar.png
+21713:
+  description: Fleet Boost Effect Icon - Sensor Optimization
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_InfoSensors.png
+21714:
+  description: Fleet Boost Effect Icon - Electronic Hardening
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_InfoTargeting.png
+21715:
+  description: Fleet Boost Effect Icon - Mining Equipment Preservation
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_MiningCrystal.png
+21716:
+  description: Fleet Boost Effect Icon - Mining Laser Optimization
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_MiningCycle.png
+21717:
+  description: Fleet Boost Effect Icon - Mining Laser Field Enhancement
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_MiningRange.png
+21718:
+  description: Fleet Boost Effect Icon - Shield Extension
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_ShieldBuffer.png
+21719:
+  description: Fleet Boost Effect Icon - Active Shielding
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_ShieldRepair.png
+21720:
+  description: Fleet Boost Effect Icon - Shield Harmonizing
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_ShieldResists.png
+21721:
+  description: Fleet Boost Effect Icon - Evasive Manuevuers
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_SkirmishSignature.png
+21722:
+  description: Fleet Boost Effect Icon - Rapid Deployment
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_SkirmishSpeed.png
+21723:
+  description: Fleet Boost Effect Icon - Interdiction Maneuvers
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_SkirmishWeb.png
+21724:
+  description: Multi-racial Titan Effect Generator
+  iconFile: res:/UI/Texture/Icons/Modules/titanGeneratorMultiple.png
+21725:
+  description: Icon for the NPE Reward Crates
+  iconFile: res:/ui/texture/icons/inventory/empireCrate.png
+21729:
+  description: Structure Rig Engineering
+  iconFile: res:/ui/texture/icons/127_64_8.png
+21730:
+  description: Pulse Activated Nexus Invulnerability Core
+  iconFile: res:/UI/Texture/Icons/Modules/panicModule.png
+21731:
+  description: Skill Injector Restricted
+  iconFile: res:/UI/texture/icons/inventory/skillInjectorMini_64.png
+21732:
+  description: 250,000 skill points
+  iconFile: res:/ui/texture/icons/50_64_11.png
