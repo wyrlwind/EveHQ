@@ -95,7 +95,6 @@ Battleships\Standard Battleships\Minmatar\Typhoon
 Capital Ships
 Capital Ships\Capital Industrial Ships
 Capital Ships\Capital Industrial Ships\ORE
-Capital Ships\Capital Industrial Ships\ORE\Orca
 Capital Ships\Capital Industrial Ships\ORE\Rorqual
 Capital Ships\Carriers
 Capital Ships\Carriers\Amarr
@@ -164,6 +163,15 @@ Capital Ships\Titans\Gallente
 Capital Ships\Titans\Gallente\Erebus
 Capital Ships\Titans\Minmatar
 Capital Ships\Titans\Minmatar\Ragnarok
+Corvettes
+Corvettes\Amarr
+Corvettes\Amarr\Impairor
+Corvettes\Caldari
+Corvettes\Caldari\Ibis
+Corvettes\Gallente
+Corvettes\Gallente\Velator
+Corvettes\Minmatar
+Corvettes\Minmatar\Reaper
 Cruisers
 Cruisers\Advanced Cruisers
 Cruisers\Advanced Cruisers\Heavy Assault Cruisers
@@ -428,6 +436,10 @@ Industrial Ships\Advanced Industrial Ships\Transport Ships\Gallente\Viator
 Industrial Ships\Advanced Industrial Ships\Transport Ships\Minmatar
 Industrial Ships\Advanced Industrial Ships\Transport Ships\Minmatar\Mastodon
 Industrial Ships\Advanced Industrial Ships\Transport Ships\Minmatar\Prowler
+Industrial Ships\Industrial Command Ships
+Industrial Ships\Industrial Command Ships\ORE
+Industrial Ships\Industrial Command Ships\ORE\Orca
+Industrial Ships\Industrial Command Ships\ORE\Porpoise
 Industrial Ships\Standard Industrial Ships
 Industrial Ships\Standard Industrial Ships\Amarr
 Industrial Ships\Standard Industrial Ships\Amarr\Bestower
@@ -456,15 +468,6 @@ Mining Barges\Mining Barges
 Mining Barges\Mining Barges\Covetor
 Mining Barges\Mining Barges\Procurer
 Mining Barges\Mining Barges\Retriever
-Rookie Ships
-Rookie Ships\Amarr
-Rookie Ships\Amarr\Impairor
-Rookie Ships\Caldari
-Rookie Ships\Caldari\Ibis
-Rookie Ships\Gallente
-Rookie Ships\Gallente\Velator
-Rookie Ships\Minmatar
-Rookie Ships\Minmatar\Reaper
 Shuttles
 Shuttles\Amarr
 Shuttles\Amarr\Amarr Shuttle
@@ -498,6 +501,8 @@ Special Edition Ships\Special Edition Cruisers
 Special Edition Ships\Special Edition Cruisers\Guardian-Vexor
 Special Edition Ships\Special Edition Cruisers\Opux Luxury Yacht
 Special Edition Ships\Special Edition Cruisers\Victorieux Luxury Yacht
+Special Edition Ships\Special Edition Destroyers
+Special Edition Ships\Special Edition Destroyers\Sunesis
 Special Edition Ships\Special Edition Frigates
 Special Edition Ships\Special Edition Frigates\Echelon
 Special Edition Ships\Special Edition Frigates\Echo

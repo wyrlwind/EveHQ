@@ -662,9 +662,9 @@ $““Advanced Railgun Chargesd
 ââTractor Beams™
 ééCapitaló
 èèSentry Dronesü
-êêDoomsday Devices
+êêSuperweapons
 
-ëëDoomsday Devices“
+ëëSuperweapons“
 #ííStandard Auto-Targetings
 2ï-ï&Advanced High Precision Light Missilesu
 4ñ/ñ'Advanced High Precision Cruise Missilesƒ
@@ -1364,12 +1364,7 @@ $®®Remote Sensor Dampenersû
 +›&›Minmatar Electronic Subsystems⁄
 *ﬁ%ﬁCaldari Electronic SubsystemsŸ
 ﬂﬂFaction Shuttlesá
-··Warfare Linksã
-"‚‚Armored Warfare Links·
-&„!„Information Warfare Links·
- ‰‰Siege Warfare Links·
-#ÂÂSkirmish Warfare Links·
-!ÊÊMining Foreman Linksã
+··Command Burstsã
 ÁÁCommand Processorsã
 #ËËJump Portal Generatorsã
 'È"ÈCynosural Field Generatorsã
@@ -1516,7 +1511,7 @@ $óóEnergized Armor Layering
 /î*î"Alliance Tournament All Star Teamsí
 "ïïNEO YC 114 Team Cardsì
 %ñ ñSpecial Edition Implants˚
-óóRookie Ships
+óó	Corvettes
 òòAmarró
 ôôCaldarió
 ööGallenteó
@@ -1829,7 +1824,7 @@ $µµStandard Battlecruisers£
 #ÌÌStructure Modifications
 ÓÓStructure Equipment
 "ÔÔStructure Combat RigsÌ
-Reprocessing RigsÌ
+(#Structure Reprocessing RigsÌ
 ÒÒElectronic WarfareÓ
 ,Ú'ÚElectronics and Sensor UpgradesÓ
 "ÛÛEngineering EquipmentÓ
@@ -1871,7 +1866,7 @@ $ääPoint Defense BatteriesÛ
 ôôStandard Citadelsó
 ööStructure Equipment
 !õõStructure Modifications
-úúReprocessing Rigsõ
+(ú#úStructure Reprocessing Rigsõ
 "ùùStructure Combat Rigsõ
 ûûElectronic Warfareö
 ,ü'üElectronics and Sensor Upgradesö
@@ -1970,8 +1965,8 @@ Non-Racialê
 )¸$¸Mining Foreman Burst Charges˘
 )˝$˝Shield Command Burst Charges˘
 +˛&˛Skirmish Command Burst Charges˘
-ÇÇRookie Ships¢
-"ÉÉStandard Rookie ShipsÇ
+ÇÇ	Corvettes¢
+ÉÉStandard CorvettesÇ
 ÑÑAmarrÉ
  ÖÖTactical DestroyersÙ
 ÜÜAmarrÖ
@@ -1981,9 +1976,39 @@ Non-Racialê
 ääSpecial Destroyersâ
 ããShuttles¢
 ååSpecial Shuttlesã
+ççStrong Boxes
+ééORE¥
+èèMining Barges€
+ êêExpedition Frigates˙
+ëëORE—
+"ííEngineering Complexes∫
+
+(ì#ìEngineering Service Modulesˆ
+"îîEngineering Complexes›
+ïïOREê
 òòORE•
 -ö(ö Special Edition Industrial Ships÷
 õõOREö
+(ú#úEngineering Service Modules¢
+%ù ùIndustrial Command ShipsÃ
+ûûOREù
+%ü üIndustrial Command ShipsÊ
+
+††OREü
+%° °Industrial Command Ships÷
+¢¢ORE°
+'£"£Structure Engineering RigsÌ
+'§"§Structure Engineering Rigsõ
+/•*•"Medium Structure Reprocessing Rigsú
+.¶)¶!Large Structure Reprocessing Rigsú
+0ß+ß#X-Large Structure Reprocessing Rigsú
+)®$®Medium Structure Combat Rigsù
+(©#©Large Structure Combat Rigsù
+*™%™X-Large Structure Combat Rigsù
+.´)´!Medium Structure Engineering Rigs§
+-¨(¨ Large Structure Engineering Rigs§
+/≠*≠"X-Large Structure Engineering Rigs§
+'Æ"ÆSpecial Edition DestroyersÃ
 ±Æ±ÆInfantry Gear
 ï ï Grenadesü 
 "ö ö Dropsuits and Gear±Æ
