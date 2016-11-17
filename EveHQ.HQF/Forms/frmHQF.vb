@@ -2404,7 +2404,7 @@ Namespace Forms
                 fitting.AppendLine(cargo.ItemType.Name & ", " & cargo.Quantity)
             Next
             Try
-                Clipboard.SetText(fitting.ToString)
+                Clipboard.SetText(fitting.ToString.Trim)
             Catch ex As Exception
                 MessageBox.Show("There was an error writing data to the clipboard. Please wait a couple of seconds and try again.", "Copy For HQF Error")
             End Try
@@ -2484,7 +2484,7 @@ Namespace Forms
                 fitting.AppendLine(cargo.ItemType.Name & " x" & cargo.Quantity)
             Next
             Try
-                Clipboard.SetText(fitting.ToString)
+                Clipboard.SetText(fitting.ToString.Trim)
             Catch ex As Exception
                 MessageBox.Show("There was an error writing data to the clipboard. Please wait a couple of seconds and try again.", "Copy For EFT Error")
             End Try
