@@ -295,6 +295,10 @@ Public Enum ModuleEnum
     ItemTenguWarfareProcessor = 29972
     ItemTriageModuleI = 27951
     ItemTriageModuleT2 = 4294
+    ItemSmallCommandProcessorI = 43894
+    ItemMediumCommandProcessorI = 43896
+    ItemLargeCommandProcessorI = 43898
+    ItemCapitalCommandProcessorI = 43900
 
     ' categoryIDs (see invCategories)
     CategoryCelestials = 2
@@ -312,6 +316,7 @@ Public Enum ModuleEnum
     GroupBoosters = 303
     GroupCapBoosters = 76
     GroupCloakingDevices = 330
+    GroupCommandBurst = 1770
     GroupCynosuralFields = 658
     GroupDamageControls = 60
     GroupDeepSpaceTransports = 380
