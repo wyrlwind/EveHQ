@@ -1332,6 +1332,10 @@
 833,1,4290,567,2,46,0,0,0,16,SkWL - Rapid Deployment II
 # Misc Fleet Modules,,,,,,,,,,
 435,1,11014,10063,3,6,0,0,1,12,Command Processor
+435,1,43894,10063,3,6,0,0,1,12,Small Command Processor I
+435,1,43896,10063,3,6,0,0,1,12,Medium Command Processor I
+435,1,43898,10063,3,6,0,0,1,12,Large Command Processor I
+435,1,43900,10063,3,6,0,0,1,12,Capital Command Processor I
 # FLEET SHIP EFFECTS,,,,,,,,,,
 55,1,-1,55,3,6,0,0,0,16,Gang Capacitor Recharge Rate
 265,1,-1,265,3,6,0,0,0,16,Gang Armor HP

@@ -1806,6 +1806,23 @@
 37481,1,37615,73,2,1533,0,1,0,-5,15,Micro Jump Field Generator duration
 37481,0,0,30,2,316,0,0,0,-95,15,Warfare link power need
 37481,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
+# Porpoise,,,,,,,,,,,
+42244,0,0,30,2,1770,0,0,0,-90,15,Command and Foreman Burst module power need
+42244,0,0,77,3,18,0,0,0,50,15,Drone Mining Yield
+42244,0,0,54,2,41;1697,0,0,0,400,15,Remote Shield Booster optimal
+42244,0,0,1045,2,650,0,0,0,50,15,Tractor Beam Velocity
+42244,0,0,54,2,650,0,0,0,100,15,Tractor Beam Range
+42244,0,0,197,2,49,0,0,0,300,15,Survey Scanner Range
+42244,0,0,10063,1,42244,0,0,1,1,15,Warfare Link Use
+42244,1,29637,1556,1,42244,0,1,0,5,15,Ore Hold Capacity
+42244,1,29637,10004,1,42244,0,1,0,5,15,Cargo Capacity
+42244,1,29637,1238,1,42244,0,1,0,2,15,Mining Foreman Ganglink Bonus
+42244,1,29637,73,3,18,0,1,0,10,15,Drone Ice Mining Cycle Time
+42244,1,29637,77,3,18,0,1,0,10,15,Drone Mining Yield
+42244,1,29637,263,3,18,0,1,0,10,15,Drone Shield HP
+42244,1,29637,265,3,18,0,1,0,10,15,Drone Armor HP
+42244,1,29637,9,3,18,0,1,0,10,15,Drone Hull HP
+42244,1,29637,64,3,18,0,1,0,10,15,Drone Damage
 # Probe,,,,,,,,,,,
 586,1,3329,1371,2,479,0,1,0,7.5,15,Probe Scan Strength Bonus
 586,1,3329,73,4,1715,0,1,0,-5,15,Salvager Cycle Time

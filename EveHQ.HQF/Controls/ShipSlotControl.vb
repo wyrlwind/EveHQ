@@ -169,7 +169,8 @@ Namespace Controls
             _remoteGroups.Add(641) ' Stasis web drone
             _remoteGroups.Add(640) ' Shield/armor repair drone
             _remoteGroups.Add(639) ' EW Drone
-            _fleetGroups.Add(316)
+            _fleetGroups.Add(ModuleEnum.GroupCommandBurst)
+            _fleetGroups.Add(ModuleEnum.GroupGangLinks)
             _fleetSkills.Add(ModuleEnum.ItemSkillLeadership, AttributeEnum.SkillScanResBonus)
             _fleetSkills.Add(ModuleEnum.ItemSkillArmoredWarfare, AttributeEnum.SkillArmorHpBonus)
             _fleetSkills.Add(ModuleEnum.ItemSkillInformationWarfare, AttributeEnum.SkillTargetRangeBonus)
@@ -1303,7 +1304,7 @@ Namespace Controls
                 ' Update only if the module state has changed
                 If currentstate <> currentMod.ModuleState Then
                     ' Check for command processors as this affects the fitting!
-                    If currentMod.ID = ModuleEnum.ItemCommandProcessorI Then
+                    If (currentMod.ID = ModuleEnum.ItemCommandProcessorI Or currentMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or currentMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or currentMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or currentMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) Then
                         If currentstate = ModuleStates.Offline Then
                             ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) -= 1
                             ' Check if we need to deactivate a highslot ganglink
@@ -1312,8 +1313,8 @@ Namespace Controls
                                 For slot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step - 1
                                     If ParentFitting.BaseShip.HiSlot(slot) IsNot Nothing Then
                                         If _
-                                            ParentFitting.BaseShip.HiSlot(slot).DatabaseGroup =
-                                            ModuleEnum.GroupGangLinks And
+                                            (ParentFitting.BaseShip.HiSlot(slot).DatabaseGroup =
+                                            ModuleEnum.GroupGangLinks Or ParentFitting.BaseShip.HiSlot(slot).DatabaseGroup = ModuleEnum.GroupCommandBurst) And
                                             ParentFitting.BaseShip.HiSlot(slot).ModuleState = ModuleStates.Active Then
                                             activeGanglinks.Add(slot)
                                         End If
@@ -1334,7 +1335,7 @@ Namespace Controls
                     If _
                         (currentstate = ModuleStates.Active Or currentstate = ModuleStates.Overloaded) And
                         currentMod.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
-                        If currentMod.DatabaseGroup <> ModuleEnum.GroupGangLinks Then
+                        If (currentMod.DatabaseGroup <> ModuleEnum.GroupGangLinks And currentMod.DatabaseGroup <> ModuleEnum.GroupCommandBurst) Then
                             If _
                                 ParentFitting.IsModuleGroupLimitExceeded(fittedMod, False,
                                                                          AttributeEnum.ModuleMaxGroupActive) = True Then
@@ -1613,7 +1614,7 @@ Namespace Controls
                 End Select
                 ' Check for command processor usage
                 If selMod IsNot Nothing Then
-                    If selMod.ID = ModuleEnum.ItemCommandProcessorI Then
+                    If (selMod.ID = ModuleEnum.ItemCommandProcessorI Or selMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or selMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or selMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or selMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) Then
                         ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) -= 1
 
                         ' Check if we need to deactivate a highslot ganglink
@@ -1622,14 +1623,14 @@ Namespace Controls
                             For hSlot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step - 1
                                 If ParentFitting.BaseShip.HiSlot(hSlot) IsNot Nothing Then
                                     If _
-                                        ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = 316 And
+                                        (ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = ModuleEnum.GroupGangLinks Or ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = ModuleEnum.GroupCommandBurst) And
                                         ParentFitting.BaseShip.HiSlot(hSlot).ModuleState = ModuleStates.Active Then
                                         activeGanglinks.Add(hSlot)
                                     End If
                                 End If
                             Next
                         End If
-                        If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(10063) Then
+                        If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) Then
                             ParentFitting.BaseShip.HiSlot(activeGanglinks(0)).ModuleState = ModuleStates.Inactive
                         End If
 
@@ -2584,7 +2585,7 @@ Namespace Controls
             sModule.ModuleState = ModuleStates.Active
             ' Check for maxGroupActive flag
             If sModule.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
-                If sModule.DatabaseGroup <> ModuleEnum.GroupGangLinks Then
+                If (sModule.DatabaseGroup <> ModuleEnum.GroupGangLinks And sModule.DatabaseGroup <> ModuleEnum.GroupCommandBurst) Then
                     If _
                         ParentFitting.IsModuleGroupLimitExceeded(sModule, False, AttributeEnum.ModuleMaxGroupActive) =
                         True Then
@@ -2675,7 +2676,7 @@ Namespace Controls
             sModule.ModuleState = ModuleStates.Overloaded
             ' Check for maxGroupActive flag
             If sModule.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
-                If sModule.DatabaseGroup <> ModuleEnum.GroupGangLinks Then
+                If (sModule.DatabaseGroup <> ModuleEnum.GroupGangLinks And sModule.DatabaseGroup <> ModuleEnum.GroupCommandBurst) Then
                     If _
                         ParentFitting.IsModuleGroupLimitExceeded(sModule, False, AttributeEnum.ModuleMaxGroupActive) =
                         True Then
