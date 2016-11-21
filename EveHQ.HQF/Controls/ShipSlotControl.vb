@@ -1335,7 +1335,7 @@ Namespace Controls
                     If _
                         (currentstate = ModuleStates.Active Or currentstate = ModuleStates.Overloaded) And
                         currentMod.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
-                        If (currentMod.DatabaseGroup <> ModuleEnum.GroupGangLinks And currentMod.DatabaseGroup <> ModuleEnum.GroupCommandBurst) Then
+                        If (currentMod.DatabaseGroup <> ModuleEnum.GroupGangLinks Or currentMod.DatabaseGroup <> ModuleEnum.GroupCommandBurst) Then
                             If _
                                 ParentFitting.IsModuleGroupLimitExceeded(fittedMod, False,
                                                                          AttributeEnum.ModuleMaxGroupActive) = True Then
@@ -1377,38 +1377,38 @@ Namespace Controls
                         End If
                     End If
                     ' Check for activation of siege mode with remote effects
-                    If fittedMod.ID = ModuleEnum.ItemSiegeModuleI Or fittedMod.ID = ModuleEnum.ItemSiegeModuleT2 Then
-                        If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
-                            Const Msg As String =
-                                      "You have active remote modules and activating Siege Mode will cancel these effects. Do you wish to continue activating Siege Mode?"
-                            Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Siege Mode",
-                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                            If reply = DialogResult.No Then
-                                fittedMod.ModuleState = oldState
-                                Exit Sub
-                            Else
-                                ParentFitting.BaseShip.RemoteSlotCollection.Clear()
-                                Call ResetRemoteEffects()
-                            End If
-                        End If
-                    End If
+                    'If fittedMod.ID = ModuleEnum.ItemSiegeModuleI Or fittedMod.ID = ModuleEnum.ItemSiegeModuleT2 Then
+                    '    If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                    '        Const Msg As String =
+                    '                  "You have active remote modules and activating Siege Mode will cancel these effects. Do you wish to continue activating Siege Mode?"
+                    '        Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Siege Mode",
+                    '                                               MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    '        If reply = DialogResult.No Then
+                    '            fittedMod.ModuleState = oldState
+                    '            Exit Sub
+                    '        Else
+                    '            ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                    '            Call ResetRemoteEffects()
+                    '        End If
+                    '    End If
+                    'End If
                     ' Check for activation of triage mode with remote effects
-                    If fittedMod.ID = ModuleEnum.ItemTriageModuleI Or fittedMod.ID = ModuleEnum.ItemTriageModuleT2 Then
-                        If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
-                            Const Msg As String =
-                                      "You have active remote modules and activating Triage Mode will cancel these effects. Do you wish to continue activating Triage Mode?"
-                            Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Triage Mode",
-                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    'If fittedMod.ID = ModuleEnum.ItemTriageModuleI Or fittedMod.ID = ModuleEnum.ItemTriageModuleT2 Then
+                    '    If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                    '        Const Msg As String =
+                    '                  "You have active remote modules and activating Triage Mode will cancel these effects. Do you wish to continue activating Triage Mode?"
+                    '        Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Triage Mode",
+                    '                                               MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-                            If reply = DialogResult.No Then
-                                fittedMod.ModuleState = oldState
-                                Exit Sub
-                            Else
-                                ParentFitting.BaseShip.RemoteSlotCollection.Clear()
-                                Call ResetRemoteEffects()
-                            End If
-                        End If
-                    End If
+                    '        If reply = DialogResult.No Then
+                    '            fittedMod.ModuleState = oldState
+                    '            Exit Sub
+                    '        Else
+                    '            ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                    '            Call ResetRemoteEffects()
+                    '        End If
+                    '    End If
+                    'End If
 
                 End If
             End If
@@ -2624,37 +2624,37 @@ Namespace Controls
                 End If
             End If
             ' Check for activation of siege mode with remote effects
-            If sModule.ID = ModuleEnum.ItemSiegeModuleI Or sModule.ID = ModuleEnum.ItemSiegeModuleT2 Then
-                If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
-                    Const Msg As String =
-                              "You have active remote modules and activating Siege Mode will cancel these effects. Do you wish to continue activating Siege Mode?"
-                    Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Siege Mode", MessageBoxButtons.YesNo,
-                                                           MessageBoxIcon.Question)
-                    If reply = DialogResult.No Then
-                        sModule.ModuleState = oldState
-                        Exit Sub
-                    Else
-                        ParentFitting.BaseShip.RemoteSlotCollection.Clear()
-                        Call ResetRemoteEffects()
-                    End If
-                End If
-            End If
+            'If sModule.ID = ModuleEnum.ItemSiegeModuleI Or sModule.ID = ModuleEnum.ItemSiegeModuleT2 Then
+            '    If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+            '        Const Msg As String =
+            '                  "You have active remote modules and activating Siege Mode will cancel these effects. Do you wish to continue activating Siege Mode?"
+            '        Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Siege Mode", MessageBoxButtons.YesNo,
+            '                                               MessageBoxIcon.Question)
+            '        If reply = DialogResult.No Then
+            '            sModule.ModuleState = oldState
+            '            Exit Sub
+            '        Else
+            '            ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+            '            Call ResetRemoteEffects()
+            '        End If
+            '    End If
+            'End If
             ' Check for activation of triage mode with remote effects
-            If sModule.ID = ModuleEnum.ItemTriageModuleI Or sModule.ID = ModuleEnum.ItemTriageModuleT2 Then
-                If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
-                    Const Msg As String =
-                              "You have active remote modules and activating Triage Mode will cancel these effects. Do you wish to continue activating Triage Mode?"
-                    Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Triage Mode", MessageBoxButtons.YesNo,
-                                                           MessageBoxIcon.Question)
-                    If reply = DialogResult.No Then
-                        sModule.ModuleState = oldState
-                        Exit Sub
-                    Else
-                        ParentFitting.BaseShip.RemoteSlotCollection.Clear()
-                        Call ResetRemoteEffects()
-                    End If
-                End If
-            End If
+            'If sModule.ID = ModuleEnum.ItemTriageModuleI Or sModule.ID = ModuleEnum.ItemTriageModuleT2 Then
+            '    If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+            '        Const Msg As String =
+            '                  "You have active remote modules and activating Triage Mode will cancel these effects. Do you wish to continue activating Triage Mode?"
+            '        Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Triage Mode", MessageBoxButtons.YesNo,
+            '                                               MessageBoxIcon.Question)
+            '        If reply = DialogResult.No Then
+            '            sModule.ModuleState = oldState
+            '            Exit Sub
+            '        Else
+            '            ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+            '            Call ResetRemoteEffects()
+            '        End If
+            '    End If
+            'End If
         End Sub
 
         Private Sub SetSingleModuleOverloaded(sModule As ShipModule)
@@ -4270,39 +4270,39 @@ Namespace Controls
                     Dim remoteDrones As DroneBayItem = CType(e.Item.Tag, DroneBayItem)
                     remoteMod = remoteDrones.DroneType
                 End If
-                If _
-                    remoteMod.DatabaseGroup <> ModuleEnum.GroupEnergyVampires And
-                    remoteMod.DatabaseGroup <> ModuleEnum.GroupEnergyNeutralizers And
-                    remoteMod.DatabaseGroup <> ModuleEnum.GroupEnergyNeutralizerDrones Then
-                    For Each cMod As ShipModule In ParentFitting.FittedShip.SlotCollection
-                        If _
-                            (cMod.ID = ModuleEnum.ItemSiegeModuleI Or cMod.ID = ModuleEnum.ItemSiegeModuleT2) And
-                            cMod.ModuleState = ModuleStates.Active Then
-                            MessageBox.Show(
-                                "You cannot apply remote effects from " & remoteMod.Name & " while the " &
-                                ParentFitting.BaseShip.Name & " is in Siege Mode!", "Remote Effect Not Permitted",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            e.Item.Checked = False
-                            Exit Sub
-                        ElseIf _
-                            (cMod.ID = ModuleEnum.ItemTriageModuleI Or cMod.ID = ModuleEnum.ItemTriageModuleT2) And
-                            cMod.ModuleState = ModuleStates.Active Then
-                            MessageBox.Show(
-                                "You cannot apply remote effects from " & remoteMod.Name & " while the " &
-                                ParentFitting.BaseShip.Name & " is in Triage Mode!", "Remote Effect Not Permitted",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            e.Item.Checked = False
-                            Exit Sub
-                        ElseIf cMod.ID = ModuleEnum.ItemBastionModuleI And cMod.ModuleState = ModuleStates.Active Then
-                            MessageBox.Show(
-                                "You cannot apply remote effects from " & remoteMod.Name & " while the " &
-                                ParentFitting.BaseShip.Name & " is in Bastion Mode!", "Remote Effect Not Permitted",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            e.Item.Checked = False
-                            Exit Sub
-                        End If
-                    Next
-                End If
+                'If _
+                '    remoteMod.DatabaseGroup <> ModuleEnum.GroupEnergyVampires And
+                '    remoteMod.DatabaseGroup <> ModuleEnum.GroupEnergyNeutralizers And
+                '    remoteMod.DatabaseGroup <> ModuleEnum.GroupEnergyNeutralizerDrones Then
+                '    For Each cMod As ShipModule In ParentFitting.FittedShip.SlotCollection
+                '        If _
+                '            (cMod.ID = ModuleEnum.ItemSiegeModuleI Or cMod.ID = ModuleEnum.ItemSiegeModuleT2) And
+                '            cMod.ModuleState = ModuleStates.Active Then
+                '            MessageBox.Show(
+                '                "You cannot apply remote effects from " & remoteMod.Name & " while the " &
+                '                ParentFitting.BaseShip.Name & " is in Siege Mode!", "Remote Effect Not Permitted",
+                '                MessageBoxButtons.OK, MessageBoxIcon.Information)
+                '            e.Item.Checked = False
+                '            Exit Sub
+                '        ElseIf _
+                '            (cMod.ID = ModuleEnum.ItemTriageModuleI Or cMod.ID = ModuleEnum.ItemTriageModuleT2) And
+                '            cMod.ModuleState = ModuleStates.Active Then
+                '            MessageBox.Show(
+                '                "You cannot apply remote effects from " & remoteMod.Name & " while the " &
+                '                ParentFitting.BaseShip.Name & " is in Triage Mode!", "Remote Effect Not Permitted",
+                '                MessageBoxButtons.OK, MessageBoxIcon.Information)
+                '            e.Item.Checked = False
+                '            Exit Sub
+                '        ElseIf cMod.ID = ModuleEnum.ItemBastionModuleI And cMod.ModuleState = ModuleStates.Active Then
+                '            MessageBox.Show(
+                '                "You cannot apply remote effects from " & remoteMod.Name & " while the " &
+                '                ParentFitting.BaseShip.Name & " is in Bastion Mode!", "Remote Effect Not Permitted",
+                '                MessageBoxButtons.OK, MessageBoxIcon.Information)
+                '            e.Item.Checked = False
+                '            Exit Sub
+                '        End If
+                '    Next
+                'End If
             End If
             If lvwRemoteEffects.Tag.ToString <> "Refresh" Then
                 ParentFitting.BaseShip.RemoteSlotCollection.Clear()
