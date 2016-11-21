@@ -1669,14 +1669,13 @@
 28606,0,0,1045,2,650,0,0,0,100,15,Tractor Beam Velocity
 28606,0,0,54,2,650,0,0,0,250,15,Tractor Beam Range
 28606,0,0,197,2,49,0,0,0,500,15,Survey Scanner Range
-28606,0,0,10063,1,28606,0,0,1,3,15,Command Burst Modules
+28606,0,0,10063,1,28606,0,0,1,2,15,Command Burst Modules
 28606,0,0,54,2,41;1697,0,0,0,400,15,Remote Shield Booster optimal
 28606,0,0,64,3,18,0,0,0,100,15,Drone Damage
 28606,0,0,77,3,18,0,0,0,50,15,Drone Mining Yield
 28606,0,0,73,3,18,0,0,0,25,15,Drone Ice Mining Cycle Time
 28606,1,29637,10004,1,28606,0,1,0,5,15,Cargo Capacity
 28606,1,29637,1556,1,28606,0,1,0,5,15,Ore Hold Capacity
-#28606,1,29637,833,4,1638,0,1,0,3,15,Warfare Link Bonus
 28606,1,29637,73,3,18,0,1,0,10,15,Drone Ice Mining Cycle Time
 28606,1,29637,77,3,18,0,1,0,10,15,Drone Mining Yield
 28606,1,29637,263,3,18,0,1,0,10,15,Drone Shield HP
@@ -1834,7 +1833,7 @@
 42244,0,0,1045,2,650,0,0,0,50,15,Tractor Beam Velocity
 42244,0,0,54,2,650,0,0,0,100,15,Tractor Beam Range
 42244,0,0,197,2,49,0,0,0,300,15,Survey Scanner Range
-42244,0,0,10063,1,42244,0,0,1,1,15,Warfare Link Use
+42244,0,0,10063,1,42244,0,0,1,1,15,Command Burst Modules
 42244,1,29637,1556,1,42244,0,1,0,5,15,Ore Hold Capacity
 42244,1,29637,10004,1,42244,0,1,0,5,15,Cargo Capacity
 42244,1,29637,73,3,18,0,1,0,10,15,Drone Ice Mining Cycle Time
