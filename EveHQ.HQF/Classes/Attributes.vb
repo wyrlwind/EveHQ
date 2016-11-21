@@ -255,7 +255,7 @@ Public Enum AttributeEnum
     ShipIceMiningRate = 10048
     ShipKinDamage = 10057
     ShipKinDPS = 10072
-    ShipMaxGangLinks = 10063
+    ShipMaxBursts = 10063
     ShipMissileDPS = 10025
     ShipMissileVolleyDamage = 10021
     ShipModuleTransferAmount = 10075

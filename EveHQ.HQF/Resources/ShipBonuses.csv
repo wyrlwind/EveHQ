@@ -1669,10 +1669,29 @@
 28606,0,0,1045,2,650,0,0,0,100,15,Tractor Beam Velocity
 28606,0,0,54,2,650,0,0,0,250,15,Tractor Beam Range
 28606,0,0,197,2,49,0,0,0,500,15,Survey Scanner Range
-28606,0,0,10063,1,28606,0,0,1,1,15,Warfare Link Use
+28606,0,0,10063,1,28606,0,0,1,2,15,Command Burst Modules
+28606,0,0,54,2,41;1697,0,0,0,400,15,Remote Shield Booster optimal
+28606,0,0,64,3,18,0,0,0,100,15,Drone Damage
+28606,0,0,77,3,18,0,0,0,50,15,Drone Mining Yield
+28606,0,0,73,3,18,0,0,0,25,15,Drone Ice Mining Cycle Time
 28606,1,29637,10004,1,28606,0,1,0,5,15,Cargo Capacity
-#28606,1,29637,833,4,1638,0,1,0,3,15,Warfare Link Bonus
-28606,0,0,28606,1,23913,0,0,1,2,15,Warfare Link Use
+28606,1,29637,1556,1,28606,0,1,0,5,15,Ore Hold Capacity
+28606,1,29637,73,3,18,0,1,0,10,15,Drone Ice Mining Cycle Time
+28606,1,29637,77,3,18,0,1,0,10,15,Drone Mining Yield
+28606,1,29637,263,3,18,0,1,0,10,15,Drone Shield HP
+28606,1,29637,265,3,18,0,1,0,10,15,Drone Armor HP
+28606,1,29637,9,3,18,0,1,0,10,15,Drone Hull HP
+28606,1,29637,64,3,18,0,1,0,10,15,Drone Damage
+28606,1,29637,2535,1,42528;43551,0,1,0,3,15,Mining Foreman Burst duration
+28606,1,29637,2469,1,42528;43551,0,1,0,3,15,Mining Foreman Burst strength
+28606,1,29637,2471,1,42528;43551,0,1,0,3,15,Mining Foreman Burst strength
+28606,1,29637,2473,1,42528;43551,0,1,0,3,15,Mining Foreman Burst strength
+28606,1,29637,2537,1,42528;43551,0,1,0,3,15,Mining Foreman Burst strength
+28606,1,29637,2535,1,42529;43555,0,1,0,1,15,Shield Command Burst duration
+28606,1,29637,2469,1,42529;43555,0,1,0,1,15,Shield Command Burst strength
+28606,1,29637,2471,1,42529;43555,0,1,0,1,15,Shield Command Burst strength
+28606,1,29637,2473,1,42529;43555,0,1,0,1,15,Shield Command Burst strength
+28606,1,29637,2537,1,42529;43555,0,1,0,1,15,Shield Command Burst strength
 # Orca ORE Development Edition,,,,,,,,,,,
 #33685,0,0,1045,2,650,0,0,0,100,15,Tractor Beam Velocity
 #33685,0,0,54,2,650,0,0,0,250,15,Tractor Beam Range
@@ -1814,15 +1833,20 @@
 42244,0,0,1045,2,650,0,0,0,50,15,Tractor Beam Velocity
 42244,0,0,54,2,650,0,0,0,100,15,Tractor Beam Range
 42244,0,0,197,2,49,0,0,0,300,15,Survey Scanner Range
+42244,0,0,10063,1,42244,0,0,1,1,15,Command Burst Modules
 42244,1,29637,1556,1,42244,0,1,0,5,15,Ore Hold Capacity
 42244,1,29637,10004,1,42244,0,1,0,5,15,Cargo Capacity
-42244,1,29637,1238,1,42244,0,1,0,2,15,Mining Foreman Ganglink Bonus
 42244,1,29637,73,3,18,0,1,0,10,15,Drone Ice Mining Cycle Time
 42244,1,29637,77,3,18,0,1,0,10,15,Drone Mining Yield
 42244,1,29637,263,3,18,0,1,0,10,15,Drone Shield HP
 42244,1,29637,265,3,18,0,1,0,10,15,Drone Armor HP
 42244,1,29637,9,3,18,0,1,0,10,15,Drone Hull HP
 42244,1,29637,64,3,18,0,1,0,10,15,Drone Damage
+42244,1,29637,2535,1,42528;43551,0,1,0,2,15,Mining Foreman Burst duration
+42244,1,29637,2469,1,42528;43551,0,1,0,2,15,Mining Foreman Burst strength
+42244,1,29637,2471,1,42528;43551,0,1,0,2,15,Mining Foreman Burst strength
+42244,1,29637,2473,1,42528;43551,0,1,0,2,15,Mining Foreman Burst strength
+42244,1,29637,2537,1,42528;43551,0,1,0,2,15,Mining Foreman Burst strength
 # Probe,,,,,,,,,,,
 586,1,3329,1371,2,479,0,1,0,7.5,15,Probe Scan Strength Bonus
 586,1,3329,73,4,1715,0,1,0,-5,15,Salvager Cycle Time

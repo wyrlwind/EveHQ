@@ -1306,7 +1306,7 @@ Namespace Controls
                     ' Check for command processors as this affects the fitting!
                     If (currentMod.ID = ModuleEnum.ItemCommandProcessorI Or currentMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or currentMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or currentMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or currentMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) Then
                         If currentstate = ModuleStates.Offline Then
-                            ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) -= 1
+                            ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) -= 1
                             ' Check if we need to deactivate a highslot ganglink
                             Dim activeGanglinks As New List(Of Integer)
                             If ParentFitting.BaseShip.HiSlots > 0 Then
@@ -1321,12 +1321,12 @@ Namespace Controls
                                     End If
                                 Next
                             End If
-                            If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) _
+                            If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) _
                                 Then
                                 ParentFitting.BaseShip.HiSlot(activeGanglinks(0)).ModuleState = ModuleStates.Inactive
                             End If
                         Else
-                            ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) += 1
+                            ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) += 1
                         End If
                     End If
                     Dim oldState As ModuleStates = currentMod.ModuleState
@@ -1643,7 +1643,7 @@ Namespace Controls
                 ' Check for command processor usage
                 If selMod IsNot Nothing Then
                     If (selMod.ID = ModuleEnum.ItemCommandProcessorI Or selMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or selMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or selMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or selMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) Then
-                        ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) -= 1
+                        ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) -= 1
 
                         ' Check if we need to deactivate a highslot ganglink
                         Dim activeGanglinks As New List(Of Integer)
@@ -1658,7 +1658,7 @@ Namespace Controls
                                 End If
                             Next
                         End If
-                        If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) Then
+                        If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) Then
                             ParentFitting.BaseShip.HiSlot(activeGanglinks(0)).ModuleState = ModuleStates.Inactive
                         End If
 

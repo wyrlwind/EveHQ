@@ -422,7 +422,7 @@ Imports EveHQ.Common.Extensions
     ''' Gets or sets a collection of remote effects to be applied to the fitting
     ''' </summary>
     ''' <value></value>
-    ''' <returns>A collection of fleet effects to be applied to the fitting</returns>
+    ''' <returns>A collection of remote effects to be applied to the fitting</returns>
     ''' <remarks></remarks>
     Public Property RemoteEffects() As List(Of RemoteEffect)
         Get
@@ -1470,8 +1470,8 @@ Imports EveHQ.Common.Extensions
                 newShip.SlotCollection.Add(newShip.RigSlot(slot))
             End If
         Next
-        ' Reset max gang links status
-        newShip.Attributes(AttributeEnum.ShipMaxGangLinks) = 1
+        ' Reset max bursts status
+        newShip.Attributes(AttributeEnum.ShipMaxBursts) = 1
         Return newShip
     End Function
     Private Sub ApplySkillEffectsToShip(ByRef newShip As Ship)
@@ -2816,8 +2816,8 @@ Imports EveHQ.Common.Extensions
     Public Sub AddModule(ByVal shipMod As ShipModule, ByVal slotNo As Integer, ByVal updateShip As Boolean, ByVal updateAll As Boolean, ByVal repMod As ShipModule, ByVal suppressUndo As Boolean, ByVal isSwappingModules As Boolean)
         ' Check for command processors as this affects the fitting!
         If (shipMod.ID = ModuleEnum.ItemCommandProcessorI Or shipMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or shipMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or shipMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or shipMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) And shipMod.ModuleState = ModuleStates.Active Then
-            BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) += 1
-            FittedShip.Attributes(AttributeEnum.ShipMaxGangLinks) += 1
+            BaseShip.Attributes(AttributeEnum.ShipMaxBursts) += 1
+            FittedShip.Attributes(AttributeEnum.ShipMaxBursts) += 1
         End If
 
         ' Check slot availability (only if not adding in a specific slot?)
@@ -3380,8 +3380,8 @@ Imports EveHQ.Common.Extensions
             Case AttributeEnum.ModuleMaxGroupActive
                 moduleState = ModuleStates.Active
                 If (fittedMod.DatabaseGroup = ModuleEnum.GroupGangLinks Or fittedMod.DatabaseGroup = ModuleEnum.GroupCommandBurst) Then
-                    If FittedShip.Attributes.ContainsKey(AttributeEnum.ShipMaxGangLinks) = True Then
-                        maxAllowed = CInt(FittedShip.Attributes(AttributeEnum.ShipMaxGangLinks))
+                    If FittedShip.Attributes.ContainsKey(AttributeEnum.ShipMaxBursts) = True Then
+                        maxAllowed = CInt(FittedShip.Attributes(AttributeEnum.ShipMaxBursts))
                     End If
                 Else
                     maxAllowed = CInt(fittedMod.Attributes(AttributeEnum.ModuleMaxGroupActive))
@@ -4061,7 +4061,7 @@ End Class
     ''' Gets or sets a collection of remote effects to be applied to the fitting
     ''' </summary>
     ''' <value></value>
-    ''' <returns>A collection of fleet effects to be applied to the fitting</returns>
+    ''' <returns>A collection of remote effects to be applied to the fitting</returns>
     ''' <remarks></remarks>
     Public Property RemoteEffects() As List(Of RemoteEffect)
         Get
