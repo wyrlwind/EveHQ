@@ -1310,7 +1310,7 @@ Namespace Controls
                             ' Check if we need to deactivate a highslot ganglink
                             Dim activeGanglinks As New List(Of Integer)
                             If ParentFitting.BaseShip.HiSlots > 0 Then
-                                For slot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step - 1
+                                For slot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step -1
                                     If ParentFitting.BaseShip.HiSlot(slot) IsNot Nothing Then
                                         If _
                                             (ParentFitting.BaseShip.HiSlot(slot).DatabaseGroup =
@@ -1567,7 +1567,7 @@ Namespace Controls
                                                     slotNo, "", ""))
                     End If
                     If (selMod.ID = ModuleEnum.ItemCommandProcessorI Or selMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or selMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or selMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or selMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) Then
-                        ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) -= 1
+                        ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) -= 1
 
                         ' Check if we need to deactivate a highslot ganglink
                         Dim activeGanglinks As New List(Of Integer)
@@ -1582,7 +1582,7 @@ Namespace Controls
                                 End If
                             Next
                         End If
-                        If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) Then
+                        If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) Then
                             ParentFitting.BaseShip.HiSlot(activeGanglinks(0)).ModuleState = ModuleStates.Inactive
                         End If
 
@@ -1648,7 +1648,7 @@ Namespace Controls
                         ' Check if we need to deactivate a highslot ganglink
                         Dim activeGanglinks As New List(Of Integer)
                         If ParentFitting.BaseShip.HiSlots > 0 Then
-                            For hSlot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step - 1
+                            For hSlot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step -1
                                 If ParentFitting.BaseShip.HiSlot(hSlot) IsNot Nothing Then
                                     If _
                                         (ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = ModuleEnum.GroupGangLinks Or ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = ModuleEnum.GroupCommandBurst) And
