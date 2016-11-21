@@ -114,9 +114,9 @@ End Class
 End Class
 
 Public Enum HQFEffectType As Integer
-    All = 0
-    Item = 1
-    Group = 2
+    All = 0 ' Role bonus for ship affecting type
+    Item = 1 ' Skill bonus for ship affecting type
+    Group = 2 ' Misc. bonus for ship affecting type
     Category = 3
     MarketGroup = 4
     Skill = 5
