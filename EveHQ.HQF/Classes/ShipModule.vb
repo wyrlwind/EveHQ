@@ -299,6 +299,8 @@ Public Enum ModuleEnum
     ItemMediumCommandProcessorI = 43896
     ItemLargeCommandProcessorI = 43898
     ItemCapitalCommandProcessorI = 43900
+    ItemIndustrialCoreI = 28583
+    ItemIndustrialCoreII = 42890
 
     ' categoryIDs (see invCategories)
     CategoryCelestials = 2
@@ -348,6 +350,8 @@ Public Enum ModuleEnum
     GroupShieldTransporters = 41
     GroupSmartbombs = 72
     GroupStrategicCruisers = 963
+    GroupAncillaryRemoteArmorsRepairers = 1698
+    GroupECM = 201
 
     ' marketGroupIDs (see invMarketGroups)
     MarketgroupGasHarvesters = 1037
