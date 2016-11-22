@@ -2544,7 +2544,7 @@ Public Class FrmCacheCreator
                         attMod.ImplantSlot = CInt(attValue)
                     Case 1087 ' Slot Type For Boosters
                         attMod.BoosterSlot = CInt(attValue)
-                    Case 182
+                    Case 182, 183, 184, 1285, 1289, 1290
                         If StaticData.Types.ContainsKey(CInt(attValue)) = True Then
                             Dim pSkill As EveType = StaticData.Types(CInt(attValue))
                             Dim nSkill As New ItemSkills
@@ -2555,45 +2555,9 @@ Public Class FrmCacheCreator
                                 attMod.RequiredSkills.Add(nSkill.Name, nSkill)
                             End If
                         End If
-                    Case 183
-                        If StaticData.Types.ContainsKey(CInt(attValue)) = True Then
-                            Dim sSkill As EveType = StaticData.Types(CInt(attValue))
-                            Dim nSkill As New ItemSkills
-                            nSkill.ID = sSkill.Id
-                            nSkill.Name = sSkill.Name
-                            sSkillName = sSkill.Name
-                            If attMod.RequiredSkills.ContainsKey(nSkill.Name) = False Then
-                                attMod.RequiredSkills.Add(nSkill.Name, nSkill)
-                            End If
-                        End If
-                    Case 184
-                        If StaticData.Types.ContainsKey(CInt(attValue)) = True Then
-                            Dim tSkill As EveType = StaticData.Types(CInt(attValue))
-                            Dim nSkill As New ItemSkills
-                            nSkill.ID = tSkill.Id
-                            nSkill.Name = tSkill.Name
-                            tSkillName = tSkill.Name
-                            If attMod.RequiredSkills.ContainsKey(nSkill.Name) = False Then
-                                attMod.RequiredSkills.Add(nSkill.Name, nSkill)
-                            End If
-                        End If
-                    Case 277
+                    Case 277, 278, 279, 1286, 1287, 1288
                         If attMod.RequiredSkills.ContainsKey(pSkillName) Then
                             Dim cSkill As ItemSkills = attMod.RequiredSkills(pSkillName)
-                            If cSkill IsNot Nothing Then
-                                cSkill.Level = CInt(attValue)
-                            End If
-                        End If
-                    Case 278
-                        If attMod.RequiredSkills.ContainsKey(sSkillName) Then
-                            Dim cSkill As ItemSkills = attMod.RequiredSkills(sSkillName)
-                            If cSkill IsNot Nothing Then
-                                cSkill.Level = CInt(attValue)
-                            End If
-                        End If
-                    Case 279
-                        If attMod.RequiredSkills.ContainsKey(tSkillName) Then
-                            Dim cSkill As ItemSkills = attMod.RequiredSkills(tSkillName)
                             If cSkill IsNot Nothing Then
                                 cSkill.Level = CInt(attValue)
                             End If
