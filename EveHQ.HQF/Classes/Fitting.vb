@@ -2815,7 +2815,7 @@ Imports EveHQ.Common.Extensions
 
     Public Sub AddModule(ByVal shipMod As ShipModule, ByVal slotNo As Integer, ByVal updateShip As Boolean, ByVal updateAll As Boolean, ByVal repMod As ShipModule, ByVal suppressUndo As Boolean, ByVal isSwappingModules As Boolean)
         ' Check for command processors as this affects the fitting!
-        If (shipMod.ID = ModuleEnum.ItemCommandProcessorI Or shipMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or shipMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or shipMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or shipMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) And shipMod.ModuleState = ModuleStates.Active Then
+        If (shipMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or shipMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or shipMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or shipMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) And shipMod.ModuleState = ModuleStates.Active Then
             BaseShip.Attributes(AttributeEnum.ShipMaxBursts) += 1
             FittedShip.Attributes(AttributeEnum.ShipMaxBursts) += 1
         End If
@@ -3397,10 +3397,8 @@ Imports EveHQ.Common.Extensions
         Next
         For slot As Integer = 1 To BaseShip.MidSlots
             If BaseShip.MidSlot(slot) IsNot Nothing Then
-                If BaseShip.MidSlot(slot).ID <> ModuleEnum.ItemCommandProcessorI Then
-                    If BaseShip.MidSlot(slot).DatabaseGroup = testMod.DatabaseGroup And BaseShip.MidSlot(slot).ModuleState >= moduleState Then
-                        count += 1
-                    End If
+                If BaseShip.MidSlot(slot).DatabaseGroup = testMod.DatabaseGroup And BaseShip.MidSlot(slot).ModuleState >= moduleState Then
+                    count += 1
                 End If
             End If
         Next
