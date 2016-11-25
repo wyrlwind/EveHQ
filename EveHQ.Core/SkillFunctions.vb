@@ -694,14 +694,19 @@ Public Class SkillFunctions
     End Function
 
     Public Shared Function CalcLevelFromSP(ByVal skillID As Integer, ByVal sp As Integer) As Integer
-        Dim cSkill As EveSkill = HQ.SkillListID(skillID)
-        Dim curLevel As Integer = 0
-        For level As Integer = 0 To 5
-            If sp >= cSkill.LevelUp(level) Then
-                curLevel = level
-            End If
-        Next
-        Return curLevel
+
+        If HQ.SkillListID.ContainsKey(skillID) Then
+            Dim cSkill As EveSkill = HQ.SkillListID(skillID)
+            Dim curLevel As Integer = 0
+            For level As Integer = 0 To 5
+                If sp >= cSkill.LevelUp(level) Then
+                    curLevel = level
+                End If
+            Next
+            Return curLevel
+        End If
+
+        Return 1
     End Function
 
     Public Shared Function HavePreReqs(ByVal qpilot As EveHQPilot, ByVal skillID As Integer) As Boolean
