@@ -246,34 +246,36 @@
 434,1,3386,77,4,1040,0,1,0,0,Mining - Strip Miner
 927,1,22578,1082,2,546,0,1,0,0,Mining Upgrades
 # LEADERSHIP,,,,,,,,,,
-335,1,-20494,265,3,6,0,0,0,32,Armored Warfare - Ship
-#,1,-20494,1159,2,329,0,0,0,32,Armored Warfare - Plates
-850,1,11569,833,4,1634,0,1,0,0,Armored Warfare Specialist
-#,1,24764,,,,0,1,0,0,Fleet Command
-309,1,-20495,76,3,6,0,0,0,32,Information Warfare
-850,1,3352,833,4,1635,0,1,0,0,Information Warfare Specialist
-850,1,3352,1310,4,1635,0,1,0,0,Information Warfare Specialist
-850,1,3352,1320,4,1635,0,1,0,0,Information Warfare Specialist
-850,1,3352,1321,4,1635,0,1,0,0,Information Warfare Specialist
-850,1,3352,1322,4,1635,0,1,0,0,Information Warfare Specialist
-850,1,3352,1323,4,1635,0,1,0,0,Information Warfare Specialist
-566,1,-3348,564,3,6,0,0,0,32,Leadership
-850,1,22552,833,4,1638,0,1,0,0,Mining Director
-434,1,-22536,77,4,1039,0,0,0,32,Mining Foreman
-434,1,-22536,77,4,1040,0,0,0,32,Mining Foreman
-337,1,-3350,263,3,6,0,0,0,32,Siege Warfare - Ship
-#,1,-3350,72,2,38,0,0,0,32,Siege Warfare - Extenders
-850,1,3351,833,4,1636,0,1,0,0,Siege Warfare Specialist
-151,1,-3349,70,3,6,0,0,0,32,Skirmish Warfare
-850,1,11572,833,4,1637,0,1,0,0,Skirmish Warfare Specialist
-850,1,3354,833,2,316,0,1,0,0,Warfare Link Specialist
-850,1,3354,1310,2,316,0,1,0,0,Warfare Link Specialist
-850,1,3354,1320,2,316,0,1,0,0,Warfare Link Specialist
-850,1,3354,1321,2,316,0,1,0,0,Warfare Link Specialist
-850,1,3354,1322,2,316,0,1,0,0,Warfare Link Specialist
-850,1,3354,1323,2,316,0,1,0,0,Warfare Link Specialist
-#,1,11574,,,,0,1,0,0,Wing Command
+66,1,3350,2535,1,42529;43555,0,1,0,0,Shield Command
+66,1,20495,2535,1,42527;43554,0,1,0,0,Information Command
+66,1,20494,2535,1,42526;43552,0,1,0,0,Armored Command
+66,1,3349,2535,1,42530;43556,0,1,0,0,Skirmish Command
+66,1,22536,2535,1,42528;43551,0,1,0,0,Mining Foreman
 66,1,43728,2535,2,1815,0,1,0,0,Spatial Phenomena Generation
+2571,1,3351,2469,1,42529;43555,0,1,0,0,Shield Command Specialist
+2571,1,3351,2471,1,42529;43555,0,1,0,0,Shield Command Specialist
+2571,1,3351,2473,1,42529;43555,0,1,0,0,Shield Command Specialist
+2571,1,3351,2537,1,42529;43555,0,1,0,0,Shield Command Specialist
+2571,1,3352,2469,1,42527;43554,0,1,0,0,Information Command Specialist
+2571,1,3352,2471,1,42527;43554,0,1,0,0,Information Command Specialist
+2571,1,3352,2473,1,42527;43554,0,1,0,0,Information Command Specialist
+2571,1,3352,2537,1,42527;43554,0,1,0,0,Information Command Specialist
+2571,1,11569,2469,1,42526;43552,0,1,0,0,Armored Command Specialist
+2571,1,11569,2471,1,42526;43552,0,1,0,0,Armored Command Specialist
+2571,1,11569,2473,1,42526;43552,0,1,0,0,Armored Command Specialist
+2571,1,11569,2537,1,42526;43552,0,1,0,0,Armored Command Specialist
+2571,1,11572,2469,1,42530;43556,0,1,0,0,Skirmish Command Specialist
+2571,1,11572,2471,1,42530;43556,0,1,0,0,Skirmish Command Specialist
+2571,1,11572,2473,1,42530;43556,0,1,0,0,Skirmish Command Specialist
+2571,1,11572,2537,1,42530;43556,0,1,0,0,Skirmish Command Specialist
+2571,1,22552,2469,1,42528;43551,0,1,0,0,Mining Director
+2571,1,22552,2471,1,42528;43551,0,1,0,0,Mining Director
+2571,1,22552,2473,1,42528;43551,0,1,0,0,Mining Director
+2571,1,22552,2537,1,42528;43551,0,1,0,0,Mining Director
+2574,1,3348,54,4,1633,0,1,0,0,Leadership
+2574,1,11574,54,4,1633,0,1,0,0,Wing Command
+2574,1,24764,54,4,1633,0,1,0,0,Fleet Command
+2573,1,3354,1795,4,1633,0,1,0,0,Command Burst Specialist
 # MECHANIC,,,,,,,,,,
 1856,1,33078,796,2,329,0,1,0,0,Armor Layering
 317,1,32797,6,2,1150,0,1,0,0,Armor Resistance Phasing - Cap Usage
