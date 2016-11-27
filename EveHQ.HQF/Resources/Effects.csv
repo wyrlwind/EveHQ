@@ -252,29 +252,29 @@
 66,1,3349,2535,1,42530;43556,0,1,0,0,Skirmish Command
 66,1,22536,2535,1,42528;43551,0,1,0,0,Mining Foreman
 66,1,43728,2535,2,1815,0,1,0,0,Spatial Phenomena Generation
-2571,1,3351,2469,1,42529;43555,0,1,0,0,Shield Command Specialist
-2571,1,3351,2471,1,42529;43555,0,1,0,0,Shield Command Specialist
-2571,1,3351,2473,1,42529;43555,0,1,0,0,Shield Command Specialist
-2571,1,3351,2537,1,42529;43555,0,1,0,0,Shield Command Specialist
-2571,1,3352,2469,1,42527;43554,0,1,0,0,Information Command Specialist
-2571,1,3352,2471,1,42527;43554,0,1,0,0,Information Command Specialist
-2571,1,3352,2473,1,42527;43554,0,1,0,0,Information Command Specialist
-2571,1,3352,2537,1,42527;43554,0,1,0,0,Information Command Specialist
-2571,1,11569,2469,1,42526;43552,0,1,0,0,Armored Command Specialist
-2571,1,11569,2471,1,42526;43552,0,1,0,0,Armored Command Specialist
-2571,1,11569,2473,1,42526;43552,0,1,0,0,Armored Command Specialist
-2571,1,11569,2537,1,42526;43552,0,1,0,0,Armored Command Specialist
-2571,1,11572,2469,1,42530;43556,0,1,0,0,Skirmish Command Specialist
-2571,1,11572,2471,1,42530;43556,0,1,0,0,Skirmish Command Specialist
-2571,1,11572,2473,1,42530;43556,0,1,0,0,Skirmish Command Specialist
-2571,1,11572,2537,1,42530;43556,0,1,0,0,Skirmish Command Specialist
-2571,1,22552,2469,1,42528;43551,0,1,0,0,Mining Director
-2571,1,22552,2471,1,42528;43551,0,1,0,0,Mining Director
-2571,1,22552,2473,1,42528;43551,0,1,0,0,Mining Director
-2571,1,22552,2537,1,42528;43551,0,1,0,0,Mining Director
-2574,1,3348,54,4,1633,0,1,0,0,Leadership
-2574,1,11574,54,4,1633,0,1,0,0,Wing Command
-2574,1,24764,54,4,1633,0,1,0,0,Fleet Command
+2572,1,3351,2469,1,42529;43555,0,1,0,0,Shield Command Specialist
+2572,1,3351,2471,1,42529;43555,0,1,0,0,Shield Command Specialist
+2572,1,3351,2473,1,42529;43555,0,1,0,0,Shield Command Specialist
+2572,1,3351,2537,1,42529;43555,0,1,0,0,Shield Command Specialist
+2572,1,3352,2469,1,42527;43554,0,1,0,0,Information Command Specialist
+2572,1,3352,2471,1,42527;43554,0,1,0,0,Information Command Specialist
+2572,1,3352,2473,1,42527;43554,0,1,0,0,Information Command Specialist
+2572,1,3352,2537,1,42527;43554,0,1,0,0,Information Command Specialist
+2572,1,11569,2469,1,42526;43552,0,1,0,0,Armored Command Specialist
+2572,1,11569,2471,1,42526;43552,0,1,0,0,Armored Command Specialist
+2572,1,11569,2473,1,42526;43552,0,1,0,0,Armored Command Specialist
+2572,1,11569,2537,1,42526;43552,0,1,0,0,Armored Command Specialist
+2572,1,11572,2469,1,42530;43556,0,1,0,0,Skirmish Command Specialist
+2572,1,11572,2471,1,42530;43556,0,1,0,0,Skirmish Command Specialist
+2572,1,11572,2473,1,42530;43556,0,1,0,0,Skirmish Command Specialist
+2572,1,11572,2537,1,42530;43556,0,1,0,0,Skirmish Command Specialist
+2572,1,22552,2469,1,42528;43551,0,1,0,0,Mining Director
+2572,1,22552,2471,1,42528;43551,0,1,0,0,Mining Director
+2572,1,22552,2473,1,42528;43551,0,1,0,0,Mining Director
+2572,1,22552,2537,1,42528;43551,0,1,0,0,Mining Director
+670,1,3348,54,4,1633,0,1,0,0,Leadership
+670,1,11574,54,4,1633,0,1,0,0,Wing Command
+670,1,24764,54,4,1633,0,1,0,0,Fleet Command
 2573,1,3354,1795,4,1633,0,1,0,0,Command Burst Specialist
 # MECHANIC,,,,,,,,,,
 1856,1,33078,796,2,329,0,1,0,0,Armor Layering
