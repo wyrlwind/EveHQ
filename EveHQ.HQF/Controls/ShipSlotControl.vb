@@ -169,6 +169,7 @@ Namespace Controls
             _remoteGroups.Add(641) ' Stasis web drone
             _remoteGroups.Add(640) ' Shield/armor repair drone
             _remoteGroups.Add(639) ' EW Drone
+            _remoteGroups.Add(1770)
             _fleetGroups.Add(ModuleEnum.GroupCommandBurst)
             _fleetGroups.Add(ModuleEnum.GroupGangLinks)
             _fleetSkills.Add(ModuleEnum.ItemSkillLeadership, AttributeEnum.SkillScanResBonus)
