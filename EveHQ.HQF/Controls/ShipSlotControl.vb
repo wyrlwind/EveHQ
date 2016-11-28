@@ -131,6 +131,8 @@ Namespace Controls
             ' This call is required by the Windows Form Designer.
             InitializeComponent()
 
+            tiFleetEffects.Visible = False
+
             ' Set the parent fitting
             _parentFitting = shipFit
 
@@ -169,6 +171,7 @@ Namespace Controls
             _remoteGroups.Add(641) ' Stasis web drone
             _remoteGroups.Add(640) ' Shield/armor repair drone
             _remoteGroups.Add(639) ' EW Drone
+            _remoteGroups.Add(1770)
             _fleetGroups.Add(ModuleEnum.GroupCommandBurst)
             _fleetGroups.Add(ModuleEnum.GroupGangLinks)
             _fleetSkills.Add(ModuleEnum.ItemSkillLeadership, AttributeEnum.SkillScanResBonus)
@@ -179,7 +182,7 @@ Namespace Controls
             _fleetSkills.Add(ModuleEnum.ItemSkillMiningForeman, AttributeEnum.SkillMiningAmountBonus)
 
             ' Load the remote and fleet info
-            Call LoadRemoteFleetInfo()
+            'Call LoadRemoteFleetInfo()
 
             ' Load the Booster info
             Call LoadBoosterInfo()
