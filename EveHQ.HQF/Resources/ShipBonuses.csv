@@ -1847,12 +1847,12 @@
 28606,0,0,10063,1,28606,0,0,1,2,15,Command Burst Modules
 28606,0,0,54,2,41;1697,0,0,0,400,15,Remote Shield Booster optimal
 28606,0,0,64,3,18,0,0,0,100,15,Drone Damage
-28606,0,0,77,3,18,0,0,0,50,15,Drone Mining Yield
-28606,0,0,73,3,18,0,0,0,25,15,Drone Ice Mining Cycle Time
+28606,0,0,77,5,3438,0,0,0,100,15,Drone Ore Mining Yield
+28606,0,0,73,5,43702,0,0,0,-25,15,Drone Ice Mining Cycle Time
 28606,1,29637,10004,1,28606,0,1,0,5,15,Cargo Capacity
 28606,1,29637,1556,1,28606,0,1,0,5,15,Ore Hold Capacity
-28606,1,29637,73,3,18,0,1,0,10,15,Drone Ice Mining Cycle Time
-28606,1,29637,77,3,18,0,1,0,10,15,Drone Mining Yield
+28606,1,29637,73,5,43702,0,1,0,10,15,Drone Ice Mining Cycle Time
+28606,1,29637,77,5,3438,0,1,0,10,15,Drone Mining Yield
 28606,1,29637,263,3,18,0,1,0,10,15,Drone Shield HP
 28606,1,29637,265,3,18,0,1,0,10,15,Drone Armor HP
 28606,1,29637,9,3,18,0,1,0,10,15,Drone Hull HP
@@ -2013,7 +2013,7 @@
 37481,1,24311,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
 # Porpoise,,,,,,,,,,,
 42244,0,0,30,2,1770,0,0,0,-90,15,Command and Foreman Burst module power need
-42244,0,0,77,3,18,0,0,0,50,15,Drone Mining Yield
+42244,0,0,77,5,3438,0,0,0,50,15,Drone Mining Yield
 42244,0,0,54,2,41;1697,0,0,0,400,15,Remote Shield Booster optimal
 42244,0,0,1045,2,650,0,0,0,50,15,Tractor Beam Velocity
 42244,0,0,54,2,650,0,0,0,100,15,Tractor Beam Range
@@ -2021,8 +2021,8 @@
 42244,0,0,10063,1,42244,0,0,1,1,15,Command Burst Modules
 42244,1,29637,1556,1,42244,0,1,0,5,15,Ore Hold Capacity
 42244,1,29637,10004,1,42244,0,1,0,5,15,Cargo Capacity
-42244,1,29637,73,3,18,0,1,0,10,15,Drone Ice Mining Cycle Time
-42244,1,29637,77,3,18,0,1,0,10,15,Drone Mining Yield
+42244,1,29637,73,5,43702,0,1,0,-10,15,Drone Ice Mining Cycle Time
+42244,1,29637,77,5,3438,0,1,0,10,15,Drone Mining Yield
 42244,1,29637,263,3,18,0,1,0,10,15,Drone Shield HP
 42244,1,29637,265,3,18,0,1,0,10,15,Drone Armor HP
 42244,1,29637,9,3,18,0,1,0,10,15,Drone Hull HP
@@ -2567,6 +2567,10 @@
 42685,0,0,10014,4,567;570,0,0,0,25,15,Small Energy Turret Damage
 42685,0,0,10015,4,564;561,0,0,0,25,15,Small Hybrid Turret Damage
 42685,0,0,10016,4,574;577,0,0,0,25,15,Small Projectile Turret Damage
+42685,0,0,116,2,387;648;384;653;394,0,0,0,25,15,Rocket & Light Missile Explosive Damage
+42685,0,0,117,2,387;648;384;653;394,0,0,0,25,15,Rocket & Light Missile Kinetic Damage
+42685,0,0,114,2,387;648;384;653;394,0,0,0,25,15,Rocket & Light Missile EM Damage
+42685,0,0,118,2,387;648;384;653;394,0,0,0,25,15,Rocket & Light Missile Thermal Damage
 42685,0,0,263,3,18,0,0,0,50,15,Drone Shield HP
 42685,0,0,265,3,18,0,0,0,50,15,Drone Armor HP
 42685,0,0,9,3,18,0,0,0,50,15,Drone Hull HP
