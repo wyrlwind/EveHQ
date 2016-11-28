@@ -146,6 +146,9 @@ Public Class FrmCacheCreator
     End Sub
 
     Private Sub ParseCertsYAMLFile()
+
+        YamlCerts.Clear()
+
         Using dataStream = New MemoryStream(My.Resources.certificates)
             Using reader = New StreamReader(dataStream)
 
@@ -885,6 +888,8 @@ Public Class FrmCacheCreator
     End Sub
 
     Private Sub LoadStations()
+
+        StaticData.Stations.Clear()
 
         ' Load the Operation data
         Dim operationServices As New Dictionary(Of Integer, Integer)
@@ -1899,9 +1904,12 @@ Public Class FrmCacheCreator
         Try
             ' Get details of ship data from database
             Dim strSql As String = ""
-            Dim pSkillName As String
-            Dim sSkillName As String
-            Dim tSkillName As String
+            Dim requiredSkill1Name As String = ""
+            Dim requiredSkill2Name As String = ""
+            Dim requiredSkill3Name As String = ""
+            Dim requiredSkill4Name As String = ""
+            Dim requiredSkill5Name As String = ""
+            Dim requiredSkill6Name As String = ""
             strSql &= "SELECT invCategories.categoryID, invGroups.groupID, invTypes.typeID, invTypes.description, invTypes.typeName, invTypes.mass, invTypes.volume, invTypes.capacity, invTypes.basePrice, invTypes.published, invTypes.raceID, invTypes.marketGroupID, dgmTypeAttributes.attributeID, dgmTypeAttributes.valueInt, dgmTypeAttributes.valueFloat"
             strSql &= " FROM ((invCategories INNER JOIN invGroups ON invCategories.categoryID=invGroups.categoryID) INNER JOIN invTypes ON invGroups.groupID=invTypes.groupID) INNER JOIN dgmTypeAttributes ON invTypes.typeID=dgmTypeAttributes.typeID"
             strSql &= " WHERE ((invCategories.categoryID=6 AND invTypes.published=1) OR invTypes.typeID IN (601,596,588,606)) ORDER BY typeName, attributeID;"
@@ -1911,7 +1919,12 @@ Public Class FrmCacheCreator
                     ShipLists.ShipList.Clear()
                     Dim lastShipName As String = ""
                     Dim newShip As New Ship
-                    pSkillName = "" : sSkillName = "" : tSkillName = ""
+                    requiredSkill1Name = ""
+                    requiredSkill2Name = ""
+                    requiredSkill3Name = ""
+                    requiredSkill4Name = ""
+                    requiredSkill5Name = ""
+                    requiredSkill6Name = ""
                     Dim attValue As Double
 
                     For Each shipRow As DataRow In shipData.Tables(0).Rows
@@ -1924,7 +1937,12 @@ Public Class FrmCacheCreator
                                 Ship.MapShipAttributes(newShip)
                                 ShipLists.ShipList.Add(newShip.Name, newShip)
                                 newShip = New Ship
-                                pSkillName = "" : sSkillName = "" : tSkillName = ""
+                                requiredSkill1Name = ""
+                                requiredSkill2Name = ""
+                                requiredSkill3Name = ""
+                                requiredSkill4Name = ""
+                                requiredSkill5Name = ""
+                                requiredSkill6Name = ""
                             End If
                             ' Create new ship type & non "attribute" data
                             newShip.Name = shipRow.Item("typeName").ToString
@@ -1988,40 +2006,50 @@ Public Class FrmCacheCreator
 
                         ' Map only the skill attributes
                         Select Case CInt(shipRow.Item("attributeID"))
-                            Case 182
+                            Case 182, 183, 184, 1285, 1289, 1290
                                 Dim pSkill As EveType = StaticData.Types(CInt(attValue))
                                 Dim nSkill As New ItemSkills
                                 nSkill.ID = pSkill.Id
                                 nSkill.Name = pSkill.Name
-                                pSkillName = pSkill.Name
+
+                                Select Case CInt(shipRow.Item("attributeID"))
+                                    Case 182
+                                        requiredSkill1Name = pSkill.Name
+                                    Case 183
+                                        requiredSkill2Name = pSkill.Name
+                                    Case 184
+                                        requiredSkill3Name = pSkill.Name
+                                    Case 1285
+                                        requiredSkill4Name = pSkill.Name
+                                    Case 1289
+                                        requiredSkill5Name = pSkill.Name
+                                    Case 1290
+                                        requiredSkill6Name = pSkill.Name
+                                End Select
+
                                 newShip.RequiredSkills.Add(nSkill.Name, nSkill)
-                            Case 183
-                                Dim sSkill As EveType = StaticData.Types(CInt(attValue))
-                                Dim nSkill As New ItemSkills
-                                nSkill.ID = sSkill.Id
-                                nSkill.Name = sSkill.Name
-                                sSkillName = sSkill.Name
-                                newShip.RequiredSkills.Add(nSkill.Name, nSkill)
-                            Case 184
-                                Dim tSkill As EveType = StaticData.Types(CInt(attValue))
-                                Dim nSkill As New ItemSkills
-                                nSkill.ID = tSkill.Id
-                                nSkill.Name = tSkill.Name
-                                tSkillName = tSkill.Name
-                                newShip.RequiredSkills.Add(nSkill.Name, nSkill)
-                            Case 277
-                                If newShip.RequiredSkills.ContainsKey(pSkillName) = True Then
-                                    Dim cSkill As ItemSkills = newShip.RequiredSkills(pSkillName)
-                                    cSkill.Level = CInt(attValue)
-                                End If
-                            Case 278
-                                If newShip.RequiredSkills.ContainsKey(sSkillName) = True Then
-                                    Dim cSkill As ItemSkills = newShip.RequiredSkills(sSkillName)
-                                    cSkill.Level = CInt(attValue)
-                                End If
-                            Case 279
-                                If newShip.RequiredSkills.ContainsKey(tSkillName) = True Then
-                                    Dim cSkill As ItemSkills = newShip.RequiredSkills(tSkillName)
+
+                            Case 277, 278, 279, 1286, 1287, 1288
+
+                                Dim skillName As String = ""
+
+                                Select Case CInt(shipRow.Item("attributeID"))
+                                    Case 277
+                                        skillName = requiredSkill1Name
+                                    Case 278
+                                        skillName = requiredSkill2Name
+                                    Case 279
+                                        skillName = requiredSkill3Name
+                                    Case 1286
+                                        skillName = requiredSkill4Name
+                                    Case 1287
+                                        skillName = requiredSkill5Name
+                                    Case 1288
+                                        skillName = requiredSkill6Name
+                                End Select
+
+                                If newShip.RequiredSkills.ContainsKey(skillName) = True Then
+                                    Dim cSkill As ItemSkills = newShip.RequiredSkills(skillName)
                                     cSkill.Level = CInt(attValue)
                                 End If
                         End Select
@@ -2419,13 +2447,23 @@ Public Class FrmCacheCreator
         Try
             ' Get details of module attributes from already retrieved dataset
             Dim attValue As Double
-            Dim pSkillName As String = "" : Dim sSkillName As String = "" : Dim tSkillName As String = ""
+            Dim requiredSkill1Name As String = ""
+            Dim requiredSkill2Name As String = ""
+            Dim requiredSkill3Name As String = ""
+            Dim requiredSkill4Name As String = ""
+            Dim requiredSkill5Name As String = ""
+            Dim requiredSkill6Name As String = ""
             Dim lastModName As String = ""
             For Each modRow As DataRow In moduleAttributeData.Tables(0).Rows
                 Dim attMod As ShipModule = ModuleLists.ModuleList.Item(CInt(modRow.Item("invTypes.typeID")))
                 'If attMod IsNot Nothing Then
                 If lastModName <> modRow.Item("invTypes.typeName").ToString And lastModName <> "" Then
-                    pSkillName = "" : sSkillName = "" : tSkillName = ""
+                    requiredSkill1Name = ""
+                    requiredSkill2Name = ""
+                    requiredSkill3Name = ""
+                    requiredSkill4Name = ""
+                    requiredSkill5Name = ""
+                    requiredSkill6Name = ""
                 End If
                 ' Now get, modify (if applicable) and add the "attribute"
                 If IsDBNull(modRow.Item("dgmTypeAttributes.valueFloat")) = False Then
@@ -2544,20 +2582,56 @@ Public Class FrmCacheCreator
                         attMod.ImplantSlot = CInt(attValue)
                     Case 1087 ' Slot Type For Boosters
                         attMod.BoosterSlot = CInt(attValue)
+
                     Case 182, 183, 184, 1285, 1289, 1290
+
                         If StaticData.Types.ContainsKey(CInt(attValue)) = True Then
                             Dim pSkill As EveType = StaticData.Types(CInt(attValue))
                             Dim nSkill As New ItemSkills
                             nSkill.ID = pSkill.Id
                             nSkill.Name = pSkill.Name
-                            pSkillName = pSkill.Name
+
+                            Select Case CInt(modRow.Item("dgmTypeAttributes.attributeID"))
+                                Case 182
+                                    requiredSkill1Name = pSkill.Name
+                                Case 183
+                                    requiredSkill2Name = pSkill.Name
+                                Case 184
+                                    requiredSkill3Name = pSkill.Name
+                                Case 1285
+                                    requiredSkill4Name = pSkill.Name
+                                Case 1289
+                                    requiredSkill5Name = pSkill.Name
+                                Case 1290
+                                    requiredSkill6Name = pSkill.Name
+                            End Select
+
                             If attMod.RequiredSkills.ContainsKey(nSkill.Name) = False Then
                                 attMod.RequiredSkills.Add(nSkill.Name, nSkill)
                             End If
                         End If
+
                     Case 277, 278, 279, 1286, 1287, 1288
-                        If attMod.RequiredSkills.ContainsKey(pSkillName) Then
-                            Dim cSkill As ItemSkills = attMod.RequiredSkills(pSkillName)
+
+                        Dim skillName As String = ""
+
+                        Select Case CInt(modRow.Item("dgmTypeAttributes.attributeID"))
+                            Case 277
+                                skillName = requiredSkill1Name
+                            Case 278
+                                skillName = requiredSkill2Name
+                            Case 279
+                                skillName = requiredSkill3Name
+                            Case 1286
+                                skillName = requiredSkill4Name
+                            Case 1287
+                                skillName = requiredSkill5Name
+                            Case 1288
+                                skillName = requiredSkill6Name
+                        End Select
+
+                        If attMod.RequiredSkills.ContainsKey(skillName) Then
+                            Dim cSkill As ItemSkills = attMod.RequiredSkills(skillName)
                             If cSkill IsNot Nothing Then
                                 cSkill.Level = CInt(attValue)
                             End If
