@@ -444,8 +444,8 @@ Public Class PilotParseFunctions
                 cAccount.LogonCount = response.ResultData.LogOnCount
                 cAccount.LogonMinutes = CLng(response.ResultData.LoggedInTime.TotalMinutes)
                 If cAccount.PaidUntil < Now Then
-                    ' Account has expired
-                    cAccount.APIAccountStatus = APIAccountStatuses.Disabled
+                    ' Account is alpha state
+                    cAccount.APIAccountStatus = APIAccountStatuses.Alpha
                 Else
                     cAccount.APIAccountStatus = APIAccountStatuses.Active
                 End If
@@ -454,7 +454,7 @@ Public Class PilotParseFunctions
                     Select Case response.EveErrorCode
                         Case 211
                             '' Account has expired
-                            cAccount.APIAccountStatus = APIAccountStatuses.Disabled
+                            cAccount.APIAccountStatus = APIAccountStatuses.Alpha
                         Case 200
                             ' Should be limited key
                             cAccount.APIKeyType = APIKeyTypes.Limited

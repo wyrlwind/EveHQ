@@ -61,25 +61,10 @@ Namespace Controls
 
             If IsAccount = True Then
                 Dim cAccount As Core.EveHQAccount = Core.HQ.Settings.Accounts(objectName)
-                _usingAccount = cAccount.userID
-                If cAccount.APIAccountStatus = Core.APIAccountStatuses.Disabled Then
-                    ' Prepare block for a blank account
-                    pbPilot.SizeMode = PictureBoxSizeMode.StretchImage
-                    pbPilot.Image = My.Resources.Warning64
-                    lblSkill.Text = "Account: " & cAccount.FriendlyName
-                    lblTime.Text = "ACCOUNT HAS EXPIRED!"
-                    ToolTip1.SetToolTip(lblTime, "Account '" & cAccount.FriendlyName & "' has expired!")
-                    lblQueue.Text = ""
-                    'ToolTip1.SetToolTip(lblQueue, "Purchase your GTCs from EveTimeCode.com and help support EveHQ!")
-                    lblSkill.ForeColor = Color.Red
-                    lblTime.LinkColor = Color.Red
-                    lblQueue.LinkColor = Color.Red
-                    lblSkill.Name = ""
-                    lblTime.Name = ""
-                    lblQueue.Name = ""
-                Else
-                    ' Prepare block for a blank account
-                    pbPilot.SizeMode = PictureBoxSizeMode.StretchImage
+                _usingAccount = cAccount.UserID
+
+                ' Prepare block for a blank account
+                pbPilot.SizeMode = PictureBoxSizeMode.StretchImage
                     pbPilot.Image = My.Resources.Warning64
                     lblSkill.Text = "Account: " & cAccount.FriendlyName
                     lblTime.Text = "NOT CURRENTLY TRAINING!"
@@ -91,8 +76,7 @@ Namespace Controls
                     lblQueue.LinkColor = Color.Red
                     lblSkill.Name = ""
                     lblTime.Name = ""
-                    lblQueue.Name = ""
-                End If
+                lblQueue.Name = ""
             Else
                 ' Prepare block for a training character
                 _displayPilotName = objectName

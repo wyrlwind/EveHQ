@@ -1250,20 +1250,17 @@ Namespace Forms
                 For Each cPilot As EveHQPilot In HQ.Settings.Pilots.Values
                     ' Check for disabled accounts
                     If HQ.Settings.Accounts.ContainsKey(cPilot.Account) Then
-                        If HQ.Settings.Accounts(cPilot.Account).APIAccountStatus = APIAccountStatuses.Disabled Then
-                            disabledAccounts.Add(cPilot.Account)
-                        Else
-                            ' Check for training accounts
-                            If cPilot.Training = True Then
-                                Dim p As New PilotSortTrainingTime
-                                p.Name = cPilot.Name
-                                p.TrainingEndTime = cPilot.TrainingEndTime
-                                ' Only add active pilots!
-                                If cPilot.Active = True Then
-                                    pilotTrainingTimes.Add(p)
-                                End If
-                                trainingAccounts.Add(cPilot.Account)
+
+                        ' Check for training accounts
+                        If cPilot.Training = True Then
+                            Dim p As New PilotSortTrainingTime
+                            p.Name = cPilot.Name
+                            p.TrainingEndTime = cPilot.TrainingEndTime
+                            ' Only add active pilots!
+                            If cPilot.Active = True Then
+                                pilotTrainingTimes.Add(p)
                             End If
+                            trainingAccounts.Add(cPilot.Account)
                         End If
                     End If
                 Next
@@ -1284,41 +1281,24 @@ Namespace Forms
 
                 ' Add non-training accounts to the training bar
                 For Each cAccount As EveHQAccount In HQ.Settings.Accounts.Values
-                    If disabledAccounts.Contains(cAccount.UserID) = True Then
-                        ' Build a status panel if the account is not manually disabled
-                        If cAccount.APIAccountStatus <> APIAccountStatuses.ManualDisabled Then
-                            Dim cb As New CharacterTrainingBlock(cAccount.UserID, True)
-                            trainingBlockLayout.Controls.Add(cb)
-                            If Bar1.DockSide = eDockSide.Bottom Or Bar1.DockSide = eDockSide.Top Then
-                                cb.Left = startloc
-                                cb.BringToFront()
-                                startloc += cb.Width + 20
-                            Else
-                                cb.Top = startloc
-                                cb.BringToFront()
-                                startloc += cb.Height + 5
-                            End If
-                        End If
-                    Else
-                        If trainingAccounts.Contains(cAccount.UserID) = False Then
-                            ' Only add if not a APIv2 corp account
-                            If _
+                    If trainingAccounts.Contains(cAccount.UserID) = False Then
+                        ' Only add if not a APIv2 corp account
+                        If _
                                 Not _
                                 (cAccount.ApiKeySystem = APIKeySystems.Version2 And
                                  cAccount.APIKeyType = APIKeyTypes.Corporation) Then
-                                ' Build a status panel if the account is not manually disabled
-                                If cAccount.APIAccountStatus <> APIAccountStatuses.ManualDisabled Then
-                                    Dim cb As New CharacterTrainingBlock(cAccount.UserID, True)
-                                    trainingBlockLayout.Controls.Add(cb)
-                                    If Bar1.DockSide = eDockSide.Bottom Or Bar1.DockSide = eDockSide.Top Then
-                                        cb.Left = startloc
-                                        cb.BringToFront()
-                                        startloc += cb.Width + 20
-                                    Else
-                                        cb.Top = startloc
-                                        cb.BringToFront()
-                                        startloc += cb.Height + 5
-                                    End If
+                            ' Build a status panel if the account is not manually disabled
+                            If cAccount.APIAccountStatus <> APIAccountStatuses.ManualDisabled Then
+                                Dim cb As New CharacterTrainingBlock(cAccount.UserID, True)
+                                trainingBlockLayout.Controls.Add(cb)
+                                If Bar1.DockSide = eDockSide.Bottom Or Bar1.DockSide = eDockSide.Top Then
+                                    cb.Left = startloc
+                                    cb.BringToFront()
+                                    startloc += cb.Width + 20
+                                Else
+                                    cb.Top = startloc
+                                    cb.BringToFront()
+                                    startloc += cb.Height + 5
                                 End If
                             End If
                         End If
