@@ -169,6 +169,7 @@ Public Enum AttributeEnum
     ModuleMaxFlightTime = 281
     ModuleMaxGroupActive = 763
     ModuleMaxGroupFitted = 1544
+    ModuleMaxTypeFitted = 2431
     ModuleMaxVelocity = 37
     ModuleMetaLevel = 633
     ModuleMidSlotModifier = 1375
