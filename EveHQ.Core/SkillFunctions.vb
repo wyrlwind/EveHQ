@@ -468,7 +468,9 @@ Public Class SkillFunctions
                             newSkill.Rank = skill.Rank
                             If skill.RequiredSkills.Any() Then
                                 For Each reqSkill In skill.RequiredSkills
-                                    newSkill.PreReqSkills.Add(reqSkill.TypeId, reqSkill.Level)
+                                    If newSkill.PreReqSkills.ContainsKey(reqSkill.TypeId) = False Then
+                                        newSkill.PreReqSkills.Add(reqSkill.TypeId, reqSkill.Level)
+                                    End If
                                 Next
                             End If
                             newSkill.Pa = StrConv(skill.PrimaryAttribute, VbStrConv.ProperCase)
