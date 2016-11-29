@@ -1851,7 +1851,7 @@
 28606,0,0,73,5,43702,0,0,0,-25,15,Drone Ice Mining Cycle Time
 28606,1,29637,10004,1,28606,0,1,0,5,15,Cargo Capacity
 28606,1,29637,1556,1,28606,0,1,0,5,15,Ore Hold Capacity
-28606,1,29637,73,5,43702,0,1,0,10,15,Drone Ice Mining Cycle Time
+28606,1,29637,73,5,43702,0,1,0,-10,15,Drone Ice Mining Cycle Time
 28606,1,29637,77,5,3438,0,1,0,10,15,Drone Mining Yield
 28606,1,29637,263,3,18,0,1,0,10,15,Drone Shield HP
 28606,1,29637,265,3,18,0,1,0,10,15,Drone Armor HP
@@ -2317,27 +2317,29 @@
 11959,1,22761,241,2,201,0,1,0,30,15,ECM Jam Strength Radar
 11959,1,22761,37,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Velocity
 # Rorqual,,,,,,,,,,,
-28352,1,28374,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Optimal
-28352,1,28374,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
-28352,1,28374,263,3,18,0,1,0,20,15,Drone Shield HP
-28352,1,28374,265,3,18,0,1,0,20,15,Drone Armor HP
-28352,1,28374,9,3,18,0,1,0,20,15,Drone Hull HP
-28352,1,28374,64,3,18,0,1,0,20,15,Drone Damage
-28352,1,28374,714,1,28583,0,1,0,-5,15,Industrial Core Fuel Need
-28352,0,0,197,2,49,0,0,0,900,15,Survey Scanner Range
-28352,0,0,126,2,47,0,0,0,200,15,Cargo Scanner Range
-28352,0,0,10063,1,28352,0,0,1,2,15,Command Burst Modules
-28352,0,0,54,4,1633,0,0,0,50,15,Mining Foreman and Command Burst AoE Range Bonus
-28352,1,28374,2535,1,42528;43551,0,1,0,5,15,Mining Foreman Burst Duration
-28352,1,28374,2535,1,42529;43555,0,1,0,3,15,Shield Command Burst Duration
+28352,1,28374,2535,1,42529;43555,0,1,0,3,15,Shield Command Burst Effect Duration
 28352,1,28374,2469,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
 28352,1,28374,2471,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
 28352,1,28374,2473,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
 28352,1,28374,2537,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+28352,1,28374,2535,1,42528;43551,0,1,0,5,15,Mining Foreman Burst Effect Duration
 28352,1,28374,2469,1,42528;43551,0,1,0,5,15,Mining Foreman Burst Strength
 28352,1,28374,2471,1,42528;43551,0,1,0,5,15,Mining Foreman Burst Strength
 28352,1,28374,2473,1,42528;43551,0,1,0,5,15,Mining Foreman Burst Strength
 28352,1,28374,2537,1,42528;43551,0,1,0,5,15,Mining Foreman Burst Strength
+28352,1,28374,714,1,28583;42890,0,1,0,-5,15,Industrial Core Fuel Consumption
+28352,1,28374,77,5,3438,0,1,0,10,15,Drone Mining Yield
+28352,1,28374,263,3,18,0,1,0,10,15,Drone Shield HP
+28352,1,28374,265,3,18,0,1,0,10,15,Drone Armor HP
+28352,1,28374,9,3,18,0,1,0,10,15,Drone Hull HP
+28352,1,28374,64,3,18,0,1,0,10,15,Drone Damage
+28352,1,28374,73,5,43702,0,1,0,-10,15,Drone Ice Mining Cycle Time
+28352,0,0,54,2,1770,0,0,0,50,15,Command burst range
+28352,0,0,126,2,47,0,0,0,200,15,Cargo scanner range
+28352,0,0,54,2,41;1697,0,0,0,400,15,Remote Shield Booster Optimal
+28352,0,0,197,2,49,0,0,0,900,15,Survey scanner range
+28352,0,0,10063,1,28352,0,0,1,2,15,Command Burst Modules
+28352,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Rorqual ORE Development Edition,,,,,,,,,,,
 #33687,1,28374,54,4,600,0,1,0,50,15,Capital Remote Shield Booster Range
 #33687,1,28374,263,3,18,0,1,0,20,15,Drone Shield HP

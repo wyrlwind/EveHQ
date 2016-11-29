@@ -613,7 +613,7 @@ Namespace Forms
                 Dim userID As String = si.Name
                 Dim cAccount As EveHQAccount = HQ.Settings.Accounts(userID)
                 Select Case cAccount.APIAccountStatus
-                    Case APIAccountStatuses.Active, APIAccountStatuses.Disabled
+                    Case APIAccountStatuses.Active, APIAccountStatuses.Alpha
                         cAccount.APIAccountStatus = APIAccountStatuses.ManualDisabled
                         btnDisableAccount.Text = "Enable Account"
                     Case APIAccountStatuses.ManualDisabled
@@ -690,7 +690,7 @@ Namespace Forms
                 Dim userID As String = si.Name
                 Dim cAccount As EveHQAccount = HQ.Settings.Accounts(userID)
                 Select Case cAccount.APIAccountStatus
-                    Case APIAccountStatuses.Active, APIAccountStatuses.Disabled
+                    Case APIAccountStatuses.Active, APIAccountStatuses.Alpha
                         btnDisableAccount.Text = "Disable Account"
                         btnDisableAccount.Enabled = True
                     Case APIAccountStatuses.ManualDisabled

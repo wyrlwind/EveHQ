@@ -3341,6 +3341,18 @@ Imports EveHQ.Common.Extensions
             End If
         End If
 
+
+        ' Check for maxTypeFitted flag
+        If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleMaxTypeFitted) = True Then
+            If IsModuleTypeLimitExceeded(shipMod, AttributeEnum.ModuleMaxGroupFitted) = True Then
+                If search = False Then
+                    MessageBox.Show("You cannot fit more than " & shipMod.Attributes(AttributeEnum.ModuleMaxTypeFitted) & " module(s) of this type to a ship ('" & FittingName & "', " & ShipName & ").", "Module Type Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+                Return False
+            End If
+        End If
+
+
         ' Check for maxGroupActive flag
         If search = False AndAlso shipMod.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
             Dim groupReplace As Boolean = False
@@ -3430,6 +3442,52 @@ Imports EveHQ.Common.Extensions
             End If
         End If
     End Function
+
+    Public Function IsModuleTypeLimitExceeded(ByVal testMod As ShipModule, ByVal attribute As Integer) As Boolean
+        Dim count As Integer = 0
+        Dim fittedMod As ShipModule = testMod.Clone
+        ApplySkillEffectsToModule(fittedMod, True)
+
+        Dim maxAllowed As Integer = CInt(fittedMod.Attributes(AttributeEnum.ModuleMaxTypeFitted))
+
+
+        For slot As Integer = 1 To BaseShip.HiSlots
+            If BaseShip.HiSlot(slot) IsNot Nothing Then
+                If BaseShip.HiSlot(slot).ID = testMod.ID Then
+                    count += 1
+                End If
+            End If
+        Next
+        For slot As Integer = 1 To BaseShip.MidSlots
+            If BaseShip.MidSlot(slot) IsNot Nothing Then
+                If BaseShip.MidSlot(slot).ID = testMod.ID Then
+                    count += 1
+                End If
+            End If
+        Next
+        For slot As Integer = 1 To BaseShip.LowSlots
+            If BaseShip.LowSlot(slot) IsNot Nothing Then
+                If BaseShip.LowSlot(slot).ID = testMod.ID Then
+                    count += 1
+                End If
+            End If
+        Next
+        For slot As Integer = 1 To BaseShip.RigSlots
+            If BaseShip.RigSlot(slot) IsNot Nothing Then
+                If BaseShip.RigSlot(slot).ID = testMod.ID Then
+                    count += 1
+                End If
+            End If
+        Next
+
+        If count >= maxAllowed Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+
     Public Function CountActiveTypeModules(ByVal typeID As Integer) As Integer
         Dim count As Integer = 0
         For slot As Integer = 1 To BaseShip.HiSlots
