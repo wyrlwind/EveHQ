@@ -617,7 +617,12 @@ Namespace Forms
                         cAccount.APIAccountStatus = APIAccountStatuses.ManualDisabled
                         btnDisableAccount.Text = "Enable Account"
                     Case APIAccountStatuses.ManualDisabled
-                        cAccount.APIAccountStatus = APIAccountStatuses.Active
+                        If cAccount.PaidUntil < Now Then
+                            ' Account is alpha state
+                            cAccount.APIAccountStatus = APIAccountStatuses.Alpha
+                        Else
+                            cAccount.APIAccountStatus = APIAccountStatuses.Active
+                        End If
                         btnDisableAccount.Text = "Disable Account"
                 End Select
                 si.Cells(4).Text = cAccount.APIAccountStatus.ToString

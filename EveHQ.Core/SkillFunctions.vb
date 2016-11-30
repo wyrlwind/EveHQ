@@ -642,6 +642,7 @@ Public Class SkillFunctions
                 sTime = 0
             Else
                 sTime = CLng(sTime + Int((endSP - startSP) / (pa + (sa / 2)) * 60))
+                ' Double the time if alpha clone
                 If cPilot.AccountStatus = APIAccountStatuses.Alpha Then
                     sTime = CLng(sTime * 2)
                 End If
