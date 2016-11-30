@@ -211,16 +211,20 @@ Namespace Controls
                                 If timeRemaining > 2400 Then
                                     timeRemaining = Int(timeRemaining / 24) * 24
                                 End If
+                                Dim overlayBrush As SolidBrush
                                 Select Case timeRemaining
                                     Case Is <= 0
-                                        overlayText = "Expired"
+                                        overlayText = "Alpha"
+                                        overlayBrush = New SolidBrush(Color.FromArgb(128, 255, 128, 0))
                                     Case Is >= 1
                                         overlayText = Core.SkillFunctions.TimeToString(Int(timeRemaining) * 3600, False)
+                                        overlayBrush = New SolidBrush(Color.FromArgb(192, 255, 0, 0))
                                     Case Else
                                         overlayText = " < 1h"
+                                        overlayBrush = New SolidBrush(Color.FromArgb(192, 255, 0, 0))
                                 End Select
                                 Dim overlayFont As Font = New Font(Font.FontFamily, 7)
-                                Dim overlayBrush As New SolidBrush(Color.FromArgb(192, 255, 0, 0))
+                                'Dim overlayBrush As New SolidBrush(Color.FromArgb(192, 255, 0, 0))
                                 ' Define a new image
                                 Dim olImage As Bitmap = New Bitmap(pbPilot.InitialImage, pbPilot.Width, pbPilot.Height)
                                 Dim myGraphics As Graphics = Graphics.FromImage(olImage)
