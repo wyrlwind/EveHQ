@@ -67,10 +67,6 @@ Public Class FrmCacheCreator
     Shared yamlIcons As SortedList(Of Integer, String) ' Key = iconID, Value = iconFile
     Shared ReadOnly YamlCerts As New SortedList(Of Integer, YAMLCert) ' Key = CertID
 
-    Private Sub frmCacheCreator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        
-    End Sub
-
     Private Sub btnGenerateCache_Click(sender As Object, e As EventArgs) Handles btnGenerateCache.Click
 
         ' Check for existence of a core cache folder in the application directory
@@ -81,14 +77,16 @@ Public Class FrmCacheCreator
         End If
 
         ' Parse the YAML files
-        Call ParseYAMLFiles()
+        Call ParseYamlFiles()
 
         ' Create and write core cache data
         Call LoadAllData()
         Call CreateCoreCache()
 
         ' Create and write HQF cache data
-        Call GenerateHQFCacheData()
+        Call GenerateHqfCacheData()
+
+        UpdateStaticDataFiles()
 
         MessageBox.Show("Creation of cache data complete!")
 
@@ -108,7 +106,11 @@ Public Class FrmCacheCreator
     End Sub
 
     Private Sub ParseIconsYAMLFile()
-        Using dataStream = New MemoryStream(My.Resources.iconIDs)
+        Dim bData As Byte()
+        Dim br As BinaryReader = New BinaryReader(File.OpenRead(Path.Combine(Application.StartupPath, "iconIDs.yaml")))
+        bData = br.ReadBytes(CInt(br.BaseStream.Length))
+        Using dataStream = New MemoryStream(bData, 0, bData.Length)
+            dataStream.Write(bData, 0, bData.Length)
             Using reader = New StreamReader(dataStream)
 
                 Dim yaml = New YamlDotNet.RepresentationModel.YamlStream()
@@ -149,7 +151,11 @@ Public Class FrmCacheCreator
 
         YamlCerts.Clear()
 
-        Using dataStream = New MemoryStream(My.Resources.certificates)
+        Dim bData As Byte()
+        Dim br As BinaryReader = New BinaryReader(File.OpenRead(Path.Combine(Application.StartupPath, "certificates.yaml")))
+        bData = br.ReadBytes(CInt(br.BaseStream.Length))
+        Using dataStream = New MemoryStream(bData, 0, bData.Length)
+            dataStream.Write(bData, 0, bData.Length)
             Using reader = New StreamReader(dataStream)
 
                 Dim yaml = New YamlDotNet.RepresentationModel.YamlStream()
@@ -203,7 +209,7 @@ Public Class FrmCacheCreator
                                         cert.RequiredSkills = reqSkills
                                 End Select
                             Next
-                            yamlCerts.Add(cert.CertID, cert)
+                            YamlCerts.Add(cert.CertID, cert)
                         End If
                     Next
                 End If
@@ -212,7 +218,11 @@ Public Class FrmCacheCreator
     End Sub
 
     Private Sub ParseTypesYAMLFile()
-        Using dataStream = New MemoryStream(My.Resources.typeIDs)
+        Dim bData As Byte()
+        Dim br As BinaryReader = New BinaryReader(File.OpenRead(Path.Combine(Application.StartupPath, "typeIDs.yaml")))
+        bData = br.ReadBytes(CInt(br.BaseStream.Length))
+        Using dataStream = New MemoryStream(bData, 0, bData.Length)
+            dataStream.Write(bData, 0, bData.Length)
             Using reader = New StreamReader(dataStream)
 
                 Dim yaml = New YamlDotNet.RepresentationModel.YamlStream()
@@ -3499,5 +3509,106 @@ Public Class FrmCacheCreator
     End Sub
 
 #End Region
+
+    Private Sub OpenFileDialogDb_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialogDb.FileOk
+        My.Computer.FileSystem.CopyFile(OpenFileDialogDb.FileName.ToString(),
+                                        Path.Combine(Application.StartupPath, "eve.db"),
+                                        FileIO.UIOption.AllDialogs,
+                                        FileIO.UICancelOption.DoNothing)
+        TextBoxEveDbLocation.Text = "eve.db file present"
+        ButtonEveDbFind.Text = "Replace eve.db"
+        SetFileAndButtonState()
+    End Sub
+
+    Private Sub ButtonEveDbFind_Click(sender As Object, e As EventArgs) Handles ButtonEveDbFind.Click
+        OpenFileDialogDb.Title = "Please select the eve.db file to copy for use"
+        OpenFileDialogDb.InitialDirectory = Application.StartupPath
+        OpenFileDialogDb.ShowDialog()
+    End Sub
+
+    Private Sub FrmCacheCreator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SetFileAndButtonState()
+    End Sub
+
+    Private Sub SetFileAndButtonState()
+        Dim allFilesPresent As Boolean = True
+        If My.Computer.FileSystem.FileExists(Path.Combine(Application.StartupPath, "eve.db")) Then
+            TextBoxEveDbLocation.Text = "eve.db file present"
+            ButtonEveDbFind.Text = "Replace eve.db"
+        Else
+            TextBoxEveDbLocation.Text = "eve.db file not found"
+            ButtonEveDbFind.Text = "Find eve.db"
+            allFilesPresent = False
+        End If
+        Dim yamlFilesAllPresent As Boolean = True
+        Dim yamlText As String = ""
+        If My.Computer.FileSystem.FileExists(Path.Combine(Application.StartupPath, "certificates.yaml")) Then
+            yamlText &= "certificates.yaml file present"
+        Else
+            yamlFilesAllPresent = False
+            yamlText &= "certificates.yaml file not found"
+        End If
+        yamlText &= vbCrLf
+        If My.Computer.FileSystem.FileExists(Path.Combine(Application.StartupPath, "iconIDs.yaml")) Then
+            yamlText &= "iconIDs.yaml file present"
+        Else
+            yamlFilesAllPresent = False
+            yamlText &= "iconIDs.yaml file not found"
+        End If
+        yamlText &= vbCrLf
+        If My.Computer.FileSystem.FileExists(Path.Combine(Application.StartupPath, "typeIDs.yaml")) Then
+            yamlText &= "typeIDs.yaml file present"
+        Else
+            yamlFilesAllPresent = False
+            yamlText &= "typeIDs.yaml file not found"
+        End If
+        TextBoxYamlFiles.Text = yamlText
+        If yamlFilesAllPresent = False Then
+            ButtonYamlFind.Text = "Find yaml files"
+            allFilesPresent = False
+        Else
+            ButtonYamlFind.Text = "Replace yaml files"
+        End If
+        If allFilesPresent = True Then
+            btnGenerateCache.Enabled = True
+            btnCheckDB.Enabled = True
+            btnCheckMarketGroup.Enabled = True
+        Else
+            btnGenerateCache.Enabled = False
+            btnCheckDB.Enabled = False
+            btnCheckMarketGroup.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ButtonFindYaml_Click(sender As Object, e As EventArgs) Handles ButtonYamlFind.Click
+        FolderBrowserDialogYaml.Description = "Please select the folder containing the certificates, iconIDs and typeIDs yaml files to copy for use"
+        If FolderBrowserDialogYaml.ShowDialog() = DialogResult.OK Then
+            If My.Computer.FileSystem.FileExists(Path.Combine(FolderBrowserDialogYaml.SelectedPath, "certificates.yaml")) Then
+                My.Computer.FileSystem.CopyFile(Path.Combine(FolderBrowserDialogYaml.SelectedPath, "certificates.yaml"),
+                                        Path.Combine(Application.StartupPath, "certificates.yaml"),
+                                        FileIO.UIOption.AllDialogs,
+                                        FileIO.UICancelOption.DoNothing)
+            End If
+            If My.Computer.FileSystem.FileExists(Path.Combine(FolderBrowserDialogYaml.SelectedPath, "iconIDs.yaml")) Then
+                My.Computer.FileSystem.CopyFile(Path.Combine(FolderBrowserDialogYaml.SelectedPath, "iconIDs.yaml"),
+                                        Path.Combine(Application.StartupPath, "iconIDs.yaml"),
+                                        FileIO.UIOption.AllDialogs,
+                                        FileIO.UICancelOption.DoNothing)
+            End If
+            If My.Computer.FileSystem.FileExists(Path.Combine(FolderBrowserDialogYaml.SelectedPath, "typeIDs.yaml")) Then
+                My.Computer.FileSystem.CopyFile(Path.Combine(FolderBrowserDialogYaml.SelectedPath, "typeIDs.yaml"),
+                                        Path.Combine(Application.StartupPath, "typeIDs.yaml"),
+                                        FileIO.UIOption.AllDialogs,
+                                        FileIO.UICancelOption.DoNothing)
+            End If
+            SetFileAndButtonState()
+        End If
+    End Sub
+
+    Private Sub UpdateStaticDataFiles()
+        My.Computer.FileSystem.CopyDirectory(Path.Combine(Application.StartupPath, "StaticData\"),
+                                             Path.Combine(Application.StartupPath, "..\..\..\EveHQ.EveData\StaticData\"),
+                                             True)
+    End Sub
 
 End Class
