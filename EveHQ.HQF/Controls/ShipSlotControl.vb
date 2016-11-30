@@ -182,7 +182,7 @@ Namespace Controls
             _fleetSkills.Add(ModuleEnum.ItemSkillMiningForeman, AttributeEnum.SkillMiningAmountBonus)
 
             ' Load the remote and fleet info
-            'Call LoadRemoteFleetInfo()
+            Call LoadRemoteFleetInfo()
 
             ' Load the Booster info
             Call LoadBoosterInfo()
