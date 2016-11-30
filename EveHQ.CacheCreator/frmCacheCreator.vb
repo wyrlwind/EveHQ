@@ -106,43 +106,38 @@ Public Class FrmCacheCreator
     End Sub
 
     Private Sub ParseIconsYAMLFile()
-        Dim bData As Byte()
-        Dim br As BinaryReader = New BinaryReader(File.OpenRead(Path.Combine(Application.StartupPath, "iconIDs.yaml")))
-        bData = br.ReadBytes(CInt(br.BaseStream.Length))
-        Using dataStream = New MemoryStream(bData, 0, bData.Length)
-            dataStream.Write(bData, 0, bData.Length)
-            Using reader = New StreamReader(dataStream)
 
-                Dim yaml = New YamlDotNet.RepresentationModel.YamlStream()
-                yaml.Load(reader)
-                If yaml.Documents.Any() Then
-                    ' Should only be 1 document so go with the first
-                    Dim yamlDoc = yaml.Documents(0)
-                    ' Cycle through the keys, which will be the typeIDs
-                    Dim root = CType(yamlDoc.RootNode, YamlMappingNode)
-                    For Each entry In root.Children
-                        ' Parse the typeID
-                        Dim iconId As Integer = CInt(CType(entry.Key, YamlScalarNode).Value)
-                        ' Parse anything underneath
-                        For Each subEntry In CType(entry.Value, YamlMappingNode).Children
-                            ' Get the key and value of th sub entry
-                            Dim keyName As String = CType(subEntry.Key, YamlScalarNode).Value
-                            ' Do something based on the key
-                            Select Case keyName
-                                Case "iconFile"
-                                    ' Pre-process the icon name to make it easier later on
-                                    Dim iconName As String = CType(subEntry.Value, YamlScalarNode).Value.Trim
-                                    ' Get the filename if the fullname starts with "res:"
-                                    If iconName.StartsWith("res", StringComparison.Ordinal) Then
-                                        iconName = iconName.Split("/".ToCharArray).Last
-                                    End If
-                                    ' Set the icon item
-                                    yamlIcons.Add(iconId, iconName)
-                            End Select
-                        Next
+        Using reader = New StreamReader(Path.Combine(Application.StartupPath, "iconIDs.yaml"))
+
+            Dim yaml = New YamlDotNet.RepresentationModel.YamlStream()
+            yaml.Load(reader)
+            If yaml.Documents.Any() Then
+                ' Should only be 1 document so go with the first
+                Dim yamlDoc = yaml.Documents(0)
+                ' Cycle through the keys, which will be the typeIDs
+                Dim root = CType(yamlDoc.RootNode, YamlMappingNode)
+                For Each entry In root.Children
+                    ' Parse the typeID
+                    Dim iconId As Integer = CInt(CType(entry.Key, YamlScalarNode).Value)
+                    ' Parse anything underneath
+                    For Each subEntry In CType(entry.Value, YamlMappingNode).Children
+                        ' Get the key and value of th sub entry
+                        Dim keyName As String = CType(subEntry.Key, YamlScalarNode).Value
+                        ' Do something based on the key
+                        Select Case keyName
+                            Case "iconFile"
+                                ' Pre-process the icon name to make it easier later on
+                                Dim iconName As String = CType(subEntry.Value, YamlScalarNode).Value.Trim
+                                ' Get the filename if the fullname starts with "res:"
+                                If iconName.StartsWith("res", StringComparison.Ordinal) Then
+                                    iconName = iconName.Split("/".ToCharArray).Last
+                                End If
+                                ' Set the icon item
+                                yamlIcons.Add(iconId, iconName)
+                        End Select
                     Next
-                End If
-            End Using
+                Next
+            End If
         End Using
 
     End Sub
@@ -151,163 +146,152 @@ Public Class FrmCacheCreator
 
         YamlCerts.Clear()
 
-        Dim bData As Byte()
-        Dim br As BinaryReader = New BinaryReader(File.OpenRead(Path.Combine(Application.StartupPath, "certificates.yaml")))
-        bData = br.ReadBytes(CInt(br.BaseStream.Length))
-        Using dataStream = New MemoryStream(bData, 0, bData.Length)
-            dataStream.Write(bData, 0, bData.Length)
-            Using reader = New StreamReader(dataStream)
+        Using reader = New StreamReader(Path.Combine(Application.StartupPath, "certificates.yaml"))
 
-                Dim yaml = New YamlDotNet.RepresentationModel.YamlStream()
-                yaml.Load(reader)
+            Dim yaml = New YamlDotNet.RepresentationModel.YamlStream()
+            yaml.Load(reader)
 
-                If yaml.Documents.Count > 0 Then
-                    ' Should only be 1 document so go with the first
-                    Dim yamlDoc = yaml.Documents(0)
-                    ' Cycle through the keys, which will be the certIDs
-                    Dim root = CType(yamlDoc.RootNode, YamlMappingNode)
-                    For Each entry In root.Children
-                        Dim certId = CInt(CType(entry.Key, YamlScalarNode).Value)
-                        Dim cert As New YAMLCert
-                        cert.RecommendedFor = New List(Of Integer)
-                        cert.CertID = certId
-                        ' Parse anything underneath
-                        Dim dataItem = TryCast(entry.Value, YamlMappingNode)
-                        If dataItem IsNot Nothing Then
-                            For Each subEntry In dataItem.Children
-                                ' Get the key and value of th sub entry
-                                Dim keyName As String = CType(subEntry.Key, YamlScalarNode).Value
-                                ' Do something based on the key
-                                Select Case keyName
-                                    Case "description"
-                                        ' Set the description
-                                        cert.Description = CType(subEntry.Value, YamlScalarNode).Value
-                                    Case "groupID"
-                                        ' Set the groupID
-                                        cert.GroupID = CInt(CType(subEntry.Value, YamlScalarNode).Value)
-                                    Case "name"
-                                        ' Set the name
-                                        cert.Name = CType(subEntry.Value, YamlScalarNode).Value
-                                    Case "recommendedFor"
-                                        ' Set the type recommendations.
-                                        cert.RecommendedFor = CType(subEntry.Value, YamlSequenceNode).Children.Select(Function(e) CInt(CType(e, YamlScalarNode).Value))
-                                    Case "skillTypes"
-                                        ' Set the required Skills
-                                        Dim skillMaps = CType(subEntry.Value, YamlMappingNode)
-                                        Dim reqSkills As New List(Of CertReqSkill)
-                                        If skillMaps IsNot Nothing Then
-                                            For Each skillMap In skillMaps.Children
-                                                Dim reqSkill As New CertReqSkill
-                                                reqSkill.SkillID = CInt(CType(skillMap.Key, YamlScalarNode).Value)
-                                                reqSkill.SkillLevels = New Dictionary(Of String, Integer)
-                                                For Each level In CType(skillMap.Value, YamlMappingNode).Children
-                                                    reqSkill.SkillLevels.Add(CType(level.Key, YamlScalarNode).Value, CInt(CType(level.Value, YamlScalarNode).Value))
-                                                Next
-                                                reqSkills.Add(reqSkill)
+            If yaml.Documents.Count > 0 Then
+                ' Should only be 1 document so go with the first
+                Dim yamlDoc = yaml.Documents(0)
+                ' Cycle through the keys, which will be the certIDs
+                Dim root = CType(yamlDoc.RootNode, YamlMappingNode)
+                For Each entry In root.Children
+                    Dim certId = CInt(CType(entry.Key, YamlScalarNode).Value)
+                    Dim cert As New YAMLCert
+                    cert.RecommendedFor = New List(Of Integer)
+                    cert.CertID = certId
+                    ' Parse anything underneath
+                    Dim dataItem = TryCast(entry.Value, YamlMappingNode)
+                    If dataItem IsNot Nothing Then
+                        For Each subEntry In dataItem.Children
+                            ' Get the key and value of th sub entry
+                            Dim keyName As String = CType(subEntry.Key, YamlScalarNode).Value
+                            ' Do something based on the key
+                            Select Case keyName
+                                Case "description"
+                                    ' Set the description
+                                    cert.Description = CType(subEntry.Value, YamlScalarNode).Value
+                                Case "groupID"
+                                    ' Set the groupID
+                                    cert.GroupID = CInt(CType(subEntry.Value, YamlScalarNode).Value)
+                                Case "name"
+                                    ' Set the name
+                                    cert.Name = CType(subEntry.Value, YamlScalarNode).Value
+                                Case "recommendedFor"
+                                    ' Set the type recommendations.
+                                    cert.RecommendedFor = CType(subEntry.Value, YamlSequenceNode).Children.Select(Function(e) CInt(CType(e, YamlScalarNode).Value))
+                                Case "skillTypes"
+                                    ' Set the required Skills
+                                    Dim skillMaps = CType(subEntry.Value, YamlMappingNode)
+                                    Dim reqSkills As New List(Of CertReqSkill)
+                                    If skillMaps IsNot Nothing Then
+                                        For Each skillMap In skillMaps.Children
+                                            Dim reqSkill As New CertReqSkill
+                                            reqSkill.SkillID = CInt(CType(skillMap.Key, YamlScalarNode).Value)
+                                            reqSkill.SkillLevels = New Dictionary(Of String, Integer)
+                                            For Each level In CType(skillMap.Value, YamlMappingNode).Children
+                                                reqSkill.SkillLevels.Add(CType(level.Key, YamlScalarNode).Value, CInt(CType(level.Value, YamlScalarNode).Value))
                                             Next
-                                        End If
-                                        cert.RequiredSkills = reqSkills
-                                End Select
-                            Next
-                            YamlCerts.Add(cert.CertID, cert)
-                        End If
-                    Next
-                End If
-            End Using
+                                            reqSkills.Add(reqSkill)
+                                        Next
+                                    End If
+                                    cert.RequiredSkills = reqSkills
+                            End Select
+                        Next
+                        YamlCerts.Add(cert.CertID, cert)
+                    End If
+                Next
+            End If
         End Using
+
     End Sub
 
     Private Sub ParseTypesYAMLFile()
-        Dim bData As Byte()
-        Dim br As BinaryReader = New BinaryReader(File.OpenRead(Path.Combine(Application.StartupPath, "typeIDs.yaml")))
-        bData = br.ReadBytes(CInt(br.BaseStream.Length))
-        Using dataStream = New MemoryStream(bData, 0, bData.Length)
-            dataStream.Write(bData, 0, bData.Length)
-            Using reader = New StreamReader(dataStream)
 
-                Dim yaml = New YamlDotNet.RepresentationModel.YamlStream()
-                yaml.Load(reader)
+        Using reader = New StreamReader(Path.Combine(Application.StartupPath, "typeIDs.yaml"))
+            Dim yaml = New YamlDotNet.RepresentationModel.YamlStream()
+            yaml.Load(reader)
 
-                If yaml.Documents.Any() Then
-                    ' Should only be 1 document so go with the first
-                    Dim yamlDoc = yaml.Documents(0)
-                    ' Cycle through the keys, which will be the typeIDs
-                    Dim root = CType(yamlDoc.RootNode, YamlMappingNode)
-                    For Each entry In root.Children
-                        ' Parse the typeID
-                        Dim typeId As Integer = CInt(CType(entry.Key, YamlScalarNode).Value)
-                        Dim yamlItem As New YAMLType
-                        yamlItem.TypeID = typeId
-                        yamlItem.IconID = -1
-                        ' Parse anything underneath
-                        Dim dataItem = TryCast(entry.Value, YamlMappingNode)
-                        If dataItem IsNot Nothing Then
-                            For Each subEntry In dataItem.Children
-                                ' Get the key and value of the sub entry
-                                Dim keyName As String = CType(subEntry.Key, YamlScalarNode).Value
-                                ' Do something based on the key
-                                Select Case keyName
-                                    Case "iconID"
-                                        ' Set the icon item
-                                        yamlItem.IconID = CInt(CType(subEntry.Value, YamlScalarNode).Value)
-                                    Case "masteries"
-                                        ' Set the various collections of certificates needed for each level of mastery
-                                        yamlItem.Masteries = New Dictionary(Of Integer, List(Of Integer))
-                                        Dim masteryLevels = CType(subEntry.Value, YamlMappingNode)
-                                        For Each level In masteryLevels.Children
-                                            Dim levelId = CInt(CType(level.Key, YamlScalarNode).Value)
-                                            Dim certs = CType(level.Value, YamlSequenceNode).Children.Select(Function(node) CInt(CType(node, YamlScalarNode).Value)).ToList()
-                                            yamlItem.Masteries.Add(levelId, certs)
-                                        Next
-                                    Case "traits"
-                                        ' Set ship traits texts for each ship skill
-                                        yamlItem.Traits = New Dictionary(Of Integer, List(Of String))()
-                                        Dim traits = CType(subEntry.Value, YamlMappingNode)
+            If yaml.Documents.Any() Then
+                ' Should only be 1 document so go with the first
+                Dim yamlDoc = yaml.Documents(0)
+                ' Cycle through the keys, which will be the typeIDs
+                Dim root = CType(yamlDoc.RootNode, YamlMappingNode)
+                For Each entry In root.Children
+                    ' Parse the typeID
+                    Dim typeId As Integer = CInt(CType(entry.Key, YamlScalarNode).Value)
+                    Dim yamlItem As New YAMLType
+                    yamlItem.TypeID = typeId
+                    yamlItem.IconID = -1
+                    ' Parse anything underneath
+                    Dim dataItem = TryCast(entry.Value, YamlMappingNode)
+                    If dataItem IsNot Nothing Then
+                        For Each subEntry In dataItem.Children
+                            ' Get the key and value of the sub entry
+                            Dim keyName As String = CType(subEntry.Key, YamlScalarNode).Value
+                            ' Do something based on the key
+                            Select Case keyName
+                                Case "iconID"
+                                    ' Set the icon item
+                                    yamlItem.IconID = CInt(CType(subEntry.Value, YamlScalarNode).Value)
+                                Case "masteries"
+                                    ' Set the various collections of certificates needed for each level of mastery
+                                    yamlItem.Masteries = New Dictionary(Of Integer, List(Of Integer))
+                                    Dim masteryLevels = CType(subEntry.Value, YamlMappingNode)
+                                    For Each level In masteryLevels.Children
+                                        Dim levelId = CInt(CType(level.Key, YamlScalarNode).Value)
+                                        Dim certs = CType(level.Value, YamlSequenceNode).Children.Select(Function(node) CInt(CType(node, YamlScalarNode).Value)).ToList()
+                                        yamlItem.Masteries.Add(levelId, certs)
+                                    Next
+                                Case "traits"
+                                    ' Set ship traits texts for each ship skill
+                                    yamlItem.Traits = New Dictionary(Of Integer, List(Of String))()
+                                    Dim traits = CType(subEntry.Value, YamlMappingNode)
 
-                                        For Each bonusTypes In traits.Children
+                                    For Each bonusTypes In traits.Children
 
-                                            Dim bonusTypeName As String = CType(bonusTypes.Key, YamlScalarNode).Value
+                                        Dim bonusTypeName As String = CType(bonusTypes.Key, YamlScalarNode).Value
 
-                                            Select Case bonusTypeName
-                                                Case "roleBonuses"
-                                                    Dim bonuses = CType(bonusTypes.Value, YamlSequenceNode)
+                                        Select Case bonusTypeName
+                                            Case "roleBonuses"
+                                                Dim bonuses = CType(bonusTypes.Value, YamlSequenceNode)
+                                                Dim bonusStrings = parseBonuses(bonuses)
+
+                                                ' -1 as id was the previous way to detect role bonuses
+                                                If bonusStrings.Count > 0 Then
+                                                    yamlItem.Traits.Add(-1, bonusStrings)
+                                                End If
+
+                                            Case "types"
+                                                For Each skill In CType(bonusTypes.Value, YamlMappingNode).Children
+
+                                                    Dim skillId = CType(CType(skill.Key, YamlScalarNode).Value, Int32)
+                                                    Dim bonuses = CType(skill.Value, YamlSequenceNode)
                                                     Dim bonusStrings = parseBonuses(bonuses)
 
-                                                    ' -1 as id was the previous way to detect role bonuses
                                                     If bonusStrings.Count > 0 Then
-                                                        yamlItem.Traits.Add(-1, bonusStrings)
+                                                        yamlItem.Traits.Add(skillId, bonusStrings)
                                                     End If
+                                                Next
+                                        End Select
 
-                                                Case "types"
-                                                    For Each skill In CType(bonusTypes.Value, YamlMappingNode).Children
+                                    Next
+                            End Select
+                        Next
+                    End If
 
-                                                        Dim skillId = CType(CType(skill.Key, YamlScalarNode).Value, Int32)
-                                                        Dim bonuses = CType(skill.Value, YamlSequenceNode)
-                                                        Dim bonusStrings = parseBonuses(bonuses)
+                    ' Get the iconFile if relevant
+                    If yamlIcons.ContainsKey(yamlItem.IconID) And yamlItem.IconID <> -1 Then
+                        yamlItem.IconName = yamlIcons(yamlItem.IconID)
+                    Else
+                        yamlItem.IconName = CStr(yamlItem.TypeID)
+                    End If
 
-                                                        If bonusStrings.Count > 0 Then
-                                                            yamlItem.Traits.Add(skillId, bonusStrings)
-                                                        End If
-                                                    Next
-                                            End Select
-
-                                        Next
-                                End Select
-                            Next
-                        End If
-
-                        ' Get the iconFile if relevant
-                        If yamlIcons.ContainsKey(yamlItem.IconID) And yamlItem.IconID <> -1 Then
-                            yamlItem.IconName = yamlIcons(yamlItem.IconID)
-                        Else
-                            yamlItem.IconName = CStr(yamlItem.TypeID)
-                        End If
-
-                        ' Add the item
-                        yamlTypes.Add(yamlItem.TypeID, yamlItem)
-                    Next
-                End If
-            End Using
+                    ' Add the item
+                    yamlTypes.Add(yamlItem.TypeID, yamlItem)
+                Next
+            End If
         End Using
     End Sub
 
