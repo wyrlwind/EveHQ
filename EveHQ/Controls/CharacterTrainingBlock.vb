@@ -216,7 +216,7 @@ Namespace Controls
                                 Select Case timeRemaining
                                     Case Is <= 0
                                         overlayText = "Alpha"
-                                        overlayBrush = New SolidBrush(Color.FromArgb(128, 255, 128, 0))
+                                        overlayBrush = New SolidBrush(Color.FromArgb(192, 255, 128, 0))
                                     Case Is >= 1
                                         overlayText = Core.SkillFunctions.TimeToString(Int(timeRemaining) * 3600, False)
                                         overlayBrush = New SolidBrush(Color.FromArgb(192, 255, 0, 0))
