@@ -200,7 +200,8 @@ Namespace Controls
 
         Private Sub OverlayAccountTime()
             If pbPilot.InitialImage IsNot Nothing Then
-                If Core.HQ.Settings.NotifyAccountTime = True Then
+                Dim isAlpha As Boolean = Core.HQ.Settings.Pilots.ContainsKey(_displayPilotName) And Core.HQ.Settings.Accounts(_displayPilot.Account).APIAccountStatus = Core.APIAccountStatuses.Alpha
+                If Core.HQ.Settings.NotifyAccountTime = True Or isAlpha Then
                     If Core.HQ.Settings.Pilots.ContainsKey(_displayPilotName) Then
                         If Core.HQ.Settings.Accounts.ContainsKey(_displayPilot.Account) Then
                             Dim accountTime As Date = Core.HQ.Settings.Accounts(_displayPilot.Account).PaidUntil
