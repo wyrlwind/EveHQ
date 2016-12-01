@@ -1179,8 +1179,29 @@
 1029,1,33400,210,3,6,0,0,0,4,Magnetrometric Sensor Strength
 1030,1,33400,208,3,6,0,0,0,4,Radar Sensor Strength
 # Industrial Core,,,,,,,,,,
-20,1,28583,37,3,6,0,0,0,4,Max Velocity Bonus
-1238,1,28583,833,4,1638,0,0,5,4,Mining Foreman Ganglink Bonus
+2605,1,28583;42890,73,4,600;910;1056;1063,0,0,0,4,Capital Remote Shield Duration
+2605,1,28583;42890,6,4,600;910;1056;1063,0,0,0,4,Capital Remote Shield Capacitor Need
+20,1,28583;42890,37,3,6,0,0,0,4,Max Velocity Bonus
+2583,1,28583;42890,64,3,18,0,0,0,4,Drone Damage
+2583,1,28583;42890,263,3,18,0,0,0,4,Drone Shield
+2583,1,28583;42890,265,3,18,0,0,0,4,Drone Armor
+2583,1,28583;42890,9,3,18,0,0,0,4,Drone Hull
+2584,1,28583;42890,37,3,18,0,0,0,4,Drone Velocity
+2585,1,28583;42890,77,5,3438,0,0,0,4,Ore Mining Amount
+2586,1,28583;42890,73,5,43702,0,0,0,4,Ice Harvesting Drone Cycle duration
+2587,1,28583;42890,2469,1,42528;43551,0,0,0,4,Mining Foreman Burst strength
+2587,1,28583;42890,2471,1,42528;43551,0,0,0,4,Mining Foreman Burst strength
+2587,1,28583;42890,2473,1,42528;43551,0,0,0,4,Mining Foreman Burst strength
+2587,1,28583;42890,2537,1,42528;43551,0,0,0,4,Mining Foreman Burst strength
+2588,1,28583;42890,54,2,1770,0,0,0,4,Command burst range
+2604,1,28583;42890,54,4,600;910;1056;1063,0,0,0,4,Capital Remote Shield Optimal
+2604,1,28583;42890,2044,4,600;910;1056;1063,0,0,0,4,Capital Remote Shield Falloff
+2606,1,28583;42890,73,2,40;1156,0,0,0,4,Shield Booster Duration
+2607,1,28583;42890,68,2,40;1156,0,0,0,4,Shield Boost Amount
+#2351,1,28583;42890,2112,3,6,0,0,0,4,Sensor Dampener resistance
+# Remote assistance impedance 
+565,1,28583;42890,564,3,6,0,0,0,4,Scan Resolution Bonus
+1471,1,28583;42890,10002,3,6,0,0,5,4,Mass Multiplier
 # Siege Modules,,,,,,,,,,
 20,1,4292;20280,37,3,6,0,0,0,4,Max Velocity Bonus
 1027,1,4292;20280,211,3,6,0,0,0,4,Gravimetric Sensor Strength
