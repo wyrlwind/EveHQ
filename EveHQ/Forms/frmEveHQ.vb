@@ -651,24 +651,26 @@ Namespace Forms
                     Dim strCharNotify As String = ""
                     For Each cPilot As EveHQPilot In HQ.Settings.Pilots.Values
                         If cPilot.Training = True Then
-                            Dim timeLimit As Date = Now.AddSeconds(HQ.Settings.ShutdownNotifyPeriod * 3600)
-                            If cPilot.TrainingEndTime < timeLimit Then
-                                If cPilot.QueuedSkillTime > 0 Then
-                                    If cPilot.TrainingEndTime.AddSeconds(cPilot.QueuedSkillTime) < timeLimit Then
-                                        strCharNotify &= cPilot.Name & " - " & cPilot.TrainingSkillName &
-                                                         " (Skill Queue ends in " &
-                                                         SkillFunctions.TimeToString(cPilot.QueuedSkillTime) & ")" &
-                                                         ControlChars.CrLf
-                                    End If
-                                Else
-                                    If cPilot.TrainingCurrentTime > 0 Then
-                                        strCharNotify &= cPilot.Name & " - " & cPilot.TrainingSkillName &
-                                                         " (Training ends in " &
-                                                         SkillFunctions.TimeToString(cPilot.TrainingCurrentTime) & ")" &
-                                                         ControlChars.CrLf
+                            If cPilot.Active = True Then
+                                Dim timeLimit As Date = Now.AddSeconds(HQ.Settings.ShutdownNotifyPeriod * 3600)
+                                If Core.SkillFunctions.ConvertEveTimeToLocal(cPilot.TrainingEndTime) < timeLimit Then
+                                    If cPilot.QueuedSkillTime > 0 Then
+                                        If Core.SkillFunctions.ConvertEveTimeToLocal(cPilot.TrainingEndTime.AddSeconds(cPilot.QueuedSkillTime)) < timeLimit Then
+                                            strCharNotify &= cPilot.Name & " - " & cPilot.TrainingSkillName &
+                                                             " (Skill Queue ends in " &
+                                                             SkillFunctions.TimeToString(cPilot.QueuedSkillTime) & ")" &
+                                                             ControlChars.CrLf
+                                        End If
                                     Else
-                                        strCharNotify &= cPilot.Name & " - " & cPilot.TrainingSkillName &
-                                                         " (Training already complete)" & ControlChars.CrLf
+                                        If cPilot.TrainingCurrentTime > 0 Then
+                                            strCharNotify &= cPilot.Name & " - " & cPilot.TrainingSkillName &
+                                                             " (Training ends in " &
+                                                             SkillFunctions.TimeToString(cPilot.TrainingCurrentTime) & ")" &
+                                                             ControlChars.CrLf
+                                        Else
+                                            strCharNotify &= cPilot.Name & " - " & cPilot.TrainingSkillName &
+                                                             " (Training already complete)" & ControlChars.CrLf
+                                        End If
                                     End If
                                 End If
                             End If
@@ -684,7 +686,7 @@ Namespace Forms
                     ' Check each account to see if something is training.
                     Dim strAccountNotify As String = ""
                     For Each cAccount As EveHQAccount In HQ.Settings.Accounts.Values
-                        If cAccount.APIKeyType <> APIKeyTypes.Corporation Then
+                        If cAccount.APIKeyType <> APIKeyTypes.Corporation And cAccount.APIAccountStatus <> APIAccountStatuses.ManualDisabled Then
                             If accounts.Contains(cAccount.UserID) = False Then
                                 If cAccount.FriendlyName <> "" Then
                                     strAccountNotify &= cAccount.FriendlyName & " (UserID: " & cAccount.UserID & ")" &
