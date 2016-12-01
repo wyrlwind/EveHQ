@@ -98,6 +98,7 @@
     <CallTarget Targets="SetAssemblyVersion" />
   </Target>
   <PropertyGroup>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     <PreBuildEvent>xcopy /Y /I /F "$(ProjectDir)StaticData\*.*" "$(TargetDir)StaticData\"</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
