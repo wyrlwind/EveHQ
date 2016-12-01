@@ -339,6 +339,7 @@ Public Class PilotParseFunctions
                         newPilot.ID = toon.CharacterId.ToInvariantString()
                         newPilot.AccountPosition = CStr(currToon)
                         newPilot.Account = caccount.UserID
+                        newPilot.AccountStatus = caccount.APIAccountStatus
                         ' Copy notification data if available - we reset this after checking the API request if not cached
                         If HQ.Settings.Pilots.ContainsKey(newPilot.Name) = True Then
                             newPilot.TrainingNotifiedEarly = HQ.Settings.Pilots(newPilot.Name).TrainingNotifiedEarly

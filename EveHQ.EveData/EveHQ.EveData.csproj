@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="protobuf-net">
@@ -98,9 +98,10 @@
     <CallTarget Targets="SetAssemblyVersion" />
   </Target>
   <PropertyGroup>
-    <PreBuildEvent />
+    <PreBuildEvent>xcopy /Y /I /F "$(ProjectDir)StaticData\*.*" "$(TargetDir)StaticData\"</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y /I /F "$(ProjectDir)StaticData\*.*" "$(TargetDir)StaticData\"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

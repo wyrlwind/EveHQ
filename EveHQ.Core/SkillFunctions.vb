@@ -521,6 +521,11 @@ Public Class SkillFunctions
         End Select
 
         rate = CInt(((60 * pa) + (30 * sa)))
+
+        ' Half the rate if Alpha Clone
+        If (cPilot.AccountStatus = APIAccountStatuses.Alpha) Then
+            rate = CInt(rate / 2)
+        End If
         Return rate
 
     End Function          'CalculateSPRate
@@ -637,6 +642,10 @@ Public Class SkillFunctions
                 sTime = 0
             Else
                 sTime = CLng(sTime + Int((endSP - startSP) / (pa + (sa / 2)) * 60))
+                ' Double the time if alpha clone
+                If cPilot.AccountStatus = APIAccountStatuses.Alpha Then
+                    sTime = CLng(sTime * 2)
+                End If
             End If
 
             startSP = endSP
