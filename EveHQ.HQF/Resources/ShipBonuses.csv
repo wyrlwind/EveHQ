@@ -133,16 +133,16 @@
 37604,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 37604,0,0,10063,1,37604,0,0,1,1,15,Command Burst Modules
 37604,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
-37604,1,24311,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
-37604,1,24311,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
-37604,1,24311,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-37604,1,24311,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-37604,1,24311,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-37604,1,24311,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-37604,1,24311,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-37604,1,24311,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-37604,1,24311,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-37604,1,24311,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+37604,1,24311,2535,1,42527;43554,0,1,0,1,15,Information Command Burst Duration
+37604,1,24311,2535,1,42526;43552,0,1,0,1,15,Armored Command Burst Duration
+37604,1,24311,2469,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+37604,1,24311,2471,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+37604,1,24311,2473,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+37604,1,24311,2537,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+37604,1,24311,2469,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+37604,1,24311,2471,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+37604,1,24311,2473,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+37604,1,24311,2537,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
 # Arazu,,,,,,,,,,,
 11969,1,3332,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 11969,1,3332,309,2,208,0,1,0,7.5,15,Remote Sensor Damp Effect Range
@@ -172,17 +172,17 @@
 23757,1,24311,2209,1,37599;40568,0,1,0,5,15,Cenobite optimal range
 23757,0,0,10063,1,23757,0,0,1,1,15,Command Burst Modules
 23757,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
-23757,1,24311,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
-23757,1,24311,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
-23757,1,24311,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-23757,1,24311,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-23757,1,24311,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-23757,1,24311,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-23757,1,24311,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-23757,1,24311,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-23757,1,24311,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-23757,1,24311,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-# Ares,,,,,,,,,,,
+23757,1,24311,2535,1,42527;43554,0,1,0,1,15,Information Command Burst Duration
+23757,1,24311,2535,1,42526;43552,0,1,0,1,15,Armored Command Burst Duration
+23757,1,24311,2469,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+23757,1,24311,2471,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+23757,1,24311,2473,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+23757,1,24311,2537,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+23757,1,24311,2469,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+23757,1,24311,2471,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+23757,1,24311,2473,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+23757,1,24311,2537,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+# Ares,,,,,,,,,,
 11202,1,3328,54,4,561;564,0,1,0,10,15,Small Hybrid Turret Optimal Range
 11202,1,3328,160,4,561;564,0,1,0,10,15,Small Hybrid Turret Tracking
 11202,1,12092,554,2,46,0,1,0,-15,15,MWD Signature Radius Penalty
@@ -2001,16 +2001,16 @@
 37481,1,37615,73,2,1533,0,1,0,-5,15,Micro Jump Field Generator duration
 37481,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
 37481,0,0,30,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst power need
-37481,1,24311,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
-37481,1,24311,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
-37481,1,24311,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-37481,1,24311,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-37481,1,24311,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-37481,1,24311,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-37481,1,24311,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-37481,1,24311,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-37481,1,24311,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-37481,1,24311,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+37481,1,37615,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+37481,1,37615,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
+37481,1,37615,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+37481,1,37615,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+37481,1,37615,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+37481,1,37615,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+37481,1,37615,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+37481,1,37615,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+37481,1,37615,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+37481,1,37615,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
 # Porpoise,,,,,,,,,,,
 42244,0,0,30,2,1770,0,0,0,-90,15,Command and Foreman Burst module power need
 42244,0,0,77,5,3438,0,0,0,50,15,Drone Mining Yield

@@ -15,7 +15,8 @@
 34317,2,0,0,2112,1,34317,0,0,0,-66.66666666,15,Sharpshooter Mode - Sensor Dampener resistance
 34317,2,0,0,2113,1,34317,0,0,0,-66.66666666,15,Sharpshooter Mode - Weapon Disruption resistance
 
-34317,3,0,0,37,1,34317,0,1,0,66.66666667,15,Propulsion Mode - Max Velocity
+34317,3,0,0,20,4,131,0,1,0,66.66666667,15,Propulsion Mode - MWD speed boost
+34317,3,0,0,20,4,542,0,1,0,66.66666667,15,Propulsion Mode - AB speed boost
 34317,3,0,0,70,1,34317,0,1,0,-33.33333333,15,Propulsion Mode - Inertia
 
 # Svipul,,,,,,,,,,,,
@@ -36,7 +37,8 @@
 34562,2,0,0,2112,1,34562,0,0,0,-66.66666666,15,Sharpshooter Mode - Sensor Dampener resistance
 34562,2,0,0,2113,1,34562,0,0,0,-66.66666666,15,Sharpshooter Mode - Weapon Disruption resistance
 
-34562,3,0,0,37,1,34562,0,1,0,66.66666667,15,Propulsion Mode - Max Velocity
+34562,3,0,0,20,4,131,0,1,0,66.66666667,15,Propulsion Mode - MWD speed boost
+34562,3,0,0,20,4,542,0,1,0,66.66666667,15,Propulsion Mode - AB speed boost
 34562,3,0,0,70,1,34562,0,1,0,-33.33333333,15,Propulsion Mode - Inertia
 
 # Jackdaw,,,,,,,,,,,, 
