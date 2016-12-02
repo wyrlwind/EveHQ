@@ -101,9 +101,9 @@
 29971,1,30544,479,1,29984,0,1,0,-3,15,Shield Recharge Rate,,,,,,,,,,,,,,,,,,
 # Tengu Defensive - Warfare Processor,,,,,,,,,,,
 29972,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
-29972,1,30532,2535,1,42529;43555,0,1,0,2,15,Shield Command Burst Duration
-29972,1,30532,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
-29972,1,30532,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+29972,1,30544,2535,1,42529;43555,0,1,0,2,15,Shield Command Burst Duration
+29972,1,30544,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+29972,1,30544,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
 29972,1,30544,2469,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
 29972,1,30544,2471,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
 29972,1,30544,2473,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
