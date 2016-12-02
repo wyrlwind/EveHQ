@@ -1132,41 +1132,41 @@
 983,2,862,552,3,6,0,0,1,15,Signature Radius
 # Superweapons
 # Amarr Phenomena Generator
-2469,1,43658,55,3,6,0,0,0,16,Avatar Effect Generator : Capacitor Recharge bonus
-2471,1,43658,269,3,6,0,0,0,16,Avatar Effect Generator : Kinetic resistance bonus
-2471,1,43658,273,3,6,0,0,0,16,Avatar Effect Generator : Kinetic resistance bonus
-2471,1,43658,976,3,6,0,0,0,16,Avatar Effect Generator : Kinetic resistance bonus
-2473,1,43658,267,3,6,0,0,0,16,Avatar Effect Generator : EM resistance penalty
-2473,1,43658,271,3,6,0,0,0,16,Avatar Effect Generator : EM resistance penalty
-2473,1,43658,974,3,6,0,0,0,16,Avatar Effect Generator : EM resistance penalty
-2537,1,43658,37,3,6,0,0,0,16,Avatar Effect Generator : Velocity penalty
+2469,1,43658,55,3,6,0,0,0,15,Avatar Effect Generator : Capacitor Recharge bonus
+2471,1,43658,269,3,6,0,0,0,15,Avatar Effect Generator : Kinetic resistance bonus
+2471,1,43658,273,3,6,0,0,0,15,Avatar Effect Generator : Kinetic resistance bonus
+2471,1,43658,976,3,6,0,0,0,15,Avatar Effect Generator : Kinetic resistance bonus
+2473,1,43658,267,3,6,0,0,0,15,Avatar Effect Generator : EM resistance penalty
+2473,1,43658,271,3,6,0,0,0,15,Avatar Effect Generator : EM resistance penalty
+2473,1,43658,974,3,6,0,0,0,15,Avatar Effect Generator : EM resistance penalty
+2537,1,43658,37,3,6,0,0,0,15,Avatar Effect Generator : Velocity penalty
 # Caldari Phenomena Generator
-2469,1,43660,263,3,6,0,0,0,16,Leviathan Effect Generator : Shield HP bonus
-2471,1,43660,267,3,6,0,0,0,16,Leviathan Effect Generator : EM resistance bonus
-2471,1,43660,271,3,6,0,0,0,16,Leviathan Effect Generator : EM resistance bonus
-2471,1,43660,974,3,6,0,0,0,16,Leviathan Effect Generator : EM resistance bonus
-2473,1,43660,269,3,6,0,0,0,16,Leviathan Effect Generator : Kinetic resistance penalty
-2473,1,43660,273,3,6,0,0,0,16,Leviathan Effect Generator : Kinetic resistance penalty
-2473,1,43660,976,3,6,0,0,0,16,Leviathan Effect Generator : Kinetic resistance penalty
-2537,1,43660,84,5,16069,0,0,0,16,Leviathan Effect Generator : Armor RR penalty
+2469,1,43660,263,3,6,0,0,0,15,Leviathan Effect Generator : Shield HP bonus
+2471,1,43660,267,3,6,0,0,0,15,Leviathan Effect Generator : EM resistance bonus
+2471,1,43660,271,3,6,0,0,0,15,Leviathan Effect Generator : EM resistance bonus
+2471,1,43660,974,3,6,0,0,0,15,Leviathan Effect Generator : EM resistance bonus
+2473,1,43660,269,3,6,0,0,0,15,Leviathan Effect Generator : Kinetic resistance penalty
+2473,1,43660,273,3,6,0,0,0,15,Leviathan Effect Generator : Kinetic resistance penalty
+2473,1,43660,976,3,6,0,0,0,15,Leviathan Effect Generator : Kinetic resistance penalty
+2537,1,43660,84,5,16069,0,0,0,15,Leviathan Effect Generator : Armor RR penalty
 # Gallente Phenomena Generator
-2469,1,43662,265,3,6,0,0,0,16,Erebus Effect Generator : Armor HP bonus
-2471,1,43662,268,3,6,0,0,0,16,Erebus Effect Generator : Explosive resistance bonus
-2471,1,43662,272,3,6,0,0,0,16,Erebus Effect Generator : Explosive resistance bonus
-2471,1,43662,975,3,6,0,0,0,16,Erebus Effect Generator : Explosive resistance bonus
-2473,1,43662,270,3,6,0,0,0,16,Erebus Effect Generator : Thermal resistance penalty
-2473,1,43662,274,3,6,0,0,0,16,Erebus Effect Generator : Thermal resistance penalty
-2473,1,43662,977,3,6,0,0,0,16,Erebus Effect Generator : Thermal resistance penalty
-2537,1,43662,68,5,3422,0,0,0,16,Erebus Effect Generator : Shield RR penalty
+2469,1,43662,265,3,6,0,0,0,15,Erebus Effect Generator : Armor HP bonus
+2471,1,43662,268,3,6,0,0,0,15,Erebus Effect Generator : Explosive resistance bonus
+2471,1,43662,272,3,6,0,0,0,15,Erebus Effect Generator : Explosive resistance bonus
+2471,1,43662,975,3,6,0,0,0,15,Erebus Effect Generator : Explosive resistance bonus
+2473,1,43662,270,3,6,0,0,0,15,Erebus Effect Generator : Thermal resistance penalty
+2473,1,43662,274,3,6,0,0,0,15,Erebus Effect Generator : Thermal resistance penalty
+2473,1,43662,977,3,6,0,0,0,15,Erebus Effect Generator : Thermal resistance penalty
+2537,1,43662,68,5,3422,0,0,0,15,Erebus Effect Generator : Shield RR penalty
 # Minmatar Phenomena Generator
-2469,1,43664,552,3,6,0,0,0,16,Ragnarok Effect Generator : Signature Radius bonus
-2471,1,43664,270,3,6,0,0,0,16,Ragnarok Effect Generator : Thermal resistance bonus
-2471,1,43664,274,3,6,0,0,0,16,Ragnarok Effect Generator : Thermal resistance bonus
-2471,1,43664,977,3,6,0,0,0,16,Ragnarok Effect Generator : Thermal resistance bonus
-2473,1,43664,268,3,6,0,0,0,16,Ragnarok Effect Generator : Explosive resistance penalty
-2473,1,43664,272,3,6,0,0,0,16,Ragnarok Effect Generator : Explosive resistance penalty
-2473,1,43664,975,3,6,0,0,0,16,Ragnarok Effect Generator : Explosive resistance penalty
-2537,1,43664,54,2,53;74,0,0,0,16,Ragnarok Effect Generator : Laser and Hybrid Optimal penalty
+2469,1,43664,552,3,6,0,0,0,15,Ragnarok Effect Generator : Signature Radius bonus
+2471,1,43664,270,3,6,0,0,0,15,Ragnarok Effect Generator : Thermal resistance bonus
+2471,1,43664,274,3,6,0,0,0,15,Ragnarok Effect Generator : Thermal resistance bonus
+2471,1,43664,977,3,6,0,0,0,15,Ragnarok Effect Generator : Thermal resistance bonus
+2473,1,43664,268,3,6,0,0,0,15,Ragnarok Effect Generator : Explosive resistance penalty
+2473,1,43664,272,3,6,0,0,0,15,Ragnarok Effect Generator : Explosive resistance penalty
+2473,1,43664,975,3,6,0,0,0,15,Ragnarok Effect Generator : Explosive resistance penalty
+2537,1,43664,54,2,53;74,0,0,0,15,Ragnarok Effect Generator : Laser and Hybrid Optimal penalty
 # Ballistic Control Systems,,,,,,,,,,
 204,2,367,51,2,511;524;506;510;771;507;508;509;1245;1673;1674,1,0,0,14,ROF Bonus
 213,2,367,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Damage Bonus - EM
@@ -1309,27 +1309,27 @@
 # Command Bursts
 # Shield Harmonizing Charge
 #  Bonus: 10 Shield resistance bonus		Value: -8
-2596,1,42695,271,3,6,0,0,0,16,Shield Harmonizing Charge	- EM Shield Resistance Bonus
-2596,1,42695,272,3,6,0,0,0,16,Shield Harmonizing Charge	- Explosive Shield Resistance Bonus
-2596,1,42695,273,3,6,0,0,0,16,Shield Harmonizing Charge	- Kinetic Shield Resistance Bonus
-2596,1,42695,274,3,6,0,0,0,16,Shield Harmonizing Charge	- Thermal Shield Resistance Bonus
+2596,1,42695,271,3,6,0,0,2,15,Shield Harmonizing Charge	- EM Shield Resistance Bonus
+2596,1,42695,272,3,6,0,0,2,15,Shield Harmonizing Charge	- Explosive Shield Resistance Bonus
+2596,1,42695,273,3,6,0,0,2,15,Shield Harmonizing Charge	- Kinetic Shield Resistance Bonus
+2596,1,42695,274,3,6,0,0,2,15,Shield Harmonizing Charge	- Thermal Shield Resistance Bonus
 # Active Shielding Charge
 #  Bonus: 11 Shield repair modules: duration & capacitor-use bonus	Value: -8
-2596,1,42694,6,5,3416;3422,0,0,0,16,Active Shielding Charge - Shield Repair Modules Capacitor-Use Bonus
-2596,1,42694,73,5,3416;3422,0,0,0,16,Active Shielding Charge - Shield Repair Modules Duration Bonus
+2596,1,42694,6,5,3416;3422,0,0,0,15,Active Shielding Charge - Shield Repair Modules Capacitor-Use Bonus
+2596,1,42694,73,5,3416;3422,0,0,0,15,Active Shielding Charge - Shield Repair Modules Duration Bonus
 # Shield Extension Charge
 #  Bonus: 12 Shield HP bonus		Value: 8
 2596,1,42696,263,3,6,0,0,0,15,Shield Extension Charge - Shield HP Bonus
 # Armor Energizing Charge
 #  Bonus: 13 Armor Resistance Bonus    Value: -8
-2596,1,42832,267,3,6,0,0,0,16,Armor Energizing Charge - EM Armor Resistance Bonus
-2596,1,42832,268,3,6,0,0,0,16,Armor Energizing Charge - Explosive Armor Resistance Bonus
-2596,1,42832,269,3,6,0,0,0,16,Armor Energizing Charge - Kinetic Armor Resistance Bonus
-2596,1,42832,270,3,6,0,0,0,16,Armor Energizing Charge - Thermal Armor Resistance Bonus
+2596,1,42832,267,3,6,0,0,2,15,Armor Energizing Charge - EM Armor Resistance Bonus
+2596,1,42832,268,3,6,0,0,2,15,Armor Energizing Charge - Explosive Armor Resistance Bonus
+2596,1,42832,269,3,6,0,0,2,15,Armor Energizing Charge - Kinetic Armor Resistance Bonus
+2596,1,42832,270,3,6,0,0,2,15,Armor Energizing Charge - Thermal Armor Resistance Bonus
 # Rapid Repair Charge
 #  Bonus: 14 Armor Repair Modules: Duration & Cap-use bonus      Value: -8
-2596,1,42833,6,2,62;1199,0,0,0,16,Rapid Repair Charge - Armor Repair Modules Capacitor-Use Bonus
-2596,1,42833,73,2,62;1199,0,0,0,16,Rapid Repair Charge - Armor Repair Modules Duration Bonus
+2596,1,42833,6,2,62;1199,0,0,0,15,Rapid Repair Charge - Armor Repair Modules Capacitor-Use Bonus
+2596,1,42833,73,2,62;1199,0,0,0,15,Rapid Repair Charge - Armor Repair Modules Duration Bonus
 # Armor Reinforcement Charge
 #  Bonus: 15 Armor HP Bonus  Value: 8
 2596,1,42834,265,3,6,0,0,0,15,Armor Reinforcement Charge - Armor HP Bonus
@@ -1338,57 +1338,57 @@
 2596,1,42835,564,3,6,0,0,0,15,Sensor Optimization Charge - Scan resolution bonus
 # Electronic Superiority Charge
 #  Bonus: 17 Electronic warfare Modules: Range and strength bonus  Value: 9
-2596,1,42836,54,2,201;208;291;379,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
-2596,1,42836,238,2,201,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,239,2,201,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,240,2,201,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,241,2,201,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,309,2,208,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
-2596,1,42836,349,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
-2596,1,42836,351,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
-2596,1,42836,547,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,554,2,379,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
-2596,1,42836,566,2,208,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,596,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,767,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,847,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,848,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,2044,2,201;208;291;379,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,54,2,201;208;291;379,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,238,2,201,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,239,2,201,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,240,2,201,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,241,2,201,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,309,2,208,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,349,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,351,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,547,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,554,2,379,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,566,2,208,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,596,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,767,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,847,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,848,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,2044,2,201;208;291;379,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
 # Electronic Hardening Charge
 #  Bonus: 18 Sensor strength bonus  Value: 18
-2596,1,42837,208,3,6,0,0,0,16,Electronic Hardening Charge - Radar Sensor strength bonus
-2596,1,42837,209,3,6,0,0,0,16,Electronic Hardening Charge - Ladar Sensor strength bonus
-2596,1,42837,210,3,6,0,0,0,16,Electronic Hardening Charge - Magnetometric Sensor strength bonus
-2596,1,42837,211,3,6,0,0,0,16,Electronic Hardening Charge - Gravimetric Sensor strength bonus
+2596,1,42837,208,3,6,0,0,0,15,Electronic Hardening Charge - Radar Sensor strength bonus
+2596,1,42837,209,3,6,0,0,0,15,Electronic Hardening Charge - Ladar Sensor strength bonus
+2596,1,42837,210,3,6,0,0,0,15,Electronic Hardening Charge - Magnetometric Sensor strength bonus
+2596,1,42837,211,3,6,0,0,0,15,Electronic Hardening Charge - Gravimetric Sensor strength bonus
 # Evasive Maneuvers Charge
 #  Bonus: 20 Signature radius bonus  Value: -6
-2596,1,42838,552,3,6,0,0,0,16,Evasive Maneuvers Charge - Signature radius bonus
+2596,1,42838,552,3,6,0,0,0,15,Evasive Maneuvers Charge - Signature radius bonus
 # Interdiction Maneuvers Charge
 #  Bonus: 21 Tackle module range bonus  Value: 12
-2596,1,42839,54,5,3435,0,0,0,16,Interdiction Maneuvers Charge - Tackle module range bonus
+2596,1,42839,54,5,3435,0,0,0,15,Interdiction Maneuvers Charge - Tackle module range bonus
 # Rapid Deployment Charge
 #  Bonus: 22 AB/MWD module speed increase bonus  Value: 12
-2596,1,42840,20,5,3450;3454,0,0,0,16,Rapid Deployment Charge - AB/MWD module speed increase bonus
+2596,1,42840,20,5,3450;3454,0,0,0,15,Rapid Deployment Charge - AB/MWD module speed increase bonus
 # Mining Laser Field Enhancement Charge
 #  Bonus: 23 Mining/survey module range bonus  Value: 30 
-2596,1,42829,54,5,3386;16281;25544;3426,0,0,0,16,Mining Laser Field Enhancement Charge - Mining/survey module range bonus
+2596,1,42829,54,5,3386;16281;25544;3426,0,0,0,15,Mining Laser Field Enhancement Charge - Mining/survey module range bonus
 # Mining Laser Optimization Charge
 #  Bonus: 24 Mining modules: Duration & Capacitor-use bonus	Value: -15  
-2596,1,42830,6,5,3386;16281;25544,0,0,0,16,Mining Laser Optimization Charge - Mining modules: Capacitor-use bonus
-2596,1,42830,73,5,3386;16281;25544,0,0,0,16,Mining Laser Optimization Charge - Mining modules: Duration bonus
+2596,1,42830,6,5,3386;16281;25544,0,0,0,15,Mining Laser Optimization Charge - Mining modules: Capacitor-use bonus
+2596,1,42830,73,5,3386;16281;25544,0,0,0,15,Mining Laser Optimization Charge - Mining modules: Duration bonus
 # Mining Equipment Preservation Charge
 #  Bonus: 25 Mining crystal volatility bonus  Value: -15
-2596,1,42831,783,5,3386,0,0,0,16,Mining Equipment Preservation Charge - Mining crystal volatility bonus
+2596,1,42831,783,5,3386,0,0,0,15,Mining Equipment Preservation Charge - Mining crystal volatility bonus
 # Electronic Hardening Charge
 #  Bonus: 19 Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus  Value: -9   
-2597,1,42837,2112,3,6,0,0,0,16,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
-2597,1,42837,2113,3,6,0,0,0,16,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
+2597,1,42837,2112,3,6,0,0,0,15,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
+2597,1,42837,2113,3,6,0,0,0,15,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
 # Sensor Optimization Charge
 #  Bonus: 26 Targeting range bonus  Value: 18   
-2597,1,42835,76,3,6,0,0,0,16,Sensor Optimization Charge - Targeting range bonus
+2597,1,42835,76,3,6,0,0,0,15,Sensor Optimization Charge - Targeting range bonus
 # Evasive Maneuvers Charge
 #  Bonus: 60 Agility bonus    Value: -6   
-2597,1,42838,70,3,6,0,0,0,16,Evasive Maneuvers Charge - Agility bonus
+2597,1,42838,70,3,6,0,0,0,15,Evasive Maneuvers Charge - Agility bonus
 # FLEET SHIP EFFECTS,,,,,,,,,,
 55,1,-1,55,3,6,0,0,0,16,Gang Capacitor Recharge Rate
 265,1,-1,265,3,6,0,0,0,16,Gang Armor HP
