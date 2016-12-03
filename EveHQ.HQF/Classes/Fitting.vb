@@ -1248,7 +1248,7 @@ Imports EveHQ.Common.Extensions
                             End If
                             If aModule.DatabaseGroup = 1770 Then
                                 If aModule.LoadedCharge IsNot Nothing Then
-                                    If fEffect.AffectedID.Contains(aModule.LoadedCharge.ID) Then
+                                    If fEffect.AffectedID.Contains(aModule.LoadedCharge.ID) And aModule.ModuleState <> ModuleStates.Inactive And aModule.ModuleState <> ModuleStates.Offline Then
                                         fEffectList.Add(fEffect)
                                     End If
                                 End If
