@@ -1305,94 +1305,294 @@
 # Ice Harvester Upgrade,,,,,,,,,,
 780,2,546,73,4,1038;2151,0,0,0,14,Cycle Time
 1082,2,546,50,4,1038;2151,0,0,0,14,CPU Penalty
-# FLEET ASSISTANCE MODULES
-# Command Bursts
-2469,2,1770,2596,2,1769;1772;1773;1774;1771,0,0,0,16,Command and Foreman Burst Module Bonus
-2471,2,1770,2597,2,1769;1772;1773;1774;1771,0,0,0,16,Command and Foreman Burst Module Bonus
-2473,2,1770,2598,2,1769;1772;1773;1774;1771,0,0,0,16,Command and Foreman Burst Module Bonus
-2537,2,1770,2599,2,1769;1772;1773;1774;1771,0,0,0,16,Command and Foreman Burst Module Bonus
+# FLEET ASSISTANCE MODULES REMOTE
+# Command Bursts (combining these will break things)
+2469,1,42529;43555,2596,1,42694,0,0,5,16,Shield Command Burst Module Bonus on Active Shielding Charge
+2471,1,42529;43555,2597,1,42694,0,0,5,16,Shield Command Burst Module Bonus on Active Shielding Charge
+2473,1,42529;43555,2598,1,42694,0,0,5,16,Shield Command Burst Module Bonus on Active Shielding Charge
+2537,1,42529;43555,2599,1,42694,0,0,5,16,Shield Command Burst Module Bonus on Active Shielding Charge
+2469,1,42529;43555,2596,1,42695,0,0,5,16,Shield Command Burst Module Bonus on Shield Harmonizing Charge
+2471,1,42529;43555,2597,1,42695,0,0,5,16,Shield Command Burst Module Bonus on Shield Harmonizing Charge
+2473,1,42529;43555,2598,1,42695,0,0,5,16,Shield Command Burst Module Bonus on Shield Harmonizing Charge
+2537,1,42529;43555,2599,1,42695,0,0,5,16,Shield Command Burst Module Bonus on Shield Harmonizing Charge
+2469,1,42529;43555,2596,1,42696,0,0,5,16,Shield Command Burst Module Bonus on Shield Extension Charge
+2471,1,42529;43555,2597,1,42696,0,0,5,16,Shield Command Burst Module Bonus on Shield Extension Charge
+2473,1,42529;43555,2598,1,42696,0,0,5,16,Shield Command Burst Module Bonus on Shield Extension Charge
+2537,1,42529;43555,2599,1,42696,0,0,5,16,Shield Command Burst Module Bonus on Shield Extension Charge
+2469,1,42527;43554,2596,1,42835,0,0,5,16,Information Command Burst Module Bonus on Sensor Optimization Charge
+2471,1,42527;43554,2597,1,42835,0,0,5,16,Information Command Burst Module Bonus on Sensor Optimization Charge
+2473,1,42527;43554,2598,1,42835,0,0,5,16,Information Command Burst Module Bonus on Sensor Optimization Charge
+2537,1,42527;43554,2599,1,42835,0,0,5,16,Information Command Burst Module Bonus on Sensor Optimization Charge
+2469,1,42527;43554,2596,1,42836,0,0,5,16,Information Command Burst Module Bonus on Electronic Superiority Charge
+2471,1,42527;43554,2597,1,42836,0,0,5,16,Information Command Burst Module Bonus on Electronic Superiority Charge
+2473,1,42527;43554,2598,1,42836,0,0,5,16,Information Command Burst Module Bonus on Electronic Superiority Charge
+2537,1,42527;43554,2599,1,42836,0,0,5,16,Information Command Burst Module Bonus on Electronic Superiority Charge
+2469,1,42527;43554,2596,1,42837,0,0,5,16,Information Command Burst Module Bonus on Electronic Hardening Charge
+2471,1,42527;43554,2597,1,42837,0,0,5,16,Information Command Burst Module Bonus on Electronic Hardening Charge
+2473,1,42527;43554,2598,1,42837,0,0,5,16,Information Command Burst Module Bonus on Electronic Hardening Charge
+2537,1,42527;43554,2599,1,42837,0,0,5,16,Information Command Burst Module Bonus on Electronic Hardening Charge
+2469,1,42526;43552,2596,1,42832,0,0,5,16,Armored Command Burst Module Bonus on Armor Energizing Charge
+2471,1,42526;43552,2597,1,42832,0,0,5,16,Armored Command Burst Module Bonus on Armor Energizing Charge
+2473,1,42526;43552,2598,1,42832,0,0,5,16,Armored Command Burst Module Bonus on Armor Energizing Charge
+2537,1,42526;43552,2599,1,42832,0,0,5,16,Armored Command Burst Module Bonus on Armor Energizing Charge
+2469,1,42526;43552,2596,1,42833,0,0,5,16,Armored Command Burst Module Bonus on Rapid Repair Charge
+2471,1,42526;43552,2597,1,42833,0,0,5,16,Armored Command Burst Module Bonus on Rapid Repair Charge
+2473,1,42526;43552,2598,1,42833,0,0,5,16,Armored Command Burst Module Bonus on Rapid Repair Charge
+2537,1,42526;43552,2599,1,42833,0,0,5,16,Armored Command Burst Module Bonus on Rapid Repair Charge
+2469,1,42526;43552,2596,1,42834,0,0,5,16,Armored Command Burst Module Bonus on Armor Reinforcement Charge
+2471,1,42526;43552,2597,1,42834,0,0,5,16,Armored Command Burst Module Bonus on Armor Reinforcement Charge
+2473,1,42526;43552,2598,1,42834,0,0,5,16,Armored Command Burst Module Bonus on Armor Reinforcement Charge
+2537,1,42526;43552,2599,1,42834,0,0,5,16,Armored Command Burst Module Bonus on Armor Reinforcement Charge
+2469,1,42530;43556,2596,1,42838,0,0,5,16,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
+2471,1,42530;43556,2597,1,42838,0,0,5,16,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
+2473,1,42530;43556,2598,1,42838,0,0,5,16,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
+2537,1,42530;43556,2599,1,42838,0,0,5,16,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
+2469,1,42530;43556,2596,1,42839,0,0,5,16,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
+2471,1,42530;43556,2597,1,42839,0,0,5,16,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
+2473,1,42530;43556,2598,1,42839,0,0,5,16,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
+2537,1,42530;43556,2599,1,42839,0,0,5,16,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
+2469,1,42530;43556,2596,1,42840,0,0,5,16,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
+2471,1,42530;43556,2597,1,42840,0,0,5,16,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
+2473,1,42530;43556,2598,1,42840,0,0,5,16,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
+2537,1,42530;43556,2599,1,42840,0,0,5,16,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
+2469,1,42528;43551,2596,1,42829,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
+2471,1,42528;43551,2597,1,42829,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
+2473,1,42528;43551,2598,1,42829,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
+2537,1,42528;43551,2599,1,42829,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
+2469,1,42528;43551,2596,1,42830,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
+2471,1,42528;43551,2597,1,42830,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
+2473,1,42528;43551,2598,1,42830,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
+2537,1,42528;43551,2599,1,42830,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
+2469,1,42528;43551,2596,1,42831,0,0,5,16,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
+2471,1,42528;43551,2597,1,42831,0,0,5,16,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
+2473,1,42528;43551,2598,1,42831,0,0,5,16,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
+2537,1,42528;43551,2599,1,42831,0,0,5,16,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
 # Shield Harmonizing Charge
 #  Bonus: 10 Shield resistance bonus		Value: -8
-2596,1,42695,271,3,6,0,0,2,15,Shield Harmonizing Charge	- EM Shield Resistance Bonus
-2596,1,42695,272,3,6,0,0,2,15,Shield Harmonizing Charge	- Explosive Shield Resistance Bonus
-2596,1,42695,273,3,6,0,0,2,15,Shield Harmonizing Charge	- Kinetic Shield Resistance Bonus
-2596,1,42695,274,3,6,0,0,2,15,Shield Harmonizing Charge	- Thermal Shield Resistance Bonus
+2596,1,42695,271,3,6,0,0,2,16,Shield Harmonizing Charge	- EM Shield Resistance Bonus
+2596,1,42695,272,3,6,0,0,2,16,Shield Harmonizing Charge	- Explosive Shield Resistance Bonus
+2596,1,42695,273,3,6,0,0,2,16,Shield Harmonizing Charge	- Kinetic Shield Resistance Bonus
+2596,1,42695,274,3,6,0,0,2,16,Shield Harmonizing Charge	- Thermal Shield Resistance Bonus
 # Active Shielding Charge
 #  Bonus: 11 Shield repair modules: duration & capacitor-use bonus	Value: -8
-2596,1,42694,6,5,3416;3422,0,0,0,15,Active Shielding Charge - Shield Repair Modules Capacitor-Use Bonus
-2596,1,42694,73,5,3416;3422,0,0,0,15,Active Shielding Charge - Shield Repair Modules Duration Bonus
+2596,1,42694,6,5,3416;3422,0,0,0,16,Active Shielding Charge - Shield Repair Modules Capacitor-Use Bonus
+2596,1,42694,73,5,3416;3422,0,0,0,16,Active Shielding Charge - Shield Repair Modules Duration Bonus
 # Shield Extension Charge
 #  Bonus: 12 Shield HP bonus		Value: 8
-2596,1,42696,263,3,6,0,0,0,15,Shield Extension Charge - Shield HP Bonus
+2596,1,42696,263,3,6,0,0,0,16,Shield Extension Charge - Shield HP Bonus
 # Armor Energizing Charge
 #  Bonus: 13 Armor Resistance Bonus    Value: -8
-2596,1,42832,267,3,6,0,0,2,15,Armor Energizing Charge - EM Armor Resistance Bonus
-2596,1,42832,268,3,6,0,0,2,15,Armor Energizing Charge - Explosive Armor Resistance Bonus
-2596,1,42832,269,3,6,0,0,2,15,Armor Energizing Charge - Kinetic Armor Resistance Bonus
-2596,1,42832,270,3,6,0,0,2,15,Armor Energizing Charge - Thermal Armor Resistance Bonus
+2596,1,42832,267,3,6,0,0,2,16,Armor Energizing Charge - EM Armor Resistance Bonus
+2596,1,42832,268,3,6,0,0,2,16,Armor Energizing Charge - Explosive Armor Resistance Bonus
+2596,1,42832,269,3,6,0,0,2,16,Armor Energizing Charge - Kinetic Armor Resistance Bonus
+2596,1,42832,270,3,6,0,0,2,16,Armor Energizing Charge - Thermal Armor Resistance Bonus
 # Rapid Repair Charge
 #  Bonus: 14 Armor Repair Modules: Duration & Cap-use bonus      Value: -8
-2596,1,42833,6,2,62;1199,0,0,0,15,Rapid Repair Charge - Armor Repair Modules Capacitor-Use Bonus
-2596,1,42833,73,2,62;1199,0,0,0,15,Rapid Repair Charge - Armor Repair Modules Duration Bonus
+2596,1,42833,6,2,62;1199,0,0,0,16,Rapid Repair Charge - Armor Repair Modules Capacitor-Use Bonus
+2596,1,42833,73,2,62;1199,0,0,0,16,Rapid Repair Charge - Armor Repair Modules Duration Bonus
 # Armor Reinforcement Charge
 #  Bonus: 15 Armor HP Bonus  Value: 8
-2596,1,42834,265,3,6,0,0,0,15,Armor Reinforcement Charge - Armor HP Bonus
+2596,1,42834,265,3,6,0,0,0,16,Armor Reinforcement Charge - Armor HP Bonus
 # Sensor Optimization Charge
 #  Bonus: 16 Scan resolution bonus  Value: 9
-2596,1,42835,564,3,6,0,0,0,15,Sensor Optimization Charge - Scan resolution bonus
+2596,1,42835,564,3,6,0,0,0,16,Sensor Optimization Charge - Scan resolution bonus
 # Electronic Superiority Charge
 #  Bonus: 17 Electronic warfare Modules: Range and strength bonus  Value: 9
-2596,1,42836,54,2,201;208;291;379,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
-2596,1,42836,238,2,201,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,239,2,201,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,240,2,201,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,241,2,201,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,309,2,208,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
-2596,1,42836,349,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
-2596,1,42836,351,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
-2596,1,42836,547,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,554,2,379,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
-2596,1,42836,566,2,208,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,596,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,767,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,847,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,848,2,291,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
-2596,1,42836,2044,2,201;208;291;379,0,0,0,15,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,54,2,201;208;291;379,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,238,2,201,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,239,2,201,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,240,2,201,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,241,2,201,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,309,2,208,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,349,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,351,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,547,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,554,2,379,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,566,2,208,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,596,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,767,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,847,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,848,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,2044,2,201;208;291;379,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
 # Electronic Hardening Charge
 #  Bonus: 18 Sensor strength bonus  Value: 18
-2596,1,42837,208,3,6,0,0,0,15,Electronic Hardening Charge - Radar Sensor strength bonus
-2596,1,42837,209,3,6,0,0,0,15,Electronic Hardening Charge - Ladar Sensor strength bonus
-2596,1,42837,210,3,6,0,0,0,15,Electronic Hardening Charge - Magnetometric Sensor strength bonus
-2596,1,42837,211,3,6,0,0,0,15,Electronic Hardening Charge - Gravimetric Sensor strength bonus
+2596,1,42837,208,3,6,0,0,0,16,Electronic Hardening Charge - Radar Sensor strength bonus
+2596,1,42837,209,3,6,0,0,0,16,Electronic Hardening Charge - Ladar Sensor strength bonus
+2596,1,42837,210,3,6,0,0,0,16,Electronic Hardening Charge - Magnetometric Sensor strength bonus
+2596,1,42837,211,3,6,0,0,0,16,Electronic Hardening Charge - Gravimetric Sensor strength bonus
 # Evasive Maneuvers Charge
 #  Bonus: 20 Signature radius bonus  Value: -6
-2596,1,42838,552,3,6,0,0,0,15,Evasive Maneuvers Charge - Signature radius bonus
+2596,1,42838,552,3,6,0,0,0,16,Evasive Maneuvers Charge - Signature radius bonus
 # Interdiction Maneuvers Charge
 #  Bonus: 21 Tackle module range bonus  Value: 12
-2596,1,42839,54,5,3435,0,0,0,15,Interdiction Maneuvers Charge - Tackle module range bonus
+2596,1,42839,54,5,3435,0,0,0,16,Interdiction Maneuvers Charge - Tackle module range bonus
 # Rapid Deployment Charge
 #  Bonus: 22 AB/MWD module speed increase bonus  Value: 12
-2596,1,42840,20,5,3450;3454,0,0,0,15,Rapid Deployment Charge - AB/MWD module speed increase bonus
+2596,1,42840,20,5,3450;3454,0,0,0,16,Rapid Deployment Charge - AB/MWD module speed increase bonus
 # Mining Laser Field Enhancement Charge
 #  Bonus: 23 Mining/survey module range bonus  Value: 30 
-2596,1,42829,54,5,3386;16281;25544;3426,0,0,0,15,Mining Laser Field Enhancement Charge - Mining/survey module range bonus
+2596,1,42829,54,5,3386;16281;25544;3426,0,0,0,16,Mining Laser Field Enhancement Charge - Mining/survey module range bonus
 # Mining Laser Optimization Charge
 #  Bonus: 24 Mining modules: Duration & Capacitor-use bonus	Value: -15  
-2596,1,42830,6,5,3386;16281;25544,0,0,0,15,Mining Laser Optimization Charge - Mining modules: Capacitor-use bonus
-2596,1,42830,73,5,3386;16281;25544,0,0,0,15,Mining Laser Optimization Charge - Mining modules: Duration bonus
+2596,1,42830,6,5,3386;16281;25544,0,0,0,16,Mining Laser Optimization Charge - Mining modules: Capacitor-use bonus
+2596,1,42830,73,5,3386;16281;25544,0,0,0,16,Mining Laser Optimization Charge - Mining modules: Duration bonus
 # Mining Equipment Preservation Charge
 #  Bonus: 25 Mining crystal volatility bonus  Value: -15
-2596,1,42831,783,5,3386,0,0,0,15,Mining Equipment Preservation Charge - Mining crystal volatility bonus
+2596,1,42831,783,5,3386,0,0,0,16,Mining Equipment Preservation Charge - Mining crystal volatility bonus
 # Electronic Hardening Charge
 #  Bonus: 19 Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus  Value: -9   
-2597,1,42837,2112,3,6,0,0,0,15,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
-2597,1,42837,2113,3,6,0,0,0,15,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
+2597,1,42837,2112,3,6,0,0,0,16,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
+2597,1,42837,2113,3,6,0,0,0,16,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
 # Sensor Optimization Charge
 #  Bonus: 26 Targeting range bonus  Value: 18   
-2597,1,42835,76,3,6,0,0,0,15,Sensor Optimization Charge - Targeting range bonus
+2597,1,42835,76,3,6,0,0,0,16,Sensor Optimization Charge - Targeting range bonus
 # Evasive Maneuvers Charge
 #  Bonus: 60 Agility bonus    Value: -6   
-2597,1,42838,70,3,6,0,0,0,15,Evasive Maneuvers Charge - Agility bonus
+2597,1,42838,70,3,6,0,0,0,16,Evasive Maneuvers Charge - Agility bonus
+# FLEET ASSISTANCE MODULES LOCAL
+# Command Bursts (combining these will break things)
+2469,1,42529;43555,2596,1,42694,0,0,5,4,Shield Command Burst Module Bonus on Active Shielding Charge
+2471,1,42529;43555,2597,1,42694,0,0,5,4,Shield Command Burst Module Bonus on Active Shielding Charge
+2473,1,42529;43555,2598,1,42694,0,0,5,4,Shield Command Burst Module Bonus on Active Shielding Charge
+2537,1,42529;43555,2599,1,42694,0,0,5,4,Shield Command Burst Module Bonus on Active Shielding Charge
+2469,1,42529;43555,2596,1,42695,0,0,5,4,Shield Command Burst Module Bonus on Shield Harmonizing Charge
+2471,1,42529;43555,2597,1,42695,0,0,5,4,Shield Command Burst Module Bonus on Shield Harmonizing Charge
+2473,1,42529;43555,2598,1,42695,0,0,5,4,Shield Command Burst Module Bonus on Shield Harmonizing Charge
+2537,1,42529;43555,2599,1,42695,0,0,5,4,Shield Command Burst Module Bonus on Shield Harmonizing Charge
+2469,1,42529;43555,2596,1,42696,0,0,5,4,Shield Command Burst Module Bonus on Shield Extension Charge
+2471,1,42529;43555,2597,1,42696,0,0,5,4,Shield Command Burst Module Bonus on Shield Extension Charge
+2473,1,42529;43555,2598,1,42696,0,0,5,4,Shield Command Burst Module Bonus on Shield Extension Charge
+2537,1,42529;43555,2599,1,42696,0,0,5,4,Shield Command Burst Module Bonus on Shield Extension Charge
+2469,1,42527;43554,2596,1,42835,0,0,5,4,Information Command Burst Module Bonus on Sensor Optimization Charge
+2471,1,42527;43554,2597,1,42835,0,0,5,4,Information Command Burst Module Bonus on Sensor Optimization Charge
+2473,1,42527;43554,2598,1,42835,0,0,5,4,Information Command Burst Module Bonus on Sensor Optimization Charge
+2537,1,42527;43554,2599,1,42835,0,0,5,4,Information Command Burst Module Bonus on Sensor Optimization Charge
+2469,1,42527;43554,2596,1,42836,0,0,5,4,Information Command Burst Module Bonus on Electronic Superiority Charge
+2471,1,42527;43554,2597,1,42836,0,0,5,4,Information Command Burst Module Bonus on Electronic Superiority Charge
+2473,1,42527;43554,2598,1,42836,0,0,5,4,Information Command Burst Module Bonus on Electronic Superiority Charge
+2537,1,42527;43554,2599,1,42836,0,0,5,4,Information Command Burst Module Bonus on Electronic Superiority Charge
+2469,1,42527;43554,2596,1,42837,0,0,5,4,Information Command Burst Module Bonus on Electronic Hardening Charge
+2471,1,42527;43554,2597,1,42837,0,0,5,4,Information Command Burst Module Bonus on Electronic Hardening Charge
+2473,1,42527;43554,2598,1,42837,0,0,5,4,Information Command Burst Module Bonus on Electronic Hardening Charge
+2537,1,42527;43554,2599,1,42837,0,0,5,4,Information Command Burst Module Bonus on Electronic Hardening Charge
+2469,1,42526;43552,2596,1,42832,0,0,5,4,Armored Command Burst Module Bonus on Armor Energizing Charge
+2471,1,42526;43552,2597,1,42832,0,0,5,4,Armored Command Burst Module Bonus on Armor Energizing Charge
+2473,1,42526;43552,2598,1,42832,0,0,5,4,Armored Command Burst Module Bonus on Armor Energizing Charge
+2537,1,42526;43552,2599,1,42832,0,0,5,4,Armored Command Burst Module Bonus on Armor Energizing Charge
+2469,1,42526;43552,2596,1,42833,0,0,5,4,Armored Command Burst Module Bonus on Rapid Repair Charge
+2471,1,42526;43552,2597,1,42833,0,0,5,4,Armored Command Burst Module Bonus on Rapid Repair Charge
+2473,1,42526;43552,2598,1,42833,0,0,5,4,Armored Command Burst Module Bonus on Rapid Repair Charge
+2537,1,42526;43552,2599,1,42833,0,0,5,4,Armored Command Burst Module Bonus on Rapid Repair Charge
+2469,1,42526;43552,2596,1,42834,0,0,5,4,Armored Command Burst Module Bonus on Armor Reinforcement Charge
+2471,1,42526;43552,2597,1,42834,0,0,5,4,Armored Command Burst Module Bonus on Armor Reinforcement Charge
+2473,1,42526;43552,2598,1,42834,0,0,5,4,Armored Command Burst Module Bonus on Armor Reinforcement Charge
+2537,1,42526;43552,2599,1,42834,0,0,5,4,Armored Command Burst Module Bonus on Armor Reinforcement Charge
+2469,1,42530;43556,2596,1,42838,0,0,5,4,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
+2471,1,42530;43556,2597,1,42838,0,0,5,4,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
+2473,1,42530;43556,2598,1,42838,0,0,5,4,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
+2537,1,42530;43556,2599,1,42838,0,0,5,4,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
+2469,1,42530;43556,2596,1,42839,0,0,5,4,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
+2471,1,42530;43556,2597,1,42839,0,0,5,4,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
+2473,1,42530;43556,2598,1,42839,0,0,5,4,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
+2537,1,42530;43556,2599,1,42839,0,0,5,4,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
+2469,1,42530;43556,2596,1,42840,0,0,5,4,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
+2471,1,42530;43556,2597,1,42840,0,0,5,4,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
+2473,1,42530;43556,2598,1,42840,0,0,5,4,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
+2537,1,42530;43556,2599,1,42840,0,0,5,4,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
+2469,1,42528;43551,2596,1,42829,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
+2471,1,42528;43551,2597,1,42829,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
+2473,1,42528;43551,2598,1,42829,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
+2537,1,42528;43551,2599,1,42829,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
+2469,1,42528;43551,2596,1,42830,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
+2471,1,42528;43551,2597,1,42830,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
+2473,1,42528;43551,2598,1,42830,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
+2537,1,42528;43551,2599,1,42830,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
+2469,1,42528;43551,2596,1,42831,0,0,5,4,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
+2471,1,42528;43551,2597,1,42831,0,0,5,4,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
+2473,1,42528;43551,2598,1,42831,0,0,5,4,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
+2537,1,42528;43551,2599,1,42831,0,0,5,4,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
+# Shield Harmonizing Charge
+#  Bonus: 10 Shield resistance bonus		Value: -8
+2596,1,42695,271,3,6,0,0,2,4,Shield Harmonizing Charge	- EM Shield Resistance Bonus
+2596,1,42695,272,3,6,0,0,2,4,Shield Harmonizing Charge	- Explosive Shield Resistance Bonus
+2596,1,42695,273,3,6,0,0,2,4,Shield Harmonizing Charge	- Kinetic Shield Resistance Bonus
+2596,1,42695,274,3,6,0,0,2,4,Shield Harmonizing Charge	- Thermal Shield Resistance Bonus
+# Active Shielding Charge
+#  Bonus: 11 Shield repair modules: duration & capacitor-use bonus	Value: -8
+2596,1,42694,6,5,3416;3422,0,0,0,4,Active Shielding Charge - Shield Repair Modules Capacitor-Use Bonus
+2596,1,42694,73,5,3416;3422,0,0,0,4,Active Shielding Charge - Shield Repair Modules Duration Bonus
+# Shield Extension Charge
+#  Bonus: 12 Shield HP bonus		Value: 8
+2596,1,42696,263,3,6,0,0,0,4,Shield Extension Charge - Shield HP Bonus
+# Armor Energizing Charge
+#  Bonus: 13 Armor Resistance Bonus    Value: -8
+2596,1,42832,267,3,6,0,0,2,4,Armor Energizing Charge - EM Armor Resistance Bonus
+2596,1,42832,268,3,6,0,0,2,4,Armor Energizing Charge - Explosive Armor Resistance Bonus
+2596,1,42832,269,3,6,0,0,2,4,Armor Energizing Charge - Kinetic Armor Resistance Bonus
+2596,1,42832,270,3,6,0,0,2,4,Armor Energizing Charge - Thermal Armor Resistance Bonus
+# Rapid Repair Charge
+#  Bonus: 14 Armor Repair Modules: Duration & Cap-use bonus      Value: -8
+2596,1,42833,6,2,62;1199,0,0,0,4,Rapid Repair Charge - Armor Repair Modules Capacitor-Use Bonus
+2596,1,42833,73,2,62;1199,0,0,0,4,Rapid Repair Charge - Armor Repair Modules Duration Bonus
+# Armor Reinforcement Charge
+#  Bonus: 15 Armor HP Bonus  Value: 8
+2596,1,42834,265,3,6,0,0,0,4,Armor Reinforcement Charge - Armor HP Bonus
+# Sensor Optimization Charge
+#  Bonus: 16 Scan resolution bonus  Value: 9
+2596,1,42835,564,3,6,0,0,0,4,Sensor Optimization Charge - Scan resolution bonus
+# Electronic Superiority Charge
+#  Bonus: 17 Electronic warfare Modules: Range and strength bonus  Value: 9
+2596,1,42836,54,2,201;208;291;379,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,238,2,201,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,239,2,201,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,240,2,201,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,241,2,201,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,309,2,208,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,349,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,351,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,547,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,554,2,379,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,566,2,208,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,596,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,767,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,847,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,848,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,2044,2,201;208;291;379,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+# Electronic Hardening Charge
+#  Bonus: 18 Sensor strength bonus  Value: 18
+2596,1,42837,208,3,6,0,0,0,4,Electronic Hardening Charge - Radar Sensor strength bonus
+2596,1,42837,209,3,6,0,0,0,4,Electronic Hardening Charge - Ladar Sensor strength bonus
+2596,1,42837,210,3,6,0,0,0,4,Electronic Hardening Charge - Magnetometric Sensor strength bonus
+2596,1,42837,211,3,6,0,0,0,4,Electronic Hardening Charge - Gravimetric Sensor strength bonus
+# Evasive Maneuvers Charge
+#  Bonus: 20 Signature radius bonus  Value: -6
+2596,1,42838,552,3,6,0,0,0,4,Evasive Maneuvers Charge - Signature radius bonus
+# Interdiction Maneuvers Charge
+#  Bonus: 21 Tackle module range bonus  Value: 12
+2596,1,42839,54,5,3435,0,0,0,4,Interdiction Maneuvers Charge - Tackle module range bonus
+# Rapid Deployment Charge
+#  Bonus: 22 AB/MWD module speed increase bonus  Value: 12
+2596,1,42840,20,5,3450;3454,0,0,0,4,Rapid Deployment Charge - AB/MWD module speed increase bonus
+# Mining Laser Field Enhancement Charge
+#  Bonus: 23 Mining/survey module range bonus  Value: 30 
+2596,1,42829,54,5,3386;16281;25544;3426,0,0,0,4,Mining Laser Field Enhancement Charge - Mining/survey module range bonus
+# Mining Laser Optimization Charge
+#  Bonus: 24 Mining modules: Duration & Capacitor-use bonus	Value: -15  
+2596,1,42830,6,5,3386;16281;25544,0,0,0,4,Mining Laser Optimization Charge - Mining modules: Capacitor-use bonus
+2596,1,42830,73,5,3386;16281;25544,0,0,0,4,Mining Laser Optimization Charge - Mining modules: Duration bonus
+# Mining Equipment Preservation Charge
+#  Bonus: 25 Mining crystal volatility bonus  Value: -15
+2596,1,42831,783,5,3386,0,0,0,4,Mining Equipment Preservation Charge - Mining crystal volatility bonus
+# Electronic Hardening Charge
+#  Bonus: 19 Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus  Value: -9   
+2597,1,42837,2112,3,6,0,0,0,4,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
+2597,1,42837,2113,3,6,0,0,0,4,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
+# Sensor Optimization Charge
+#  Bonus: 26 Targeting range bonus  Value: 18   
+2597,1,42835,76,3,6,0,0,0,4,Sensor Optimization Charge - Targeting range bonus
+# Evasive Maneuvers Charge
+#  Bonus: 60 Agility bonus    Value: -6   
+2597,1,42838,70,3,6,0,0,0,4,Evasive Maneuvers Charge - Agility bonus
 # FLEET SHIP EFFECTS,,,,,,,,,,
 55,1,-1,55,3,6,0,0,0,16,Gang Capacitor Recharge Rate
 265,1,-1,265,3,6,0,0,0,16,Gang Armor HP
