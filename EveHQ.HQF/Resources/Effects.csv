@@ -1307,10 +1307,10 @@
 1082,2,546,50,4,1038;2151,0,0,0,14,CPU Penalty
 # FLEET ASSISTANCE MODULES
 # Command Bursts
-2469,2,1770,2596,2,1769;1772;1773;1774;1771,0,0,0,16,Command and Foreman Burst Module Bonus
-2471,2,1770,2597,2,1769;1772;1773;1774;1771,0,0,0,16,Command and Foreman Burst Module Bonus
-2473,2,1770,2598,2,1769;1772;1773;1774;1771,0,0,0,16,Command and Foreman Burst Module Bonus
-2537,2,1770,2599,2,1769;1772;1773;1774;1771,0,0,0,16,Command and Foreman Burst Module Bonus
+2469,2,1770,2596,2,1769;1772;1773;1774;1771,0,0,5,16,Command and Foreman Burst Module Bonus
+2471,2,1770,2597,2,1769;1772;1773;1774;1771,0,0,5,16,Command and Foreman Burst Module Bonus
+2473,2,1770,2598,2,1769;1772;1773;1774;1771,0,0,5,16,Command and Foreman Burst Module Bonus
+2537,2,1770,2599,2,1769;1772;1773;1774;1771,0,0,5,16,Command and Foreman Burst Module Bonus
 # Shield Harmonizing Charge
 #  Bonus: 10 Shield resistance bonus		Value: -8
 2596,1,42695,271,3,6,0,0,2,15,Shield Harmonizing Charge	- EM Shield Resistance Bonus
