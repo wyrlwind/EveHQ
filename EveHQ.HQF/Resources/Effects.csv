@@ -1132,41 +1132,41 @@
 983,2,862,552,3,6,0,0,1,15,Signature Radius
 # Superweapons
 # Amarr Phenomena Generator
-2469,1,43658,55,3,6,0,0,0,16,Avatar Effect Generator : Capacitor Recharge bonus
-2471,1,43658,269,3,6,0,0,2,16,Avatar Effect Generator : Kinetic resistance bonus
-2471,1,43658,273,3,6,0,0,2,16,Avatar Effect Generator : Kinetic resistance bonus
-2471,1,43658,976,3,6,0,0,2,16,Avatar Effect Generator : Kinetic resistance bonus
-2473,1,43658,267,3,6,0,0,2,16,Avatar Effect Generator : EM resistance penalty
-2473,1,43658,271,3,6,0,0,2,16,Avatar Effect Generator : EM resistance penalty
-2473,1,43658,974,3,6,0,0,2,16,Avatar Effect Generator : EM resistance penalty
-2537,1,43658,37,3,6,0,0,0,16,Avatar Effect Generator : Velocity penalty
+2469,1,43658,55,3,6,0,0,0,20,Avatar Effect Generator : Capacitor Recharge bonus
+2471,1,43658,269,3,6,0,0,2,20,Avatar Effect Generator : Kinetic resistance bonus
+2471,1,43658,273,3,6,0,0,2,20,Avatar Effect Generator : Kinetic resistance bonus
+2471,1,43658,976,3,6,0,0,2,20,Avatar Effect Generator : Kinetic resistance bonus
+2473,1,43658,267,3,6,0,0,2,20,Avatar Effect Generator : EM resistance penalty
+2473,1,43658,271,3,6,0,0,2,20,Avatar Effect Generator : EM resistance penalty
+2473,1,43658,974,3,6,0,0,2,20,Avatar Effect Generator : EM resistance penalty
+2537,1,43658,37,3,6,0,0,0,20,Avatar Effect Generator : Velocity penalty
 # Caldari Phenomena Generator
-2469,1,43660,263,3,6,0,0,0,16,Leviathan Effect Generator : Shield HP bonus
-2471,1,43660,267,3,6,0,0,2,16,Leviathan Effect Generator : EM resistance bonus
-2471,1,43660,271,3,6,0,0,2,16,Leviathan Effect Generator : EM resistance bonus
-2471,1,43660,974,3,6,0,0,2,16,Leviathan Effect Generator : EM resistance bonus
-2473,1,43660,269,3,6,0,0,2,16,Leviathan Effect Generator : Kinetic resistance penalty
-2473,1,43660,273,3,6,0,0,2,16,Leviathan Effect Generator : Kinetic resistance penalty
-2473,1,43660,976,3,6,0,0,2,16,Leviathan Effect Generator : Kinetic resistance penalty
-2537,1,43660,84,5,16069,0,0,0,16,Leviathan Effect Generator : Armor RR penalty
+2469,1,43660,263,3,6,0,0,0,20,Leviathan Effect Generator : Shield HP bonus
+2471,1,43660,267,3,6,0,0,2,20,Leviathan Effect Generator : EM resistance bonus
+2471,1,43660,271,3,6,0,0,2,20,Leviathan Effect Generator : EM resistance bonus
+2471,1,43660,974,3,6,0,0,2,20,Leviathan Effect Generator : EM resistance bonus
+2473,1,43660,269,3,6,0,0,2,20,Leviathan Effect Generator : Kinetic resistance penalty
+2473,1,43660,273,3,6,0,0,2,20,Leviathan Effect Generator : Kinetic resistance penalty
+2473,1,43660,976,3,6,0,0,2,20,Leviathan Effect Generator : Kinetic resistance penalty
+2537,1,43660,84,5,16069,0,0,0,20,Leviathan Effect Generator : Armor RR penalty
 # Gallente Phenomena Generator
-2469,1,43662,265,3,6,0,0,0,16,Erebus Effect Generator : Armor HP bonus
-2471,1,43662,268,3,6,0,0,2,16,Erebus Effect Generator : Explosive resistance bonus
-2471,1,43662,272,3,6,0,0,2,16,Erebus Effect Generator : Explosive resistance bonus
-2471,1,43662,975,3,6,0,0,2,16,Erebus Effect Generator : Explosive resistance bonus
-2473,1,43662,270,3,6,0,0,2,16,Erebus Effect Generator : Thermal resistance penalty
-2473,1,43662,274,3,6,0,0,2,16,Erebus Effect Generator : Thermal resistance penalty
-2473,1,43662,977,3,6,0,0,2,16,Erebus Effect Generator : Thermal resistance penalty
-2537,1,43662,68,5,3422,0,0,0,16,Erebus Effect Generator : Shield RR penalty
+2469,1,43662,265,3,6,0,0,0,20,Erebus Effect Generator : Armor HP bonus
+2471,1,43662,268,3,6,0,0,2,20,Erebus Effect Generator : Explosive resistance bonus
+2471,1,43662,272,3,6,0,0,2,20,Erebus Effect Generator : Explosive resistance bonus
+2471,1,43662,975,3,6,0,0,2,20,Erebus Effect Generator : Explosive resistance bonus
+2473,1,43662,270,3,6,0,0,2,20,Erebus Effect Generator : Thermal resistance penalty
+2473,1,43662,274,3,6,0,0,2,20,Erebus Effect Generator : Thermal resistance penalty
+2473,1,43662,977,3,6,0,0,2,20,Erebus Effect Generator : Thermal resistance penalty
+2537,1,43662,68,5,3422,0,0,0,20,Erebus Effect Generator : Shield RR penalty
 # Minmatar Phenomena Generator
-2469,1,43664,552,3,6,0,0,0,16,Ragnarok Effect Generator : Signature Radius bonus
-2471,1,43664,270,3,6,0,0,2,16,Ragnarok Effect Generator : Thermal resistance bonus
-2471,1,43664,274,3,6,0,0,2,16,Ragnarok Effect Generator : Thermal resistance bonus
-2471,1,43664,977,3,6,0,0,2,16,Ragnarok Effect Generator : Thermal resistance bonus
-2473,1,43664,268,3,6,0,0,2,16,Ragnarok Effect Generator : Explosive resistance penalty
-2473,1,43664,272,3,6,0,0,2,16,Ragnarok Effect Generator : Explosive resistance penalty
-2473,1,43664,975,3,6,0,0,2,16,Ragnarok Effect Generator : Explosive resistance penalty
-2537,1,43664,54,2,53;74,0,0,0,16,Ragnarok Effect Generator : Laser and Hybrid Optimal penalty
+2469,1,43664,552,3,6,0,0,0,20,Ragnarok Effect Generator : Signature Radius bonus
+2471,1,43664,270,3,6,0,0,2,20,Ragnarok Effect Generator : Thermal resistance bonus
+2471,1,43664,274,3,6,0,0,2,20,Ragnarok Effect Generator : Thermal resistance bonus
+2471,1,43664,977,3,6,0,0,2,20,Ragnarok Effect Generator : Thermal resistance bonus
+2473,1,43664,268,3,6,0,0,2,20,Ragnarok Effect Generator : Explosive resistance penalty
+2473,1,43664,272,3,6,0,0,2,20,Ragnarok Effect Generator : Explosive resistance penalty
+2473,1,43664,975,3,6,0,0,2,20,Ragnarok Effect Generator : Explosive resistance penalty
+2537,1,43664,54,2,53;74,0,0,0,20,Ragnarok Effect Generator : Laser and Hybrid Optimal penalty
 # Ballistic Control Systems,,,,,,,,,,
 204,2,367,51,2,511;524;506;510;771;507;508;509;1245;1673;1674,1,0,0,14,ROF Bonus
 213,2,367,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Damage Bonus - EM
