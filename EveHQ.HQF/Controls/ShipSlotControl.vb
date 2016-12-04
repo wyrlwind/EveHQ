@@ -4190,7 +4190,7 @@ Namespace Controls
                     Dim newFit As Fitting = Fittings.FittingList(shipFit).Clone
                     newFit.UpdateBaseShipFromFitting()
                     newFit.PilotName = pPilot.PilotName
-                    newFit.ApplyFitting(BuildType.BuildEverything)
+                    newFit.ApplyFitting(BuildType.BuildEverything, True, True)
                     Dim remoteShip As Ship = newFit.FittedShip
                     For Each remoteModule As ShipModule In remoteShip.SlotCollection
                         If _remoteGroups.Contains(CInt(remoteModule.DatabaseGroup)) = True Then
