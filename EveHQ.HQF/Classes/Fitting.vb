@@ -1149,7 +1149,7 @@ Imports EveHQ.Common.Extensions
                                         processData = True
                                     End If
                             End Select
-                            If processData = True And (aModule.LoadedCharge.ModuleState And chkEffect.Status) = aModule.LoadedCharge.ModuleState Then
+                            If processData = True And ((aModule.DatabaseGroup <> 1770 And (aModule.LoadedCharge.ModuleState And chkEffect.Status) = aModule.LoadedCharge.ModuleState) Or (aModule.DatabaseGroup = 1770 And aModule.ModuleState = chkEffect.Status)) Then
                                 fEffect = New FinalEffect
                                 fEffect.AffectedAtt = chkEffect.AffectedAtt
                                 fEffect.AffectedType = chkEffect.AffectedType
@@ -1246,7 +1246,15 @@ Imports EveHQ.Common.Extensions
                             Else
                                 fEffectList = _moduleEffectsTable(fEffect.AffectedAtt)
                             End If
-                            fEffectList.Add(fEffect)
+                            If aModule.DatabaseGroup = 1770 Then
+                                If aModule.LoadedCharge IsNot Nothing Then
+                                    If fEffect.AffectedID.Contains(aModule.LoadedCharge.ID) And aModule.ModuleState <> ModuleStates.Inactive And aModule.ModuleState <> ModuleStates.Offline Then
+                                        fEffectList.Add(fEffect)
+                                    End If
+                                End If
+                            Else
+                                fEffectList.Add(fEffect)
+                            End If
                         End If
                     Next
                 End If
@@ -1789,8 +1797,10 @@ Imports EveHQ.Common.Extensions
                 att = aModule.Attributes.Keys(attNo)
                 If _moduleEffectsTable.ContainsKey(att) = True Then
                     For Each fEffect As FinalEffect In _moduleEffectsTable(att)
-                        If ProcessFinalEffectForModule(aModule, fEffect) = True Then
-                            Call ApplyFinalEffectToModule(aModule, fEffect, att)
+                        If aModule.DatabaseGroup <> 1770 Then
+                            If ProcessFinalEffectForModule(aModule, fEffect) = True Then
+                                Call ApplyFinalEffectToModule(aModule, fEffect, att)
+                            End If
                         End If
                     Next
                 End If
