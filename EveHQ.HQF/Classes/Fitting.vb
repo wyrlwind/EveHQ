@@ -422,7 +422,7 @@ Imports EveHQ.Common.Extensions
     ''' Gets or sets a collection of remote effects to be applied to the fitting
     ''' </summary>
     ''' <value></value>
-    ''' <returns>A collection of fleet effects to be applied to the fitting</returns>
+    ''' <returns>A collection of remote effects to be applied to the fitting</returns>
     ''' <remarks></remarks>
     Public Property RemoteEffects() As List(Of RemoteEffect)
         Get
@@ -1149,7 +1149,7 @@ Imports EveHQ.Common.Extensions
                                         processData = True
                                     End If
                             End Select
-                            If processData = True And (aModule.LoadedCharge.ModuleState And chkEffect.Status) = aModule.LoadedCharge.ModuleState Then
+                            If processData = True And ((aModule.DatabaseGroup <> 1770 And (aModule.LoadedCharge.ModuleState And chkEffect.Status) = aModule.LoadedCharge.ModuleState) Or (aModule.DatabaseGroup = 1770 And aModule.ModuleState = chkEffect.Status)) Then
                                 fEffect = New FinalEffect
                                 fEffect.AffectedAtt = chkEffect.AffectedAtt
                                 fEffect.AffectedType = chkEffect.AffectedType
@@ -1246,7 +1246,15 @@ Imports EveHQ.Common.Extensions
                             Else
                                 fEffectList = _moduleEffectsTable(fEffect.AffectedAtt)
                             End If
-                            fEffectList.Add(fEffect)
+                            If aModule.DatabaseGroup = 1770 Then
+                                If aModule.LoadedCharge IsNot Nothing Then
+                                    If fEffect.AffectedID.Contains(aModule.LoadedCharge.ID) And aModule.ModuleState <> ModuleStates.Inactive And aModule.ModuleState <> ModuleStates.Offline Then
+                                        fEffectList.Add(fEffect)
+                                    End If
+                                End If
+                            Else
+                                fEffectList.Add(fEffect)
+                            End If
                         End If
                     Next
                 End If
@@ -1470,8 +1478,8 @@ Imports EveHQ.Common.Extensions
                 newShip.SlotCollection.Add(newShip.RigSlot(slot))
             End If
         Next
-        ' Reset max gang links status
-        newShip.Attributes(10063) = 1
+        ' Reset max bursts status
+        newShip.Attributes(AttributeEnum.ShipMaxBursts) = 1
         Return newShip
     End Function
     Private Sub ApplySkillEffectsToShip(ByRef newShip As Ship)
@@ -1789,8 +1797,10 @@ Imports EveHQ.Common.Extensions
                 att = aModule.Attributes.Keys(attNo)
                 If _moduleEffectsTable.ContainsKey(att) = True Then
                     For Each fEffect As FinalEffect In _moduleEffectsTable(att)
-                        If ProcessFinalEffectForModule(aModule, fEffect) = True Then
-                            Call ApplyFinalEffectToModule(aModule, fEffect, att)
+                        If aModule.DatabaseGroup <> 1770 Then
+                            If ProcessFinalEffectForModule(aModule, fEffect) = True Then
+                                Call ApplyFinalEffectToModule(aModule, fEffect, att)
+                            End If
                         End If
                     Next
                 End If
@@ -2815,9 +2825,9 @@ Imports EveHQ.Common.Extensions
 
     Public Sub AddModule(ByVal shipMod As ShipModule, ByVal slotNo As Integer, ByVal updateShip As Boolean, ByVal updateAll As Boolean, ByVal repMod As ShipModule, ByVal suppressUndo As Boolean, ByVal isSwappingModules As Boolean)
         ' Check for command processors as this affects the fitting!
-        If shipMod.ID = ModuleEnum.ItemCommandProcessorI And shipMod.ModuleState = ModuleStates.Active Then
-            BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) += 1
-            FittedShip.Attributes(AttributeEnum.ShipMaxGangLinks) += 1
+        If (shipMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or shipMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or shipMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or shipMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) And shipMod.ModuleState = ModuleStates.Active Then
+            BaseShip.Attributes(AttributeEnum.ShipMaxBursts) += 1
+            FittedShip.Attributes(AttributeEnum.ShipMaxBursts) += 1
         End If
 
         ' Check slot availability (only if not adding in a specific slot?)
@@ -3341,13 +3351,25 @@ Imports EveHQ.Common.Extensions
             End If
         End If
 
+
+        ' Check for maxTypeFitted flag
+        If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleMaxTypeFitted) = True Then
+            If IsModuleTypeLimitExceeded(shipMod, AttributeEnum.ModuleMaxGroupFitted) = True Then
+                If search = False Then
+                    MessageBox.Show("You cannot fit more than " & shipMod.Attributes(AttributeEnum.ModuleMaxTypeFitted) & " module(s) of this type to a ship ('" & FittingName & "', " & ShipName & ").", "Module Type Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+                Return False
+            End If
+        End If
+
+
         ' Check for maxGroupActive flag
         If search = False AndAlso shipMod.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
             Dim groupReplace As Boolean = False
             If repMod IsNot Nothing AndAlso repMod.DatabaseGroup = shipMod.DatabaseGroup Then
                 groupReplace = True
             End If
-            If shipMod.DatabaseGroup <> ModuleEnum.GroupGangLinks Then
+            If (shipMod.DatabaseGroup <> ModuleEnum.GroupGangLinks And shipMod.DatabaseGroup <> ModuleEnum.GroupCommandBurst) Then
                 If IsModuleGroupLimitExceeded(shipMod, Not groupReplace, AttributeEnum.ModuleMaxGroupActive) = True Then
                     ' Set the module offline
                     shipMod.ModuleState = ModuleStates.Inactive
@@ -3379,9 +3401,9 @@ Imports EveHQ.Common.Extensions
                 maxAllowed = CInt(fittedMod.Attributes(AttributeEnum.ModuleMaxGroupFitted))
             Case AttributeEnum.ModuleMaxGroupActive
                 moduleState = ModuleStates.Active
-                If fittedMod.DatabaseGroup = ModuleEnum.GroupGangLinks Then
-                    If FittedShip.Attributes.ContainsKey(AttributeEnum.ShipMaxGangLinks) = True Then
-                        maxAllowed = CInt(FittedShip.Attributes(AttributeEnum.ShipMaxGangLinks))
+                If (fittedMod.DatabaseGroup = ModuleEnum.GroupGangLinks Or fittedMod.DatabaseGroup = ModuleEnum.GroupCommandBurst) Then
+                    If FittedShip.Attributes.ContainsKey(AttributeEnum.ShipMaxBursts) = True Then
+                        maxAllowed = CInt(FittedShip.Attributes(AttributeEnum.ShipMaxBursts))
                     End If
                 Else
                     maxAllowed = CInt(fittedMod.Attributes(AttributeEnum.ModuleMaxGroupActive))
@@ -3397,10 +3419,8 @@ Imports EveHQ.Common.Extensions
         Next
         For slot As Integer = 1 To BaseShip.MidSlots
             If BaseShip.MidSlot(slot) IsNot Nothing Then
-                If BaseShip.MidSlot(slot).ID <> ModuleEnum.ItemCommandProcessorI Then
-                    If BaseShip.MidSlot(slot).DatabaseGroup = testMod.DatabaseGroup And BaseShip.MidSlot(slot).ModuleState >= moduleState Then
-                        count += 1
-                    End If
+                If BaseShip.MidSlot(slot).DatabaseGroup = testMod.DatabaseGroup And BaseShip.MidSlot(slot).ModuleState >= moduleState Then
+                    count += 1
                 End If
             End If
         Next
@@ -3432,6 +3452,52 @@ Imports EveHQ.Common.Extensions
             End If
         End If
     End Function
+
+    Public Function IsModuleTypeLimitExceeded(ByVal testMod As ShipModule, ByVal attribute As Integer) As Boolean
+        Dim count As Integer = 0
+        Dim fittedMod As ShipModule = testMod.Clone
+        ApplySkillEffectsToModule(fittedMod, True)
+
+        Dim maxAllowed As Integer = CInt(fittedMod.Attributes(AttributeEnum.ModuleMaxTypeFitted))
+
+
+        For slot As Integer = 1 To BaseShip.HiSlots
+            If BaseShip.HiSlot(slot) IsNot Nothing Then
+                If BaseShip.HiSlot(slot).ID = testMod.ID Then
+                    count += 1
+                End If
+            End If
+        Next
+        For slot As Integer = 1 To BaseShip.MidSlots
+            If BaseShip.MidSlot(slot) IsNot Nothing Then
+                If BaseShip.MidSlot(slot).ID = testMod.ID Then
+                    count += 1
+                End If
+            End If
+        Next
+        For slot As Integer = 1 To BaseShip.LowSlots
+            If BaseShip.LowSlot(slot) IsNot Nothing Then
+                If BaseShip.LowSlot(slot).ID = testMod.ID Then
+                    count += 1
+                End If
+            End If
+        Next
+        For slot As Integer = 1 To BaseShip.RigSlots
+            If BaseShip.RigSlot(slot) IsNot Nothing Then
+                If BaseShip.RigSlot(slot).ID = testMod.ID Then
+                    count += 1
+                End If
+            End If
+        Next
+
+        If count >= maxAllowed Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+
     Public Function CountActiveTypeModules(ByVal typeID As Integer) As Integer
         Dim count As Integer = 0
         For slot As Integer = 1 To BaseShip.HiSlots
@@ -4061,7 +4127,7 @@ End Class
     ''' Gets or sets a collection of remote effects to be applied to the fitting
     ''' </summary>
     ''' <value></value>
-    ''' <returns>A collection of fleet effects to be applied to the fitting</returns>
+    ''' <returns>A collection of remote effects to be applied to the fitting</returns>
     ''' <remarks></remarks>
     Public Property RemoteEffects() As List(Of RemoteEffect)
         Get

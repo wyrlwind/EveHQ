@@ -339,6 +339,7 @@ Public Class PilotParseFunctions
                         newPilot.ID = toon.CharacterId.ToInvariantString()
                         newPilot.AccountPosition = CStr(currToon)
                         newPilot.Account = caccount.UserID
+                        newPilot.AccountStatus = caccount.APIAccountStatus
                         ' Copy notification data if available - we reset this after checking the API request if not cached
                         If HQ.Settings.Pilots.ContainsKey(newPilot.Name) = True Then
                             newPilot.TrainingNotifiedEarly = HQ.Settings.Pilots(newPilot.Name).TrainingNotifiedEarly
@@ -444,8 +445,8 @@ Public Class PilotParseFunctions
                 cAccount.LogonCount = response.ResultData.LogOnCount
                 cAccount.LogonMinutes = CLng(response.ResultData.LoggedInTime.TotalMinutes)
                 If cAccount.PaidUntil < Now Then
-                    ' Account has expired
-                    cAccount.APIAccountStatus = APIAccountStatuses.Disabled
+                    ' Account is alpha state
+                    cAccount.APIAccountStatus = APIAccountStatuses.Alpha
                 Else
                     cAccount.APIAccountStatus = APIAccountStatuses.Active
                 End If
@@ -454,7 +455,7 @@ Public Class PilotParseFunctions
                     Select Case response.EveErrorCode
                         Case 211
                             '' Account has expired
-                            cAccount.APIAccountStatus = APIAccountStatuses.Disabled
+                            cAccount.APIAccountStatus = APIAccountStatuses.Alpha
                         Case 200
                             ' Should be limited key
                             cAccount.APIKeyType = APIKeyTypes.Limited

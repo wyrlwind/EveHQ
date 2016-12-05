@@ -169,6 +169,7 @@ Public Enum AttributeEnum
     ModuleMaxFlightTime = 281
     ModuleMaxGroupActive = 763
     ModuleMaxGroupFitted = 1544
+    ModuleMaxTypeFitted = 2431
     ModuleMaxVelocity = 37
     ModuleMetaLevel = 633
     ModuleMidSlotModifier = 1375
@@ -255,7 +256,7 @@ Public Enum AttributeEnum
     ShipIceMiningRate = 10048
     ShipKinDamage = 10057
     ShipKinDPS = 10072
-    ShipMaxGangLinks = 10063
+    ShipMaxBursts = 10063
     ShipMissileDPS = 10025
     ShipMissileVolleyDamage = 10021
     ShipModuleTransferAmount = 10075
