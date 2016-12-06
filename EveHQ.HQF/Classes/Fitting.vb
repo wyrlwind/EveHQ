@@ -560,7 +560,7 @@ Imports EveHQ.Common.Extensions
     ''' </summary>
     ''' <param name="buildMethod"></param>
     ''' <remarks></remarks>
-    Public Sub ApplyFitting(Optional ByVal buildMethod As BuildType = BuildType.BuildEverything, Optional ByVal visualUpdates As Boolean = True)
+    Public Sub ApplyFitting(Optional ByVal buildMethod As BuildType = BuildType.BuildEverything, Optional ByVal visualUpdates As Boolean = True, Optional ByVal forRemoteShip As Boolean = False)
         ' Update the pilot from the pilot name
 
         Dim newBaseShip As Ship = BaseShip
@@ -615,7 +615,7 @@ Imports EveHQ.Common.Extensions
                 pStageTime(6) = Now
                 ApplySkillEffectsToDrones(newShip)
                 pStageTime(7) = Now
-                BuildModuleEffects(newShip)
+                BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(8) = Now
                 ApplyStackingPenalties()
                 pStageTime(9) = Now
@@ -627,13 +627,13 @@ Imports EveHQ.Common.Extensions
                 pStageTime(12) = Now
                 ApplyChargeEffectsToShip(newShip)
                 pStageTime(13) = Now
-                BuildModuleEffects(newShip)
+                BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(14) = Now
                 ApplyStackingPenalties()
                 pStageTime(15) = Now
                 ApplyModuleEffectsToModules(newShip)
                 pStageTime(16) = Now
-                BuildModuleEffects(newShip)
+                BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(17) = Now
                 ApplyStackingPenalties()
                 pStageTime(18) = Now
@@ -666,7 +666,7 @@ Imports EveHQ.Common.Extensions
                 pStageTime(6) = Now
                 'Me.ApplySkillEffectsToDrones(newShip)
                 pStageTime(7) = Now
-                'Me.BuildModuleEffects(newShip)
+                'Me.BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(8) = Now
                 'Me.ApplyStackingPenalties()
                 pStageTime(9) = Now
@@ -678,13 +678,13 @@ Imports EveHQ.Common.Extensions
                 pStageTime(12) = Now
                 'Me.ApplyChargeEffectsToShip(newShip)
                 pStageTime(13) = Now
-                'Me.BuildModuleEffects(newShip)
+                'Me.BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(14) = Now
                 'Me.ApplyStackingPenalties()
                 pStageTime(15) = Now
                 'Me.ApplyModuleEffectsToModules(newShip)
                 pStageTime(16) = Now
-                'Me.BuildModuleEffects(newShip)
+                'Me.BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(18) = Now
                 'Me.ApplyStackingPenalties()
                 pStageTime(19) = Now
@@ -715,7 +715,7 @@ Imports EveHQ.Common.Extensions
                 pStageTime(6) = Now
                 ApplySkillEffectsToDrones(newShip)
                 pStageTime(7) = Now
-                BuildModuleEffects(newShip)
+                BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(8) = Now
                 ApplyStackingPenalties()
                 pStageTime(9) = Now
@@ -727,13 +727,13 @@ Imports EveHQ.Common.Extensions
                 pStageTime(12) = Now
                 ApplyChargeEffectsToShip(newShip)
                 pStageTime(13) = Now
-                BuildModuleEffects(newShip)
+                BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(14) = Now
                 ApplyStackingPenalties()
                 pStageTime(15) = Now
                 ApplyModuleEffectsToModules(newShip)
                 pStageTime(16) = Now
-                BuildModuleEffects(newShip)
+                BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(17) = Now
                 ApplyStackingPenalties()
                 pStageTime(18) = Now
@@ -1149,7 +1149,7 @@ Imports EveHQ.Common.Extensions
                                         processData = True
                                     End If
                             End Select
-                            If processData = True And ((aModule.DatabaseGroup <> 1770 And (aModule.LoadedCharge.ModuleState And chkEffect.Status) = aModule.LoadedCharge.ModuleState) Or (aModule.DatabaseGroup = 1770 And aModule.ModuleState = chkEffect.Status)) Then
+                            If processData = True And ((aModule.DatabaseGroup <> ModuleEnum.GroupCommandBurst And (aModule.LoadedCharge.ModuleState And chkEffect.Status) = aModule.LoadedCharge.ModuleState) Or (aModule.DatabaseGroup = ModuleEnum.GroupCommandBurst And aModule.ModuleState = chkEffect.Status)) Then
                                 fEffect = New FinalEffect
                                 fEffect.AffectedAtt = chkEffect.AffectedAtt
                                 fEffect.AffectedType = chkEffect.AffectedType
@@ -1176,7 +1176,7 @@ Imports EveHQ.Common.Extensions
             End If ' End of LoadedCharge checking
         Next
     End Sub
-    Private Sub BuildModuleEffects(ByRef newShip As Ship)
+    Private Sub BuildModuleEffects(ByRef newShip As Ship, Optional ByVal forRemoteShip As Boolean = False)
         ' Clear the Effects Table
         _moduleEffectsTable.Clear()
         ' Go through all the skills and see what needs to be mapped
@@ -1227,7 +1227,9 @@ Imports EveHQ.Common.Extensions
                                 cause = aModule.LoadedCharge.Name
                             End If
                         End If
-                        If processData = True And (aModule.ModuleState And chkEffect.Status) = aModule.ModuleState Then
+                        If processData = True And
+                            ((aModule.ModuleState And chkEffect.Status) = aModule.ModuleState Or
+                            (chkEffect.Status = ModuleStates.Gang And aModule.DatabaseGroup = ModuleEnum.GroupCommandBurst And forRemoteShip = True)) Then
                             fEffect = New FinalEffect
                             fEffect.AffectedAtt = chkEffect.AffectedAtt
                             fEffect.AffectedType = chkEffect.AffectedType
@@ -1246,10 +1248,13 @@ Imports EveHQ.Common.Extensions
                             Else
                                 fEffectList = _moduleEffectsTable(fEffect.AffectedAtt)
                             End If
-                            If aModule.DatabaseGroup = 1770 Then
+                            If aModule.DatabaseGroup = ModuleEnum.GroupCommandBurst Then
                                 If aModule.LoadedCharge IsNot Nothing Then
-                                    If fEffect.AffectedID.Contains(aModule.LoadedCharge.ID) And aModule.ModuleState <> ModuleStates.Inactive And aModule.ModuleState <> ModuleStates.Offline Then
-                                        fEffectList.Add(fEffect)
+                                    If fEffect.AffectedID.Contains(aModule.LoadedCharge.ID) Then
+                                        If (aModule.ModuleState = ModuleStates.Active And chkEffect.Status = ModuleStates.Active And forRemoteShip = False) _
+                                            Or (chkEffect.Status = ModuleStates.Gang And forRemoteShip = True) Then
+                                            fEffectList.Add(fEffect)
+                                        End If
                                     End If
                                 End If
                             Else
@@ -1503,7 +1508,7 @@ Imports EveHQ.Common.Extensions
     End Sub
     Public Sub ApplySkillEffectsToModule(ByRef aModule As ShipModule, ByVal mapAttributes As Boolean)
         Dim att As Integer
-        If aModule.ModuleState < 16 Then
+        If aModule.ModuleState <16 Then
             For attNo As Integer = 0 To aModule.Attributes.Keys.Count - 1
                 att = aModule.Attributes.Keys(attNo)
                 If _skillEffectsTable.ContainsKey(att) = True Then
@@ -1797,10 +1802,8 @@ Imports EveHQ.Common.Extensions
                 att = aModule.Attributes.Keys(attNo)
                 If _moduleEffectsTable.ContainsKey(att) = True Then
                     For Each fEffect As FinalEffect In _moduleEffectsTable(att)
-                        If aModule.DatabaseGroup <> 1770 Then
-                            If ProcessFinalEffectForModule(aModule, fEffect) = True Then
-                                Call ApplyFinalEffectToModule(aModule, fEffect, att)
-                            End If
+                        If ProcessFinalEffectForModule(aModule, fEffect) = True Then
+                            Call ApplyFinalEffectToModule(aModule, fEffect, att)
                         End If
                     Next
                 End If
