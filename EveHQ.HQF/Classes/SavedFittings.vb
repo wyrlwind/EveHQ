@@ -93,7 +93,7 @@ Imports Newtonsoft.Json
 
         ' Write the JSON version of the fittings
         Try
-            If json = "null" Or SavedFittingList Is Nothing Or json = "" Then
+            If json = "null" Or json = "" Then
                 Throw New Exception("JSON conversion failed")
             End If
 
