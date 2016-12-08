@@ -3548,6 +3548,7 @@ Namespace Controls
                     Next
                     Call ParentFitting.UpdateFittingFromBaseShip()
                     Call RedrawCargoBay()
+                    ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
                 Case "lvwShipBay"
                     ' Removes the item from the cargo bay
                     For Each remItem As ListViewItem In lvwShipBay.SelectedItems
