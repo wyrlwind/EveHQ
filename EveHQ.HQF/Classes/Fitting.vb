@@ -105,6 +105,7 @@ Imports EveHQ.Common.Extensions
 
     Dim cModules As New List(Of ModuleWithState)
     Dim cDrones As New List(Of ModuleQWithState)
+    Dim cFighters As New List(Of ModuleFighterWithState)
     Dim cItems As New List(Of ModuleQWithState)
     Dim cShips As New List(Of ModuleQWithState)
 
@@ -282,6 +283,21 @@ Imports EveHQ.Common.Extensions
     End Property
 
     ''' <summary>
+    ''' Gets or sets the collection of fighters used in the fitting
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A collection of fighters used in the fitting</returns>
+    ''' <remarks></remarks>
+    Public Property Fighters() As List(Of ModuleFighterWithState)
+        Get
+            Return cFighters
+        End Get
+        Set(ByVal value As List(Of ModuleFighterWithState))
+            cFighters = value
+        End Set
+    End Property
+
+    ''' <summary>
     ''' Gets or sets the collection of items stored in the cargo bay
     ''' </summary>
     ''' <value></value>
@@ -406,7 +422,7 @@ Imports EveHQ.Common.Extensions
     ''' Gets or sets a collection of remote effects to be applied to the fitting
     ''' </summary>
     ''' <value></value>
-    ''' <returns>A collection of fleet effects to be applied to the fitting</returns>
+    ''' <returns>A collection of remote effects to be applied to the fitting</returns>
     ''' <remarks></remarks>
     Public Property RemoteEffects() As List(Of RemoteEffect)
         Get
@@ -544,7 +560,7 @@ Imports EveHQ.Common.Extensions
     ''' </summary>
     ''' <param name="buildMethod"></param>
     ''' <remarks></remarks>
-    Public Sub ApplyFitting(Optional ByVal buildMethod As BuildType = BuildType.BuildEverything, Optional ByVal visualUpdates As Boolean = True)
+    Public Sub ApplyFitting(Optional ByVal buildMethod As BuildType = BuildType.BuildEverything, Optional ByVal visualUpdates As Boolean = True, Optional ByVal forRemoteShip As Boolean = False)
         ' Update the pilot from the pilot name
 
         Dim newBaseShip As Ship = BaseShip
@@ -560,23 +576,23 @@ Imports EveHQ.Common.Extensions
         pStages(3) = "Building Ship Bonuses: "
         pStages(4) = "Building External Influences: "
         pStages(5) = "Collecting Modules: "
-        pStages(6) = "Applying Skill Effects to Ship: "
-        pStages(7) = "Applying Skill Effects to Modules: "
-        pStages(8) = "Applying Skill Effects to Drones: "
-        pStages(9) = "Building Module Effects: "
-        pStages(10) = "Applying Stacking Penalties: "
-        pStages(11) = "Applying Module Effects to Charges: "
-        pStages(12) = "Build Charge Effects: "
-        pStages(13) = "Applying Charge Effects to Modules: "
-        pStages(14) = "Applying Charge Effects to Ship: "
-        pStages(15) = "Rebuilding Module Effects: "
-        pStages(16) = "Recalculating Stacking Penalties: "
-        pStages(17) = "Applying Module Effects to Modules: "
-        pStages(18) = "Rebuilding Module Effects: "
-        pStages(19) = "Recalculating Stacking Penalties: "
-        pStages(20) = "Applying Module Effects to Missiles: "
-        pStages(21) = "Applying Module Effects to Drones: "
-        pStages(22) = "Applying Module Effects to Ship: "
+        pStages(6) = "Applying Skill Effects to Modules: "
+        pStages(7) = "Applying Skill Effects to Drones: "
+        pStages(8) = "Building Module Effects: "
+        pStages(9) = "Applying Stacking Penalties: "
+        pStages(10) = "Applying Module Effects to Charges: "
+        pStages(11) = "Build Charge Effects: "
+        pStages(12) = "Applying Charge Effects to Modules: "
+        pStages(13) = "Applying Charge Effects to Ship: "
+        pStages(14) = "Rebuilding Module Effects: "
+        pStages(15) = "Recalculating Stacking Penalties: "
+        pStages(16) = "Applying Module Effects to Modules: "
+        pStages(17) = "Rebuilding Module Effects: "
+        pStages(18) = "Recalculating Stacking Penalties: "
+        pStages(19) = "Applying Module Effects to Missiles: "
+        pStages(20) = "Applying Module Effects to Drones: "
+        pStages(21) = "Applying Module Effects to Ship: "
+        pStages(22) = "Applying Skill Effects to Ship: "
         pStages(23) = "Calculating Damage Statistics: "
         pStages(24) = "Calculating Defence Statistics: "
         ' Apply the pilot skills to the ship
@@ -594,39 +610,40 @@ Imports EveHQ.Common.Extensions
                 pStageTime(4) = Now
                 newShip = CollectModules(newBaseShip.Clone)
                 pStageTime(5) = Now
-                ApplySkillEffectsToShip(newShip)
-                pStageTime(6) = Now
+                'ApplySkillEffectsToShip(newShip)
                 ApplySkillEffectsToModules(newShip)
-                pStageTime(7) = Now
+                pStageTime(6) = Now
                 ApplySkillEffectsToDrones(newShip)
+                pStageTime(7) = Now
+                BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(8) = Now
-                BuildModuleEffects(newShip)
+                ApplyStackingPenalties()
                 pStageTime(9) = Now
-                ApplyStackingPenalties()
-                pStageTime(10) = Now
                 ApplyModuleEffectsToCharges(newShip)
-                pStageTime(11) = Now
+                pStageTime(10) = Now
                 BuildChargeEffects(newShip)
-                pStageTime(12) = Now
+                pStageTime(11) = Now
                 ApplyChargeEffectsToModules(newShip)
-                pStageTime(13) = Now
+                pStageTime(12) = Now
                 ApplyChargeEffectsToShip(newShip)
+                pStageTime(13) = Now
+                BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(14) = Now
-                BuildModuleEffects(newShip)
+                ApplyStackingPenalties()
                 pStageTime(15) = Now
-                ApplyStackingPenalties()
-                pStageTime(16) = Now
                 ApplyModuleEffectsToModules(newShip)
+                pStageTime(16) = Now
+                BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(17) = Now
-                BuildModuleEffects(newShip)
-                pStageTime(18) = Now
                 ApplyStackingPenalties()
-                pStageTime(19) = Now
+                pStageTime(18) = Now
                 ApplyModuleEffectsToMissiles(newShip)
-                pStageTime(20) = Now
+                pStageTime(19) = Now
                 ApplyModuleEffectsToDrones(newShip)
-                pStageTime(21) = Now
+                pStageTime(20) = Now
                 ApplyModuleEffectsToShip(newShip)
+                pStageTime(21) = Now
+                ApplySkillEffectsToShip(newShip)
                 pStageTime(22) = Now
                 CalculateDamageStatistics(newShip)
                 pStageTime(23) = Now
@@ -645,37 +662,37 @@ Imports EveHQ.Common.Extensions
                 pStageTime(4) = Now
                 'newShip = CollectModules(CType(baseShip.Clone, Ship))
                 pStageTime(5) = Now
-                'Me.ApplySkillEffectsToShip(newShip)
-                pStageTime(6) = Now
                 'Me.ApplySkillEffectsToModules(newShip)
-                pStageTime(7) = Now
+                pStageTime(6) = Now
                 'Me.ApplySkillEffectsToDrones(newShip)
+                pStageTime(7) = Now
+                'Me.BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(8) = Now
-                'Me.BuildModuleEffects(newShip)
+                'Me.ApplyStackingPenalties()
                 pStageTime(9) = Now
-                'Me.ApplyStackingPenalties()
-                pStageTime(10) = Now
                 'Me.ApplyModuleEffectsToCharges(newShip)
-                pStageTime(11) = Now
+                pStageTime(10) = Now
                 'Me.BuildChargeEffects(newShip)
-                pStageTime(12) = Now
+                pStageTime(11) = Now
                 'Me.ApplyChargeEffectsToModules(newShip)
-                pStageTime(13) = Now
+                pStageTime(12) = Now
                 'Me.ApplyChargeEffectsToShip(newShip)
+                pStageTime(13) = Now
+                'Me.BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(14) = Now
-                'Me.BuildModuleEffects(newShip)
+                'Me.ApplyStackingPenalties()
                 pStageTime(15) = Now
-                'Me.ApplyStackingPenalties()
-                pStageTime(16) = Now
                 'Me.ApplyModuleEffectsToModules(newShip)
+                pStageTime(16) = Now
+                'Me.BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(18) = Now
-                'Me.BuildModuleEffects(newShip)
-                pStageTime(19) = Now
                 'Me.ApplyStackingPenalties()
-                pStageTime(20) = Now
+                pStageTime(19) = Now
                 'Me.ApplyModuleEffectsToDrones(newShip)
+                pStageTime(20) = Now
+                'Me.ApplyModuleEffectsToShip(newShip)                
                 pStageTime(21) = Now
-                'Me.ApplyModuleEffectsToShip(newShip)
+                'Me.ApplySkillEffectsToShip(newShip)
                 pStageTime(22) = Now
                 'Me.CalculateDamageStatistics(newShip)
                 pStageTime(23) = Now
@@ -694,39 +711,39 @@ Imports EveHQ.Common.Extensions
                 pStageTime(4) = Now
                 newShip = CollectModules(newBaseShip.Clone)
                 pStageTime(5) = Now
-                ApplySkillEffectsToShip(newShip)
-                pStageTime(6) = Now
                 ApplySkillEffectsToModules(newShip)
-                pStageTime(7) = Now
+                pStageTime(6) = Now
                 ApplySkillEffectsToDrones(newShip)
+                pStageTime(7) = Now
+                BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(8) = Now
-                BuildModuleEffects(newShip)
+                ApplyStackingPenalties()
                 pStageTime(9) = Now
-                ApplyStackingPenalties()
-                pStageTime(10) = Now
                 ApplyModuleEffectsToCharges(newShip)
-                pStageTime(11) = Now
+                pStageTime(10) = Now
                 BuildChargeEffects(newShip)
-                pStageTime(12) = Now
+                pStageTime(11) = Now
                 ApplyChargeEffectsToModules(newShip)
-                pStageTime(13) = Now
+                pStageTime(12) = Now
                 ApplyChargeEffectsToShip(newShip)
+                pStageTime(13) = Now
+                BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(14) = Now
-                BuildModuleEffects(newShip)
+                ApplyStackingPenalties()
                 pStageTime(15) = Now
-                ApplyStackingPenalties()
-                pStageTime(16) = Now
                 ApplyModuleEffectsToModules(newShip)
+                pStageTime(16) = Now
+                BuildModuleEffects(newShip, forRemoteShip)
                 pStageTime(17) = Now
-                BuildModuleEffects(newShip)
-                pStageTime(18) = Now
                 ApplyStackingPenalties()
-                pStageTime(19) = Now
+                pStageTime(18) = Now
                 ApplyModuleEffectsToMissiles(newShip)
-                pStageTime(20) = Now
+                pStageTime(19) = Now
                 ApplyModuleEffectsToDrones(newShip)
-                pStageTime(21) = Now
+                pStageTime(20) = Now
                 ApplyModuleEffectsToShip(newShip)
+                pStageTime(21) = Now
+                ApplySkillEffectsToShip(newShip)
                 pStageTime(22) = Now
                 CalculateDamageStatistics(newShip)
                 pStageTime(23) = Now
@@ -1132,7 +1149,14 @@ Imports EveHQ.Common.Extensions
                                         processData = True
                                     End If
                             End Select
-                            If processData = True And (aModule.LoadedCharge.ModuleState And chkEffect.Status) = aModule.LoadedCharge.ModuleState Then
+                            ' I don't get this line but I think there is a bug
+                            ' I believe it should always work like the second line
+                            ' looking at the module state instead of the charge state
+                            ' because the charge state doesn't seem to ever change
+                            ' in any case command bursts require it to be like this
+                            ' (or we could have the charge state change)
+                            If processData = True And ((aModule.DatabaseGroup <> ModuleEnum.GroupCommandBurst And (aModule.LoadedCharge.ModuleState And chkEffect.Status) = aModule.LoadedCharge.ModuleState) _
+                                                        Or (aModule.DatabaseGroup = ModuleEnum.GroupCommandBurst And aModule.ModuleState = chkEffect.Status)) Then
                                 fEffect = New FinalEffect
                                 fEffect.AffectedAtt = chkEffect.AffectedAtt
                                 fEffect.AffectedType = chkEffect.AffectedType
@@ -1151,6 +1175,10 @@ Imports EveHQ.Common.Extensions
                                 Else
                                     fEffectList = _chargeEffectsTable(fEffect.AffectedAtt)
                                 End If
+                                ' Record the module that caused the effect so 
+                                ' we can make it only apply to the charge in it
+                                ' later if needed
+                                fEffect.CauseModule = aModule
                                 fEffectList.Add(fEffect)
                             End If
                         Next
@@ -1159,7 +1187,7 @@ Imports EveHQ.Common.Extensions
             End If ' End of LoadedCharge checking
         Next
     End Sub
-    Private Sub BuildModuleEffects(ByRef newShip As Ship)
+    Private Sub BuildModuleEffects(ByRef newShip As Ship, Optional ByVal forRemoteShip As Boolean = False)
         ' Clear the Effects Table
         _moduleEffectsTable.Clear()
         ' Go through all the skills and see what needs to be mapped
@@ -1228,6 +1256,24 @@ Imports EveHQ.Common.Extensions
                                 _moduleEffectsTable.Add(fEffect.AffectedAtt, fEffectList)
                             Else
                                 fEffectList = _moduleEffectsTable(fEffect.AffectedAtt)
+                            End If
+                            ' We need to special case Command Bursts because they have
+                            ' have local and remote effects and should only apply
+                            ' to the charge loaded
+                            If aModule.DatabaseGroup = ModuleEnum.GroupCommandBurst Then
+                                If aModule.LoadedCharge IsNot Nothing Then
+                                    ' We only want the burst to affect the charge loaded
+                                    ' so we are going to record which module the effect is for
+                                    If forRemoteShip = False Then
+                                        fEffect.CauseModule = aModule
+                                        ' We need to exclude the Non-gang effects for remote bursts
+                                        ' Note that we are still adding the effect but if it isn't
+                                        ' a gang effect it will not match with a module 
+                                        ' ergo it will no be applied later in the ApplyModuleEffectsToCharges
+                                    ElseIf (chkEffect.Status = ModuleStates.Gang And forRemoteShip = True) Then
+                                        fEffect.CauseModule = aModule
+                                    End If
+                                End If
                             End If
                             fEffectList.Add(fEffect)
                         End If
@@ -1360,6 +1406,9 @@ Imports EveHQ.Common.Extensions
         For Each dbidx As Integer In cShip.DroneBayItems.Keys
             newShip.DroneBayItems.Add(dbidx, cShip.DroneBayItems(dbidx))
         Next
+        For Each fbidx As Integer In cShip.FighterBayItems.Keys
+            newShip.FighterBayItems.Add(fbidx, cShip.FighterBayItems(fbidx))
+        Next
         For Each sbidx As Integer In cShip.ShipBayItems.Keys
             newShip.ShipBayItems.Add(sbidx, cShip.ShipBayItems(sbidx))
         Next
@@ -1450,8 +1499,8 @@ Imports EveHQ.Common.Extensions
                 newShip.SlotCollection.Add(newShip.RigSlot(slot))
             End If
         Next
-        ' Reset max gang links status
-        newShip.Attributes(10063) = 1
+        ' Reset max bursts status
+        newShip.Attributes(AttributeEnum.ShipMaxBursts) = 1
         Return newShip
     End Function
     Private Sub ApplySkillEffectsToShip(ByRef newShip As Ship)
@@ -1508,6 +1557,22 @@ Imports EveHQ.Common.Extensions
         Dim att As Integer
         For Each dbi As DroneBayItem In newShip.DroneBayItems.Values
             aModule = dbi.DroneType
+            If aModule.ModuleState < 16 Then
+                For attNo As Integer = 0 To aModule.Attributes.Keys.Count - 1
+                    att = aModule.Attributes.Keys(attNo)
+                    If _skillEffectsTable.ContainsKey(att) = True Then
+                        For Each fEffect As FinalEffect In _skillEffectsTable(att)
+                            If ProcessFinalEffectForModule(aModule, fEffect) = True Then
+                                Call ApplyFinalEffectToModule(aModule, fEffect, att)
+                            End If
+                        Next
+                    End If
+                Next
+            End If
+        Next
+
+        For Each dbi As FighterBayItem In newShip.FighterBayItems.Values
+            aModule = dbi.FighterType
             If aModule.ModuleState < 16 Then
                 For attNo As Integer = 0 To aModule.Attributes.Keys.Count - 1
                     att = aModule.Attributes.Keys(attNo)
@@ -1716,7 +1781,16 @@ Imports EveHQ.Common.Extensions
                         If _moduleEffectsTable.ContainsKey(att) = True Then
                             For Each fEffect As FinalEffect In _moduleEffectsTable(att)
                                 If ProcessFinalEffectForModule(aModule.LoadedCharge, fEffect) = True Then
-                                    Call ApplyFinalEffectToModule(aModule.LoadedCharge, fEffect, att)
+                                    ' Bursts need to only apply to their loaded charge
+                                    ' we recorded which burst an effect goes to earlier
+                                    ' so now we can filter on it
+                                    If aModule.DatabaseGroup = ModuleEnum.GroupCommandBurst Then
+                                        If fEffect.CauseModule Is aModule Then
+                                            Call ApplyFinalEffectToModule(aModule.LoadedCharge, fEffect, att)
+                                        End If
+                                    Else
+                                        Call ApplyFinalEffectToModule(aModule.LoadedCharge, fEffect, att)
+                                    End If
                                 End If
                             Next
                         End If
@@ -1778,6 +1852,21 @@ Imports EveHQ.Common.Extensions
                 End If
             Next
         Next
+
+        For Each dbi As FighterBayItem In newShip.FighterBayItems.Values
+            aModule = dbi.FighterType
+            For attNo As Integer = 0 To aModule.Attributes.Keys.Count - 1
+                att = aModule.Attributes.Keys(attNo)
+                If _moduleEffectsTable.ContainsKey(att) = True Then
+                    For Each fEffect As FinalEffect In _moduleEffectsTable(att)
+                        If ProcessFinalEffectForModule(aModule, fEffect) = True Then
+                            Call ApplyFinalEffectToModule(aModule, fEffect, att)
+                        End If
+                    Next
+                End If
+            Next
+        Next
+
     End Sub
     Private Sub ApplyModuleEffectsToShip(ByRef newShip As Ship)
         Dim tempAtts As New SortedList(Of String, Double)
@@ -1887,6 +1976,123 @@ Imports EveHQ.Common.Extensions
                         newShip.Attributes(AttributeEnum.ShipKinDPS) += (cModule.Attributes(AttributeEnum.ModuleKinDamage) / rof) * dbi.Quantity
                         newShip.Attributes(AttributeEnum.ShipThermDPS) += (cModule.Attributes(AttributeEnum.ModuleThermDamage) / rof) * dbi.Quantity
                 End Select
+            End If
+        Next
+        For Each fbi As FighterBayItem In newShip.FighterBayItems.Values
+            If fbi.IsActive = True Then
+                cModule = fbi.FighterType
+                Dim squadronQuantity As Integer = fbi.Quantity
+                If fbi.FighterType.Attributes(2215) < squadronQuantity Then
+                    squadronQuantity = CInt(fbi.FighterType.Attributes(2215))
+                End If
+
+                ' Turret Damage
+                Dim turretRof As Double = 1
+                Dim turretDmgMod As Double = 0
+                Dim turretBaseDamage As Double = 0
+                Dim turretEMDamage As Double = 0
+                Dim turretExpDamage As Double = 0
+                Dim turretKinDamage As Double = 0
+                Dim turretThermDamage As Double = 0
+                If fbi.IsTurretActive And cModule.Attributes.ContainsKey(2233) = True Then
+                    turretRof = cModule.Attributes(2233)
+                    turretDmgMod = cModule.Attributes(2226)
+                    If cModule.Attributes.ContainsKey(2227) Then
+                        turretBaseDamage += cModule.Attributes(2227)
+                        turretEMDamage = cModule.Attributes(2227) * turretDmgMod
+                    Else
+                        turretEMDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2230) Then
+                        turretBaseDamage += cModule.Attributes(2230)
+                        turretExpDamage = cModule.Attributes(2230) * turretDmgMod
+                    Else
+                        turretExpDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2229) Then
+                        turretBaseDamage += cModule.Attributes(2229)
+                        turretKinDamage = cModule.Attributes(2229) * turretDmgMod
+                    Else
+                        turretKinDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2228) Then
+                        turretBaseDamage += cModule.Attributes(2228)
+                        turretThermDamage = cModule.Attributes(2228) * turretDmgMod
+                    Else
+                        turretThermDamage = 0
+                    End If
+                End If
+                ' Missile damage
+                Dim missileRof As Double = 1
+                Dim missileDmgMod As Double = 0
+                Dim missileBaseDamage As Double = 0
+                Dim missileEMDamage As Double = 0
+                Dim missileExpDamage As Double = 0
+                Dim missileKinDamage As Double = 0
+                Dim missileThermDamage As Double = 0
+                If fbi.IsMissileActive And cModule.Attributes.ContainsKey(2182) = True Then
+                    missileRof = cModule.Attributes(2182)
+                    missileDmgMod = cModule.Attributes(2130)
+                    If cModule.Attributes.ContainsKey(2131) Then
+                        missileBaseDamage += cModule.Attributes(2131)
+                        missileEMDamage = cModule.Attributes(2131) * missileDmgMod
+                    Else
+                        missileEMDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2134) Then
+                        missileBaseDamage += cModule.Attributes(2134)
+                        missileExpDamage = cModule.Attributes(2134) * missileDmgMod
+                    Else
+                        missileExpDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2133) Then
+                        missileBaseDamage += cModule.Attributes(2133)
+                        missileKinDamage = cModule.Attributes(2133) * missileDmgMod
+                    Else
+                        missileKinDamage = 0
+                    End If
+                    If cModule.Attributes.ContainsKey(2132) Then
+                        missileBaseDamage += cModule.Attributes(2132)
+                        missileThermDamage = cModule.Attributes(2132) * missileDmgMod
+                    Else
+                        missileThermDamage = 0
+                    End If
+                End If
+                Dim bombRof As Double = 1
+                Dim bombDmgMod As Double = 1
+                Dim bombBaseDamage As Double = 0
+                Dim bombEMDamage As Double = 0
+                Dim bombExpDamage As Double = 0
+                Dim bombKinDamage As Double = 0
+                Dim bombThermDamage As Double = 0
+                If fbi.IsBombActive And cModule.LoadedCharge IsNot Nothing Then
+                    bombRof = cModule.Attributes(2349)
+                    bombDmgMod = 1
+                    bombBaseDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseEMDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseExpDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseKinDamage) + cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseThermDamage)
+                    bombEMDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseEMDamage) * bombDmgMod
+                    bombExpDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseExpDamage) * bombDmgMod
+                    bombKinDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseKinDamage) * bombDmgMod
+                    bombThermDamage = cModule.LoadedCharge.Attributes(AttributeEnum.ModuleBaseThermDamage) * bombDmgMod
+                End If
+                cModule.Attributes(AttributeEnum.ModuleBaseDamage) = 0
+                cModule.Attributes(AttributeEnum.ModuleVolleyDamage) = (turretDmgMod * turretBaseDamage) + (missileDmgMod * missileBaseDamage) + (bombDmgMod * bombBaseDamage)
+                cModule.Attributes(AttributeEnum.ModuleDPS) = ((turretDmgMod * turretBaseDamage) / turretRof) + ((missileDmgMod * missileBaseDamage) / missileRof) + ((bombDmgMod * bombBaseDamage) / bombRof)
+                cModule.Attributes(AttributeEnum.ModuleEMDamage) = turretEMDamage + missileEMDamage + bombEMDamage
+                cModule.Attributes(AttributeEnum.ModuleExpDamage) = turretExpDamage + missileExpDamage + bombExpDamage
+                cModule.Attributes(AttributeEnum.ModuleKinDamage) = turretKinDamage + missileKinDamage + bombKinDamage
+                cModule.Attributes(AttributeEnum.ModuleThermDamage) = turretThermDamage + missileThermDamage + bombThermDamage
+                newShip.Attributes(AttributeEnum.ShipDroneVolleyDamage) += cModule.Attributes(AttributeEnum.ModuleVolleyDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipDroneDPS) += cModule.Attributes(AttributeEnum.ModuleDPS) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipVolleyDamage) += cModule.Attributes(AttributeEnum.ModuleVolleyDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipDPS) += cModule.Attributes(AttributeEnum.ModuleDPS) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipEMDamage) += cModule.Attributes(AttributeEnum.ModuleEMDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipExpDamage) += cModule.Attributes(AttributeEnum.ModuleExpDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipKinDamage) += cModule.Attributes(AttributeEnum.ModuleKinDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipThermDamage) += cModule.Attributes(AttributeEnum.ModuleThermDamage) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipEmDPS) += ((turretEMDamage / turretRof) + (missileEMDamage / missileRof) + (bombEMDamage / bombRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipExpDPS) += ((turretExpDamage / turretRof) + (missileExpDamage / missileRof) + (bombExpDamage / bombRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipKinDPS) += ((turretKinDamage / turretRof) + (missileKinDamage / missileRof) + (bombKinDamage / bombRof)) * squadronQuantity
+                newShip.Attributes(AttributeEnum.ShipThermDPS) += ((turretThermDamage / turretRof) + (missileThermDamage / missileRof) + (bombThermDamage / bombRof)) * squadronQuantity
             End If
         Next
         For slot As Integer = 1 To newShip.HiSlots
@@ -2443,6 +2649,22 @@ Imports EveHQ.Common.Extensions
             End If
         Next
 
+        ' Add the fighters
+        For Each mws As ModuleFighterWithState In Fighters
+            Dim temp As New ShipModule
+            If ModuleLists.ModuleList.TryGetValue(CInt(mws.ID), temp) Then
+                Dim newMod As ShipModule = temp.Clone
+                newMod.ModuleState = mws.State
+                If mws.State = ModuleStates.Active Then
+                    Call AddFighter(newMod, mws.Quantity, True, True, mws.TurretState, mws.MissileState, mws.BombState)
+                Else
+                    Call AddFighter(newMod, mws.Quantity, False, True, mws.TurretState, mws.MissileState, mws.BombState)
+                End If
+            Else
+                Trace.TraceWarning(String.Format(UnknownModuleFitted, mws.ID))
+            End If
+        Next
+
         ' Add items
         For Each mws As ModuleQWithState In Items
             'Bug EVEHQ-380 : There is a key not found error in the module list. 
@@ -2566,6 +2788,16 @@ Imports EveHQ.Common.Extensions
             End If
         Next
 
+        ' Add fighters
+        Fighters.Clear()
+        For Each fbi As FighterBayItem In BaseShip.FighterBayItems.Values
+            If fbi.IsActive = True Then
+                Fighters.Add(New ModuleFighterWithState(CStr(fbi.FighterType.ID), ModuleStates.Active, fbi.Quantity, fbi.IsTurretActive, fbi.IsMissileActive, fbi.IsBombActive))
+            Else
+                Fighters.Add(New ModuleFighterWithState(CStr(fbi.FighterType.ID), ModuleStates.Inactive, fbi.Quantity, fbi.IsTurretActive, fbi.IsMissileActive, fbi.IsBombActive))
+            End If
+        Next
+
         ' Add items
         Items.Clear()
         For Each cbi As CargoBayItem In BaseShip.CargoBayItems.Values
@@ -2621,9 +2853,9 @@ Imports EveHQ.Common.Extensions
 
     Public Sub AddModule(ByVal shipMod As ShipModule, ByVal slotNo As Integer, ByVal updateShip As Boolean, ByVal updateAll As Boolean, ByVal repMod As ShipModule, ByVal suppressUndo As Boolean, ByVal isSwappingModules As Boolean)
         ' Check for command processors as this affects the fitting!
-        If shipMod.ID = ModuleEnum.ItemCommandProcessorI And shipMod.ModuleState = ModuleStates.Active Then
-            BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) += 1
-            FittedShip.Attributes(AttributeEnum.ShipMaxGangLinks) += 1
+        If (shipMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or shipMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or shipMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or shipMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) And shipMod.ModuleState = ModuleStates.Active Then
+            BaseShip.Attributes(AttributeEnum.ShipMaxBursts) += 1
+            FittedShip.Attributes(AttributeEnum.ShipMaxBursts) += 1
         End If
 
         ' Check slot availability (only if not adding in a specific slot?)
@@ -2754,6 +2986,58 @@ Imports EveHQ.Common.Extensions
             End If
         Else
             MessageBox.Show("There is not enough space in the Drone Bay to hold " & qty & " unit(s) of " & drone.Name & " on '" & FittingName & "' (" & ShipName & ").", "Insufficient Space", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Public Sub AddFighter(ByVal fighter As ShipModule, ByVal qty As Integer, ByVal active As Boolean, ByVal updateAll As Boolean, ByVal isTurretActive As Boolean, ByVal isMissileActive As Boolean, ByVal isBombActive As Boolean)
+
+        ' See if there is sufficient space
+        Dim vol As Double = fighter.Volume
+        Dim myShip As Ship
+
+        If FittedShip IsNot Nothing Then
+            myShip = FittedShip
+        Else
+            myShip = BaseShip
+        End If
+
+        If myShip.FighterBay - BaseShip.FighterBayUsed >= vol * qty Then
+
+            Dim fbi As New FighterBayItem
+            fbi.FighterType = fighter
+            fbi.Quantity = qty
+            fbi.IsTurretActive = isTurretActive
+            fbi.IsMissileActive = isMissileActive
+            fbi.IsBombActive = isBombActive
+            If active = True Then
+                fbi.IsActive = True
+            Else
+                fbi.IsActive = False
+            End If
+
+            If updateAll = False Then
+                Dim squadMax As Integer = CInt(fbi.FighterType.Attributes(2215))
+
+                If myShip.FighterBay - BaseShip.FighterBayUsed >= vol * squadMax Then
+                    fbi.Quantity = squadMax
+                Else
+                    fbi.Quantity = CInt((Fix(((myShip.FighterBay - BaseShip.FighterBayUsed) / vol) * 100)) / 100)
+                End If
+            End If
+
+            BaseShip.FighterBayItems.Add(BaseShip.FighterBayItems.Count, fbi)
+
+            ' Update stuff
+            If updateAll = False Then
+                ApplyFitting(BuildType.BuildFromEffectsMaps)
+                If ShipSlotCtrl IsNot Nothing Then
+                    Call ShipSlotCtrl.UpdateFighterBay()
+                End If
+            Else
+                BaseShip.FighterBayUsed += vol * qty
+            End If
+        Else
+            MessageBox.Show("There is not enough space in the Fighter Bay to hold " & qty & " unit(s) of " & fighter.Name & " on '" & FittingName & "' (" & ShipName & ").", "Insufficient Space", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -2991,7 +3275,19 @@ Imports EveHQ.Common.Extensions
 
         ' Check for ship group restrictions
         Dim shipGroups As New List(Of Integer)
-        Dim shipGroupAttributes() As Integer = {AttributeEnum.ModuleCanFitShipGroup1, AttributeEnum.ModuleCanFitShipGroup2, AttributeEnum.ModuleCanFitShipGroup3, AttributeEnum.ModuleCanFitShipGroup4, AttributeEnum.ModuleCanFitShipGroup5, AttributeEnum.ModuleCanFitShipGroup6, AttributeEnum.ModuleCanFitShipGroup7, AttributeEnum.ModuleCanFitShipGroup8, AttributeEnum.ModuleCanFitShipGroup9}
+        Dim shipGroupAttributes() As Integer = {
+            AttributeEnum.ModuleCanFitShipGroup1,
+            AttributeEnum.ModuleCanFitShipGroup2,
+            AttributeEnum.ModuleCanFitShipGroup3,
+            AttributeEnum.ModuleCanFitShipGroup4,
+            AttributeEnum.ModuleCanFitShipGroup5,
+            AttributeEnum.ModuleCanFitShipGroup6,
+            AttributeEnum.ModuleCanFitShipGroup7,
+            AttributeEnum.ModuleCanFitShipGroup8,
+            AttributeEnum.ModuleCanFitShipGroup9,
+            AttributeEnum.ModuleCanFitShipGroup10
+        }
+
         For Each att As Integer In shipGroupAttributes
             If shipMod.Attributes.ContainsKey(att) = True Then
                 shipGroups.Add(CInt(shipMod.Attributes(att)))
@@ -2999,7 +3295,16 @@ Imports EveHQ.Common.Extensions
         Next
         ' Check for ship type restrictions
         Dim shipTypes As New List(Of Integer)
-        Dim shipTypeAttributes() As Integer = {AttributeEnum.ModuleCanFitShipType1, AttributeEnum.ModuleCanFitShipType2, AttributeEnum.ModuleCanFitShipType3, AttributeEnum.ModuleCanFitShipType4, AttributeEnum.ModuleCanFitShipType5}
+        Dim shipTypeAttributes() As Integer = {
+            AttributeEnum.ModuleCanFitShipType1,
+            AttributeEnum.ModuleCanFitShipType2,
+            AttributeEnum.ModuleCanFitShipType3,
+            AttributeEnum.ModuleCanFitShipType4,
+            AttributeEnum.ModuleCanFitShipType5,
+            AttributeEnum.ModuleCanFitShipType6,
+            AttributeEnum.ModuleCanFitShipType7
+        }
+
         For Each att As Integer In shipTypeAttributes
             If shipMod.Attributes.ContainsKey(att) = True Then
                 shipTypes.Add(CInt(shipMod.Attributes(att)))
@@ -3074,13 +3379,25 @@ Imports EveHQ.Common.Extensions
             End If
         End If
 
+
+        ' Check for maxTypeFitted flag
+        If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleMaxTypeFitted) = True Then
+            If IsModuleTypeLimitExceeded(shipMod, AttributeEnum.ModuleMaxGroupFitted) = True Then
+                If search = False Then
+                    MessageBox.Show("You cannot fit more than " & shipMod.Attributes(AttributeEnum.ModuleMaxTypeFitted) & " module(s) of this type to a ship ('" & FittingName & "', " & ShipName & ").", "Module Type Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+                Return False
+            End If
+        End If
+
+
         ' Check for maxGroupActive flag
         If search = False AndAlso shipMod.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
             Dim groupReplace As Boolean = False
             If repMod IsNot Nothing AndAlso repMod.DatabaseGroup = shipMod.DatabaseGroup Then
                 groupReplace = True
             End If
-            If shipMod.DatabaseGroup <> ModuleEnum.GroupGangLinks Then
+            If (shipMod.DatabaseGroup <> ModuleEnum.GroupGangLinks And shipMod.DatabaseGroup <> ModuleEnum.GroupCommandBurst) Then
                 If IsModuleGroupLimitExceeded(shipMod, Not groupReplace, AttributeEnum.ModuleMaxGroupActive) = True Then
                     ' Set the module offline
                     shipMod.ModuleState = ModuleStates.Inactive
@@ -3112,9 +3429,9 @@ Imports EveHQ.Common.Extensions
                 maxAllowed = CInt(fittedMod.Attributes(AttributeEnum.ModuleMaxGroupFitted))
             Case AttributeEnum.ModuleMaxGroupActive
                 moduleState = ModuleStates.Active
-                If fittedMod.DatabaseGroup = ModuleEnum.GroupGangLinks Then
-                    If FittedShip.Attributes.ContainsKey(AttributeEnum.ShipMaxGangLinks) = True Then
-                        maxAllowed = CInt(FittedShip.Attributes(AttributeEnum.ShipMaxGangLinks))
+                If (fittedMod.DatabaseGroup = ModuleEnum.GroupGangLinks Or fittedMod.DatabaseGroup = ModuleEnum.GroupCommandBurst) Then
+                    If FittedShip.Attributes.ContainsKey(AttributeEnum.ShipMaxBursts) = True Then
+                        maxAllowed = CInt(FittedShip.Attributes(AttributeEnum.ShipMaxBursts))
                     End If
                 Else
                     maxAllowed = CInt(fittedMod.Attributes(AttributeEnum.ModuleMaxGroupActive))
@@ -3130,10 +3447,8 @@ Imports EveHQ.Common.Extensions
         Next
         For slot As Integer = 1 To BaseShip.MidSlots
             If BaseShip.MidSlot(slot) IsNot Nothing Then
-                If BaseShip.MidSlot(slot).ID <> ModuleEnum.ItemCommandProcessorI Then
-                    If BaseShip.MidSlot(slot).DatabaseGroup = testMod.DatabaseGroup And BaseShip.MidSlot(slot).ModuleState >= moduleState Then
-                        count += 1
-                    End If
+                If BaseShip.MidSlot(slot).DatabaseGroup = testMod.DatabaseGroup And BaseShip.MidSlot(slot).ModuleState >= moduleState Then
+                    count += 1
                 End If
             End If
         Next
@@ -3165,6 +3480,52 @@ Imports EveHQ.Common.Extensions
             End If
         End If
     End Function
+
+    Public Function IsModuleTypeLimitExceeded(ByVal testMod As ShipModule, ByVal attribute As Integer) As Boolean
+        Dim count As Integer = 0
+        Dim fittedMod As ShipModule = testMod.Clone
+        ApplySkillEffectsToModule(fittedMod, True)
+
+        Dim maxAllowed As Integer = CInt(fittedMod.Attributes(AttributeEnum.ModuleMaxTypeFitted))
+
+
+        For slot As Integer = 1 To BaseShip.HiSlots
+            If BaseShip.HiSlot(slot) IsNot Nothing Then
+                If BaseShip.HiSlot(slot).ID = testMod.ID Then
+                    count += 1
+                End If
+            End If
+        Next
+        For slot As Integer = 1 To BaseShip.MidSlots
+            If BaseShip.MidSlot(slot) IsNot Nothing Then
+                If BaseShip.MidSlot(slot).ID = testMod.ID Then
+                    count += 1
+                End If
+            End If
+        Next
+        For slot As Integer = 1 To BaseShip.LowSlots
+            If BaseShip.LowSlot(slot) IsNot Nothing Then
+                If BaseShip.LowSlot(slot).ID = testMod.ID Then
+                    count += 1
+                End If
+            End If
+        Next
+        For slot As Integer = 1 To BaseShip.RigSlots
+            If BaseShip.RigSlot(slot) IsNot Nothing Then
+                If BaseShip.RigSlot(slot).ID = testMod.ID Then
+                    count += 1
+                End If
+            End If
+        Next
+
+        If count >= maxAllowed Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+
     Public Function CountActiveTypeModules(ByVal typeID As Integer) As Integer
         Dim count As Integer = 0
         For slot As Integer = 1 To BaseShip.HiSlots
@@ -3463,6 +3824,21 @@ Imports EveHQ.Common.Extensions
             Next
         Next
 
+        ' Get Fighter skills
+        count = 0
+        For Each fbi As FighterBayItem In cShip.FighterBayItems.Values
+            For Each nSkill As ItemSkills In fbi.FighterType.RequiredSkills.Values
+                count += 1
+                rSkill = New ReqSkill
+                rSkill.Name = nSkill.Name
+                rSkill.ID = nSkill.ID
+                rSkill.ReqLevel = nSkill.Level
+                rSkill.CurLevel = 0
+                rSkill.NeededFor = fbi.FighterType.Name
+                nSkills.Add("Fighter" & count.ToString, rSkill)
+            Next
+        Next
+
         ' Get Implant Skills
         Dim shipPilot As FittingPilot = FittingPilots.HQFPilots(PilotName)
         Dim fittedImplantName As String
@@ -3506,6 +3882,7 @@ End Class
 
     Dim cModules As New List(Of ModuleWithState)
     Dim cDrones As New List(Of ModuleQWithState)
+    Dim cFighters As New List(Of ModuleFighterWithState)
     Dim cItems As New List(Of ModuleQWithState)
     Dim cShips As New List(Of ModuleQWithState)
 
@@ -3620,6 +3997,21 @@ End Class
         End Get
         Set(ByVal value As List(Of ModuleWithState))
             cModules = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the collection of fighters used in the fitting
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A collection of fighters used in the fitting</returns>
+    ''' <remarks></remarks>
+    Public Property Fighters() As List(Of ModuleFighterWithState)
+        Get
+            Return cFighters
+        End Get
+        Set(ByVal value As List(Of ModuleFighterWithState))
+            cFighters = value
         End Set
     End Property
 
@@ -3763,7 +4155,7 @@ End Class
     ''' Gets or sets a collection of remote effects to be applied to the fitting
     ''' </summary>
     ''' <value></value>
-    ''' <returns>A collection of fleet effects to be applied to the fitting</returns>
+    ''' <returns>A collection of remote effects to be applied to the fitting</returns>
     ''' <remarks></remarks>
     Public Property RemoteEffects() As List(Of RemoteEffect)
         Get

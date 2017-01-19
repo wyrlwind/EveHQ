@@ -59,8 +59,10 @@ Namespace Controls
     Public Class ShipSlotControl
         Dim _updateAll As Boolean = False
         Dim _updateDrones As Boolean = False
+        Dim _updateFighters As Boolean = False
         Dim _updateBoosters As Boolean = False
         Dim _cancelDroneActivation As Boolean = False
+        Dim _cancelFighterActivation As Boolean = False
         ReadOnly _rigGroups As New ArrayList
         ReadOnly _remoteGroups As New ArrayList
         ReadOnly _fleetGroups As New ArrayList
@@ -129,6 +131,8 @@ Namespace Controls
             ' This call is required by the Windows Form Designer.
             InitializeComponent()
 
+            tiFleetEffects.Visible = False
+
             ' Set the parent fitting
             _parentFitting = shipFit
 
@@ -167,7 +171,10 @@ Namespace Controls
             _remoteGroups.Add(641) ' Stasis web drone
             _remoteGroups.Add(640) ' Shield/armor repair drone
             _remoteGroups.Add(639) ' EW Drone
-            _fleetGroups.Add(316)
+            _remoteGroups.Add(1770)
+            _remoteGroups.Add(1815)
+            _fleetGroups.Add(ModuleEnum.GroupCommandBurst)
+            _fleetGroups.Add(ModuleEnum.GroupGangLinks)
             _fleetSkills.Add(ModuleEnum.ItemSkillLeadership, AttributeEnum.SkillScanResBonus)
             _fleetSkills.Add(ModuleEnum.ItemSkillArmoredWarfare, AttributeEnum.SkillArmorHpBonus)
             _fleetSkills.Add(ModuleEnum.ItemSkillInformationWarfare, AttributeEnum.SkillTargetRangeBonus)
@@ -201,19 +208,23 @@ Namespace Controls
             Call UpdateShipSlotColumns()
             lvwCargoBay.BeginUpdate()
             lvwDroneBay.BeginUpdate()
+            lvwFighterBay.BeginUpdate()
             ClearShipSlots()
             ClearDroneBay()
+            ClearFighterBay()
             ClearCargoBay()
             ClearShipBay()
             ParentFitting.UpdateBaseShipFromFitting()
             UpdateShipSlotLayout()
             lvwCargoBay.EndUpdate()
             lvwDroneBay.EndUpdate()
+            lvwFighterBay.EndUpdate()
             ParentFitting.ShipInfoCtrl.UpdateImplantList()
             ParentFitting.ApplyFitting(BuildType.BuildEverything)
             If ParentFitting.FittedShip IsNot Nothing Then
                 UpdateShipDetails()
                 RedrawDroneBay()
+                RedrawFighterBay()
                 RedrawCargoBay()
                 RedrawShipBay()
                 UpdateBoosterSlots()
@@ -307,13 +318,24 @@ Namespace Controls
             Next
 
             'Drone bay
-            itemIds.AddRange(
-                From dbi As Object In ParentFitting.FittedShip.DroneBayItems.Values
-                                Select CInt(CType(dbi, DroneBayItem).DroneType.ID))
+            For Each dbi As Object In ParentFitting.FittedShip.DroneBayItems.Values
+                For count As Integer = 0 To CType(dbi, DroneBayItem).Quantity
+                    itemIds.Add(CInt(CType(dbi, DroneBayItem).DroneType.ID))
+                Next
+            Next
+
+            'Fighter bay
+            For Each fbi As Object In ParentFitting.FittedShip.FighterBayItems.Values
+                For count As Integer = 0 To CType(fbi, FighterBayItem).Quantity
+                    itemIds.Add(CInt(CType(fbi, FighterBayItem).FighterType.ID))
+                Next
+            Next
 
             'Cargo bay
             For Each item As Object In ParentFitting.FittedShip.CargoBayItems.Values
-                itemIds.Add(CInt(CType(item, CargoBayItem).ItemType.ID))
+                For count As Integer = 0 To CType(item, CargoBayItem).Quantity
+                    itemIds.Add(CInt(CType(item, CargoBayItem).ItemType.ID))
+                Next
             Next
 
             ' Calculate the fitted prices
@@ -386,6 +408,8 @@ Namespace Controls
                 adtSlots.EndUpdate()
                 Call RedrawCargoBayCapacity()
                 Call RedrawDroneBayCapacity()
+                Call RedrawFighterBayCapacity()
+                Call RedrawFighterSquadronCounts()
                 Call RedrawShipBayCapacity()
             End If
             'eTime = Now
@@ -877,7 +901,11 @@ Namespace Controls
                             End If
                             idx += 1
                         Case "ActTime"
-                            If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleActivationTime) Then
+                            If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleActivationTime) Or
+                                shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationECMJammerBurstProjector) Or
+                                shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationSensorDampeningBurstProjector) Or
+                                shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationTargetIlluminationBurstProjector) Or
+                                shipMod.Attributes.ContainsKey(AttributeEnum.ModuleDurationWeaponDisruptionBurstProjector) Then
                                 If _
                                     shipMod.ModuleState = ModuleStates.Active Or
                                     shipMod.ModuleState = ModuleStates.Overloaded Then
@@ -1279,113 +1307,94 @@ Namespace Controls
 
                 ' Update only if the module state has changed
                 If currentstate <> currentMod.ModuleState Then
-                    ' Check for command processors as this affects the fitting!
-                    If currentMod.ID = ModuleEnum.ItemCommandProcessorI Then
-                        If currentstate = ModuleStates.Offline Then
-                            ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) -= 1
-                            ' Check if we need to deactivate a highslot ganglink
-                            Dim activeGanglinks As New List(Of Integer)
-                            If ParentFitting.BaseShip.HiSlots > 0 Then
-                                For slot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step - 1
-                                    If ParentFitting.BaseShip.HiSlot(slot) IsNot Nothing Then
-                                        If _
-                                            ParentFitting.BaseShip.HiSlot(slot).DatabaseGroup =
-                                            ModuleEnum.GroupGangLinks And
-                                            ParentFitting.BaseShip.HiSlot(slot).ModuleState = ModuleStates.Active Then
-                                            activeGanglinks.Add(slot)
-                                        End If
-                                    End If
-                                Next
-                            End If
-                            If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) _
-                                Then
-                                ParentFitting.BaseShip.HiSlot(activeGanglinks(0)).ModuleState = ModuleStates.Inactive
-                            End If
-                        Else
-                            ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) += 1
-                        End If
-                    End If
                     Dim oldState As ModuleStates = currentMod.ModuleState
                     currentMod.ModuleState = CType(currentstate, ModuleStates)
                     ' Check for maxGroupActive flag
                     If _
                         (currentstate = ModuleStates.Active Or currentstate = ModuleStates.Overloaded) And
                         currentMod.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
-                        If currentMod.DatabaseGroup <> ModuleEnum.GroupGangLinks Then
-                            If _
-                                ParentFitting.IsModuleGroupLimitExceeded(fittedMod, False,
-                                                                         AttributeEnum.ModuleMaxGroupActive) = True Then
+                        If _
+                             ParentFitting.IsModuleGroupLimitExceeded(fittedMod, False,
+                                                                      AttributeEnum.ModuleMaxGroupActive) = True Then
 
-                                ' Set the module offline
-                                MessageBox.Show(
-                                    "You cannot activate the " & currentMod.Name &
-                                    " due to a restriction on the maximum number permitted for this group.",
-                                    "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                currentMod.ModuleState = oldState
-                                Exit Sub
-                            End If
-                        Else
-                            If _
-                                ParentFitting.IsModuleGroupLimitExceeded(fittedMod, False,
-                                                                         AttributeEnum.ModuleMaxGroupActive) = True Then
-                                ' Set the module offline
-                                MessageBox.Show(
-                                    "You cannot activate the " & currentMod.Name &
-                                    " due to a restriction on the maximum number permitted for this group.",
-                                    "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                currentMod.ModuleState = oldState
-                                Exit Sub
-                            Else
-                                If _
-                                    ParentFitting.CountActiveTypeModules(fittedMod.ID) >
-                                    CInt(fittedMod.Attributes(AttributeEnum.ModuleMaxGroupActive)) Then
-
-
-                                    ' Set the module offline
-                                    MessageBox.Show(
-                                        "You cannot activate the " & currentMod.Name &
-                                        " due to a restriction on the maximum number permitted for this type.",
-                                        "Module Type Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                    currentMod.ModuleState = oldState
+                            ' Set the module offline
+                            MessageBox.Show(
+                                "You cannot activate the " & currentMod.Name &
+                                " due to a restriction on the maximum number permitted for this group.",
+                                "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            currentMod.ModuleState = oldState
+                            Exit Sub
+                        End If
+                    End If
+                    ' Check for activation of siege mode with remote effects
+                    If currentstate = ModuleStates.Active Then
+                        If fittedMod.ID = ModuleEnum.ItemSiegeModuleI Or fittedMod.ID = ModuleEnum.ItemSiegeModuleT2 Then
+                            If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                                Const Msg As String =
+                                      "You have active remote modules and activating Siege Mode will cancel these effects. Do you wish to continue activating Siege Mode?"
+                                Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Siege Mode",
+                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                                If reply = DialogResult.No Then
+                                    fittedMod.ModuleState = oldState
                                     Exit Sub
+                                Else
+                                    ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                                    Call ResetRemoteEffects()
+                                End If
+                            End If
+                        End If
+                        ' Check for activation of triage mode with remote effects
+                        If fittedMod.ID = ModuleEnum.ItemTriageModuleI Or fittedMod.ID = ModuleEnum.ItemTriageModuleT2 Then
+                            If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                                Const Msg As String =
+                                      "You have active remote modules and activating Triage Mode will cancel these effects. Do you wish to continue activating Triage Mode?"
+                                Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Triage Mode",
+                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                                If reply = DialogResult.No Then
+                                    fittedMod.ModuleState = oldState
+                                    Exit Sub
+                                Else
+                                    ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                                    Call ResetRemoteEffects()
+                                End If
+                            End If
+                        End If
+                        ' Check for activation of bastion mode with remote effects
+                        If fittedMod.ID = ModuleEnum.ItemBastionModuleI Then
+                            If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                                Const Msg As String =
+                                      "You have active remote modules and activating Bastion Mode will cancel these effects. Do you wish to continue activating Bastion Mode?"
+                                Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Bastion Mode",
+                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                                If reply = DialogResult.No Then
+                                    fittedMod.ModuleState = oldState
+                                    Exit Sub
+                                Else
+                                    ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                                    Call ResetRemoteEffects()
+                                End If
+                            End If
+                        End If
+                        ' Check for activation of industrial mode with remote effects
+                        If fittedMod.ID = ModuleEnum.ItemIndustrialCoreI Or fittedMod.ID = ModuleEnum.ItemIndustrialCoreII Then
+                            If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                                Const Msg As String =
+                                      "You have active remote modules and activating Industrial Mode will cancel these effects. Do you wish to continue activating Industrial Mode?"
+                                Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Industrial Mode",
+                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                                If reply = DialogResult.No Then
+                                    fittedMod.ModuleState = oldState
+                                    Exit Sub
+                                Else
+                                    ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                                    Call ResetRemoteEffects()
                                 End If
                             End If
                         End If
                     End If
-                    ' Check for activation of siege mode with remote effects
-                    If fittedMod.ID = ModuleEnum.ItemSiegeModuleI Or fittedMod.ID = ModuleEnum.ItemSiegeModuleT2 Then
-                        If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
-                            Const Msg As String =
-                                      "You have active remote modules and activating Siege Mode will cancel these effects. Do you wish to continue activating Siege Mode?"
-                            Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Siege Mode",
-                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                            If reply = DialogResult.No Then
-                                fittedMod.ModuleState = oldState
-                                Exit Sub
-                            Else
-                                ParentFitting.BaseShip.RemoteSlotCollection.Clear()
-                                Call ResetRemoteEffects()
-                            End If
-                        End If
-                    End If
-                    ' Check for activation of triage mode with remote effects
-                    If fittedMod.ID = ModuleEnum.ItemTriageModuleI Or fittedMod.ID = ModuleEnum.ItemTriageModuleT2 Then
-                        If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
-                            Const Msg As String =
-                                      "You have active remote modules and activating Triage Mode will cancel these effects. Do you wish to continue activating Triage Mode?"
-                            Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Triage Mode",
-                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-                            If reply = DialogResult.No Then
-                                fittedMod.ModuleState = oldState
-                                Exit Sub
-                            Else
-                                ParentFitting.BaseShip.RemoteSlotCollection.Clear()
-                                Call ResetRemoteEffects()
-                            End If
-                        End If
-                    End If
-
                 End If
             End If
         End Sub
@@ -1469,6 +1478,19 @@ Namespace Controls
             End If
         End Sub
 
+        Private Sub ClearFighterBay()
+            If ParentFitting.BaseShip IsNot Nothing Then
+                ParentFitting.BaseShip.FighterBayItems.Clear()
+                ParentFitting.BaseShip.FighterBayUsed = 0
+            End If
+            ' Remove the fighter bay tab if we don't need it (to avoid confusion)
+            If ParentFitting.BaseShip.FighterBay = 0 Then
+                tiFighterBay.Visible = False
+            Else
+                tiFighterBay.Visible = True
+            End If
+        End Sub
+
         Private Sub ClearCargoBay()
             If ParentFitting.BaseShip IsNot Nothing Then
                 ParentFitting.BaseShip.CargoBayItems.Clear()
@@ -1492,7 +1514,7 @@ Namespace Controls
 
 #End Region
 
-#Region "Removing Mods/Drones/Items"
+#Region "Removing Mods/Drones/Fighters/Items"
 
         Private Sub RemoveModules(ByVal sender As Object, ByVal e As EventArgs)
             Dim removedSubsystems As Boolean = False
@@ -1521,6 +1543,27 @@ Namespace Controls
                     Else
                         UndoStack.Push(New UndoInfo(UndoInfo.TransType.RemoveModule, slotType, slotNo, selMod.Name, "",
                                                     slotNo, "", ""))
+                    End If
+                    If (selMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or selMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or selMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or selMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) Then
+                        ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) -= 1
+
+                        ' Check if we need to deactivate a highslot ganglink
+                        Dim activeGanglinks As New List(Of Integer)
+                        If ParentFitting.BaseShip.HiSlots > 0 Then
+                            For hSlot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step -1
+                                If ParentFitting.BaseShip.HiSlot(hSlot) IsNot Nothing Then
+                                    If _
+                                        (ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = ModuleEnum.GroupGangLinks Or ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = ModuleEnum.GroupCommandBurst) And
+                                        ParentFitting.BaseShip.HiSlot(hSlot).ModuleState = ModuleStates.Active Then
+                                        activeGanglinks.Add(hSlot)
+                                    End If
+                                End If
+                            Next
+                        End If
+                        If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) Then
+                            ParentFitting.BaseShip.HiSlot(activeGanglinks(0)).ModuleState = ModuleStates.Inactive
+                        End If
+
                     End If
                     Select Case slotType
                         Case SlotTypes.Rig
@@ -1577,23 +1620,23 @@ Namespace Controls
                 End Select
                 ' Check for command processor usage
                 If selMod IsNot Nothing Then
-                    If selMod.ID = ModuleEnum.ItemCommandProcessorI Then
-                        ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) -= 1
+                    If (selMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or selMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or selMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or selMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) Then
+                        ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) -= 1
 
                         ' Check if we need to deactivate a highslot ganglink
                         Dim activeGanglinks As New List(Of Integer)
                         If ParentFitting.BaseShip.HiSlots > 0 Then
-                            For hSlot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step - 1
+                            For hSlot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step -1
                                 If ParentFitting.BaseShip.HiSlot(hSlot) IsNot Nothing Then
                                     If _
-                                        ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = 316 And
+                                        (ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = ModuleEnum.GroupGangLinks Or ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = ModuleEnum.GroupCommandBurst) And
                                         ParentFitting.BaseShip.HiSlot(hSlot).ModuleState = ModuleStates.Active Then
                                         activeGanglinks.Add(hSlot)
                                     End If
                                 End If
                             Next
                         End If
-                        If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(10063) Then
+                        If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) Then
                             ParentFitting.BaseShip.HiSlot(activeGanglinks(0)).ModuleState = ModuleStates.Inactive
                         End If
 
@@ -2022,7 +2065,8 @@ Namespace Controls
                                     End If
                                     If _
                                         currentMod.IsTurret Or
-                                        currentMod.DatabaseGroup = ModuleEnum.GroupFueledShieldBoosters Then
+                                        currentMod.DatabaseGroup = ModuleEnum.GroupFueledShieldBoosters Or
+                                        currentMod.DatabaseGroup = ModuleEnum.GroupFueledRemoteShieldBoosters Then
                                         If _
                                             currentMod.ChargeSize = CInt(chargeGroupData(3)) And
                                             chargeItems.ContainsKey(chargeGroupData(2)) = False Then
@@ -2547,42 +2591,16 @@ Namespace Controls
             sModule.ModuleState = ModuleStates.Active
             ' Check for maxGroupActive flag
             If sModule.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
-                If sModule.DatabaseGroup <> ModuleEnum.GroupGangLinks Then
-                    If _
+                If _
                         ParentFitting.IsModuleGroupLimitExceeded(sModule, False, AttributeEnum.ModuleMaxGroupActive) =
                         True Then
-                        ' Set the module offline
-                        MessageBox.Show(
+                    ' Set the module offline
+                    MessageBox.Show(
                             "You cannot activate the " & sModule.Name &
                             " due to a restriction on the maximum number permitted for this group.",
                             "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        sModule.ModuleState = oldState
-                        Exit Sub
-                    End If
-                Else
-                    If _
-                        ParentFitting.IsModuleGroupLimitExceeded(sModule, False, AttributeEnum.ModuleMaxGroupActive) =
-                        True Then
-                        ' Set the module offline
-                        MessageBox.Show(
-                            "You cannot activate the " & sModule.Name &
-                            " due to a restriction on the maximum number permitted for this group.",
-                            "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        sModule.ModuleState = oldState
-                        Exit Sub
-                    Else
-                        If _
-                            ParentFitting.CountActiveTypeModules(sModule.ID) >
-                            CInt(fModule.Attributes(AttributeEnum.ModuleMaxGroupActive)) Then
-                            ' Set the module offline
-                            MessageBox.Show(
-                                "You cannot activate the " & sModule.Name &
-                                " due to a restriction on the maximum number permitted for this type.",
-                                "Module Type Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            sModule.ModuleState = oldState
-                            Exit Sub
-                        End If
-                    End If
+                    sModule.ModuleState = oldState
+                    Exit Sub
                 End If
             End If
             ' Check for activation of siege mode with remote effects
@@ -2617,6 +2635,38 @@ Namespace Controls
                     End If
                 End If
             End If
+            ' Check for activation of bastion mode with remote effects
+            If sModule.ID = ModuleEnum.ItemBastionModuleI Then
+                If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                    Const Msg As String =
+                              "You have active remote modules and activating Bastion Mode will cancel these effects. Do you wish to continue activating Bastion Mode?"
+                    Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Bastion Mode", MessageBoxButtons.YesNo,
+                                                           MessageBoxIcon.Question)
+                    If reply = DialogResult.No Then
+                        sModule.ModuleState = oldState
+                        Exit Sub
+                    Else
+                        ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                        Call ResetRemoteEffects()
+                    End If
+                End If
+            End If
+            ' Check for activation of industrial mode with remote effects
+            If sModule.ID = ModuleEnum.ItemIndustrialCoreI Or sModule.ID = ModuleEnum.ItemIndustrialCoreII Then
+                If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                    Const Msg As String =
+                              "You have active remote modules and activating Industrial Mode will cancel these effects. Do you wish to continue activating Industrial Mode?"
+                    Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Industrial Mode", MessageBoxButtons.YesNo,
+                                                           MessageBoxIcon.Question)
+                    If reply = DialogResult.No Then
+                        sModule.ModuleState = oldState
+                        Exit Sub
+                    Else
+                        ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                        Call ResetRemoteEffects()
+                    End If
+                End If
+            End If
         End Sub
 
         Private Sub SetSingleModuleOverloaded(sModule As ShipModule)
@@ -2638,42 +2688,16 @@ Namespace Controls
             sModule.ModuleState = ModuleStates.Overloaded
             ' Check for maxGroupActive flag
             If sModule.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
-                If sModule.DatabaseGroup <> ModuleEnum.GroupGangLinks Then
-                    If _
-                        ParentFitting.IsModuleGroupLimitExceeded(sModule, False, AttributeEnum.ModuleMaxGroupActive) =
-                        True Then
-                        ' Set the module offline
-                        MessageBox.Show(
-                            "You cannot activate the " & sModule.Name &
-                            " due to a restriction on the maximum number permitted for this group.",
-                            "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        sModule.ModuleState = oldState
-                        Exit Sub
-                    End If
-                Else
-                    If _
-                        ParentFitting.IsModuleGroupLimitExceeded(sModule, False, AttributeEnum.ModuleMaxGroupActive) =
-                        True Then
-                        ' Set the module offline
-                        MessageBox.Show(
-                            "You cannot activate the " & sModule.Name &
-                            " due to a restriction on the maximum number permitted for this group.",
-                            "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        sModule.ModuleState = oldState
-                        Exit Sub
-                    Else
-                        If _
-                            ParentFitting.CountActiveTypeModules(sModule.ID) >
-                            CInt(fModule.Attributes(AttributeEnum.ModuleMaxGroupActive)) Then
-                            ' Set the module offline
-                            MessageBox.Show(
-                                "You cannot activate the " & sModule.Name &
-                                " due to a restriction on the maximum number permitted for this type.",
-                                "Module Type Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            sModule.ModuleState = oldState
-                            Exit Sub
-                        End If
-                    End If
+                If _
+                    ParentFitting.IsModuleGroupLimitExceeded(sModule, False, AttributeEnum.ModuleMaxGroupActive) =
+                    True Then
+                    ' Set the module offline
+                    MessageBox.Show(
+                        "You cannot activate the " & sModule.Name &
+                        " due to a restriction on the maximum number permitted for this group.",
+                        "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    sModule.ModuleState = oldState
+                    Exit Sub
                 End If
             End If
         End Sub
@@ -2812,6 +2836,142 @@ Namespace Controls
             Call RedrawDroneBayCapacity()
         End Sub
 
+        Private Sub RedrawFighterBay()
+            lvwFighterBay.BeginUpdate()
+            lvwFighterBay.Items.Clear()
+            ParentFitting.BaseShip.FighterBayUsed = 0
+            Dim fbi As FighterBayItem
+            Dim holdingBay As New SortedList
+            For Each fbi In ParentFitting.BaseShip.FighterBayItems.Values
+                holdingBay.Add(holdingBay.Count, fbi)
+            Next
+            ParentFitting.BaseShip.FighterBayItems.Clear()
+            For Each fbi In holdingBay.Values
+                Dim newFighterItem As New ListViewItem(fbi.FighterType.Name)
+                newFighterItem.Name = CStr(lvwFighterBay.Items.Count)
+                Dim squadMax As Integer = CInt(fbi.FighterType.Attributes(2215))
+                Dim squadMaxSize As String = CStr(squadMax)
+                newFighterItem.SubItems.Add(CStr(fbi.Quantity) & "/" & CStr(squadMaxSize))
+                Dim type As String
+                If fbi.FighterType.Attributes.ContainsKey(2212) Then
+                    type = "Light"
+                    If fbi.FighterType.Attributes(2270) = 1 Then
+                        type = type & " - Space Superiority"
+                    ElseIf fbi.FighterType.Attributes(2270) = 2 Then
+                        type = type & " - Attack"
+                    End If
+                ElseIf fbi.FighterType.Attributes.ContainsKey(2213) Then
+                    type = "Support"
+                ElseIf fbi.FighterType.Attributes.ContainsKey(2214) Then
+                    type = "Heavy"
+                    If fbi.FighterType.Attributes(2270) = 4 Then
+                        type = type & " - Heavy Attack"
+                    ElseIf fbi.FighterType.Attributes(2270) = 5 Then
+                        type = type & " - Long Range attack"
+                    End If
+                End If
+                newFighterItem.SubItems.Add(type)
+                Dim abilities As String = ""
+                If fbi.FighterType.FighterEffectAttackM Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    If fbi.IsTurretActive Then
+                        abilities += "+"
+                    End If
+                    abilities += "Turret"
+                End If
+                If fbi.FighterType.FighterEffectMissiles Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    If fbi.IsMissileActive Then
+                        abilities += "+"
+                    End If
+                    abilities += "Missiles"
+                End If
+                If fbi.FighterType.FighterEffectLaunchBomb Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    If fbi.IsBombActive Then
+                        abilities += "+"
+                    End If
+                    abilities += "Launch Bomb"
+                End If
+                If fbi.FighterType.FighterEffectTackle Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Tackle"
+                End If
+                If fbi.FighterType.FighterEffectEvasiveManeuvers Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Evasive Maneuvers"
+                End If
+                If fbi.FighterType.FighterEffectAfterburner Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Afterburner"
+                End If
+                If fbi.FighterType.FighterEffectMicroWarpDrive Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Microwarpdrive"
+                End If
+                If fbi.FighterType.FighterEffectMicroJumpDrive Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Micro Jump Drive"
+                End If
+                If fbi.FighterType.FighterEffectEnergyNeutralizer Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Energy Neutralizer"
+                End If
+                If fbi.FighterType.FighterEffectStasisWebifier Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Statis Webifier"
+                End If
+                If fbi.FighterType.FighterEffectWarpDisruption Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "Warp Disruption"
+                End If
+                If fbi.FighterType.FighterEffectEcm Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "ECM"
+                End If
+                If fbi.FighterType.FighterEffectKamikaze Then
+                    If abilities.Length <> 0 Then
+                        abilities += ", "
+                    End If
+                    abilities += "True Sacrifice"
+                End If
+                newFighterItem.SubItems.Add(abilities)
+                If fbi.IsActive = True Then
+                    newFighterItem.Checked = True
+                End If
+                ParentFitting.BaseShip.FighterBayItems.Add(lvwFighterBay.Items.Count, fbi)
+                ParentFitting.BaseShip.FighterBayUsed += fbi.FighterType.Volume * fbi.Quantity
+                lvwFighterBay.Items.Add(newFighterItem)
+            Next
+            lvwFighterBay.EndUpdate()
+            Call RedrawFighterBayCapacity()
+            Call RedrawFighterSquadronCounts()
+        End Sub
+
         Private Sub RedrawShipBay()
             lvwShipBay.BeginUpdate()
             lvwShipBay.Items.Clear()
@@ -2827,9 +2987,9 @@ Namespace Controls
                 newCargoItem.Name = CStr(lvwShipBay.Items.Count)
                 newCargoItem.SubItems.Add(CStr(sbi.Quantity))
                 newCargoItem.SubItems.Add(sbi.ShipType.Volume.ToString("N0"))
-                newCargoItem.SubItems.Add((sbi.ShipType.Volume*sbi.Quantity).ToString("N0"))
+                newCargoItem.SubItems.Add((sbi.ShipType.Volume * sbi.Quantity).ToString("N0"))
                 ParentFitting.BaseShip.ShipBayItems.Add(lvwShipBay.Items.Count, sbi)
-                ParentFitting.BaseShip.ShipBayUsed += sbi.ShipType.Volume*sbi.Quantity
+                ParentFitting.BaseShip.ShipBayUsed += sbi.ShipType.Volume * sbi.Quantity
                 lvwShipBay.Items.Add(newCargoItem)
             Next
             lvwShipBay.EndUpdate()
@@ -2873,6 +3033,36 @@ Namespace Controls
             Else
                 pbDroneBay.Value = CInt(ParentFitting.BaseShip.DroneBayUsed)
             End If
+
+            If ParentFitting.FittedShip.DroneBay = 0 Then
+                tiDroneBay.Visible = False
+            Else
+                tiDroneBay.Visible = True
+            End If
+        End Sub
+
+        Private Sub RedrawFighterBayCapacity()
+            lvwFighterBay.EndUpdate()
+            lblFighterBay.Text = ParentFitting.BaseShip.FighterBayUsed.ToString("N2") & " / " &
+                               ParentFitting.FittedShip.FighterBay.ToString("N2") & " m³"
+            If ParentFitting.FittedShip.FighterBay > 0 Then
+                pbFighterBay.Maximum = CInt(ParentFitting.FittedShip.FighterBay)
+            Else
+                pbFighterBay.Maximum = 1
+            End If
+            If ParentFitting.BaseShip.FighterBayUsed > ParentFitting.FittedShip.FighterBay Then
+                pbFighterBay.Value = CInt(ParentFitting.FittedShip.FighterBay)
+            Else
+                pbFighterBay.Value = CInt(ParentFitting.BaseShip.FighterBayUsed)
+            End If
+        End Sub
+
+        Private Sub RedrawFighterSquadronCounts()
+            Dim total As Integer = ParentFitting.FittedShip.FighterSquadronLaunchTubes
+            Dim light As Integer = ParentFitting.FittedShip.LightFighterSquadronLimit
+            Dim support As Integer = ParentFitting.FittedShip.SupportFighterSquadronLimit
+            Dim heavy As Integer = ParentFitting.FittedShip.HeavyFighterSquadronLimit
+            lblFighterSquadrons.Text = "Squadron Limits: " & total & " Total / " & light & " Light / " & support & " Support / " & heavy & " Heavy"
         End Sub
 
         Private Sub RedrawShipBayCapacity()
@@ -2935,8 +3125,70 @@ Namespace Controls
             _cancelDroneActivation = False
         End Sub
 
+        Private Sub lvwFighterBay_ItemChecked(ByVal sender As Object, ByVal e As ItemCheckedEventArgs) _
+            Handles lvwFighterBay.ItemChecked
+            If _updateAll = False Or _cancelFighterActivation = True Then
+                Dim idx As Integer = CInt(e.Item.Name)
+                Dim fbiCur As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+                ' Check we have the bandwidth and/or control ability for this item
+                If _updateFighters = False Then
+                    Dim reqQ As Integer = fbiCur.Quantity
+                    If e.Item.Checked = True Then
+                        Dim squadronCount As Integer = 0
+                        Dim lightSquadronCount As Integer = 0
+                        Dim heavySquadronCount As Integer = 0
+                        Dim supportSquadronCount As Integer = 0
+                        For Each fbi As FighterBayItem In ParentFitting.BaseShip.FighterBayItems.Values
+                            If fbi.IsActive Then
+                                squadronCount += 1
+                                If fbi.FighterType.Attributes.ContainsKey(2212) Then
+                                    lightSquadronCount += 1
+                                ElseIf fbi.FighterType.Attributes.ContainsKey(2213) Then
+                                    supportSquadronCount += 1
+                                ElseIf fbi.FighterType.Attributes.ContainsKey(2214) Then
+                                    heavySquadronCount += 1
+                                End If
+                            End If
+                        Next
+                        If ParentFitting.FittedShip.FighterSquadronLaunchTubes <= squadronCount Then
+                            MessageBox.Show(
+                                "You do not have the ability to control this many fighter squadrons.",
+                                "Fighter Squadron Limit Exceeded", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            _cancelFighterActivation = True
+                            e.Item.Checked = False
+                            Exit Sub
+                        End If
+                        If (fbiCur.FighterType.Attributes.ContainsKey(2212) And ParentFitting.FittedShip.LightFighterSquadronLimit <= lightSquadronCount) Or
+                            (fbiCur.FighterType.Attributes.ContainsKey(2213) And ParentFitting.FittedShip.SupportFighterSquadronLimit <= supportSquadronCount) Or
+                            (fbiCur.FighterType.Attributes.ContainsKey(2214) And ParentFitting.FittedShip.HeavyFighterSquadronLimit <= heavySquadronCount) Then
+                            MessageBox.Show(
+                                "You do not have the ability to control this many fighter squadrons of this type.",
+                                "Fighter Squadron Type Limit Exceeded", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                            _cancelFighterActivation = True
+                            e.Item.Checked = False
+                            Exit Sub
+                        End If
+                    End If
+                    fbiCur.IsActive = e.Item.Checked
+                    ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+                    If fbiCur.IsActive = True Then
+                        ParentFitting.BaseShip.Attributes(10006) = CDbl(ParentFitting.BaseShip.Attributes(10006)) + reqQ
+                    Else
+                        ParentFitting.BaseShip.Attributes(10006) =
+                                    Math.Max(CDbl(ParentFitting.BaseShip.Attributes(10006)) - reqQ, 0)
+                    End If
+                End If
+            End If
+            Call ParentFitting.UpdateFittingFromBaseShip()
+            '                Call _currentInfo.UpdateFighterUsage()
+            _cancelFighterActivation = False
+        End Sub
+
         Private Sub ctxBays_Opening(ByVal sender As Object, ByVal e As CancelEventArgs) Handles ctxBays.Opening
             _lvwBay = CType(ctxBays.SourceControl, ListView)
+
+
+            Me.ctxShowModuleMarketGroup.Enabled = False
             Select Case _lvwBay.Name
                 Case "lvwCargoBay"
                     If _lvwBay.SelectedItems.Count > 0 Then
@@ -2944,8 +3196,12 @@ Namespace Controls
                         If ctxBays.Items.ContainsKey("Drone Skills") = True Then
                             ctxBays.Items.RemoveByKey("Drone Skills")
                         End If
+                        If ctxBays.Items.ContainsKey("Fighter Skills") = True Then
+                            ctxBays.Items.RemoveByKey("Fighter Skills")
+                        End If
                         ctxSplitBatch.Enabled = False
                         ctxShowBayInfoItem.Enabled = True
+                        FighterAbilitiesToolStripMenuItem.Enabled = False
                     Else
                         e.Cancel = True
                     End If
@@ -2955,8 +3211,12 @@ Namespace Controls
                         If ctxBays.Items.ContainsKey("Drone Skills") = True Then
                             ctxBays.Items.RemoveByKey("Drone Skills")
                         End If
+                        If ctxBays.Items.ContainsKey("Fighter Skills") = True Then
+                            ctxBays.Items.RemoveByKey("Fighter Skills")
+                        End If
                         ctxSplitBatch.Enabled = False
                         ctxShowBayInfoItem.Enabled = False
+                        FighterAbilitiesToolStripMenuItem.Enabled = False
                     Else
                         e.Cancel = True
                     End If
@@ -2969,6 +3229,10 @@ Namespace Controls
                         Dim idx As Integer = CInt(selItem.Name)
                         Dim dbi As DroneBayItem = ParentFitting.BaseShip.DroneBayItems.Item(idx)
                         Dim currentMod As ShipModule = dbi.DroneType
+
+                        Me.ctxShowModuleMarketGroup.Enabled = True
+                        Me.ctxShowModuleMarketGroup.Name = currentMod.Name
+                        AddHandler ctxShowModuleMarketGroup.Click, AddressOf ShowModuleMarketGroup
 
                         ' Check for Relevant Skills in Modules/Charges
                         Dim relModuleSkills, relChargeSkills As New ArrayList
@@ -3099,6 +3363,175 @@ Namespace Controls
                             ctxAlterQuantity.Enabled = True
                             ctxSplitBatch.Enabled = True
                         End If
+                        FighterAbilitiesToolStripMenuItem.Enabled = False
+                    Else
+                        e.Cancel = True
+                    End If
+                Case "lvwFighterBay"
+                    If _lvwBay.SelectedItems.Count > 0 Then
+                        ctxShowBayInfoItem.Text = "Show Fighter Info"
+                        ctxShowBayInfoItem.Enabled = True
+                        ctxSplitBatch.Enabled = True
+                        FighterAbilitiesToolStripMenuItem.Enabled = True
+                        Dim selItem As ListViewItem = _lvwBay.SelectedItems(0)
+                        Dim idx As Integer = CInt(selItem.Name)
+                        Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+                        Dim currentMod As ShipModule = fbi.FighterType
+                        If fbi.FighterType.FighterEffectAttackM Then
+                            FighterTurretToolStripMenuItem.Enabled = True
+                            FighterTurretToolStripMenuItem.Checked = fbi.IsTurretActive
+                        Else
+                            FighterTurretToolStripMenuItem.Enabled = False
+                            FighterTurretToolStripMenuItem.Checked = False
+                        End If
+                        If fbi.FighterType.FighterEffectMissiles Then
+                            FighterMissileToolStripMenuItem.Enabled = True
+                            FighterMissileToolStripMenuItem.Checked = fbi.IsMissileActive
+                        Else
+                            FighterMissileToolStripMenuItem.Enabled = False
+                            FighterMissileToolStripMenuItem.Checked = False
+                        End If
+                        If fbi.FighterType.FighterEffectLaunchBomb Then
+                            FighterBombToolStripMenuItem.Enabled = True
+                            FighterBombToolStripMenuItem.Checked = fbi.IsBombActive
+                        Else
+                            FighterBombToolStripMenuItem.Enabled = False
+                            FighterBombToolStripMenuItem.Checked = False
+                        End If
+
+                        Me.ctxShowModuleMarketGroup.Enabled = True
+                        Me.ctxShowModuleMarketGroup.Name = currentMod.Name
+                        AddHandler ctxShowModuleMarketGroup.Click, AddressOf ShowModuleMarketGroup
+
+                        ' Check for Relevant Skills in Modules/Charges
+                        Dim relModuleSkills, relChargeSkills As New ArrayList
+                        Dim affects(3) As String
+                        For Each affect As String In currentMod.Affects
+                            If affect.Contains(";Skill;") = True Then
+                                affects = affect.Split((";").ToCharArray)
+                                If relModuleSkills.Contains(affects(0)) = False Then
+                                    relModuleSkills.Add(affects(0))
+                                End If
+                            End If
+                            If affect.Contains(";Ship Bonus;") = True Then
+                                affects = affect.Split((";").ToCharArray)
+                                If ParentFitting.ShipName = affects(0) Then
+                                    If relModuleSkills.Contains(affects(3)) = False Then
+                                        relModuleSkills.Add(affects(3))
+                                    End If
+                                End If
+                            End If
+                        Next
+                        relModuleSkills.Sort()
+                        If currentMod.LoadedCharge IsNot Nothing Then
+                            For Each affect As String In currentMod.LoadedCharge.Affects
+                                If affect.Contains(";Skill;") = True Then
+                                    affects = affect.Split((";").ToCharArray)
+                                    If relChargeSkills.Contains(affects(0)) = False Then
+                                        relChargeSkills.Add(affects(0))
+                                    End If
+                                End If
+                                If affect.Contains(";Ship Bonus;") = True Then
+                                    affects = affect.Split((";").ToCharArray)
+                                    If ParentFitting.ShipName = affects(0) Then
+                                        If relChargeSkills.Contains(affects(3)) = False Then
+                                            relChargeSkills.Add(affects(3))
+                                        End If
+                                    End If
+                                End If
+                            Next
+                        End If
+                        relChargeSkills.Sort()
+                        If relModuleSkills.Count > 0 Or relChargeSkills.Count > 0 Then
+                            ' Add the Main menu item
+                            Dim alterRelevantSkills As New ToolStripMenuItem
+                            alterRelevantSkills.Name = "Fighter Skills"
+                            alterRelevantSkills.Text = "Alter Relevant Skills"
+                            For Each relSkill As String In relModuleSkills
+                                Dim newRelSkill As New ToolStripMenuItem
+                                newRelSkill.Name = relSkill
+                                newRelSkill.Text = relSkill
+                                Dim pilotLevel As Integer =
+                                        FittingPilots.HQFPilots(_currentInfo.cboPilots.SelectedItem.ToString).SkillSet(
+                                            relSkill).Level
+                                newRelSkill.Image =
+                                    CType(My.Resources.ResourceManager.GetObject("Level" & pilotLevel.ToString), Image)
+                                For skillLevel As Integer = 0 To 5
+                                    Dim newRelSkillLevel As New ToolStripMenuItem
+                                    newRelSkillLevel.Name = relSkill & skillLevel.ToString
+                                    newRelSkillLevel.Text = "Level " & skillLevel.ToString
+                                    If skillLevel = pilotLevel Then
+                                        newRelSkillLevel.Checked = True
+                                    End If
+                                    AddHandler newRelSkillLevel.Click, AddressOf SetPilotSkillLevel
+                                    newRelSkill.DropDownItems.Add(newRelSkillLevel)
+                                Next
+                                newRelSkill.DropDownItems.Add("-")
+                                Dim defaultLevel As Integer = 0
+                                If _
+                                    HQ.Settings.Pilots(_currentInfo.cboPilots.SelectedItem.ToString).PilotSkills.
+                                        ContainsKey(relSkill) = True Then
+                                    defaultLevel =
+                                        HQ.Settings.Pilots(_currentInfo.cboPilots.SelectedItem.ToString).PilotSkills(
+                                            relSkill).Level
+                                End If
+                                Dim newRelSkillDefault As New ToolStripMenuItem
+                                newRelSkillDefault.Name = relSkill & defaultLevel.ToString
+                                newRelSkillDefault.Text = "Actual (Level " & defaultLevel.ToString & ")"
+                                AddHandler newRelSkillDefault.Click, AddressOf SetPilotSkillLevel
+                                newRelSkill.DropDownItems.Add(newRelSkillDefault)
+                                alterRelevantSkills.DropDownItems.Add(newRelSkill)
+                            Next
+                            If alterRelevantSkills.DropDownItems.Count > 0 And relChargeSkills.Count > 0 Then
+                                alterRelevantSkills.DropDownItems.Add("-")
+                            End If
+                            For Each relSkill As String In relChargeSkills
+                                Dim newRelSkill As New ToolStripMenuItem
+                                newRelSkill.Name = relSkill
+                                newRelSkill.Text = relSkill
+                                Dim pilotLevel As Integer =
+                                        FittingPilots.HQFPilots(_currentInfo.cboPilots.SelectedItem.ToString).SkillSet(
+                                            relSkill).Level
+                                newRelSkill.Image =
+                                    CType(My.Resources.ResourceManager.GetObject("Level" & pilotLevel.ToString), Image)
+                                For skillLevel As Integer = 0 To 5
+                                    Dim newRelSkillLevel As New ToolStripMenuItem
+                                    newRelSkillLevel.Name = relSkill & skillLevel.ToString
+                                    newRelSkillLevel.Text = "Level " & skillLevel.ToString
+                                    If skillLevel = pilotLevel Then
+                                        newRelSkillLevel.Checked = True
+                                    End If
+                                    AddHandler newRelSkillLevel.Click, AddressOf SetPilotSkillLevel
+                                    newRelSkill.DropDownItems.Add(newRelSkillLevel)
+                                Next
+                                newRelSkill.DropDownItems.Add("-")
+                                Dim defaultLevel As Integer = 0
+                                If _
+                                    HQ.Settings.Pilots(_currentInfo.cboPilots.SelectedItem.ToString).PilotSkills.
+                                        ContainsKey(relSkill) = True Then
+                                    defaultLevel =
+                                        HQ.Settings.Pilots(_currentInfo.cboPilots.SelectedItem.ToString).PilotSkills(
+                                            relSkill).Level
+                                End If
+                                Dim newRelSkillDefault As New ToolStripMenuItem
+                                newRelSkillDefault.Name = relSkill & defaultLevel.ToString
+                                newRelSkillDefault.Text = "Actual (Level " & defaultLevel.ToString & ")"
+                                AddHandler newRelSkillDefault.Click, AddressOf SetPilotSkillLevel
+                                newRelSkill.DropDownItems.Add(newRelSkillDefault)
+                                alterRelevantSkills.DropDownItems.Add(newRelSkill)
+                            Next
+                            If ctxBays.Items.ContainsKey("Fighter Skills") = True Then
+                                ctxBays.Items.RemoveByKey("Fighter Skills")
+                            End If
+                            ctxBays.Items.Add(alterRelevantSkills)
+                        End If
+                        If _lvwBay.SelectedItems.Count > 1 Then
+                            ctxAlterQuantity.Enabled = False
+                            ctxSplitBatch.Enabled = False
+                        Else
+                            ctxAlterQuantity.Enabled = True
+                            ctxSplitBatch.Enabled = True
+                        End If
                     Else
                         e.Cancel = True
                     End If
@@ -3115,6 +3548,7 @@ Namespace Controls
                     Next
                     Call ParentFitting.UpdateFittingFromBaseShip()
                     Call RedrawCargoBay()
+                    ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
                 Case "lvwShipBay"
                     ' Removes the item from the cargo bay
                     For Each remItem As ListViewItem In lvwShipBay.SelectedItems
@@ -3134,6 +3568,17 @@ Namespace Controls
                     Call RedrawDroneBay()
                     _updateDrones = False
                     ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+                Case "lvwFighterBay"
+                    ' Removes the item from the fighter bay
+                    For Each remItem As ListViewItem In lvwFighterBay.SelectedItems
+                        ParentFitting.BaseShip.FighterBayItems.Remove(CInt(remItem.Name))
+                        lvwFighterBay.Items.RemoveByKey(remItem.Name)
+                    Next
+                    Call ParentFitting.UpdateFittingFromBaseShip()
+                    _updateFighters = True
+                    Call RedrawFighterBay()
+                    _updateFighters = False
+                    ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
             End Select
         End Sub
 
@@ -3150,6 +3595,10 @@ Namespace Controls
                     Dim idx As Integer = CInt(selItem.Name)
                     Dim dbi As DroneBayItem = ParentFitting.FittedShip.DroneBayItems.Item(idx)
                     sModule = dbi.DroneType
+                Case "lvwFighterBay"
+                    Dim idx As Integer = CInt(selItem.Name)
+                    Dim fbi As FighterBayItem = ParentFitting.FittedShip.FighterBayItems.Item(idx)
+                    sModule = fbi.FighterType
             End Select
             Dim showInfo As New FrmShowInfo
             Dim hPilot As EveHQPilot
@@ -3234,6 +3683,30 @@ Namespace Controls
                         Call RedrawDroneBay()
                         _updateDrones = False
                     End Using
+                Case "lvwFighterBay"
+                    Dim selItem As ListViewItem = lvwFighterBay.SelectedItems(0)
+                    Dim idx As Integer = CInt(selItem.Name)
+                    Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+                    Using newSelectForm As New FrmSelectQuantity
+                        newSelectForm.FittedShip = ParentFitting.FittedShip
+                        newSelectForm.Fbi = fbi
+                        newSelectForm.BayType = FrmSelectQuantity.BayTypes.FighterBay
+                        newSelectForm.IsSplit = False
+                        newSelectForm.nudQuantity.Minimum = 1
+                        newSelectForm.nudQuantity.Maximum = fbi.Quantity +
+                                                            CInt(
+                                                                Int(
+                                                                    (ParentFitting.FittedShip.FighterBay -
+                                                                     ParentFitting.BaseShip.FighterBayUsed) /
+                                                                    fbi.FighterType.Volume))
+                        newSelectForm.nudQuantity.Value = fbi.Quantity
+                        newSelectForm.ShowDialog()
+                        ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+                        Call ParentFitting.UpdateFittingFromBaseShip()
+                        _updateFighters = True
+                        Call RedrawFighterBay()
+                        _updateFighters = False
+                    End Using
             End Select
         End Sub
 
@@ -3293,6 +3766,26 @@ Namespace Controls
                         Call RedrawDroneBay()
                         _updateDrones = False
                     End Using
+                Case "lvwFighterBay"
+                    Dim selItem As ListViewItem = lvwFighterBay.SelectedItems(0)
+                    Dim idx As Integer = CInt(selItem.Name)
+                    Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+                    Using newSelectForm As New FrmSelectQuantity
+                        newSelectForm.FittedShip = ParentFitting.FittedShip
+                        newSelectForm.CurrentShip = ParentFitting.BaseShip
+                        newSelectForm.Fbi = fbi
+                        newSelectForm.BayType = FrmSelectQuantity.BayTypes.FighterBay
+                        newSelectForm.IsSplit = True
+                        newSelectForm.nudQuantity.Value = 1
+                        newSelectForm.nudQuantity.Minimum = 1
+                        newSelectForm.nudQuantity.Maximum = fbi.Quantity - 1
+                        newSelectForm.ShowDialog()
+                        ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+                        Call ParentFitting.UpdateFittingFromBaseShip()
+                        _updateFighters = True
+                        Call RedrawFighterBay()
+                        _updateFighters = False
+                    End Using
             End Select
         End Sub
 
@@ -3335,6 +3828,48 @@ Namespace Controls
             ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
         End Sub
 
+        Private Sub btnMergeFighters_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnMergeFighters.Click
+            _updateFighters = True
+            lvwFighterBay.BeginUpdate()
+            lvwFighterBay.Items.Clear()
+            ParentFitting.BaseShip.FighterBayUsed = 0
+            Dim fbi As FighterBayItem
+            Dim holdingBay As New SortedList
+            Dim fighterQuantities As New SortedList
+            For Each fbi In ParentFitting.BaseShip.FighterBayItems.Values
+                If holdingBay.Contains(fbi.FighterType.Name) = False Then
+                    holdingBay.Add(fbi.FighterType.Name, fbi.FighterType)
+                End If
+                If fighterQuantities.Contains(fbi.FighterType.Name) = True Then
+                    Dim cq As Integer = CInt(fighterQuantities(fbi.FighterType.Name))
+                    fighterQuantities(fbi.FighterType.Name) = cq + fbi.Quantity
+                Else
+                    fighterQuantities.Add(fbi.FighterType.Name, fbi.Quantity)
+                End If
+            Next
+            ParentFitting.BaseShip.FighterBayItems.Clear()
+            For Each fighter As String In holdingBay.Keys
+                fbi = New FighterBayItem
+                fbi.FighterType = CType(holdingBay(fighter), ShipModule)
+                fbi.IsActive = False
+                fbi.IsTurretActive = True
+                fbi.IsMissileActive = False
+                fbi.IsBombActive = False
+                fbi.Quantity = CInt(fighterQuantities(fighter))
+                Dim newFighterItem As New ListViewItem(fbi.FighterType.Name)
+                newFighterItem.Name = CStr(lvwFighterBay.Items.Count)
+                newFighterItem.SubItems.Add(CStr(fbi.Quantity))
+                ParentFitting.BaseShip.FighterBayItems.Add(lvwFighterBay.Items.Count, fbi)
+                ParentFitting.BaseShip.FighterBayUsed += fbi.FighterType.Volume * fbi.Quantity
+                lvwFighterBay.Items.Add(newFighterItem)
+            Next
+            lvwFighterBay.EndUpdate()
+            Call RedrawFighterBay()
+            _updateFighters = False
+            ' Rebuild the ship to account for any disabled fighters
+            ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+        End Sub
+
         Private Sub btnMergeCargo_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnMergeCargo.Click
             lvwCargoBay.BeginUpdate()
             lvwCargoBay.Items.Clear()
@@ -3363,14 +3898,65 @@ Namespace Controls
                 newCargoItem.Name = CStr(lvwCargoBay.Items.Count)
                 newCargoItem.SubItems.Add(CStr(cbi.Quantity))
                 ParentFitting.BaseShip.CargoBayItems.Add(lvwCargoBay.Items.Count, cbi)
-                ParentFitting.BaseShip.CargoBayUsed += cbi.ItemType.Volume*cbi.Quantity
+                ParentFitting.BaseShip.CargoBayUsed += cbi.ItemType.Volume * cbi.Quantity
                 If cbi.ItemType.IsContainer Then _
-                    ParentFitting.BaseShip.CargoBayAdditional += (cbi.ItemType.Capacity - cbi.ItemType.Volume)*
+                    ParentFitting.BaseShip.CargoBayAdditional += (cbi.ItemType.Capacity - cbi.ItemType.Volume) *
                                                                  cbi.Quantity
                 lvwCargoBay.Items.Add(newCargoItem)
             Next
             lvwCargoBay.EndUpdate()
             Call RedrawCargoBayCapacity()
+        End Sub
+
+        Private Sub FighterTurretToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FighterTurretToolStripMenuItem.Click
+            Dim selItem As ListViewItem = lvwFighterBay.SelectedItems(0)
+            Dim idx As Integer = CInt(selItem.Name)
+            Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+            If fbi.IsTurretActive Then
+                fbi.IsTurretActive = False
+            Else
+                fbi.IsTurretActive = True
+            End If
+            FighterTurretToolStripMenuItem.Checked = fbi.IsTurretActive
+            Call ParentFitting.UpdateFittingFromBaseShip()
+            _updateFighters = True
+            Call RedrawFighterBay()
+            _updateFighters = False
+            ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+        End Sub
+
+        Private Sub FighterMissileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FighterMissileToolStripMenuItem.Click
+            Dim selItem As ListViewItem = lvwFighterBay.SelectedItems(0)
+            Dim idx As Integer = CInt(selItem.Name)
+            Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+            If fbi.IsMissileActive Then
+                fbi.IsMissileActive = False
+            Else
+                fbi.IsMissileActive = True
+            End If
+            FighterMissileToolStripMenuItem.Checked = fbi.IsMissileActive
+            Call ParentFitting.UpdateFittingFromBaseShip()
+            _updateFighters = True
+            Call RedrawFighterBay()
+            _updateFighters = False
+            ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
+        End Sub
+
+        Private Sub FighterBombToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FighterBombToolStripMenuItem.Click
+            Dim selItem As ListViewItem = lvwFighterBay.SelectedItems(0)
+            Dim idx As Integer = CInt(selItem.Name)
+            Dim fbi As FighterBayItem = ParentFitting.BaseShip.FighterBayItems.Item(idx)
+            If fbi.IsBombActive Then
+                fbi.IsBombActive = False
+            Else
+                fbi.IsBombActive = True
+            End If
+            FighterBombToolStripMenuItem.Checked = fbi.IsTurretActive
+            Call ParentFitting.UpdateFittingFromBaseShip()
+            _updateFighters = True
+            Call RedrawFighterBay()
+            _updateFighters = False
+            ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
         End Sub
 
 #End Region
@@ -3605,7 +4191,7 @@ Namespace Controls
                     Dim newFit As Fitting = Fittings.FittingList(shipFit).Clone
                     newFit.UpdateBaseShipFromFitting()
                     newFit.PilotName = pPilot.PilotName
-                    newFit.ApplyFitting(BuildType.BuildEverything)
+                    newFit.ApplyFitting(BuildType.BuildEverything, True, True)
                     Dim remoteShip As Ship = newFit.FittedShip
                     For Each remoteModule As ShipModule In remoteShip.SlotCollection
                         If _remoteGroups.Contains(CInt(remoteModule.DatabaseGroup)) = True Then
@@ -3632,6 +4218,11 @@ Namespace Controls
                                 newRemoteItem.Text = remoteDrone.DroneType.Name & " (x" & remoteDrone.Quantity & ")"
                                 lvwRemoteEffects.Items.Add(newRemoteItem)
                             End If
+                        End If
+                    Next
+                    For Each remoteFighter As FighterBayItem In remoteShip.FighterBayItems.Values
+                        If _remoteGroups.Contains(CInt(remoteFighter.FighterType.DatabaseGroup)) = True Then
+                            'TODO
                         End If
                     Next
                 Next
@@ -3667,9 +4258,14 @@ Namespace Controls
                     remoteMod = remoteDrones.DroneType
                 End If
                 If _
-                    remoteMod.DatabaseGroup <> ModuleEnum.GroupEnergyVampires And
-                    remoteMod.DatabaseGroup <> ModuleEnum.GroupEnergyNeutralizers And
-                    remoteMod.DatabaseGroup <> ModuleEnum.GroupEnergyNeutralizerDrones Then
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupRemoteArmorRepairers Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupAncillaryRemoteArmorsRepairers Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupRemoteHullRepairers Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupFueledRemoteShieldBoosters Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupShieldTransporters Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupEnergyTransfers Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupECM Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupLogisticDrones Then
                     For Each cMod As ShipModule In ParentFitting.FittedShip.SlotCollection
                         If _
                             (cMod.ID = ModuleEnum.ItemSiegeModuleI Or cMod.ID = ModuleEnum.ItemSiegeModuleT2) And
@@ -3693,6 +4289,15 @@ Namespace Controls
                             MessageBox.Show(
                                 "You cannot apply remote effects from " & remoteMod.Name & " while the " &
                                 ParentFitting.BaseShip.Name & " is in Bastion Mode!", "Remote Effect Not Permitted",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            e.Item.Checked = False
+                            Exit Sub
+                        ElseIf _
+                            (cMod.ID = ModuleEnum.ItemIndustrialCoreI Or cMod.ID = ModuleEnum.ItemIndustrialCoreII) And
+                            cMod.ModuleState = ModuleStates.Active Then
+                            MessageBox.Show(
+                                "You cannot apply remote effects from " & remoteMod.Name & " while the " &
+                                ParentFitting.BaseShip.Name & " is in Industrial Mode!", "Remote Effect Not Permitted",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information)
                             e.Item.Checked = False
                             Exit Sub
@@ -4667,6 +5272,14 @@ Namespace Controls
             _updateDrones = True
             Call RedrawDroneBay()
             _updateDrones = False
+            Call UpdatePrices()
+            Call ParentFitting.UpdateFittingFromBaseShip()
+        End Sub
+
+        Public Sub UpdateFighterBay()
+            _updateFighters = True
+            Call RedrawFighterBay()
+            _updateFighters = False
             Call UpdatePrices()
             Call ParentFitting.UpdateFittingFromBaseShip()
         End Sub

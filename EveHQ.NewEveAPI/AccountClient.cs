@@ -277,7 +277,7 @@ namespace EveHQ.NewEveApi
         private static ApiKeyInfo ParseApiKeyInfoXml(XElement result)
         {
             DateTimeOffset expiry = default(DateTimeOffset);
-            int accessMask = 0;
+            long accessMask = 0;
             var type = ApiKeyType.Invalid;
             ApiKeyInfo keyInfo = null;
             IEnumerable<AccountCharacter> chars = new AccountCharacter[0];
@@ -292,7 +292,7 @@ namespace EveHQ.NewEveApi
                     switch (attribute.Name.LocalName)
                     {
                         case "accessMask":
-                            int.TryParse(attribute.Value, out accessMask);
+                            Int64.TryParse(attribute.Value, out accessMask);
                             break;
                         case "type":
                             Enum.TryParse(attribute.Value, out type);

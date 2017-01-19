@@ -46,10 +46,10 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\debug\</OutputPath>
+    <OutputPath>$(SolutionDir)BuildOutput\EveHQ\$(Configuration)\</OutputPath>
     <DocumentationFile>EveHQ.Void.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355,40010</NoWarn>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -57,7 +57,7 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>bin\release\</OutputPath>
+    <OutputPath>$(SolutionDir)BuildOutput\EveHQ\$(Configuration)\</OutputPath>
     <DocumentationFile>EveHQ.Void.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355,40010</NoWarn>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -93,7 +93,6 @@
     <Compile Include="frmVoid.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IGBData.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -124,6 +123,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -140,7 +140,7 @@
       <Name>EveHQ.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\EveHQ.EveData\EveHQ.EveData.csproj">
-      <Project>{C3FEE7B0-5E02-4910-BBB9-A03425294B7A}</Project>
+      <Project>{c3fee7b0-5e02-4910-bbb9-a03425294b7a}</Project>
       <Name>EveHQ.EveData</Name>
     </ProjectReference>
   </ItemGroup>
@@ -186,7 +186,10 @@
   <Target Name="AfterBuild">
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)*.*" ..\..\..\evehq\$(outdir)
-copy /Y "$(TargetDir)*.*" "$(SolutionDir)BuildOutput\$(ConfigurationName)\"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent />
   </PropertyGroup>
 </Project>

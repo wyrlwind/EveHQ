@@ -66,7 +66,6 @@ Namespace Forms
         Dim _lastSlotFitting As New ArrayList
         Dim _lastModuleResults As New SortedList(Of Integer, ShipModule)
         Dim _myPilotManager As New FrmPilotManager
-        Dim _myBcBrowser As New FrmBcBrowser
         Dim _myEveImport As New FrmEveImport
         Dim _shutdownComplete As Boolean = False
 
@@ -135,7 +134,6 @@ Namespace Forms
             If _shutdownComplete = False Then
                 ' Close any open windows
                 If _myPilotManager.IsHandleCreated Then _myPilotManager.Close()
-                If _myBcBrowser.IsHandleCreated Then _myBcBrowser.Close()
 
                 ' Save data and settings
                 Call SaveAll()
@@ -610,18 +608,7 @@ Namespace Forms
             End If
             showInfo.ShowItemDetails(selShip, hPilot)
         End Sub
-        Private Sub mnuBattleClinicBrowser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuBattleClinicBrowser.Click
-            Dim shipName As String = mnuShipBrowserShipName.Text
-            Dim bShip As Ship = ShipLists.ShipList(shipName).Clone
-            If _myBcBrowser.IsHandleCreated = True Then
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.BringToFront()
-            Else
-                _myBcBrowser = New FrmBcBrowser
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.Show()
-            End If
-        End Sub
+
         Private Sub CreateNewFitting(ByVal shipName As String)
             ' Check we have some valid characters
             ' Bug 83: Adding a check of the core pilots collection as well, since it may end up in an unstable state due to other actors, and needs to contain pilots before loading the new fitting.
@@ -1227,7 +1214,7 @@ Namespace Forms
 
 
             For Each shipmod As ShipModule In _lastModuleResults.Values
-                If shipmod.SlotType <> 0 Or (shipmod.SlotType = 0 And (shipmod.IsBooster Or shipmod.IsCharge Or shipmod.IsDrone Or shipmod.DatabaseCategory = 22)) Then
+                If shipmod.SlotType <> 0 Or (shipmod.SlotType = 0 And (shipmod.IsBooster Or shipmod.IsCharge Or shipmod.IsDrone Or shipmod.IsFighter Or shipmod.DatabaseCategory = 22 Or shipmod.DatabaseCategory = 87)) Then
                     If (shipmod.MetaType And PluginSettings.HQFSettings.ModuleFilter) = shipmod.MetaType Then
                         Dim newModule As New Node
                         newModule.Name = CStr(shipmod.ID)
@@ -1241,7 +1228,7 @@ Namespace Forms
                         newModule.Style = New ElementStyle
                         newModule.Style.Font = Font
                         ' Create drone icons individually because drones have no iconID
-                        If shipmod.IsDrone = True Then
+                        If shipmod.IsDrone = True Or shipmod.IsFighter = True Then
                             newModule.Image = ImageHandler.CreateIcon(CStr(shipmod.ID), shipmod.MetaType.ToString, 24, True)
                         Else
                             newModule.Image = ImageHandler.IconImage24(shipmod.Icon, shipmod.MetaType)
@@ -1259,7 +1246,7 @@ Namespace Forms
                         stt.Color = eTooltipColor.Yellow
                         'stt.FooterImage = CType(My.Resources.imgInfo1, Image)
                         ' Create drone icons individually because drones have no iconID
-                        If shipmod.IsDrone = True Then
+                        If shipmod.IsDrone = True Or shipmod.IsFighter = True Then
                             stt.BodyImage = ImageHandler.CreateIcon(CStr(shipmod.ID), shipmod.MetaType.ToString, 48, True)
                         Else
                             stt.BodyImage = ImageHandler.IconImage48(shipmod.Icon, shipmod.MetaType)
@@ -1353,6 +1340,8 @@ Namespace Forms
                         Dim shipMod As ShipModule = ModuleLists.ModuleList(moduleID).Clone
                         If shipMod.IsDrone = True Then
                             Call ActiveFitting.AddDrone(shipMod, 1, False, False)
+                        ElseIf shipMod.IsFighter = True Then
+                            Call ActiveFitting.AddFighter(shipMod, 1, False, False, True, False, False)
                         Else
                             ' Check if module is a charge
                             If shipMod.IsCharge = True Or shipMod.IsContainer Or shipMod.DatabaseCategory = 22 Then
@@ -1984,18 +1973,6 @@ Namespace Forms
         Private Sub RemoteShowFitting(ByVal fitKey As String)
             ShowFitting(fitKey)
         End Sub
-        Private Sub mnuFittingsBCBrowser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuFittingsBCBrowser.Click
-            Dim shipName As String = mnuFittingsFittingName.Tag.ToString
-            Dim bShip As Ship = ShipLists.ShipList(shipName).Clone
-            If _myBcBrowser.IsHandleCreated = True Then
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.BringToFront()
-            Else
-                _myBcBrowser = New FrmBcBrowser
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.Show()
-            End If
-        End Sub
         Private Sub mnuExportToEve_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuExportToEve.Click
             Call ExportFittingsToEve()
         End Sub
@@ -2415,11 +2392,19 @@ Namespace Forms
                 End If
             Next
             fitting.AppendLine("")
+            For Each fighter As FighterBayItem In currentShip.FighterBayItems.Values
+                If fighter.IsActive = True Then
+                    fitting.AppendLine(fighter.FighterType.Name & ", " & fighter.Quantity & "a")
+                Else
+                    fitting.AppendLine(fighter.FighterType.Name & ", " & fighter.Quantity & "i")
+                End If
+            Next
+            fitting.AppendLine("")
             For Each cargo As CargoBayItem In currentShip.CargoBayItems.Values
                 fitting.AppendLine(cargo.ItemType.Name & ", " & cargo.Quantity)
             Next
             Try
-                Clipboard.SetText(fitting.ToString)
+                Clipboard.SetText(fitting.ToString.Trim)
             Catch ex As Exception
                 MessageBox.Show("There was an error writing data to the clipboard. Please wait a couple of seconds and try again.", "Copy For HQF Error")
             End Try
@@ -2491,11 +2476,15 @@ Namespace Forms
                 fitting.AppendLine(drone.DroneType.Name & " x" & drone.Quantity)
             Next
             fitting.AppendLine("")
+            For Each fighter As FighterBayItem In currentship.FighterBayItems.Values
+                fitting.AppendLine(fighter.FighterType.Name & " x" & fighter.Quantity)
+            Next
+            fitting.AppendLine("")
             For Each cargo As CargoBayItem In currentship.CargoBayItems.Values
                 fitting.AppendLine(cargo.ItemType.Name & " x" & cargo.Quantity)
             Next
             Try
-                Clipboard.SetText(fitting.ToString)
+                Clipboard.SetText(fitting.ToString.Trim)
             Catch ex As Exception
                 MessageBox.Show("There was an error writing data to the clipboard. Please wait a couple of seconds and try again.", "Copy For EFT Error")
             End Try
@@ -2685,6 +2674,12 @@ Namespace Forms
                     fitting.AppendLine(drone.Quantity & "x " & drone.DroneType.Name)
                 Next
             End If
+            If currentship.FighterBayItems.Count > 0 Then
+                fitting.AppendLine("")
+                For Each fighter As FighterBayItem In currentship.FighterBayItems.Values
+                    fitting.AppendLine(fighter.Quantity & "x " & fighter.FighterType.Name)
+                Next
+            End If
 
             If currentship.CargoBayItems.Count > 0 Then
                 fitting.AppendLine("")
@@ -2832,6 +2827,17 @@ Namespace Forms
                 Next
             End If
 
+            ' Parse fighters
+            If currentship.FighterBayItems.Count > 0 Then
+                For Each fighter As FighterBayItem In currentship.FighterBayItems.Values
+                    If modList.ContainsKey(fighter.FighterType.Name) = True Then
+                        modList(fighter.FighterType.Name) += fighter.Quantity
+                    Else
+                        modList.Add(fighter.FighterType.Name, fighter.Quantity)
+                    End If
+                Next
+            End If
+
             ' Parse cargo bay
             If currentship.CargoBayItems.Count > 0 Then
                 For Each cargoitem As CargoBayItem In currentship.CargoBayItems.Values
@@ -2949,10 +2955,10 @@ Namespace Forms
                             If IsNumeric(quantity) = True Then
                                 If ModuleLists.ModuleListName.ContainsKey(modName) = True Then
                                     Dim testMod As ShipModule = ModuleLists.ModuleList(ModuleLists.ModuleListName(modName)).Clone
-                                    If testMod.IsDrone = True Then
-                                        newFit.Add(modName & ", " & quantity)
-                                    Else
-                                        If CInt(quantity) > 1 Then
+                                If testMod.IsDrone = True Or testMod.IsFighter = True Then
+                                    newFit.Add(modName & ", " & quantity)
+                                Else
+                                    If CInt(quantity) > 1 Then
                                             modName = modName & " x" & quantity
                                         End If
                                         newFit.Add(modName)

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmKMV
+Partial Class FrmKmv
     Inherits DevComponents.DotNetBar.Office2007Form
 
     'Form overrides dispose to clean up the component list.
@@ -203,18 +203,8 @@ Partial Class frmKMV
         Me.txtKillMailDetails.Name = "txtKillMailDetails"
         Me.txtKillMailDetails.ReadOnly = True
         Me.txtKillMailDetails.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtKillMailDetails.Size = New System.Drawing.Size(415, 491)
+        Me.txtKillMailDetails.Size = New System.Drawing.Size(282, 491)
         Me.txtKillMailDetails.TabIndex = 6
-        '
-        'btnUploadToBC
-        '
-        Me.btnUploadToBC.Location = New System.Drawing.Point(418, 177)
-        Me.btnUploadToBC.Name = "btnUploadToBC"
-        Me.btnUploadToBC.Size = New System.Drawing.Size(123, 23)
-        Me.btnUploadToBC.TabIndex = 7
-        Me.btnUploadToBC.Text = "Upload to BattleClinic"
-        Me.btnUploadToBC.UseVisualStyleBackColor = True
-        Me.btnUploadToBC.Visible = False
         '
         'gpAPI
         '
@@ -229,7 +219,6 @@ Partial Class frmKMV
         Me.gpAPI.Controls.Add(Me.lblAPIKey)
         Me.gpAPI.Controls.Add(Me.btnGetCharacters)
         Me.gpAPI.Controls.Add(Me.txtAPIKey)
-        Me.gpAPI.DisabledBackColor = System.Drawing.Color.Empty
         Me.gpAPI.Location = New System.Drawing.Point(9, 12)
         Me.gpAPI.Name = "gpAPI"
         Me.gpAPI.Size = New System.Drawing.Size(532, 163)
@@ -248,6 +237,7 @@ Partial Class frmKMV
         Me.gpAPI.Style.BorderRightWidth = 1
         Me.gpAPI.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
         Me.gpAPI.Style.BorderTopWidth = 1
+        Me.gpAPI.Style.Class = ""
         Me.gpAPI.Style.CornerDiameter = 4
         Me.gpAPI.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded
         Me.gpAPI.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center
@@ -256,10 +246,12 @@ Partial Class frmKMV
         '
         '
         '
+        Me.gpAPI.StyleMouseDown.Class = ""
         Me.gpAPI.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
+        Me.gpAPI.StyleMouseOver.Class = ""
         Me.gpAPI.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.gpAPI.TabIndex = 9
         Me.gpAPI.Text = "API Information"
@@ -270,7 +262,6 @@ Partial Class frmKMV
         Me.gpCharacters.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
         Me.gpCharacters.Controls.Add(Me.lvwCharacters)
         Me.gpCharacters.Controls.Add(Me.btnFetchKillMails)
-        Me.gpCharacters.DisabledBackColor = System.Drawing.Color.Empty
         Me.gpCharacters.Location = New System.Drawing.Point(547, 12)
         Me.gpCharacters.Name = "gpCharacters"
         Me.gpCharacters.Size = New System.Drawing.Size(279, 163)
@@ -289,6 +280,7 @@ Partial Class frmKMV
         Me.gpCharacters.Style.BorderRightWidth = 1
         Me.gpCharacters.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
         Me.gpCharacters.Style.BorderTopWidth = 1
+        Me.gpCharacters.Style.Class = ""
         Me.gpCharacters.Style.CornerDiameter = 4
         Me.gpCharacters.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded
         Me.gpCharacters.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center
@@ -297,10 +289,12 @@ Partial Class frmKMV
         '
         '
         '
+        Me.gpCharacters.StyleMouseDown.Class = ""
         Me.gpCharacters.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square
         '
         '
         '
+        Me.gpCharacters.StyleMouseOver.Class = ""
         Me.gpCharacters.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.gpCharacters.TabIndex = 10
         Me.gpCharacters.Text = "Available Characters"
@@ -318,11 +312,10 @@ Partial Class frmKMV
         Me.PanelEx1.Controls.Add(Me.lblKMSummary)
         Me.PanelEx1.Controls.Add(Me.txtKillMailDetails)
         Me.PanelEx1.Controls.Add(Me.lblKillmailDetails)
-        Me.PanelEx1.DisabledBackColor = System.Drawing.Color.Empty
         Me.PanelEx1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelEx1.Location = New System.Drawing.Point(0, 0)
         Me.PanelEx1.Name = "PanelEx1"
-        Me.PanelEx1.Size = New System.Drawing.Size(974, 735)
+        Me.PanelEx1.Size = New System.Drawing.Size(841, 735)
         Me.PanelEx1.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
         Me.PanelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -391,6 +384,7 @@ Partial Class frmKMV
         '
         'ElementStyle1
         '
+        Me.ElementStyle1.Class = ""
         Me.ElementStyle1.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.ElementStyle1.Name = "ElementStyle1"
         Me.ElementStyle1.TextColor = System.Drawing.SystemColors.ControlText
@@ -421,15 +415,15 @@ Partial Class frmKMV
         Me.btnExportToHQF.TabIndex = 12
         Me.btnExportToHQF.Text = "Export to HQF"
         '
-        'FrmKmv
+        'frmKMV
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(974, 735)
+        Me.ClientSize = New System.Drawing.Size(841, 735)
         Me.Controls.Add(Me.PanelEx1)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Name = "FrmKmv"
+        Me.Name = "frmKMV"
         Me.Text = "EveHQ Killmail Viewer"
         Me.gpAPI.ResumeLayout(False)
         Me.gpAPI.PerformLayout()
@@ -456,15 +450,15 @@ Partial Class frmKMV
     Friend WithEvents radUseAccount As System.Windows.Forms.RadioButton
     Friend WithEvents cboAccount As System.Windows.Forms.ComboBox
     Friend WithEvents btnUploadToBC As System.Windows.Forms.Button
+    Friend WithEvents gpAPI As DevComponents.DotNetBar.Controls.GroupPanel
+    Friend WithEvents gpCharacters As DevComponents.DotNetBar.Controls.GroupPanel
+    Friend WithEvents PanelEx1 As DevComponents.DotNetBar.PanelEx
+    Friend WithEvents btnExportToHQF As DevComponents.DotNetBar.ButtonX
+    Friend WithEvents btnCopyKillmail As DevComponents.DotNetBar.ButtonX
+    Friend WithEvents adtKillmails As DevComponents.AdvTree.AdvTree
     Friend WithEvents NodeConnector1 As DevComponents.AdvTree.NodeConnector
     Friend WithEvents ElementStyle1 As DevComponents.DotNetBar.ElementStyle
-    Private WithEvents gpAPI As DevComponents.DotNetBar.Controls.GroupPanel
-    Private WithEvents gpCharacters As DevComponents.DotNetBar.Controls.GroupPanel
-    Private WithEvents PanelEx1 As DevComponents.DotNetBar.PanelEx
-    Private WithEvents btnExportToHQF As DevComponents.DotNetBar.ButtonX
-    Private WithEvents btnCopyKillmail As DevComponents.DotNetBar.ButtonX
-    Private WithEvents adtKillmails As DevComponents.AdvTree.AdvTree
-    Private WithEvents colVictim As DevComponents.AdvTree.ColumnHeader
-    Private WithEvents colShip As DevComponents.AdvTree.ColumnHeader
-    Private WithEvents colDate As DevComponents.AdvTree.ColumnHeader
+    Friend WithEvents colVictim As DevComponents.AdvTree.ColumnHeader
+    Friend WithEvents colShip As DevComponents.AdvTree.ColumnHeader
+    Friend WithEvents colDate As DevComponents.AdvTree.ColumnHeader
 End Class

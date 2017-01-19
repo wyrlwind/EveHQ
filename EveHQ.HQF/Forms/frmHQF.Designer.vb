@@ -50,7 +50,6 @@ Namespace Forms
             Me.mnuCreateNewFitting = New System.Windows.Forms.ToolStripMenuItem()
             Me.mnuAddToShipBay = New System.Windows.Forms.ToolStripMenuItem()
             Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripSeparator()
-            Me.mnuBattleClinicBrowser = New System.Windows.Forms.ToolStripMenuItem()
             Me.NodeConnector1 = New DevComponents.AdvTree.NodeConnector()
             Me.ElementStyle1 = New DevComponents.DotNetBar.ElementStyle()
             Me.lblFlyable = New System.Windows.Forms.Label()
@@ -153,7 +152,7 @@ Namespace Forms
             '
             'ctxFittings
             '
-            Me.ctxFittings.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFittingsFittingName, Me.ToolStripMenuItem4, Me.mnuPreviewShip2, Me.mnuFittingsShowFitting, Me.ToolStripMenuItem1, Me.mnuFittingsRenameFitting, Me.mnuFittingsCopyFitting, Me.mnuFittingsDeleteFitting, Me.ToolStripMenuItem3, Me.mnuFittingsCreateFitting, Me.mnuFittingsBCBrowser, Me.ToolStripMenuItem5, Me.mnuCompareFittings, Me.ToolStripMenuItem7, Me.mnuExportToEve, Me.mnuExportToRequisitions})
+            Me.ctxFittings.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFittingsFittingName, Me.ToolStripMenuItem4, Me.mnuPreviewShip2, Me.mnuFittingsShowFitting, Me.ToolStripMenuItem1, Me.mnuFittingsRenameFitting, Me.mnuFittingsCopyFitting, Me.mnuFittingsDeleteFitting, Me.ToolStripMenuItem3, Me.mnuFittingsCreateFitting, Me.ToolStripMenuItem5, Me.mnuCompareFittings, Me.ToolStripMenuItem7, Me.mnuExportToEve, Me.mnuExportToRequisitions})
             Me.ctxFittings.Name = "ctxFittings"
             Me.ctxFittings.Size = New System.Drawing.Size(192, 276)
             '
@@ -215,12 +214,6 @@ Namespace Forms
             Me.mnuFittingsCreateFitting.Size = New System.Drawing.Size(191, 22)
             Me.mnuFittingsCreateFitting.Text = "Create New Fitting"
             '
-            'mnuFittingsBCBrowser
-            '
-            Me.mnuFittingsBCBrowser.Name = "mnuFittingsBCBrowser"
-            Me.mnuFittingsBCBrowser.Size = New System.Drawing.Size(191, 22)
-            Me.mnuFittingsBCBrowser.Text = "BattleClinic Browser"
-            '
             'ToolStripMenuItem5
             '
             Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
@@ -277,7 +270,7 @@ Namespace Forms
             '
             'ctxShipBrowser
             '
-            Me.ctxShipBrowser.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuShipBrowserShipName, Me.ToolStripMenuItem2, Me.mnuPreviewShip, Me.mnuCreateNewFitting, Me.mnuAddToShipBay, Me.ToolStripMenuItem6, Me.mnuBattleClinicBrowser})
+            Me.ctxShipBrowser.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuShipBrowserShipName, Me.ToolStripMenuItem2, Me.mnuPreviewShip, Me.mnuCreateNewFitting, Me.mnuAddToShipBay, Me.ToolStripMenuItem6})
             Me.ctxShipBrowser.Name = "ctxShipBrowser"
             Me.ctxShipBrowser.Size = New System.Drawing.Size(231, 126)
             '
@@ -317,13 +310,6 @@ Namespace Forms
             '
             Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
             Me.ToolStripMenuItem6.Size = New System.Drawing.Size(227, 6)
-            '
-            'mnuBattleClinicBrowser
-            '
-            Me.mnuBattleClinicBrowser.Name = "mnuBattleClinicBrowser"
-            Me.mnuBattleClinicBrowser.Size = New System.Drawing.Size(230, 22)
-            Me.mnuBattleClinicBrowser.Text = "Battleclinic Browser"
-            Me.mnuBattleClinicBrowser.ToolTipText = "View Ship Loadouts from BattleClinic"
             '
             'NodeConnector1
             '
@@ -1515,7 +1501,6 @@ Namespace Forms
         Friend WithEvents chkOnlyShowFittable As System.Windows.Forms.CheckBox
         Friend WithEvents pbSearchShips As System.Windows.Forms.PictureBox
         Friend WithEvents mnuCompareFittings As System.Windows.Forms.ToolStripMenuItem
-        Friend WithEvents mnuBattleClinicBrowser As System.Windows.Forms.ToolStripMenuItem
         Friend WithEvents mnuFittingsBCBrowser As System.Windows.Forms.ToolStripMenuItem
         Friend WithEvents ToolStripMenuItem6 As System.Windows.Forms.ToolStripSeparator
         Friend WithEvents mnuExportToEve As System.Windows.Forms.ToolStripMenuItem

@@ -89,6 +89,20 @@ Public Class ShipModule
     <ProtoMember(30)> Public Property IsBooster() As Boolean
     <ProtoMember(31)> Public Property IsContainer() As Boolean
     <ProtoMember(32)> Public Property IsMissile() As Boolean
+    <ProtoMember(43)> Public Property IsFighter() As Boolean
+    <ProtoMember(44)> Public Property FighterEffectMissiles() As Boolean
+    <ProtoMember(45)> Public Property FighterEffectEnergyNeutralizer() As Boolean
+    <ProtoMember(46)> Public Property FighterEffectStasisWebifier() As Boolean
+    <ProtoMember(47)> Public Property FighterEffectWarpDisruption() As Boolean
+    <ProtoMember(48)> Public Property FighterEffectEcm() As Boolean
+    <ProtoMember(49)> Public Property FighterEffectEvasiveManeuvers() As Boolean
+    <ProtoMember(50)> Public Property FighterEffectAfterburner() As Boolean
+    <ProtoMember(51)> Public Property FighterEffectMicroWarpDrive() As Boolean
+    <ProtoMember(52)> Public Property FighterEffectMicroJumpDrive() As Boolean
+    <ProtoMember(53)> Public Property FighterEffectKamikaze() As Boolean
+    <ProtoMember(54)> Public Property FighterEffectTackle() As Boolean
+    <ProtoMember(55)> Public Property FighterEffectAttackM() As Boolean
+    <ProtoMember(56)> Public Property FighterEffectLaunchBomb() As Boolean
 
     ' Skills
     <ProtoMember(33)> Public Property RequiredSkills() As New SortedList(Of String, ItemSkills)
@@ -157,7 +171,11 @@ Public Class ShipModule
                     newModule.PG = attValue
                 Case AttributeEnum.ModuleCpuUsage
                     newModule.CPU = attValue
-                Case AttributeEnum.ModuleActivationTime
+                Case AttributeEnum.ModuleActivationTime,
+                     AttributeEnum.ModuleDurationECMJammerBurstProjector,
+                     AttributeEnum.ModuleDurationSensorDampeningBurstProjector,
+                     AttributeEnum.ModuleDurationTargetIlluminationBurstProjector,
+                     AttributeEnum.ModuleDurationWeaponDisruptionBurstProjector
                     newModule.ActivationTime = attValue
                 Case AttributeEnum.ModuleReactivationDelay
                     newModule.ReactivationDelay = attValue
@@ -257,7 +275,6 @@ Public Enum ModuleEnum
 
     ' itemIDs (see invTypes)
     ItemBastionModuleI = 33400
-    ItemCommandProcessorI = 11014
     ItemLegionCovertReconfiguration = 30120
     ItemLegionWarfareProcessor = 29967
     ItemLokiCovertReconfiguration = 30135
@@ -277,6 +294,12 @@ Public Enum ModuleEnum
     ItemTenguWarfareProcessor = 29972
     ItemTriageModuleI = 27951
     ItemTriageModuleT2 = 4294
+    ItemSmallCommandProcessorI = 43894
+    ItemMediumCommandProcessorI = 43896
+    ItemLargeCommandProcessorI = 43898
+    ItemCapitalCommandProcessorI = 43900
+    ItemIndustrialCoreI = 28583
+    ItemIndustrialCoreII = 42890
 
     ' categoryIDs (see invCategories)
     CategoryCelestials = 2
@@ -284,6 +307,7 @@ Public Enum ModuleEnum
     CategoryDrones = 18
     CategoryImplants = 20
     CategorySubsystems = 32
+    CategoryFighters = 87
 
     ' groupIDs (see invGroups)
     GroupArmorRepairers = 62
@@ -293,6 +317,7 @@ Public Enum ModuleEnum
     GroupBoosters = 303
     GroupCapBoosters = 76
     GroupCloakingDevices = 330
+    GroupCommandBurst = 1770
     GroupCynosuralFields = 658
     GroupDamageControls = 60
     GroupDeepSpaceTransports = 380
@@ -306,6 +331,7 @@ Public Enum ModuleEnum
     GroupFreighters = 513
     GroupFueledArmorRepairers = 1199
     GroupFueledShieldBoosters = 1156
+    GroupFueledRemoteShieldBoosters = 1697
     GroupGangLinks = 316
     GroupHullRepairers = 63
     GroupHybridTurrets = 74
@@ -323,6 +349,8 @@ Public Enum ModuleEnum
     GroupShieldTransporters = 41
     GroupSmartbombs = 72
     GroupStrategicCruisers = 963
+    GroupAncillaryRemoteArmorsRepairers = 1698
+    GroupECM = 201
 
     ' marketGroupIDs (see invMarketGroups)
     MarketgroupGasHarvesters = 1037

@@ -63,6 +63,7 @@
 
     Dim cModules As New List(Of ModuleWithState)
     Dim cDrones As New List(Of ModuleQWithState)
+    Dim cFighters As New List(Of ModuleFighterWithState)
     Dim cItems As New List(Of ModuleQWithState)
     Dim cShips As New List(Of ModuleQWithState)
 
@@ -181,6 +182,21 @@
         End Get
         Set(ByVal value As List(Of ModuleQWithState))
             cDrones = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the collection of fighters used in the fitting
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>A collection of fighters used in the fitting</returns>
+    ''' <remarks></remarks>
+    Public Property Fighters() As List(Of ModuleFighterWithState)
+        Get
+            Return cFighters
+        End Get
+        Set(ByVal value As List(Of ModuleFighterWithState))
+            cFighters = value
         End Set
     End Property
 
@@ -309,7 +325,7 @@
     ''' Gets or sets a collection of remote effects to be applied to the fitting.
     ''' </summary>
     ''' <value></value>
-    ''' <returns>A collection of fleet effects to be applied to the fitting.</returns>
+    ''' <returns>A collection of remote effects to be applied to the fitting.</returns>
     ''' <remarks></remarks>
     Public Property RemoteEffects() As List(Of RemoteEffect)
         Get

@@ -138,6 +138,29 @@ Public Class PilotParseFunctions
             ' Add the update info first to indicate it has been updated
             If HQ.Settings.Corporations.ContainsKey(newCorp.Name) = False Then
                 HQ.Settings.Corporations.Add(newCorp.Name, newCorp)
+                If HQ.Settings.Accounts.ContainsKey(newCorp.Accounts(0)) Then
+                    Dim cAccount As EveHQAccount = HQ.Settings.Accounts(newCorp.Accounts(0))
+                    If cAccount.CanUseCorporateAPI(NewEveApi.CorporateAccessMasks.CorporationSheet) = True Then
+                        Dim corpResponse As NewEveApi.EveServiceResponse(Of NewEveApi.Entities.CorporateData) = HQ.ApiProvider.Corporation.CorporationSheet(cAccount.UserID, cAccount.APIKey)
+                        If corpResponse IsNot Nothing Then
+                            If corpResponse.IsSuccess Then
+                                newCorp.ApiData = corpResponse.ResultData
+                                If corpResponse.ResultData.WalletDivisions IsNot Nothing Then
+                                    If cAccount.CanUseCorporateAPI(NewEveApi.CorporateAccessMasks.AccountBalances) = True Then
+                                        For Each wallet As CorporateDivision In corpResponse.ResultData.WalletDivisions
+                                            Dim walletBalances As NewEveApi.EveServiceResponse(Of IEnumerable(Of NewEveApi.Entities.AccountBalance)) = HQ.ApiProvider.Corporation.AccountBalance(cAccount.UserID, cAccount.APIKey, newCorp.ID.ToInt32())
+                                            If walletBalances IsNot Nothing Then
+                                                If walletBalances.IsSuccess Then
+                                                    newCorp.WalletBalances = walletBalances.ResultData
+                                                End If
+                                            End If
+                                        Next
+                                    End If
+                                End If
+                            End If
+                        End If
+                    End If
+                End If
             End If
         Next
     End Sub
@@ -316,6 +339,7 @@ Public Class PilotParseFunctions
                         newPilot.ID = toon.CharacterId.ToInvariantString()
                         newPilot.AccountPosition = CStr(currToon)
                         newPilot.Account = caccount.UserID
+                        newPilot.AccountStatus = caccount.APIAccountStatus
                         ' Copy notification data if available - we reset this after checking the API request if not cached
                         If HQ.Settings.Pilots.ContainsKey(newPilot.Name) = True Then
                             newPilot.TrainingNotifiedEarly = HQ.Settings.Pilots(newPilot.Name).TrainingNotifiedEarly
@@ -421,8 +445,8 @@ Public Class PilotParseFunctions
                 cAccount.LogonCount = response.ResultData.LogOnCount
                 cAccount.LogonMinutes = CLng(response.ResultData.LoggedInTime.TotalMinutes)
                 If cAccount.PaidUntil < Now Then
-                    ' Account has expired
-                    cAccount.APIAccountStatus = APIAccountStatuses.Disabled
+                    ' Account is alpha state
+                    cAccount.APIAccountStatus = APIAccountStatuses.Alpha
                 Else
                     cAccount.APIAccountStatus = APIAccountStatuses.Active
                 End If
@@ -431,7 +455,7 @@ Public Class PilotParseFunctions
                     Select Case response.EveErrorCode
                         Case 211
                             '' Account has expired
-                            cAccount.APIAccountStatus = APIAccountStatuses.Disabled
+                            cAccount.APIAccountStatus = APIAccountStatuses.Alpha
                         Case 200
                             ' Should be limited key
                             cAccount.APIKeyType = APIKeyTypes.Limited
@@ -454,7 +478,7 @@ Public Class PilotParseFunctions
         'Dim cXML As XmlDocument = apiReq.GetAPIXML(APITypes.CharacterSheet, cAccount.ToAPIAccount, cPilot.ID,
         '                                           APIReturnMethods.ReturnStandard)
 
-        Dim characterSheetResponse As EveServiceResponse(Of CharacterData) = HQ.ApiProvider.Character.CharacterSheet(cAccount.UserID, cAccount.APIKey, cPilot.ID.ToInt32())
+        Dim characterSheetResponse As EveServiceResponse(Of CharacterData) = HQ.ApiProvider.Character.CharacterSheet(cAccount.UserID, cAccount.APIKey, CLng(cPilot.ID))
 
         ' Store the Character Sheet API result
         If characterSheetResponse.EveErrorCode > 0 Then
@@ -469,7 +493,7 @@ Public Class PilotParseFunctions
 
 
         ' Get the Skill Queue
-        Dim skillResponse As EveServiceResponse(Of IEnumerable(Of QueuedSkill)) = HQ.ApiProvider.Character.SkillQueue(cAccount.UserID, cAccount.APIKey, cPilot.ID.ToInt32())
+        Dim skillResponse As EveServiceResponse(Of IEnumerable(Of QueuedSkill)) = HQ.ApiProvider.Character.SkillQueue(cAccount.UserID, cAccount.APIKey, CLng(cPilot.ID))
 
         ' Store the Skill Queue API result
         If skillResponse.EveErrorCode > 0 Then

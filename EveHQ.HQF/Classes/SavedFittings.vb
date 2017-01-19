@@ -93,6 +93,10 @@ Imports Newtonsoft.Json
 
         ' Write the JSON version of the fittings
         Try
+            If json = "null" Or json = "" Then
+                Throw New Exception("JSON conversion failed")
+            End If
+
             Using s As New StreamWriter(Path.Combine(PluginSettings.HQFFolder, "Fittings.json"), False)
                 s.Write(json)
                 s.Flush()
@@ -142,7 +146,8 @@ Imports Newtonsoft.Json
         savedFit.DamageProfileName = Fit.DamageProfileName
         savedFit.Modules = Fit.Modules
         savedFit.Drones = Fit.Drones
-        savedFit.Items = Fit.Items
+        savedFit.Fighters = fit.Fighters
+        savedFit.Items = fit.Items
         savedFit.Ships = Fit.Ships
         savedFit.ImplantGroup = Fit.ImplantGroup
         savedFit.Implants = Fit.Implants
@@ -182,7 +187,8 @@ Imports Newtonsoft.Json
             newFit.DamageProfileName = Fit.DamageProfileName
             newFit.Modules = Fit.Modules
             newFit.Drones = Fit.Drones
-            newFit.Items = Fit.Items
+            newFit.Fighters = fit.Fighters
+            newFit.Items = fit.Items
             newFit.Ships = Fit.Ships
             newFit.ImplantGroup = Fit.ImplantGroup
             newFit.Implants = Fit.Implants
